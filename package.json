@@ -1,0 +1,8 @@
+{
+  "name": "fsd_part2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:MetalHead89/fsd_part2.git",
+  "author": "bakalov <bakalov.vitaliy@gmail.com>",
+  "license": "MIT"
+}
