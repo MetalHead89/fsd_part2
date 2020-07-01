@@ -4,5 +4,11 @@
   "main": "index.js",
   "repository": "git@github.com:MetalHead89/fsd_part2.git",
   "author": "bakalov <bakalov.vitaliy@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "pug": "^3.0.0"
+  },
+  "devDependencies": {
+    "sass": "^1.26.9"
+  }
 }

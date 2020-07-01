@@ -1,0 +1,63 @@
+.central-container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.colors-and-type {
+    width: 100%;
+    flex-direction: row;
+}
+
+.colors-and-type__colors {
+    width: 60%;
+    flex-direction: column;
+}
+
+.colors-and-type__color-section {
+    flex-direction: row;
+}
+
+.colors-and-type__color-square {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.colors-and-type__color-square_block_Dark_Shade_100 {
+    background: #1F2041;
+}
+
+.colors-and-type__color-square_block_Dark_Shade_75 {
+    background: rgba(31, 32, 65, 0.75);
+}
+
+.colors-and-type__color-square_block_Dark_Shade_50 {
+    background: rgba(31, 32, 65, 0.5);
+}
+
+.colors-and-type__color-square_block_Dark_Shade_25 {
+    background: rgba(31, 32, 65, 0.25);
+}
+
+.colors-and-type__color-square_block_Dark_Shade_5 {
+    background: rgba(31, 32, 65, 0.05);
+}
+
+.colors-and-type__color-square_block_Purple {
+    background: #BC9CFF;
+}
+
+.colors-and-type__color-square_block_Green {
+    background: #6FCF97;
+}
+
+.colors-and-type__color-description {
+    display: inline-block;
+    flex-direction: column;
+}
+
+.colors-and-type__type {
+    width: 40%;
+    flex-direction: column;
+}
