@@ -5,6 +5,20 @@
     display: inline-block;
 }
 
+.color-sample_flex {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+}
+
+.color-sample_margin-bottom {
+    margin-bottom: 20px;
+}
+
+.color-sample_margin-0 {
+    margin: 0px;
+}
+
 .color-sample__color-square_Dark_Shade_100 {
     background: #1F2041;
 }
@@ -33,20 +47,28 @@
     background: #6FCF97;
 }
 
-.color-sample_flex {
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-}
-
 .color-sample__color-description_display {
     display: inline-block;
 }
 
-.color-sample__color-description_flex {
+.color-description_flex {
     flex-direction: column;
 }
 
-.color-description_p_margin {
+.color-description_padding-left {
+    padding-left: 40px;
+}
+
+.color-description__p_margin {
     margin: 0px;
+}
+
+.color-description__p_font {
+    font-family: "QuicksandRegular";
+    font-size: 19px;
+    color: #1F2041;
+}
+
+.color-description__p_font-bold {
+    font-weight: bold;
 }

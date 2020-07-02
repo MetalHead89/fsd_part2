@@ -1,11 +1,11 @@
-mixin set_color-sample(color, color_name, color_code)
+mixin set_color-sample(color_sample_margin, color, color_name, color_code)
 
-    .color-sample.color-sample_flex
+    div(class='color-sample color-sample_flex color-sample_margin-' + color_sample_margin)
         div(class='color-sample__color-square color-sample__color-square_' + color)
-        div(class='color-description color-sample__color-description color-sample__color-description_display '
-            + 'color-sample__color-description_flex')
-        .color-description.color-sample__color-description.color-sample__color-description_display.color-sample__color-description_flex
+        div(class='color-description color-description_flex color-description_padding-left '
+            + 'color-sample__color-description_display')
             .color-description__color-name
-                p(class='color-description_p color-description_p_margin') !{color_name}
+                p(class='color-description__p color-description__p_margin color-description__p_font '
+                    + 'color-description__p_font-bold') !{color_name}
             .color-description__color-code
-                p(class='color-description_p color-description_p_margin') !{color_code}
+                p(class='color-description__p color-description__p_margin color-description__p_font') !{color_code}
