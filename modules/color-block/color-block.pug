@@ -1,9 +1,11 @@
 mixin set_color-sample(color, color_name, color_code)
 
-    .color-sample
+    .color-sample.color-sample_flex
         div(class='color-sample__color-square color-sample__color-square_' + color)
-        .color-description.color-sample__color-description
+        div(class='color-description color-sample__color-description color-sample__color-description_display '
+            + 'color-sample__color-description_flex')
+        .color-description.color-sample__color-description.color-sample__color-description_display.color-sample__color-description_flex
             .color-description__color-name
-                p !{color_name}
+                p(class='color-description_p color-description_p_margin') !{color_name}
             .color-description__color-code
-                p !{color_code}
+                p(class='color-description_p color-description_p_margin') !{color_code}

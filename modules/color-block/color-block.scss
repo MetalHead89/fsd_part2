@@ -32,3 +32,21 @@
 .color-sample__color-square_Green {
     background: #6FCF97;
 }
+
+.color-sample_flex {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+}
+
+.color-sample__color-description_display {
+    display: inline-block;
+}
+
+.color-sample__color-description_flex {
+    flex-direction: column;
+}
+
+.color-description_p_margin {
+    margin: 0px;
+}

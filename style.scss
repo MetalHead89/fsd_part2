@@ -11,17 +11,21 @@
     padding: 145px 0px;
 }
 
-.colors-and-type p {
-    margin: 0px;
-}
-
 .colors-and-type__colors {
     width: 60%;
     flex-direction: column;
     display: inline-block;
 }
 
-.colors-and-type__color-section {
+
+
+
+
+
+
+
+
+/*.colors-and-type__color-section {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -102,7 +106,7 @@
     display: inline-block;
     padding-left: 30px;
     width: 90%;
-}
+}*/
 
 @font-face {
     font-family: "QuicksandRegular";
