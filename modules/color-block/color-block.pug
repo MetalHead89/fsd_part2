@@ -1,0 +1,9 @@
+mixin set_color-sample(color, color_name, color_code)
+
+    .color-sample
+        div(class='color-sample__color-square color-sample__color-square_' + color)
+        .color-description.color-sample__color-description
+            .color-description__color-name
+                p !{color_name}
+            .color-description__color-code
+                p !{color_code}

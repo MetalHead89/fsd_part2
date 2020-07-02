@@ -5,77 +5,16 @@ html(lang="ru")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title UI kit
         link(rel="stylesheet", href="style.scss")
+        link(rel="stylesheet", href="modules/color-block/color-block.scss")
     body
         .central-container
             .colors-and-type
                 .colors-and-type__colors
-                    .colors-and-type__color-section
-                        .colors-and-type__color-square.colors-and-type__color-square_block_Dark_Shade_100
-                        .colors-and-type__color-description
-                            .colors-and-type__color-name
-                                p Dark Shade 100%
-                            .colors-and-type__color-code
-                                p #1F2041
-                    .colors-and-type__color-section
-                        .colors-and-type__color-square.colors-and-type__color-square_block_Dark_Shade_75
-                        .colors-and-type__color-description
-                            .colors-and-type__color-name
-                                p Dark Shade 100%
-                            .colors-and-type__color-code
-                                p #1F2041     
-                    .colors-and-type__color-section
-                        .colors-and-type__color-square.colors-and-type__color-square_block_Dark_Shade_50
-                        .colors-and-type__color-description
-                            .colors-and-type__color-name
-                                p Dark Shade 100%
-                            .colors-and-type__color-code
-                                p #1F2041
-                    .colors-and-type__color-section
-                        .colors-and-type__color-square.colors-and-type__color-square_block_Dark_Shade_25
-                        .colors-and-type__color-description
-                            .colors-and-type__color-name
-                                p Dark Shade 100%
-                            .colors-and-type__color-code
-                                p #1F2041
-                    .colors-and-type__color-section
-                        .colors-and-type__color-square.colors-and-type__color-square_block_Dark_Shade_5
-                        .colors-and-type__color-description
-                            .colors-and-type__color-name
-                                p Dark Shade 100%
-                            .colors-and-type__color-code
-                                p #1F2041
-                    .colors-and-type__color-section
-                        .colors-and-type__color-square.colors-and-type__color-square_block_Purple
-                        .colors-and-type__color-description
-                            .colors-and-type__color-name
-                                p Dark Shade 100%
-                            .colors-and-type__color-code
-                                p #1F2041
-                    .colors-and-type__color-section
-                        .colors-and-type__color-square.colors-and-type__color-square_block_Green
-                        .colors-and-type__color-description
-                            .colors-and-type__color-name
-                                p Dark Shade 100%
-                            .colors-and-type__color-code
-                                p #1F2041
-                .colors_and_type__type
-                    .colors_and_type__type-section
-                        .colors_and_type__type_name
-                            h1 H1
-                        .colors_and_type__text
-                            h1 This one is the sub-section or widget title
-                    .colors_and_type__type-section
-                        .colors_and_type__type_name
-                            h2 H2
-                        .colors_and_type__text
-                            h2 Next one is the item title inside widgets
-                    .colors_and_type__type-section
-                        .colors_and_type__type_name
-                            h3 H3
-                        .colors_and_type__text
-                            h3 This is a label or CTA text
-                    .colors_and_type__type-section
-                        .colors_and_type__type_name
-                            p Body
-                        .colors_and_type__text
-                            p This one is the sub-section or widget title
+                    include modules/color-block/color-block.pug
+                    +set_color-sample('Dark_Shade_100', 'Dark Shade 100%', '#1F2041')
+                    +set_color-sample('Dark_Shade_75', 'Dark Shade 75%', '#1F2041')
+                    +set_color-sample('Dark_Shade_50', 'Dark Shade 50%', '#1F2041')
+                    +set_color-sample('Dark_Shade_25', 'Dark Shade 25%', '#1F2041')
+                    +set_color-sample('Dark_Shade_5', 'Dark Shade 5%', '#1F2041')
+                    +set_color-sample('Purple', 'Purple', '#BC9CFF')
+                    +set_color-sample('Green', 'Green', '#6FCF97')
