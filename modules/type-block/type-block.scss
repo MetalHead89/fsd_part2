@@ -1,0 +1,29 @@
+.type-sample_flex {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.type-sample_margin-bottom {
+    margin-bottom: 50px;
+}
+
+.type-sample_margin-0 {
+    margin-bottom: 0px;
+}
+
+.type-sample__heading_position {
+    display: inline-block;
+    width: 50px;
+    flex: none;
+    text-align: right;
+}
+
+.type-sample__text_position {
+    display: inline-block;
+    padding-left: 30px;
+}
+
+.type-sample__h_margin-0 {
+    margin: 0px
+}

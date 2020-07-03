@@ -6,6 +6,7 @@ html(lang="ru")
         title UI kit
         link(rel="stylesheet", href="style.scss")
         link(rel="stylesheet", href="modules/color-block/color-block.scss")
+        link(rel="stylesheet", href="modules/type-block/type-block.scss")
     body
         .central-container
             .colors-and-type
@@ -20,8 +21,8 @@ html(lang="ru")
                     +set_color-sample('0', 'Green', 'Green', '#6FCF97')
                 .colors-and-type__type
                     include modules/type-block/type-block.pug
-                    +set_type-sample('h1', 'H1', 'This one is the sub-section or widget title')
-                    +set_type-sample('h2', 'H2', 'Next one is the item title inside widgets')
-                    +set_type-sample('h3', 'H3', 'This is a label or CTA text')
-                    +set_type-sample('p', 'Body', 'This is the body text which is used for most' 
+                    +set_type-sample('bottom', 'h1', 'H1', 'This one is the sub-section or widget title')
+                    +set_type-sample('bottom', 'h2', 'H2', 'Next one is the item title inside widgets')
+                    +set_type-sample('bottom', 'h3', 'H3', 'This is a label or CTA text')
+                    +set_type-sample('0', 'p', 'Body', 'This is the body text which is used for most' 
                         + 'of the design, like paragraphs, lists, etc.')

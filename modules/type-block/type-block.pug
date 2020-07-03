@@ -1,7 +1,7 @@
-mixin set_type-sample(tag, type, text)
+mixin set_type-sample(type_sample_margin, tag, type, text)
 
-    .type-sample
-        .type-sample__heading
-            #{tag} !{type}
-        .type-sample__text
-            #{tag} !{text}
+    div(class='type-sample type-sample_flex type-sample_margin-' + type_sample_margin)
+        .type-sample__heading.type-sample__heading_position
+            #{tag}(class='type-sample__h_margin-0') !{type}
+        .type-sample__text.type-sample__text_position
+            #{tag}(class='type-sample__h_margin-0') !{text}
