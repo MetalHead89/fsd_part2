@@ -1,5 +1,9 @@
 html {    
     font-size: 14px;
+    line-height: 180%;
+    word-spacing: 0.5px;
+    letter-spacing: 0px;
+    font-weight: 350;
 }
 
 body {
@@ -8,7 +12,7 @@ body {
 }
 
 .central-container {
-    max-width: 1140px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -20,10 +24,16 @@ body {
     padding: 145px 0px;
 }
 
+.colors-and-type__type {
+    width: 38%;
+    flex-direction: column;
+}
+
 .colors-and-type__colors {
-    width: 60%;
+    width: 62%;
     flex-direction: column;
     display: inline-block;
+    flex: none;
 }
 
 @font-face {

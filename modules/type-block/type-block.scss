@@ -24,6 +24,24 @@
     padding-left: 30px;
 }
 
-.type-sample__h_margin-0 {
+.type-sample__type_margin-0 {
     margin: 0px
+}
+
+.type-sample__type-h1_font {
+    font-size: 1.5rem;
+    line-height: 150%;
+    word-spacing: 0.2rem;
+}
+
+.type-sample__type-h2_font {
+    font-size: 1.3rem;
+    line-height: 130%;
+    word-spacing: 0rem;
+    font-weight: 600;
+}
+
+.type-sample__type-h3_font {
+    font-size: 0.85rem;
+    line-height: 100%;
 }

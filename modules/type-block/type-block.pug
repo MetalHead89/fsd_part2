@@ -1,7 +1,15 @@
 mixin set_type-sample(type_sample_margin, tag, type, text)
 
+    if tag == 'h1'
+        - var class_tag = 'type-sample__type-h1_font'    
+    else if tag == 'h2'
+        - var class_tag = 'type-sample__type-h2_font'
+    else if tag == 'h3'
+        - var class_tag = 'type-sample__type-h3_font'
+
+
     div(class='type-sample type-sample_flex type-sample_margin-' + type_sample_margin)
         .type-sample__heading.type-sample__heading_position
-            #{tag}(class='type-sample__h_margin-0') !{type}
+            #{tag}(class='type-sample__type_margin-0 ' + class_tag) !{type}
         .type-sample__text.type-sample__text_position
-            #{tag}(class='type-sample__h_margin-0') !{text}
+            #{tag}(class='type-sample__type_margin-0 ' + class_tag) !{text}
