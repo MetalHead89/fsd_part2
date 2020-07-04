@@ -31,12 +31,19 @@ h3 {
     margin: 0 auto;
 }
 
+.section-title {
+    margin-bottom: 50px;
+}
+
+
+// COLORS AND TYPE BLOCK
+
 .colors-and-type {
     width: 100%;
     flex-direction: row;
     display: flex;
     align-items: flex-start;
-    padding: 145px 0px;
+    padding-bottom: 145px;
 }
 
 .colors-and-type__type {
@@ -51,12 +58,26 @@ h3 {
     flex: none;
 }
 
+
+// FORM ELEMENTS BLOCK
+
+.form-elements {
+    padding-bottom: 145px;
+}
+
 @font-face {
     font-family: "Montserrat";
-    src: url("fonts/Montserrat.woff") format("truetype"); 
+    src: url("fonts/Montserrat/montserratlight.woff2") format("woff2"); 
     font-style: normal; 
-    font-weight: normal; 
-} 
+    font-weight: 300; 
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat/montserrat.woff2") format("woff2"); 
+    font-style: normal; 
+    font-weight: 400; 
+}
 
 @font-face {
     font-family: "Quicksand";
@@ -77,4 +98,15 @@ h3 {
     src: url("fonts/QuicksandRegular.woff2") format("woff2"); 
     font-style: normal; 
     font-weight: 400; 
+}
+
+@media screen and (max-width: 750px){
+    .colors-and-type {
+        flex-direction: column;
+    }
+
+    .colors-and-type__type {
+        width: 100%;
+        margin-top: 50px;
+    }
 }

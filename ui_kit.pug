@@ -7,8 +7,10 @@ html(lang="ru")
         link(rel="stylesheet", href="style.scss")
         link(rel="stylesheet", href="modules/color-block/color-block.scss")
         link(rel="stylesheet", href="modules/type-block/type-block.scss")
+        link(rel="stylesheet", href="modules/text-field/text-field.scss")
     body
         .central-container
+            h1(class="section-title") Colors & Type
             .colors-and-type
                 .colors-and-type__colors
                     include modules/color-block/color-block.pug
@@ -26,3 +28,8 @@ html(lang="ru")
                     +set_type-sample('bottom', 'h3', 'H3', 'THIS IS A LABEL OR CTA TEXT')
                     +set_type-sample('0', 'p', 'Body', 'This is the body text which is used for most ' 
                         + 'of&nbsp;the design, like paragraphs, lists, etc.')
+            
+            .form-elements
+                h1(class="section-title") Form Elements
+                h3 TEXT FIELD
+                include modules/text-field/text-field.pug
