@@ -7,7 +7,8 @@
     box-sizing: border-box;
     font-family: "Montserrat";
     font-size: 14px;
-    font-weight: 300;
+    font-weight: normal;
+    color: rgba(31, 32, 65, 0.75);
     &::placeholder {
         color: rgba(31, 32, 65, 0.25);
     }
