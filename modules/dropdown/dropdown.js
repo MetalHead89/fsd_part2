@@ -10,10 +10,10 @@ for (i = 0; i < dropdownElements.length; i++) {
             dropdown.removeAttribute("style")
         }
         else {
-            options.style.display = "block";
+            options.style.display = "flex";
             dropdown.style.borderRadius = "4px 4px 0 0"
             dropdown.style.border = "1px solid rgba(31, 32, 65, 0.5)";
-            dropdown.style.borderBottom = "none"
+            //dropdown.style.borderBottom = "none"
         }
         optionsVisible = !optionsVisible
     };

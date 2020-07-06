@@ -100,13 +100,6 @@ h3 {
     font-weight: 400; 
 }
 
-@font-face {
-    font-family: "MaterialIcons";
-    src: url("fonts/MaterialIcons.woff2") format("woff2"); 
-    font-style: normal; 
-    font-weight: 400; 
-}
-
 @media screen and (max-width: 750px){
     .colors-and-type {
         flex-direction: column;

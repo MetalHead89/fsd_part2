@@ -1,3 +1,7 @@
+.dropdown_container {
+    display: inline-block;
+}
+
 .dropdown {
     width: 320px;
     height: 44px;    
@@ -9,6 +13,9 @@
     font-family: "Montserrat";
     font-size: 14px;
     font-weight: normal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: rgba(31, 32, 65, 0.75);
     &:hover, &:focus {
         border: 1px solid rgba(31, 32, 65, 0.5);
@@ -16,9 +23,73 @@
     }
 }
 
+.dropdown__inner-container {
+    display: inline-block;
+}
+
+.dropdown__expand-more {
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid rgba(31, 32, 65, 0.75);
+    border-right: 1px solid rgba(31, 32, 65, 0.75);
+    transform: rotate(135deg);
+    margin-bottom: 5px;
+}
+
 .options {
+    position: absolute;
     display: none;
     border: 1px solid rgba(31, 32, 65, 0.5);
+    border-top: none;
     width: 320px;
     box-sizing: border-box;
+    padding-left: 15px;
+    flex-direction: column;
+    background: #FFFFFF;
+}
+
+.option {
+    font-weight: bold;
+    display: flex;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #1F2041;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1;
+    margin: 4px 0;
+}
+
+.option__quantity-selection {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+}
+
+.option__quantity-element {
+    display: inline-block;
+    margin: 0 6px;
+}
+
+.option__button {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: rgba(31, 32, 65, 0.5);
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 15px;
+    background: #FFFFFF;
+    line-height: 1;
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        transform: scale(0.97, 0.97);
+    }
+    &:hover {
+        border: 1px solid rgba(31, 32, 65, 0.5);
+    }
 }

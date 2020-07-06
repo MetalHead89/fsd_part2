@@ -1,10 +1,29 @@
 .dropdown_container
     .dropdown
-        span Сколько гостей
+        .dropdown__inner-container Сколько гостей
+        .dropdown__inner-container.dropdown__expand-more
     .options
         .option
-            p some text
+            .option__title.option__element взрослые
+            .option__quantity-selection.option__element
+                .option__subtract.option__quantity-element
+                    button(class='option__button') -
+                .option__number.option__quantity-element 0
+                .option__add.option__quantity-element
+                    button(class='option__button') +
         .option
-            p some text
+            .option__title.option__element дети
+            .option__quantity-selection.option__element
+                .option__subtract.option__quantity-element
+                    button(class='option__button') -
+                .option__number.option__quantity-element 0
+                .option__add.option__quantity-element
+                    button(class='option__button') +
         .option
-            p some text
+            .option__title.option__element младенцы
+            .option__quantity-selection.option__element
+                .option__subtract.option__quantity-element
+                    button(class='option__button') -
+                .option__number.option__quantity-element 0
+                .option__add.option__quantity-element
+                    button(class='option__button') +
