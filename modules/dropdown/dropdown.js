@@ -1,4 +1,37 @@
+class GuestsDropdown {
+    constructor() {
+        var adults = 0
+        var children = 0
+        var babies = 0
+    }
+}
+
+
+
+
+
+function clickAddNumberButton() {
+    dropdownOptionNumber = this.previousSibling;
+    number = parseInt(dropdownOptionNumber.textContent);
+    dropdownOptionNumber.textContent = number + 1
+
+    if (number == 0)
+        dropdownOptionNumber.previousSibling.disabled = false;
+}
+
+function clickSubNumberButton() {
+    dropdownOptionNumber = this.nextSibling;
+    number = parseInt(dropdownOptionNumber.textContent);
+    dropdownOptionNumber.textContent = number - 1
+
+    if (number == 1)
+        dropdownOptionNumber.previousSibling.disabled = true;
+}
+
 var dropdownElements = document.getElementsByClassName('dropdown');
+var dropdownOptionNumber = document.getElementsByClassName('option__number');
+var buttonsAdd = document.getElementsByClassName('option__add');
+var buttonsSub = document.getElementsByClassName('option__subtract');
 var optionsVisible = false
 
 for (i = 0; i < dropdownElements.length; i++) {
@@ -17,3 +50,20 @@ for (i = 0; i < dropdownElements.length; i++) {
         optionsVisible = !optionsVisible
     };
 };
+
+for (i = 0; i < dropdownOptionNumber.length; i++) {
+    number = dropdownOptionNumber[i];
+    if (parseInt(number.textContent) == 0) {
+        number.previousSibling.disabled = true;
+    }
+}
+
+for (i = 0; i < buttonsAdd.length; i++) {
+    button = buttonsAdd[i];
+    button.onclick = clickAddNumberButton;
+}
+
+for (i = 0; i < buttonsSub.length; i++) {
+    button = buttonsSub[i];
+    button.onclick = clickSubNumberButton;
+}

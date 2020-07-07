@@ -1,30 +1,24 @@
-.dropdown_container
-    .dropdown
-        .dropdown__inner-container Сколько гостей
-        .dropdown__inner-container.dropdown__expand-more
-    .options
-        .option
-            .option__title.option__element взрослые
-            .option__quantity-selection.option__element
-                .option__subtract.option__quantity-element
-                    button(class='option__button') -
-                .option__number.option__quantity-element 0
-                .option__add.option__quantity-element
-                    button(class='option__button') +
-        .option
-            .option__title.option__element дети
-            .option__quantity-selection.option__element
-                .option__subtract.option__quantity-element
-                    button(class='option__button') -
-                .option__number.option__quantity-element 0
-                .option__add.option__quantity-element
-                    button(class='option__button') +
-        .option
-            .option__title.option__element младенцы
-            .option__quantity-selection.option__element
-                button(class='option__subtract option__quantity-element option__button') -
-                .option__number.option__quantity-element 0
-                button(class='option__subtract option__quantity-element option__button') +
-        .bottom-buttons-panel
-            button(class="bottom-buttons-panel__clear bottom-buttons-panel__button") очистить
-            button(class="bottom-buttons-panel_apply bottom-buttons-panel__button") применить
+mixin set_dropdown(type='guests')
+    if type == 'guests'
+        - var options = ['взрослые', 'дети', 'младенцы']
+        - var buttons = true
+    else if type = 'comfort'
+        - var options = ['спальни', 'кровати', 'ванные комнаты']
+        - var buttons = false
+
+    .dropdown_container
+        .dropdown
+            .dropdown__inner-container Сколько гостей
+            .dropdown__inner-container.dropdown__expand-more
+        .options
+            each val in options
+                .option
+                    .option__title.option__element !{val}
+                    .option__quantity-selection.option__element
+                        button(class='option__subtract option__quantity-element option__button') -
+                        .option__number.option__quantity-element 0
+                        button(class='option__add option__quantity-element option__button') +
+            if buttons
+                .bottom-buttons-panel
+                    button(class="bottom-buttons-panel__clear bottom-buttons-panel__button") очистить
+                    button(class="bottom-buttons-panel_apply bottom-buttons-panel__button") применить
