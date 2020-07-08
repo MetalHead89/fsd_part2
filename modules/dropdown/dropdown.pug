@@ -2,23 +2,25 @@ mixin set_dropdown(type='guests')
     if type == 'guests'
         - var options = ['взрослые', 'дети', 'младенцы']
         - var buttons = true
+        - var dropdownClass = 'dropdown_guests'
     else if type = 'comfort'
         - var options = ['спальни', 'кровати', 'ванные комнаты']
         - var buttons = false
+        - var dropdownClass = 'dropdown_comfort'
 
-    .dropdown_container
-        .dropdown
-            .dropdown__inner-container Сколько гостей
-            .dropdown__inner-container.dropdown__expand-more
-        .options
+    div(class='dropdown ' + dropdownClass)
+        .dropdown__header
+            .dropdown__header-element.dropdown__header-text Сколько гостей
+            .dropdown__header-element.dropdown__expand-more
+        .dropdown__options
             each val in options
-                .option
-                    .option__title.option__element !{val}
-                    .option__quantity-selection.option__element
-                        button(class='option__subtract option__quantity-element option__button') -
-                        .option__number.option__quantity-element 0
-                        button(class='option__add option__quantity-element option__button') +
+                .dropdown__option
+                    .dropdown__option-title !{val}
+                    .dropdown__quantity-selection
+                        button(class='dropdown__subtract-button dropdown__quantity-button' disabled) -
+                        .dropdown__quantity-number 0
+                        button(class='dropdown__add-button dropdown__quantity-button') +
             if buttons
-                .bottom-buttons-panel
-                    button(class="bottom-buttons-panel__clear bottom-buttons-panel__button") очистить
-                    button(class="bottom-buttons-panel_apply bottom-buttons-panel__button") применить
+                .dropdown__bottom-buttons-panel
+                    button(class="dropdown__button-clear dropdown__bottom-button") очистить
+                    button(class="dropdown__button-apply dropdown__bottom-button") применить

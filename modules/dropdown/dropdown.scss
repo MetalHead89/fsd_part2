@@ -1,8 +1,8 @@
-.dropdown_container {
+.dropdown {
     display: inline-block;
 }
 
-.dropdown {
+.dropdown__header {
     width: 320px;
     height: 44px;    
     padding: 13px 15px;
@@ -23,7 +23,7 @@
     }
 }
 
-.dropdown__inner-container {
+.dropdown__header-element {
     display: inline-block;
 }
 
@@ -36,7 +36,7 @@
     margin-bottom: 5px;
 }
 
-.options {
+.dropdown__options {
     position: absolute;
     display: none;
     border: 1px solid rgba(31, 32, 65, 0.5);
@@ -49,7 +49,7 @@
     background: #FFFFFF;
 }
 
-.option {
+.dropdown__option {
     font-weight: bold;
     display: flex;
     font-size: 12px;
@@ -62,24 +62,19 @@
     margin: 4px 0;
 }
 
-.option__quantity-selection {
+.dropdown__quantity-selection {
     flex-direction: row;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.option__quantity-element {
-    display: inline-block;
-    /*margin: 0 6px;*/
-}
-
-.option__number {
+.dropdown__quantity-number {
     width: 30px;
     text-align: center;
 }
 
-.option__button {
+.dropdown__quantity-button {
     width: 30px;
     height: 30px;
     font-family: "Montserrat";
@@ -105,7 +100,7 @@
     }
 }
 
-.bottom-buttons-panel {
+.dropdown__bottom-buttons-panel {
     flex-direction: row;
     display: flex;
     justify-content: space-between;
@@ -113,7 +108,7 @@
     padding-bottom: 10px;
 }
 
-.bottom-buttons-panel__button {
+.dropdown__bottom-button {
     font-family: Montserrat;
     font-weight: bold;
     font-size: 12px;
@@ -132,11 +127,11 @@
     }
 }
 
-.bottom-buttons-panel__clear {
+.dropdown__button-clear {
     padding: 0;
 }
 
-.bottom-buttons-panel_apply {
+.dropdown__button-apply {
     color: #BC9CFF;
     &:hover {
         color: #8f72ce;
