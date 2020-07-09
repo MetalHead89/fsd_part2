@@ -1,5 +1,5 @@
 class Dropdown {
-    constructor(dropdownHeader, quantityNumbers, buttonsSub, buttonsAdd) {
+    constructor(dropdownHeader, quantityNumbers, buttonsSub, buttonsAdd, buttonClear, buttonApply) {
 
         this.dropdownHeader = dropdownHeader;
         this.quantityNumber1 = quantityNumbers[0];
@@ -11,62 +11,67 @@ class Dropdown {
         this.buttonAdd1 = buttonsAdd[0];
         this.buttonAdd2 = buttonsAdd[1];
         this.buttonAdd3 = buttonsAdd[2];
+        this.buttonClear = buttonClear;
+        this.buttonApply = buttonApply;
     }
 
-    clickAddNumberButton() {
-        dropdownOptionNumber = this.previousSibling;
+    clickAddNumberButton(button) {
+        dropdownOptionNumber = button.previousSibling;
         number = parseInt(dropdownOptionNumber.textContent);
         dropdownOptionNumber.textContent = number + 1
 
-        if (number == 0)
+        if (number == 0) 
             dropdownOptionNumber.previousSibling.disabled = false;
         
-        this.generateHeader();
+        this.setClearButton();
     }
 
-    clickSubNumberButton() {
-        dropdownOptionNumber = this.nextSibling;
+    clickSubNumberButton(button) {
+        dropdownOptionNumber = button.nextSibling;
         number = parseInt(dropdownOptionNumber.textContent);
         dropdownOptionNumber.textContent = number - 1
     
         if (number == 1)
             dropdownOptionNumber.previousSibling.disabled = true;
 
+        this.setClearButton();
+    }
+
+    clickClearButton() {
+        this.quantityNumber1.textContent = 0;
+        this.quantityNumber2.textContent = 0;
+        this.quantityNumber3.textContent = 0;
         this.generateHeader();
+        this.setClearButton();
     }
 
-    generateHeader = function() {
-        guestsCount = parseInt(quantityNumber1.textContent) + parseInt(quantityNumber2.textContent);
-        dropdownHeader.textContent = guestsCount + ' гостей';
+    generateHeader() {
+        guestsCount = parseInt(this.quantityNumber1.textContent) + parseInt(this.quantityNumber2.textContent);
+        dropdownHeader.textContent = guestsCount + ' ' + this.wordGenerator('guest', parseInt(guestsCount));
+    }
+
+    setClearButton() {
+        if (parseInt(this.quantityNumber1.textContent) + parseInt(this.quantityNumber2.textContent) + parseInt(this.quantityNumber3.textContent) > 0) {
+            this.buttonClear.style.display = 'inline-block';
+        }
+        else
+            this.buttonClear.style.display = 'none';
+    }
+
+    wordGenerator(word, number) {
+        number10 = number % 10;
+        number100 = number % 100;
+        if (number10 == 1 && number100 != 11)
+            return 'гость';
+        else if ((number10 >= 2 && number10 <= 4) && !(number100 >= 12 && number100 <= 14))
+            return 'гостя';
+        else
+            return 'гостей';
+            
     }
 }
-
-
-
-
-
-/*function clickAddNumberButton() {
-    dropdownOptionNumber = this.previousSibling;
-    number = parseInt(dropdownOptionNumber.textContent);
-    dropdownOptionNumber.textContent = number + 1
-
-    if (number == 0)
-        dropdownOptionNumber.previousSibling.disabled = false;
-}
-
-function clickSubNumberButton() {
-    dropdownOptionNumber = this.nextSibling;
-    number = parseInt(dropdownOptionNumber.textContent);
-    dropdownOptionNumber.textContent = number - 1
-
-    if (number == 1)
-        dropdownOptionNumber.previousSibling.disabled = true;
-}*/
 
 var dropdownElements = document.getElementsByClassName('dropdown__header');
-/*var dropdownOptionNumber = document.getElementsByClassName('option__number');
-var buttonsAdd = document.getElementsByClassName('option__add');
-var buttonsSub = document.getElementsByClassName('option__subtract');*/
 var optionsVisible = false
 
 for (i = 0; i < dropdownElements.length; i++) {
@@ -86,43 +91,22 @@ for (i = 0; i < dropdownElements.length; i++) {
     };
 };
 
-/*for (i = 0; i < dropdownOptionNumber.length; i++) {
-    number = dropdownOptionNumber[i];
-    if (parseInt(number.textContent) == 0) {
-        number.previousSibling.disabled = true;
-    }
-}
-
-for (i = 0; i < buttonsAdd.length; i++) {
-    button = buttonsAdd[i];
-    button.onclick = clickAddNumberButton;
-}
-
-for (i = 0; i < buttonsSub.length; i++) {
-    button = buttonsSub[i];
-    button.onclick = clickSubNumberButton;
-}*/
-
-
-
-
-
-
-
-
-
 var dropdowns = document.getElementsByClassName('dropdown_guests');
 for (i = 0; i < dropdowns.length; i++) {
     var dropdownHeader = dropdowns[i].getElementsByClassName('dropdown__header-text')[0];
     var quantityNumbers = dropdowns[i].getElementsByClassName('dropdown__quantity-number');
     var buttonsSub = dropdowns[i].getElementsByClassName('dropdown__subtract-button');
     var buttonsAdd = dropdowns[i].getElementsByClassName('dropdown__add-button');
+    var buttonClear = dropdowns[i].getElementsByClassName('dropdown__button-clear')[0];
+    var buttonApply = dropdowns[i].getElementsByClassName('dropdown__button-apply')[0];
 
-    let dropdown = new Dropdown(dropdownHeader, quantityNumbers, buttonsSub, buttonsAdd);
-    dropdown.buttonAdd1.onclick = dropdown.clickAddNumberButton
-    dropdown.buttonAdd2.onclick = dropdown.clickAddNumberButton
-    dropdown.buttonAdd3.onclick = dropdown.clickAddNumberButton
-    dropdown.buttonSub1.onclick = dropdown.clickSubNumberButton
-    dropdown.buttonSub2.onclick = dropdown.clickSubNumberButton
-    dropdown.buttonSub3.onclick = dropdown.clickSubNumberButton
+    let dropdown = new Dropdown(dropdownHeader, quantityNumbers, buttonsSub, buttonsAdd, buttonClear, buttonApply);
+    dropdown.buttonAdd1.onclick = function() {dropdown.clickAddNumberButton(dropdown.buttonAdd1)};
+    dropdown.buttonAdd2.onclick = function() {dropdown.clickAddNumberButton(dropdown.buttonAdd2)};
+    dropdown.buttonAdd3.onclick = function() {dropdown.clickAddNumberButton(dropdown.buttonAdd3)};
+    dropdown.buttonSub1.onclick = function() {dropdown.clickSubNumberButton(dropdown.buttonSub1)};
+    dropdown.buttonSub2.onclick = function() {dropdown.clickSubNumberButton(dropdown.buttonSub2)};
+    dropdown.buttonSub3.onclick = function() {dropdown.clickSubNumberButton(dropdown.buttonSub3)};
+    dropdown.buttonClear.onclick = function() {dropdown.clickClearButton()};
+    dropdown.buttonApply.onclick = function() {dropdown.generateHeader()};
 }
