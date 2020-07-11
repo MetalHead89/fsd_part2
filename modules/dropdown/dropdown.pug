@@ -3,14 +3,18 @@ mixin set_dropdown(type='guests')
         - var options = ['взрослые', 'дети', 'младенцы']
         - var buttons = true
         - var dropdownClass = 'dropdown_guests'
+        - var headerText = 'Сколько гостей'
+        - var borders = 'dropdown__header_all-angles-are-round'
     else if type = 'comfort'
         - var options = ['спальни', 'кровати', 'ванные комнаты']
         - var buttons = false
         - var dropdownClass = 'dropdown_comfort'
+        - var headerText = 'Выберите удобства'
+        - var borders = 'dropdown__header_top-angles-are-round'
 
     div(class='dropdown ' + dropdownClass)
-        .dropdown__header
-            .dropdown__header-element.dropdown__header-text Сколько гостей
+        div(class='dropdown__header ' + borders)
+            .dropdown__header-element.dropdown__header-text !{headerText}
             .dropdown__header-element.dropdown__expand-more
         .dropdown__options
             each val in options

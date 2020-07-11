@@ -7,10 +7,8 @@
     height: 44px;    
     padding: 13px 15px;
     border: 1px solid rgba(31, 32, 65, 0.25);
-    border-radius: 4px;
     box-sizing: border-box;
     line-height: 1;
-    font-family: "Montserrat";
     font-size: 14px;
     font-weight: normal;
     display: flex;
@@ -23,15 +21,32 @@
     }
 }
 
+.dropdown__header_all-angles-are-round {
+    border-radius: 4px;
+}
+
+.dropdown__header_top-angles-are-round {
+    border-radius: 4px 4px 0 0;
+}
+
 .dropdown__header-element {
     display: inline-block;
+    flex: none;
+}
+
+.dropdown__header-text {
+    font-weight: 400;
+    width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .dropdown__expand-more {
-    width: 8px;
-    height: 8px;
-    border-top: 1px solid rgba(31, 32, 65, 0.75);
-    border-right: 1px solid rgba(31, 32, 65, 0.75);
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid rgba(31, 32, 65, 0.75);
+    border-right: 2px solid rgba(31, 32, 65, 0.75);
     transform: rotate(135deg);
     margin-bottom: 5px;
 }

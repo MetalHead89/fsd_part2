@@ -88,16 +88,39 @@ class Dropdown {
     }
 
     generateHeader() {
-        let guestsCount = parseInt(this.quantityNumber1.textContent) + parseInt(this.quantityNumber2.textContent);
-        let babiesCount = parseInt(this.quantityNumber3.textContent);
+        if (this.dropdownType == 'guests'){
+            let guestsCount = parseInt(this.quantityNumber1.textContent) + parseInt(this.quantityNumber2.textContent);
+            let babiesCount = parseInt(this.quantityNumber3.textContent);
 
-        if (guestsCount == 0 && babiesCount == 0)
-            this.headerText.textContent = 'Сколько гостей';
-        else if (guestsCount > 0 && babiesCount == 0)
-            this.headerText.textContent = guestsCount + ' ' + this.wordGenerator('guest', parseInt(guestsCount));
-        else if (guestsCount > 0 && babiesCount > 0)
-            this.headerText.textContent = `${guestsCount} ${this.wordGenerator('guest', parseInt(guestsCount))}, 
-                ${babiesCount} ${this.wordGenerator('baby', parseInt(babiesCount))}`;
+            if (guestsCount == 0 && babiesCount == 0)
+                this.headerText.textContent = 'Сколько гостей';
+            else if (guestsCount > 0 && babiesCount == 0)
+                this.headerText.textContent = guestsCount + ' ' + this.wordGenerator('guest', parseInt(guestsCount));
+            else if (guestsCount > 0 && babiesCount > 0)
+                this.headerText.textContent = `${guestsCount} ${this.wordGenerator('guest', parseInt(guestsCount))}, 
+                    ${babiesCount} ${this.wordGenerator('baby', parseInt(babiesCount))}`;
+        }
+        else if (this.dropdownType == 'comfort') {
+            let comfort = {
+                'bedroomsCount': parseInt(this.quantityNumber1.textContent),
+                'bedsCount': parseInt(this.quantityNumber2.textContent),
+                'bathroomsCount': parseInt(this.quantityNumber3.textContent)
+            };
+
+            let headerText = '';
+            for (let key in comfort) {
+                if (comfort[key] > 0) {
+                    if (headerText != '')
+                        headerText += ', ';
+                    headerText += `${comfort[key]} ${this.wordGenerator(key, comfort[key])}`;
+                }
+            }
+
+            if (headerText == '')
+                headerText = 'Выберите удобства'
+            
+            this.headerText.textContent = headerText;
+        }
     }
 
     setClearButton() {
@@ -115,19 +138,37 @@ class Dropdown {
             if (word == 'guest')
                 return 'гость';
             else if (word == 'baby')
-                return 'младенец'
+                return 'младенец';
+            else if (word == 'bedroomsCount')
+                return 'спальня';
+            else if (word == 'bedsCount')
+                return 'кровать';
+            else if (word == 'bathroomsCount')
+                return 'ванная комната';
         }
         else if ((number10 >= 2 && number10 <= 4) && !(number100 >= 12 && number100 <= 14)) {
             if (word == 'guest')
                 return 'гостя';
             else if (word == 'baby')
-                return 'младенца'
+                return 'младенца';
+            else if (word == 'bedroomsCount')
+                return 'спальни';
+            else if (word == 'bedsCount')
+                return 'кровати';
+            else if (word == 'bathroomsCount')
+                return 'ванные комнаты';
         }
         else {
             if (word == 'guest')
                 return 'гостей';
             else if (word == 'baby')
-                return 'младенцев'
+                return 'младенцев';
+            else if (word == 'bedroomsCount')
+                return 'спален';
+            else if (word == 'bedsCount')
+                return 'кроватей';
+            else if (word == 'bathroomsCount')
+                return 'ванных комнат';
         }
     }
 }
