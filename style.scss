@@ -67,16 +67,16 @@ h3 {
 
 @font-face {
     font-family: "Montserrat";
-    src: url("fonts/Montserrat/montserrat.woff2") format("woff2"); 
-    font-style: normal; 
-    font-weight: 400; 
+    src: local("fonts/Montserrat/montserrat.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
 }
 
 @font-face {
     font-family: "Montserrat";
-    src: url("fonts/Montserrat/montserratlight.woff2") format("woff2"); 
-    font-style: normal; 
-    font-weight: 300; 
+    src: local("fonts/Montserrat/montserratlight.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 300;
 }
 
 @font-face {

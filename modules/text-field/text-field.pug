@@ -1,1 +1,7 @@
-input(type="text" placeholder="Email" class="text-field_style text-field_text-font text-field_placeholder_font")
+mixin set_text_field(placeholder_text='', type='text_field')
+    - var text_field_classes
+    if type == 'masked_text_field'
+        - placeholder_text = 'ДД.ММ.ГГГГ'
+        - text_field_classes = 'text-field_masked'
+
+    input(type="text" placeholder=placeholder_text class="text-field_style text-field_text-font text-field_placeholder_font " + text_field_classes)

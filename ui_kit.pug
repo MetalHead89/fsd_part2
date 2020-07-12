@@ -34,13 +34,11 @@ html(lang="ru")
                 h1(class="section-title") Form Elements
                 h3 TEXT FIELD
                 include modules/text-field/text-field.pug
+                +set_text_field('Email')
                 h3 DROPDOWN GUESTS
                 include modules/dropdown/dropdown.pug
                 +set_dropdown()
-                h3 TEXT FIELD
-                include modules/text-field/text-field.pug
-                h3 TEXT FIELD
-                include modules/text-field/text-field.pug
-                h3 DROPDOWN COMFORT
-                +set_dropdown('comfort')
+                h3 MASKED TEXT FIELD
+                +set_text_field('text', 'masked_text_field')
         script(src="modules/dropdown/dropdown.js")
+        script(src="modules/text-field/text-field.js")
