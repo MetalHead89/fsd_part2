@@ -5,10 +5,9 @@
   "repository": "git@github.com:MetalHead89/fsd_part2.git",
   "author": "bakalov <bakalov.vitaliy@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "pug": "^3.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "sass": "^1.26.9"
+    "pug": "^3.0.0",
+    "sass": "^1.26.10"
   }
 }
