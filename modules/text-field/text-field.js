@@ -25,19 +25,22 @@ function onKeyPressMaskedTextField(maskedTextField) {
 
 function onInputMaskedTextField(event, maskedTextField) {
     let caretPosition = maskedTextField.selectionStart;
-    let text = maskedTextField.value.split('.').join('');
-
-    if (isNaN(parseInt(text))) {
+    let text = maskedTextField.value;
+    
+    if (isNaN(text.split('.').join(''))) {
+        console.log(text)
         startCaretPosition = caretPosition - event.data.length;
-        text = `${text.slice(0, startCaretPosition)}${text.slice(caretPosition)}`;
-        /*text = text.slice(0, -1);*/
+        console.log(startCaretPosition)
+        text = `${text.slice(0, startCaretPosition)}`;
     }
+
+    text = text.split('.').join('');
 
     if (text.length == 1 && parseInt(text) > 3) {
         text = `0${text}`;
         caretPosition += 1;
     }
-    else if (text.length == 3) {
+    else if (text.length == 3 && parseInt(text.slice(-1)) > 1) {
         text = `${text.slice(0, -1)}0${text.slice(-1)}`;
         caretPosition += 1;
     }
