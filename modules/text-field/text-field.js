@@ -27,6 +27,22 @@ function onInputMaskedTextField(event, maskedTextField) {
     let caretPosition = maskedTextField.selectionStart;
     let text = maskedTextField.value.split('.').join('');
 
+    if (isNaN(parseInt(text))) {
+        startCaretPosition = caretPosition - event.data.length;
+        text = `${text.slice(0, startCaretPosition)}${text.slice(caretPosition)}`;
+        /*text = text.slice(0, -1);*/
+    }
+
+    if (text.length == 1 && parseInt(text) > 3) {
+        text = `0${text}`;
+        caretPosition += 1;
+    }
+    else if (text.length == 3) {
+        text = `${text.slice(0, -1)}0${text.slice(-1)}`;
+        caretPosition += 1;
+    }
+        
+
     if (text.length >= 2 && text.length < 4) {
         text = `${text.slice(0, 2)}.${text.slice(2)}`;
         caretPosition += 1;
@@ -39,6 +55,13 @@ function onInputMaskedTextField(event, maskedTextField) {
     maskedTextField.value = text;
     maskedTextField.selectionStart = caretPosition;
     maskedTextField.selectionEnd = caretPosition;
+    /*let date = maskedTextField.value.split('.');
+    console.dir(date)
+    if (date[0].length == 1 && parseInt(date[0][0]) > 3)
+        date[0] = `0${date[0]}`;*/
+
+
+
     /*maskedTextField.value = deleteMaskedText(maskedTextField.value);
     if(event.inputType == 'deleteContentBackward' || event.inputType == 'deleteContentForward' || 
         event.inputType == 'deleteByCut' || event.inputType == 'insertFromPaste')
