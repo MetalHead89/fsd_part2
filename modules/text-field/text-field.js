@@ -23,18 +23,34 @@ function onKeyPressMaskedTextField(maskedTextField) {
 
 
 
+function getTextWithoutDots(text) {
+    // Убирает все точки в тексте
+    // 16.07.2020 => 16072020
+
+    return text.split('.').join('');
+}
+
+function onPastetMaskedTextField() {
+    // Проверяет, что вставляемый текст содержит в себе только цифры и точки.
+    // В случае неудачной проверки отменяет вставку
+
+    clipboardData = event.clipboardData || window.clipboardData;
+    pastedData = clipboardData.getData('Text');
+
+    if (isNaN(getTextWithoutDots(pastedData)))
+        event.preventDefault();
+}
+
 function onInputMaskedTextField(event, maskedTextField) {
     let caretPosition = maskedTextField.selectionStart;
     let text = maskedTextField.value;
     
-    if (isNaN(text.split('.').join(''))) {
-        console.log(text)
+    if (isNaN(getTextWithoutDots(text))) {
         startCaretPosition = caretPosition - event.data.length;
-        console.log(startCaretPosition)
         text = `${text.slice(0, startCaretPosition)}`;
     }
 
-    text = text.split('.').join('');
+    text = getTextWithoutDots(text);
 
     if (text.length == 1 && parseInt(text) > 3) {
         text = `0${text}`;
@@ -163,6 +179,7 @@ let maskedTextField = document.querySelector('.text-field_masked');
 /*let maskedPrevText = ''*/
 if (maskedTextField) {
     maskedTextField.addEventListener('input', () => onInputMaskedTextField(event, maskedTextField));
+    maskedTextField.addEventListener('paste', () => onPastetMaskedTextField(event, maskedTextField));
     /*maskedTextField.addEventListener('keypress', () => onKeyPressMaskedTextField(maskedTextField));
     maskedTextField.addEventListener('paste', () => event.preventDefault());
     maskedTextField.addEventListener('cut', () => event.preventDefault());
