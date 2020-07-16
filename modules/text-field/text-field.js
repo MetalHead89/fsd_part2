@@ -41,39 +41,60 @@ function onPastetMaskedTextField() {
         event.preventDefault();
 }
 
+function onKeydowMaskedTextField(event, maskedTextField) {
+    // Сдвигает каретку во время удаления, если она стоит до или перед точкой
+    
+    if (event.key == 'Backspace' && maskedTextField.selectionStart == maskedTextField.selectionEnd && 
+    maskedTextField.value.substr(maskedTextField.selectionStart - 1, 1) == '.') {
+        maskedTextField.selectionStart--;
+        maskedTextField.selectionEnd--;
+    }
+    if (event.key == 'Delete' && maskedTextField.selectionStart == maskedTextField.selectionEnd && 
+    maskedTextField.value.substr(maskedTextField.selectionStart, 1) == '.') {
+        maskedTextField.selectionStart++;
+        maskedTextField.selectionEnd++;
+    }
+}
+
 function onInputMaskedTextField(event, maskedTextField) {
     let caretPosition = maskedTextField.selectionStart;
     let text = maskedTextField.value;
     
     if (isNaN(getTextWithoutDots(text))) {
         startCaretPosition = caretPosition - event.data.length;
-        text = `${text.slice(0, startCaretPosition)}`;
+        text = `${text.slice(0, startCaretPosition)}${text.slice(caretPosition)}`;
+        caretPosition--;
     }
+    else if (event.inputType != 'deleteContentBackward' && event.inputType != 'deleteContentForward'){
+        text = getTextWithoutDots(text);
 
-    text = getTextWithoutDots(text);
+        if (text.length == 1 && parseInt(text) > 3) {
+            text = `0${text}`;
+            caretPosition += 1;
+        }
+        else if (text.length == 3 && parseInt(text.slice(-1)) > 1) {
+            text = `${text.slice(0, -1)}0${text.slice(-1)}`;
+            caretPosition += 1;
+        }
+            
 
-    if (text.length == 1 && parseInt(text) > 3) {
-        text = `0${text}`;
-        caretPosition += 1;
-    }
-    else if (text.length == 3 && parseInt(text.slice(-1)) > 1) {
-        text = `${text.slice(0, -1)}0${text.slice(-1)}`;
-        caretPosition += 1;
-    }
-        
-
-    if (text.length >= 2 && text.length < 4) {
-        text = `${text.slice(0, 2)}.${text.slice(2)}`;
-        caretPosition += 1;
-    }        
-    else if (text.length >= 4) {
-        text = `${text.slice(0, 2)}.${text.slice(2, 4)}.${text.slice(4, 8)}`
-        caretPosition += 2;
+        if (text.length >= 2 && text.length < 4) {
+            text = `${text.slice(0, 2)}.${text.slice(2)}`;
+            caretPosition += 1;
+        }        
+        else if (text.length >= 4) {
+            text = `${text.slice(0, 2)}.${text.slice(2, 4)}.${text.slice(4, 8)}`
+            caretPosition += 2;
+        }
     }
         
     maskedTextField.value = text;
     maskedTextField.selectionStart = caretPosition;
     maskedTextField.selectionEnd = caretPosition;
+
+
+
+
     /*let date = maskedTextField.value.split('.');
     console.dir(date)
     if (date[0].length == 1 && parseInt(date[0][0]) > 3)
@@ -180,6 +201,7 @@ let maskedTextField = document.querySelector('.text-field_masked');
 if (maskedTextField) {
     maskedTextField.addEventListener('input', () => onInputMaskedTextField(event, maskedTextField));
     maskedTextField.addEventListener('paste', () => onPastetMaskedTextField(event, maskedTextField));
+    maskedTextField.addEventListener('keydown', () => onKeydowMaskedTextField(event, maskedTextField));
     /*maskedTextField.addEventListener('keypress', () => onKeyPressMaskedTextField(maskedTextField));
     maskedTextField.addEventListener('paste', () => event.preventDefault());
     maskedTextField.addEventListener('cut', () => event.preventDefault());
