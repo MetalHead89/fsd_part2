@@ -17,3 +17,65 @@
         outline: none;
     }
 }
+
+.text-field_subscription {
+    height: 42px;
+    border: none;
+    width: 80%;
+    &:hover, &:focus {
+        border: none;
+    }
+}
+
+.text-field-container-subscription {
+    width: 320px;
+    height: 44px;
+    box-sizing: border-box;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15px;
+    &:hover, &:focus {
+        border: 1px solid rgba(31, 32, 65, 0.5);
+        outline: none;
+    }
+}
+
+.text-field__subscription-btn {
+    border: none;
+    background: none;
+    padding: 0px;
+    &:focus {
+        outline: none;
+    }
+}
+
+.text-field__button-image {
+    position: relative;
+    width: 14px;
+    height: 2px;
+    background-color: rgba(31, 32, 65, 0.75);;
+    padding: 0px;
+    &:after {
+        position: absolute;
+        top: -5px;
+        right: 0px;
+        content: "";
+        width: 9px;
+        height: 9px;
+        border-top: 2px solid rgba(31, 32, 65, 0.75);
+        border-right: 2px solid rgba(31, 32, 65, 0.75);
+        transform: rotate(45deg);
+    }
+}
+
+/*.text-field__button-image {
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid rgba(31, 32, 65, 0.75);
+    border-right: 2px solid rgba(31, 32, 65, 0.75);
+    transform: rotate(45deg);
+}*/
