@@ -5,28 +5,37 @@ mixin set_dropdown(type='guests')
         - var dropdownClass = 'dropdown_guests'
         - var headerText = 'Сколько гостей'
         - var borders = 'dropdown__header_all-angles-are-round'
-    else if type = 'comfort'
+    else if type == 'comfort'
         - var options = ['спальни', 'кровати', 'ванные комнаты']
         - var buttons = false
         - var dropdownClass = 'dropdown_comfort'
         - var headerText = 'Выберите удобства'
         - var borders = 'dropdown__header_top-angles-are-round'
+    else if type == 'date'
+        - var dropdownClass = 'dropdown_date'
+        - var headerText = 'ДД.ММ.ГГГГ'
+        - var borders = 'dropdown__header_all-angles-are-round'
+    else if type == 'filter_date'
+        - var dropdownClass = 'filter_dropdown_date'
+        - var headerText = 'Период пребывания в отеле'
+        - var borders = 'dropdown__header_all-angles-are-round'
 
     div(class='dropdown ' + dropdownClass)
         div(class='dropdown__header ' + borders)
             .dropdown__header-element.dropdown__header-text !{headerText}
             .dropdown__header-element.dropdown__expand-more
-        .dropdown__options
-            each val in options
-                .dropdown__option
-                    .dropdown__option-title !{val}
-                    .dropdown__quantity-selection
-                        button(class='dropdown__subtract-button dropdown__quantity-button' disabled) -
-                        .dropdown__quantity-number 0
-                        button(class='dropdown__add-button dropdown__quantity-button') +
-            if buttons
-                .dropdown__bottom-buttons-panel
-                    .conainer
-                        button(class="dropdown__button-clear dropdown__bottom-button") очистить
-                    .conainer
-                        button(class="dropdown__button-apply dropdown__bottom-button") применить
+        if type == 'guests' || type == 'comfort'
+            .dropdown__options
+                each val in options
+                    .dropdown__option
+                        .dropdown__option-title !{val}
+                        .dropdown__quantity-selection
+                            button(class='dropdown__subtract-button dropdown__quantity-button' disabled) -
+                            .dropdown__quantity-number 0
+                            button(class='dropdown__add-button dropdown__quantity-button') +
+                if buttons
+                    .dropdown__bottom-buttons-panel
+                        .conainer
+                            button(class="dropdown__button-clear dropdown__bottom-button") очистить
+                        .conainer
+                            button(class="dropdown__button-apply dropdown__bottom-button") применить
