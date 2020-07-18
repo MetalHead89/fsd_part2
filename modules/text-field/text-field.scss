@@ -37,7 +37,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-right: 15px;
+    padding-right: 9px;
     &:hover, &:focus {
         border: 1px solid rgba(31, 32, 65, 0.5);
         outline: none;
@@ -51,31 +51,25 @@
     &:focus {
         outline: none;
     }
-}
-
-.text-field__button-image {
-    position: relative;
-    width: 14px;
-    height: 2px;
-    background-color: rgba(31, 32, 65, 0.75);;
-    padding: 0px;
-    &:after {
-        position: absolute;
-        top: -5px;
-        right: 0px;
-        content: "";
-        width: 9px;
-        height: 9px;
-        border-top: 2px solid rgba(31, 32, 65, 0.75);
-        border-right: 2px solid rgba(31, 32, 65, 0.75);
-        transform: rotate(45deg);
+    &:active {
+        transform: scale(0.8, 0.8);
     }
 }
 
-/*.text-field__button-image {
-    width: 10px;
-    height: 10px;
-    border-top: 2px solid rgba(31, 32, 65, 0.75);
-    border-right: 2px solid rgba(31, 32, 65, 0.75);
-    transform: rotate(45deg);
-}*/
+.text-field__arrow-forward {
+    background:-moz-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: -webkit-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color:transparent;
+}
+
+.text-field__subscription-btn:hover .text-field__arrow-forward {
+    background: rgba(31, 32, 65, 0.25);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color:transparent;
+}
