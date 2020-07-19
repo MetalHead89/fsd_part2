@@ -65,6 +65,10 @@ h3 {
     padding-bottom: 145px;
 }
 
+.form-elements__row-container {
+    width: 320px;
+}
+
 @font-face {
     font-family: "Montserrat";
     src: local("fonts/Montserrat/montserrat.woff2") format("woff2");
@@ -105,7 +109,7 @@ h3 {
     font-style: normal;
     font-weight: 400;
     src: url("fonts/MaterialIcons/MaterialIcons.woff2") format("woff2");
-  }
+}
 
 @media screen and (max-width: 750px){
     .colors-and-type {

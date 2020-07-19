@@ -12,4 +12,4 @@ mixin set_text_field(placeholder_text='', type='text_field')
         input(type="text" placeholder=placeholder_text class="text-field_style text-field_text-font text-field_placeholder_font " + text_field_classes)
         if type == 'subscription_textfield'
             button(class='text-field__subscription-btn')
-                <i class="material-icons text-field__arrow-forward">arrow_forward</i>
+                i(class='material-icons text-field__arrow-forward') arrow_forward

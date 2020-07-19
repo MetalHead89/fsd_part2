@@ -9,6 +9,7 @@ html(lang="ru")
         link(rel="stylesheet", href="modules/type-block/type-block.scss")
         link(rel="stylesheet", href="modules/text-field/text-field.scss")
         link(rel="stylesheet", href="modules/dropdown/dropdown.scss")
+        link(rel="stylesheet", href="modules/checkbox-button/checkbox-button.scss")
     body
         .central-container
             h1(class="section-title") Colors & Type
@@ -31,20 +32,24 @@ html(lang="ru")
                         + 'of&nbsp;the design, like paragraphs, lists, etc.')
             
             .form-elements
-                h1(class="section-title") Form Elements
-                h3 TEXT FIELD
-                include modules/text-field/text-field.pug
-                +set_text_field('Email')
-                h3 DROPDOWN GUESTS
-                include modules/dropdown/dropdown.pug
-                +set_dropdown()
-                h3 MASKED TEXT FIELD
-                +set_text_field('text', 'masked_text_field')
-                h3 DATE DROPDOWN
-                +set_dropdown('date')
-                h3 FILTER DATE DROPDOWN
-                +set_dropdown('filter_date')
-                h3 SUBSCRIPTION TEXT FIELD
-                +set_text_field('Email', 'subscription_textfield')
+                .form-elements__row-container
+                    h1(class="section-title") Form Elements
+                    h3 TEXT FIELD
+                    include modules/text-field/text-field.pug
+                    +set_text_field('Email')
+                    h3 DROPDOWN GUESTS
+                    include modules/dropdown/dropdown.pug
+                    +set_dropdown()
+                    h3 MASKED TEXT FIELD
+                    +set_text_field('text', 'masked_text_field')
+                    h3 DATE DROPDOWN
+                    +set_dropdown('date')
+                    h3 FILTER DATE DROPDOWN
+                    +set_dropdown('filter_date')
+                    h3 SUBSCRIPTION TEXT FIELD
+                    +set_text_field('Email', 'subscription_textfield')
+                    include modules/checkbox-button/checkbox-button.pug
+                    h3 CHECKBOX BUTTON
+                    +set_checkbox-button
         script(src="modules/dropdown/dropdown.js")
         script(src="modules/text-field/text-field.js")
