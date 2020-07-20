@@ -50,6 +50,8 @@ html(lang="ru")
                     +set_text_field('Email', 'subscription_textfield')
                     include modules/checkbox-button/checkbox-button.pug
                     h3 CHECKBOX BUTTON
-                    +set_checkbox-button
+                    +set_checkbox-button('Можно курить', 'noSmoking')
+                    +set_checkbox-button('Можно с питомцами', 'pets')
+                    +set_checkbox-button('Можно пригласить гостей (до 10 человек)', 'guests')
         script(src="modules/dropdown/dropdown.js")
         script(src="modules/text-field/text-field.js")
