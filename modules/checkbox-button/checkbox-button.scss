@@ -28,12 +28,13 @@
 
 .checkbox-button__checked-element {
     display: none;
-    font-size: 10px;
-    background:-moz-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    background: -webkit-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color:transparent;
+    width: 4px;
+    height: 5px;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    margin-bottom: 2px;
+    transform: rotate(45deg);
+
+    border-image-source: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-image-slice: 1;
 }

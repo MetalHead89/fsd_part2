@@ -2,7 +2,8 @@ mixin set_checkbox-button(labelText, id)
     .checkbox-button
         input(class='checkbox-button__checkbox-element' type='checkbox' id=id)
         div(class='checkbox-button__checkbox-custom-element')
-            i(class='material-icons checkbox-button__checked-element') check
+            .checkbox-button__checked-element
+            //- i(class='material-icons checkbox-button__checked-element') check
         label(class='checkbox-button__label', for=id) !{labelText}
 
         script(src="modules/checkbox-button/checkbox-button.js")
