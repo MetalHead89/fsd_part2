@@ -10,6 +10,7 @@ html(lang="ru")
         link(rel="stylesheet", href="modules/text-field/text-field.scss")
         link(rel="stylesheet", href="modules/dropdown/dropdown.scss")
         link(rel="stylesheet", href="modules/checkbox-button/checkbox-button.scss")
+        link(rel="stylesheet", href="modules/radio-button/radio-button.scss")
     body
         .central-container
             h1(class="section-title") Colors & Type
@@ -53,5 +54,9 @@ html(lang="ru")
                     +set_checkbox-button('Можно курить', 'noSmoking')
                     +set_checkbox-button('Можно с питомцами', 'pets')
                     +set_checkbox-button('Можно пригласить гостей (до 10 человек)', 'guests')
+                    h3 RADIO BUTTONS
+                    include modules/radio-button/radio-button.pug
+                    - var d = [['radio1', 'radio', 'male', 'Мужчина'], ['radio2', 'radio', 'female', 'Женщина']]
+                    +set_radio-button([['radio1', 'radio', 'male', 'Мужчина'], ['radio2', 'radio', 'female', 'Женщина']])
         script(src="modules/dropdown/dropdown.js")
         script(src="modules/text-field/text-field.js")

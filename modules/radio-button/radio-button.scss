@@ -1,0 +1,21 @@
+.radio-button__radio-section {
+    display: inline-block;
+    margin-left: 16px;
+    display: inline-flex;
+    align-items: center;
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+.radio-button__radio-element {
+    margin-top: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #dddddd;
+}
+
+.radio-button__label {
+    margin-left: 7px;
+    line-height: 0;
+}
