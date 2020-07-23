@@ -11,6 +11,7 @@ html(lang="ru")
         link(rel="stylesheet", href="modules/dropdown/dropdown.scss")
         link(rel="stylesheet", href="modules/checkbox-button/checkbox-button.scss")
         link(rel="stylesheet", href="modules/radio-button/radio-button.scss")
+        link(rel="stylesheet", href="modules/toggle/toggle.scss")
     body
         .central-container
             h1(class="section-title") Colors & Type
@@ -58,5 +59,8 @@ html(lang="ru")
                     include modules/radio-button/radio-button.pug
                     - var d = [['radio1', 'radio', 'male', 'Мужчина'], ['radio2', 'radio', 'female', 'Женщина']]
                     +set_radio-button([['radio1', 'radio', 'male', 'Мужчина'], ['radio2', 'radio', 'female', 'Женщина']])
+                    h3 TOGGLE
+                    include modules/toggle/toggle.pug
+                    +set_toggle('Получать спецпредложения', 'specialOffers', 'specialOffers')
         script(src="modules/dropdown/dropdown.js")
         script(src="modules/text-field/text-field.js")
