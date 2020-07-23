@@ -12,6 +12,7 @@ html(lang="ru")
         link(rel="stylesheet", href="modules/checkbox-button/checkbox-button.scss")
         link(rel="stylesheet", href="modules/radio-button/radio-button.scss")
         link(rel="stylesheet", href="modules/toggle/toggle.scss")
+        link(rel="stylesheet", href="modules/like-button/like-button.scss")
     body
         .central-container
             h1(class="section-title") Colors & Type
@@ -62,5 +63,9 @@ html(lang="ru")
                     h3 TOGGLE
                     include modules/toggle/toggle.pug
                     +set_toggle('Получать спецпредложения', 'specialOffers', 'specialOffers')
+                    h3 LIKE BUTTON
+                    include modules/like-button/like-button.pug
+                    +set_like-button(12)
         script(src="modules/dropdown/dropdown.js")
         script(src="modules/text-field/text-field.js")
+        script(src="modules/like-button/like-button.js")
