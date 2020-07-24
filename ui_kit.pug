@@ -14,6 +14,7 @@ html(lang="ru")
         link(rel="stylesheet", href="modules/toggle/toggle.scss")
         link(rel="stylesheet", href="modules/like-button/like-button.scss")
         link(rel="stylesheet", href="modules/rate-button/rate-button.scss")
+        link(rel="stylesheet", href="modules/range-slider/range-slider.scss")
     body
         .central-container
             h1(class="section-title") Colors & Type
@@ -70,6 +71,10 @@ html(lang="ru")
                     h3 RATE BUTTON
                     include modules/rate-button/rate-button.pug
                     +set_rate-button(4)
+                    h3 RANGE SLIDER
+                    include modules/range-slider/range-slider.pug
+                    +set_range-slider()
         script(src="modules/dropdown/dropdown.js")
         script(src="modules/text-field/text-field.js")
         script(src="modules/like-button/like-button.js")
+        script(src="modules/range-slider/range-slider.js")
