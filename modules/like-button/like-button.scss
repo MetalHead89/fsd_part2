@@ -2,17 +2,27 @@
     width: 40px;
     height: 20px;
     border: 1px solid rgba(31, 32, 65, 0.25);
-    background: #FFFFFF;
     box-sizing: border-box;
     border-radius: 10px;
     font-size: 10px;
     color: rgba(31, 32, 65, 0.25);
+    line-height: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-left: 4px;
     padding-right: 10px;
     cursor: pointer;
+}
+
+.like-button_cheked {
+    color: #BC9CFF;
+    border: 1px solid transparent;
+    background-image: linear-gradient(white, white), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    box-sizing: border-box;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    -webkit-background-clip: padding-box, border-box;
 }
 
 .like-button__heart{

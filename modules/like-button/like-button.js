@@ -12,12 +12,21 @@ let likeButtons = document.querySelectorAll('.like-button');
 for (let likeButton of likeButtons) {
     let buttonObject = new LikeButton(likeButton);
     buttonObject.likeButton.onclick = () => onClickLikeButton(buttonObject);
-    // likeButton.onclick = onClickLikeButton;
 }
 
 function onClickLikeButton(buttonObject) {
-    let heart = buttonObject.button.children[0]
-    let likeCounter = buttonObject.button.children[1]
-    likeCounter.innerText = parseInt(likeCounter.innerText) + 1
+    let heart = buttonObject.likeButton.children[0]
+    let likeCounter = buttonObject.likeButton.children[1]
+
+    if(buttonObject.likeChecked) {
+        likeCounter.innerText = parseInt(likeCounter.innerText) - 1;
+        heart.innerText = 'favorite_border';
+    } else {
+        heart.innerText = 'favorite'
+        likeCounter.innerText = parseInt(likeCounter.innerText) + 1;
+    }
+
+    buttonObject.likeButton.classList.toggle('like-button_cheked');
+    buttonObject.likeChecked = !buttonObject.likeChecked
 }
 
