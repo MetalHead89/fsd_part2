@@ -1,0 +1,56 @@
+.rate-button__star {
+    font-size: 24px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color:transparent;
+}
+
+
+
+
+
+// .rate-button {
+//     position: relative;
+//     width: 19px;
+//     height: 19px;
+//     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+// }
+
+// .rate-button:after {
+//     content: "";
+//     position: absolute;
+//     background: #fff;
+//     top: 4px;
+//     left: 4px;
+//     right: 4px;
+//     bottom: 4px;
+//   }
+
+//   .rate-button, .rate-button:after {
+//     -webkit-clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+//     clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+// }
+
+
+
+
+
+// .rate-button {
+//     position: relative;
+//     width: 100px;
+//     height: 100px;
+//     background: green;
+//     -webkit-clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+//     clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+// }
+
+// .rate-button::after {
+//     position: absolute;
+//     top: 1px;
+//     right: 1px;
+//     bottom: 1px;
+//     left: 1px;
+//     background: white;
+// }

@@ -13,6 +13,7 @@ html(lang="ru")
         link(rel="stylesheet", href="modules/radio-button/radio-button.scss")
         link(rel="stylesheet", href="modules/toggle/toggle.scss")
         link(rel="stylesheet", href="modules/like-button/like-button.scss")
+        link(rel="stylesheet", href="modules/rate-button/rate-button.scss")
     body
         .central-container
             h1(class="section-title") Colors & Type
@@ -66,6 +67,9 @@ html(lang="ru")
                     h3 LIKE BUTTON
                     include modules/like-button/like-button.pug
                     +set_like-button(12)
+                    h3 RATE BUTTON
+                    include modules/rate-button/rate-button.pug
+                    +set_rate-button(4)
         script(src="modules/dropdown/dropdown.js")
         script(src="modules/text-field/text-field.js")
         script(src="modules/like-button/like-button.js")
