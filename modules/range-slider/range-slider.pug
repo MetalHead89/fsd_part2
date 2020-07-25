@@ -1,4 +1,14 @@
 mixin set_range-slider()
     .range-slider
-        .range-slider__range-line
-            .range-slider__min-value-slider
+        input(class='range-slider__input-range range-slider__left-input' type="range" min='0' max='15000' value=5000)
+        input(class='range-slider__input-range range-slider__right-input' type="range" min='0' max='15000' value=10000)
+        .range-slider__slider
+            .range-slider__track
+            .range-slider__range
+            div(class='range-slider__thumb range-slider__left-thumb')
+            div(class='range-slider__thumb range-slider__right-thumb')
+
+
+        //- .range-slider__range-line
+        //-     div(class='range-slider__min-value-slider range-slider__slider')
+        //-     div(class='range-slider__max-value-slider range-slider__slider')
