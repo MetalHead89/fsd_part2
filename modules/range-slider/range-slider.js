@@ -20,6 +20,6 @@ function moveSlider(slider, offset) {
     let parent = slider.parentElement;
     console.dir(slider)
 
-    if (shift >= 0 && shift <= parent.offsetWidth)
+    if (shift >= 0 && shift <= parent.offsetWidth - slider.offsetWidth - slider.clientLeft)
         slider.style.left = shift + 'px';
 }
