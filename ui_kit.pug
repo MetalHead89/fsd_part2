@@ -16,6 +16,7 @@ html(lang="ru")
         link(rel="stylesheet", href="modules/rate-button/rate-button.scss")
         link(rel="stylesheet", href="modules/range-slider/range-slider.scss")
         link(rel="stylesheet", href="modules/button/button.scss")
+        link(rel="stylesheet", href="modules/pagination/pagination.scss")
     body
         .central-container
             h1(class="section-title") Colors & Type
@@ -83,6 +84,9 @@ html(lang="ru")
                         +set_button('only-text-button')
                         +set_button('only-text-button', 'click me', 'gray')
                         +set_button('arrow-button', 'перейти к оплате')
+                    h3(class='module-title') PAGINATION
+                    include modules/pagination/pagination.pug
+                    +set_pagination
         script(src="modules/dropdown/dropdown.js")
         script(src="modules/text-field/text-field.js")
         script(src="modules/like-button/like-button.js")

@@ -1,0 +1,7 @@
+mixin set_pagination(number_of_pages = 15)
+    - var current_page = 1
+    .pagination
+        ul(class='pagination_pages')
+            while current_page <= number_of_pages
+                li(class='pagination_page_number') !{current_page}
+                - current_page++
