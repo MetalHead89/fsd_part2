@@ -36,7 +36,7 @@ h3 {
 }
 
 .module-title {
-    margin-bottom: 25px;
+    margin-bottom: 16px;
 }
 
 
@@ -71,6 +71,15 @@ h3 {
 
 .form-elements__row-container {
     width: 320px;
+}
+
+.buttons-block {
+    & > div {
+        margin-bottom: 32px;
+    }
+    &:last-child {
+        margin: 0;
+    }
 }
 
 @font-face {
