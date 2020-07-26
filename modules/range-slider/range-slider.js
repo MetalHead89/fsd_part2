@@ -5,6 +5,11 @@ let leftThumb = document.querySelector('.range-slider__left-thumb');
 let rightThumb = document.querySelector('.range-slider__right-thumb');
 let range = document.querySelector('.range-slider__range');
 
+leftInput.addEventListener('input', setLeftValue);
+rightInput.addEventListener('input', setRightValue);
+
+let rangeLable = document.querySelector('.range-slider__range-label');
+
 function setLeftValue() {
     let _this = leftInput;
     let min = parseInt(_this.min);
@@ -14,6 +19,13 @@ function setLeftValue() {
     let percent = ((_this.value - min) / (max - min)) * 100;
     leftThumb.style.left = percent + '%';
     range.style.left = percent + '%';
+
+    let rangeNumbers = rangeLable.innerText.split('-');
+
+    number = rangeNumbers[0].replace(' ', '').trim();
+    number = parseInt(number.substring(0, number.length - 1));
+    
+    rangeLable.innerText = `${addSpaceSeparator(_this.value)}${String.fromCharCode(8381)} - ${rangeNumbers[1]}`;
 }
 
 setLeftValue();
@@ -27,9 +39,36 @@ function setRightValue() {
     let percent = ((_this.value - min) / (max - min)) * 100;
     rightThumb.style.right = 100 - percent + '%';
     range.style.right = 100 - percent + '%';
+
+    let rangeNumbers = rangeLable.innerText.split('-');
+
+    number = rangeNumbers[1].replace(' ', '').trim();
+    number = parseInt(number.substring(0, number.length - 1));
+
+    rangeLable.innerText = `${rangeNumbers[0]} - ${addSpaceSeparator(_this.value)}${String.fromCharCode(8381)}`;
 }
 
 setRightValue();
 
-leftInput.addEventListener('input', setLeftValue);
-rightInput.addEventListener('input', setRightValue);
+function addSpaceSeparator(number) {
+    /**
+     * Возвращает строку разделённую пробелом по тысячным разрядам.
+     * 
+     * @param {number} number Число в которое будет вставляться резделитель.
+     * @return {string} reverseResult Строка с разделённым по тысячным разрядам числом.
+     */
+    
+    let reverseStringNumber = String(number).split("").reverse().join("");
+    let reverseResult = '';
+
+    counter = 0;
+    for (index in reverseStringNumber) {
+        if(counter == 3) {
+            reverseResult += ' '
+            counter = 0;
+        }
+        reverseResult += reverseStringNumber[index];
+        counter++;
+    }
+    return reverseResult.split("").reverse().join("");
+}

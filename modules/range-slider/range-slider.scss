@@ -77,3 +77,12 @@
     background-color: red;
     -webkit-appearance: none;
 }
+
+.range-slider__range-label {
+    position: absolute;
+    right: 0px;
+    top: -40px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: rgba(31, 32, 65, 0.5);
+}

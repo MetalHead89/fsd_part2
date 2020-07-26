@@ -39,39 +39,39 @@ html(lang="ru")
             .form-elements
                 .form-elements__row-container
                     h1(class="section-title") Form Elements
-                    h3 TEXT FIELD
+                    h3(class='module-title') TEXT FIELD
                     include modules/text-field/text-field.pug
                     +set_text_field('Email')
-                    h3 DROPDOWN GUESTS
+                    h3(class='module-title') DROPDOWN GUESTS
                     include modules/dropdown/dropdown.pug
                     +set_dropdown()
-                    h3 MASKED TEXT FIELD
+                    h3(class='module-title') MASKED TEXT FIELD
                     +set_text_field('text', 'masked_text_field')
-                    h3 DATE DROPDOWN
+                    h3(class='module-title') DATE DROPDOWN
                     +set_dropdown('date')
-                    h3 FILTER DATE DROPDOWN
+                    h3(class='module-title') FILTER DATE DROPDOWN
                     +set_dropdown('filter_date')
-                    h3 SUBSCRIPTION TEXT FIELD
+                    h3(class='module-title') SUBSCRIPTION TEXT FIELD
                     +set_text_field('Email', 'subscription_textfield')
                     include modules/checkbox-button/checkbox-button.pug
-                    h3 CHECKBOX BUTTON
+                    h3(class='module-title') CHECKBOX BUTTON
                     +set_checkbox-button('Можно курить', 'noSmoking')
                     +set_checkbox-button('Можно с питомцами', 'pets')
                     +set_checkbox-button('Можно пригласить гостей (до 10 человек)', 'guests')
-                    h3 RADIO BUTTONS
+                    h3(class='module-title') RADIO BUTTONS
                     include modules/radio-button/radio-button.pug
                     - var d = [['radio1', 'radio', 'male', 'Мужчина'], ['radio2', 'radio', 'female', 'Женщина']]
                     +set_radio-button([['radio1', 'radio', 'male', 'Мужчина'], ['radio2', 'radio', 'female', 'Женщина']])
-                    h3 TOGGLE
+                    h3(class='module-title') TOGGLE
                     include modules/toggle/toggle.pug
                     +set_toggle('Получать спецпредложения', 'specialOffers', 'specialOffers')
-                    h3 LIKE BUTTON
+                    h3(class='module-title') LIKE BUTTON
                     include modules/like-button/like-button.pug
                     +set_like-button(12)
-                    h3 RATE BUTTON
+                    h3(class='module-title') RATE BUTTON
                     include modules/rate-button/rate-button.pug
                     +set_rate-button(4)
-                    h3 RANGE SLIDER
+                    h3(class='module-title') RANGE SLIDER
                     include modules/range-slider/range-slider.pug
                     +set_range-slider()
         script(src="modules/dropdown/dropdown.js")
