@@ -1,7 +1,46 @@
-mixin set_pagination(number_of_pages = 15)
-    - var current_page = 1
+mixin set_pagination(number_of_pages = 15, active_page = 1)
+    - let current_page = 1
+    - let isLeftNumbersHidden = false
+    - let isRightNumbersHidden = false
+    - let hotelRoomsTotal = (number_of_pages - 1) * 12
+    - const endHotelRoomOnPage = active_page * 12
+    - const startHotelRoomOnPage = endHotelRoomOnPage - 11
+
+    if hotelRoomsTotal > 100
+        - hotelRoomsTotal = '100+'
+    else
+        - hotelRoomsTotal = hotelRoomsTotal + '+'
+
     .pagination
-        ul(class='pagination_pages')
+        ul(class='pagination__pages')
+
+            if active_page != 1
+                li(class='pagination__page-number pagination__next-page')
+                    span(class='material-icons pagination__arrow') arrow_back
+            
             while current_page <= number_of_pages
-                li(class='pagination_page_number') !{current_page}
+
+                if current_page < active_page && active_page - current_page > 2 && current_page > 1 && active_page > 5
+                    if !isLeftNumbersHidden
+                        li(class='pagination__page-number') ...
+                        - isLeftNumbersHidden = true
+                    - current_page++
+                    - continue
+                
+                if current_page > active_page && current_page - active_page > 2 && current_page < number_of_pages && number_of_pages - active_page > 4
+                    if !isRightNumbersHidden
+                        li(class='pagination__page-number') ...
+                        - isRightNumbersHidden = true
+                    - current_page++
+                    - continue
+
+                if current_page == active_page
+                    li(class='pagination__page-number pagination__active-page') !{current_page}
+                else
+                    li(class='pagination__page-number') !{current_page}
                 - current_page++
+            
+            li(class='pagination__page-number pagination__next-page')
+                span(class='material-icons pagination__arrow') arrow_forward
+
+        span(class='pagination__signature pagination__signature_position') !{startHotelRoomOnPage} – !{endHotelRoomOnPage} из !{hotelRoomsTotal} вариантов аренды
