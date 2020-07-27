@@ -10,7 +10,7 @@
     align-items: center;
 }
 
-.pagination__page-number {
+.pagination__button {
     width: 40px;
     height: 40px;
     flex: none;
@@ -29,7 +29,7 @@
     border-radius: 22px;
 }
 
-.pagination__next-page {
+.pagination__prev-page, .pagination__next-page {
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     border-radius: 22px;
 }
@@ -48,4 +48,8 @@
 
 .pagination__signature_position {
     margin-top: 10px;
+}
+
+.pagination__link {
+    text-decoration: none;
 }
