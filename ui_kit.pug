@@ -17,6 +17,7 @@ html(lang="ru")
         link(rel="stylesheet", href="modules/range-slider/range-slider.scss")
         link(rel="stylesheet", href="modules/button/button.scss")
         link(rel="stylesheet", href="modules/pagination/pagination.scss")
+        link(rel="stylesheet", href="modules/expandable-checkbox-list/expandable-checkbox-list.scss")
     body
         .central-container
             h1(class="section-title") Colors & Type
@@ -58,11 +59,10 @@ html(lang="ru")
                     include modules/checkbox-button/checkbox-button.pug
                     h3(class='module-title') CHECKBOX BUTTON
                     +set_checkbox-button('Можно курить', 'noSmoking')
-                    +set_checkbox-button('Можно с питомцами', 'pets')
-                    +set_checkbox-button('Можно пригласить гостей (до 10 человек)', 'guests')
+                    +set_checkbox-button('Можно с питомцами', 'pets', true)
+                    +set_checkbox-button('Можно пригласить гостей (до 10 человек)', 'guests', true)
                     h3(class='module-title') RADIO BUTTONS
                     include modules/radio-button/radio-button.pug
-                    - var d = [['radio1', 'radio', 'male', 'Мужчина'], ['radio2', 'radio', 'female', 'Женщина']]
                     +set_radio-button([['radio1', 'radio', 'male', 'Мужчина'], ['radio2', 'radio', 'female', 'Женщина']])
                     h3(class='module-title') TOGGLE
                     include modules/toggle/toggle.pug
@@ -87,8 +87,14 @@ html(lang="ru")
                     h3(class='module-title') PAGINATION
                     include modules/pagination/pagination.pug
                     +set_pagination()
+                    include modules/expandable-checkbox-list/expandable-checkbox-list.pug
+                    +set_expandable-checkbox-list([['Завтрак', 'breakfast'], ['Письменный стол', 'desk', true], ['Стул для кормления', 'feedingChair', true], ['Кроватка', 'crib', true], ['Телевизор', 'tv'], ['Шампунь', 'shampoo']])
+                    h3(class='module-title') RICH CHECKBOX BUTTONS
+                    +set_checkbox-button('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
+                    +set_checkbox-button('Помощник для инвалидов', 'disabledAssistant', false, true, 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.')
         script(src="modules/dropdown/dropdown.js")
         script(src="modules/text-field/text-field.js")
         script(src="modules/like-button/like-button.js")
         script(src="modules/range-slider/range-slider.js")
         script(src="modules/pagination/pagination.js")
+        script(src="modules/expandable-checkbox-list/expandable-checkbox-list.js")
