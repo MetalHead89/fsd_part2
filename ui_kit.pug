@@ -18,6 +18,7 @@ html(lang="ru")
         link(rel="stylesheet", href="modules/button/button.scss")
         link(rel="stylesheet", href="modules/pagination/pagination.scss")
         link(rel="stylesheet", href="modules/expandable-checkbox-list/expandable-checkbox-list.scss")
+        link(rel="stylesheet", href="modules/bullet-list/bullet-list.scss")
     body
         .central-container
             h1(class="section-title") Colors & Type
@@ -92,6 +93,9 @@ html(lang="ru")
                     h3(class='module-title') RICH CHECKBOX BUTTONS
                     +set_checkbox-button('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
                     +set_checkbox-button('Помощник для инвалидов', 'disabledAssistant', false, true, 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.')
+                    h3(class='module-title') BULLET LIST
+                    include modules/bullet-list/bullet-list.pug
+                    +set_bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а&nbsp;выезд до 12:00'])
         script(src="modules/dropdown/dropdown.js")
         script(src="modules/text-field/text-field.js")
         script(src="modules/like-button/like-button.js")
