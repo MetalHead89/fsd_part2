@@ -21,9 +21,16 @@ function onClickToPageNumber() {
     old_active_page.classList.remove('pagination__active-page');
 
     createNewPagination.bind(this, paginatonPagesCount)();
+    createNewPaginationSignature();
 }
 
 function createNewPagination(pagesCount) {
+    /**
+     * Создаёт обновлённый элемент пагинации, удаляет старый
+     * 
+     * @param {string} pagesCount количество страниц в пагинации
+     */
+
     const ul = document.createElement('ul');
     const activePage = parseInt(this.innerText);
     let isLeftNumbersHidden = false;
@@ -67,7 +74,35 @@ function createNewPagination(pagesCount) {
     paginationElements[0].remove();
 }
 
+function createNewPaginationSignature() {
+    /**
+     * Созёт новй подпись к пагинации, удаляет старую
+     */
+
+    const span = document.createElement('span');
+    const activePageNumber = parseInt(document.querySelector('.pagination__active-page').innerText);
+    let hotelRoomsTotal = (paginatonPagesCount - 1) * 12
+    const endHotelRoomOnPage = activePageNumber * 12;
+    const startHotelRoomOnPage = endHotelRoomOnPage - 11;
+
+    if(hotelRoomsTotal > 100)
+        hotelRoomsTotal = '100+'
+    else
+        hotelRoomsTotal = hotelRoomsTotal + '+'
+
+    span.classList.add('pagination__signature', 'pagination__signature_position');
+    span.innerText = `${startHotelRoomOnPage} – ${endHotelRoomOnPage} из ${hotelRoomsTotal} вариантов аренды`;
+    pagination.append(span);
+
+    paginationSignatureElements = document.querySelectorAll('.pagination__signature');
+    paginationSignatureElements[0].remove();
+}
+
 function createPaginationButon(ul, type, page=null) {
+    /**
+     * Добавляет кнопки в пагинацию
+     */
+
     let a = null;
 
     if (type != 'numbersPruning' && parseInt(this.innerText) != page) {
