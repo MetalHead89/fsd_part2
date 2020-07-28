@@ -8,6 +8,10 @@ if(prevButton){
     prevButton.onclick = clickToPrevButton;
 }
 
+if(nextButton){
+    nextButton.onclick = clickToNextButton;
+}
+
 for (page of paginatonPagesNumbers) {
     page.onclick = onClickToPageNumber;
 }
@@ -15,7 +19,6 @@ for (page of paginatonPagesNumbers) {
 function onClickToPageNumber() {
     const old_active_page = document.querySelector('.pagination__active-page');
     old_active_page.classList.remove('pagination__active-page');
-    this.classList.add('pagination__active-page');
 
     createNewPagination.bind(this, paginatonPagesCount)();
 }
@@ -65,10 +68,13 @@ function createNewPagination(pagesCount) {
 }
 
 function createPaginationButon(ul, type, page=null) {
-    const a = document.createElement('a');
-    a.classList.add('pagination__link');
-    a.href = '#';
-    ul.append(a);
+    let a = null;
+
+    if (type != 'numbersPruning' && parseInt(this.innerText) != page) {
+        a = document.createElement('a');
+        a.classList.add('pagination__link');
+        a.href = '#';
+    }
 
     const li = document.createElement('li');
 
@@ -83,9 +89,11 @@ function createPaginationButon(ul, type, page=null) {
         } else {
             li.classList.add('pagination__button', 'pagination__next-page');
             span.innerText = 'arrow_forward';
+            li.onclick = clickToNextButton;
         }
 
-        li.append(span);
+        li.append(a);
+        a.append(span);
 
     } else if (type == 'numbersPruning') {
         li.classList.add('pagination__button', 'pagination__page-number');
@@ -93,32 +101,29 @@ function createPaginationButon(ul, type, page=null) {
     } else if (type == 'pageNumber'){
         if (parseInt(this.innerText) == page) {
             li.classList.add('pagination__button', 'pagination__page-number', 'pagination__active-page');
+            li.innerText = page;
         } else {
             li.classList.add('pagination__button', 'pagination__page-number');
+            li.append(a);
+            a.innerText = page;
         }
 
-        li.innerText = page;
         li.onclick = onClickToPageNumber;
     }
     
-    a.append(li);
+    ul.append(li);
 }
 
 function clickToPrevButton() {
     const old_active_page = document.querySelector('.pagination__active-page');
     old_active_page.classList.remove('pagination__active-page');
-    console.dir(old_active_page)
 
-/**
- * 
- * Сделать а дочерним элементом li, а не наоборот.
- * 
- * 
- * 
- * 
- */
+    createNewPagination.bind(old_active_page.previousSibling, paginatonPagesCount)();
+}
 
-    // this.classList.add('pagination__active-page');
+function clickToNextButton() {
+    const old_active_page = document.querySelector('.pagination__active-page');
+    old_active_page.classList.remove('pagination__active-page');
 
-    // createNewPagination.bind(this, paginatonPagesCount)();
+    createNewPagination.bind(old_active_page.nextSibling, paginatonPagesCount)();
 }
