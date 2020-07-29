@@ -20,6 +20,7 @@ html(lang="ru")
         link(rel="stylesheet", href="modules/expandable-checkbox-list/expandable-checkbox-list.scss")
         link(rel="stylesheet", href="modules/bullet-list/bullet-list.scss")
         link(rel="stylesheet", href="modules/room-details/room-details.scss")
+        link(rel="stylesheet", href="modules/guest-review/guest-review.scss")
     body
         .central-container
             h1(class="section-title") Colors & Type
@@ -100,6 +101,8 @@ html(lang="ru")
                     include modules/room-details/room-details.pug
                     +set_room-details('insert_emoticon', 'Комфорт', 'Шумопоглащающие стены')
                     +set_room-details('location_city', 'Удобство', 'Окно в каждой из спален')
+                    include modules/guest-review/guest-review.pug
+                    +set_guest-review('resources/img/guest1.png', 'Мурад Сарафанов', 5, 12, 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
         script(src="modules/dropdown/dropdown.js")
         script(src="modules/text-field/text-field.js")
         script(src="modules/like-button/like-button.js")

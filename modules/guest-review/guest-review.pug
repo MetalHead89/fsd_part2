@@ -1,0 +1,27 @@
+include ../like-button/like-button.pug
+
+mixin set_guest-review(photo, name, days, likes, rewiew)
+    - let lastVisit = ''
+    - let days10 = days % 10
+    - let days100 = days % 100
+    if days10 == 1 && days100 != 11
+        - lastVisit = days + ' день '
+    else if (days10 >= 2 && days10 <= 4) && !(days100 >= 12 && days100 <= 14)
+        - lastVisit = days + ' дня '
+    else
+        - lastVisit = days + ' дней '
+
+    - lastVisit = lastVisit + ' назад '
+
+
+    .guest-review
+        .guest-review__guest
+            .guest-review__photo-mask
+                img(src=photo class='guest-review__photo')
+            .guest-review__guest-details
+                .guest-review__guest-name !{name}
+                .last-visit !{lastVisit}
+        .guest-review__rewiew
+            .guest-review__likes
+                +set_like-button(likes)
+            .guest-review__rewiew-text !{rewiew}
