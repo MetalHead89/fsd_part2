@@ -19,6 +19,7 @@ html(lang="ru")
         link(rel="stylesheet", href="modules/pagination/pagination.scss")
         link(rel="stylesheet", href="modules/expandable-checkbox-list/expandable-checkbox-list.scss")
         link(rel="stylesheet", href="modules/bullet-list/bullet-list.scss")
+        link(rel="stylesheet", href="modules/room-details/room-details.scss")
     body
         .central-container
             h1(class="section-title") Colors & Type
@@ -96,6 +97,9 @@ html(lang="ru")
                     h3(class='module-title') BULLET LIST
                     include modules/bullet-list/bullet-list.pug
                     +set_bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а&nbsp;выезд до 12:00'])
+                    include modules/room-details/room-details.pug
+                    +set_room-details('insert_emoticon', 'Комфорт', 'Шумопоглащающие стены')
+                    +set_room-details('location_city', 'Удобство', 'Окно в каждой из спален')
         script(src="modules/dropdown/dropdown.js")
         script(src="modules/text-field/text-field.js")
         script(src="modules/like-button/like-button.js")
