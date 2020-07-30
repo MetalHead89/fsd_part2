@@ -25,7 +25,7 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            // template: './index.html'
+            template: path.resolve(__dirname, 'src/pug/pages/index.pug')
         }),
         new CleanWebpackPlugin()
     ],
@@ -34,6 +34,13 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.pug$/,
+                loader: 'pug-loader',
+                options: {
+                    pretty: true
+                }
             }
         ]
     }
