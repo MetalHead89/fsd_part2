@@ -1,0 +1,19 @@
+mixin set_button(type='regular-button', text='click me', theme='')
+    - var button_position = ''
+    - var button_theme = ''
+    if type == 'regular-button'
+        - var button_class = 'button__button-shape  button__regular-button'
+    else if type == 'border-button'
+        - var button_class = 'button__button-shape  button__border-button'
+    else if type == 'only-text-button'
+        - var button_class = 'button__button-shape  button__only-text-button'
+        if theme == 'gray'
+            - button_theme = 'button__only-text-button_gray_teme'
+    else if type == 'arrow-button'
+        - var button_class = 'button__button-shape  button__arrow-button'
+        - button_position = 'button_position-relative '
+    
+    div(class='button ' + button_position)
+        input(type="button", value=text, class=button_class + ' ' + button_theme)
+        if type == 'arrow-button'
+            span(class='material-icons button__arrow') arrow_forward

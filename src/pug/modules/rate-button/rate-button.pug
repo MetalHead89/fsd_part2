@@ -1,0 +1,7 @@
+mixin set_rate-button(rate=3)
+    .rate-button
+        - for (var i = 0; i < 5; i++)
+            if i < rate
+                span(class='material-icons rate-button__star') star
+            else
+                span(class='material-icons rate-button__star') star_border

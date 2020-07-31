@@ -1,0 +1,5 @@
+mixin set_bullet-list(bulletList)
+    .bullet-list
+        ul(class='bullet-list__unordered-list')
+            each item in bulletList
+                li(class='bullet-list__item') !{item}

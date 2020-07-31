@@ -1,0 +1,14 @@
+mixin set_checkbox-button(labelText, id, isChecked, richCheckbox=false, richText)
+    - var additionalClass = ''
+    if richCheckbox
+        - additionalClass = 'checkbox-button__label_rich'
+    .checkbox-button
+        .checkbox-button__checkbox
+            input(class='checkbox-button__checkbox-element' type='checkbox' checked=isChecked id=id)
+            div(class='checkbox-button__checkbox-custom-element')
+                .checkbox-button__checked-element
+            label(class='checkbox-button__label ' + additionalClass, for=id) !{labelText}
+        if richCheckbox
+            .checkbox-button__rich-text !{richText}
+
+        script(src="modules/checkbox-button/checkbox-button.js")

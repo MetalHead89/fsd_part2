@@ -1,7 +1,9 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const loader = require('sass-loader');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -29,8 +31,13 @@ module.exports = {
             template: path.resolve(__dirname, 'src/pug/pages/index.pug')
         }),
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({
-            filename: '[name].css'
+        new MiniCssExtractPlugin([
+            { filename: '[name].css' }
+        ]),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: path.resolve(__dirname, 'src/assets'), to: path.resolve(__dirname, 'dist/assets') }
+            ]
         })
     ],
     module: {
@@ -38,14 +45,9 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    'style-loader',
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader'
-                    },
-                    {
-                        loader: 'sass-loader'
-                    }
+                    { loader: MiniCssExtractPlugin.loader },
+                    'css-loader',
+                    'sass-loader'
                 ]
             },
             {
@@ -60,6 +62,13 @@ module.exports = {
                 loader: 'pug-loader',
                 options: {
                     pretty: true
+                }
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]'
                 }
             }
         ]

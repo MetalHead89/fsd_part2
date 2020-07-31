@@ -1,0 +1,26 @@
+.expandable-checkbox-list {
+    width: 266px;
+}
+
+.expandable-checkbox-list__title{
+    position: relative;
+    text-transform: uppercase;
+    margin-bottom: 17px;
+    &::after {
+        position: absolute;
+        right: 19px;
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-top: 2px solid rgba(31, 32, 65, 0.5);
+        border-right: 2px solid rgba(31, 32, 65, 0.5);
+        transform: rotate(135deg);
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.expandable-checkbox-list__hide-list {
+    display: none;
+}
