@@ -1,0 +1,35 @@
+.central-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    margin-bottom: 50px;
+}
+
+.module-title {
+    margin-bottom: 16px;
+}
+
+
+// COLORS AND TYPE BLOCK
+
+.colors-and-type {
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 145px;
+}
+
+.colors-and-type__type {
+    width: 38%;
+    flex-direction: column;
+}
+
+.colors-and-type__colors {
+    width: 62%;
+    flex-direction: column;
+    display: inline-block;
+    flex: none;
+}
