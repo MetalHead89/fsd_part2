@@ -15,8 +15,6 @@ html(lang="ru")
                     each color in ['Dark Shade 100%', 'Dark Shade 75%', 'Dark Shade 50%', 'Dark Shade 25%', 'Dark Shade 5%', 'Purple', 'Green']
                         +set_color-block(color)
                 .colors-and-type__type
-                    +set_type-sample('bottom', 'h1', 'H1', 'This one is the sub-section or widget title')
-                    +set_type-sample('bottom', 'h2', 'H2', 'Next one is the item title inside widgets')
-                    +set_type-sample('bottom', 'h3', 'H3', 'THIS IS A LABEL OR CTA TEXT')
-                    +set_type-sample('0', 'p', 'Body', 'This is the body text which is used for most ' 
-                        + 'of&nbsp;the design, like paragraphs, lists, etc.')
+                    - var r = [['h1', 'This one is the sub-section or widget title'], ['h2', 'Next one is the item title inside widgets'], ['h3', 'THIS IS A LABEL OR CTA TEXT'], ['span', 'This is the body text which is used for most of&nbsp;the design, like paragraphs, lists, etc.']]
+                    each blockType in r
+                        +set_type-block(blockType[0], blockType[1])

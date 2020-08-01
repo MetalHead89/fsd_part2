@@ -3,10 +3,11 @@
 body {
     font-family: "Montserrat";
     font-style: normal;
-    font-weight: normal;
+    font-weight: 300;
     font-size: 14px;
     line-height: 24px;
     color: $darkShade75;
+    letter-spacing: 0.01em;
 }
 
 h1 {
@@ -16,6 +17,7 @@ h1 {
     font-size: 24px;
     line-height: 30px;
     color: $darkShade100;
+    letter-spacing: -0.02em;
 }
 
 h2 {
@@ -25,6 +27,7 @@ h2 {
     font-size: 19px;
     line-height: 24px;
     color: $darkShade100;
+    letter-spacing: -0.02em;
 }
 
 h3 {

@@ -1,12 +1,13 @@
-mixin set_type-sample(type_sample_margin, tag, type, text)
-    - var text_font = ''
+mixin set_type-block(tag, text)
+    if tag == 'h1'
+        - var type = 'H1'
+    else if tag == 'h2'
+        - var type = 'H2'
+    else if tag == 'h3'
+        - var type = 'H3'
+    else
+        - var type = 'Body'
 
-    if tag == 'h1' || tag == 'h2'
-        - var text_font = 'text-block__text_quicksand-font'
-
-
-    div(class='type-sample_flex type-sample_margin-' + type_sample_margin)
-        div(class='type-sample__tag-block_position tag-block_style')
-            #{tag}(class='tag-block__tag_margin-0 tag-block__tag_h-weight') !{type}
-        div(class='type-sample__text-block_position text-block_padding-left')
-            #{tag}(class='text-block__text_margin-0 ' + text_font) !{text}
+    .type-block
+        #{tag}(class='type-block__tag') !{type}
+        #{tag}(class='type-block__text') !{text}
