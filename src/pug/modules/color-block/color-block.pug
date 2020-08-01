@@ -1,11 +1,26 @@
-mixin set_color-sample(color_sample_margin, color, color_name, color_code)
+mixin set_color-block(colorName)
+    - var colorClass = 'color-block__square_'
+    - var colorCode = '#1F2041'
 
-    div(class='color-sample color-sample_flex color-sample_margin-' + color_sample_margin)
-        div(class='color-sample__color-square color-sample__color-square_' + color)
-        div(class='color-description color-description_flex color-description_padding-left '
-            + 'color-sample__color-description_display')
-            .color-description__color-name
-                p(class='color-description__p color-description__p_margin color-description__p_font '
-                    + 'color-description__p_font-bold') !{color_name}
-            .color-description__color-code
-                p(class='color-code_p-font color-description__p_margin') !{color_code}
+    if colorName == 'Dark Shade 100%'
+        - colorClass += 'color-dark100'
+    if colorName == 'Dark Shade 75%'
+        - colorClass += 'color-dark75'
+    if colorName == 'Dark Shade 50%'
+        - colorClass += 'color-dark50'
+    if colorName == 'Dark Shade 25%'
+        - colorClass += 'color-dark25'
+    if colorName == 'Dark Shade 5%'
+        - colorClass += 'color-dark5'
+    if colorName == 'Purple'
+        - colorClass += 'color-purple'
+        - colorCode = '#BC9CFF'
+    if colorName == 'Green'
+        - colorClass += 'color-green'
+        - colorCode = '#6FCF97'
+
+    .color-block
+        div(class='color-block__square ' + colorClass)
+        .color-block__description
+            h2(class='color-block__colorName') !{colorName}
+            .color-block__color-code !{colorCode}

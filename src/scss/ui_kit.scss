@@ -32,4 +32,10 @@
     flex-direction: column;
     display: inline-block;
     flex: none;
+    & > div {
+        margin-bottom: 20px;
+    }
+    & > div:last-of-type {
+        margin-bottom: 0;
+    }
 }
