@@ -1,5 +1,6 @@
 include ../modules/color-block/color-block.pug
 include ../modules/type-block/type-block.pug
+include ../modules/text-field/text-field.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -9,12 +10,32 @@ html(lang="ru")
         title UI kit
     body
         .central-container
+
+            //- COLORS AND TYPE
             h1(class="section-title") Colors & Type
-            .colors-and-type
-                .colors-and-type__colors
-                    each color in ['Dark Shade 100%', 'Dark Shade 75%', 'Dark Shade 50%', 'Dark Shade 25%', 'Dark Shade 5%', 'Purple', 'Green']
-                        +set_color-block(color)
-                .colors-and-type__type
-                    - var r = [['h1', 'This one is the sub-section or widget title'], ['h2', 'Next one is the item title inside widgets'], ['h3', 'THIS IS A LABEL OR CTA TEXT'], ['span', 'This is the body text which is used for most of&nbsp;the design, like paragraphs, lists, etc.']]
-                    each blockType in r
-                        +set_type-block(blockType[0], blockType[1])
+            .section-block
+                .colors-and-type
+                    .colors-and-type__colors
+                        each color in ['Dark Shade 100%', 'Dark Shade 75%', 'Dark Shade 50%', 'Dark Shade 25%', 'Dark Shade 5%', 'Purple', 'Green']
+                            +color-block(color)
+                    .colors-and-type__type
+                        - var r = [['h1', 'This one is the sub-section or widget title'], ['h2', 'Next one is the item title inside widgets'], ['h3', 'THIS IS A LABEL OR CTA TEXT'], ['span', 'This is the body text which is used for most of&nbsp;the design, like paragraphs, lists, etc.']]
+                        each blockType in r
+                            +type-block(blockType[0], blockType[1])
+            
+            //- Form Elements
+            h1(class="section-title") Form Elements
+            .section-block
+                .form-elements
+                        .form-elements__column
+                            .module
+                                h3(class='module__title') Text Field
+                                +text_field()
+                            .module
+                                h3(class='module__title') masked text field
+                                +text_field('Email', 'masked')
+                            div(class='module module_width266')
+                                h3(class='module__title') subscription text field
+                                +text_field('Email', 'subscription')
+                        .form-elements__column
+                        .form-elements__column

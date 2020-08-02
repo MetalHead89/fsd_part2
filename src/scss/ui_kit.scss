@@ -8,9 +8,21 @@
     margin-bottom: 50px;
 }
 
-// .module-title {
-//     margin-bottom: 16px;
-// }
+.section-block {
+    padding-bottom: 100px;
+}
+
+.module {
+    margin-bottom: 22px;
+}
+
+.module_width266 {
+    max-width: 266px;
+}
+
+.module__title {
+    margin-bottom: 4px;
+}
 
 
 // COLORS AND TYPE BLOCK
@@ -21,7 +33,6 @@
     flex-direction: row;
     display: flex;
     align-items: flex-start;
-    padding-bottom: 145px;
 }
 
 .colors-and-type__type {
@@ -64,4 +75,17 @@
     .section-title {
         text-align: center;
     }
+}
+
+
+
+// Form Elements Block
+.form-elements {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-elements__column {
+    width: 100%;
+    max-width: 320px;
 }
