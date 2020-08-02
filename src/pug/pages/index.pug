@@ -1,6 +1,9 @@
 include ../modules/color-block/color-block.pug
 include ../modules/type-block/type-block.pug
 include ../modules/text-field/text-field.pug
+include ../modules/dropdown/dropdown.pug
+
+include ../modules/button/button.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -34,8 +37,22 @@ html(lang="ru")
                             .module
                                 h3(class='module__title') masked text field
                                 +text_field('Email', 'masked')
+                            .module
+                                h3(class='module__title') Dropdown
+                                +dropdown()
                             div(class='module module_width266')
                                 h3(class='module__title') subscription text field
                                 +text_field('Email', 'subscription')
                         .form-elements__column
                         .form-elements__column
+                            .buttons-block
+                                h3(class='module__title') Buttons
+                                .module
+                                    +button()
+                                .module
+                                    +button('borderButton')
+                                .module.module-2-buttons
+                                    +button('onlyTextButton')
+                                    +button('onlyTextButton', 'click me', 'gray')
+                                .module
+                                    +button('arrowButton', 'перейти к оплате')

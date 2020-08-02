@@ -89,3 +89,25 @@
     width: 100%;
     max-width: 320px;
 }
+
+.buttons-block h3{
+    margin-bottom: 16px;
+}
+
+.buttons-block .module{
+    margin-bottom: 27px;
+}
+
+.buttons-block .module:last-child{
+    margin-bottom: 0;
+}
+
+.module-2-buttons {
+    & > .button {
+        display: inline-block;
+    }
+    & .button:first-child {
+        margin-right: 20px;
+    }
+    flex-direction: row;
+}

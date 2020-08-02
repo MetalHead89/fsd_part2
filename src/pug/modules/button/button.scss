@@ -1,3 +1,5 @@
+@import '../../../scss/vars.scss';
+
 .button_position-relative {
     position: relative;
 }
@@ -6,25 +8,22 @@
     width: 99px;
     height: 44px;
     border-radius: 22px;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: linear-gradient(180deg, $purple 0%, $blue 100%);
     font-weight: bold;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-size: 12px;
     text-transform: uppercase;
     color: #FFFFFF;
     border: none;
+    transition: .5s;
     &:focus {
         outline: none;
     }
-}
-
-
-.button__regular-button {
     &:hover {
         opacity: 0.5;
     }
     &:active {
-        background: linear-gradient(180deg, rgb(157, 113, 252) 0%, #7795f7 100%);
+        transition: none;
         opacity: 1;
     }
 }
@@ -32,53 +31,27 @@
 .button__border-button {
     color: #BC9CFF;
     border: 2px solid transparent;
-    background-image: linear-gradient(white, white), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background-image: linear-gradient(white, white), linear-gradient(180deg, $purple 0%, $blue 100%);
     background-origin: border-box;
     background-clip: padding-box, border-box;
     -webkit-background-clip: padding-box, border-box;
-    &:hover {
-        opacity: 0.5;
-    }
-    &:active {
-        background: linear-gradient(white, white), linear-gradient(180deg, rgb(157, 113, 252) 0%, #7795f7 100%);
-        opacity: 1;
-        box-sizing: border-box;
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
-        -webkit-background-clip: padding-box, border-box;
-    }
 }
 
 .button__only-text-button {
-    height: 15px;
-    color: #BC9CFF;
+    color: $purple;
     background: #FFFFFF;
-    &:hover {
-        opacity: 0.5;
-    }
-    &:active {
-        color: #a77eff;
-        opacity: 1;
-    }
+    width: unset;
+    height: unset;
+    padding: 0;
 }
 
 .button__only-text-button_gray_teme {
-    color: rgba(31, 32, 65, 0.5);
-    &:active {
-        color: rgb(31, 32, 65, 0.75);
-        opacity: 1;
-    }
+    color: $darkShade50;
 }
 
 .button__arrow-button {
-    width: 320px;
-    &:hover {
-        opacity: 0.5;
-    }
-    &:active {
-        background: linear-gradient(180deg, rgb(157, 113, 252) 0%, #7795f7 100%);
-        opacity: 1;
-    }
+    width: 100%;
+    max-width: 500px;
 }
 
 .button__arrow {
@@ -88,5 +61,5 @@
     transform: translate(-50%, -50%);
     top: 50%;
     font-size: 24px;
-    color: #FFFFFF;
+    color: #FFFFFF
 }
