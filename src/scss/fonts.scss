@@ -1,41 +1,41 @@
 @font-face {
     font-family: "Montserrat";
-    src: url("../assets/fonts/Montserrat/montserrat.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: "Montserrat";
-    src: url("../assets/fonts/Montserrat/montserratlight.woff2") format("woff2");
+    src: url("/assets/fonts/montserrat/montserratLight.woff") format("woff");
     font-style: normal;
     font-weight: 300;
 }
 
 @font-face {
-    font-family: "Quicksand";
-    src: url("../assets/fonts/Quicksand/QuicksandBold.woff2") format("woff2"); 
-    font-style: normal; 
-    font-weight: 700; 
+    font-family: "Montserrat";
+    src: url("/assets/fonts/montserrat/montserrat.woff") format("woff");
+    font-style: normal;
+    font-weight: 400;
 }
+
+// @font-face {
+//     font-family: "Quicksand";
+//     src: url("/assets/fonts/Quicksand/QuicksandLight.woff2") format("woff2"); 
+//     font-style: normal; 
+//     font-weight: 300; 
+// }
 
 @font-face {
     font-family: "Quicksand";
-    src: url("../assets/fonts/Quicksand/QuicksandLight.woff2") format("woff2"); 
-    font-style: normal; 
-    font-weight: 300; 
-}
-
-@font-face {
-    font-family: "Quicksand";
-    src: url("../assets/fonts/Quicksand/QuicksandRegular.woff2") format("woff2"); 
+    src: url("/assets/fonts/quicksand/quicksand.woff") format("woff"); 
     font-style: normal; 
     font-weight: 400; 
 }
 
 @font-face {
+    font-family: "Quicksand";
+    src: url("/assets/fonts/quicksand/quicksandBold.woff") format("woff"); 
+    font-style: normal; 
+    font-weight: 700; 
+}
+
+@font-face {
     font-family: "Material Icons";
     font-style: normal;
-    font-weight: 400;
-    src: url("../assets/fonts/MaterialIcons/MaterialIcons.woff2") format("woff2");
+    font-weight: normal;
+    src: url("/assets/fonts/materialIcons/materialIcons.woff") format("woff");
 }

@@ -7,7 +7,6 @@ body {
     font-size: 14px;
     line-height: 24px;
     color: $darkShade75;
-    letter-spacing: 0.01em;
 }
 
 h1 {
@@ -17,7 +16,6 @@ h1 {
     font-size: 24px;
     line-height: 30px;
     color: $darkShade100;
-    letter-spacing: -0.02em;
 }
 
 h2 {
@@ -27,7 +25,6 @@ h2 {
     font-size: 19px;
     line-height: 24px;
     color: $darkShade100;
-    letter-spacing: -0.02em;
 }
 
 h3 {
@@ -39,3 +36,28 @@ h3 {
     text-transform: uppercase;
     color: $darkShade100;
 }
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
