@@ -1,180 +1,203 @@
-class Dropdown {
-    constructor(dropdown) {
-        let quantityNumbers = dropdown.getElementsByClassName('dropdown__quantity-number');
-        let buttonsSub = dropdown.getElementsByClassName('dropdown__subtract-button');
-        let buttonsAdd = dropdown.getElementsByClassName('dropdown__add-button');
+'use strict'
 
-        this.isOptionVisible = false;
-        this.header = dropdown.getElementsByClassName('dropdown__header')[0];
-        this.headerText = dropdown.getElementsByClassName('dropdown__header-text')[0];
-        this.options = dropdown.getElementsByClassName('dropdown__options')[0];
-        this.quantityNumber1 = quantityNumbers[0];
-        this.quantityNumber2 = quantityNumbers[1];
-        this.quantityNumber3 = quantityNumbers[2];
-        this.buttonSub1 = buttonsSub[0];
-        this.buttonSub2 = buttonsSub[1];
-        this.buttonSub3 = buttonsSub[2];
-        this.buttonAdd1 = buttonsAdd[0];
-        this.buttonAdd2 = buttonsAdd[1];
-        this.buttonAdd3 = buttonsAdd[2];
+const dropdowns = document.querySelectorAll('.dropdown__header');
+const quantityButtons = document.querySelectorAll('.dropdown__quantity-button');
+const clearButons = document.querySelectorAll('.dropdown__button-clear');
 
-        this.buttonAdd1.onclick = () => this.clickAddNumberButton(this.buttonAdd1);
-        this.buttonAdd2.onclick = () => this.clickAddNumberButton(this.buttonAdd2);
-        this.buttonAdd3.onclick = () => this.clickAddNumberButton(this.buttonAdd3);
-        this.buttonSub1.onclick = () => this.clickSubNumberButton(this.buttonSub1);
-        this.buttonSub2.onclick = () => this.clickSubNumberButton(this.buttonSub2);
-        this.buttonSub3.onclick = () => this.clickSubNumberButton(this.buttonSub3);
-        this.header.onclick = () => this.clickHeader();
+for (let dropdown of dropdowns) {
+    dropdown.onclick = showHideOptions;
+}
 
-        if (dropdown.className.includes('dropdown_guests')) {
-            this.buttonClear = dropdown.getElementsByClassName('dropdown__button-clear')[0];
-            this.buttonApply = dropdown.getElementsByClassName('dropdown__button-apply')[0];
-            this.buttonClear.onclick = () => this.clickClearButton();
-            this.buttonApply.onclick = () => this.generateHeader();
-            this.dropdownType = 'guests';
-        }
-        else
-            this.dropdownType = 'comfort';
-    }
+for (let button of quantityButtons) {
+    button.onclick = changQuantity;
+}
 
-    clickHeader() {
-        if (this.isOptionVisible) {
-            this.options.style.display = "none";
-            this.header.removeAttribute("style")
-        }
-        else {
-            this.options.style.display = "flex";
-            this.header.style.borderRadius = "4px 4px 0 0";
-            this.header.style.border = "1px solid rgba(31, 32, 65, 0.5)";
-        }
-        this.isOptionVisible = !this.isOptionVisible;
-    }
+for (let button of clearButons) {
+    button.firstElementChild.firstElementChild.onclick = resetOptionsValues;
+}
 
-    clickAddNumberButton(button) {
-        dropdownOptionNumber = button.previousSibling;
-        number = parseInt(dropdownOptionNumber.textContent);
-        dropdownOptionNumber.textContent = number + 1;
+function showHideOptions() {
+    /**
+     * Разворачивает/сворачивает dropdown
+     */
 
-        if (number == 0) 
-            dropdownOptionNumber.previousSibling.disabled = false;
-        
-        if (this.dropdownType == 'guests')
-            this.setClearButton();
-        this.generateHeader();
-    }
+    const options = this.nextElementSibling;
 
-    clickSubNumberButton(button) {
-        dropdownOptionNumber = button.nextSibling;
-        number = parseInt(dropdownOptionNumber.textContent);
-        dropdownOptionNumber.textContent = number - 1;
-    
-        if (number == 1)
-            dropdownOptionNumber.previousSibling.disabled = true;
+    if (options.style.display == '') {
+        options.style.display = 'flex';
+        this.style.borderRadius = "4px 4px 0 0";
+        this.style.border = "1px solid rgba(31, 32, 65, 0.5)";
 
-        if (this.dropdownType == 'guests')
-            this.setClearButton();
-        this.generateHeader();
-    }
-
-    clickClearButton() {
-        this.quantityNumber1.textContent = 0;
-        this.quantityNumber2.textContent = 0;
-        this.quantityNumber3.textContent = 0;
-        this.buttonSub1.disabled = true;
-        this.buttonSub2.disabled = true;
-        this.buttonSub3.disabled = true;
-        this.generateHeader();
-        this.setClearButton();
-    }
-
-    generateHeader() {
-        if (this.dropdownType == 'guests'){
-            let guestsCount = parseInt(this.quantityNumber1.textContent) + parseInt(this.quantityNumber2.textContent);
-            let babiesCount = parseInt(this.quantityNumber3.textContent);
-
-            if (guestsCount == 0 && babiesCount == 0)
-                this.headerText.textContent = 'Сколько гостей';
-            else if (guestsCount > 0 && babiesCount == 0)
-                this.headerText.textContent = guestsCount + ' ' + this.wordGenerator('guest', parseInt(guestsCount));
-            else if (guestsCount > 0 && babiesCount > 0)
-                this.headerText.textContent = `${guestsCount} ${this.wordGenerator('guest', parseInt(guestsCount))}, 
-                    ${babiesCount} ${this.wordGenerator('baby', parseInt(babiesCount))}`;
-        }
-        else if (this.dropdownType == 'comfort') {
-            let comfort = {
-                'bedroomsCount': parseInt(this.quantityNumber1.textContent),
-                'bedsCount': parseInt(this.quantityNumber2.textContent),
-                'bathroomsCount': parseInt(this.quantityNumber3.textContent)
-            };
-
-            let headerText = '';
-            for (let key in comfort) {
-                if (comfort[key] > 0) {
-                    if (headerText != '')
-                        headerText += ', ';
-                    headerText += `${comfort[key]} ${this.wordGenerator(key, comfort[key])}`;
-                }
+        for (let dropdown of dropdowns) {
+            if (dropdown !== this) {
+                dropdown.nextElementSibling.removeAttribute('style');
+                dropdown.removeAttribute('style');
             }
-
-            if (headerText == '')
-                headerText = 'Выберите удобства'
-            
-            this.headerText.textContent = headerText;
         }
+    } else {
+        options.removeAttribute('style');
+        this.removeAttribute('style');
+    }
+}
+
+function changQuantity() {
+    /**
+     * Изменяет количество выбранной опции на единицу в большую или меньшую сторону
+     */
+
+    if (this.classList.contains('dropdown__add-button')) {
+        const quantityElement = this.previousElementSibling;
+
+        quantityElement.innerText = parseInt(quantityElement.innerText) + 1;
+    } else {
+        const quantityElement = this.nextElementSibling;
+
+        quantityElement.innerText = parseInt(quantityElement.innerText) - 1;
     }
 
-    setClearButton() {
-        if (parseInt(this.quantityNumber1.textContent) + parseInt(this.quantityNumber2.textContent) + parseInt(this.quantityNumber3.textContent) > 0) {
-            this.buttonClear.style.display = 'inline-block';
+    changeButtonsState(this.offsetParent);
+    changeDropdownHeader(this.offsetParent);
+}
+
+function changeButtonsState(options) {
+    /**
+     * Изменяет состояние кнопок
+     */
+
+    const quantityElements = options.querySelectorAll('.dropdown__quantity-number');
+    let quantitySum = 0;
+
+    for (let quantity of quantityElements) {
+        let quantityNumber = parseInt(quantity.innerText);
+
+        if (parseInt(quantityNumber) > 0) {
+            quantity.previousElementSibling.disabled = false;
+        } else {
+            quantity.previousElementSibling.disabled = true;
         }
-        else
-            this.buttonClear.style.display = 'none';
+
+        quantitySum += quantityNumber;
     }
 
-    wordGenerator(word, number) {
-        let number10 = number % 10;
-        let number100 = number % 100;
-        if (number10 == 1 && number100 != 11){
-            if (word == 'guest')
-                return 'гость';
-            else if (word == 'baby')
-                return 'младенец';
-            else if (word == 'bedroomsCount')
-                return 'спальня';
-            else if (word == 'bedsCount')
-                return 'кровать';
-            else if (word == 'bathroomsCount')
-                return 'ванная комната';
-        }
-        else if ((number10 >= 2 && number10 <= 4) && !(number100 >= 12 && number100 <= 14)) {
-            if (word == 'guest')
-                return 'гостя';
-            else if (word == 'baby')
-                return 'младенца';
-            else if (word == 'bedroomsCount')
-                return 'спальни';
-            else if (word == 'bedsCount')
-                return 'кровати';
-            else if (word == 'bathroomsCount')
-                return 'ванные комнаты';
-        }
-        else {
-            if (word == 'guest')
-                return 'гостей';
-            else if (word == 'baby')
-                return 'младенцев';
-            else if (word == 'bedroomsCount')
-                return 'спален';
-            else if (word == 'bedsCount')
-                return 'кроватей';
-            else if (word == 'bathroomsCount')
-                return 'ванных комнат';
+    if (options.querySelector('.button ')) {
+        const buttonClear = options.querySelector('.button ').children[0];
+
+        if (quantitySum > 0) {
+            buttonClear.style.display = 'inline-block'
+        } else {
+            buttonClear.removeAttribute('style');
         }
     }
 }
 
-let dr = [];
-var dropdowns = document.getElementsByClassName('dropdown');
-for (dropdownElement of dropdowns) {
-    dr.push(new Dropdown(dropdownElement));
-} 
+function resetOptionsValues() {
+    /**
+     * Сбрасывет все значения dropdown на дефолтные
+     */
+
+    const options = this.parentElement.parentElement.offsetParent;
+    const quantityElements = options.querySelectorAll('.dropdown__quantity-number');
+    this.removeAttribute('style');
+
+    for (let quantity of quantityElements) {
+        quantity.innerText = '0'
+        quantity.previousElementSibling.disabled = true;
+    }
+
+    changeDropdownHeader(options);
+}
+
+function changeDropdownHeader(options) {
+    /**
+     * Изеняет текст хедера dropdown элемента
+     */
+
+    const dropdown = options.offsetParent;
+    const header = options.previousElementSibling.firstElementChild;
+    const quantityNumbers = options.querySelectorAll('.dropdown__quantity-number');
+
+    if (dropdown.classList.contains('dropdown_guests')) {
+        const guests = {
+            'guests': parseInt(quantityNumbers[0].innerText) + parseInt(quantityNumbers[1].innerText),
+            'babies': parseInt(quantityNumbers[2].innerText)
+        };
+
+        let headerText = '';
+        for (let key in guests) {
+            if (guests[key] > 0) {
+                if (headerText != '')
+                    headerText += ', ';
+                headerText += `${guests[key]} ${wordGenerator(key, guests[key])}`;
+            }
+        }
+
+        if (headerText == '')
+            headerText = 'Сколько гостей'
+
+        header.textContent = headerText;
+    } else if (dropdown.classList.contains('dropdown_comfort')) {
+        let comfort = {
+            'bedroomsCount': parseInt(quantityNumbers[0].innerText),
+            'bedsCount': parseInt(quantityNumbers[1].innerText),
+            'bathroomsCount': parseInt(quantityNumbers[2].innerText)
+        };
+
+        let headerText = '';
+        for (let key in comfort) {
+            if (comfort[key] > 0) {
+                if (headerText != '')
+                    headerText += ', ';
+                headerText += `${comfort[key]} ${wordGenerator(key, comfort[key])}`;
+            }
+        }
+
+        if (headerText == '')
+            headerText = 'Выберите удобства'
+
+        header.textContent = headerText;
+    }
+}
+
+function wordGenerator(word, number) {
+    /**
+     * Склоняет слова
+     */
+    let number10 = number % 10;
+    let number100 = number % 100;
+    if (number10 == 1 && number100 != 11) {
+        if (word == 'guests')
+            return 'гость';
+        else if (word == 'babies')
+            return 'младенец';
+        else if (word == 'bedroomsCount')
+            return 'спальня';
+        else if (word == 'bedsCount')
+            return 'кровать';
+        else if (word == 'bathroomsCount')
+            return 'ванная комната';
+    }
+    else if ((number10 >= 2 && number10 <= 4) && !(number100 >= 12 && number100 <= 14)) {
+        if (word == 'guests')
+            return 'гостя';
+        else if (word == 'babies')
+            return 'младенца';
+        else if (word == 'bedroomsCount')
+            return 'спальни';
+        else if (word == 'bedsCount')
+            return 'кровати';
+        else if (word == 'bathroomsCount')
+            return 'ванные комнаты';
+    }
+    else {
+        if (word == 'guests')
+            return 'гостей';
+        else if (word == 'babies')
+            return 'младенцев';
+        else if (word == 'bedroomsCount')
+            return 'спален';
+        else if (word == 'bedsCount')
+            return 'кроватей';
+        else if (word == 'bathroomsCount')
+            return 'ванных комнат';
+    }
+}
