@@ -1,14 +1,18 @@
 include ../button/button.pug
 
-mixin dropdown(type='guests')
+mixin dropdown(type='guests', title=none)
 
     if type == 'guests'
+        if !title
+            - title = 'гости'
         - var options = ['взрослые', 'дети', 'младенцы']
         - var buttons = true
         - var dropdownType = 'dropdown_guests'
         - var headerText = 'Сколько гостей'
         - var borders = 'dropdown__header_all-angles-are-round'
     else if type == 'comfort'
+        if !title
+            - title = 'удобства номера'
         - var options = ['спальни', 'кровати', 'ванные комнаты']
         - var buttons = false
         - var dropdownType = 'dropdown_comfort'
@@ -19,14 +23,31 @@ mixin dropdown(type='guests')
         - var headerText = 'ДД.ММ.ГГГГ'
         - var borders = 'dropdown__header_all-angles-are-round'
     else if type == 'filter_date'
+        if !title
+            - title = 'даты пребывания в отеле'
         - var dropdownType = 'filter_dropdown_date'
-        - var headerText = 'Период пребывания в отеле'
+        - var headerText = 'Выберите период'
         - var borders = 'dropdown__header_all-angles-are-round'
 
     div(class='dropdown ' + dropdownType)
-        div(class='dropdown__header ' + borders)
-            .dropdown__header-element.dropdown__header-text !{headerText}
-            span(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
+        if type != 'date'
+            h3(class="dropdown__title") !{title}
+            div(class='dropdown__header ' + borders)
+                .dropdown__header-element.dropdown__header-text !{headerText}
+                span(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
+        else
+            .dropdown__date-block
+                .dropdown__arrival.dropdown_dateElement
+                    h3(class="dropdown__title") !{title}
+                    div(class='dropdown__header ' + borders)
+                        .dropdown__header-element.dropdown__header-text !{headerText}
+                        span(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
+                .dropdown__departure.dropdown_dateElement
+                    h3(class="dropdown__title") !{title}
+                    div(class='dropdown__header ' + borders)
+                        .dropdown__header-element.dropdown__header-text !{headerText}
+                        span(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
+
         .dropdown__options
             if type == 'guests' || type == 'comfort'
                 each val in options

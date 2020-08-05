@@ -35,14 +35,18 @@ html(lang="ru")
                                 h3(class='module__title') Text Field
                                 +text_field()
                             .module
+                                +dropdown('guests', 'dropdown')
+                            .module
                                 h3(class='module__title') masked text field
                                 +text_field('Email', 'masked')
                             .module
-                                h3(class='module__title') Dropdown
-                                +dropdown()
+                                +dropdown('date', 'date Dropdown')
                             div(class='module module_width266')
-                                h3(class='module__title') subscription text field
-                                +text_field('Email', 'subscription')
+                                .module
+                                    +dropdown('filter_date', 'filter date dropdown')
+                                .module
+                                    h3(class='module__title') subscription text field
+                                    +text_field('Email', 'subscription')
                         .form-elements__column
                         .form-elements__column
                             .buttons-block

@@ -5,7 +5,8 @@ const quantityButtons = document.querySelectorAll('.dropdown__quantity-button');
 const clearButons = document.querySelectorAll('.dropdown__button-clear');
 
 for (let dropdown of dropdowns) {
-    dropdown.onclick = showHideOptions;
+    if (!dropdown.offsetParent.classList.contains('dropdown_date'))
+        dropdown.onclick = showHideOptions;
 }
 
 for (let button of quantityButtons) {
