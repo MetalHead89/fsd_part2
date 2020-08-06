@@ -13,7 +13,7 @@ import '@/pug/modules/type-block/type-block.scss'
 import '@/pug/modules/text-field/text-field.scss'
 import '@/pug/modules/dropdown/dropdown.scss'
 import '@/pug/modules/expandable-checkbox-list/expandable-checkbox-list.scss'
-
+import '@/pug/modules/room-details/room-details.scss'
 import '@/pug/modules/checkbox-button/checkbox-button.scss'
 
 import '@/pug/modules/button/button.scss'

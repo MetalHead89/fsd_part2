@@ -3,6 +3,7 @@ include ../modules/type-block/type-block.pug
 include ../modules/text-field/text-field.pug
 include ../modules/dropdown/dropdown.pug
 include ../modules/expandable-checkbox-list/expandable-checkbox-list.pug
+include ../modules/room-details/room-details.pug
 include ../modules/checkbox-button/checkbox-button.pug
 
 include ../modules/button/button.pug
@@ -54,6 +55,9 @@ html(lang="ru")
                                 .module
                                     +expandable-checkbox-list([['Завтрак', 'breakfast'], ['Письменный стол', 'desk', true], ['Стул для кормления', 
                                     'feedingChair', true], ['Кроватка', 'crib', true], ['Телевизор', 'tv'], ['Шампунь', 'shampoo']], 'expandable checkbox list')
+                                .module
+                                    +roomDetails('insert_emoticon', 'Комфорт', 'Шумопоглащающие стены')
+                                    +roomDetails('location_city', 'Удобство', 'Окно в каждой из спален')
                         .form-elements__column
                             .module
                                 h3(class='module__title') Checkbox Buttons
