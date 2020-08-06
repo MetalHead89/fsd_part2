@@ -1,17 +1,10 @@
 include ../checkbox-button/checkbox-button.pug
 
-mixin set_expandable-checkbox-list(checkboxes)
+mixin expandable-checkbox-list(checkboxes, title)
     .expandable-checkbox-list
-        h3(class='expandable-checkbox-list__title') expandable checkbox list
+        .expandable-checkbox-list__title-section
+            h3(class='expandable-checkbox-list__title') !{title}
+            span(class='material-icons expandable-checkbox-list__expand-more') keyboard_arrow_down
         .expandable-checkbox-list__hide-list
             each checkboxSettings in checkboxes
-                +set_checkbox-button(checkboxSettings[0], checkboxSettings[1], checkboxSettings[2])
-            //- +set_checkbox-button('Завтрак', 'breakfast')
-            //- +set_checkbox-button('Письменный стол', 'desk', true)
-            //- +set_checkbox-button('Стул для кормления', 'feedingChair', true)
-            //- +set_checkbox-button('Кроватка', 'crib', true)
-            //- +set_checkbox-button('Телевизор', 'tv')
-            //- +set_checkbox-button('Шампунь', 'shampoo')
-
-
-            
+                +checkboxButton(checkboxSettings[0], checkboxSettings[1], checkboxSettings[2])

@@ -1,49 +1,60 @@
-.checkbox-button {
-    margin-bottom: 7px;
-}
+@import '../../../scss/vars.scss';
 
-.checkbox-button__checkbox {
-    display: flex;
-    align-items: top;
+.checkbox-button {
+    position: relative;
+    margin: 6px 0;
 }
 
 .checkbox-button__checkbox-element {
     display: none;
-     &:checked + .checkbox-button__checkbox-custom-element .checkbox-button__checked-element {
-        display: inline;
+    &:checked + .checkbox-button__label:before {
+        border-color: $purple;
+    }
+    &:checked + .checkbox-button__label:after {
+        transform: rotate(45deg) scale(1);
+        animation: jumpUp .2s ease;
     }
 }
 
 .checkbox-button__label {
-    margin-left: 10px;
+    margin-left: 30px;
+    color: $darkShade50;
+    transition: color .5s ease;
+    &:hover {
+        color: $darkShade75;
+    }
+    &:before {
+        content: '';
+        width: 18px;
+        height: 18px;
+        border: 1px solid $darkShade25;
+        position: absolute;
+        left: 0;
+        top: 2px;
+        border-radius: 4px;
+        transition: border-color .5s ease;
+    }
+    &:hover::before {
+        border-color: $purple;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        left: 7px;
+        top: 7px;
+        width: 4px;
+        height: 6px;
+        border-right: 2px solid;
+        border-bottom: 2px solid;
+        transition: .2s ease;
+        transform: rotate(45deg) scale(.1);
+        border-image-source: linear-gradient(180deg, $purple 0%, $blue 100%);
+        border-image-slice: 1;
+    }
 }
 
 .checkbox-button__label_rich {
     font-weight: bold;
-}
-
-.checkbox-button__checkbox-custom-element {
-    margin-top: 2px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 18px;
-    height: 18px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    border-radius: 4px;
-}
-
-.checkbox-button__checked-element {
-    display: none;
-    width: 4px;
-    height: 5px;
-    border-right: 2px solid;
-    border-bottom: 2px solid;
-    margin-bottom: 2px;
-    transform: rotate(45deg);
-    
-    border-image-source: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    border-image-slice: 1;
 }
 
 .checkbox-button__rich-text {
@@ -51,6 +62,15 @@
     width: 236px;
     padding-left: 30px;
     font-size: 12px;
-    color: rgba(31, 32, 65, 0.5);
+    color: $darkShade50;
     line-height: 14px;
 }
+  
+  @keyframes jumpUp {
+    50% {
+        -webkit-transform: scale(1.2) rotate(45deg);
+    }
+    100% {
+        -webkit-transform: scale(1) rotate(45deg);
+    }
+  }
