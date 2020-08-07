@@ -11,6 +11,7 @@ include ../modules/like-button/like-button.pug
 include ../modules/rate-button/rate-button.pug
 include ../modules/range-slider/range-slider.pug
 include ../modules/button/button.pug
+include ../modules/pagination/pagination.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -102,3 +103,6 @@ html(lang="ru")
                                     +button('onlyTextButton', 'click me', 'gray')
                                 .module
                                     +button('arrowButton', 'перейти к оплате')
+                                .module
+                                    h3(class='module__title') Pagination
+                                    +pagination()

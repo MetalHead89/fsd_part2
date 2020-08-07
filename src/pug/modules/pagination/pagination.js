@@ -30,7 +30,6 @@ function createNewPagination(pagesCount) {
      * 
      * @param {string} pagesCount количество страниц в пагинации
      */
-
     const ul = document.createElement('ul');
     const activePage = parseInt(this.innerText);
     let isLeftNumbersHidden = false;
@@ -153,12 +152,14 @@ function clickToPrevButton() {
     const old_active_page = document.querySelector('.pagination__active-page');
     old_active_page.classList.remove('pagination__active-page');
 
-    createNewPagination.bind(old_active_page.previousSibling, paginatonPagesCount)();
+    createNewPagination.bind(old_active_page.previousElementSibling, paginatonPagesCount)();
+    createNewPaginationSignature();
 }
 
 function clickToNextButton() {
     const old_active_page = document.querySelector('.pagination__active-page');
     old_active_page.classList.remove('pagination__active-page');
 
-    createNewPagination.bind(old_active_page.nextSibling, paginatonPagesCount)();
+    createNewPagination.bind(old_active_page.nextElementSibling, paginatonPagesCount)();
+    createNewPaginationSignature();
 }

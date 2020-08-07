@@ -23,6 +23,11 @@
     &:hover::before {
         border-color: $purple;
     }
+    
+    &:hover::after {
+        background-position: 0 100%;
+    }
+
     &::before {
         transition: .5s ease;
         content: '';
