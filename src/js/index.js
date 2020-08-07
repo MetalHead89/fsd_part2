@@ -19,5 +19,5 @@ import '@/pug/modules/checkbox-button/checkbox-button.scss'
 import '@/pug/modules/radio-button/radio-button.scss'
 import '@/pug/modules/toggle/toggle.scss'
 import '@/pug/modules/like-button/like-button.scss'
-
+import '@/pug/modules/rate-button/rate-button.scss'
 import '@/pug/modules/button/button.scss'

@@ -8,7 +8,7 @@ include ../modules/checkbox-button/checkbox-button.pug
 include ../modules/radio-button/radio-button.pug
 include ../modules/toggle/toggle.pug
 include ../modules/like-button/like-button.pug
-
+include ../modules/rate-button/rate-button.pug
 include ../modules/button/button.pug
 
 <!DOCTYPE html>
@@ -78,6 +78,11 @@ html(lang="ru")
                                 .likeButtonSection
                                     +like-button(2)
                                     +like-button(12, true)
+                            .module
+                                h3(class='module-title') rate button
+                                .rateButtonSection
+                                    +rateButton(4)
+                                    +rateButton(5)
                             .module
                                 h3(class='module-title') RICH CHECKBOX BUTTONS
                                 +checkboxButton('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
