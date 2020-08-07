@@ -7,6 +7,10 @@ let range = document.querySelector('.range-slider__range');
 
 leftInput.addEventListener('input', setLeftValue);
 rightInput.addEventListener('input', setRightValue);
+leftInput.onmouseover = function() { leftThumb.classList.add('range-slider__left-thumb_hover') };
+rightInput.onmouseover = function() { rightThumb.classList.add('range-slider__right-thumb_hover') };
+leftInput.onmouseout = function() { leftThumb.classList.remove('range-slider__left-thumb_hover') };
+rightInput.onmouseout = function() { rightThumb.classList.remove('range-slider__right-thumb_hover') };
 
 let rangeLable = document.querySelector('.range-slider__range-label');
 

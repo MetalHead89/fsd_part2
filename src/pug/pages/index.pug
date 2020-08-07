@@ -9,6 +9,7 @@ include ../modules/radio-button/radio-button.pug
 include ../modules/toggle/toggle.pug
 include ../modules/like-button/like-button.pug
 include ../modules/rate-button/rate-button.pug
+include ../modules/range-slider/range-slider.pug
 include ../modules/button/button.pug
 
 <!DOCTYPE html>
@@ -88,6 +89,8 @@ html(lang="ru")
                                 +checkboxButton('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
                                 +checkboxButton('Помощник для инвалидов', 'disabledAssistant', false, true, 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.')
                         .form-elements__column
+                            .module
+                                +rangeSlider('Range Slider')
                             .buttons-block
                                 h3(class='module__title') Buttons
                                 .module
