@@ -6,6 +6,7 @@ include ../modules/expandable-checkbox-list/expandable-checkbox-list.pug
 include ../modules/room-details/room-details.pug
 include ../modules/checkbox-button/checkbox-button.pug
 include ../modules/radio-button/radio-button.pug
+include ../modules/toggle/toggle.pug
 
 include ../modules/button/button.pug
 
@@ -68,6 +69,9 @@ html(lang="ru")
                             .module
                                 h3(class='module-title') Radio Buttons
                                 +radioButton([['radio1', 'radio', 'male', 'Мужчина', true], ['radio2', 'radio', 'female', 'Женщина']])
+                            .module
+                                h3(class='module-title') toggle
+                                +toggle('Получать спецпредложения', 'specialOffers', 'specialOffers')
                             .module
                                 h3(class='module-title') RICH CHECKBOX BUTTONS
                                 +checkboxButton('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
