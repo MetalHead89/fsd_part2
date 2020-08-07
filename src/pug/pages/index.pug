@@ -5,6 +5,7 @@ include ../modules/dropdown/dropdown.pug
 include ../modules/expandable-checkbox-list/expandable-checkbox-list.pug
 include ../modules/room-details/room-details.pug
 include ../modules/checkbox-button/checkbox-button.pug
+include ../modules/radio-button/radio-button.pug
 
 include ../modules/button/button.pug
 
@@ -64,6 +65,9 @@ html(lang="ru")
                                 +checkboxButton('Можно курить', 'noSmoking')
                                 +checkboxButton('Можно с питомцами', 'pets', true)
                                 +checkboxButton('Можно пригласить гостей (до 10 человек)', 'guests', true)
+                            .module
+                                h3(class='module-title') Radio Buttons
+                                +radioButton([['radio1', 'radio', 'male', 'Мужчина', true], ['radio2', 'radio', 'female', 'Женщина']])
                             .module
                                 h3(class='module-title') RICH CHECKBOX BUTTONS
                                 +checkboxButton('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
