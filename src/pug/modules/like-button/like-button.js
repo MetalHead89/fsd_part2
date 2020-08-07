@@ -1,8 +1,8 @@
 'use strict'
 
 class LikeButton {
-    constructor(button) {
-        this.likeChecked = false;
+    constructor(button, checked) {
+        this.likeChecked = checked;
         this.likeButton = button;
     }
 }
@@ -10,7 +10,8 @@ class LikeButton {
 let likeButtons = document.querySelectorAll('.like-button');
 
 for (let likeButton of likeButtons) {
-    let buttonObject = new LikeButton(likeButton);
+    const checked = likeButton.classList.contains('like-button_cheked') ? true : false;
+    let buttonObject = new LikeButton(likeButton, checked);
     buttonObject.likeButton.onclick = () => onClickLikeButton(buttonObject);
 }
 
@@ -27,6 +28,6 @@ function onClickLikeButton(buttonObject) {
     }
 
     buttonObject.likeButton.classList.toggle('like-button_cheked');
+    buttonObject.likeButton.classList.toggle('like-button_un-cheked');
     buttonObject.likeChecked = !buttonObject.likeChecked
 }
-

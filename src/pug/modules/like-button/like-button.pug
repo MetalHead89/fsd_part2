@@ -1,4 +1,11 @@
-mixin set_like-button(like_count=0)
-    .like-button
-        span(class='material-icons like-button__heart') favorite_border
+mixin like-button(like_count=0, checked=false)
+    if checked
+        - var checkedClass = 'like-button_cheked'
+        - var icon = 'favorite'
+    else
+        - var checkedClass = 'like-button_un-cheked'
+        - var icon = 'favorite_border'
+
+    div(class='like-button ' + checkedClass)
+        i(class='material-icons like-button__heart') !{icon}
         .like-button__like-counter !{like_count}

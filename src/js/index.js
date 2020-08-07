@@ -2,6 +2,7 @@
 import '@/pug/modules/text-field/text-field.js'
 import '@/pug/modules/dropdown/dropdown.js'
 import '@/pug/modules/expandable-checkbox-list/expandable-checkbox-list.js'
+import '@/pug/modules/like-button/like-button.js'
 
 // Styles
 import '@/scss/fonts.scss';
@@ -17,5 +18,6 @@ import '@/pug/modules/room-details/room-details.scss'
 import '@/pug/modules/checkbox-button/checkbox-button.scss'
 import '@/pug/modules/radio-button/radio-button.scss'
 import '@/pug/modules/toggle/toggle.scss'
+import '@/pug/modules/like-button/like-button.scss'
 
 import '@/pug/modules/button/button.scss'

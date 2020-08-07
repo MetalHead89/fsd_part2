@@ -112,6 +112,17 @@
     flex-direction: row;
 }
 
+.likeButtonSection {
+    flex-direction: row;
+    display: inline-flex;
+    & > div {
+        margin-left: 10px;
+    }
+    & > div:first-child {
+        margin-left: 0;
+    }
+}
+
 @media screen and (max-width: 750px){
     .form-elements {
         flex-direction: column;

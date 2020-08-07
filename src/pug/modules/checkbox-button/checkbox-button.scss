@@ -1,4 +1,4 @@
-@import '../../../scss/vars.scss';
+@import "../../../scss/vars.scss";
 
 .checkbox-button {
     position: relative;
@@ -12,19 +12,19 @@
     }
     &:checked + .checkbox-button__label:after {
         transform: rotate(45deg) scale(1);
-        animation: jumpUp .2s ease;
+        animation: jumpUp 0.2s ease;
     }
 }
 
 .checkbox-button__label {
     margin-left: 30px;
     color: $darkShade50;
-    transition: color .5s ease;
+    transition: color 0.5s ease;
     &:hover {
         color: $darkShade75;
     }
     &:before {
-        content: '';
+        content: "";
         width: 18px;
         height: 18px;
         border: 1px solid $darkShade25;
@@ -32,13 +32,13 @@
         left: 0;
         top: 2px;
         border-radius: 4px;
-        transition: border-color .5s ease;
+        transition: border-color 0.5s ease;
     }
     &:hover::before {
         border-color: $purple;
     }
     &:after {
-        content: '';
+        content: "";
         position: absolute;
         left: 7px;
         top: 7px;
@@ -46,8 +46,8 @@
         height: 6px;
         border-right: 2px solid;
         border-bottom: 2px solid;
-        transition: .2s ease;
-        transform: rotate(45deg) scale(.1);
+        transition: 0.2s ease;
+        transform: rotate(45deg) scale(0.1);
         border-image-source: linear-gradient(180deg, $purple 0%, $blue 100%);
         border-image-slice: 1;
     }
@@ -69,12 +69,12 @@
     color: $darkShade50;
     line-height: 14px;
 }
-  
-  @keyframes jumpUp {
+
+@keyframes jumpUp {
     50% {
         -webkit-transform: scale(1.2) rotate(45deg);
     }
     100% {
         -webkit-transform: scale(1) rotate(45deg);
     }
-  }
+}
