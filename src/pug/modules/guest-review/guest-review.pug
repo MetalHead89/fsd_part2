@@ -1,6 +1,6 @@
 include ../like-button/like-button.pug
 
-mixin set_guest-review(photo, name, days, likes, rewiew)
+mixin guestReview(photo, name, days, likes, checkedLike, rewiew)
     - let lastVisit = ''
     - let days10 = days % 10
     - let days100 = days % 100
@@ -16,12 +16,11 @@ mixin set_guest-review(photo, name, days, likes, rewiew)
 
     .guest-review
         .guest-review__guest
-            .guest-review__photo-mask
-                img(src=photo class='guest-review__photo')
+            img(src=photo class='guest-review__photo')
             .guest-review__guest-details
                 .guest-review__guest-name !{name}
                 .last-visit !{lastVisit}
         .guest-review__rewiew
             .guest-review__likes
-                +set_like-button(likes)
+                +likeButton(likes, checkedLike)
             .guest-review__rewiew-text !{rewiew}
