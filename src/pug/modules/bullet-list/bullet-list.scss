@@ -1,22 +1,29 @@
+@import '../../../scss/vars.scss';
+
 .bullet-list__unordered-list {
-    padding: 3px;
+    padding-left: 21px;
     margin: 0;
     width: 300px;
+    & .bullet-list__item:first-child {
+        margin-top: 0;
+    }
+    & .bullet-list__item:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .bullet-list__item {
     position: relative;
     list-style-type: none;
-    margin-left: 15px;
-    margin-bottom: 11px;
+    margin: 10px 0;
     &::before {
         border-radius: 50%;
         position: absolute;
         content: '';
         width: 10px;
         height: 10px;
-        background: rgba(31, 32, 65, 0.25);
-        left: -20px;
-        top: 5px;
+        background: $darkShade25;
+        left: -21px;
+        top: 6px;
     }
 }

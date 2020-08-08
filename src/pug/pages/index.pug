@@ -12,6 +12,7 @@ include ../modules/rate-button/rate-button.pug
 include ../modules/range-slider/range-slider.pug
 include ../modules/button/button.pug
 include ../modules/pagination/pagination.pug
+include ../modules/bullet-list/bullet-list.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -106,3 +107,6 @@ html(lang="ru")
                                 .module
                                     h3(class='module__title') Pagination
                                     +pagination()
+                                .module
+                                    h3(class='module__title') bullet list
+                                    +bulletList(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а&nbsp;выезд до 12:00'])
