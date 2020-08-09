@@ -30,35 +30,37 @@ mixin dropdown(type='guests', title=none)
         - var borders = 'dropdown__header_all-angles-are-round'
 
     div(class='dropdown ' + dropdownType)
+        input(type="checkbox" id=type class='dropdown__check')
         if type != 'date'
             h3(class="dropdown__title") !{title}
-            div(class='dropdown__header ' + borders)
+            //- input(type="checkbox" id=type class='dropdown__check')
+            label(for=type class='dropdown__header ' + borders)
                 .dropdown__header-element.dropdown__header-text !{headerText}
                 span(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
         else
             .dropdown__date-block
                 .dropdown__arrival.dropdown_dateElement
                     h3(class="dropdown__title") !{title}
-                    div(class='dropdown__header ' + borders)
+                    label(for=type class='dropdown__header ' + borders)
                         .dropdown__header-element.dropdown__header-text !{headerText}
                         span(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
                 .dropdown__departure.dropdown_dateElement
                     h3(class="dropdown__title") !{title}
-                    div(class='dropdown__header ' + borders)
+                    label(for=type class='dropdown__header ' + borders)
                         .dropdown__header-element.dropdown__header-text !{headerText}
                         span(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
 
-        .dropdown__options
+        .dropdown__drop-menu
             if type == 'guests' || type == 'comfort'
                 each val in options
-                    .dropdown__option
+                    .dropdown__option.dropdown__drop-element
                         .dropdown__option-title !{val}
                         .dropdown__quantity-selection
                             button(class='dropdown__subtract-button dropdown__quantity-button' disabled) -
                             .dropdown__quantity-number 0
                             button(class='dropdown__add-button dropdown__quantity-button') +
                 if buttons
-                    .dropdown__bottom-buttons-panel
+                    .dropdown__bottom-buttons-panel.dropdown__drop-element
                         .dropdown__button-clear
                             +button('onlyTextButton', 'очистить', 'gray')
                         .dropdown__button-apply

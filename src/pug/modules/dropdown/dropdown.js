@@ -1,45 +1,45 @@
 'use strict'
 
-const dropdowns = document.querySelectorAll('.dropdown__header');
-const quantityButtons = document.querySelectorAll('.dropdown__quantity-button');
-const clearButons = document.querySelectorAll('.dropdown__button-clear');
+// const dropdowns = document.querySelectorAll('.dropdown__header');
+// const quantityButtons = document.querySelectorAll('.dropdown__quantity-button');
+// const clearButons = document.querySelectorAll('.dropdown__button-clear');
 
-for (let dropdown of dropdowns) {
-    if (!dropdown.offsetParent.classList.contains('dropdown_date'))
-        dropdown.onclick = showHideOptions;
-}
+// for (let dropdown of dropdowns) {
+//     if (!dropdown.offsetParent.classList.contains('dropdown_date'))
+//         dropdown.onclick = showHideOptions;
+// }
 
-for (let button of quantityButtons) {
-    button.onclick = changQuantity;
-}
+// for (let button of quantityButtons) {
+//     button.onclick = changQuantity;
+// }
 
-for (let button of clearButons) {
-    button.firstElementChild.firstElementChild.onclick = resetOptionsValues;
-}
+// for (let button of clearButons) {
+//     button.firstElementChild.firstElementChild.onclick = resetOptionsValues;
+// }
 
-function showHideOptions() {
-    /**
-     * Разворачивает/сворачивает dropdown
-     */
+// function showHideOptions() {
+//     /**
+//      * Разворачивает/сворачивает dropdown
+//      */
 
-    const options = this.nextElementSibling;
+//     const options = this.nextElementSibling;
 
-    if (options.style.display == '') {
-        options.style.display = 'flex';
-        this.style.borderRadius = "4px 4px 0 0";
-        this.style.border = "1px solid rgba(31, 32, 65, 0.5)";
+//     if (options.style.display == '') {
+//         options.style.display = 'flex';
+//         this.style.borderRadius = "4px 4px 0 0";
+//         this.style.border = "1px solid rgba(31, 32, 65, 0.5)";
 
-        for (let dropdown of dropdowns) {
-            if (dropdown !== this) {
-                dropdown.nextElementSibling.removeAttribute('style');
-                dropdown.removeAttribute('style');
-            }
-        }
-    } else {
-        options.removeAttribute('style');
-        this.removeAttribute('style');
-    }
-}
+//         for (let dropdown of dropdowns) {
+//             if (dropdown !== this) {
+//                 dropdown.nextElementSibling.removeAttribute('style');
+//                 dropdown.removeAttribute('style');
+//             }
+//         }
+//     } else {
+//         options.removeAttribute('style');
+//         this.removeAttribute('style');
+//     }
+// }
 
 function changQuantity() {
     /**
