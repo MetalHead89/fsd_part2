@@ -6,7 +6,7 @@ class Dropdown {
         this.quantitySum = 0;
         this.dropdownType = this.getDropdownType(this.dropdown);
         this.clearButton = this.dropdown.querySelector('.button_clear')
-        this.dropdownHeader = this.dropdown.querySelector('.dropdown__header');
+        this.dropdownHeaderText = this.dropdown.querySelector('.dropdown__header-text');
     }
 
     getDropdownType(dropdown) {
@@ -58,7 +58,7 @@ function changeQuantity(dropdown) {
     if (dropdown.dropdownType == 'guests') {
         onOffClearButton(dropdown);
     }
-    changeDropdownHeader(dropdown);
+    changeDropdownHeaderText(dropdown);
 }
 
 function onOffQuantityButton(){
@@ -90,10 +90,10 @@ function resetOptionsValues() {
         quantity.previousElementSibling.disabled = true;
     }
 
-    changeDropdownHeader(this);
+    changeDropdownHeaderText(this);
 }
 
-function changeDropdownHeader(dropdown) {
+function changeDropdownHeaderText(dropdown) {
     /**
      * Изеняет текст хедера dropdown элемента
      */
@@ -138,7 +138,7 @@ function changeDropdownHeader(dropdown) {
 
     }
 
-    dropdown.dropdownHeader.textContent = headerText;
+    dropdown.dropdownHeaderText.innerText = headerText;
 }
 
 function wordGenerator(word, number) {

@@ -35,19 +35,19 @@ mixin dropdown(type='guests', title=none)
             h3(class="dropdown__title") !{title}
             label(for=type class='dropdown__header ' + borders)
                 .dropdown__header-element.dropdown__header-text !{headerText}
-                span(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
+                i(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
         else
             .dropdown__date-block
                 .dropdown__arrival.dropdown_dateElement
                     h3(class="dropdown__title") !{title}
                     label(for=type class='dropdown__header ' + borders)
                         .dropdown__header-element.dropdown__header-text !{headerText}
-                        span(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
+                        i(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
                 .dropdown__departure.dropdown_dateElement
                     h3(class="dropdown__title") !{title}
                     label(for=type class='dropdown__header ' + borders)
                         .dropdown__header-element.dropdown__header-text !{headerText}
-                        span(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
+                        i(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
 
         .dropdown__drop-menu
             if type == 'guests' || type == 'comfort'
