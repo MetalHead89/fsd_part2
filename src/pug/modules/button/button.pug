@@ -14,6 +14,6 @@ mixin button(type='regularButton', text='click me', theme='')
         - buttonPosition = 'button_position-relative '
     
     div(class='button ' + buttonPosition)
-        input(type="button", value=text, class=button_class + ' ' + buttonTheme)
+        input(type="button", value=text, class=button_class + ' ' + buttonTheme + ' ' + attributes.class)
         if type == 'arrowButton'
             span(class='material-icons button__arrow') arrow_forward

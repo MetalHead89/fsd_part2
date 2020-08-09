@@ -25,7 +25,7 @@ mixin dropdown(type='guests', title=none)
     else if type == 'filter_date'
         if !title
             - title = 'даты пребывания в отеле'
-        - var dropdownType = 'filter_dropdown_date'
+        - var dropdownType = 'dropdown_filter-date'
         - var headerText = 'Выберите период'
         - var borders = 'dropdown__header_all-angles-are-round'
 
@@ -33,7 +33,6 @@ mixin dropdown(type='guests', title=none)
         input(type="checkbox" id=type class='dropdown__check')
         if type != 'date'
             h3(class="dropdown__title") !{title}
-            //- input(type="checkbox" id=type class='dropdown__check')
             label(for=type class='dropdown__header ' + borders)
                 .dropdown__header-element.dropdown__header-text !{headerText}
                 span(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
@@ -62,6 +61,6 @@ mixin dropdown(type='guests', title=none)
                 if buttons
                     .dropdown__bottom-buttons-panel.dropdown__drop-element
                         .dropdown__button-clear
-                            +button('onlyTextButton', 'очистить', 'gray')
+                            +button('onlyTextButton', 'очистить', 'gray')(class='button_clear')
                         .dropdown__button-apply
-                            +button('onlyTextButton', 'применить')
+                            +button('onlyTextButton', 'применить')(class='button_apply')
