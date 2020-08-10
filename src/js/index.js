@@ -1,7 +1,6 @@
 //Scripts
 import '@/pug/modules/text-field/text-field.js'
 import '@/pug/modules/dropdown/dropdown.js'
-import '@/pug/modules/expandable-checkbox-list/expandable-checkbox-list.js'
 import '@/pug/modules/like-button/like-button.js'
 import '@/pug/modules/range-slider/range-slider.js'
 import '@/pug/modules/pagination/pagination.js'

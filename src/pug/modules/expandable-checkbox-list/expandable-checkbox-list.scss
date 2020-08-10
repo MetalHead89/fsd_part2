@@ -5,6 +5,16 @@
     max-width: 500px;
 }
 
+.expandable-checkbox-list__check {
+    display: none;
+    &:checked ~ .expandable-checkbox-list__hide-list {
+        display: block;
+    }
+    &:checked ~ .expandable-checkbox-list__title-section .expandable-checkbox-list__expand-more {
+        transform: rotate(180deg);
+    }
+}
+
 .expandable-checkbox-list__title-section {
     display: flex;
     flex-direction: row;
