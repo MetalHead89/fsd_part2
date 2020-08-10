@@ -7,6 +7,11 @@ class Dropdown {
         this.dropdownType = this.getDropdownType(this.dropdown);
         this.clearButton = this.dropdown.querySelector('.button_clear')
         this.dropdownHeaderText = this.dropdown.querySelector('.dropdown__header-text');
+        this.dropdownHeader = this.dropdown.querySelector('.dropdown__header');
+        this.dropMenu = this.dropdown.querySelector('.dropdown__drop-menu');
+        this.dropCheck = this.dropdown.querySelector('.dropdown__check');
+        this.closeTimer = null;
+        this.DROPDOWN_CLOSE_TIME = 10000;
     }
 
     getDropdownType(dropdown) {
@@ -39,6 +44,43 @@ for (let dropdown of dropdowns) {
             button.addEventListener('click', changeQuantity.bind(button, dropdownObject));
         }
     }
+
+    dropdownObject.dropdownHeader.onmouseout = autoCloseDropdown.bind(dropdownObject);
+    dropdownObject.dropMenu.onmouseout = autoCloseDropdown.bind(dropdownObject);
+    dropdownObject.dropdownHeader.onmouseover = resetCloseTimer.bind(dropdownObject);
+    dropdownObject.dropMenu.onmouseover = resetCloseTimer.bind(dropdownObject);
+}
+
+function autoCloseDropdown() {
+    if (this.dropCheck.checked &&
+        !event.relatedTarget.classList.contains('dropdown__header') && 
+        !event.relatedTarget.classList.contains('dropdown__drop-menu') &&
+        !event.relatedTarget.offsetParent.classList.contains('dropdown__drop-menu')) {
+            if (this.closeTimer == null) {
+                startCloseTimer.bind(this)();
+            }
+    }
+}
+
+function resetCloseTimer() {
+    if (this.dropCheck.checked &&
+        (event.relatedTarget.classList.contains('dropdown__header') || 
+        event.relatedTarget.classList.contains('dropdown__drop-menu') ||
+        event.relatedTarget.offsetParent.classList.contains('dropdown__drop-menu'))) {
+        if (this.closeTimer != null) {
+            clearTimeout(this.closeTimer);
+            startCloseTimer.bind(this)();
+        }
+    }
+}
+
+function startCloseTimer() {
+    this.closeTimer = setTimeout(closeDropMenu.bind(this), this.DROPDOWN_CLOSE_TIME);
+}
+
+function closeDropMenu() {
+    this.dropCheck.checked = false;
+    this.closeTimer = null;
 }
 
 function changeQuantity(dropdown) {
