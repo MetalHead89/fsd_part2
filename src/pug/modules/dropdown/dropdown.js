@@ -53,11 +53,13 @@ for (let dropdown of dropdowns) {
 }
 
 function closeOpenDropdowns() {
-    for (let dropdown of dropdowns) {
-        if (dropdown !== this && dropdown.querySelector('.dropdown__check').checked) {
-            dropdown.querySelector('.dropdown__check').checked = false;
+    if (!this.dropCheck.checked) {
+        for (let dropdown of dropdowns) {
+            if (dropdown !== this && dropdown.querySelector('.dropdown__check').checked) {
+                dropdown.querySelector('.dropdown__check').checked = false;
+            }
         }
-    }
+    }    
 }
 
 function autoCloseDropdown() {
