@@ -49,6 +49,15 @@ for (let dropdown of dropdowns) {
     dropdownObject.dropMenu.onmouseout = autoCloseDropdown.bind(dropdownObject);
     dropdownObject.dropdownHeader.onmouseover = resetCloseTimer.bind(dropdownObject);
     dropdownObject.dropMenu.onmouseover = resetCloseTimer.bind(dropdownObject);
+    dropdownObject.dropdownHeader.onclick = closeOpenDropdowns.bind(dropdownObject);
+}
+
+function closeOpenDropdowns() {
+    for (let dropdown of dropdowns) {
+        if (dropdown !== this && dropdown.querySelector('.dropdown__check').checked) {
+            dropdown.querySelector('.dropdown__check').checked = false;
+        }
+    }
 }
 
 function autoCloseDropdown() {
