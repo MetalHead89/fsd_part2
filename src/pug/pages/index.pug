@@ -14,6 +14,7 @@ include ../modules/button/button.pug
 include ../modules/pagination/pagination.pug
 include ../modules/bullet-list/bullet-list.pug
 include ../modules/guest-review/guest-review.pug
+include ../modules/calendar/calendar.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -117,3 +118,11 @@ html(lang="ru")
                         .form-elements__column_100-percent-width
                             .module
                                 +guestReview('assets/images/reviewPhoto1.png', 'Мурад Сарафанов', 5, 12, true, 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
+            h1(class="section-title") Cards
+            .section-block
+                .cards
+                    .cards_column
+                    .cards_column
+                    .cards_column
+                        .module.module_calendar
+                            +calendar

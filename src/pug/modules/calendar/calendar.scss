@@ -1,0 +1,92 @@
+@import '../../../scss/vars.scss';
+
+.calendar {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    padding-bottom: 15px;
+    cursor: default;
+    border: 1px solid $darkShade25;
+    box-sizing: border-box;
+    box-shadow: 0px 10px 20px $darkShade5;
+    border-radius: 4px;
+}
+
+.calendar__month-selection-section {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar__month-button {
+    color: $purple;
+    transition: opacity .5s ease;
+    &:hover {        
+        opacity: .5;
+    }
+    &:active {
+        transition: opacity 0s ease;
+        opacity: 1;
+    }
+}
+
+.calendar__month {
+    font-family: "Open Sans";
+    font-weight: bold;
+    font-size: 19px;
+    color: $darkShade100;
+}
+
+.calendar__days {
+    margin-top: 30px;
+}
+
+.calendar__names-of-week-days {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 12px;
+    color: #BC9CFF;
+}
+
+.calendar__day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // padding: 4.2%;
+    width: 40px;
+    height: 40px;
+}
+
+.calendar__current-day {
+    background: linear-gradient(180deg, $green 0%, $turquoise 100%);
+    color: white;
+    font-weight: bold;
+    border-radius: 22px;
+}
+
+.calendar__day-number_other-month {
+    color: $darkShade25;
+}
+
+.calendar__day-number_current-month {
+    transition: opacity .5s ease;
+    &:hover {
+        opacity: .5;
+    }
+}
+
+.calendar__week {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar__buttons-panel {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar__button_clear {
+    display: none;
+}

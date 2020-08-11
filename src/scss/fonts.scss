@@ -12,12 +12,12 @@
     font-weight: 400;
 }
 
-// @font-face {
-//     font-family: "Quicksand";
-//     src: url("/assets/fonts/Quicksand/QuicksandLight.woff2") format("woff2"); 
-//     font-style: normal; 
-//     font-weight: 300; 
-// }
+@font-face {
+    font-family: "Montserrat";
+    src: url("/assets/fonts/montserrat/montserratBold.woff") format("woff");
+    font-style: normal;
+    font-weight: 700;
+}
 
 @font-face {
     font-family: "Quicksand";

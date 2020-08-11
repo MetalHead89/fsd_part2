@@ -4,6 +4,7 @@ import '@/pug/modules/dropdown/dropdown.js'
 import '@/pug/modules/like-button/like-button.js'
 import '@/pug/modules/range-slider/range-slider.js'
 import '@/pug/modules/pagination/pagination.js'
+import '@/pug/modules/calendar/calendar.js'
 
 
 // Styles
@@ -27,3 +28,4 @@ import '@/pug/modules/button/button.scss'
 import '@/pug/modules/pagination/pagination.scss'
 import '@/pug/modules/bullet-list/bullet-list.scss'
 import '@/pug/modules/guest-review/guest-review.scss'
+import '@/pug/modules/calendar/calendar.scss'

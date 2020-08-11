@@ -186,3 +186,21 @@
         margin-bottom: 0;
     }
 }
+
+
+// Cards
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cards_column {
+    width: 100%;
+    max-width: 380px;
+}
+
+.module_calendar {
+    width: 320px;
+}
