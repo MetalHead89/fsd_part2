@@ -71,8 +71,7 @@ class Calendar {
 
         const daysInCurrentMonth = 32 - new Date(this.year, this.month, 32).getDate();
         const daysInPrevMonths = 32 - new Date(this.year, this.month - 1, 32).getDate();
-        const firstDayMonth = date.getDay() == 0 ? 7 : date.getDate();
-        console.log(date)
+        const firstDayMonth = date.getDay() == 0 ? 7 : date.getDay();
         const calendarBody = this.calendar.querySelector('.calendar__days');
         const weeksInCalendar = Math.ceil((daysInCurrentMonth + firstDayMonth - 1) / 7);
         
@@ -80,22 +79,37 @@ class Calendar {
 
         let dayNumber = 1;
         let dayInMonth = daysInCurrentMonth;
-        if (firstDayMonth != 0) {
-            dayNumber = daysInPrevMonths - firstDayMonth - 1;
+        let isOtherMonth = false;
+        let classList = 'calendar__day calendar__day-number_current-month';
+        if (firstDayMonth != 1) {
+            isOtherMonth = true;
+            classList = 'calendar__day  calendar__day-number_other-month';
+            dayNumber = daysInPrevMonths - firstDayMonth + 2;
             dayInMonth = daysInPrevMonths;
         }
         
-        for (let week = 0; week <= weeksInCalendar; week++) {
+        for (let week = 0; week < weeksInCalendar; week++) {
             const weekDiv = document.createElement('div');
             weekDiv.className = 'calendar__week';
 
             for (let weekDayNumber = 0; weekDayNumber < 7; weekDayNumber++) {
                 if (dayNumber > dayInMonth) {
+                    isOtherMonth = !isOtherMonth;
                     dayNumber = 1;
                     dayInMonth = daysInCurrentMonth;
                 }
+
+                if (!isOtherMonth) {
+                    classList = 'calendar__day calendar__day-number_current-month';
+                } else {
+                    classList = 'calendar__day  calendar__day-number_other-month';
+                }
+
+                if (!isOtherMonth && this.month == this.currentDate.getMonth() && this.year == this.currentDate.getFullYear() && this.currentDate.getDate() == dayNumber) {
+                    classList = 'calendar__day calendar__day-number_current-month calendar__current-day';
+                }
                 const calendarDay = document.createElement('span');
-                calendarDay.classList = 'calendar__day calendar__day-number_current-month';
+                calendarDay.classList = classList;
                 calendarDay.innerText = dayNumber;
                 weekDiv.append(calendarDay);
 
@@ -104,15 +118,6 @@ class Calendar {
 
             calendarBody.append(weekDiv);
         }
-
-        // let day = daysInCurrentMonth;
-        // if (weekDay != 0) {
-        //     day = 
-        // }
-        // for (let day = daysInPrevMonths - )
-
-        // const week = document.createElement('div');
-        // week.className = 'calendar__week';
     }
 }
 
