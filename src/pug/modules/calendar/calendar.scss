@@ -49,7 +49,7 @@
     color: #BC9CFF;
 }
 
-.calendar__day {
+.calendar__calendar-element {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,16 +65,35 @@
     border-radius: 22px;
 }
 
-.calendar__day-number_other-month {
-    color: $darkShade25;
-}
-
-.calendar__day-number_current-month {
+.calendar__day_selectable {
     transition: opacity .5s ease;
     &:hover {
         opacity: .5;
     }
 }
+
+.calendar__day_selected {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    color: white;
+    font-weight: bold;
+}
+
+.calendar__range-highlight_light {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    opacity: 0.25;
+}
+
+.calendar__day-number_other-month {
+    color: $darkShade25;
+}
+
+// .calendar__day-number_current-month {
+//     transition: opacity .5s ease;
+//     &:hover {
+//         opacity: .5;
+//     }
+// }
 
 .calendar__week {
     display: flex;

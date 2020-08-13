@@ -20,7 +20,7 @@ mixin calendar()
         .calendar__days
             .calendar__names-of-week-days
                 for day in ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
-                    span(class='calendar__day calendar__week-day-name') !{day}
+                    span(class='calendar__calendar-element calendar__week-day-name') !{day}
 
             while week <= weeksCount
                 .calendar__week
@@ -31,17 +31,17 @@ mixin calendar()
                             - maxDaysCount = 30
                             - dayNumber = 1
                             - isPrevMonth = false
-                            - calendarDayNumberClass = 'calendar__day calendar__day-number_current-month'
+                            - calendarDayNumberClass = 'calendar__calendar-element calendar__day calendar__day-number_current-month'
                         if dayNumber == currentDay
-                            - calendarDayNumberClass = 'calendar__day calendar__day-number_current-month calendar__current-day'
+                            - calendarDayNumberClass = ' calendar__calendar-element calendar__day calendar__day-number_current-month calendar__current-day'
                         if !isPrevMonth && dayNumber > maxDaysCount
                             - dayNumber = 1
-                            - calendarDayNumberClass = 'calendar__day  calendar__day-number_other-month'
+                            - calendarDayNumberClass = 'calendar__calendar-element calendar__day  calendar__day-number_other-month'
 
                         span(class=calendarDayNumberClass) !{dayNumber}
 
                         if dayNumber == currentDay
-                            - calendarDayNumberClass = 'calendar__day calendar__day-number_current-month'
+                            - calendarDayNumberClass = 'calendar__calendar-element calendar__day calendar__day-number_current-month'
 
                         - dayNumber += 1
                         - weekDay += 1
