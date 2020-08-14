@@ -20,8 +20,8 @@ class Calendar {
         this.prevMonthButton = calendar.querySelector('.calendar__prev-month');
         this.nextMonthButton = calendar.querySelector('.calendar__next-month');
 
-        // this.prevMonthButton.onclick = () => this.switchMonth(this.prevMonthButton);
-        // this.nextMonthButton.onclick = () => this.showRange(this.nextMonthButton);
+        this.prevMonthButton.onclick = () => this.switchMonth(this.prevMonthButton);
+        this.nextMonthButton.onclick = () => this.switchMonth(this.nextMonthButton);
 
         // for (let day of this.calendarDays) {
         //     day.onclick = () => this.selectDay(day);
@@ -35,6 +35,26 @@ class Calendar {
     switchMonth(button) {
         const date = button.classList.contains('calendar__prev-month') ? new Date(this.year, this.month - 1) : new Date(this.year, this.month + 1)
         this.refreshCalendar(date);
+
+        let selectableDays = this.calendar.querySelectorAll('.calendar__day_selectable');
+        selectableDays = Array.from(selectableDays);
+        
+        // let range = [];
+
+        // for (let day of this.dateRange) {
+        //     console.log(day)
+        //     let index = selectableDays.indexOf(day);
+
+        //     if (index != -1) {
+        //         range.push[index]
+        //     }
+        // }
+
+        // if (range.length == 2) {
+        //     range.sort(this.compareNumbers);
+        // }
+
+        // this.showRange(range);
     }
 
     selectDay(day) {
@@ -53,34 +73,14 @@ class Calendar {
             day.classList.remove('calendar__day_selected');
             day.parentNode.classList.remove('calendar__range-highlight_light-and-left-round');
             day.parentNode.classList.remove('calendar__range-highlight_light-and-right-round');
-        }  else if (this.dateRange.length == 2 && (day == this.dateRange[0] || day == this.dateRange[1])) {
+        } else if (this.dateRange.length == 2 && (day == this.dateRange[0] || day == this.dateRange[1])) {
             this.dateRange.splice(this.dateRange.indexOf(day), 1);
             this.choiceMode = true;
             day.classList.remove('calendar__day_selected');
         }
-        // const selectableElements = this.calendar.querySelectorAll('.calendar__day_selectable');
-        // if (day.classList.contains('calendar__day_selectable')) {
-        //     if (this.dateRanges[0] == null) {
-        //         day.classList.add('calendar__day_selected');
-        //         this.dateRanges[0] = day;
-        //     } else if (this.dateRanges[0] != null && this.getDateFromСalendar(day) < this.getDateFromСalendar(this.dateRanges[0])) {
-        //         this.dateRanges[0].classList.remove('calendar__day_selected');
-        //         day.classList.add('calendar__day_selected');
-        //         this.dateRanges[0] = day;
-        //     } else if (this.dateRanges[0] != null && this.getDateFromСalendar(day) > this.getDateFromСalendar(this.dateRanges[0])) {
-        //         if (this.dateRanges[1] == null) {
-        //             this.dateRanges[1] = day;
-        //         } else {
-        //             this.dateRanges[1].classList.remove('calendar__day_selected');
-        //             day.classList.add('calendar__day_selected');
-        //             this.dateRanges[1] = day;
-        //         }
-        //     }
-            
-        // }
     }
 
-    showRange(day) {
+    setRangeHighlight(day) {
         if (this.choiceMode && day.classList.contains('calendar__day_selectable')) {
             let selectableDays = this.calendar.querySelectorAll('.calendar__day_selectable');
             selectableDays = Array.from(selectableDays);
@@ -92,53 +92,36 @@ class Calendar {
             }
 
             let range = []
-            range.push(selectableDays.indexOf(this.dateRange[0]));
-            range.push(selectableDays.indexOf(day));
-            range.sort(compareNumbers);
-
-            for(let index = range[0];index <= range[1]; index++) {
-                if (index == range[0]) {
-                    selectableDays[index].parentNode.classList.add('calendar__range-highlight_light-and-left-round');
-                } else if (index == range[1]) {
-                    selectableDays[index].parentNode.classList.add('calendar__range-highlight_light-and-right-round');
-                } else {
-                    selectableDays[index].parentNode.classList.add('calendar__range-highlight_light');
-                }
+            if (selectableDays.indexOf(this.dateRange[0]) == -1) {
+                range.push(0);
+            } else {
+                range.push(selectableDays.indexOf(this.dateRange[0]));
             }
 
-            // let startRange = this.dateRange[0].parentElement;
-            // let endRange = day.parentElement;
-            // if (this.getDateFromСalendar(this.dateRange[0]) > this.getDateFromСalendar(day)) {
-            //     startRange = day.parentElement;
-            //     endRange = this.dateRange[0].parentElement;
-            // }
+            range.push(selectableDays.indexOf(day));
+            range.sort(this.compareNumbers);
 
-            // while (startRange != endRange) {
-            //     startRange.classList.add('calendar__range-highlight_light')
-            //     startRange = startRange.NextSibling
-            // }
+            this.showRange(range);
         }
-
-        function compareNumbers(a, b) {
-            return a - b;
-          }
-
-
-
-        // if (this.choiceMode) {
-        //     // let startRange = this.dateRange[0].parentElement;
-        //     // let endRange = day.parentElement;
-        //     // if (this.getDateFromСalendar(this.dateRange[0]) > this.getDateFromСalendar(day)) {
-        //     //     startRange = day.parentElement;
-        //     //     endRange = this.dateRange[0].parentElement;
-        //     // }
-
-        //     // while (startRange != endRange) {
-        //     //     startRange.classList.add('calendar__range-highlight_light')
-        //     //     startRange = startRange.NextSibling
-        //     // }
-        // }
     }
+
+    showRange(range) {
+        let selectableDays = this.calendar.querySelectorAll('.calendar__day_selectable');
+
+        for(let index = range[0];index <= range[1]; index++) {
+            if (index == range[0]) {
+                selectableDays[index].parentNode.classList.add('calendar__range-highlight_light-and-left-round');
+            } else if (index == range[1]) {
+                selectableDays[index].parentNode.classList.add('calendar__range-highlight_light-and-right-round');
+            } else {
+                selectableDays[index].parentNode.classList.add('calendar__range-highlight_light');
+            }
+        }
+    }
+
+    compareNumbers(a, b) {
+        return a - b;
+      }
 
     getDateFromСalendar(day) {
         if (!day.classList.contains('calendar__day-number_other-month')) {
@@ -206,12 +189,11 @@ class Calendar {
 
                 const calendarDay = document.createElement('span');
                 calendarDay.onclick = () => this.selectDay(calendarDay);
-                // calendarDay.onmouseover = () => this.showRange(calendarDay);
                 calendarDay.classList = classList;
                 calendarDay.innerText = calendarDate.getDate();
 
                 const rangeHighlight = document.createElement('div');
-                rangeHighlight.onmouseover = () => this.showRange(calendarDay);
+                rangeHighlight.onmouseover = () => this.setRangeHighlight(calendarDay);
                 rangeHighlight.classList = 'calendar__range-highlight';
 
                 rangeHighlight.append(calendarDay);
