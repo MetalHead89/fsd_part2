@@ -80,20 +80,17 @@
 }
 
 .calendar__range-highlight_light {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    opacity: 0.25;
+    background: linear-gradient(180deg, RGBA(188, 156, 255, 0.25) 0%, RGBA(139, 164, 249, 0.25) 100%);
 }
 
 .calendar__range-highlight_light-and-left-round {
     border-radius: 22px 0 0 22px;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    opacity: 0.25;
+    background: linear-gradient(180deg, RGBA(188, 156, 255, 0.25) 0%, RGBA(139, 164, 249, 0.25) 100%);
 }
 
 .calendar__range-highlight_light-and-right-round {
     border-radius: 0 22px 22px 0;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    opacity: 0.25;
+    background: linear-gradient(180deg, RGBA(188, 156, 255, 0.25) 0%, RGBA(139, 164, 249, 0.25) 100%);
 }
 
 .calendar__day-number_other-month {
