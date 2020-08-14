@@ -41,6 +41,22 @@ class Calendar {
         if (this.dateRange.length == 0 && day.classList.contains('calendar__day_selectable')) {
             this.dateRange.push(day);
             this.choiceMode = true;
+            day.classList.add('calendar__day_selected');
+        } else if (this.dateRange.length == 1 && day.classList.contains('calendar__day_selectable') 
+            && day != this.dateRange[0]) {
+                this.dateRange.push(day);
+                this.choiceMode = false;
+                day.classList.add('calendar__day_selected');
+        } else if (this.dateRange.length == 1 && day == this.dateRange[0]) {
+            this.dateRange.pop();
+            this.choiceMode = false;
+            day.classList.remove('calendar__day_selected');
+            day.parentNode.classList.remove('calendar__range-highlight_light-and-left-round');
+            day.parentNode.classList.remove('calendar__range-highlight_light-and-right-round');
+        }  else if (this.dateRange.length == 2 && (day == this.dateRange[0] || day == this.dateRange[1])) {
+            this.dateRange.splice(this.dateRange.indexOf(day), 1);
+            this.choiceMode = true;
+            day.classList.remove('calendar__day_selected');
         }
         // const selectableElements = this.calendar.querySelectorAll('.calendar__day_selectable');
         // if (day.classList.contains('calendar__day_selectable')) {
