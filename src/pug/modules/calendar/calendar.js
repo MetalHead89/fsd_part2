@@ -16,9 +16,11 @@ class Calendar {
         this.calendarDays = this.calendar.querySelectorAll('.calendar__day');
         this.prevMonthButton = calendar.querySelector('.calendar__prev-month');
         this.nextMonthButton = calendar.querySelector('.calendar__next-month');
+        this.clearButton = calendar.querySelector('.calendar__button_clear');
 
         this.prevMonthButton.onclick = () => this.switchMonth(this.prevMonthButton);
         this.nextMonthButton.onclick = () => this.switchMonth(this.nextMonthButton);
+        this.clearButton.onclick = () => this.clearRange();
     }
 
     switchMonth(button) {
@@ -96,6 +98,12 @@ class Calendar {
                 this.dateRange[1] = this.getDateFromСalendar(day).getTime();
                 this.showRange(this.dateRange);
         }
+
+        if (this.dateRange.length > 0) {
+            this.clearButton.style.display = 'block';
+        } else {
+            this.clearButton.removeAttribute('style');
+        }
     }
 
     setRangeHighlight(day) {
@@ -149,6 +157,21 @@ class Calendar {
                 return new Date(this.year, this.month + 1, day.innerText)
             }
         }
+    }
+
+    clearRange() {
+        const selectableDays = this.calendar.querySelectorAll('.calendar__day_selectable');
+
+        for (let day of selectableDays) {
+            day.classList.remove('calendar__day_selected');
+            day.parentNode.classList.remove('calendar__range-highlight_light-and-left-round');
+            day.parentNode.classList.remove('calendar__range-highlight_light-and-right-round');
+            day.parentNode.classList.remove('calendar__range-highlight_light');
+        }
+
+        this.dateRange = [];
+        this.choiceMode = false;
+        this.clearButton.removeAttribute('style');
     }
 
     refreshCalendar(date=new Date(this.year, this.month)) {
