@@ -17,10 +17,12 @@ class Calendar {
         this.prevMonthButton = calendar.querySelector('.calendar__prev-month');
         this.nextMonthButton = calendar.querySelector('.calendar__next-month');
         this.clearButton = calendar.querySelector('.calendar__button_clear');
+        this.applyButton = calendar.querySelector('.calendar__button_apply');
 
         this.prevMonthButton.onclick = () => this.switchMonth(this.prevMonthButton);
         this.nextMonthButton.onclick = () => this.switchMonth(this.nextMonthButton);
         this.clearButton.onclick = () => this.clearRange();
+        this.applyButton.onclick = () => this.applyRange();
     }
 
     switchMonth(button) {
@@ -108,7 +110,7 @@ class Calendar {
 
     setRangeHighlight(day) {
         if (this.choiceMode && day.classList.contains('calendar__day_selectable')) {
-            let selectableDays = this.calendar.querySelectorAll('.calendar__day_selectable');
+            // let selectableDays = this.calendar.querySelectorAll('.calendar__day_selectable');
 
             let range = [this.dateRange[0], this.getDateFromСalendar(day).getTime()];
             range.sort(this.compareNumbers);
@@ -118,16 +120,16 @@ class Calendar {
     }
 
     showRange(range) {
-        if (range[0] == range[1]) {
-            return;
-        }
-
         const selectableDays = this.calendar.querySelectorAll('.calendar__day_selectable');
 
         for (let selectableDay of selectableDays) {
             selectableDay.parentNode.classList.remove('calendar__range-highlight_light-and-left-round');
             selectableDay.parentNode.classList.remove('calendar__range-highlight_light-and-right-round');
             selectableDay.parentNode.classList.remove('calendar__range-highlight_light');
+        }
+
+        if (range[0] == range[1]) {
+            return;
         }
 
         for (let day of selectableDays) {
@@ -172,6 +174,41 @@ class Calendar {
         this.dateRange = [];
         this.choiceMode = false;
         this.clearButton.removeAttribute('style');
+
+        const parent = this.calendar.offsetParent;
+        if (parent.classList.contains('dropdown_date')) {
+            parent.querySelector('.dropdown__startDate').innerText = 'ДД.ММ.ГГГГ';
+            parent.querySelector('.dropdown__endDate').innerText = 'ДД.ММ.ГГГГ';
+        } else if (parent.classList.contains('dropdown_filter-date')) {
+            parent.querySelector('.dropdown__header-text').innerText = 'Выберите период';
+        }
+    }
+
+    applyRange() {
+        this.dateRange.sort(this.compareNumbers);
+        parent = this.calendar.offsetParent;
+
+        if (this.dateRange.length == 2) {
+            const startDate = new Date(this.dateRange[0]);
+            const endDate = new Date(this.dateRange[1]);
+
+            if (parent.classList.contains('dropdown_date')) {
+                parent.querySelector('.dropdown__startDate').innerText = startDate.toLocaleString("ru", {day: 'numeric', month: 'numeric', year: 'numeric'});
+                parent.querySelector('.dropdown__endDate').innerText = endDate.toLocaleString("ru", {day: 'numeric', month: 'numeric', year: 'numeric'})
+            } else if (parent.classList.contains('dropdown_filter-date')) {
+                parent.querySelector('.dropdown__header-text').innerText = `${startDate.getDate()} `
+                    + `${this.MONTHS[startDate.getMonth()].toLowerCase().slice(0, 3)} - `
+                    + `${endDate.getDate()} ${this.MONTHS[endDate.getMonth()].toLowerCase().slice(0, 3)} `;
+            }
+        } else {
+            if (parent.classList.contains('dropdown_date')) {
+                parent.querySelector('.dropdown__startDate').innerText = 'ДД.ММ.ГГГГ';
+                parent.querySelector('.dropdown__endDate').innerText = 'ДД.ММ.ГГГГ';
+            } else if (parent.classList.contains('dropdown_filter-date')) {
+                parent.querySelector('.dropdown__header-text').innerText = 'Выберите период';
+            }
+        }
+        
     }
 
     refreshCalendar(date=new Date(this.year, this.month)) {
@@ -233,7 +270,7 @@ class Calendar {
 
                 const rangeHighlight = document.createElement('div');
                 rangeHighlight.onmouseover = () => this.setRangeHighlight(calendarDay);
-                rangeHighlight.classList = 'calendar__range-highlight';
+                rangeHighlight.classList = 'calendar__range-highlight calendar__calendar-element';
 
                 rangeHighlight.append(calendarDay);
                 weekDiv.append(rangeHighlight);

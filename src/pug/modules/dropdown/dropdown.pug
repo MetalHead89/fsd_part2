@@ -1,4 +1,5 @@
 include ../button/button.pug
+include ../calendar/calendar.pug
 
 mixin dropdown(type='guests', title=none)
 
@@ -19,6 +20,7 @@ mixin dropdown(type='guests', title=none)
         - var headerText = 'Выберите удобства'
         - var borders = 'dropdown__header_top-angles-are-round'
     else if type == 'date'
+        - var calendarClass = 'dropdown__calendar_padding-6 dropdown__drop-menu'
         - var dropdownType = 'dropdown_date'
         - var headerText = 'ДД.ММ.ГГГГ'
         - var borders = 'dropdown__header_all-angles-are-round'
@@ -28,6 +30,7 @@ mixin dropdown(type='guests', title=none)
         - var dropdownType = 'dropdown_filter-date'
         - var headerText = 'Выберите период'
         - var borders = 'dropdown__header_all-angles-are-round'
+        - var calendarClass = 'dropdown__drop-menu calendar_without-top-border'
 
     div(class='dropdown ' + dropdownType)
         input(type="checkbox" id=type class='dropdown__check')
@@ -40,17 +43,17 @@ mixin dropdown(type='guests', title=none)
             .dropdown__date-block
                 .dropdown__arrival.dropdown_dateElement
                     h3(class="dropdown__title") !{title}
-                    label(for=type class='dropdown__header ' + borders)
-                        .dropdown__header-element.dropdown__header-text !{headerText}
+                    label(for=type class='dropdown__header dropdown__start-date-header ' + borders)
+                        .dropdown__header-element.dropdown__header-text.dropdown__startDate !{headerText}
                         i(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
                 .dropdown__departure.dropdown_dateElement
                     h3(class="dropdown__title") !{title}
-                    label(for=type class='dropdown__header ' + borders)
-                        .dropdown__header-element.dropdown__header-text !{headerText}
+                    label(for=type class='dropdown__header dropdown__end-date-header ' + borders)
+                        .dropdown__header-element.dropdown__header-text.dropdown__endDate !{headerText}
                         i(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
 
-        .dropdown__drop-menu
-            if type == 'guests' || type == 'comfort'
+        if type == 'guests' || type == 'comfort'
+            .dropdown__drop-menu
                 each val in options
                     .dropdown__option.dropdown__drop-element
                         .dropdown__option-title !{val}
@@ -61,6 +64,8 @@ mixin dropdown(type='guests', title=none)
                 if buttons
                     .dropdown__bottom-buttons-panel.dropdown__drop-element
                         .dropdown__button-clear
-                            +button('onlyTextButton', 'очистить', 'gray')(class='button_clear')
+                            +button('onlyTextButton', 'очистить', 'gray')(class='dropdown__button_clear')
                         .dropdown__button-apply
-                            +button('onlyTextButton', 'применить')(class='button_apply')
+                            +button('onlyTextButton', 'применить')(class='dropdown__button_apply')
+        else
+            +calendar()(class=calendarClass)

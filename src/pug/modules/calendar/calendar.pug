@@ -12,7 +12,7 @@ mixin calendar()
 
 
 
-    .calendar
+    div(class='calendar ' + attributes.class)
         .calendar__month-selection-section
             i(class='material-icons calendar__month-button calendar__prev-month') arrow_back
             span(class='calendar__month') Сентябрь 1989
@@ -52,54 +52,3 @@ mixin calendar()
                 +button('onlyTextButton', 'очистить', 'gray')(class='calendar__button_clear')
             .calendar__button-apply
                 +button('onlyTextButton', 'применить')(class='calendar__button_apply')
-
-
-
-
-
-//- include ../button/button.pug
-
-//- mixin calendar()
-//-     - const MONTHS = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
-//-     - const MAX_DAYS_COUNT = 31
-//-     - const WEEK_DAYS = 7
-//-     - const currentDate = new Date()    
-//-     - const currentMonth = currentDate.getMonth
-
-//-     - let weeksCount = 5
-//-     - let week = 1    
-//-     - let dayNumber = 1
-//-     - let calendarDayNumberClass = 'calendar__day calendar__day-number_current-month'
-//-     - let headerText = 'Сентябрь 1989'
-//-     - let currentDay = 6
-
-//-     if currentDate
-//-         - headerText = MONTHS[currentDate.getMonth()] + ' ' + currentDate.getFullYear()
-
-
-
-//-     .calendar
-//-         .calendar__month-selection-section
-//-             i(class='material-icons calendar__month-button calendar__prev-month') arrow_back
-//-             span(class='calendar__month') !{headerText}
-//-             i(class='material-icons calendar__month-button calendar__next-month') arrow_forward
-//-         .calendar__days
-//-             .calendar__names-of-week-days
-//-                 for day in ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
-//-                     span(class='calendar__day calendar__week-day-name') !{day}
-//-             while week <= weeksCount
-//-                 .calendar__week
-//-                     - let weekDay = 1
-//-                     while weekDay <= WEEK_DAYS
-//-                         if dayNumber > MAX_DAYS_COUNT
-//-                             - dayNumber = 1
-//-                             - calendarDayNumberClass = 'calendar__day  calendar__day-number_other-month'
-//-                         span(class=calendarDayNumberClass) !{dayNumber}
-//-                         - dayNumber += 1
-//-                         - weekDay += 1
-//-                 - week += 1
-//-         .calendar__buttons-panel
-//-             .calendar__button-clear
-//-                 +button('onlyTextButton', 'очистить', 'gray')(class='calendar__button_clear')
-//-             .calendar__button-apply
-//-                 +button('onlyTextButton', 'применить')(class='calendar__button_apply')

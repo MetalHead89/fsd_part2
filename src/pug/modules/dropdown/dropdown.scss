@@ -20,8 +20,8 @@
     justify-content: space-between;
     align-items: center;
     color: $darkShade75;
+    transition: border-color .5s ease;
     &:hover, &:focus {
-        // transition: border-color .5s ease;
         border: 1px solid $darkShade50;
         outline: none;
         cursor: default
@@ -79,7 +79,7 @@
     transform-origin: top;
     transform: scale(1, 0);
     z-index: 99;
-    & .dropdown__drop-element {
+    & .dropdown__drop-element, & .calendar__days, & .calendar__month-selection-section {
         opacity: 0;
     }
 }
@@ -99,14 +99,14 @@
         transition: transform .4s cubic-bezier(.73,.32,.34,1.5);
         transform: scale(1, 1);
         opacity: 1;
-        & .dropdown__drop-element {
+        & .dropdown__drop-element, & .calendar__days, & .calendar__month-selection-section {
             transition: opacity 1.2s ease;
             opacity: 1;
         }
     }
     &:not(:checked) ~ .dropdown__drop-menu {
         transition: transform .5s;
-        & .dropdown__drop-element {
+        & .dropdown__drop-element, & .calendar__days, & .calendar__month-selection-section {
             transition: opacity .3s;
         }
     }
@@ -179,4 +179,8 @@
     & input {
         display: none;
     }
+}
+
+.dropdown__calendar_padding-6 {
+    margin-top: 6px;
 }
