@@ -8,11 +8,8 @@ class Calendar {
         this.currentDate.setHours(0, 0, 0, 0);
         this.calendar = calendar;
         this.calendarTitle = calendar.querySelector('.calendar__month');
-        // this.startDate = null;
-        // this.endDate = null;
         this.year = this.currentDate.getFullYear();
         this.month = this.currentDate.getMonth();
-        // this.dateRanges = [null, null]
         this.dateRange = [];
         this.choiceMode = false;
 
@@ -22,83 +19,90 @@ class Calendar {
 
         this.prevMonthButton.onclick = () => this.switchMonth(this.prevMonthButton);
         this.nextMonthButton.onclick = () => this.switchMonth(this.nextMonthButton);
-
-        // for (let day of this.calendarDays) {
-        //     day.onclick = () => this.selectDay(day);
-        // }
-
-        // for (let day of this.calendarDays) {
-        //     day.onmouseover = () => this.selectDay(day);
-        // }
     }
 
     switchMonth(button) {
         const date = button.classList.contains('calendar__prev-month') ? new Date(this.year, this.month - 1) : new Date(this.year, this.month + 1)
         this.refreshCalendar(date);
 
-        let selectableDays = this.calendar.querySelectorAll('.calendar__day_selectable');
-        selectableDays = Array.from(selectableDays);
-        
-        // let range = [];
+        if (this.dateRange.length > 0) {
+            let selectableDays = this.calendar.querySelectorAll('.calendar__day_selectable');
 
-        // for (let day of this.dateRange) {
-        //     console.log(day)
-        //     let index = selectableDays.indexOf(day);
+            for (let day of selectableDays) {
+                if (this.dateRange.indexOf(this.getDateFromСalendar(day).getTime()) != -1) {
+                    day.classList.add('calendar__day_selected');
+                }
+            }
 
-        //     if (index != -1) {
-        //         range.push[index]
-        //     }
-        // }
-
-        // if (range.length == 2) {
-        //     range.sort(this.compareNumbers);
-        // }
-
-        // this.showRange(range);
+            this.dateRange.sort(this.compareNumbers);
+            this.showRange(this.dateRange);
+        }
     }
 
     selectDay(day) {
         if (this.dateRange.length == 0 && day.classList.contains('calendar__day_selectable')) {
-            this.dateRange.push(day);
+
+            this.dateRange.push(this.getDateFromСalendar(day).getTime());
             this.choiceMode = true;
             day.classList.add('calendar__day_selected');
-        } else if (this.dateRange.length == 1 && day.classList.contains('calendar__day_selectable') 
-            && day != this.dateRange[0]) {
-                this.dateRange.push(day);
+
+        } else if (this.dateRange.length == 1 && day.classList.contains('calendar__day_selectable')
+            && this.getDateFromСalendar(day).getTime() != this.dateRange[0]) {
+
+                this.dateRange.push(this.getDateFromСalendar(day).getTime());
                 this.choiceMode = false;
                 day.classList.add('calendar__day_selected');
-        } else if (this.dateRange.length == 1 && day == this.dateRange[0]) {
+
+        } else if (this.dateRange.length == 1 && this.getDateFromСalendar(day).getTime() == this.dateRange[0]) {
+
             this.dateRange.pop();
             this.choiceMode = false;
             day.classList.remove('calendar__day_selected');
             day.parentNode.classList.remove('calendar__range-highlight_light-and-left-round');
             day.parentNode.classList.remove('calendar__range-highlight_light-and-right-round');
-        } else if (this.dateRange.length == 2 && (day == this.dateRange[0] || day == this.dateRange[1])) {
-            this.dateRange.splice(this.dateRange.indexOf(day), 1);
-            this.choiceMode = true;
-            day.classList.remove('calendar__day_selected');
+
+        } else if (this.dateRange.length == 2 
+            && (this.getDateFromСalendar(day).getTime() == this.dateRange[0] || this.getDateFromСalendar(day).getTime() == this.dateRange[1])) {
+
+                this.dateRange.splice(this.dateRange.indexOf(this.getDateFromСalendar(day).getTime()), 1);
+                this.choiceMode = true;
+                day.classList.remove('calendar__day_selected');
+
+        } else if (this.dateRange.length == 2 && day.classList.contains('calendar__day_selectable') && 
+            this.getDateFromСalendar(day).getTime() < this.dateRange.sort(this.compareNumbers)[0]) {
+
+                const selectedDays = this.calendar.querySelectorAll('.calendar__day_selected');
+
+                if (selectedDays[0]) {
+                    selectedDays[0].classList.remove('calendar__day_selected');
+                }
+
+                day.classList.add('calendar__day_selected');                
+                this.dateRange[0] = this.getDateFromСalendar(day).getTime();
+                this.showRange(this.dateRange);
+
+        } else if (this.dateRange.length == 2 && day.classList.contains('calendar__day_selectable') && 
+            this.getDateFromСalendar(day).getTime() > this.dateRange.sort(this.compareNumbers)[0]) {
+
+                const selectedDays = this.calendar.querySelectorAll('.calendar__day_selected');
+
+                if (selectedDays.length == 2) {
+                    selectedDays[1].classList.remove('calendar__day_selected');
+                } else if (selectedDays.length == 1 && this.getDateFromСalendar(selectedDays[0]).getTime() != this.dateRange.sort(this.compareNumbers)[0]){
+                    selectedDays[0].classList.remove('calendar__day_selected');
+                }
+
+                day.classList.add('calendar__day_selected');                
+                this.dateRange[1] = this.getDateFromСalendar(day).getTime();
+                this.showRange(this.dateRange);
         }
     }
 
     setRangeHighlight(day) {
         if (this.choiceMode && day.classList.contains('calendar__day_selectable')) {
             let selectableDays = this.calendar.querySelectorAll('.calendar__day_selectable');
-            selectableDays = Array.from(selectableDays);
 
-            for (let selectableDay of selectableDays) {
-                selectableDay.parentNode.classList.remove('calendar__range-highlight_light-and-left-round');
-                selectableDay.parentNode.classList.remove('calendar__range-highlight_light-and-right-round');
-                selectableDay.parentNode.classList.remove('calendar__range-highlight_light');
-            }
-
-            let range = []
-            if (selectableDays.indexOf(this.dateRange[0]) == -1) {
-                range.push(0);
-            } else {
-                range.push(selectableDays.indexOf(this.dateRange[0]));
-            }
-
-            range.push(selectableDays.indexOf(day));
+            let range = [this.dateRange[0], this.getDateFromСalendar(day).getTime()];
             range.sort(this.compareNumbers);
 
             this.showRange(range);
@@ -106,15 +110,27 @@ class Calendar {
     }
 
     showRange(range) {
-        let selectableDays = this.calendar.querySelectorAll('.calendar__day_selectable');
+        if (range[0] == range[1]) {
+            return;
+        }
 
-        for(let index = range[0];index <= range[1]; index++) {
-            if (index == range[0]) {
-                selectableDays[index].parentNode.classList.add('calendar__range-highlight_light-and-left-round');
-            } else if (index == range[1]) {
-                selectableDays[index].parentNode.classList.add('calendar__range-highlight_light-and-right-round');
-            } else {
-                selectableDays[index].parentNode.classList.add('calendar__range-highlight_light');
+        const selectableDays = this.calendar.querySelectorAll('.calendar__day_selectable');
+
+        for (let selectableDay of selectableDays) {
+            selectableDay.parentNode.classList.remove('calendar__range-highlight_light-and-left-round');
+            selectableDay.parentNode.classList.remove('calendar__range-highlight_light-and-right-round');
+            selectableDay.parentNode.classList.remove('calendar__range-highlight_light');
+        }
+
+        for (let day of selectableDays) {
+            let dayToTime = this.getDateFromСalendar(day).getTime();
+
+            if (dayToTime == range[0]) {
+                day.parentNode.classList.add('calendar__range-highlight_light-and-left-round');
+            } else if (dayToTime == range[1]) {
+                day.parentNode.classList.add('calendar__range-highlight_light-and-right-round');
+            } else if (dayToTime >= range[0] && dayToTime <= range[1]) {
+                day.parentNode.classList.add('calendar__range-highlight_light');
             }
         }
     }
