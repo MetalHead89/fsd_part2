@@ -8,7 +8,10 @@ mixin numberCard(args)
         .number-card__slider-section
             <ul class="number-card__slider-list">
                 each img, index in args.images
-                    <li class="number-card__slider-list-item"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
+                    if index == 0
+                        <li class="number-card__slider-list-item number-card__slider-list-item_opacity1"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
+                    else
+                        <li class="number-card__slider-list-item number-card__slider-list-item_opacity0"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
             </ul>
             button(class='number-card__prevButton number-card__arrow-button')
                 i(class="material-icons") keyboard_arrow_left

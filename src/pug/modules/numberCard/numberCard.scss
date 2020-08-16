@@ -37,9 +37,16 @@
     display: block;
     width: 100%;
     transition: opacity 1s ease-in;
-    opacity: 1;
     position: absolute;
     z-index: 2;
+}
+
+.number-card__slider-list-item_opacity1{
+    opacity: 1;
+}
+
+.number-card__slider-list-item_opacity0{
+    opacity: 0;
 }
 
 .number-card__arrow-button {
