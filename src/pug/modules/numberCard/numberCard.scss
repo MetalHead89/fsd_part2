@@ -1,0 +1,69 @@
+@import '../../../scss/vars.scss';
+
+.number-card {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    box-shadow: 0px 10px 20px $darkShade5;
+    border-radius: 4px;
+    flex-direction: column;
+}
+
+.number-card__room-info {
+    padding: 20px;
+}
+
+.number-card__number-section {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.number-card__number {
+    display: inline;
+    font-family: 'Quicksand';
+    font-weight: bold;
+    font-size: 14px;
+    color: $darkShade100;
+    line-height: 0;
+}
+
+.number-card__number_size19 {
+    font-size: 19px;
+}
+
+.number-card__lux {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $purple;
+    line-height: 0;
+}
+
+.number-card__room-rate  {
+    display: inline-block;
+    font-size: 12px;
+}
+
+.number-card__accented-text {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 14px;
+    color: $darkShade50;
+}
+
+.number-card__separator {
+    margin: 8px 0;
+    height: 1px;
+    background: rgba(31, 32, 65, 0.1);
+    width: 100%;
+}
+
+.number-card__rating-section {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

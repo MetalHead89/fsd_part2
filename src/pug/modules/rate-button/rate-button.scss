@@ -1,5 +1,9 @@
 @import '../../../scss/vars.scss';
 
+.rate-button {
+    line-height: 0;
+}
+
 .rate-button__star {
     font-size: 24px;
     background: linear-gradient(180deg, $purple 0%, $blue 100%);

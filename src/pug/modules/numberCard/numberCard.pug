@@ -1,0 +1,21 @@
+include ../rate-button/rate-button.pug
+
+mixin numberCard(args)
+    .number-card
+        .number-card__slider-section
+        .number-card__room-info
+            .number-card__number-section
+                .number-card__room-number
+                    span(class='number-card__number') №
+                    |   #[span(class='number-card__number number-card__number_size19') !{args.roomNumber}]
+                    if args.lux
+                        |    #[span(class='number-card__lux') ЛЮКС]
+                .number-card__room-rate 
+                    span(class='number-card__accented-text') !{args.roomRate.toLocaleString('ru-RU')}&#8381 
+                    span в сутки
+            .number-card__separator
+            .number-card__rating-section
+                +rateButton(args.rating)
+                .number-card__rating
+                    span(class='number-card__accented-text') !{args.reviewsNumber} 
+                    span Отзывов

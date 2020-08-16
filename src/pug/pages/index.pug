@@ -15,6 +15,7 @@ include ../modules/pagination/pagination.pug
 include ../modules/bullet-list/bullet-list.pug
 include ../modules/guest-review/guest-review.pug
 include ../modules/calendar/calendar.pug
+include ../modules/numberCard/numberCard.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -126,3 +127,7 @@ html(lang="ru")
                     .cards_column
                         .module.module_calendar
                             +calendar
+                        .cards_column-270
+                            .module
+                                +numberCard({roomNumber: 888, lux: true, roomRate: 9990, rating: 5, reviewsNumber: 145})
+                        
