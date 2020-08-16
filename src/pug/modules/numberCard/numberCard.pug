@@ -1,8 +1,23 @@
 include ../rate-button/rate-button.pug
 
 mixin numberCard(args)
+    - var dot = 0
+    - var dots = args.images.length
+
     .number-card
         .number-card__slider-section
+            <ul class="number-card__slider-list">
+                each img, index in args.images
+                    <li class="number-card__slider-list-item"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
+            </ul>
+            button(class='number-card__prevButton number-card__arrow-button')
+                i(class="material-icons") keyboard_arrow_left
+            button(class='number-card__nextButton number-card__arrow-button')
+                i(class="material-icons") keyboard_arrow_right
+            .number-card__slider-dots
+                while dot < dots
+                    .number-card__dot
+                    - dot += 1
         .number-card__room-info
             .number-card__number-section
                 .number-card__room-number
