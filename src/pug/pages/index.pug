@@ -49,20 +49,20 @@ html(lang="ru")
                                 h3(class='module__title') Text Field
                                 +text_field()
                             .module
-                                +dropdown('guests', 'dropdown')
+                                +dropdown('guests', 'uiDrop', 'dropdown')
                             .module
                                 h3(class='module__title') masked text field
                                 +text_field('Email', 'masked')
                             .module
-                                +dropdown('date', 'date Dropdown', 'date Dropdown')
+                                +dropdown('date', 'uiDateDrop', 'date Dropdown', 'date Dropdown')
                             div(class='module module_width266')
                                 .module
-                                    +dropdown('filter_date', 'filter date dropdown')
+                                    +dropdown('filter_date', 'uiFilterDateDrop', 'filter date dropdown')
                                 .module
                                     h3(class='module__title') subscription text field
                                     +text_field('Email', 'subscription')
                                 .module
-                                    +dropdown('comfort', 'dropdown')
+                                    +dropdown('comfort', 'uiComfortDrop', 'dropdown')
                                 .module
                                     +expandable-checkbox-list([['Завтрак', 'breakfast'], ['Письменный стол', 'desk', true], ['Стул для кормления', 
                                     'feedingChair', true], ['Кроватка', 'crib', true], ['Телевизор', 'tv'], ['Шампунь', 'shampoo']], 'expandable checkbox list')
