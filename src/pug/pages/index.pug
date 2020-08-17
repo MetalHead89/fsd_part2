@@ -16,6 +16,7 @@ include ../modules/bullet-list/bullet-list.pug
 include ../modules/guest-review/guest-review.pug
 include ../modules/calendar/calendar.pug
 include ../modules/numberCard/numberCard.pug
+include ../modules/searchRoomCard/searchRoomCard.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -53,7 +54,7 @@ html(lang="ru")
                                 h3(class='module__title') masked text field
                                 +text_field('Email', 'masked')
                             .module
-                                +dropdown('date', 'date Dropdown')
+                                +dropdown('date', 'date Dropdown', 'date Dropdown')
                             div(class='module module_width266')
                                 .module
                                     +dropdown('filter_date', 'filter date dropdown')
@@ -123,6 +124,8 @@ html(lang="ru")
             .section-block
                 .cards
                     .cards_column
+                        .module
+                            +searchRoomCard({title: 'Найдём номера под ваши пожелания'})
                     .cards_column
                     .cards_column
                         .module.module_calendar

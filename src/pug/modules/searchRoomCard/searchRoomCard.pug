@@ -1,0 +1,9 @@
+include ../dropdown/dropdown.pug
+include ../button/button.pug
+
+mixin searchRoomCard(args)
+    .searchRoomCard
+        h1(class='searchRoomCard__title') !{args.title}
+        +dropdown('date', 'прибытие', 'выезд')
+        +dropdown('guests', 'гости')
+        +button('arrowButton', 'подобрать номер')
