@@ -2,8 +2,11 @@ include ../dropdown/dropdown.pug
 include ../button/button.pug
 
 mixin searchRoomCard(args)
-    .searchRoomCard
-        h1(class='searchRoomCard__title') !{args.title}
-        +dropdown('date', 'searchRoomDateDrop', 'прибытие', 'выезд')
-        +dropdown('guests', 'searchRoomGuestsDrop', 'гости')
-        +button('arrowButton', 'подобрать номер')
+    .search-room-card
+        h1(class='search-room-card__title search-room-card__title_margins') !{args.title}
+        .search-room-card__dropdown
+            +dropdown('date', 'searchRoomDateDrop', 'прибытие', 'выезд')
+        .search-room-card__dropdown
+            +dropdown('guests', 'searchRoomGuestsDrop', 'гости')
+        .search-room-card__button
+            +button('arrowButton', 'подобрать номер')

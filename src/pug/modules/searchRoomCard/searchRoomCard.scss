@@ -1,4 +1,4 @@
-.searchRoomCard {
+.search-room-card {
     padding: 30px;
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.12);
@@ -7,6 +7,18 @@
     border-radius: 4px;
 }
 
-.searchRoomCard__title {
+.search-room-card__title {
     font-family: 'Open Sans';
+}
+
+.search-room-card__dropdown {
+    margin-bottom: 20px;
+}
+
+.search-room-card__title_margins {
+    margin: 8px 0 10px
+}
+
+.search-room-card__button {
+    margin-top: 30px;
 }
