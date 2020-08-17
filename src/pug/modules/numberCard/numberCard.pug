@@ -18,9 +18,11 @@ mixin numberCard(args)
             button(class='number-card__nextButton number-card__arrow-button')
                 i(class="material-icons") keyboard_arrow_right
             .number-card__slider-dots
-                while dot < dots
-                    .number-card__dot
-                    - dot += 1
+                each img, index in args.images
+                    if index == 0
+                        .number-card__dot.number-card__active-dot
+                    else
+                        .number-card__dot.number-card__unactive-dot
         .number-card__room-info
             .number-card__number-section
                 .number-card__room-number
