@@ -4,16 +4,18 @@ include ../button/button.pug
 
 mixin registrationCard()
     .registrationCard
-        h1(class='registrationCard__title') Регистрация аккаунта
-        +text_field('Имя', textField)
-        +text_field('Фамилия', textField)
-        +radioButton([['radioMale', 'radioGender', 'male', 'Мужчина', true], ['radioFemale', 'radioGender', 'female', 'Женщина']])
+        h1(class='registrationCard__title registrationCard__title_margin') Регистрация аккаунта
+        .registrationCard__person
+            +text_field('Имя', textField)
+            +text_field('Фамилия', textField)
+            +radioButton([['radioMale', 'radioGender', 'male', 'Мужчина', true], ['radioFemale', 'radioGender', 'female', 'Женщина']])
         +text_field('', 'masked', 'Дата рождения')
-        +text_field('Email', 'textField', 'Данные для входа в сервис')
-        +text_field('Пароль', 'textField')
-        +toggle('Получать спецпредложения', toggleSpecialOffers, toggleSpecialOffers)
+        .registrationCard__login-details
+            +text_field('Email', 'textField', 'Данные для входа в сервис')
+            +text_field('Пароль', 'textField')
+            +toggle('Получать спецпредложения', toggleSpecialOffers, toggleSpecialOffers)
         +button('arrowButton', 'перейти к оплате')
         .registrationCard__account-login
             .registrationCard__login-label Уже есть аккаунт на Toxin
             .registrationCard__login-button
-                +button(type='borderButton', text='войти')
+                +button('borderButton', 'войти')

@@ -9,7 +9,7 @@ mixin text_field(placeholderText='Email', type='textField', title=none)
 
     .text-field
         if title
-            h3 !{title}
+            h3(class='text-field_title') !{title}
         input(type="text" placeholder=placeholderText class="text-field__field " + textFieldType)
         if type == 'subscription'
             button(class='text-field__subscription-btn')
