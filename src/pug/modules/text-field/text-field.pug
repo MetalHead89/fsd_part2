@@ -1,4 +1,4 @@
-mixin text_field(placeholderText='Email', type='textField')
+mixin text_field(placeholderText='Email', type='textField', title=none)
     - var textFieldType
 
     if type == 'masked'
@@ -8,6 +8,8 @@ mixin text_field(placeholderText='Email', type='textField')
         - textFieldType = 'text-field__field-subscription'
 
     .text-field
+        if title
+            h3 !{title}
         input(type="text" placeholder=placeholderText class="text-field__field " + textFieldType)
         if type == 'subscription'
             button(class='text-field__subscription-btn')
