@@ -18,6 +18,7 @@ include ../modules/calendar/calendar.pug
 include ../modules/numberCard/numberCard.pug
 include ../modules/searchRoomCard/searchRoomCard.pug
 include ../modules/registrationCard/registrationCard.pug
+include ../modules/entryCard/entryCard.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -130,6 +131,8 @@ html(lang="ru")
                         .module
                             +registrationCard()
                     .cards_column
+                        .module
+                            +entryCard()
                     .cards_column
                         .module.module_calendar
                             +calendar

@@ -1,0 +1,13 @@
+include ../text-field/text-field.pug
+
+mixin entryCard()
+    .entry-card
+        h1(class='entry-card__title') Войти
+        .entry-card__login-details
+            +text_field('Email', textField)
+            +text_field('Пароль', textField)
+        +button('arrowButton', 'Войти')
+        .entry-card__create-account
+            .entry-card__create-account-label Нет аккаунта на Toxin?
+            .entry-card__create-account-button
+                +button('borderButton', 'создать')
