@@ -1,0 +1,19 @@
+include ../text-field/text-field.pug
+include ../radio-button/radio-button.pug
+include ../button/button.pug
+
+mixin registrationCard()
+    .registrationCard
+        h1(class='registrationCard__title') Регистрация аккаунта
+        +text_field('Имя', textField)
+        +text_field('Фамилия', textField)
+        +radioButton([['radioMale', 'radioGender', 'male', 'Мужчина', true], ['radioFemale', 'radioGender', 'female', 'Женщина']])
+        +text_field('', 'masked')
+        +text_field('Email', textField)
+        +text_field('Пароль', textField)
+        +toggle('Получать спецпредложения', toggleSpecialOffers, toggleSpecialOffers)
+        +button('arrowButton', 'перейти к оплате')
+        .registrationCard__account-login
+            .registrationCard__login-label Уже есть аккаунт на Toxin
+            .registrationCard__login-button
+                +button(type='borderButton', text='войти')

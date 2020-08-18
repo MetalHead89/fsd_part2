@@ -17,6 +17,7 @@ include ../modules/guest-review/guest-review.pug
 include ../modules/calendar/calendar.pug
 include ../modules/numberCard/numberCard.pug
 include ../modules/searchRoomCard/searchRoomCard.pug
+include ../modules/registrationCard/registrationCard.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -125,7 +126,9 @@ html(lang="ru")
                 .cards
                     .cards_column
                         .module
-                            +searchRoomCard({title: 'Найдём номера под ваши пожелания'})
+                            +searchRoomCard()
+                        .module
+                            +registrationCard()
                     .cards_column
                     .cards_column
                         .module.module_calendar
