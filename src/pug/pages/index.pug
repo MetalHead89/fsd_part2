@@ -19,6 +19,7 @@ include ../modules/numberCard/numberCard.pug
 include ../modules/searchRoomCard/searchRoomCard.pug
 include ../modules/registrationCard/registrationCard.pug
 include ../modules/entryCard/entryCard.pug
+include ../modules/roomRateCard/roomRateCard.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -131,6 +132,8 @@ html(lang="ru")
                         .module
                             +registrationCard()
                     .cards_column
+                        .module
+                            +roomRateCard({'roomNumber': 888, 'lux': true, 'roomRate': 9990})
                         .module
                             +entryCard()
                     .cards_column

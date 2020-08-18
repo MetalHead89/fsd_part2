@@ -1,0 +1,11 @@
+mixin roomRateCard(args)
+    .room-rate-card
+        .room-rate-card__room-info
+            .room-rate-card__room-number
+                .room-rate-card__number №
+                .room-rate-card__number.room-rate-card__number_size19 !{args.roomNumber}
+                if args.lux
+                    .room-rate-card__lux ЛЮКС
+            .room-rate-card__room-rate 
+                .room-rate-card__cost !{args.roomRate.toLocaleString('ru-RU')}&#8381 
+                .room-rate-card__room-rate-label в сутки
