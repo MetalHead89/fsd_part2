@@ -95,16 +95,16 @@
     justify-content: space-between;
 }
 
-.room-rate-card__tooltip {
+.room-rate-card__service-tooltip {
     width: 20px;
     height: 20px;
     border: 1px solid $darkShade25;
     box-sizing: border-box;
     border-radius: 50%;
-    font-family: 'Montserrat';
-    font-weight: bold;
-    font-size: 12px;
-    color: $darkShade25;
+    // font-family: 'Montserrat';
+    // font-weight: bold;
+    // font-size: 12px;
+    // color: $darkShade25;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,3 +177,194 @@
     font-size: 19px;
     color: $darkShade100;
 }
+
+[tooltip] {
+    position: relative;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 12px;
+    color: $darkShade25;
+    cursor: default;
+    &:before {
+        content: '';
+        z-index: 1001;
+        border: 5px solid transparent;
+        user-select: none;
+        pointer-events: none;
+        position: absolute;
+        display: none;
+        opacity: 0;
+        // font-family: 'Montserrat';
+        // font-weight: bold;
+        // font-size: 12px;
+        // color: $darkShade25;
+    }
+    &:after {
+        content: 'attr(tooltip)';
+        z-index: 1000;
+        user-select: none;
+        pointer-events: none;
+        position: absolute;
+        display: none;
+        opacity: 0;
+        // font-family: 'Montserrat';
+        // font-weight: bold;
+        // font-size: 12px;
+        // color: $darkShade25;
+
+        font-family: Helvetica, sans-serif;
+        text-align: center;
+        min-width: 3em;
+        max-width: 21em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 1ch 1.5ch;
+        border-radius: .3ch;
+        box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
+        background: #333;
+        color: #fff;
+    }
+
+    &:hover::before {
+        display: block;
+    }
+
+    &:hover::after {
+        display: block;
+    }
+
+    &:not([flow])::before {
+        bottom: 100%;
+        border-bottom-width: 0;
+        border-top-color: #333;
+    }
+
+    &[flow^="up"]::before {
+        bottom: 100%;
+        border-bottom-width: 0;
+        border-top-color: #333;
+    }
+
+    &:not([flow])::after {
+        bottom: calc(100% + 5px);
+    }
+    
+    &[flow^="up"]::after {
+        bottom: calc(100% + 5px);
+    }
+    
+    &:not([flow])::before {
+        left: 50%;
+        transform: translate(-50%, -.5em);
+    }
+
+    &:not([flow])::after {
+        left: 50%;
+        transform: translate(-50%, -.5em);
+    }
+
+    &[flow^="up"]::before {
+        left: 50%;
+        transform: translate(-50%, -.5em);
+    }
+
+    &[flow^="up"]::after {
+        left: 50%;
+        transform: translate(-50%, -.5em);
+    }
+
+    &:not([flow]):hover::before {
+        animation: 
+            tooltips-vert 
+            300ms 
+            ease-out
+            forwards;
+    }
+
+    &:not([flow]):hover::after {
+        animation: 
+            tooltips-vert 
+            300ms 
+            ease-out
+            forwards;
+    }
+
+    &[flow^="up"]:hover::before {
+        animation: 
+            tooltips-vert 
+            300ms 
+            ease-out
+            forwards;
+    }
+
+    &[flow^="up"]:hover::after {
+        animation: 
+            tooltips-vert 
+            300ms 
+            ease-out
+            forwards;
+    }
+
+    &[flow^="down"]:hover::before {
+        animation: 
+            tooltips-vert 
+            300ms 
+            ease-out
+            forwards;
+    }
+
+    &[flow^="down"]:hover::after {
+        animation: 
+            tooltips-vert 
+            300ms 
+            ease-out
+            forwards;
+    }
+
+    &[flow^="left"]:hover::before {
+        animation: 
+            tooltips-horz 
+            300ms 
+            ease-out 
+            forwards;
+    }
+
+    &[flow^="left"]:hover::after {
+        animation: 
+            tooltips-horz 
+            300ms 
+            ease-out 
+            forwards;
+    }
+
+    &[flow^="right"]:hover::before {
+        animation: 
+            tooltips-horz 
+            300ms 
+            ease-out 
+            forwards;
+    }
+
+    &[flow^="right"]:hover::after {
+        animation: 
+            tooltips-horz 
+            300ms 
+            ease-out 
+            forwards;
+    }
+}
+
+@keyframes tooltips-vert {
+    to {
+      opacity: .9;
+      transform: translate(-50%, 0);
+    }
+  }
+   
+  @keyframes tooltips-horz {
+    to {
+      opacity: .9;
+      transform: translate(0, -50%);
+    }
+  }

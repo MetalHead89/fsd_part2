@@ -21,12 +21,14 @@ mixin roomRateCard(args)
         .room-rate-card__services
             .room-rate-card__service-info
                 .room-rate-card__services-label Сбор за услуги:
-                .room-rate-card__tooltip i
+                .room-rate-card__service-tooltip
+                    span(class='room-rate-card__tooltip' tooltip='Some Text2') i
             .room-rate-card__total-services-cost 0&#8381            
         .room-rate-card__additional-services
             .room-rate-card__additional-service-info
-                .room-rate-card__additional-services-label Сбор за дополнительные услуги:
-                .room-rate-card__additional-service-tooltip i
+                .room-rate-card__additional-services-label Сбор за дополнительные услуги:                	
+                .room-rate-card__additional-service-tooltip
+                    span(class='room-rate-card__tooltip' tooltip='Some Text') i
             .room-rate-card__total-services-additional-cost 0&#8381
         .room-rate-card__result
             .room-rate-card__result-label Итого
