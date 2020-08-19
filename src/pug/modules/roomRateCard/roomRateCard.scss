@@ -66,10 +66,11 @@
 }
 
 .room-rate-card__dropGuests {
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .room-rate-card__room-rate-calc {
+    margin-bottom: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -80,15 +81,18 @@
 }
 
 .room-rate-card__services {
+    margin-bottom: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
 .room-rate-card__service-info {
+    width: 75%;
     display: flex;
+    line-height: 18px;
     flex-direction: row;
-    justify-content: start;
+    justify-content: space-between;
 }
 
 .room-rate-card__tooltip {
@@ -110,15 +114,19 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 40px;
 }
 
 .room-rate-card__additional-service-info {
+    width: 75%;
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    line-height: 18px;
+    justify-content: space-between;
 }
 
 .room-rate-card__additional-service-tooltip {
+    flex: none;
     width: 20px;
     height: 20px;
     border: 1px solid $darkShade25;
@@ -131,4 +139,41 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.room-rate-card__services-label {
+    width: 90%;
+}
+
+.room-rate-card__additionals-services-label {
+    width: 90%;
+}
+
+.room-rate-card__result {
+    display: flex;
+    flex-direction: row;
+    line-height: 12px;
+    align-items: flex-end;
+    margin: 25px 0;
+}
+
+.room-rate-card__result-dots {
+    margin: 0 3px;
+    width: 100%;
+    border-bottom: 1px dashed $darkShade25;
+    box-sizing: border-box;
+}
+
+.room-rate-card__result-label {
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 19px;
+    color: $darkShade100;
+}
+
+.room-rate-card__result-cost {
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 19px;
+    color: $darkShade100;
 }
