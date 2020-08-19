@@ -10,7 +10,7 @@
 }
 
 .room-rate-card__room-info {
-    margin: 13px 0;
+    margin: 13px 0 6px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -45,7 +45,7 @@
     display: inline;
 }
 
-.room-rate-card__room-rate {
+.room-rate-card__price-per-day {
     // display: flex;
     // flex-direction: row;
     // justify-content: end;
@@ -63,4 +63,72 @@
 
 .room-rate-card__room-rate-label {
     display: inline;
+}
+
+.room-rate-card__dropGuests {
+    margin-top: 20px;
+}
+
+.room-rate-card__room-rate-calc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 14px;
+    color: $darkShade75
+}
+
+.room-rate-card__services {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.room-rate-card__service-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.room-rate-card__tooltip {
+    width: 20px;
+    height: 20px;
+    border: 1px solid $darkShade25;
+    box-sizing: border-box;
+    border-radius: 50%;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 12px;
+    color: $darkShade25;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.room-rate-card__additional-services {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.room-rate-card__additional-service-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.room-rate-card__additional-service-tooltip {
+    width: 20px;
+    height: 20px;
+    border: 1px solid $darkShade25;
+    box-sizing: border-box;
+    border-radius: 50%;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 12px;
+    color: $darkShade25;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

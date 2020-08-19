@@ -1,3 +1,6 @@
+include ../dropdown/dropdown.pug
+include ../button/button.pug
+
 mixin roomRateCard(args)
     .room-rate-card
         .room-rate-card__room-info
@@ -6,6 +9,26 @@ mixin roomRateCard(args)
                 .room-rate-card__number.room-rate-card__number_size19 !{args.roomNumber}
                 if args.lux
                     .room-rate-card__lux ЛЮКС
-            .room-rate-card__room-rate 
+            .room-rate-card__price-per-day 
                 .room-rate-card__cost !{args.roomRate.toLocaleString('ru-RU')}&#8381 
                 .room-rate-card__room-rate-label в сутки
+        +dropdown('date', 'roomRateDateDrop', 'прибытие', 'выезд')
+        .room-rate-card__dropGuests
+            +dropdown('guests', 'roomRateDrop', 'гости')
+        .room-rate-card__room-rate-calc
+            .room-rate-card__daily-calc !{args.roomRate.toLocaleString('ru-RU')}&#8381
+            .room-rate-card__room-rate !{args.roomRate.toLocaleString('ru-RU')}&#8381
+        .room-rate-card__services
+            .room-rate-card__service-info
+                .room-rate-card__services-label Сбор за услуги:
+                .room-rate-card__service-cost 0&#8381
+                .room-rate-card__tooltip i
+            .room-rate-card__total-services-cost 0&#8381            
+        .room-rate-card__additional-services
+            .room-rate-card__additional-service-info
+                .room-rate-card__additional-services-label Сбор за дополнительные услуги:
+                .room-rate-card__additional-service-cost 0&#8381
+                .room-rate-card__additional-service-tooltip i
+            .room-rate-card__total-services-additional-cost 0&#8381
+        
+        +button('arrowButton', 'забронировать')
