@@ -20,6 +20,7 @@ include ../modules/searchRoomCard/searchRoomCard.pug
 include ../modules/registrationCard/registrationCard.pug
 include ../modules/entryCard/entryCard.pug
 include ../modules/roomRateCard/roomRateCard.pug
+include ../modules/header/header.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -144,3 +145,5 @@ html(lang="ru")
                                 +numberCard({roomNumber: 888, lux: true, roomRate: 9990, rating: 5, reviewsNumber: 145, images: ['assets/images/number1.png', 'assets/images/number6.png', 'assets/images/number10.png', 'assets/images/number7.png']})
                             .module
                                 +numberCard({roomNumber: 840, lux: false, roomRate: 9900, rating: 4, reviewsNumber: 65, images: ['assets/images/number2.png', 'assets/images/number12.png', 'assets/images/number8.png', 'assets/images/number3.png']})
+            h1(class="section-title") Headers & Footers
+        +header()

@@ -1,0 +1,10 @@
+include ../button/button.pug
+
+mixin header()
+    .header
+        .header__content
+            .header__logo
+                img(src='assets/images/logo.svg', alt="logo")
+            .header__top-menu
+                +button('borderButton', 'Войти')(class='header__button-entry header__button-entry_margin-right')
+                +button('regularButton', 'Зарегистрироваться')(class='header__button-registration')
