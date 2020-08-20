@@ -6,6 +6,7 @@ import '@/pug/modules/range-slider/range-slider.js'
 import '@/pug/modules/pagination/pagination.js'
 import '@/pug/modules/calendar/calendar.js'
 import '@/pug/modules/numberCard/numberCard.js'
+import '@/pug/modules/roomRateCard/roomRateCard.js'
 
 
 // Styles

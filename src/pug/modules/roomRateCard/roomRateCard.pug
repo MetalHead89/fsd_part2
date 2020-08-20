@@ -10,28 +10,28 @@ mixin roomRateCard(args)
                 if args.lux
                     .room-rate-card__lux ЛЮКС
             .room-rate-card__price-per-day 
-                .room-rate-card__cost !{args.roomRate.toLocaleString('ru-RU')}&#8381 
+                .room-rate-card__cost !{args.roomRate.toLocaleString('ru-RU')}₽ 
                 .room-rate-card__room-rate-label в сутки
         +dropdown('date', 'roomRateDateDrop', 'прибытие', 'выезд')
         .room-rate-card__dropGuests
             +dropdown('guests', 'roomRateDrop', 'гости')
         .room-rate-card__room-rate-calc
             .room-rate-card__daily-calc !{args.roomRate}
-            .room-rate-card__room-rate !{args.roomRate.toLocaleString('ru-RU')}&#8381
+            .room-rate-card__room-rate 0₽
         .room-rate-card__services
             .room-rate-card__service-info
-                .room-rate-card__services-label Сбор за услуги:
+                .room-rate-card__services-label Сбор за услуги
                 .room-rate-card__service-tooltip
                     span(class='room-rate-card__tooltip' tooltip='Суммарная стоимость выбранных услуг') i
-            .room-rate-card__total-services-cost 0&#8381            
+            .room-rate-card__total-services-cost !{args.serviceCost}₽
         .room-rate-card__additional-services
             .room-rate-card__additional-service-info
                 .room-rate-card__additional-services-label Сбор за дополнительные услуги:                	
                 .room-rate-card__additional-service-tooltip
                     span(class='room-rate-card__tooltip' tooltip='Суммарная стоимость выбранных дополнительных услуг') i
-            .room-rate-card__total-services-additional-cost 0&#8381
+            .room-rate-card__total-services-additional-cost !{args.additionalServiceCost}
         .room-rate-card__result
             .room-rate-card__result-label Итого
             .room-rate-card__result-dots
-            .room-rate-card__result-cost 0&#8381 
+            .room-rate-card__result-cost 0₽
         +button('arrowButton', 'забронировать')
