@@ -95,16 +95,13 @@
     justify-content: space-between;
 }
 
-.room-rate-card__service-tooltip {
+.room-rate-card__service-tooltip,
+.room-rate-card__additional-service-tooltip {
     width: 20px;
     height: 20px;
     border: 1px solid $darkShade25;
     box-sizing: border-box;
     border-radius: 50%;
-    // font-family: 'Montserrat';
-    // font-weight: bold;
-    // font-size: 12px;
-    // color: $darkShade25;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,22 +120,6 @@
     flex-direction: row;
     line-height: 18px;
     justify-content: space-between;
-}
-
-.room-rate-card__additional-service-tooltip {
-    flex: none;
-    width: 20px;
-    height: 20px;
-    border: 1px solid $darkShade25;
-    box-sizing: border-box;
-    border-radius: 50%;
-    font-family: 'Montserrat';
-    font-weight: bold;
-    font-size: 12px;
-    color: $darkShade25;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .room-rate-card__services-label {
@@ -178,7 +159,7 @@
     color: $darkShade100;
 }
 
-[tooltip] {
+.room-rate-card__tooltip {
     position: relative;
     font-family: 'Montserrat';
     font-weight: bold;
@@ -187,133 +168,67 @@
     cursor: default;
     &:before {
         content: '';
-        z-index: 1001;
+        z-index: 3;
         border: 5px solid transparent;
         user-select: none;
         pointer-events: none;
         position: absolute;
         display: none;
         opacity: 0;
-        // font-family: 'Montserrat';
-        // font-weight: bold;
-        // font-size: 12px;
-        // color: $darkShade25;
     }
     &:after {
-        content: 'attr(tooltip)';
-        z-index: 1000;
+        content: attr(tooltip);
+        z-index: 2;
         user-select: none;
         pointer-events: none;
         position: absolute;
         display: none;
         opacity: 0;
-        // font-family: 'Montserrat';
-        // font-weight: bold;
-        // font-size: 12px;
-        // color: $darkShade25;
-
-        font-family: Helvetica, sans-serif;
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 12px;
+        color: $darkShade25;
         text-align: center;
-        min-width: 3em;
-        max-width: 21em;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        padding: 1ch 1.5ch;
-        border-radius: .3ch;
+        padding: 10px;
+        border-radius: 3px;
         box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
         background: #333;
         color: #fff;
     }
 
-    &:hover::before {
-        display: block;
-    }
-
+    &:hover::before,
     &:hover::after {
         display: block;
     }
 
-    &:not([flow])::before {
-        bottom: 100%;
-        border-bottom-width: 0;
-        border-top-color: #333;
-    }
-
+    &:not([flow])::before,
     &[flow^="up"]::before {
         bottom: 100%;
         border-bottom-width: 0;
         border-top-color: #333;
     }
 
-    &:not([flow])::after {
-        bottom: calc(100% + 5px);
-    }
-    
+    &:not([flow])::after,
     &[flow^="up"]::after {
         bottom: calc(100% + 5px);
     }
     
-    &:not([flow])::before {
-        left: 50%;
-        transform: translate(-50%, -.5em);
-    }
-
-    &:not([flow])::after {
-        left: 50%;
-        transform: translate(-50%, -.5em);
-    }
-
-    &[flow^="up"]::before {
-        left: 50%;
-        transform: translate(-50%, -.5em);
-    }
-
+    &:not([flow])::before,
+    &:not([flow])::after,
+    &[flow^="up"]::before,
     &[flow^="up"]::after {
         left: 50%;
         transform: translate(-50%, -.5em);
     }
 
-    &:not([flow]):hover::before {
-        animation: 
-            tooltips-vert 
-            300ms 
-            ease-out
-            forwards;
-    }
-
-    &:not([flow]):hover::after {
-        animation: 
-            tooltips-vert 
-            300ms 
-            ease-out
-            forwards;
-    }
-
-    &[flow^="up"]:hover::before {
-        animation: 
-            tooltips-vert 
-            300ms 
-            ease-out
-            forwards;
-    }
-
-    &[flow^="up"]:hover::after {
-        animation: 
-            tooltips-vert 
-            300ms 
-            ease-out
-            forwards;
-    }
-
-    &[flow^="down"]:hover::before {
-        animation: 
-            tooltips-vert 
-            300ms 
-            ease-out
-            forwards;
-    }
-
+    &:not([flow]):hover::before,
+    &:not([flow]):hover::after,
+    &[flow^="up"]:hover::before,
+    &[flow^="up"]:hover::after,
+    &[flow^="down"]:hover::before,
     &[flow^="down"]:hover::after {
         animation: 
             tooltips-vert 
@@ -322,30 +237,9 @@
             forwards;
     }
 
-    &[flow^="left"]:hover::before {
-        animation: 
-            tooltips-horz 
-            300ms 
-            ease-out 
-            forwards;
-    }
-
-    &[flow^="left"]:hover::after {
-        animation: 
-            tooltips-horz 
-            300ms 
-            ease-out 
-            forwards;
-    }
-
-    &[flow^="right"]:hover::before {
-        animation: 
-            tooltips-horz 
-            300ms 
-            ease-out 
-            forwards;
-    }
-
+    &[flow^="left"]:hover::before,
+    &[flow^="left"]:hover::after,
+    &[flow^="right"]:hover::before,
     &[flow^="right"]:hover::after {
         animation: 
             tooltips-horz 
@@ -357,14 +251,14 @@
 
 @keyframes tooltips-vert {
     to {
-      opacity: .9;
-      transform: translate(-50%, 0);
+        opacity: .9;
+        transform: translate(-50%, 0);
     }
-  }
-   
-  @keyframes tooltips-horz {
+}
+    
+@keyframes tooltips-horz {
     to {
-      opacity: .9;
-      transform: translate(0, -50%);
+        opacity: .9;
+        transform: translate(0, -50%);
     }
-  }
+}
