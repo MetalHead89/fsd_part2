@@ -178,6 +178,8 @@
     }
     &:after {
         content: attr(tooltip);
+        max-width: 200px;
+        min-width: 150px;
         z-index: 2;
         user-select: none;
         pointer-events: none;
@@ -189,9 +191,9 @@
         font-size: 12px;
         color: $darkShade25;
         text-align: center;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        // white-space: nowrap;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
         padding: 10px;
         border-radius: 3px;
         box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
