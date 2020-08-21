@@ -13,13 +13,31 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    // padding: 0 10px;
+    padding: 0 10px;
     box-sizing: border-box;
+    align-items: center;
 }
 
 .header__top-menu {
     display: flex;
     justify-content: end;
+    align-items: center;
+}
+
+.header__navbar {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.header__navbar-item {
+    padding: 0 10px;
+    font-family: Montserrat;
+    font-size: 14px;
+    color: $darkShade50;
 }
 
 .header__button-registration {
