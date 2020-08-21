@@ -2,8 +2,9 @@
 
 .header {
     width: 100%;
-    background: #FFFFFF;
+    background: white;
     box-shadow: 0px 10px 20px $darkShade5;
+    box-sizing: border-box;
 }
 
 .header__content {
@@ -12,11 +13,11 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
+    // padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .header__top-menu {
-    // width: 80%;
     display: flex;
     justify-content: end;
 }
