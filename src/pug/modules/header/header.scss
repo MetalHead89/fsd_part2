@@ -2,29 +2,40 @@
 
 .header {
     width: 100%;
-    background: white;
+    display: flex;
+    justify-content: center;
     box-shadow: 0px 10px 20px $darkShade5;
     box-sizing: border-box;
+    margin-bottom: 500px;
 }
 
 .header__content {
     width: 100%;
     max-width: 1160px;
-    margin: 0 auto;
+    margin: 0 10px;
+    // padding: 12px 0;
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
     box-sizing: border-box;
     align-items: center;
+    box-sizing: border-box;
+}
+
+.header__logo {
+    padding: 15px 0;
 }
 
 .header__top-menu {
+    flex: none;
+    box-sizing: border-box;
     display: flex;
     justify-content: end;
     align-items: center;
+    height: 100%;
 }
 
 .header__navbar {
+    height: 100%;
     display: flex;
     flex-direction: row;
     list-style-type: none;
@@ -34,10 +45,70 @@
 }
 
 .header__navbar-item {
+    position: relative;
+    height: 100%;
+    white-space: nowrap;
     padding: 0 10px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-size: 14px;
     color: $darkShade50;
+    display: flex;
+    align-items: center;
+    cursor: default;
+    transition: color .5s ease;
+    &:hover {
+        color: $darkShade75;
+    }
+    &:hover .header__nested-list {
+        transition: transform .4s cubic-bezier(.73,.32,.34,1.5);
+        transform: translateY(100%) scaleY(1);
+        transform-origin: top;
+    }
+
+    &:not(:hover) .header__nested-list {
+        transition: transform .5s;
+        transform: translateY(100%) scaleY(0);
+    }
+
+    &:hover .header__nested-list-item {
+        transition: opacity .3s;
+        opacity: 1;
+    }
+
+    &:not(:hover) .header__nested-list-item {
+        transition: opacity .3s;
+    }
+}
+
+.header__navbar-item_active {
+    font-weight: bold;
+    color: $darkShade75;
+}
+
+.header__nested-list {
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    position: absolute;    
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: inherit;
+    background: white;
+    list-style-type: none;
+    box-shadow: 0px 10px 20px $darkShade5;
+    transform-origin: top;
+    transform: translateY(100%);
+}
+
+.header__nested-list-item {
+    opacity: 0;
+    color: $darkShade50;
+    padding: 10px 0;
+    transition: color .5s ease;
+    &:hover {
+        color: $darkShade75;
+    }
 }
 
 .header__button-registration {
@@ -50,6 +121,8 @@
     height: 34px;
 }
 
-.header__button-entry_margin-right {
-    margin-right: 20px;
+.header__button-entry_container {
+    box-sizing: border-box;
+    padding-right: 2.5%;
+    padding-left: 1.2%;;
 }
