@@ -1,6 +1,7 @@
 @import '../../../scss/vars.scss';
 
 .header {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -26,7 +27,6 @@
 }
 
 .header__top-menu {
-    flex: none;
     box-sizing: border-box;
     display: flex;
     justify-content: end;
@@ -42,6 +42,12 @@
     margin: 0;
     padding: 0;
     align-items: center;
+    & > .header__navbar-item:first-child {
+        padding-left: 0;
+    }
+    & > .header__navbar-item:last-child {
+        padding-right: 0;   
+    }
 }
 
 .header__navbar-item {
@@ -125,4 +131,34 @@
     box-sizing: border-box;
     padding-right: 2.5%;
     padding-left: 1.2%;;
+}
+
+.header__burger {
+    display: none;
+    width: 40px;
+    height: 40px;
+    background: black;
+}
+
+@media screen and (max-width: 950px){
+    .header__navbar {
+        width: 300px;
+        right: 0;
+        top: 0;
+        position: absolute;
+        flex-direction: column;
+        background: white;
+        z-index: 1;
+    }
+
+    .header__navbar-item {
+        padding: 10px 0;
+        background: white;
+    }
+
+
+    .header__burger {
+        z-index: 2;
+        display: block;
+    }
 }
