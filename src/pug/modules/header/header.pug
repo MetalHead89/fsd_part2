@@ -2,39 +2,38 @@ include ../button/button.pug
 
 mixin header()
     .header
+        .header__curtain
         .header__content
             img(class='header__logo' src='assets/images/logo.svg', alt="logo")
-            //- .header__top-menu
             input(type="checkbox", name="header", id="header", class='header__menu-check')
-            .header__curtain
             ul(class='header__navbar')
                 li(class='header__navbar-item header__navbar-item_active')
                     a О нас
                 li(class='header__navbar-item')
-                    a(class='header__dropdown-menu')
+                    a(class='header__dropdown-title')
                         span Услуги 
                         i(class='material-icons') expand_more
-                    ul(class='header__nested-list')
-                        li(class='header__nested-list-item') Обслуживание номеров
-                        li(class='header__nested-list-item') Парковка
-                        li(class='header__nested-list-item') Персональный сейф
-                        li(class='header__nested-list-item') Интернет
-                        li(class='header__nested-list-item') Кабельное телевидние
-                        li(class='header__nested-list-item') Питание
+                    ul(class='header__hidden-list')
+                        li(class='header__hidden-list-item') Обслуживание номеров
+                        li(class='header__hidden-list-item') Парковка
+                        li(class='header__hidden-list-item') Персональный сейф
+                        li(class='header__hidden-list-item') Интернет
+                        li(class='header__hidden-list-item') Кабельное телевидние
+                        li(class='header__hidden-list-item') Питание
                 li(class='header__navbar-item')
                     a Вакансии
                 li(class='header__navbar-item')
                     a Новости
                 li(class='header__navbar-item')
-                    a(class='header__dropdown-menu')
+                    a(class='header__dropdown-title')
                         span Соглашения
                         i(class='material-icons') expand_more
-                    ul(class='header__nested-list')
-                        li(class='header__nested-list-item')
+                    ul(class='header__hidden-list')
+                        li(class='header__hidden-list-item')
                             a Правила проживание
-                        li(class='header__nested-list-item')
+                        li(class='header__hidden-list-item')
                             a Бонусная программа
-                        li(class='header__nested-list-item')
+                        li(class='header__hidden-list-item')
                             a Политика конфиденциальности
                 li(class='header__navbar-item')
                     +button('borderButton', 'Войти')(class='header__button-entry')
