@@ -21,6 +21,7 @@ include ../modules/registrationCard/registrationCard.pug
 include ../modules/entryCard/entryCard.pug
 include ../modules/roomRateCard/roomRateCard.pug
 include ../modules/header/header.pug
+include ../modules/footer/footer.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -147,3 +148,4 @@ html(lang="ru")
                                 +numberCard({roomNumber: 840, lux: false, roomRate: 9900, rating: 4, reviewsNumber: 65, images: ['assets/images/number2.png', 'assets/images/number12.png', 'assets/images/number8.png', 'assets/images/number3.png']})
             h1(class="section-title") Headers & Footers
         +header()
+        +footer()
