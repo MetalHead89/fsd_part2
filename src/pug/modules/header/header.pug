@@ -2,18 +2,18 @@ include ../button/button.pug
 
 mixin header()
     .header
-        .header__curtain
         .header__content
             img(class='header__logo' src='assets/images/logo.svg', alt="logo")
             input(type="checkbox", name="header", id="header", class='header__menu-check')
+            .header__curtain
             ul(class='header__navbar')
                 li(class='header__navbar-item header__navbar-item_active')
                     a О нас
                 li(class='header__navbar-item')
-                    a(class='header__dropdown-title')
+                    a(href='#services', class='header__dropdown-title')
                         span Услуги 
                         i(class='material-icons') expand_more
-                    ul(class='header__hidden-list')
+                    ul(id='services', class='header__hidden-list')
                         li(class='header__hidden-list-item') Обслуживание номеров
                         li(class='header__hidden-list-item') Парковка
                         li(class='header__hidden-list-item') Персональный сейф
@@ -25,10 +25,10 @@ mixin header()
                 li(class='header__navbar-item')
                     a Новости
                 li(class='header__navbar-item')
-                    a(class='header__dropdown-title')
+                    a(href='#agreements', class='header__dropdown-title')
                         span Соглашения
                         i(class='material-icons') expand_more
-                    ul(class='header__hidden-list')
+                    ul(id='agreements', class='header__hidden-list')
                         li(class='header__hidden-list-item')
                             a Правила проживание
                         li(class='header__hidden-list-item')
@@ -40,3 +40,4 @@ mixin header()
                 li(class='header__navbar-item')
                     +button('regularButton', 'Зарегистрироваться')(class='header__button-registration')
             label(for="header", class='header__burger')
+                .header__burger-image
