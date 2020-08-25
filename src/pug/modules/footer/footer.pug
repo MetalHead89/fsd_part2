@@ -2,7 +2,8 @@ include ../text-field/text-field.pug
 
 mixin footer()
     footer
-        .footer__content
+        //- .footer__content
+        .footer__info_container
             .footer__info
                 ul(class='footer__info-column footer__info-column_width260 footer__info-column_margin-left')
                     li(class='footer__info-column-item')
@@ -35,5 +36,9 @@ mixin footer()
                     li(class='footer__info-column-item') Получайте специальные предложения и новости сервиса
                     li(class='footer__info-column-item')
                         +text_field('Email', 'subscription')
-            .footer__copyright
-                .footer__copyright-text Copyright © 2018 Toxin отель. Все права зачищены.
+        .footer__copyright
+            .footer__copyright-text Copyright © 2018 Toxin отель. Все права зачищены.
+            .footer__socials-icons
+                i(class='fab fa-twitter')
+                i(class='fab fa-facebook-square')
+                i(class='fab fa-instagram')
