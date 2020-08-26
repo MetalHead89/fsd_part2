@@ -28,7 +28,7 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            template: path.resolve(__dirname, 'src/pug/pages/ui_kit.pug')
+            template: path.resolve(__dirname, 'src/pug/pages/landing_page.pug')
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin([
@@ -78,13 +78,6 @@ module.exports = {
                 test: /\.(png|jpg|svg|gif)$/,
                 use: ['file-loader']
             }
-            // {
-            //     test: /\.(eot|svg|ttf|woff|woff2)$/,
-            //     loader: 'file-loader',
-            //     options: {
-            //         name: '[name].[ext]'
-            //     }
-            // }
         ]
     }
 }
