@@ -182,10 +182,14 @@
 }
 
 .header__navbar-separator {
-    margin: 0 10px;
+    margin: 0 5px;
     height: 30px;
     width: 1px;
     background: rgba(31, 32, 65, 0.1);
+}
+
+.header__separator-item {
+    display: none;
 }
 
 @media screen and (min-width: 951px){
