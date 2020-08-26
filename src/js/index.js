@@ -7,6 +7,7 @@ import '@/pug/modules/pagination/pagination.js'
 import '@/pug/modules/calendar/calendar.js'
 import '@/pug/modules/numberCard/numberCard.js'
 import '@/pug/modules/roomRateCard/roomRateCard.js'
+import '@/pug/modules/header/header.js'
 
 
 // Styles

@@ -36,8 +36,12 @@ mixin header()
                         li(class='header__hidden-list-item')
                             a Политика конфиденциальности
                 li(class='header__navbar-item')
+                    .header__navbar-separator
+                li(class='header__navbar-item header__account-name')
+                    a(class='header__account-name-link') Виталий Бакалов
+                li(class='header__navbar-item header__button-entry-container')
                     +button('borderButton', 'Войти')(class='header__button-entry')
-                li(class='header__navbar-item')
+                li(class='header__navbar-item header__button-registration-container')
                     +button('regularButton', 'Зарегистрироваться')(class='header__button-registration')
             label(for="header", class='header__burger')
                 .header__burger-image
