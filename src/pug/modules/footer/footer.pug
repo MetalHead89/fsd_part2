@@ -40,6 +40,9 @@ mixin footer()
             img(class='footer__logo footer__logo-in-copyright-zone' src='assets/images/logo.svg', alt="logo")
             .footer__copyright-text Copyright © 2018 Toxin отель. Все права зачищены.
             .footer__socials-icons
-                i(class='fab fa-twitter')
-                i(class='fab fa-facebook-square')
-                i(class='fab fa-instagram')
+                a(href='https://twitter.com/', class='footer__social-link')
+                    i(class='fab fa-twitter')
+                a(href='https://www.facebook.com/' class='footer__social-link')
+                    i(class='fab fa-facebook-square')
+                a(href='https://www.instagram.com/' class='footer__social-link')
+                    i(class='fab fa-instagram')

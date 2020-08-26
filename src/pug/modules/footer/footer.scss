@@ -82,7 +82,7 @@ footer {
     box-shadow: 0px 10px 20px $darkShade5;
 }
 
-.fab {
+.footer__social-link {
     font-size: 24px;
     background: linear-gradient(180deg, $purple 0%, $blue 100%);
     -webkit-background-clip: text;
@@ -90,13 +90,17 @@ footer {
     background-clip: text;
     -webkit-text-fill-color:transparent;
     margin: 0 11px;
+    transition: opacity .5s ease-in;
+    &:hover {
+        opacity: 75%;
+    }
 }
 
-.footer__socials-icons .fab:first-child {
+.footer__socials-icons .footer__social-link:first-child {
     margin-left: 0;
 }
 
-.footer__socials-icons .fab:last-child {
+.footer__socials-icons .footer__social-link:last-child {
     margin-right: 0;
 }
 
