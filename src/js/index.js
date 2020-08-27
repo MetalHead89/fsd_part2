@@ -1,13 +1,13 @@
 //Scripts
-import '@/pug/modules/text-field/text-field.js'
-import '@/pug/modules/dropdown/dropdown.js'
-import '@/pug/modules/like-button/like-button.js'
-import '@/pug/modules/range-slider/range-slider.js'
-import '@/pug/modules/pagination/pagination.js'
-import '@/pug/modules/calendar/calendar.js'
-import '@/pug/modules/numberCard/numberCard.js'
-import '@/pug/modules/roomRateCard/roomRateCard.js'
-import '@/pug/modules/header/header.js'
+// import '@/pug/modules/text-field/text-field.js'
+// import '@/pug/modules/dropdown/dropdown.js'
+// import '@/pug/modules/like-button/like-button.js'
+// import '@/pug/modules/range-slider/range-slider.js'
+// import '@/pug/modules/pagination/pagination.js'
+// import '@/pug/modules/calendar/calendar.js'
+// import '@/pug/modules/numberCard/numberCard.js'
+// import '@/pug/modules/roomRateCard/roomRateCard.js'
+// import '@/pug/modules/header/header.js'
 
 
 // Styles
