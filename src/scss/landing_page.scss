@@ -1,5 +1,10 @@
 @import 'vars.scss';
 
+.landing-page__header-container {
+    position: relative;
+    z-index: 2;
+}
+
 .landing-page__landing-body {
     position: relative;
     width: 100%;
