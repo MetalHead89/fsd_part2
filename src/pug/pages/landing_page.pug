@@ -11,6 +11,9 @@ html(lang="ru")
     body
         +header()
         .landing-page__landing-body
+            .landing-page__background.background1
+            .landing-page__background.background2
+            .landing-page__background.background3
             .landing-page__body-content-container
                 .landing-page__search-card-container
                     +searchRoomCard()
@@ -21,3 +24,4 @@ html(lang="ru")
             include ../modules/dropdown/dropdown.js
             include ../modules/calendar/calendar.js
             include ../modules/header/header.js
+            //- include ../../js/landing-page.js

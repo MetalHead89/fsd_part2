@@ -1,20 +1,48 @@
 @import 'vars.scss';
 
 .landing-page__landing-body {
+    position: relative;
     width: 100%;
     height: 100vh;
+}
+
+.background1 {
     background: url('../assets/images/landing_image_1.png');
+    animation: landing-animation1 40s infinite;
+}
+
+.background2 {
+    background: url('../assets/images/landing_image_2.png');
+    animation: landing-animation2 40s infinite;
+}
+
+.background3 {
+    background: url('../assets/images/landing_image_3.png');
+    animation: landing-animation3 40s infinite;
+}
+
+.landing-page__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center center;
     display: flex;
     justify-content: center;
+    z-index: 1;
 }
 
 .landing-page__body-content-container {
     position: relative;
     width: 100%;
+    height: 100%;
+    box-sizing: border-box;
     max-width: 1160px;
     padding: 70px 20px;
+    z-index: 1;
+    margin: 0 auto;
 }
 
 .landing-page__search-card-container {
@@ -28,7 +56,65 @@
     bottom: 0;
     right: 0;
     padding-bottom: 18px;
+    padding-right: 20px;
     font-family: Montserrat;
     font-size: 14px;
     color: $darkShade75;
+}
+
+@keyframes landing-animation1 {
+    0% {
+        opacity: 1;
+    }
+    27% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 0;
+    }
+    94% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes landing-animation2 {
+    0% {
+        opacity: 0;
+    }
+    27% {
+        opacity: 0;
+    }
+    33% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    66% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes landing-animation3 {
+    0% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+    }
+    66% {
+        opacity: 1;
+    }
+    94% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
