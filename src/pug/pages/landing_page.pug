@@ -2,10 +2,22 @@ include ../modules/header/header.pug
 include ../modules/footer/footer.pug
 include ../modules/searchRoomCard/searchRoomCard.pug
 
-+header()
-.landing-page__landing-body
-    .landing-page__body-content-container
-        .landing-page__search-card-container
-            +searchRoomCard()
-        .landing-page__body-text Лучшие номера для вашей работы, отдыха и просто вдохновения
-+footer()
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Landing Page
+    body
+        +header()
+        .landing-page__landing-body
+            .landing-page__body-content-container
+                .landing-page__search-card-container
+                    +searchRoomCard()
+                .landing-page__body-text Лучшие номера для вашей работы, отдыха и просто вдохновения
+        +footer()
+
+        script
+            include ../modules/dropdown/dropdown.js
+            include ../modules/calendar/calendar.js
+            include ../modules/header/header.js
