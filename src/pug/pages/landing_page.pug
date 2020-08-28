@@ -10,7 +10,7 @@ html(lang="ru")
         title Landing Page
     body
         .landing-page__header-container
-            +header()
+            +header({type: 'horizontal'})
         .landing-page__landing-body
             .landing-page__background.background1
             .landing-page__background.background2
@@ -24,5 +24,5 @@ html(lang="ru")
         script
             include ../modules/dropdown/dropdown.js
             include ../modules/calendar/calendar.js
-            include ../modules/header/header.js
+            include ../modules/navbar/navbar.js
             //- include ../../js/landing-page.js

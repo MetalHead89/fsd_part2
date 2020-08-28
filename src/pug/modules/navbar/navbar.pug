@@ -21,18 +21,18 @@ mixin navbar(args)
         li(class=navbarItemClass) Вакансии
         li(class=navbarItemClass) Новости
         li(class=navbarItemClass)
-            .header__dropdown-title
+            .navbar__dropdown-title
                 span Соглашения
                 i(class='material-icons') expand_more
             ul(class=navbarHiddenListClass)
                 li(class=navbarHiddenListItemClass) Правила проживание
                 li(class=navbarHiddenListItemClass) Бонусная программа
                 li(class=navbarHiddenListItemClass) Политика конфиденциальности
-        li(class='navbar__item navbar__separator-item')
-            .header__navbar-separator
-        li(class='navbar__item navbar__account-name')
+        li(class='navbar__item navbar__separator-item ' + navbarItemClass)
+            .navbar__separator
+        li(class='navbar__account-name ' + navbarItemClass)
             .navbar__account-name Виталий Бакалов
-        li(class='navbar__item navbar__button-entry-container')
+        li(class='navbar__button-entry-container ' + navbarItemClass)
             +button('borderButton', 'Войти')(class='navbar__button-entry')
-        li(class='navbar__item navbar__button-registration-container')
+        li(class='navbar__button-registration-container ' + navbarItemClass)
             +button('regularButton', 'Зарегистрироваться')(class='navbar__button-registration')
