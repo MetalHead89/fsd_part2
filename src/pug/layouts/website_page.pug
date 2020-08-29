@@ -1,0 +1,23 @@
+include ../modules/header/header.pug
+include ../modules/footer/footer.pug
+block includs
+
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title 
+            block title
+    body
+        .landing-page__header-container
+            +header({type: 'horizontal'})
+
+        block content
+
+        +footer()
+
+        script
+            include ../modules/navbar/navbar.js
+            include ../modules/header/header.js
+            block scripts

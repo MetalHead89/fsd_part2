@@ -1,28 +1,21 @@
-include ../modules/header/header.pug
-include ../modules/footer/footer.pug
-include ../modules/searchRoomCard/searchRoomCard.pug
+extends ../layouts/website_page
 
-<!DOCTYPE html>
-html(lang="ru")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Landing Page
-    body
-        .landing-page__header-container
-            +header({type: 'horizontal'})
-        .landing-page__landing-body
-            .landing-page__background.background1
-            .landing-page__background.background2
-            .landing-page__background.background3
-            .landing-page__body-content-container
-                .landing-page__search-card-container
-                    +searchRoomCard()
-                .landing-page__body-text Лучшие номера для вашей работы, отдыха и просто вдохновения
-        +footer()
+block includs
+    include ../modules/searchRoomCard/searchRoomCard.pug
 
-        script
-            include ../modules/dropdown/dropdown.js
-            include ../modules/calendar/calendar.js
-            include ../modules/navbar/navbar.js
-            include ../modules/header/header.js
+block title
+    | Landing Page
+
+block content
+    .landing-page__landing-body
+        .landing-page__background.background1
+        .landing-page__background.background2
+        .landing-page__background.background3
+        .landing-page__body-content-container
+            .landing-page__search-card-container
+                +searchRoomCard()
+            .landing-page__body-text Лучшие номера для вашей работы, отдыха и просто вдохновения
+
+block scripts
+    include ../modules/dropdown/dropdown.js
+    include ../modules/calendar/calendar.js
