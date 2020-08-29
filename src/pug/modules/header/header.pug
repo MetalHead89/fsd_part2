@@ -2,51 +2,12 @@ include ../button/button.pug
 include ../navbar/navbar.pug
 
 mixin header()
-    .header
-        .header__content
-            img(class='header__logo' src='assets/images/logo.svg', alt="logo")
-            input(type="checkbox", name="header", id="header", class='header__menu-check')
-            +navbar({type: 'horizontal'})
-            //- .header__curtain
-
-
-
-            //- ul(class='header__navbar')
-            //-     li(class='header__navbar-item header__navbar-item_active')
-            //-         a О нас
-            //-     li(class='header__navbar-item')
-            //-         a(href='#services', class='header__dropdown-title')
-            //-             span Услуги 
-            //-             i(class='material-icons') expand_more
-            //-         ul(id='services', class='header__hidden-list')
-            //-             li(class='header__hidden-list-item') Обслуживание номеров
-            //-             li(class='header__hidden-list-item') Парковка
-            //-             li(class='header__hidden-list-item') Персональный сейф
-            //-             li(class='header__hidden-list-item') Интернет
-            //-             li(class='header__hidden-list-item') Кабельное телевидние
-            //-             li(class='header__hidden-list-item') Питание
-            //-     li(class='header__navbar-item')
-            //-         a Вакансии
-            //-     li(class='header__navbar-item')
-            //-         a Новости
-            //-     li(class='header__navbar-item')
-            //-         a(href='#agreements', class='header__dropdown-title')
-            //-             span Соглашения
-            //-             i(class='material-icons') expand_more
-            //-         ul(id='agreements', class='header__hidden-list')
-            //-             li(class='header__hidden-list-item')
-            //-                 a Правила проживание
-            //-             li(class='header__hidden-list-item')
-            //-                 a Бонусная программа
-            //-             li(class='header__hidden-list-item')
-            //-                 a Политика конфиденциальности
-            //-     li(class='header__navbar-item header__separator-item')
-            //-         .header__navbar-separator
-            //-     li(class='header__navbar-item header__account-name')
-            //-         a(class='header__account-name-link') Виталий Бакалов
-            //-     li(class='header__navbar-item header__button-entry-container')
-            //-         +button('borderButton', 'Войти')(class='header__button-entry')
-            //-     li(class='header__navbar-item header__button-registration-container')
-            //-         +button('regularButton', 'Зарегистрироваться')(class='header__button-registration')
-            label(for="header", class='header__burger')
-                .header__burger-image
+    .header_contaner
+        .header
+            .header__content
+                img(class='header__logo' src='assets/images/logo.svg', alt="logo")
+                input(type="checkbox", name="header", id="header", class='header__menu-check')
+                +navbar({type: 'horizontal'})
+                label(for="header", class='header__burger')
+                    .header__burger-image
+        +navbar({type: 'vertical'})

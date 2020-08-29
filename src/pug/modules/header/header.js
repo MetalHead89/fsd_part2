@@ -1,27 +1,14 @@
-// 'use strict'
+'use strict'
 
-// let entryCheck = false;
-// const entryBtn = document.querySelector('.header__button-entry-container');
-// const registrationBtn = document.querySelector('.header__button-registration-container');
-// const accountName = document.querySelector('.header__account-name');
-// const separator = document.querySelector('.header__separator-item');
+const burger = document.querySelector('.header__burger');
+const hideMenu = document.querySelector('.navbar_vertical');
+const hideMenuItems = hideMenu.querySelectorAll('.navbar__item_vertical');
 
-// entryBtn.onclick = signIn;
-// accountName.onclick = signIn;
-
-// function signIn() {
-//     if (entryCheck) {
-//         entryBtn.removeAttribute('style');
-//         registrationBtn.removeAttribute('style');
-//         accountName.removeAttribute('style');
-//         separator.removeAttribute('style');
-//         entryCheck = false;
-//     } else {
-//         entryBtn.style.display = 'none';
-//         registrationBtn.style.display = 'none';
-//         accountName.style.display = 'flex'
-//         accountName.style.paddingRight = 0;
-//         separator.style.display = 'flex';
-//         entryCheck = true;
-//     }
-// }
+burger.onclick = function() {
+    if (hideMenu) {
+        hideMenu.classList.toggle('navbar_vertical-opened');
+        for (let item of hideMenuItems) {
+            item.classList.toggle('navbar__item_vertical-opened');
+        }
+    }
+}

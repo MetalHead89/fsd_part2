@@ -4,11 +4,20 @@ mixin navbar(args)
         - var navbarItemClass = 'navbar__item navbar__item_horizontal'
         - var navbarHiddenListClass = 'navbar__hidden-list navbar__hidden-list_horizontal'
         - var navbarHiddenListItemClass = 'navbar__hidden-list-item navbar__hidden-list-item_horizontal'
+        - var dropdownTitleClass = 'navbar__dropdown-title'
+        - var separatorClass = 'navbar__separator'
+    else if (args.type == 'vertical')
+        - var navbarClass = 'navbar navbar_vertical'
+        - var navbarItemClass = 'navbar__item navbar__item_vertical'
+        - var navbarHiddenListClass = 'navbar__hidden-list navbar__hidden-list_vertical'
+        - var navbarHiddenListItemClass = 'navbar__hidden-list-item navbar__hidden-list-item_vertical'
+        - var dropdownTitleClass = 'navbar__dropdown-title navbar__dropdown-title_vertical'
+        - var separatorClass = 'navbar__separator navbar__separator_vertical'
 
     ul(class=navbarClass)
         li(class=navbarItemClass) О нас
         li(class=navbarItemClass)
-            .navbar__dropdown-title
+            div(class=dropdownTitleClass)
                 span Услуги 
                 i(class='material-icons') expand_more
             ul(class=navbarHiddenListClass)
@@ -21,7 +30,7 @@ mixin navbar(args)
         li(class=navbarItemClass) Вакансии
         li(class=navbarItemClass) Новости
         li(class=navbarItemClass)
-            .navbar__dropdown-title
+            div(class=dropdownTitleClass)
                 span Соглашения
                 i(class='material-icons') expand_more
             ul(class=navbarHiddenListClass)
@@ -29,9 +38,8 @@ mixin navbar(args)
                 li(class=navbarHiddenListItemClass) Бонусная программа
                 li(class=navbarHiddenListItemClass) Политика конфиденциальности
         li(class='navbar__item navbar__separator-item ' + navbarItemClass)
-            .navbar__separator
-        li(class='navbar__account-name ' + navbarItemClass)
-            .navbar__account-name Виталий Бакалов
+            div(class=separatorClass)
+        li(class='navbar__account-name ' + navbarItemClass) Виталий Бакалов
         li(class='navbar__button-entry-container ' + navbarItemClass)
             +button('borderButton', 'Войти')(class='navbar__button-entry')
         li(class='navbar__button-registration-container ' + navbarItemClass)
