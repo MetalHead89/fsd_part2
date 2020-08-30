@@ -1,0 +1,45 @@
+extends ../layouts/website_page
+
+block includs
+    include ../modules/dropdown/dropdown.pug
+    include ../modules/range-slider/range-slider.pug
+    include ../modules/checkbox-button/checkbox-button.pug
+    include ../modules/expandable-checkbox-list/expandable-checkbox-list.pug
+    
+
+block title
+    | Serach Room
+
+block content
+    .search-room__body
+        .search-room__content
+            .search-room__sidebar
+                .search-room__filter-date-container
+                    +dropdown('filter_date', 'search-room-filer-date', 'даты пребывания в отеле')
+                .search-room__guests-dropdown-container
+                    +dropdown('guests', 'search-room-guests', 'гости')
+                .search-room__range-slider-container
+                    +rangeSlider()
+                    span Стоимость за сутки пребывания в номере
+                .search-room__checkbox-container
+                    h3 Checkbox Buttons
+                    +checkboxButton('Можно курить', 'noSmoking')
+                    +checkboxButton('Можно с питомцами', 'pets', true)
+                    +checkboxButton('Можно пригласить гостей (до&nbsp10&nbspчеловек)', 'guests', true)
+                .search-room__rich-checkbox-container
+                    h3 Доступность
+                    +checkboxButton('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
+                    +checkboxButton('Помощник для инвалидов', 'disabledAssistant', false, true, 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.')
+                .search-room__comfort-dropdown-container
+                    +dropdown('comfort', 'search-room-comfort-drop', 'удобства номера')
+                .search-room__expandable-checkbox-list-container
+                    +expandable-checkbox-list([['Завтрак', 'breakfast'], ['Письменный стол', 'desk', true], ['Стул для кормления', 
+                                    'feedingChair', true], ['Кроватка', 'crib', true], ['Телевизор', 'tv'], ['Шампунь', 'shampoo']], 'expandable checkbox list')
+                
+    script
+        include ../modules/range-slider/range-slider.js
+
+block scripts
+    include ../modules/dropdown/dropdown.js
+    include ../modules/calendar/calendar.js
+    

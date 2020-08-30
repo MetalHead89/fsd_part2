@@ -48,7 +48,6 @@ function signIn() {
 }
 
 for (let item of dropdownItems) {
-    console.log('asd')
     item.onclick = function() {
         item.nextElementSibling.classList.toggle('navbar__hidden-list_vertical-opened')
     }
