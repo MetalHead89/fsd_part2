@@ -3,6 +3,7 @@
 .checkbox-button {
     position: relative;
     margin: 6px 0;
+    padding-left: 30px;
 }
 
 .checkbox-button__checkbox-element {
@@ -17,7 +18,6 @@
 }
 
 .checkbox-button__label {
-    margin-left: 30px;
     color: $darkShade50;
     transition: color 0.5s ease;
     &:hover {
