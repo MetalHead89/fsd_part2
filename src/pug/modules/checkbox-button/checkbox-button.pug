@@ -1,8 +1,10 @@
 mixin checkboxButton(labelText, id, isChecked, richCheckbox=false, richText)
     - var additionalClass = ''
+    - var checkboxClass = 'checkbox-button'
     if richCheckbox
         - additionalClass = 'checkbox-button__label_rich'
-    .checkbox-button
+        - var checkboxClass = 'checkbox-button checkbox-button_rich'
+    div(class=checkboxClass)
         input(class='checkbox-button__checkbox-element' type='checkbox' checked=isChecked id=id)
         label(class='checkbox-button__label ' + additionalClass, for=id) !{labelText}
         if richCheckbox

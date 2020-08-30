@@ -43,7 +43,7 @@
         content: "";
         position: absolute;
         left: 7px;
-        top:4px;
+        top: 4px;
         width: 4px;
         height: 6px;
         border-right: 2px solid;
@@ -64,11 +64,15 @@
 }
 
 .checkbox-button__rich-text {
-    padding-top: 3px;
+    padding-top: 6px;
     width: 236px;
     font-size: 12px;
     color: $darkShade50;
     line-height: 14px;
+}
+
+.checkbox-button_rich {
+    margin: 10px 0;
 }
 
 @keyframes jumpUp {
