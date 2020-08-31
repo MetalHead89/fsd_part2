@@ -5,7 +5,8 @@ block includs
     include ../modules/range-slider/range-slider.pug
     include ../modules/checkbox-button/checkbox-button.pug
     include ../modules/expandable-checkbox-list/expandable-checkbox-list.pug
-    
+    include ../modules/numberCard/numberCard.pug
+    include ../modules/pagination/pagination.pug    
 
 block title
     | Serach Room
@@ -14,32 +15,66 @@ block content
     .search-room__body
         .search-room__content
             .search-room__sidebar
-                .search-room__filter-date-container
-                    +dropdown('filter_date', 'search-room-filer-date', 'даты пребывания в отеле')
-                .search-room__guests-dropdown-container
-                    +dropdown('guests', 'search-room-guests', 'гости')
-                .search-room__range-slider-container
-                    +rangeSlider()
-                    span Стоимость за сутки пребывания в номере
-                .search-room__checkbox-container
-                    h3 Checkbox Buttons
-                    +checkboxButton('Можно курить', 'noSmoking')
-                    +checkboxButton('Можно с питомцами', 'pets', true)
-                    +checkboxButton('Можно пригласить гостей (до&nbsp10&nbspчеловек)', 'guests', true)
-                .search-room__rich-checkbox-container
-                    h3 Доступность
-                    +checkboxButton('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
-                    +checkboxButton('Помощник для инвалидов', 'disabledAssistant', false, true, 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.')
-                .search-room__comfort-dropdown-container
-                    +dropdown('comfort', 'search-room-comfort-drop', 'удобства номера')
-                .search-room__expandable-checkbox-list-container
-                    +expandable-checkbox-list([['Завтрак', 'breakfast'], ['Письменный стол', 'desk', true], ['Стул для кормления', 
-                                    'feedingChair', true], ['Кроватка', 'crib', true], ['Телевизор', 'tv'], ['Шампунь', 'shampoo']], 'дополнительные удобства')
-                
+                .search-room__filter
+                    h3 Дополнительные опции для поиска номера
+                    i(class='material-icons search-room__filter-expand-more') keyboard_arrow_down
+                .search-room__filter-options
+                    .search-room__filter-date-container
+                        +dropdown('filter_date', 'search-room-filer-date', 'даты пребывания в отеле')
+                    .search-room__guests-dropdown-container
+                        +dropdown('guests', 'search-room-guests', 'гости')
+                    .search-room__range-slider-container
+                        +rangeSlider()
+                        span Стоимость за сутки пребывания в номере
+                    .search-room__checkbox-container
+                        h3 Checkbox Buttons
+                        +checkboxButton('Можно курить', 'noSmoking')
+                        +checkboxButton('Можно с питомцами', 'pets', true)
+                        +checkboxButton('Можно пригласить гостей (до&nbsp10&nbspчеловек)', 'guests', true)
+                    .search-room__rich-checkbox-container
+                        h3 Доступность
+                        +checkboxButton('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
+                        +checkboxButton('Помощник для инвалидов', 'disabledAssistant', false, true, 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.')
+                    .search-room__comfort-dropdown-container
+                        +dropdown('comfort', 'search-room-comfort-drop', 'удобства номера')
+                    .search-room__expandable-checkbox-list-container
+                        +expandable-checkbox-list([['Завтрак', 'breakfast'], ['Письменный стол', 'desk', true], ['Стул для кормления', 
+                                        'feedingChair', true], ['Кроватка', 'crib', true], ['Телевизор', 'tv'], ['Шампунь', 'shampoo']], 'дополнительные удобства')
+            .search-room__rooms-section
+                h1(class='search-room__rooms-title') Номера, которые мы для вас подобрали
+                .search-room__rooms
+                    .search-room__number-card-container
+                        +numberCard({roomNumber: 888, lux: true, roomRate: 9990, rating: 5, reviewsNumber: 145, images: ['assets/images/number1.png', 'assets/images/number6.png', 'assets/images/number10.png', 'assets/images/number7.png']})
+                    .search-room__number-card-container
+                        +numberCard({roomNumber: 840, lux: false, roomRate: 9900, rating: 4, reviewsNumber: 65, images: ['assets/images/number2.png', 'assets/images/number9.png', 'assets/images/number3.png', 'assets/images/number6.png']})
+                    .search-room__number-card-container
+                        +numberCard({roomNumber: 980, lux: true, roomRate: 8500, rating: 3, reviewsNumber: 35, images: ['assets/images/number3.png', 'assets/images/number10.png', 'assets/images/number1.png', 'assets/images/number5.png']})
+                    .search-room__number-card-container
+                        +numberCard({roomNumber: 856, lux: false, roomRate: 7300, rating: 5, reviewsNumber: 19, images: ['assets/images/number4.png', 'assets/images/number8.png', 'assets/images/number9.png', 'assets/images/number2.png']})
+                    .search-room__number-card-container
+                        +numberCard({roomNumber: 740, lux: false, roomRate: 6000, rating: 4, reviewsNumber: 44, images: ['assets/images/number5.png', 'assets/images/number3.png', 'assets/images/number2.png', 'assets/images/number9.png']})
+                    .search-room__number-card-container
+                        +numberCard({roomNumber: 982, lux: false, roomRate: 5800, rating: 3, reviewsNumber: 56, images: ['assets/images/number6.png', 'assets/images/number10.png', 'assets/images/number8.png', 'assets/images/number7.png']})
+                    .search-room__number-card-container
+                        +numberCard({roomNumber: 678, lux: false, roomRate: 5500, rating: 5, reviewsNumber: 45, images: ['assets/images/number7.png', 'assets/images/number6.png', 'assets/images/number8.png', 'assets/images/number10.png']})
+                    .search-room__number-card-container
+                        +numberCard({roomNumber: 450, lux: false, roomRate: 5300, rating: 4, reviewsNumber: 39, images: ['assets/images/number8.png', 'assets/images/number1.png', 'assets/images/number3.png', 'assets/images/number9.png']})
+                    .search-room__number-card-container
+                        +numberCard({roomNumber: 350, lux: false, roomRate: 5000, rating: 3, reviewsNumber: 77, images: ['assets/images/number9.png', 'assets/images/number2.png', 'assets/images/number10.png', 'assets/images/number4.png']})
+                    .search-room__number-card-container
+                        +numberCard({roomNumber: 666, lux: false, roomRate: 5000, rating: 5, reviewsNumber: 25, images: ['assets/images/number10.png', 'assets/images/number7.png', 'assets/images/number9.png', 'assets/images/number3.png']})
+                    .search-room__number-card-container
+                        +numberCard({roomNumber: 444, lux: false, roomRate: 5000, rating: 3, reviewsNumber: 15, images: ['assets/images/number11.png', 'assets/images/number6.png', 'assets/images/number7.png', 'assets/images/number5.png']})
+                    .search-room__number-card-container
+                        +numberCard({roomNumber: 352, lux: false, roomRate: 5000, rating: 3, reviewsNumber: 55, images: ['assets/images/number12.png', 'assets/images/number2.png', 'assets/images/number3.png', 'assets/images/number5.png']})
+                .search-room__pagination-container
+                    +pagination(15, 1)
+
     script
         include ../modules/range-slider/range-slider.js
+        include ../modules/pagination/pagination.js
 
 block scripts
     include ../modules/dropdown/dropdown.js
     include ../modules/calendar/calendar.js
-    
+    include ../modules/numberCard/numberCard.js
