@@ -27,9 +27,36 @@
 }
 
 .search-room__filter {
+    padding: 20px;
     display: none;
     flex-direction: raw;
     align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:hover,
+    & h3:hover {
+        transition: color .5s ease-in;
+        color: $darkShade50;
+    }
+    & h3:not(:hover) {
+        transition: color .5s ease-in;
+    }
+    & h3 {
+        margin: 0;
+    }
+}
+
+.search-room__filter-check {
+    display: none;
+    &:checked ~ .search-room__filter-options {
+        display: block;
+    }
+}
+
+.search-room__filter-options {
+    width: 100%;
+    max-width: 266px;
+    display: block;
 }
 
 .search-room__filter-date-container {
@@ -128,10 +155,21 @@
 
     .search-room__filter-options {
         display: none;
+        margin: 0 auto;
+    }
+
+    .search-room__rooms-section {
+        padding: 0;
     }
 
     .search-room__filter {
-        display: block;
+        display: flex;
+    }
+
+    .search-room__sidebar {
+        max-width: 100%;
+        display: flex;
+        align-items: center;;
     }
     
     // .search-room__number-card-container {

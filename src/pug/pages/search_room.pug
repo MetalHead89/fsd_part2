@@ -15,9 +15,10 @@ block content
     .search-room__body
         .search-room__content
             .search-room__sidebar
-                .search-room__filter
+                label(class='search-room__filter' for='search-room__filter-check')
                     h3 Дополнительные опции для поиска номера
                     i(class='material-icons search-room__filter-expand-more') keyboard_arrow_down
+                input(type='checkbox' id='search-room__filter-check' class='search-room__filter-check')
                 .search-room__filter-options
                     .search-room__filter-date-container
                         +dropdown('filter_date', 'search-room-filer-date', 'даты пребывания в отеле')
