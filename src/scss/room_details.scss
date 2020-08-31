@@ -1,7 +1,20 @@
+.room-details__room-photos {
+    display: flex;
+    flex-direction: row;
+}
+
 .room-details__photo1 {
+    width: 63.5%;
     height: 0;
     background: url('../assets/images/room_details_image1.png');
-    padding-bottom: 56.25%;
+    padding-bottom: 31.4%;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+}
+
+.room-details__photo2 {
+    width: 36.5%;
+    height: 0;
+    padding-bottom: 15%;
+    background: red;
 }
