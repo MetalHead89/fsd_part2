@@ -42,11 +42,13 @@
 }
 
 .room-details__central-container {
+    padding-top: 55px;
     width: 1160px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .room-details__room-info {
-    padding-top: 55px;
     width: 100%;
     max-width: 710px;
 }
@@ -93,4 +95,9 @@
 
 .room-details__details-title_cancel {
     padding-bottom: 8px;
+}
+
+.room-details__rate-card-container {
+    max-width: 380px;
+    padding-top: 15px;
 }

@@ -4,6 +4,7 @@ block includs
     include ../modules/guest-review/guest-review.pug
     include ../modules/room-details/room-details.pug
     include ../modules/bullet-list/bullet-list.pug
+    include ../modules/roomRateCard/roomRateCard.pug
 
 block title
     | Room Details
@@ -36,7 +37,13 @@ block content
                     .room-details__details-container
                         h1(class='room-details__details-title room-details__details-title_cancel') Отмена
                         .room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+            .room-details__rate-card-container
+                +roomRateCard({'roomNumber': 888, 'lux': true, 'roomRate': 9990, 'serviceCost': -2179, 'additionalServiceCost': 300})
     script
         include ../modules/like-button/like-button.js
+        
 
 block scripts
+    include ../modules/roomRateCard/roomRateCard.js
+    include ../modules/dropdown/dropdown.js
+    include ../modules/calendar/calendar.js
