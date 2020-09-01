@@ -1,0 +1,53 @@
+@import '../../../scss/vars.scss';
+
+.impressions-diagram {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 13px 0;
+    padding-right: 9px;
+    box-sizing: border-box;
+}
+
+.impressions-diagram__diagram {
+    width: 120px;
+    height: 120px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 4px solid transparent;
+    background-image: linear-gradient(white, white), linear-gradient(180deg, $purple 0%, $blue 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    -webkit-background-clip: padding-box, border-box;
+}
+
+.impressions-diagram__legend-item {
+    position: relative;
+    padding-left: 30px;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        left: 15px;
+        top: 7px;
+    }
+}
+
+.impressions-diagram__legend-item_yellow::before {
+    background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+}
+
+.impressions-diagram__legend-item_green::before {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+
+.impressions-diagram__legend-item_purple::before {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+
+.impressions-diagram__legend-item_brown::before {
+    background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+}

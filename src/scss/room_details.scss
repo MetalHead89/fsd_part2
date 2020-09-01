@@ -66,6 +66,16 @@
     }
 }
 
+.room-details__top-info-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.room-details__impressions-diagram {
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+
 .room-details__details-title {
     font-family: 'Open Sans';
     font-size: 19px;

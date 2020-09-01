@@ -5,6 +5,7 @@ block includs
     include ../modules/room-details/room-details.pug
     include ../modules/bullet-list/bullet-list.pug
     include ../modules/roomRateCard/roomRateCard.pug
+    include ../modules/impressions-diagram/impressions-diagram.pug
 
 block title
     | Room Details
@@ -24,6 +25,10 @@ block content
                         +roomDetails('insert_emoticon', 'Комфорт', 'Шумопоглащающие стены')
                         +roomDetails('location_city', 'Удобство', 'Окно в каждой из спален')
                         +roomDetails('whatshot', 'Уют', 'Номер оснащён камином')
+                    .room-details__impressions-diagram
+                        h1(class='room-details__details-title') Впечатления от номера
+                        +impressionsDiagram()
+
                 .room-details__reviews-header
                     h1(class='room-details__details-title') Отзывы посетителей номера
                     .room-details__reviews-count  2 отзыва
