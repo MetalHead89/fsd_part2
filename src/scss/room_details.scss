@@ -74,6 +74,8 @@
 
 .room-details__bottom-info-section {
     padding-top: 8px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .room-details__details-container_bullet-list {
@@ -82,5 +84,13 @@
 
 .room-details__details-title_bullet-list {
     padding-left: 20px;
+    padding-bottom: 8px;
+}
+
+.room-details__cancel-text {
+    max-width: 345px;
+}
+
+.room-details__details-title_cancel {
     padding-bottom: 8px;
 }
