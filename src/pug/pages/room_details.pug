@@ -24,8 +24,9 @@ block content
                         +roomDetails('insert_emoticon', 'Комфорт', 'Шумопоглащающие стены')
                         +roomDetails('location_city', 'Удобство', 'Окно в каждой из спален')
                         +roomDetails('whatshot', 'Уют', 'Номер оснащён камином')
-
-                h1(class='room-details__details-title') Отзывы посетителей номера
+                .room-details__reviews-header
+                    h1(class='room-details__details-title') Отзывы посетителей номера
+                    .room-details__reviews-count  2 отзыва
                 .room-details__guest-review-container
                     +guestReview('assets/images/reviewPhoto1.png', 'Мурад Сарафанов', 5, 12, true, 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
                 .room-details__guest-review-container
