@@ -45,7 +45,23 @@
     width: 1160px;
 }
 
-.room-details__title {
+.room-details__room-info {
+    padding-top: 55px;
+    width: 100%;
+    max-width: 710px;
+}
+
+.room-details__details-container {
+    & .room-details:first-of-type {
+        padding-top: 10px;
+    }
+    & .room-details:last-child {
+        border: none;
+        padding-bottom: 18px;
+    }
+}
+
+.room-details__details-title {
     font-family: 'Open Sans';
     font-size: 19px;
     margin-bottom: 6px;
@@ -53,6 +69,18 @@
 
 .room-details__guest-review-container {
     width: 100%;
-    max-width: 710px;
     padding: 11px 0;
+}
+
+.room-details__bottom-info-section {
+    padding-top: 8px;
+}
+
+.room-details__details-container_bullet-list {
+    max-width: 300px;
+}
+
+.room-details__details-title_bullet-list {
+    padding-left: 20px;
+    padding-bottom: 8px;
 }

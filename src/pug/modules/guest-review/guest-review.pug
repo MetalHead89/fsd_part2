@@ -12,15 +12,19 @@ mixin guestReview(photo, name, days, likes, checkedLike, rewiew)
             - lastVisit = days + ' дней '
     else
         - var weeks = parseInt(days / 7)
-        - let weeks10 = weeks % 10
-        - let weeks100 = weeks % 100
 
-        if weeks10 == 1 && weeks100 != 11
-            - lastVisit = weeks + ' неделю '
-        else if (weeks10 >= 2 && weeks10 <= 4) && !(weeks100 >= 12 && weeks100 <= 14)
-            - lastVisit = weeks + ' недели '
+        if weeks == 1
+            - lastVisit = 'Неделю '
         else
-            - lastVisit = weeks + ' недель '
+            - let weeks10 = weeks % 10
+            - let weeks100 = weeks % 100
+
+            if weeks10 == 1 && weeks100 != 11
+                - lastVisit = weeks + ' неделю '
+            else if (weeks10 >= 2 && weeks10 <= 4) && !(weeks100 >= 12 && weeks100 <= 14)
+                - lastVisit = weeks + ' недели '
+            else
+                - lastVisit = weeks + ' недель '
 
     - lastVisit = lastVisit + ' назад '
 
