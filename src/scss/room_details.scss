@@ -32,3 +32,27 @@
     background-size: cover;
     background-position: center;
 }
+
+.room-details__details-section {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.room-details__central-container {
+    width: 1160px;
+}
+
+.room-details__title {
+    font-family: 'Open Sans';
+    font-size: 19px;
+    margin-bottom: 6px;
+}
+
+.room-details__guest-review-container {
+    width: 100%;
+    max-width: 710px;
+    padding: 11px 0;
+}
