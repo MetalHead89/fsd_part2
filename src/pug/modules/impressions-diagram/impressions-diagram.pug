@@ -10,8 +10,7 @@ mixin impressionsDiagram(diagramArgs)
             .impressions-diagram__legend-item.impressions-diagram__legend-item_purple Удовлетворительно
             .impressions-diagram__legend-item.impressions-diagram__legend-item_brown Разочарован
     script.
-        let votesTotal = 0
-        for (let i in !{diagramArgs}) {
-            alert('s')
-        }
-        //- alert(!{diagramArgs.good})
+        document.cookie = 'magnificently=' + !{diagramArgs.magnificently}
+        document.cookie = 'good=' + !{diagramArgs.good}
+        document.cookie = 'satisfactorily=' + !{diagramArgs.satisfactorily}
+        document.cookie = 'disappointed=' + !{diagramArgs.disappointed}
