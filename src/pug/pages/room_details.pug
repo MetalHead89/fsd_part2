@@ -27,7 +27,8 @@ block content
                         +roomDetails('whatshot', 'Уют', 'Номер оснащён камином')
                     .room-details__impressions-diagram
                         h1(class='room-details__details-title') Впечатления от номера
-                        +impressionsDiagram({'magnificently': 50, 'good': 25, 'satisfactorily': 25, 'disappointed': 0})
+                        +impressionsDiagram()
+                        //- +impressionsDiagram({'magnificently': 50, 'good': 25, 'satisfactorily': 25, 'disappointed': 0})
 
                 .room-details__reviews-header
                     h1(class='room-details__details-title') Отзывы посетителей номера
@@ -47,7 +48,7 @@ block content
                 +roomRateCard({'roomNumber': 888, 'lux': true, 'roomRate': 9990, 'serviceCost': -2179, 'additionalServiceCost': 300})
     script
         include ../modules/like-button/like-button.js
-        include ../modules/impressions-diagram/impressions-diagram.js
+        //- include ../modules/impressions-diagram/impressions-diagram.js
         
 
 block scripts
