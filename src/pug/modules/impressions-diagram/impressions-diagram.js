@@ -8,7 +8,7 @@ const roomImpressions = {};
 let votesSum = 0;
 let diagramSegmentCount = 0;
 let startAngle = 0
-let endAngle = 0 - degToRad(90);
+let endAngle = 0 - degToRad(94);
 
 // Установка градиентов
 const magnificentlyGradient = canvasContext.createLinearGradient(0, 0, 0, 120);
@@ -54,17 +54,18 @@ function setDiagramSegment(color, votes) {
     if (votes == 0) {
         return;
     }
-    
+    console.log(diagramSegmentCount)
     let impressionPercent = votes / votesSum * 100;
     startAngle = endAngle;
-    let degAngle = 360 * impressionPercent / 100;
-    endAngle -= degToRad(degAngle)
+    let degAngle = (360 - (diagramSegmentCount * 8))  * impressionPercent / 100;
+    endAngle -= degToRad(degAngle);
 
-    canvasContext.beginPath()
+    canvasContext.beginPath();
     canvasContext.arc(canvasCenterX, canvasCenterY, 58, startAngle, endAngle, true);
     canvasContext.lineWidth = 4;
     canvasContext.strokeStyle = color;
     canvasContext.stroke();
+    endAngle -= degToRad(8);
 }
 
 function degToRad(deg) {
