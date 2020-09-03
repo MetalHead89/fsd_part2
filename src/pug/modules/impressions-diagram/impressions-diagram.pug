@@ -1,9 +1,11 @@
 mixin impressionsDiagram(diagramArgs)
     .impressions-diagram
-        canvas(class='impressions-diagram__diagram', width=120, height=120)
+        .impressions-diagram__diagram-section
+            canvas(class='impressions-diagram__diagram', width=120, height=120)
             .impressions-diagram__votes-counter
-                .impressions-diagram__votes-number 0
-                .impressions-diagram__votes-text голосов
+                    .impressions-diagram__votes-number 0
+                    .impressions-diagram__votes-text голосов
+            
         .impressions-diagram__diagram-legend
             .impressions-diagram__legend-item.impressions-diagram__legend-item_yellow Великолепно
             .impressions-diagram__legend-item.impressions-diagram__legend-item_green Хорошо
