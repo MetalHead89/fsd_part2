@@ -1,41 +1,264 @@
 'use strict'
 
-const diagram = document.querySelector('.impressions-diagram__diagram');
+const canvas = document.querySelector('.impressions-diagram__diagram');
+const canvasContext = canvas.getContext('2d');
+const canvasCenterX = canvas.width / 2;
+const canvasCenterY = canvas.height / 2;
 const roomImpressions = {};
 let votesSum = 0;
+let diagramSegmentCount = 0;
+let startAngle = 0
+let endAngle = 0 - degToRad(90);
 
+// Установка градиентов
+const magnificentlyGradient = canvasContext.createLinearGradient(0, 0, 0, 120);
+const goodGradient = canvasContext.createLinearGradient(0, 0, 0, 120);
+const satisfactorilyGradient = canvasContext.createLinearGradient(0, 0, 0, 120);
+const disappointedGradient = canvasContext.createLinearGradient(0, 0, 0, 120);
+setGradient(magnificentlyGradient, '#FFE39C', '#FFBA9C');
+setGradient(goodGradient, '#6FCF97', '#66D2EA');
+setGradient(satisfactorilyGradient, '#BC9CFF', '#8BA4F9');
+setGradient(disappointedGradient, '#919191', '#3D4975');
+
+// Формирование словаря сегментов диаграммы и подсчет общего количества голосов
 for (let cookie of document.cookie.split(';')) {
     cookie = cookie.split('=');
     
     if (cookie[0].trim() == 'magnificently' || cookie[0].trim() == 'good' || 
         cookie[0].trim() == 'satisfactorily' || cookie[0].trim() == 'disappointed') {
+        
+        // Подсчёт количества сегментов
+        if (parseInt(cookie[1]) != 0) {
+            diagramSegmentCount++;
+        }
+
         roomImpressions[cookie[0].trim()] = parseInt(cookie[1]);
         votesSum += parseInt(cookie[1]);
     }
 }
 
-let diagramStyle = 'linear-gradient(white, white), conic-gradient(';
-let startAngle = 0;
-let endAngle = 0;
+setDiagramSegment(magnificentlyGradient, roomImpressions['magnificently']);
+setDiagramSegment(goodGradient, roomImpressions['good']);
+setDiagramSegment(satisfactorilyGradient, roomImpressions['satisfactorily']);
+setDiagramSegment(disappointedGradient, roomImpressions['disappointed']);
 
-diagramStyle += setDiagramStyle('#919191', roomImpressions['disappointed']);
-diagramStyle += setDiagramStyle('#BC9CFF', roomImpressions['satisfactorily']);
-diagramStyle += setDiagramStyle('#6FCF97', roomImpressions['good']);
-diagramStyle += setDiagramStyle('#FFE39C', roomImpressions['magnificently']);
-diagramStyle = `${diagramStyle.slice(0, -1)})`;
+canvasContext.font = 'bold 24px Quicksand';;
+canvasContext.fillText(260, 20, 50);
 
-diagram.style.backgroundImage = diagramStyle;
+function setGradient(gradientObject, startColor, endColor) {
+    gradientObject.addColorStop(0, startColor);
+    gradientObject.addColorStop(1, endColor);
+}
 
-function setDiagramStyle(color, votes) {
+function setDiagramSegment(color, votes) {
     if (votes == 0) {
-        return '';
+        return;
     }
     
     let impressionPercent = votes / votesSum * 100;
     startAngle = endAngle;
-    endAngle += 360 * impressionPercent / 100;
-    return ` ${color} ${startAngle}deg ${endAngle}deg,`;
+    let degAngle = 360 * impressionPercent / 100;
+    endAngle -= degToRad(degAngle)
+
+    canvasContext.beginPath()
+    canvasContext.arc(canvasCenterX, canvasCenterY, 58, startAngle, endAngle, true);
+    canvasContext.lineWidth = 4;
+    canvasContext.strokeStyle = color;
+    canvasContext.stroke();
 }
+
+function degToRad(deg) {
+    return (Math.PI * deg) / 180;
+}
+
+
+
+
+
+// 'use strict'
+
+// const canvas = document.querySelector('.impressions-diagram__diagram');
+// const canvasContext = canvas.getContext('2d');
+// const canvasCenterX = canvas.width / 2;
+// const canvasCenterY = canvas.height / 2;
+// const roomImpressions = {};
+// let votesSum = 0;
+// let diagramSegmentCount = 0;
+// let startAngle = 0
+// let endAngle = 0 - degToRad(90);
+
+// // Установка градиентов
+// const magnificentlyGradient = canvasContext.createLinearGradient(0, 0, 0, 120);
+// const goodGradient = canvasContext.createLinearGradient(0, 0, 0, 120);
+// const satisfactorilyGradient = canvasContext.createLinearGradient(0, 0, 0, 120);
+// const disappointedGradient = canvasContext.createLinearGradient(0, 0, 0, 120);
+// setGradient(magnificentlyGradient, '#FFE39C', '#FFBA9C');
+// setGradient(goodGradient, '#6FCF97', '#66D2EA');
+// setGradient(satisfactorilyGradient, '#BC9CFF', '#8BA4F9');
+// setGradient(disappointedGradient, '#919191', '#3D4975');
+
+// // Формирование словаря сегментов диаграммы и подсчет общего количества голосов
+// for (let cookie of document.cookie.split(';')) {
+//     cookie = cookie.split('=');
+    
+//     if (cookie[0].trim() == 'magnificently' || cookie[0].trim() == 'good' || 
+//         cookie[0].trim() == 'satisfactorily' || cookie[0].trim() == 'disappointed') {
+        
+//         // Подсчёт количества сегментов
+//         if (parseInt(cookie[1]) != 0) {
+//             diagramSegmentCount++;
+//         }
+
+//         roomImpressions[cookie[0].trim()] = parseInt(cookie[1]);
+//         votesSum += parseInt(cookie[1]);
+//     }
+// }
+
+// setDiagramSegment(magnificentlyGradient, roomImpressions['magnificently']);
+// setDiagramSegment(goodGradient, roomImpressions['good']);
+// setDiagramSegment(satisfactorilyGradient, roomImpressions['satisfactorily']);
+// setDiagramSegment(disappointedGradient, roomImpressions['disappointed']);
+
+
+
+
+
+// function setGradient(gradientObject, startColor, endColor) {
+//     gradientObject.addColorStop(0, startColor);
+//     gradientObject.addColorStop(1, endColor);
+// }
+
+// function setDiagramSegment(color, votes) {
+//     if (votes == 0) {
+//         return;
+//     }
+    
+//     let impressionPercent = votes / votesSum * 100;
+//     startAngle = endAngle;
+//     let degAngle = 360 * impressionPercent / 100;
+//     endAngle += degToRad(degAngle)
+
+//     canvasContext.arc(canvasCenterX, canvasCenterY, 58, startAngle, endAngle, true);
+//     canvasContext.lineWidth = 4;
+//     canvasContext.strokeStyle = color;
+//     canvasContext.stroke();
+// }
+
+// function degToRad(deg) {
+//     return (Math.PI * deg) / 180;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// canvasContext.arc(canvasCenterX, canvasCenterY, 58, 0 - (Math.PI*90/180), Math.PI*90/180, true);
+// canvasContext.lineWidth = 4;
+// canvasContext.strokeStyle = magnificentlyGradient;
+// canvasContext.stroke();
+
+
+
+// const diagram = document.querySelector('.impressions-diagram__diagram');
+// const roomImpressions = {};
+// let votesSum = 0;
+
+// for (let cookie of document.cookie.split(';')) {
+//     cookie = cookie.split('=');
+    
+//     if (cookie[0].trim() == 'magnificently' || cookie[0].trim() == 'good' || 
+//         cookie[0].trim() == 'satisfactorily' || cookie[0].trim() == 'disappointed') {
+//         roomImpressions[cookie[0].trim()] = parseInt(cookie[1]);
+//         votesSum += parseInt(cookie[1]);
+//     }
+// }
+
+// let diagramStyle = 'linear-gradient(white, white), conic-gradient(';
+// let startAngle = 0;
+// let endAngle = 0;
+
+// diagramStyle += setDiagramStyle('#919191', roomImpressions['disappointed']);
+// diagramStyle += setDiagramStyle('#BC9CFF', roomImpressions['satisfactorily']);
+// diagramStyle += setDiagramStyle('#6FCF97', roomImpressions['good']);
+// diagramStyle += setDiagramStyle('#FFE39C', roomImpressions['magnificently']);
+// diagramStyle = `${diagramStyle.slice(0, -1)})`;
+
+// diagram.style.backgroundImage = diagramStyle;
+
+// function setDiagramStyle(color, votes) {
+//     if (votes == 0) {
+//         return '';
+//     }
+    
+//     let impressionPercent = votes / votesSum * 100;
+//     startAngle = endAngle;
+//     endAngle += 360 * impressionPercent / 100;
+//     return ` ${color} ${startAngle}deg ${endAngle}deg,`;
+// }
+
+
+
+
+
+
+
+
+
+
+
+// 'use strict'
+
+// const diagram = document.querySelector('.impressions-diagram__diagram');
+// const roomImpressions = {};
+// let votesSum = 0;
+
+// for (let cookie of document.cookie.split(';')) {
+//     cookie = cookie.split('=');
+    
+//     if (cookie[0].trim() == 'magnificently' || cookie[0].trim() == 'good' || 
+//         cookie[0].trim() == 'satisfactorily' || cookie[0].trim() == 'disappointed') {
+//         roomImpressions[cookie[0].trim()] = parseInt(cookie[1]);
+//         votesSum += parseInt(cookie[1]);
+//     }
+// }
+
+// let diagramStyle = 'linear-gradient(white, white), conic-gradient(';
+// let startAngle = 0;
+// let endAngle = 0;
+
+// diagramStyle += setDiagramStyle('#919191', roomImpressions['disappointed']);
+// diagramStyle += setDiagramStyle('#BC9CFF', roomImpressions['satisfactorily']);
+// diagramStyle += setDiagramStyle('#6FCF97', roomImpressions['good']);
+// diagramStyle += setDiagramStyle('#FFE39C', roomImpressions['magnificently']);
+// diagramStyle = `${diagramStyle.slice(0, -1)})`;
+
+// diagram.style.backgroundImage = diagramStyle;
+
+// function setDiagramStyle(color, votes) {
+//     if (votes == 0) {
+//         return '';
+//     }
+    
+//     let impressionPercent = votes / votesSum * 100;
+//     startAngle = endAngle;
+//     endAngle += 360 * impressionPercent / 100;
+//     return ` ${color} ${startAngle}deg ${endAngle}deg,`;
+// }
 
 
 
