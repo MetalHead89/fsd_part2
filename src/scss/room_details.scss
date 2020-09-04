@@ -68,12 +68,12 @@
 
 .room-details__top-info-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
 }
 
 .room-details__impressions-diagram {
-    padding-right: 30px;
     box-sizing: border-box;
+    margin-left: 11.3%;
 }
 
 .room-details__details-title {

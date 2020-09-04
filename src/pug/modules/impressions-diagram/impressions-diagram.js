@@ -6,6 +6,8 @@ const canvasCenterX = canvas.width / 2;
 const canvasCenterY = canvas.height / 2;
 const roomImpressions = {};
 const separatorSize = 3;
+const votesCounterNumber = document.querySelector('.impressions-diagram__votes-number');
+const votesCounterText = document.querySelector('.impressions-diagram__votes-text');
 let votesSum = 0;
 let diagramSegmentCount = 0;
 let startAngle = 0
@@ -38,6 +40,9 @@ for (let cookie of document.cookie.split(';')) {
     }
 }
 
+votesCounterNumber.innerText = votesSum;
+votesCounterText.innerText = wordGenerator(votesSum);
+
 setDiagramSegment(magnificentlyGradient, roomImpressions['magnificently']);
 setDiagramSegment(goodGradient, roomImpressions['good']);
 setDiagramSegment(satisfactorilyGradient, roomImpressions['satisfactorily']);
@@ -52,7 +57,7 @@ function setDiagramSegment(color, votes) {
     if (votes == 0) {
         return;
     }
-    console.log(diagramSegmentCount)
+    
     let impressionPercent = votes / votesSum * 100;
     startAngle = endAngle;
     let degAngle = (360 * impressionPercent / 100) - separatorSize;
@@ -68,6 +73,23 @@ function setDiagramSegment(color, votes) {
 
 function degToRad(deg) {
     return (Math.PI * deg) / 180;
+}
+
+function wordGenerator(number) {
+    /**
+     * Склоняет слово 'голоса'
+     */
+    let number10 = number % 10;
+    let number100 = number % 100;
+    if (number10 == 1 && number100 != 11) {
+        return 'голос';
+    }
+    else if ((number10 >= 2 && number10 <= 4) && !(number100 >= 12 && number100 <= 14)) {
+        return 'голоса';
+    }
+    else {
+        return 'голосов';
+    }
 }
 
 
