@@ -46,14 +46,14 @@
 
 .room-details__central-container {
     padding-top: 55px;
-    width: 1160px;
+    width: 100%;
+    max-width: 1160px;
     display: flex;
     justify-content: space-between;
 }
 
 .room-details__room-info {
-    width: 100%;
-    max-width: 710px;
+    max-width: 61.2%;
 }
 
 .room-details__details-container {
@@ -72,6 +72,7 @@
 }
 
 .room-details__impressions-diagram {
+    width: 50%;
     box-sizing: border-box;
     margin-left: 11.3%;
 }
@@ -85,6 +86,10 @@
 .room-details__guest-review-container {
     width: 100%;
     padding: 11px 0;
+}
+
+.room-details__reviews-count {
+    color: $darkShade50;
 }
 
 .room-details__reviews-header {
@@ -119,4 +124,14 @@
 .room-details__rate-card-container {
     max-width: 380px;
     padding-top: 15px;
+}
+
+@media screen and (max-width: 1120px){
+    .room-details__top-info-section {
+        flex-direction: column;
+    }
+
+    .room-details__impressions-diagram {
+        margin-left: 0;
+    }
 }

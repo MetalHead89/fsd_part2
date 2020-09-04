@@ -7,11 +7,12 @@
 }
 
 .impressions-diagram {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: flex-end;
     padding: 12px 0;
-    padding-right: 9px;
+    // padding-right: 9px;
     box-sizing: border-box;
 }
 
@@ -44,19 +45,19 @@
 }
 
 .impressions-diagram__diagram-legend {
-    margin-left: 5%;
+    margin-left: 13%;
 }
 
 .impressions-diagram__legend-item {
     position: relative;
-    padding-left: 30px;
+    // padding-left: 30px;
     &::before {
         content: '';
         position: absolute;
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        left: 15px;
+        left: -15px;
         top: 7px;
     }
 }
