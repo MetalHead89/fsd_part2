@@ -73,6 +73,7 @@
 
 .room-details__impressions-diagram {
     width: 50%;
+    min-width: 240px;
     box-sizing: border-box;
     margin-left: 11.3%;
 }
@@ -128,10 +129,80 @@
 
 @media screen and (max-width: 1120px){
     .room-details__top-info-section {
+        margin-left: 5%;
         flex-direction: column;
+        margin-bottom: 30px;
     }
 
     .room-details__impressions-diagram {
         margin-left: 0;
+    }
+
+    .room-details__rate-card-container {
+        position: absolute;
+        right: 5%;
+        padding-right: 20px;
+    }
+
+    .room-details__room-info {
+        max-width: 100%;
+    }
+
+    .room-details__bottom-info-section {
+        justify-content: space-evenly;;
+    }
+}
+
+@media screen and (max-width: 850px){
+    .room-details__rate-card-container {
+        position: static;
+        margin: 30px auto 0;
+    }
+
+    .room-details__central-container {
+        flex-direction: column;
+    }
+
+    .room-details__top-info-section {
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 660px){
+    .room-details__top-info-section {
+        flex-direction: column;
+    }
+
+    .room-details__impressions-diagram {
+        margin: 0 auto 30px;
+    }
+
+    .room-details__details-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // margin: 0 auto;
+    }
+
+    .room-details__bottom-info-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .room-details__details-title_bullet-list {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .room-details__details-title_cancel {
+        text-align: center;
+    }
+
+    .room-details__details-container_bullet-list {
+        margin-bottom: 20px;
     }
 }
