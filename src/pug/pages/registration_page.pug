@@ -1,0 +1,23 @@
+extends ../layouts/website_page
+
+block includs
+    include ../modules/registrationCard/registrationCard.pug
+    
+
+block title
+    | Registration Page
+
+block content
+    .registration-page__body
+        .registration-page__background.registration-page__background1
+        .registration-page__background.registration-page__background2
+        .registration-page__body-content-container
+            .registration-page__registration-card-container
+                +registrationCard()
+    script
+        include ../modules/text-field/text-field.js
+        include ../../js/registration_page.js
+
+block scripts
+    //- include ../modules/navbar/navbar.js
+    //- include ../modules/header/header.js
