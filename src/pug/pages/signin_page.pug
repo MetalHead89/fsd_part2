@@ -1,0 +1,13 @@
+extends ../layouts/registration_signin_page
+
+block includs
+    include ../modules/entryCard/entryCard.pug
+    
+
+block title
+    | Registration Page
+
+block card
+    +entryCard()
+    script
+        include ../modules/text-field/text-field.js
