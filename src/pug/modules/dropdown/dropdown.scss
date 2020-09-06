@@ -54,10 +54,19 @@
 }
 
 .dropdown__date-block {
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     flex-direction: row;
     display: flex;
     justify-content: space-between;
+}
+
+.dropdown__start-date-header {
+    margin-right: 3%;
+}
+
+.dropdown__end-date-header {
+    margin-left: 3%;
 }
 
 .dropdown_dateElement {
