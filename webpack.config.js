@@ -28,7 +28,7 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            template: path.resolve(__dirname, 'src/pug/pages/registration_page.pug')
+            template: path.resolve(__dirname, 'src/pug/pages/signin_page.pug')
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin([
