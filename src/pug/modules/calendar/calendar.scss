@@ -38,6 +38,7 @@
 }
 
 .calendar__month {
+    text-align: center;
     font-family: "Open Sans";
     font-weight: bold;
     font-size: 19px;
@@ -122,4 +123,9 @@
 
 .calendar__button_clear {
     display: none;
+}
+
+.calendar__button-clear {
+    display: flex;
+    align-items: center;
 }
