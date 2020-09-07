@@ -9,10 +9,8 @@
 .impressions-diagram {
     width: 100%;
     display: flex;
-    // justify-content: space-between;
     align-items: flex-end;
     padding: 12px 0;
-    // padding-right: 9px;
     box-sizing: border-box;
 }
 
@@ -76,4 +74,15 @@
 
 .impressions-diagram__legend-item_brown::before {
     background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+}
+
+@media screen and (max-width: 400px){
+    .impressions-diagram {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .impressions-diagram__diagram-section {
+        margin-bottom: 10px;
+    }
 }
