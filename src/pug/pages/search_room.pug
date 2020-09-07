@@ -20,27 +20,29 @@ block content
                     i(class='material-icons search-room__filter-expand-more') keyboard_arrow_down
                 input(type='checkbox' id='search-room__filter-check' class='search-room__filter-check')
                 .search-room__filter-options
-                    .search-room__filter-date-container
-                        +dropdown('filter_date', 'search-room-filer-date', 'даты пребывания в отеле')
-                    .search-room__guests-dropdown-container
-                        +dropdown('guests', 'search-room-guests', 'гости')
-                    .search-room__range-slider-container
-                        +rangeSlider()
-                        span Стоимость за сутки пребывания в номере
-                    .search-room__checkbox-container
-                        h3 Checkbox Buttons
-                        +checkboxButton('Можно курить', 'noSmoking')
-                        +checkboxButton('Можно с питомцами', 'pets', true)
-                        +checkboxButton('Можно пригласить гостей (до&nbsp10&nbspчеловек)', 'guests', true)
-                    .search-room__rich-checkbox-container
-                        h3 Доступность
-                        +checkboxButton('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
-                        +checkboxButton('Помощник для инвалидов', 'disabledAssistant', false, true, 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.')
-                    .search-room__comfort-dropdown-container
-                        +dropdown('comfort', 'search-room-comfort-drop', 'удобства номера')
-                    .search-room__expandable-checkbox-list-container
-                        +expandable-checkbox-list([['Завтрак', 'breakfast'], ['Письменный стол', 'desk', true], ['Стул для кормления', 
-                                        'feedingChair', true], ['Кроватка', 'crib', true], ['Телевизор', 'tv'], ['Шампунь', 'shampoo']], 'дополнительные удобства')
+                    .search-room__option-column-one
+                        .search-room__filter-date-container
+                            +dropdown('filter_date', 'search-room-filer-date', 'даты пребывания в отеле')
+                        .search-room__guests-dropdown-container
+                            +dropdown('guests', 'search-room-guests', 'гости')
+                        .search-room__range-slider-container
+                            +rangeSlider()
+                            span Стоимость за сутки пребывания в номере
+                        .search-room__checkbox-container
+                            h3 Checkbox Buttons
+                            +checkboxButton('Можно курить', 'noSmoking')
+                            +checkboxButton('Можно с питомцами', 'pets', true)
+                            +checkboxButton('Можно пригласить гостей (до&nbsp10&nbspчеловек)', 'guests', true)
+                    .search-room__option-column-two
+                        .search-room__rich-checkbox-container
+                            h3 Доступность
+                            +checkboxButton('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
+                            +checkboxButton('Помощник для инвалидов', 'disabledAssistant', false, true, 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.')
+                        .search-room__comfort-dropdown-container
+                            +dropdown('comfort', 'search-room-comfort-drop', 'удобства номера')
+                        .search-room__expandable-checkbox-list-container
+                            +expandable-checkbox-list([['Завтрак', 'breakfast'], ['Письменный стол', 'desk', true], ['Стул для кормления', 
+                                            'feedingChair', true], ['Кроватка', 'crib', true], ['Телевизор', 'tv'], ['Шампунь', 'shampoo']], 'дополнительные удобства')
             .search-room__rooms-section
                 h1(class='search-room__rooms-title') Номера, которые мы для вас подобрали
                 .search-room__rooms

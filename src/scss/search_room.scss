@@ -48,15 +48,22 @@
 
 .search-room__filter-check {
     display: none;
-    &:checked ~ .search-room__filter-options {
-        display: block;
-    }
+    // &:checked ~ .search-room__filter-options {
+    //     max-width: 100%;
+    //     display: flex;
+    //     justify-content: space-around;
+    // }
 }
 
 .search-room__filter-options {
     width: 100%;
     max-width: 266px;
     display: block;
+}
+
+.search-room__option-column-one,
+.search-room__option-column-two {
+    width: 266px;;
 }
 
 .search-room__filter-date-container {
@@ -100,8 +107,9 @@
 }
 
 .search-room__rooms-section {
-    width: 100%;
-    max-width:834px;
+    width: 71.8%;
+    // width: 100%;
+    // max-width:834px;
 }
 
 .search-room__rooms-title {
@@ -121,8 +129,9 @@
 .search-room__number-card-container {
     margin: 10px 0;
     flex: none;
-    width: 100%;
-    max-width: 270px;
+    width: 32.5%;
+    // width: 100%;
+    // max-width: 270px;
 }
 
 .search-room__pagination-container {
@@ -138,7 +147,9 @@
     }
 
     .search-room__number-card-container {
-        margin: 10px 6px;
+        // margin: 10px 6px;
+        margin: 10px 0;
+        width: 46%;
     }
 
     .search-room__rooms-title {
@@ -146,7 +157,19 @@
     }
 }
 
-@media screen and (max-width: 960px){
+@media screen and (max-width: 980px){
+    .search-room__filter-check {
+        &:checked ~ .search-room__filter-options {
+            max-width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+
+    .search-room__number-card-container {
+        width: 45%;
+    }
+
     .search-room__content {
         flex-direction: column;
         align-items: center;
@@ -158,6 +181,7 @@
     }
 
     .search-room__rooms-section {
+        width: 100%;
         padding: 0;
     }
 
@@ -169,5 +193,24 @@
         max-width: 100%;
         display: flex;
         align-items: center;;
+    }
+}
+
+@media screen and (max-width: 610px){
+    .search-room__filter-check {
+        &:checked ~ .search-room__filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+
+@media screen and (max-width: 610px){
+    .search-room__number-card-container {
+        width: 80%;
+        min-width: 260px;
     }
 }
