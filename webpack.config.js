@@ -28,7 +28,7 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            template: path.resolve(__dirname, 'src/pug/pages/room_details.pug')
+            template: path.resolve(__dirname, 'src/pug/pages/ui_kit.pug')
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin([
