@@ -31,7 +31,6 @@
 
 .colors-and-type {
     width: 100%;
-    // justify-content: space-between;
     flex-direction: row;
     display: flex;
     align-items: flex-start;
@@ -49,7 +48,6 @@
 }
 
 .colors-and-type__colors {
-    // max-width: 680px;
     width: 59%;
     min-width: 350px;
     flex-direction: column;
@@ -90,13 +88,11 @@
     justify-content: space-between;
     margin-bottom: 100px;
     flex-wrap: wrap;
-    // margin: 0 -25px;
 }
 
 .form-elements__column {
     width: 100%;
     max-width: 320px;
-    // margin: 0 25px;
 }
 
 .buttons-block h3 {
@@ -145,7 +141,6 @@
 
 .form-elements__two-column-layout {
     display: flex;
-    // margin: 0 -25px;
     justify-content: space-between;
     width: 100%;
 }
@@ -154,7 +149,6 @@
     max-width: 740px;
     width: 100%;
     display: flex;
-    // margin: 0 auto;
     & .module {
         margin: auto 0;
         display: flex;

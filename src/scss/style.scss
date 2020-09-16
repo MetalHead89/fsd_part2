@@ -1,12 +1,15 @@
 @import 'vars.scss';
 
+html {
+    font-size: 14px;
+}
+
 body {
     font-family: "Montserrat";
     margin: 0;
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
+    line-height: 1.71rem;
     color: $darkShade75;
 }
 
@@ -14,8 +17,8 @@ h1 {
     font-family: "Quicksand";
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 1.71rem;
+    line-height: 2.15rem;
     color: $darkShade100;
 }
 
@@ -23,8 +26,8 @@ h2 {
     font-family: "Quicksand";
     font-style: normal;
     font-weight: bold;
-    font-size: 19px;
-    line-height: 24px;
+    font-size: 1.35rem;
+    line-height: 1.72rem;
     color: $darkShade100;
 }
 
@@ -32,8 +35,8 @@ h3 {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 0.85rem;
+    line-height: 1.08rem;
     text-transform: uppercase;
     color: $darkShade100;
 }
@@ -42,7 +45,7 @@ h3 {
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 24px;  /* Preferred icon size */
+    font-size: 1.71rem;  /* Preferred icon size */
     display: inline-block;
     line-height: 1;
     text-transform: none;
@@ -61,4 +64,4 @@ h3 {
   
     /* Support for IE. */
     font-feature-settings: 'liga';
-  }
+}
