@@ -7,10 +7,16 @@
 }
 
 .color-block__square {
-    width: 70px;
-    height: 70px;
+    width: 100%;
+    max-width: 70px;
+    // height: 70px;
     border-radius: 6px;
     display: inline-block;
+    &:after {
+        content: "";
+        padding-top: 100%;
+        display: block;
+    }
 }
 
 .color-block__square_color-dark100 {
