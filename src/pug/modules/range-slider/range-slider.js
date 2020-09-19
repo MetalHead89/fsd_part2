@@ -19,7 +19,7 @@ function setLeftValue() {
     let min = parseInt(_this.min);
     let max = parseInt(_this.max);
 
-    _this.value = Math.min(parseInt(_this.value), parseInt(rightInput.value) - 1);
+    _this.value = Math.min(parseInt(_this.value), parseInt(rightInput.value));
     let percent = ((_this.value - min) / (max - min)) * 100;
     leftThumb.style.left = percent + '%';
     range.style.left = percent + '%';
@@ -29,7 +29,8 @@ function setLeftValue() {
     number = rangeNumbers[0].replace(' ', '').trim();
     number = parseInt(number.substring(0, number.length - 1));
     
-    rangeLable.innerText = `${addSpaceSeparator(_this.value)}${String.fromCharCode(8381)} - ${rangeNumbers[1]}`;
+    rangeLable.innerText = `${parseInt(_this.value).toLocaleString('ru-RU')}${String.fromCharCode(8381)} - ${rangeNumbers[1]}`;
+
 }
 
 setLeftValue();
@@ -49,30 +50,7 @@ function setRightValue() {
     number = rangeNumbers[1].replace(' ', '').trim();
     number = parseInt(number.substring(0, number.length - 1));
 
-    rangeLable.innerText = `${rangeNumbers[0]} - ${addSpaceSeparator(_this.value)}${String.fromCharCode(8381)}`;
+    rangeLable.innerText = `${rangeNumbers[0]} - ${parseInt(_this.value).toLocaleString('ru-RU')}${String.fromCharCode(8381)}`;
 }
 
 setRightValue();
-
-function addSpaceSeparator(number) {
-    /**
-     * Возвращает строку разделённую пробелом по тысячным разрядам.
-     * 
-     * @param {number} number Число в которое будет вставляться резделитель.
-     * @return {string} reverseResult Строка с разделённым по тысячным разрядам числом.
-     */
-    
-    let reverseStringNumber = String(number).split("").reverse().join("");
-    let reverseResult = '';
-
-    counter = 0;
-    for (index in reverseStringNumber) {
-        if(counter == 3) {
-            reverseResult += ' '
-            counter = 0;
-        }
-        reverseResult += reverseStringNumber[index];
-        counter++;
-    }
-    return reverseResult.split("").reverse().join("");
-}
