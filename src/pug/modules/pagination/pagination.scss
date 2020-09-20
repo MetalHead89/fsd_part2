@@ -1,27 +1,37 @@
 @import '../../../scss/vars.scss';
 
 .pagination {
+    width: 100%;
     display: inline-flex;
     flex-direction: column;
 }
 
 .pagination__pages {
+    width: 100%;
     margin: 0;
     padding: 0;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
 }
 
 .pagination__button {
-    width: 40px;
-    height: 40px;
-    flex: none;
+    width: 100%;
+    max-width: 40px;
+    min-width: 30px;
+    // height: 40px;
+    // flex: none;
     display: inline-flex;
     text-decoration: none;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 0.85rem;
     color: $darkShade50;
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+    }
 }
 
 .pagination__page-number a:hover {
@@ -45,13 +55,13 @@
 }
 
 .pagination__arrow {
-    font-size: 24px;
+    font-size: 1.71rem;
     color: white;
 }
 
 .pagination__signature {
     display: inline-block;
-    font-size: 14px;
+    font-size: 1rem;
     color: $darkShade75;
     text-align: center;
 }
@@ -64,12 +74,18 @@
     text-decoration: none;
     color: $darkShade50;
     display: inline-block;
-    width: 40px;
-    height: 40px;
+    width: 100%;
+    max-width: 40px;
+    // height: 40px;
     border-radius: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: .5s ease;
     cursor: default;
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+    }
 }
