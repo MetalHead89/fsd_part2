@@ -71,7 +71,6 @@
 
 .dropdown_dateElement {
     width: 48%;
-    // max-width: 150px;
 }
 
 .dropdown__drop-menu {
@@ -125,7 +124,7 @@
 .dropdown__option {
     font-weight: bold;
     display: flex;
-    font-size: 12px;
+    font-size: 0.85rem;
     text-transform: uppercase;
     color: $darkShade100;
     flex-direction: row;
@@ -153,7 +152,7 @@
     // padding-bottom: 3px;
     font-family: "Montserrat";
     // line-height: 22px;
-    font-size: 18px;
+    font-size: 1.28rem;
     color: $darkShade50;
     border: 1px solid $darkShade50;
     border-radius: 15px;
