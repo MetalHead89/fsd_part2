@@ -43,7 +43,7 @@
 }
 
 .dropdown__header-text {
-    width: 80%;
+    width: 75%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -51,6 +51,11 @@
 
 .dropdown__expand-more {
     color: $darkShade50;
+}
+
+.dropdown__expand-more_absolute {
+    position: absolute;
+    right: 8px;
 }
 
 .dropdown__date-block {
@@ -61,16 +66,23 @@
     justify-content: space-between;
 }
 
-.dropdown__start-date-header {
-    margin-right: 3%;
-}
-
-.dropdown__end-date-header {
-    margin-left: 3%;
+.dropdown__start-date-header,
+.dropdown__end-date-header
+ {
+    position: relative;
+    // margin-right: 3%;
 }
 
 .dropdown_dateElement {
-    width: 48%;
+    width: 47%;
+}
+
+.dropdown_date-element_right-padding {
+    padding-right: 3%;
+}
+
+.dropdown_date-element_left-padding {
+    padding-left: 3%;
 }
 
 .dropdown__drop-menu {

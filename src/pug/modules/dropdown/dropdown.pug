@@ -41,16 +41,16 @@ mixin dropdown(type='guests', id=none, title=none, title2=none)
                 i(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
         else
             .dropdown__date-block
-                .dropdown__arrival.dropdown_dateElement
+                .dropdown__arrival.dropdown_dateElement.dropdown_date-element_right-padding
                     h3(class="dropdown__title") !{title}
                     label(for=id class='dropdown__header dropdown__start-date-header ' + borders)
                         .dropdown__header-element.dropdown__header-text.dropdown__startDate !{headerText}
-                        i(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
-                .dropdown__departure.dropdown_dateElement
+                        i(class='material-icons dropdown__header-element dropdown__expand-more dropdown__expand-more_absolute') keyboard_arrow_down
+                .dropdown__departure.dropdown_dateElement.dropdown_date-element_left-padding
                     h3(class="dropdown__title") !{title2}
                     label(for=id class='dropdown__header dropdown__end-date-header ' + borders)
                         .dropdown__header-element.dropdown__header-text.dropdown__endDate !{headerText}
-                        i(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
+                        i(class='material-icons dropdown__header-element dropdown__expand-more dropdown__expand-more_absolute') keyboard_arrow_down
 
         if type == 'guests' || type == 'comfort'
             .dropdown__drop-menu
