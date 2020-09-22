@@ -88,15 +88,20 @@
 // Form Elements Block
 
 .form-elements__three-column-layout {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 100px;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
 }
 
 .form-elements__column {
     width: 100%;
     max-width: 320px;
+}
+
+.form-elements__column_side-paddings {
+    padding: 0 30px;
 }
 
 .buttons-block h3 {
@@ -172,28 +177,28 @@
     max-width: 300px;
 }
 
-@media screen and (max-width: 1130px){
-    .form-elements__three-column-layout {
-        justify-content: space-evenly;
-    }
+// @media screen and (max-width: 1130px){
+//     .form-elements__three-column-layout {
+//         justify-content: space-evenly;
+//     }
 
-    .form-elements__column {
-        margin: 0 25px;
-        margin-bottom: 50px;
-    }
-}
+//     .form-elements__column {
+//         margin: 0 25px;
+//         margin-bottom: 50px;
+//     }
+// }
 
-@media screen and (max-width: 750px){
+// @media screen and (max-width: 750px){
 
-    .form-elements__two-column-layout {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+//     .form-elements__two-column-layout {
+//         flex-wrap: wrap;
+//         justify-content: center;
+//     }
 
-    .form-elements__column {
-        margin-bottom: 0;
-    }
-}
+//     .form-elements__column {
+//         margin-bottom: 0;
+//     }
+// }
 
 
 // Cards
