@@ -179,7 +179,7 @@ function changeDropdownHeaderText(dropdown) {
             if (guests[key] > 0) {
                 if (headerText != '')
                     headerText += ', ';
-                headerText += `${guests[key]} ${wordGenerator(key, guests[key])}`;
+                headerText += `${guests[key]} ${dropdownWordGenerator(key, guests[key])}`;
             }
         }
 
@@ -197,7 +197,7 @@ function changeDropdownHeaderText(dropdown) {
             if (comfort[key] > 0) {
                 if (headerText != '')
                     headerText += ', ';
-                headerText += `${comfort[key]} ${wordGenerator(key, comfort[key])}`;
+                headerText += `${comfort[key]} ${dropdownWordGenerator(key, comfort[key])}`;
             }
         }
 
@@ -209,7 +209,7 @@ function changeDropdownHeaderText(dropdown) {
     dropdown.dropdownHeaderText.innerText = headerText;
 }
 
-function wordGenerator(word, number) {
+function dropdownWordGenerator(word, number) {
     /**
      * Склоняет слова
      */
