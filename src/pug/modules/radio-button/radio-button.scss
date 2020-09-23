@@ -3,10 +3,11 @@
 .radio-button {
     flex-direction: row;
     display: flex;
+    flex-wrap: wrap;
     & .radio-button__radio-section {
-        margin-left: 20px;
+        margin-right: 20px;
     }
-    & .radio-button__radio-section:first-child {
+    & .radio-button__radio-section:last-child {
         margin-left: 0px;
     }
 }

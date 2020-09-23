@@ -77,9 +77,9 @@ html(lang="ru")
                                 +checkboxButton('Можно курить', 'noSmoking')
                                 +checkboxButton('Можно с питомцами', 'pets', true)
                                 +checkboxButton('Можно пригласить гостей (до 10 человек)', 'guests', true)
-                            //- .module
-                            //-     h3(class='module-title') Radio Buttons
-                            //-     +radioButton([['radio1', 'radio', 'male', 'Мужчина', true], ['radio2', 'radio', 'female', 'Женщина']])
+                            .module
+                                h3(class='module-title') Radio Buttons
+                                +radioButton([['radio1', 'radio', 'male', 'Мужчина', true], ['radio2', 'radio', 'female', 'Женщина']])
                             //- .module
                             //-     h3(class='module-title') toggle
                             //-     +toggle('Получать спецпредложения', 'specialOffers', 'specialOffers')
