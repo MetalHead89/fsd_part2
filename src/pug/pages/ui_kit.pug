@@ -60,17 +60,17 @@ html(lang="ru")
                                 +text_field('Email', 'masked')
                             .module
                                 +dropdown('date', 'uiDateDrop', 'date Dropdown', 'date Dropdown')
-                            //- div(class='module module_width266')
-                            //-     .module
-                            //-         +dropdown('filter_date', 'uiFilterDateDrop', 'filter date dropdown')
-                            //-     .module
-                            //-         h3(class='module__title') subscription text field
-                            //-         +text_field('Email', 'subscription')
-                            //-     .module
-                            //-         +dropdown('comfort', 'uiComfortDrop', 'dropdown')
-                            //-     .module
-                            //-         +expandable-checkbox-list([['Завтрак', 'breakfast'], ['Письменный стол', 'desk', true], ['Стул для кормления', 
-                            //-         'feedingChair', true], ['Кроватка', 'crib', true], ['Телевизор', 'tv'], ['Шампунь', 'shampoo']], 'expandable checkbox list')
+                            div(class='module module_width266')
+                                .module
+                                    +dropdown('filter_date', 'uiFilterDateDrop', 'filter date dropdown')
+                                .module
+                                    h3(class='module__title') subscription text field
+                                    +text_field('Email', 'subscription')
+                                .module
+                                    +dropdown('comfort', 'uiComfortDrop', 'dropdown')
+                                .module
+                                    +expandable-checkbox-list([['Завтрак', 'breakfast'], ['Письменный стол', 'desk', true], ['Стул для кормления', 
+                                    'feedingChair', true], ['Кроватка', 'crib', true], ['Телевизор', 'tv'], ['Шампунь', 'shampoo']], 'expandable checkbox list')
                         .form-elements__column.form-elements__column_side-paddings
                             .module
                                 h3(class='module__title') Checkbox Buttons
