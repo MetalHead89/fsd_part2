@@ -93,10 +93,10 @@ html(lang="ru")
                                 .rateButtonSection
                                     +rateButton(4)
                                     +rateButton(5)
-                            //- .module
-                            //-     h3(class='module-title') RICH CHECKBOX BUTTONS
-                            //-     +checkboxButton('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
-                            //-     +checkboxButton('Помощник для инвалидов', 'disabledAssistant', false, true, 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.')
+                            .module
+                                h3(class='module-title') RICH CHECKBOX BUTTONS
+                                +checkboxButton('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
+                                +checkboxButton('Помощник для инвалидов', 'disabledAssistant', false, true, 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.')
                         .form-elements__column
                             .module
                                 +rangeSlider('Range Slider')
