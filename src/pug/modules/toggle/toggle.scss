@@ -29,6 +29,7 @@
     }
 
     &::before {
+        flex: none;
         transition: .5s ease;
         content: '';
         margin-right: 10px;
