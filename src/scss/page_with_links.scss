@@ -1,0 +1,32 @@
+@import 'vars.scss';
+
+.links-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links {
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 1.8rem;
+    display: inline-block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.links__item {
+    margin: 20px;
+}
+
+.links__link {
+    text-decoration: none;
+    color: $blue;
+    transition: color .3s ease-in;
+    &:hover {
+        color: $purple;
+    }
+}

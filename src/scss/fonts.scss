@@ -55,6 +55,20 @@
     src: url("/assets/fonts/fontAwesome/fontAwesomeBrands.woff") format("woff");
 }
 
+@font-face {
+    font-family: "Roboto";
+    src: url("/assets/fonts/roboto/robotoRegular.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/assets/fonts/roboto/robotoBold.woff") format("woff");
+    font-style: normal;
+    font-weight: 700;
+}
+
 // Font Awesome Brand Style
 .fab {
     -moz-osx-font-smoothing: grayscale;
