@@ -124,7 +124,7 @@ html(lang="ru")
                                 +roomDetails('location_city', 'Удобство', 'Окно в каждой из спален')
                         .form-elements__column_100-percent-width
                             .module.module__guest-review
-                                +guestReview('assets/images/reviewPhoto1.png', 'Мурад Сарафанов', 5, 12, true, 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
+                                +guestReview('../images/reviewPhoto1.png', 'Мурад Сарафанов', 5, 12, true, 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
             h1(class="section-title") Cards
             .section-block
                 .cards
@@ -143,9 +143,9 @@ html(lang="ru")
                             +calendar
                         .cards_column-270
                             .module
-                                +numberCard({roomNumber: 888, lux: true, roomRate: 9990, rating: 5, reviewsNumber: 145, images: ['assets/images/number1.png', 'assets/images/number6.png', 'assets/images/number10.png', 'assets/images/number7.png']})
+                                +numberCard({roomNumber: 888, lux: true, roomRate: 9990, rating: 5, reviewsNumber: 145, images: ['../images/number1.png', '../images/number6.png', '../images/number10.png', '../images/number7.png']})
                             .module
-                                +numberCard({roomNumber: 840, lux: false, roomRate: 9900, rating: 4, reviewsNumber: 65, images: ['assets/images/number2.png', 'assets/images/number12.png', 'assets/images/number8.png', 'assets/images/number3.png']})
+                                +numberCard({roomNumber: 840, lux: false, roomRate: 9900, rating: 4, reviewsNumber: 65, images: ['../images/number2.png', '../images/number12.png', '../images/number8.png', '../images/number3.png']})
             h1(class="section-title") Headers & Footers
         +header()
         +footer()
