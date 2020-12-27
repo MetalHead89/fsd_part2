@@ -30,6 +30,30 @@ module.exports = {
         new HTMLWebpackPlugin({
             template: path.resolve(__dirname, 'src/pug/pages/page_with_links.pug')
         }),
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, 'src/pug/pages/ui_kit.pug'),
+            filename: 'assets/pages/ui_kit.html'
+        }),
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, 'src/pug/pages/ui_kit.pug'),
+            filename: 'assets/pages/ui_kit.html'
+        }),
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, 'src/pug/pages/search_room.pug'),
+            filename: 'assets/pages/search_room.html'
+        }),
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, 'src/pug/pages/room_details.pug'),
+            filename: 'assets/pages/room_details.html'
+        }),
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, 'src/pug/pages/registration_page.pug'),
+            filename: 'assets/pages/registration_page.html'
+        }),
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, 'src/pug/pages/signin_page.pug'),
+            filename: 'assets/pages/signin_page.html'
+        }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin([
             { filename: '[name].css' }
@@ -39,7 +63,7 @@ module.exports = {
                 { from: path.resolve(__dirname, 'src/assets/fonts'), to: path.resolve(__dirname, 'dist/assets/fonts') },
                 { from: path.resolve(__dirname, 'src/assets/images'), to: path.resolve(__dirname, 'dist/assets/images') }
             ]
-        })
+        }),
     ],
     module: {
         rules: [
