@@ -72,12 +72,12 @@
       }
 }
 
-.calendar__current-day {
-    background: linear-gradient(180deg, $green 0%, $turquoise 100%);
-    color: white;
-    font-weight: bold;
-    border-radius: 22px;
-}
+// .calendar__current-day {
+//     background: linear-gradient(180deg, $green 0%, $turquoise 100%);
+//     color: white;
+//     font-weight: bold;
+//     border-radius: 22px;
+// }
 
 .calendar__day_selectable {
     transition: opacity .5s ease;
@@ -102,6 +102,13 @@
 
 .calendar__day-number_other-month {
     color: $darkShade25;
+}
+
+.calendar__current-day {
+    background: linear-gradient(180deg, $green 0%, $turquoise 100%);
+    color: white;
+    font-weight: bold;
+    border-radius: 22px;
 }
 
 .calendar__day_selected {
