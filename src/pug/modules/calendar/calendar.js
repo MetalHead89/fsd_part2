@@ -282,10 +282,8 @@ class Calendar {
 
     let calendarDate = date;
 
-    if (firstDayMonth !== 1) {
-      calendarDate = new Date(date.getFullYear(), date.getMonth()
+    calendarDate = new Date(date.getFullYear(), date.getMonth()
         - 1, daysInPrevMonths - firstDayMonth + 2);
-    }
 
     for (let week = 0; week < weeksInCalendar; week += 1) {
       const weekDiv = document.createElement('div');
