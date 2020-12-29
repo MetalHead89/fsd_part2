@@ -4,7 +4,6 @@
     position: relative;
 }
 
-
 .header__menu-check {
     display: none;
     &:checked ~ .header__burger .header__burger-image {
