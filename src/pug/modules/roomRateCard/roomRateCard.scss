@@ -18,14 +18,9 @@
 }
 
 .room-rate-card__room-number {
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: start;
-
     font-family: Quicksand;
     font-weight: bold;
     font-size: 14px;
-    // line-height: 0;
     color: $darkShade100;
 }
 
@@ -46,10 +41,6 @@
 }
 
 .room-rate-card__price-per-day {
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: end;
-
     font-family: Montserrat;
     font-size: 12px;
     color: $darkShade50;
@@ -192,9 +183,6 @@
         font-size: 12px;
         color: $darkShade25;
         text-align: center;
-        // white-space: nowrap;
-        // overflow: hidden;
-        // text-overflow: ellipsis;
         padding: 10px;
         border-radius: 3px;
         box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
