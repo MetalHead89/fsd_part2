@@ -90,26 +90,6 @@ class Pagination {
         this.createPaginationButon.bind(this, button, ul, 'pageNumber', currentPage)();
       }
     }
-    //   if (Pagination.numberDontFitOnTheLeft(currentPage, activePage)) {
-    //     if (!isLeftNumbersHidden) {
-    //       this.createPaginationButon.bind(this, button, ul, 'numbersPruning')();
-    //       isLeftNumbersHidden = true;
-    //     }
-
-    //     continue;
-    //   }
-
-    //   if (Pagination.numberDontFitOnTheRight(currentPage, activePage, this.pagesCount)) {
-    //     if (!isRightNumbersHidden) {
-    //       this.createPaginationButon.bind(this, button, ul, 'numbersPruning')();
-    //       isRightNumbersHidden = true;
-    //     }
-
-    //     continue;
-    //   }
-
-    //   this.createPaginationButon.bind(this, button, ul, 'pageNumber', currentPage)();
-    // }
 
     if (parseInt(button.innerText, 10) !== this.pagesCount) {
       this.createPaginationButon.bind(this, button, ul, 'nextButton')();
