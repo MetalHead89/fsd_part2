@@ -76,39 +76,40 @@ class Pagination {
     }
 
     for (let currentPage = 1; currentPage <= parseInt(this.pagesCount, 10); currentPage += 1) {
-      // if (Pagination.numberDontFitOnTheLeft(currentPage, activePage)) {
-      //   if (!isLeftNumbersHidden) {
-      //     this.createPaginationButon.bind(this, button, ul, 'numbersPruning')();
-      //     isLeftNumbersHidden = true;
-      //   }
-      // } else if (Pagination.numberDontFitOnTheLeft(currentPage, activePage, this.pagesCount)) {
-      //   if (!isRightNumbersHidden) {
-      //     this.createPaginationButon.bind(this, button, ul, 'numbersPruning')();
-      //     isRightNumbersHidden = true;
-      //   }
-      // } else {
-      //   this.createPaginationButon.bind(this, button, ul, 'pageNumber', currentPage)();
-      // }
       if (Pagination.numberDontFitOnTheLeft(currentPage, activePage)) {
         if (!isLeftNumbersHidden) {
           this.createPaginationButon.bind(this, button, ul, 'numbersPruning')();
           isLeftNumbersHidden = true;
         }
-
-        continue;
-      }
-
-      if (Pagination.numberDontFitOnTheLeft(currentPage, activePage, this.pagesCount)) {
+      } else if (Pagination.numberDontFitOnTheRight(currentPage, activePage, this.pagesCount)) {
         if (!isRightNumbersHidden) {
           this.createPaginationButon.bind(this, button, ul, 'numbersPruning')();
           isRightNumbersHidden = true;
         }
-
-        continue;
+      } else {
+        this.createPaginationButon.bind(this, button, ul, 'pageNumber', currentPage)();
       }
-
-      this.createPaginationButon.bind(this, button, ul, 'pageNumber', currentPage)();
     }
+    //   if (Pagination.numberDontFitOnTheLeft(currentPage, activePage)) {
+    //     if (!isLeftNumbersHidden) {
+    //       this.createPaginationButon.bind(this, button, ul, 'numbersPruning')();
+    //       isLeftNumbersHidden = true;
+    //     }
+
+    //     continue;
+    //   }
+
+    //   if (Pagination.numberDontFitOnTheRight(currentPage, activePage, this.pagesCount)) {
+    //     if (!isRightNumbersHidden) {
+    //       this.createPaginationButon.bind(this, button, ul, 'numbersPruning')();
+    //       isRightNumbersHidden = true;
+    //     }
+
+    //     continue;
+    //   }
+
+    //   this.createPaginationButon.bind(this, button, ul, 'pageNumber', currentPage)();
+    // }
 
     if (parseInt(button.innerText, 10) !== this.pagesCount) {
       this.createPaginationButon.bind(this, button, ul, 'nextButton')();
