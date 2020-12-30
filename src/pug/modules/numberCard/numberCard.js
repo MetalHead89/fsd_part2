@@ -66,7 +66,8 @@ class NumberCard {
 }
 
 const numbersCards = document.querySelectorAll('.number-card');
+const cards = [];
 
-for (let card = 0; card < numbersCards.length; card += 1) {
-  card = new NumberCard(numbersCards[card]);
+for (let cardIndex = 0; cardIndex < numbersCards.length; cardIndex += 1) {
+  cards.push(new NumberCard(numbersCards[cardIndex]));
 }
