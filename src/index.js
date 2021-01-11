@@ -1,4 +1,10 @@
 // Styles
+
+// bullet-list
+import '@/blocks/bullet-list/bullet-list.scss';
+import '@/blocks/bullet-list/__unordered-list/bullet-list__unordered-list.scss';
+import '@/blocks/bullet-list/__item/bullet-list__item.scss';
+
 import '@/scss/fonts.scss';
 import '@/scss/style.scss';
 import '@/pug/modules/color-block/color-block.scss';
@@ -16,7 +22,7 @@ import '@/pug/modules/rate-button/rate-button.scss';
 import '@/pug/modules/range-slider/range-slider.scss';
 import '@/pug/modules/button/button.scss';
 import '@/pug/modules/pagination/pagination.scss';
-import '@/pug/modules/bullet-list/bullet-list.scss';
+
 import '@/pug/modules/guest-review/guest-review.scss';
 import '@/pug/modules/calendar/calendar.scss';
 import '@/pug/modules/numberCard/numberCard.scss';

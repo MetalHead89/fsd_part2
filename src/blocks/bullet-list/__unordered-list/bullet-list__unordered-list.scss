@@ -1,0 +1,10 @@
+.bullet-list__unordered-list {
+    padding-left: 21px;
+    margin: 0;
+    & .bullet-list__item:first-child {
+        margin-top: 0;
+    }
+    & .bullet-list__item:last-child {
+        margin-bottom: 0;
+    }
+}
