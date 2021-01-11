@@ -4,6 +4,7 @@
 import '@/blocks/bullet-list/bullet-list.scss';
 import '@/blocks/bullet-list/__unordered-list/bullet-list__unordered-list.scss';
 import '@/blocks/bullet-list/__item/bullet-list__item.scss';
+import '@/blocks/bullet-list/__item/_color/bullet-list__item_color.scss';
 
 import '@/scss/fonts.scss';
 import '@/scss/style.scss';

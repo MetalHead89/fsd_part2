@@ -2,4 +2,7 @@ mixin bulletList(args)
     .bullet-list
         ul(class='bullet-list__unordered-list')
             each item in args.menuItems
-                li(class='bullet-list__item') !{item}
+                - let itemClass = 'bullet-list__item'
+                if(args.theme === 'darkShade25')
+                    - itemClass += ' bullet-list__item_color.scss'
+                li(class=itemClass) !{item}

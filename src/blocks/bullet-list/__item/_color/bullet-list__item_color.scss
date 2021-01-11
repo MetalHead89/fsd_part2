@@ -1,0 +1,5 @@
+.bullet-list__item_color {
+    &::before {
+        background: rgba(31, 32, 65, 0.25);
+    }
+}
