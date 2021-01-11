@@ -1,5 +1,5 @@
-mixin bulletList(bulletList)
+mixin bulletList(args)
     .bullet-list
         ul(class='bullet-list__unordered-list')
-            each item in bulletList
+            each item in args.menuItems
                 li(class='bullet-list__item') !{item}
