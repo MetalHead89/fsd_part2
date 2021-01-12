@@ -41,6 +41,6 @@ mixin navbar(args)
             div(class=separatorClass)
         li(class='navbar__account-name ' + navbarItemClass) Виталий Бакалов
         li(class='navbar__button-entry-container ' + navbarItemClass)
-            +button('borderButton', 'Войти')(class='navbar__button-entry')
+            +button({type: 'border', text: 'войти'})(class='navbar__button-entry')
         li(class='navbar__button-registration-container ' + navbarItemClass)
-            +button('regularButton', 'Зарегистрироваться')(class='navbar__button-registration')
+            +button({text: 'зарегистрироваться'})(class='navbar__button-registration')

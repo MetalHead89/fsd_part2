@@ -9,4 +9,4 @@ mixin searchRoomCard()
         .search-room-card__dropdown
             +dropdown('guests', 'searchRoomGuestsDrop', 'гости')
         .search-room-card__button
-            +button('arrowButton', 'подобрать номер')
+            +button({type: 'arrow', text: 'подобрать номер'})

@@ -1,21 +1,17 @@
 mixin button(args)
-    //- {theme, text}
-    - let buttonPosition = ''
-    - let buttonTheme = ''
-    - let button_class = 'button__button-wrapper  button__regular-button'
-    //- if type == 'regularButton'
-    //-     - let button_class = 'button__button-shape  button__regular-button'
-    if theme == 'border'
-        - let button_class = 'button__button-wrapper  button__border-button'
-    else if type == 'onlyText'
-        - let button_class = 'button__button-wrapper  button__only-text-button'
-    else if theme == 'onlyTextGray'
-            - buttonTheme = 'button__only-text-button_gray_teme'
-    else if type == 'arrow'
-        - let button_class = 'button__button-wrapper  button__arrow-button'
-        - buttonPosition = 'button_position-relative '
-    
-    div(class='button ' + buttonPosition)
-        input(type="button", value=text, class=button_class + ' ' + buttonTheme + ' ' + attributes.class)
-        if type == 'arrowButton'
-            span(class='material-icons button__arrow') arrow_forward
+    - let button_class = 'button'
+
+    if args.type === 'border'
+        - button_class += ' button_with-border'
+    else if args.type === 'onlyText'
+        - button_class += ' button_only-text'
+        if args.theme === 'gray'
+            - button_class += ' button_only-text_gray'
+    else if args.type == 'arrow'
+        - button_class += ' button_with-arrow'
+    else
+        - button_class += ' button_regular'
+
+    button(type="button", value=args.text, class=button_class) !{args.text}
+        if args.type == 'arrow'
+            i(class='material-icons button__arrow') arrow_forward

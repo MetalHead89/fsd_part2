@@ -103,14 +103,14 @@ html(lang="ru")
                             .buttons-block
                                 h3(class='module__title') Buttons
                                 .module
-                                    +button()
+                                    +button({text: 'click me'})
                                 .module
-                                    +button('borderButton')
+                                    +button({text: 'click me', type: 'border'})
                                 .module.module-2-buttons
-                                    +button('onlyTextButton')
-                                    +button('onlyTextButton', 'click me', 'gray')
+                                    +button({text: 'click me', type: 'onlyText'})
+                                    +button({text: 'click me', type: 'onlyText', theme: 'gray'})
                                 .module
-                                    +button('arrowButton', 'перейти к оплате')
+                                    +button({text: 'перейти к оплате', type: 'arrow'})
                                 .module
                                     h3(class='module__title') Pagination
                                     +pagination()

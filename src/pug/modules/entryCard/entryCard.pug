@@ -6,8 +6,8 @@ mixin entryCard()
         .entry-card__login-details
             +text_field('Email', textField)
             +text_field('Пароль', textField)
-        +button('arrowButton', 'Войти')
+        +button({type: 'arrow', text: 'войти'})
         .entry-card__create-account
             .entry-card__create-account-label Нет аккаунта на Toxin?
             .entry-card__create-account-button
-                +button('borderButton', 'создать')
+                +button({type: 'border', text: 'создать'})

@@ -64,8 +64,8 @@ mixin dropdown(type='guests', id=none, title=none, title2=none)
                 if buttons
                     .dropdown__bottom-buttons-panel.dropdown__drop-element
                         .dropdown__button-clear
-                            +button('onlyTextButton', 'очистить', 'gray')(class='dropdown__button_clear')
+                            +button({type: 'onlyText', text: 'очистить'})(class='dropdown__button_clear')
                         .dropdown__button-apply
-                            +button('onlyTextButton', 'применить')(class='dropdown__button_apply')
+                            +button({type: 'onlyText', text: 'применить'})(class='dropdown__button_apply')
         else
             +calendar()(class=calendarClass)

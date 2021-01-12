@@ -49,6 +49,6 @@ mixin calendar()
 
         .calendar__buttons-panel
             .calendar__button-clear
-                +button('onlyTextButton', 'очистить', 'gray')(class='calendar__button_clear')
+                +button({type: 'onlyText', text: 'очистить'})(class='calendar__button_clear')
             .calendar__button-apply
-                +button('onlyTextButton', 'применить')(class='calendar__button_apply')
+                +button({type: 'onlyText', text: 'применить'})(class='calendar__button_apply')

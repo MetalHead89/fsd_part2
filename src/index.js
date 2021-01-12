@@ -15,7 +15,16 @@ import '@/pug/modules/toggle/toggle.scss';
 import '@/pug/modules/like-button/like-button.scss';
 import '@/pug/modules/rate-button/rate-button.scss';
 import '@/pug/modules/range-slider/range-slider.scss';
+
+// button
 import '@/blocks/button/button.scss';
+import '@/blocks/button/_regular/button_regular.scss';
+import '@/blocks/button/_with-border/button_with-border.scss';
+import '@/blocks/button/_only-text/button_only-text.scss';
+import '@/blocks/button/_only-text/_gray/button_only-text_gray.scss';
+import '@/blocks/button/_with-arrow/button_with-arrow.scss';
+import '@/blocks/button/__arrow/button__arrow.scss';
+
 import '@/pug/modules/pagination/pagination.scss';
 
 // bullet-list

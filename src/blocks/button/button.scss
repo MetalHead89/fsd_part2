@@ -1,22 +1,13 @@
-// @import '../../../scss/vars.scss';
-
-// .button_position-relative {
-//     position: relative;
-// }
-
-.button__button-wrapper {
+.button {
     position: relative;
-    width: 99px;
     height: 44px;
     box-sizing: border-box;
-    padding: 0 8px;
+    padding: 0 20px;
     border-radius: 22px;
-    // background: linear-gradient(180deg, $purple 0%, $blue 100%);
     font-weight: bold;
     font-family: 'Montserrat';
     font-size: 12px;
     text-transform: uppercase;
-    color: #FFFFFF;
     border: none;
     transition: .5s;
     &:focus {
@@ -29,44 +20,4 @@
         transition: none;
         opacity: 1;
     }
-}
-
-// .button__button-shape_width196 {
-//     width: 196px;
-// }
-
-.button__border-button {
-    // color: $purple;
-    border: 2px solid transparent;
-    // background-image: linear-gradient(white, white), linear-gradient(180deg, $purple 0%, $blue 100%);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-    -webkit-background-clip: padding-box, border-box;
-}
-
-.button__only-text-button {
-    // color: $purple;
-    background: #FFFFFF;
-    width: unset;
-    height: unset;
-    padding: 0;
-}
-
-.button__only-text-button_gray_teme {
-    // color: $darkShade50;
-}
-
-.button__arrow-button {
-    width: 100%;
-    max-width: 500px;
-}
-
-.button__arrow {
-    pointer-events: none;
-    position: absolute;
-    right: 0;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    font-size: 24px;
-    color: #FFFFFF
 }

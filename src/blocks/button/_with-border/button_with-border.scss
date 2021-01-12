@@ -1,0 +1,8 @@
+.button_with-border {
+  color: #BC9CFF;
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  -webkit-background-clip: padding-box, border-box;
+}
