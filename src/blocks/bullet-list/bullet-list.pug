@@ -3,6 +3,6 @@ mixin bulletList(args)
         ul(class='bullet-list__unordered-list')
             each item in args.menuItems
                 - let itemClass = 'bullet-list__item'
-                if(args.theme === 'darkShade25')
-                    - itemClass += ' bullet-list__item_color.scss'
+                if(args.theme === undefined)
+                    - itemClass += ' bullet-list__item__standard-theme'
                 li(class=itemClass) !{item}
