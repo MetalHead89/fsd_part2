@@ -17,21 +17,21 @@ import '@/pug/modules/rate-button/rate-button.scss';
 import '@/pug/modules/range-slider/range-slider.scss';
 
 // button
-import '@/blocks/button/button.scss';
-import '@/blocks/button/_regular/button_regular.scss';
-import '@/blocks/button/_with-border/button_with-border.scss';
-import '@/blocks/button/_only-text/button_only-text.scss';
-import '@/blocks/button/_only-text/_gray/button_only-text_gray.scss';
-import '@/blocks/button/_with-arrow/button_with-arrow.scss';
-import '@/blocks/button/__arrow/button__arrow.scss';
+import '@/common.blocks/button/button.scss';
+import '@/common.blocks/button/_regular/button_regular.scss';
+import '@/common.blocks/button/_with-border/button_with-border.scss';
+import '@/common.blocks/button/_only-text/button_only-text.scss';
+import '@/common.blocks/button/_only-text/_gray/button_only-text_gray.scss';
+import '@/common.blocks/button/_with-arrow/button_with-arrow.scss';
+import '@/common.blocks/button/__arrow/button__arrow.scss';
 
 import '@/pug/modules/pagination/pagination.scss';
 
 // bullet-list
-import '@/blocks/bullet-list/bullet-list.scss';
-import '@/blocks/bullet-list/__unordered-list/bullet-list__unordered-list.scss';
-import '@/blocks/bullet-list/__item/bullet-list__item.scss';
-import '@/blocks/bullet-list/__item/_standard-theme/bullet-list__item_standard-theme.scss';
+import '@/common.blocks/bullet-list/bullet-list.scss';
+import '@/common.blocks/bullet-list/__unordered-list/bullet-list__unordered-list.scss';
+import '@/common.blocks/bullet-list/__item/bullet-list__item.scss';
+import '@/common.blocks/bullet-list/__item/_standard-theme/bullet-list__item_standard-theme.scss';
 
 import '@/pug/modules/guest-review/guest-review.scss';
 import '@/pug/modules/calendar/calendar.scss';
