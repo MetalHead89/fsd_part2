@@ -1,16 +1,17 @@
-@import '../../../scss/vars.scss';
+// @import '../../../scss/vars.scss';
 
-.button_position-relative {
+// .button_position-relative {
+//     position: relative;
+// }
+
+.button__button-wrapper {
     position: relative;
-}
-
-.button__button-shape {
     width: 99px;
     height: 44px;
     box-sizing: border-box;
     padding: 0 8px;
     border-radius: 22px;
-    background: linear-gradient(180deg, $purple 0%, $blue 100%);
+    // background: linear-gradient(180deg, $purple 0%, $blue 100%);
     font-weight: bold;
     font-family: 'Montserrat';
     font-size: 12px;
@@ -30,21 +31,21 @@
     }
 }
 
-.button__button-shape_width196 {
-    width: 196px;
-}
+// .button__button-shape_width196 {
+//     width: 196px;
+// }
 
 .button__border-button {
-    color: $purple;
+    // color: $purple;
     border: 2px solid transparent;
-    background-image: linear-gradient(white, white), linear-gradient(180deg, $purple 0%, $blue 100%);
+    // background-image: linear-gradient(white, white), linear-gradient(180deg, $purple 0%, $blue 100%);
     background-origin: border-box;
     background-clip: padding-box, border-box;
     -webkit-background-clip: padding-box, border-box;
 }
 
 .button__only-text-button {
-    color: $purple;
+    // color: $purple;
     background: #FFFFFF;
     width: unset;
     height: unset;
@@ -52,7 +53,7 @@
 }
 
 .button__only-text-button_gray_teme {
-    color: $darkShade50;
+    // color: $darkShade50;
 }
 
 .button__arrow-button {

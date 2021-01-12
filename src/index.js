@@ -1,11 +1,5 @@
 // Styles
 
-// bullet-list
-import '@/blocks/bullet-list/bullet-list.scss';
-import '@/blocks/bullet-list/__unordered-list/bullet-list__unordered-list.scss';
-import '@/blocks/bullet-list/__item/bullet-list__item.scss';
-import '@/blocks/bullet-list/__item/_standard-theme/bullet-list__item_standard-theme.scss';
-
 import '@/scss/fonts.scss';
 import '@/scss/style.scss';
 import '@/pug/modules/color-block/color-block.scss';
@@ -21,8 +15,14 @@ import '@/pug/modules/toggle/toggle.scss';
 import '@/pug/modules/like-button/like-button.scss';
 import '@/pug/modules/rate-button/rate-button.scss';
 import '@/pug/modules/range-slider/range-slider.scss';
-import '@/pug/modules/button/button.scss';
+import '@/blocks/button/button.scss';
 import '@/pug/modules/pagination/pagination.scss';
+
+// bullet-list
+import '@/blocks/bullet-list/bullet-list.scss';
+import '@/blocks/bullet-list/__unordered-list/bullet-list__unordered-list.scss';
+import '@/blocks/bullet-list/__item/bullet-list__item.scss';
+import '@/blocks/bullet-list/__item/_standard-theme/bullet-list__item_standard-theme.scss';
 
 import '@/pug/modules/guest-review/guest-review.scss';
 import '@/pug/modules/calendar/calendar.scss';
