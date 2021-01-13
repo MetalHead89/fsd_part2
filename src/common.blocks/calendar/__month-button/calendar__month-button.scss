@@ -1,0 +1,10 @@
+.calendar__month-button {
+    transition: opacity .5s ease;
+    &:hover {        
+        opacity: .5;
+    }
+    &:active {
+        transition: opacity 0s ease;
+        opacity: 1;
+    }
+}

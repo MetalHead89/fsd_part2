@@ -22,15 +22,15 @@ class Calendar {
   calendarInit() {
     this.currentDate = new Date();
     this.currentDate.setHours(0, 0, 0, 0);
-    this.calendarTitle = this.calendar.querySelector('.calendar__month');
+    this.calendarTitle = this.calendar.querySelector('.calendar__month-name');
     this.year = this.currentDate.getFullYear();
     this.month = this.currentDate.getMonth();
     this.dateRange = [];
     this.choiceMode = false;
 
     this.calendarDays = this.calendar.querySelectorAll('.calendar__day');
-    this.prevMonthButton = this.calendar.querySelector('.calendar__prev-month');
-    this.nextMonthButton = this.calendar.querySelector('.calendar__next-month');
+    this.prevMonthButton = this.calendar.querySelector('.calendar__month-button_with-back-arrow');
+    this.nextMonthButton = this.calendar.querySelector('.calendar__month-button_with-forward-arrow');
     [this.clearButton] = this.calendar.querySelector(
       '.calendar__button-clear',
     ).children;
@@ -49,7 +49,7 @@ class Calendar {
   }
 
   switchMonth(button) {
-    const date = button.classList.contains('calendar__prev-month')
+    const date = button.classList.contains('calendar__month-button_with-back-arrow')
       ? new Date(this.year, this.month - 1)
       : new Date(this.year, this.month + 1);
     this.refreshCalendar(date);

@@ -1,6 +1,6 @@
 include ../button/button.pug
 
-mixin calendar()
+mixin calendar(args)
     - const WEEK_DAYS = 7
     - let maxDaysCount = 31
     - let weeksCount = 5
@@ -12,11 +12,11 @@ mixin calendar()
 
 
 
-    div(class='calendar ' + attributes.class)
+    .calendar.calendar_standart-theme
         .calendar__month-selection-section
-            i(class='material-icons calendar__month-button calendar__prev-month') arrow_back
-            span(class='calendar__month') Сентябрь 1989
-            i(class='material-icons calendar__month-button calendar__next-month') arrow_forward
+            i(class='material-icons calendar__month-button calendar__month-button_standart-theme calendar__month-button_with-back-arrow') arrow_back
+            span(class='calendar__month-name') Сентябрь 1989
+            i(class='material-icons calendar__month-button calendar__month-button_standart-theme calendar__month-button_with-forward-arrow') arrow_forward
         .calendar__days
             .calendar__names-of-week-days
                 for day in ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']

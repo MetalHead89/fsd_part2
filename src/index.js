@@ -39,6 +39,12 @@ import '@/pug/modules/guest-review/guest-review.scss';
 
 // calendar
 import '@/common.blocks/calendar/calendar.scss';
+import '@/common.blocks/calendar/_standart-theme/calendar_standart-theme.scss';
+import '@/common.blocks/calendar/__month-selection-section/calendar__month-selection-section.scss';
+import '@/common.blocks/calendar/__month-button/calendar__month-button.scss';
+import '@/common.blocks/calendar/__month-button/_standart-theme/calendar__month-button_standart-theme.scss';
+import '@/common.blocks/calendar/__month-name/calendar__month-name.scss';
+import '@/common.blocks/calendar/__month-name/_standart-theme/calendar__month-name_standart-theme.scss';
 
 import '@/pug/modules/numberCard/numberCard.scss';
 import '@/pug/modules/searchRoomCard/searchRoomCard.scss';
