@@ -8,7 +8,11 @@ class Dropdown {
   dropdownInit() {
     this.quantitySum = 0;
     this.dropdownType = Dropdown.getDropdownType(this.dropdown);
-    this.clearButton = this.dropdown.querySelector('.dropdown__button_clear');
+    const clearButtonWrapper = this.dropdown.querySelector('.dropdown__button-clear');
+    if (clearButtonWrapper !== null) {
+      [this.clearButton] = clearButtonWrapper.children;
+      this.clearButton.style.display = 'none';
+    }
     this.dropdownHeaderText = this.dropdown.querySelector('.dropdown__header-text');
     this.dropdownHeader = this.dropdown.querySelector('.dropdown__header');
     this.dropdownStartDayHeader = this.dropdown.querySelector('.dropdown__start-date-header');
@@ -52,7 +56,7 @@ class Dropdown {
   }
 
   clearButtonHide() {
-    this.clearButton.removeAttribute('style');
+    this.clearButton.style.display = 'none';
   }
 }
 

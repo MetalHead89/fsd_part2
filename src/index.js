@@ -49,3 +49,7 @@ import '@/scss/room_details.scss';
 import '@/pug/modules/impressions-diagram/impressions-diagram.scss';
 import '@/scss/registration_signin_page.scss';
 import '@/scss/page_with_links.scss';
+
+// Scripts
+import '@/pug/modules/dropdown/dropdown';
+import '@/pug/modules/calendar/calendar';
