@@ -11,6 +11,11 @@ mixin button(args)
         - button_class += ' button_with-arrow'
     else
         - button_class += ' button_regular'
+    
+    if args.theme === 'paddings10'
+        - button_class += ' button_with-vertical-paddings-10'
+    if args.theme === 'paddings8'
+        - button_class += ' button_with-vertical-paddings-8'
 
     button(type="button", value=args.text, class=button_class) !{args.text}
         if args.type == 'arrow'

@@ -24,6 +24,8 @@ import '@/common.blocks/button/_only-text/button_only-text.scss';
 import '@/common.blocks/button/_only-text/_gray/button_only-text_gray.scss';
 import '@/common.blocks/button/_with-arrow/button_with-arrow.scss';
 import '@/common.blocks/button/__arrow/button__arrow.scss';
+import '@/common.blocks/button/_with-vertical-paddings-10/button_with-vertical-paddings-10.scss';
+import '@/common.blocks/button/_with-vertical-paddings-8/button_with-vertical-paddings-8.scss';
 
 import '@/pug/modules/pagination/pagination.scss';
 
