@@ -36,7 +36,10 @@ import '@/common.blocks/bullet-list/__item/bullet-list__item.scss';
 import '@/common.blocks/bullet-list/__item/_standard-theme/bullet-list__item_standard-theme.scss';
 
 import '@/pug/modules/guest-review/guest-review.scss';
-import '@/pug/modules/calendar/calendar.scss';
+
+// calendar
+import '@/common.blocks/calendar/calendar.scss';
+
 import '@/pug/modules/numberCard/numberCard.scss';
 import '@/pug/modules/searchRoomCard/searchRoomCard.scss';
 import '@/pug/modules/registrationCard/registrationCard.scss';
@@ -54,4 +57,4 @@ import '@/scss/page_with_links.scss';
 
 // Scripts
 import '@/pug/modules/dropdown/dropdown';
-import '@/pug/modules/calendar/calendar';
+import '@/common.blocks/calendar/calendar';
