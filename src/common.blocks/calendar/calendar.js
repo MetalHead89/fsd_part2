@@ -40,13 +40,15 @@ class Calendar {
     ).children;
     this.clearButton.style.display = 'none';
     this.clearButton.onclick = () => this.clearRange();
-    const applyButtonWrapper = this.calendar.querySelector(
+    // const applyButtonWrapper = this.calendar.querySelector(
+    //   '.calendar__button-apply'
+    // );
+    // if (applyButtonWrapper !== null) {
+    [this.applyButton] = this.calendar.querySelector(
       '.calendar__button-apply'
-    );
-    if (applyButtonWrapper !== null) {
-      [this.applyButton] = applyButtonWrapper.children;
-      this.applyButton.onclick = () => this.applyRange();
-    }
+    ).children;
+    this.applyButton.onclick = () => this.applyRange();
+    // }
 
     this.prevMonthButton.onclick = () => this.switchMonth(this.prevMonthButton);
     this.nextMonthButton.onclick = () => this.switchMonth(this.nextMonthButton);
@@ -292,7 +294,7 @@ class Calendar {
 
   applyRange() {
     this.dateRange.sort(Calendar.compareNumbers);
-    const parent = this.calendar.offsetParent;
+    const parent = this.calendar.offsetParent.offsetParent;
 
     if (this.dateRange.length === 2) {
       const startDate = new Date(this.dateRange[0]);
