@@ -29,7 +29,6 @@ import '@/common.blocks/button/_with-vertical-paddings-8/button_with-vertical-pa
 import '@/pug/modules/pagination/pagination.scss';
 
 // bullet-list
-import '@/common.blocks/bullet-list/bullet-list.scss';
 import '@/common.blocks/bullet-list/__unordered-list/bullet-list__unordered-list.scss';
 import '@/common.blocks/bullet-list/__item/bullet-list__item.scss';
 import '@/common.blocks/bullet-list/__item/_standard-theme/bullet-list__item_standard-theme.scss';
