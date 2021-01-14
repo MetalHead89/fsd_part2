@@ -29,15 +29,19 @@ class Calendar {
     this.choiceMode = false;
 
     this.calendarDays = this.calendar.querySelectorAll('.calendar__day');
-    this.prevMonthButton = this.calendar.querySelector('.calendar__month-button_with-back-arrow');
-    this.nextMonthButton = this.calendar.querySelector('.calendar__month-button_with-forward-arrow');
+    this.prevMonthButton = this.calendar.querySelector(
+      '.calendar__month-button_with-back-arrow'
+    );
+    this.nextMonthButton = this.calendar.querySelector(
+      '.calendar__month-button_with-forward-arrow'
+    );
     [this.clearButton] = this.calendar.querySelector(
-      '.calendar__button-clear',
+      '.calendar__button-clear'
     ).children;
     this.clearButton.style.display = 'none';
     this.clearButton.onclick = () => this.clearRange();
     const applyButtonWrapper = this.calendar.querySelector(
-      '.calendar__button-apply',
+      '.calendar__button-apply'
     );
     if (applyButtonWrapper !== null) {
       [this.applyButton] = applyButtonWrapper.children;
@@ -49,7 +53,9 @@ class Calendar {
   }
 
   switchMonth(button) {
-    const date = button.classList.contains('calendar__month-button_with-back-arrow')
+    const date = button.classList.contains(
+      'calendar__month-button_with-back-arrow'
+    )
       ? new Date(this.year, this.month - 1)
       : new Date(this.year, this.month + 1);
     this.refreshCalendar(date);
@@ -93,9 +99,7 @@ class Calendar {
       this.dateRange.pop();
       this.choiceMode = false;
       day.classList.remove('calendar__day_selected');
-      day.parentNode.classList.remove(
-        'calendar__range-highlight_left-rounded'
-      );
+      day.parentNode.classList.remove('calendar__range-highlight_left-rounded');
       day.parentNode.classList.remove(
         'calendar__range-highlight_right-rounded'
       );
@@ -217,9 +221,7 @@ class Calendar {
       selectableDay.parentNode.classList.remove(
         'calendar__range-highlight_right-rounded'
       );
-      selectableDay.parentNode.classList.remove(
-        'calendar__range-highlight'
-      );
+      selectableDay.parentNode.classList.remove('calendar__range-highlight');
     }
 
     if (range[0] === range[1]) {
@@ -231,13 +233,11 @@ class Calendar {
       const dayToTime = this.getDateFromСalendar(day).getTime();
 
       if (dayToTime === range[0]) {
-        day.parentNode.classList.add(
-          'calendar__range-highlight_left-rounded'
-        );
+        day.parentNode.classList.add('calendar__range-highlight');
+        day.parentNode.classList.add('calendar__range-highlight_left-rounded');
       } else if (dayToTime === range[1]) {
-        day.parentNode.classList.add(
-          'calendar__range-highlight_right-rounded'
-        );
+        day.parentNode.classList.add('calendar__range-highlight');
+        day.parentNode.classList.add('calendar__range-highlight_right-rounded');
       } else if (dayToTime >= range[0] && dayToTime <= range[1]) {
         day.parentNode.classList.add('calendar__range-highlight');
       }
@@ -269,9 +269,7 @@ class Calendar {
       const day = selectableDays[dayIndex];
 
       day.classList.remove('calendar__day_selected');
-      day.parentNode.classList.remove(
-        'calendar__range-highlight_left-rounded'
-      );
+      day.parentNode.classList.remove('calendar__range-highlight_left-rounded');
       day.parentNode.classList.remove(
         'calendar__range-highlight_right-rounded'
       );
@@ -395,8 +393,7 @@ class Calendar {
       for (let weekDayNumber = 0; weekDayNumber < 7; weekDayNumber += 1) {
         let classList = 'calendar__day';
         if (calendarDate.getMonth() !== date.getMonth()) {
-          classList =
-            'calendar__day  calendar__day_other-month';
+          classList = 'calendar__day  calendar__day_other-month';
         }
 
         const calendarDay = document.createElement('span');
@@ -406,8 +403,7 @@ class Calendar {
 
         const rangeHighlight = document.createElement('div');
         rangeHighlight.onmouseover = () => this.setRangeHighlight(calendarDay);
-        rangeHighlight.classList =
-          'calendar__range-highlight calendar__day';
+        rangeHighlight.classList = 'calendar__day';
 
         rangeHighlight.append(calendarDay);
         weekDiv.append(rangeHighlight);
