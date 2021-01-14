@@ -40,10 +40,6 @@ class Calendar {
     ).children;
     this.clearButton.style.display = 'none';
     this.clearButton.onclick = () => this.clearRange();
-    // const applyButtonWrapper = this.calendar.querySelector(
-    //   '.calendar__button-apply'
-    // );
-    // if (applyButtonWrapper !== null) {
     [this.applyButton] = this.calendar.querySelector(
       '.calendar__button-apply'
     ).children;
@@ -150,7 +146,7 @@ class Calendar {
     }
 
     if (this.dateRange.length > 0) {
-      this.clearButton.style.display = 'block';
+      this.clearButton.removeAttribute('style');
     } else {
       this.clearButton.style.display = 'none';
     }
@@ -280,9 +276,9 @@ class Calendar {
 
     this.dateRange = [];
     this.choiceMode = false;
-    this.clearButton.removeAttribute('style');
+    this.clearButton.style.display = 'none';
 
-    const parent = this.calendar.offsetParent;
+    const parent = this.calendar.offsetParent.offsetParent;
     if (parent.classList.contains('dropdown_date')) {
       parent.querySelector('.dropdown__startDate').innerText = 'ДД.ММ.ГГГГ';
       parent.querySelector('.dropdown__endDate').innerText = 'ДД.ММ.ГГГГ';
