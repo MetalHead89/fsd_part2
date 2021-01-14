@@ -94,10 +94,10 @@ class Calendar {
       this.choiceMode = false;
       day.classList.remove('calendar__day_selected');
       day.parentNode.classList.remove(
-        'calendar__range-highlight_light-and-left-round'
+        'calendar__range-highlight_left-rounded'
       );
       day.parentNode.classList.remove(
-        'calendar__range-highlight_light-and-right-round'
+        'calendar__range-highlight_right-rounded'
       );
     } else if (this.dateRange.length === 2 && this.dayIsSelected(day)) {
       this.dateRange.splice(
@@ -212,13 +212,13 @@ class Calendar {
       const selectableDay = selectableDays[dayIndex];
 
       selectableDay.parentNode.classList.remove(
-        'calendar__range-highlight_light-and-left-round'
+        'calendar__range-highlight_left-rounded'
       );
       selectableDay.parentNode.classList.remove(
-        'calendar__range-highlight_light-and-right-round'
+        'calendar__range-highlight_right-rounded'
       );
       selectableDay.parentNode.classList.remove(
-        'calendar__range-highlight_light'
+        'calendar__range-highlight'
       );
     }
 
@@ -232,14 +232,14 @@ class Calendar {
 
       if (dayToTime === range[0]) {
         day.parentNode.classList.add(
-          'calendar__range-highlight_light-and-left-round'
+          'calendar__range-highlight_left-rounded'
         );
       } else if (dayToTime === range[1]) {
         day.parentNode.classList.add(
-          'calendar__range-highlight_light-and-right-round'
+          'calendar__range-highlight_right-rounded'
         );
       } else if (dayToTime >= range[0] && dayToTime <= range[1]) {
-        day.parentNode.classList.add('calendar__range-highlight_light');
+        day.parentNode.classList.add('calendar__range-highlight');
       }
     }
   }
@@ -249,7 +249,7 @@ class Calendar {
   }
 
   getDateFromСalendar(day) {
-    if (!day.classList.contains('calendar__day-number_other-month')) {
+    if (!day.classList.contains('calendar__day_other-month')) {
       return new Date(this.year, this.month, day.innerText);
     }
 
@@ -270,12 +270,12 @@ class Calendar {
 
       day.classList.remove('calendar__day_selected');
       day.parentNode.classList.remove(
-        'calendar__range-highlight_light-and-left-round'
+        'calendar__range-highlight_left-rounded'
       );
       day.parentNode.classList.remove(
-        'calendar__range-highlight_light-and-right-round'
+        'calendar__range-highlight_right-rounded'
       );
-      day.parentNode.classList.remove('calendar__range-highlight_light');
+      day.parentNode.classList.remove('calendar__range-highlight');
     }
 
     this.dateRange = [];
@@ -350,7 +350,7 @@ class Calendar {
      * Удаляет текущий календарь
      */
 
-    const weekBloks = this.calendar.querySelectorAll('.calendar__week');
+    const weekBloks = this.calendar.querySelectorAll('.calendar__week-section');
 
     for (
       let weekNodeIndex = 0;
@@ -373,7 +373,7 @@ class Calendar {
     const daysInPrevMonths =
       32 - new Date(this.year, this.month - 1, 32).getDate();
     const firstDayMonth = date.getDay() === 0 ? 7 : date.getDay();
-    const calendarBody = this.calendar.querySelector('.calendar__days');
+    const calendarBody = this.calendar.querySelector('.calendar__days-section');
     const weeksInCalendar = Math.ceil(
       (daysInCurrentMonth + firstDayMonth - 1) / 7
     );
@@ -390,13 +390,13 @@ class Calendar {
 
     for (let week = 0; week < weeksInCalendar; week += 1) {
       const weekDiv = document.createElement('div');
-      weekDiv.className = 'calendar__week';
+      weekDiv.className = 'calendar__week-section';
 
       for (let weekDayNumber = 0; weekDayNumber < 7; weekDayNumber += 1) {
-        let classList = 'calendar__calendar-element calendar__day';
+        let classList = 'calendar__day';
         if (calendarDate.getMonth() !== date.getMonth()) {
           classList =
-            'calendar__calendar-element calendar__day  calendar__day-number_other-month';
+            'calendar__day  calendar__day_other-month';
         }
 
         const calendarDay = document.createElement('span');
@@ -407,13 +407,13 @@ class Calendar {
         const rangeHighlight = document.createElement('div');
         rangeHighlight.onmouseover = () => this.setRangeHighlight(calendarDay);
         rangeHighlight.classList =
-          'calendar__range-highlight calendar__calendar-element';
+          'calendar__range-highlight calendar__day';
 
         rangeHighlight.append(calendarDay);
         weekDiv.append(rangeHighlight);
 
         if (this.dateIsEqualToTodayDate(calendarDate)) {
-          calendarDay.classList.add('calendar__current-day');
+          calendarDay.classList.add('calendar__day_current');
         }
         if (calendarDate >= this.currentDate) {
           calendarDay.classList.add('calendar__day_selectable');

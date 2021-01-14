@@ -6,7 +6,7 @@ mixin calendar(args)
     - let weeksCount = 5
     - let week = 1    
     - let dayNumber = 28
-    - let calendarDayNumberClass = 'calendar__day  calendar__day-number_other-month'
+    - let calendarDayClass = 'calendar__day  calendar__day-number_other-month'
     - let currentDay = 6
     - let isPrevMonth = true
 
@@ -17,13 +17,13 @@ mixin calendar(args)
             i(class='material-icons calendar__month-button calendar__month-button_standart-theme calendar__month-button_with-back-arrow') arrow_back
             span(class='calendar__month-name') Сентябрь 1989
             i(class='material-icons calendar__month-button calendar__month-button_standart-theme calendar__month-button_with-forward-arrow') arrow_forward
-        .calendar__days
-            .calendar__names-of-week-days
+        .calendar__days-section
+            .calendar__names-of-week-days-section.calendar__names-of-week-days-section_standart-theme
                 for day in ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
-                    span(class='calendar__calendar-element calendar__week-day-name') !{day}
+                    span(class='calendar__week-day') !{day}
 
             while week <= weeksCount
-                .calendar__week
+                .calendar__week-section
                     - let weekDay = 1
 
                     while weekDay <= WEEK_DAYS
@@ -31,17 +31,17 @@ mixin calendar(args)
                             - maxDaysCount = 30
                             - dayNumber = 1
                             - isPrevMonth = false
-                            - calendarDayNumberClass = 'calendar__calendar-element calendar__day calendar__day-number_current-month'
+                            - calendarDayClass = 'calendar__day'
                         if dayNumber == currentDay
-                            - calendarDayNumberClass = ' calendar__calendar-element calendar__day calendar__day-number_current-month calendar__current-day'
+                            - calendarDayClass = 'calendar__day calendar__day_current'
                         if !isPrevMonth && dayNumber > maxDaysCount
                             - dayNumber = 1
-                            - calendarDayNumberClass = 'calendar__calendar-element calendar__day  calendar__day-number_other-month'
+                            - calendarDayClass = 'calendar__day  calendar__day_other-month'
 
-                        span(class=calendarDayNumberClass) !{dayNumber}
+                        span(class=calendarDayClass) !{dayNumber}
 
                         if dayNumber == currentDay
-                            - calendarDayNumberClass = 'calendar__calendar-element calendar__day calendar__day-number_current-month'
+                            - calendarDayClass = 'calendar__day'
 
                         - dayNumber += 1
                         - weekDay += 1

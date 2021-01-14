@@ -1,0 +1,13 @@
+.calendar__week-day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 40px;
+  width: 100%;
+  &:before {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+}
