@@ -1,5 +1,4 @@
 // Styles
-
 import '@/scss/fonts.scss';
 import '@/scss/style.scss';
 import '@/pug/modules/color-block/color-block.scss';
@@ -76,5 +75,5 @@ import '@/scss/registration_signin_page.scss';
 import '@/scss/page_with_links.scss';
 
 // Scripts
+// import '@/common.blocks/calendar/calendar';
 import '@/pug/modules/dropdown/dropdown';
-import '@/common.blocks/calendar/calendar';
