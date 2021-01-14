@@ -4,7 +4,7 @@ include ../modules/text-field/text-field.pug
 include ../modules/dropdown/dropdown.pug
 include ../modules/expandable-checkbox-list/expandable-checkbox-list.pug
 include ../modules/room-details/room-details.pug
-include ../modules/checkbox-button/checkbox-button.pug
+include ../../common.blocks/checkbox-button/checkbox-button.pug
 include ../modules/radio-button/radio-button.pug
 include ../modules/toggle/toggle.pug
 include ../modules/like-button/like-button.pug
@@ -74,9 +74,9 @@ html(lang="ru")
                         .form-elements__column.form-elements__column2.form-elements__column_side-paddings
                             .module
                                 h3(class='module__title') Checkbox Buttons
-                                +checkboxButton('Можно курить', 'noSmoking')
-                                +checkboxButton('Можно с питомцами', 'pets', true)
-                                +checkboxButton('Можно пригласить гостей (до 10 человек)', 'guests', true)
+                                +checkbox-button('Можно курить', 'noSmoking')
+                                +checkbox-button('Можно с питомцами', 'pets', true)
+                                +checkbox-button('Можно пригласить гостей (до 10 человек)', 'guests', true)
                             .module
                                 h3(class='module-title') Radio Buttons
                                 +radioButton([['radio1', 'radio', 'male', 'Мужчина', true], ['radio2', 'radio', 'female', 'Женщина']])
@@ -95,8 +95,8 @@ html(lang="ru")
                                     +rateButton(5)
                             .module
                                 h3(class='module-title') RICH CHECKBOX BUTTONS
-                                +checkboxButton('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
-                                +checkboxButton('Помощник для инвалидов', 'disabledAssistant', false, true, 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.')
+                                +checkbox-button('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
+                                +checkbox-button('Помощник для инвалидов', 'disabledAssistant', false, true, 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.')
                         .form-elements__column.form-elements__column3
                             .module
                                 +rangeSlider('Range Slider')

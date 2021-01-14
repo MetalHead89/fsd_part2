@@ -1,4 +1,4 @@
-include ../checkbox-button/checkbox-button.pug
+include ../../../common.blocks/checkbox-button/checkbox-button.pug
 
 mixin expandable-checkbox-list(checkboxes, title)
     - const ID = 'expandableCheckboxList'
@@ -9,4 +9,4 @@ mixin expandable-checkbox-list(checkboxes, title)
             i(class='material-icons expandable-checkbox-list__expand-more') keyboard_arrow_down
         .expandable-checkbox-list__hide-list
             each checkboxSettings in checkboxes
-                +checkboxButton(checkboxSettings[0], checkboxSettings[1], checkboxSettings[2])
+                +checkbox-button(checkboxSettings[0], checkboxSettings[1], checkboxSettings[2])

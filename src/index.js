@@ -8,7 +8,10 @@ import '@/pug/modules/text-field/text-field.scss';
 import '@/pug/modules/dropdown/dropdown.scss';
 import '@/pug/modules/expandable-checkbox-list/expandable-checkbox-list.scss';
 import '@/pug/modules/room-details/room-details.scss';
-import '@/pug/modules/checkbox-button/checkbox-button.scss';
+
+// checkbox-button
+import '@/common.blocks/checkbox-button/checkbox-button.scss';
+
 import '@/pug/modules/radio-button/radio-button.scss';
 import '@/pug/modules/toggle/toggle.scss';
 import '@/pug/modules/like-button/like-button.scss';

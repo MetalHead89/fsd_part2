@@ -1,5 +1,3 @@
-@import "../../../scss/vars.scss";
-
 .checkbox-button {
     position: relative;
     margin: 12px 0;
@@ -9,7 +7,7 @@
 .checkbox-button__checkbox-element {
     display: none;
     &:checked + .checkbox-button__label:before {
-        border-color: $purple;
+        // border-color: $purple;
     }
     &:checked + .checkbox-button__label:after {
         transform: rotate(45deg) scale(1);
@@ -20,16 +18,16 @@
 .checkbox-button__label {
     display: block;
     line-height: 18px;
-    color: $darkShade50;
+    // color: $darkShade50;
     transition: color 0.5s ease;
     &:hover {
-        color: $darkShade75;
+        // color: $darkShade75;
     }
     &:before {
         content: "";
         width: 18px;
         height: 18px;
-        border: 1px solid $darkShade25;
+        // border: 1px solid $darkShade25;
         position: absolute;
         left: 0;
         top: -1px;
@@ -37,7 +35,7 @@
         transition: border-color 0.5s ease;
     }
     &:hover::before {
-        border-color: $purple;
+        // border-color: $purple;
     }
     &:after {
         content: "";
@@ -50,7 +48,7 @@
         border-bottom: 2px solid;
         transition: 0.2s ease;
         transform: rotate(45deg) scale(0.1);
-        border-image-source: linear-gradient(180deg, $purple 0%, $blue 100%);
+        // border-image-source: linear-gradient(180deg, $purple 0%, $blue 100%);
         border-image-slice: 1;
     }
 }
@@ -58,9 +56,9 @@
 .checkbox-button__label_rich {
     width: 100%;
     font-weight: bold;
-    color: $darkShade75;
+    // color: $darkShade75;
     &:hover {
-        color: $darkShade100;
+        // color: $darkShade100;
     }
 }
 
@@ -69,7 +67,7 @@
     width: 100%;
     max-width: 236px;
     font-size: 0.85rem;
-    color: $darkShade50;
+    // color: $darkShade50;
     line-height: 14px;
 }
 
