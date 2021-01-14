@@ -9,10 +9,12 @@ mixin calendar(args)
     - let calendarDayClass = 'calendar__day  calendar__day-number_other-month'
     - let currentDay = 6
     - let isPrevMonth = true
+    - let calendarStyle = 'calendar calendar_standart-theme'
+    
+    if (args !== undefined && args.theme === 'without-top-border')
+        - calendarStyle += ' calendar_without-top-border'
 
-
-
-    .calendar.calendar_standart-theme
+    div(class=calendarStyle)
         .calendar__month-selection-section
             i(class='material-icons calendar__month-button calendar__month-button_standart-theme calendar__month-button_with-back-arrow') arrow_back
             span(class='calendar__month-name') Сентябрь 1989

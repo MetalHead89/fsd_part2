@@ -58,6 +58,7 @@ import '@/common.blocks/calendar/__range-highlight/calendar__range-highlight.scs
 import '@/common.blocks/calendar/__range-highlight/_left-rounded/calendar__range-highlight_left-rounded.scss';
 import '@/common.blocks/calendar/__range-highlight/_right-rounded/calendar__range-highlight_right-rounded.scss';
 import '@/common.blocks/calendar/__day/_selected/calendar__day_selected.scss';
+import '@/common.blocks/calendar/_without-top-border/calendar_without-top-border.scss';
 
 import '@/pug/modules/numberCard/numberCard.scss';
 import '@/pug/modules/searchRoomCard/searchRoomCard.scss';
@@ -75,5 +76,5 @@ import '@/scss/registration_signin_page.scss';
 import '@/scss/page_with_links.scss';
 
 // Scripts
-// import '@/common.blocks/calendar/calendar';
+import '@/common.blocks/calendar/calendar';
 import '@/pug/modules/dropdown/dropdown';

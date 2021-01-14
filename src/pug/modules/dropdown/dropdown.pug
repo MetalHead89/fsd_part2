@@ -20,17 +20,16 @@ mixin dropdown(type='guests', id=none, title=none, title2=none)
         - var headerText = 'Выберите удобства'
         - var borders = 'dropdown__header_top-angles-are-round'
     else if type == 'date'
-        - var calendarType = 'dropdown__calendar_padding-6 dropdown__drop-menu'
         - var dropdownType = 'dropdown_date'
         - var headerText = 'ДД.ММ.ГГГГ'
         - var borders = 'dropdown__header_all-angles-are-round'
     else if type == 'filter_date'
         if !title
             - title = 'даты пребывания в отеле'
-        - var dropdownType = 'dropdown_filter-date'
+        - var dropdownTheme = 'dropdown_filter-date'
         - var headerText = 'Выберите период'
         - var borders = 'dropdown__header_all-angles-are-round'
-        - var calendarType = 'dropdown__drop-menu calendar_without-top-border'
+        - var calendarTheme = 'without-top-border'
 
     div(class='dropdown ' + dropdownType)
         input(type="checkbox" id=id class='dropdown__check')
@@ -69,4 +68,4 @@ mixin dropdown(type='guests', id=none, title=none, title2=none)
                             +button({type: 'onlyText', text: 'применить'})
         else
             .dropdown__drop-menu
-                +calendar()(class=calendarType)
+                +calendar({theme: calendarTheme})
