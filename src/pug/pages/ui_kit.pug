@@ -74,9 +74,9 @@ html(lang="ru")
                         .form-elements__column.form-elements__column2.form-elements__column_side-paddings
                             .module
                                 h3(class='module__title') Checkbox Buttons
-                                +checkbox-button('Можно курить', 'noSmoking')
-                                +checkbox-button('Можно с питомцами', 'pets', true)
-                                +checkbox-button('Можно пригласить гостей (до 10 человек)', 'guests', true)
+                                +checkbox-button({label: 'Можно курить', id: 'noSmoking'})
+                                +checkbox-button({label: 'Можно с питомцами', id: 'pets', checked: true})
+                                +checkbox-button({label: 'Можно пригласить гостей (до&nbsp10&nbspчеловек)', id: 'guests', checked: true})
                             .module
                                 h3(class='module-title') Radio Buttons
                                 +radioButton([['radio1', 'radio', 'male', 'Мужчина', true], ['radio2', 'radio', 'female', 'Женщина']])
@@ -95,8 +95,8 @@ html(lang="ru")
                                     +rateButton(5)
                             .module
                                 h3(class='module-title') RICH CHECKBOX BUTTONS
-                                +checkbox-button('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
-                                +checkbox-button('Помощник для инвалидов', 'disabledAssistant', false, true, 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.')
+                                +checkbox-button({label: 'Широкий коридор', id: 'wideCorridor', checked: false, rich: true, text: 'Ширина коридоров в номере не&nbsp;менее 91 см.'})
+                                +checkbox-button({label: 'Помощник для инвалидов', id: 'disabledAssistant', checked: false, rich: true, text: 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.'})
                         .form-elements__column.form-elements__column3
                             .module
                                 +rangeSlider('Range Slider')

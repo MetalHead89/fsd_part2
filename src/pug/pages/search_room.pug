@@ -30,14 +30,14 @@ block content
                             span Стоимость за сутки пребывания в номере
                         .search-room__checkbox-container
                             h3 Checkbox Buttons
-                            +checkbox-button('Можно курить', 'noSmoking')
-                            +checkbox-button('Можно с питомцами', 'pets', true)
-                            +checkbox-button('Можно пригласить гостей (до&nbsp10&nbspчеловек)', 'guests', true)
+                            +checkbox-button({label: 'Можно курить', id: 'noSmoking'})
+                            +checkbox-button({label: 'Можно с питомцами', id: 'pets', checked: true})
+                            +checkbox-button({label: 'Можно пригласить гостей (до&nbsp10&nbspчеловек)', id: 'guests', checked: true})
                     .search-room__option-column-two
                         .search-room__rich-checkbox-container
                             h3 Доступность
-                            +checkbox-button('Широкий коридор', 'wideCorridor', false, true, 'Ширина коридоров в номере не&nbsp;менее 91 см.')
-                            +checkbox-button('Помощник для инвалидов', 'disabledAssistant', false, true, 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.')
+                            +checkbox-button({label: 'Широкий коридор', id: 'wideCorridor', checked: false, rich: true, text: 'Ширина коридоров в номере не&nbsp;менее 91 см.'})
+                            +checkbox-button({label: 'Помощник для инвалидов', id: 'disabledAssistant', checked: false, rich: true, text: 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.'})
                         .search-room__comfort-dropdown-container
                             +dropdown('comfort', 'search-room-comfort-drop', 'удобства номера')
                         .search-room__expandable-checkbox-list-container
