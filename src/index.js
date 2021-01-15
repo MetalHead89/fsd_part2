@@ -11,6 +11,11 @@ import '@/pug/modules/room-details/room-details.scss';
 
 // checkbox-button
 import '@/common.blocks/checkbox-button/checkbox-button.scss';
+import '@/common.blocks/checkbox-button/_rich/checkbox-button_rich.scss';
+import '@/common.blocks/checkbox-button/__text/checkbox-button__text.scss';
+import '@/common.blocks/checkbox-button/__label/checkbox-button__label.scss';
+import '@/common.blocks/checkbox-button/__label/_rich/checkbox-button__label_rich.scss';
+import '@/common.blocks/checkbox-button/__checkbox-element/checkbox-button__checkbox-element.scss';
 
 import '@/pug/modules/radio-button/radio-button.scss';
 import '@/pug/modules/toggle/toggle.scss';
