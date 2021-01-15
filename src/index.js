@@ -1,7 +1,21 @@
 // Styles
 import '@/scss/fonts.scss';
 import '@/scss/style.scss';
-import '@/pug/modules/color-block/color-block.scss';
+
+// color-block
+import '@/common.blocks/color-block/color-block.scss';
+import '@/common.blocks/color-block/__color-code/color-block__color-code.scss';
+import '@/common.blocks/color-block/__color-name/color-block__color-name.scss';
+import '@/common.blocks/color-block/__description/color-block__description.scss';
+import '@/common.blocks/color-block/__square/color-block__square.scss';
+import '@/common.blocks/color-block/__square/_dark-shade-5/color-block__square_dark-shade-5.scss';
+import '@/common.blocks/color-block/__square/_dark-shade-25/color-block__square_dark-shade-25.scss';
+import '@/common.blocks/color-block/__square/_dark-shade-50/color-block__square_dark-shade-50.scss';
+import '@/common.blocks/color-block/__square/_dark-shade-75/color-block__square_dark-shade-75.scss';
+import '@/common.blocks/color-block/__square/_dark-shade-100/color-block__square_dark-shade-100.scss';
+import '@/common.blocks/color-block/__square/_green/color-block__square_green.scss';
+import '@/common.blocks/color-block/__square/_purple/color-block__square_purple.scss';
+
 import '@/scss/ui_kit.scss';
 import '@/pug/modules/type-block/type-block.scss';
 import '@/pug/modules/text-field/text-field.scss';

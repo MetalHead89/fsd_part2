@@ -1,0 +1,53 @@
+mixin color-block(args)
+    //- {theme, colorName, colorCode}
+        - var colorClass = 'color-block__square_'
+    - let colorSquareClass = 'color-block__square'
+
+    if args.theme === 'darkShade100'
+        - colorSquareClass += ' color-block__square_dark-shade-100'
+    else if args.theme === 'darkShade75'
+        - colorSquareClass += ' color-block__square_dark-shade-75'
+    else if args.theme === 'darkShade50'
+        - colorSquareClass += ' color-block__square_dark-shade-50'
+    else if args.theme === 'darkShade25'
+        - colorSquareClass += ' color-block__square_dark-shade-25'
+    else if args.theme === 'darkShade5'
+        - colorSquareClass += ' color-block__square_dark-shade-5'
+    else if args.theme === 'purple'
+        - colorSquareClass += ' color-block__square_purple'
+    else if args.theme === 'green'
+        - colorSquareClass += ' color-block__square_green'
+    else
+        - colorSquareClass += ' color-block__square_dark-shade-100'
+
+    .color-block
+        div(class=colorSquareClass)
+        .color-block__description
+            h2(class='color-block__color-name') !{args.colorName}
+            .color-block__color-code !{args.colorCode}
+
+    //- - var colorClass = 'color-block__square_'
+    //- - var colorCode = '#1F2041'
+
+    //- if colorName == 'Dark Shade 100%'
+    //-     - colorClass += 'color-dark100'
+    //- if colorName == 'Dark Shade 75%'
+    //-     - colorClass += 'color-dark75'
+    //- if colorName == 'Dark Shade 50%'
+    //-     - colorClass += 'color-dark50'
+    //- if colorName == 'Dark Shade 25%'
+    //-     - colorClass += 'color-dark25'
+    //- if colorName == 'Dark Shade 5%'
+    //-     - colorClass += 'color-dark5'
+    //- if colorName == 'Purple'
+    //-     - colorClass += 'color-purple'
+    //-     - colorCode = '#BC9CFF'
+    //- if colorName == 'Green'
+    //-     - colorClass += 'color-green'
+    //-     - colorCode = '#6FCF97'
+
+    //- .color-block
+    //-     div(class='color-block__square ' + colorClass)
+    //-     .color-block__description
+    //-         h2(class='color-block__colorName') !{colorName}
+    //-         .color-block__color-code !{colorCode}
