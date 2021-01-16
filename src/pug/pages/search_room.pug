@@ -1,7 +1,7 @@
 extends ../layouts/website_page
 
 block includs
-    include ../modules/dropdown/dropdown.pug
+    include ../../common.blocks/dropdown/dropdown.pug
     include ../modules/range-slider/range-slider.pug
     include ../../common.blocks/checkbox-button/checkbox-button.pug
     include ../modules/expandable-checkbox-list/expandable-checkbox-list.pug
@@ -22,9 +22,9 @@ block content
                 .search-room__filter-options
                     .search-room__option-column-one
                         .search-room__filter-date-container
-                            +dropdown('filter_date', 'search-room-filer-date', 'даты пребывания в отеле')
+                            +dropdown({type: 'filter_date', id: 'search-room-filer-date', title: 'даты пребывания в отеле'})
                         .search-room__guests-dropdown-container
-                            +dropdown('guests', 'search-room-guests', 'гости')
+                            +dropdown({type: 'guests', id: 'search-room-guests', title: 'гости'})
                         .search-room__range-slider-container
                             +rangeSlider()
                             span Стоимость за сутки пребывания в номере
@@ -39,7 +39,7 @@ block content
                             +checkbox-button({label: 'Широкий коридор', id: 'wideCorridor', checked: false, rich: true, text: 'Ширина коридоров в номере не&nbsp;менее 91 см.'})
                             +checkbox-button({label: 'Помощник для инвалидов', id: 'disabledAssistant', checked: false, rich: true, text: 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.'})
                         .search-room__comfort-dropdown-container
-                            +dropdown('comfort', 'search-room-comfort-drop', 'удобства номера')
+                            +dropdown({type: 'comfort', id: 'search-room-comfort-drop', title: 'удобства номера'})
                         .search-room__expandable-checkbox-list-container
                             +expandable-checkbox-list([['Завтрак', 'breakfast'], ['Письменный стол', 'desk', true], ['Стул для кормления', 
                                             'feedingChair', true], ['Кроватка', 'crib', true], ['Телевизор', 'tv'], ['Шампунь', 'shampoo']], 'дополнительные удобства')
@@ -78,6 +78,4 @@ block content
         include ../modules/pagination/pagination.js
 
 block scripts
-    //- include ../modules/dropdown/dropdown.js
-    //- include ../modules/calendar/calendar.js
     include ../modules/numberCard/numberCard.js

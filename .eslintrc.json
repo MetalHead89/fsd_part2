@@ -20,6 +20,14 @@
         "fsd/jq-use-js-prefix-in-selector": "error",
         "fsd/no-function-declaration-in-event-listener": "error",
         "fsd/split-conditionals": "error",
-        "import/no-unresolved": "off"
+        "import/no-unresolved": "off",
+        "comma-dangle": ["error", {
+            "arrays": "always",
+            "objects": "always",
+            "imports": "never",
+            "exports": "never",
+            "functions": "never"
+        }],
+        "operator-linebreak": 0
     }
 }

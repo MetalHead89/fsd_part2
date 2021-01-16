@@ -8,15 +8,23 @@ class Dropdown {
   dropdownInit() {
     this.quantitySum = 0;
     this.dropdownType = Dropdown.getDropdownType(this.dropdown);
-    const clearButtonWrapper = this.dropdown.querySelector('.dropdown__button-clear');
+    const clearButtonWrapper = this.dropdown.querySelector(
+      '.dropdown__button-clear'
+    );
     if (clearButtonWrapper !== null) {
       [this.clearButton] = clearButtonWrapper.children;
       this.clearButton.style.display = 'none';
     }
-    this.dropdownHeaderText = this.dropdown.querySelector('.dropdown__header-text');
+    this.dropdownHeaderText = this.dropdown.querySelector(
+      '.dropdown__header-text'
+    );
     this.dropdownHeader = this.dropdown.querySelector('.dropdown__header');
-    this.dropdownStartDayHeader = this.dropdown.querySelector('.dropdown__start-date-header');
-    this.dropdownEndDayHeader = this.dropdown.querySelector('.dropdown__end-date-header');
+    this.dropdownStartDayHeader = this.dropdown.querySelector(
+      '.dropdown__start-date-header'
+    );
+    this.dropdownEndDayHeader = this.dropdown.querySelector(
+      '.dropdown__end-date-header'
+    );
     this.dropMenu = this.dropdown.querySelector('.dropdown__drop-menu');
     this.dropCheck = this.dropdown.querySelector('.dropdown__check');
     this.closeTimer = null;
@@ -61,7 +69,9 @@ class Dropdown {
 }
 
 function numberIsTwoThreeOrFour(number10, number100) {
-  return (number10 >= 2 && number10 <= 4) && !(number100 >= 12 && number100 <= 14);
+  return (
+    number10 >= 2 && number10 <= 4 && !(number100 >= 12 && number100 <= 14)
+  );
 }
 
 function dropdownWordGenerator(word, number) {
@@ -116,13 +126,16 @@ function changeDropdownHeaderText(dropdown) {
    * Изеняет текст хедера dropdown элемента
    */
 
-  const quantityNumbers = dropdown.dropdown.querySelectorAll('.dropdown__quantity-number');
+  const quantityNumbers = dropdown.dropdown.querySelectorAll(
+    '.dropdown__quantity-number'
+  );
   let headerText = '';
 
   if (dropdown.dropdownType === 'guests') {
     const guests = {
-      guests: parseInt(quantityNumbers[0].innerText, 10)
-        + parseInt(quantityNumbers[1].innerText, 10),
+      guests:
+        parseInt(quantityNumbers[0].innerText, 10) +
+        parseInt(quantityNumbers[1].innerText, 10),
       babies: parseInt(quantityNumbers[2].innerText, 10),
     };
 
@@ -131,7 +144,10 @@ function changeDropdownHeaderText(dropdown) {
         if (headerText !== '') {
           headerText += ', ';
         }
-        headerText += `${guests[key]} ${dropdownWordGenerator(key, guests[key])}`;
+        headerText += `${guests[key]} ${dropdownWordGenerator(
+          key,
+          guests[key]
+        )}`;
       }
     });
 
@@ -150,7 +166,10 @@ function changeDropdownHeaderText(dropdown) {
         if (headerText !== '') {
           headerText += ', ';
         }
-        headerText += `${comfort[key]} ${dropdownWordGenerator(key, comfort[key])}`;
+        headerText += `${comfort[key]} ${dropdownWordGenerator(
+          key,
+          comfort[key]
+        )}`;
       }
     });
 
@@ -166,10 +185,16 @@ function resetOptionsValues() {
    * Сбрасывет все значения dropdown на дефолтные
    */
 
-  const quantityElements = this.dropdown.querySelectorAll('.dropdown__quantity-number');
+  const quantityElements = this.dropdown.querySelectorAll(
+    '.dropdown__quantity-number'
+  );
   this.clearButton.removeAttribute('style');
 
-  for (let quantityIndex = 0; quantityIndex < quantityElements.length; quantityIndex += 1) {
+  for (
+    let quantityIndex = 0;
+    quantityIndex < quantityElements.length;
+    quantityIndex += 1
+  ) {
     const quantity = quantityElements[quantityIndex];
 
     quantity.innerText = '0';
@@ -221,7 +246,10 @@ function closeDropMenu() {
 }
 
 function startCloseTimer() {
-  this.closeTimer = setTimeout(closeDropMenu.bind(this), this.DROPDOWN_CLOSE_TIME);
+  this.closeTimer = setTimeout(
+    closeDropMenu.bind(this),
+    this.DROPDOWN_CLOSE_TIME
+  );
 }
 
 function autoCloseDropdown() {
@@ -241,40 +269,75 @@ const dropdowns = document.querySelectorAll('.dropdown');
 
 function closeOpenDropdowns() {
   if (!this.dropCheck.checked) {
-    for (let dropdownIndex = 0; dropdownIndex < dropdowns.length; dropdownIndex += 1) {
+    for (
+      let dropdownIndex = 0;
+      dropdownIndex < dropdowns.length;
+      dropdownIndex += 1
+    ) {
       const dropdown = dropdowns[dropdownIndex];
 
-      if (dropdown !== this && dropdown.querySelector('.dropdown__check').checked) {
+      if (
+        dropdown !== this &&
+        dropdown.querySelector('.dropdown__check').checked
+      ) {
         dropdown.querySelector('.dropdown__check').checked = false;
       }
     }
   }
 }
 
-for (let dropdownIndex = 0; dropdownIndex < dropdowns.length; dropdownIndex += 1) {
+for (
+  let dropdownIndex = 0;
+  dropdownIndex < dropdowns.length;
+  dropdownIndex += 1
+) {
   const dropdown = dropdowns[dropdownIndex];
   const dropdownObject = new Dropdown(dropdown);
 
   if (dropdownObject.dropdownType === 'guests') {
-    dropdownObject.clearButton.onclick = resetOptionsValues.bind(dropdownObject);
+    dropdownObject.clearButton.onclick = resetOptionsValues.bind(
+      dropdownObject
+    );
   }
 
-  if (dropdownObject.dropdownType === 'guests' || dropdownObject.dropdownType === 'comfort') {
-    const dropdownQuantityButtons = dropdownObject.dropdown.querySelectorAll('.dropdown__quantity-button');
+  if (
+    dropdownObject.dropdownType === 'guests' ||
+    dropdownObject.dropdownType === 'comfort'
+  ) {
+    const dropdownQuantityButtons = dropdownObject.dropdown.querySelectorAll(
+      '.dropdown__quantity-button'
+    );
 
-    for (let buttonIndex = 0; buttonIndex < dropdownQuantityButtons.length; buttonIndex += 1) {
+    for (
+      let buttonIndex = 0;
+      buttonIndex < dropdownQuantityButtons.length;
+      buttonIndex += 1
+    ) {
       const button = dropdownQuantityButtons[buttonIndex];
-      button.addEventListener('click', changeQuantity.bind(button, dropdownObject));
+      button.addEventListener(
+        'click',
+        changeQuantity.bind(button, dropdownObject)
+      );
     }
   }
 
-  dropdownObject.dropdownHeader.onmouseout = autoCloseDropdown.bind(dropdownObject);
+  dropdownObject.dropdownHeader.onmouseout = autoCloseDropdown.bind(
+    dropdownObject
+  );
   dropdownObject.dropMenu.onmouseout = autoCloseDropdown.bind(dropdownObject);
-  dropdownObject.dropdownHeader.onmouseover = resetCloseTimer.bind(dropdownObject);
+  dropdownObject.dropdownHeader.onmouseover = resetCloseTimer.bind(
+    dropdownObject
+  );
   dropdownObject.dropMenu.onmouseover = resetCloseTimer.bind(dropdownObject);
-  dropdownObject.dropdownHeader.onclick = closeOpenDropdowns.bind(dropdownObject);
+  dropdownObject.dropdownHeader.onclick = closeOpenDropdowns.bind(
+    dropdownObject
+  );
   if (dropdownObject.dropdownType === 'date') {
-    dropdownObject.dropdownStartDayHeader.onclick = closeOpenDropdowns.bind(dropdownObject);
-    dropdownObject.dropdownEndDayHeader.onclick = closeOpenDropdowns.bind(dropdownObject);
+    dropdownObject.dropdownStartDayHeader.onclick = closeOpenDropdowns.bind(
+      dropdownObject
+    );
+    dropdownObject.dropdownEndDayHeader.onclick = closeOpenDropdowns.bind(
+      dropdownObject
+    );
   }
 }

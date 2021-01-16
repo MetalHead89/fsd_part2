@@ -44,7 +44,6 @@ class Calendar {
       '.calendar__button-apply'
     ).children;
     this.applyButton.onclick = () => this.applyRange();
-    // }
 
     this.prevMonthButton.onclick = () => this.switchMonth(this.prevMonthButton);
     this.nextMonthButton.onclick = () => this.switchMonth(this.nextMonthButton);

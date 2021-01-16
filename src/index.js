@@ -19,7 +19,10 @@ import '@/common.blocks/color-block/__square/_purple/color-block__square_purple.
 import '@/scss/ui_kit.scss';
 import '@/pug/modules/type-block/type-block.scss';
 import '@/pug/modules/text-field/text-field.scss';
-import '@/pug/modules/dropdown/dropdown.scss';
+
+// dropdown
+import '@/common.blocks/dropdown/dropdown.scss';
+
 import '@/pug/modules/expandable-checkbox-list/expandable-checkbox-list.scss';
 import '@/pug/modules/room-details/room-details.scss';
 
@@ -98,4 +101,4 @@ import '@/scss/page_with_links.scss';
 
 // Scripts
 import '@/common.blocks/calendar/calendar';
-import '@/pug/modules/dropdown/dropdown';
+import '@/common.blocks/dropdown/dropdown';
