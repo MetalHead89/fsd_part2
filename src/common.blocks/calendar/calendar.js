@@ -279,8 +279,8 @@ class Calendar {
 
     const parent = this.calendar.offsetParent.offsetParent;
     if (parent.classList.contains('dropdown_date')) {
-      parent.querySelector('.dropdown__startDate').innerText = 'ДД.ММ.ГГГГ';
-      parent.querySelector('.dropdown__endDate').innerText = 'ДД.ММ.ГГГГ';
+      parent.querySelector('.dropdown_start-date').innerText = 'ДД.ММ.ГГГГ';
+      parent.querySelector('.dropdown_end-date').innerText = 'ДД.ММ.ГГГГ';
     } else if (parent.classList.contains('dropdown_filter-date')) {
       parent.querySelector('.dropdown__header-text').innerText =
         'Выберите период';
@@ -297,14 +297,14 @@ class Calendar {
 
       if (parent.classList.contains('dropdown_date')) {
         parent.querySelector(
-          '.dropdown__startDate'
+          '.dropdown_start-date'
         ).innerText = startDate.toLocaleString('ru', {
           day: 'numeric',
           month: 'numeric',
           year: 'numeric',
         });
         parent.querySelector(
-          '.dropdown__endDate'
+          '.dropdown_end-date'
         ).innerText = endDate.toLocaleString('ru', {
           day: 'numeric',
           month: 'numeric',
@@ -320,8 +320,8 @@ class Calendar {
       }
     } else {
       if (parent.classList.contains('dropdown_date')) {
-        parent.querySelector('.dropdown__startDate').innerText = 'ДД.ММ.ГГГГ';
-        parent.querySelector('.dropdown__endDate').innerText = 'ДД.ММ.ГГГГ';
+        parent.querySelector('.dropdown_start-date').innerText = 'ДД.ММ.ГГГГ';
+        parent.querySelector('.dropdown_end-date').innerText = 'ДД.ММ.ГГГГ';
       }
 
       if (parent.classList.contains('dropdown_filter-date')) {

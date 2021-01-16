@@ -2,68 +2,72 @@ include ../button/button.pug
 include ../calendar/calendar.pug
 
 mixin dropdown(args)
-    //- type='guests', id=none, title=none, title2=none
+    - let type = ''
     - let options = []
     - let buttons = false
     - let dropdownClass = 'dropdown'
     - let headerText = ''
-    - let headerBorders = ''
+    - let headerClass = ''
     - let calendarTheme = ''
     
-    if args.type === 'guests'
-        - options = ['взрослые', 'дети', 'младенцы']
-        - buttons = true
-        - dropdownClass += ' dropdown_guests'
-        - headerText = 'Сколько гостей'
-        - borders = 'dropdown__header_all-angles-are-round'
-    else if args.type === 'comfort'
+    if args.type === 'comfort'
+        - type = 'comfort'
         - options = ['спальни', 'кровати', 'ванные комнаты']
         - buttons = false
         - dropdownClass += ' dropdown_comfort'
         - headerText = 'Выберите удобства'
-        - headerBorders = 'dropdown__header_top-angles-are-round'
+        - headerClass = 'dropdown__header dropdown__header_top-angles-are-round'
     else if args.type === 'date'
+        - type = 'date'
         - dropdownClass += ' dropdown_date'
         - headerText = 'ДД.ММ.ГГГГ'
-        - headerBorders = 'dropdown__header_all-angles-are-round'
+        - headerClass = 'dropdown__header dropdown__header_all-angles-are-round'
     else if args.type === 'filter_date'
+        - type = 'filter_date'
         - title = 'даты пребывания в отеле'
         - dropdownClass += ' dropdown_filter-date'
         - headerText = 'Выберите период'
-        - headerBorders = 'dropdown__header_all-angles-are-round'
+        - headerClass = 'dropdown__header dropdown__header_all-angles-are-round'
         - calendarTheme = 'without-top-border'
+    else
+        - type = 'guests'
+        - options = ['взрослые', 'дети', 'младенцы']
+        - buttons = true
+        - dropdownClass += ' dropdown_guests'
+        - headerText = 'Сколько гостей'
+        - headerClass = 'dropdown__header dropdown__header_all-angles-are-round'
 
     div(class=dropdownClass)
         input(type="checkbox" id=args.id class='dropdown__check')
-        if args.type != 'date'
+        if type != 'date'
             h3(class="dropdown__title") !{args.title}
-            label(for=args.id class='dropdown__header ' + headerBorders)
-                .dropdown__header-element.dropdown__header-text !{headerText}
-                i(class='material-icons dropdown__header-element dropdown__expand-more') keyboard_arrow_down
+            label(for=args.id class=headerClass)
+                .dropdown__header-text !{headerText}
+                i(class='material-icons dropdown__expand-more') keyboard_arrow_down
         else
-            .dropdown__date-block
-                .dropdown__arrival.dropdown_dateElement.dropdown_date-element_right-padding
+            .dropdown__date-section
+                .dropdown__date-block.dropdown__date-block_right-padding
                     h3(class="dropdown__title") !{args.title}
-                    label(for=id class='dropdown__header dropdown__start-date-header ' + headerBorders)
-                        .dropdown__header-element.dropdown__header-text.dropdown__startDate !{headerText}
-                        i(class='material-icons dropdown__header-element dropdown__expand-more dropdown__expand-more_absolute') keyboard_arrow_down
-                .dropdown__departure.dropdown_dateElement.dropdown_date-element_left-padding
+                    label(for=args.id class=headerClass + ' dropdown__start-date-header')
+                        .dropdown__header-text.dropdown_start-date !{headerText}
+                        i(class='material-icons dropdown__expand-more dropdown__expand-more_absolute') keyboard_arrow_down
+                .dropdown__date-block.dropdown__date-block_left-padding
                     h3(class="dropdown__title") !{args.title2}
-                    label(for=id class='dropdown__header dropdown__end-date-header ' + headerBorders)
-                        .dropdown__header-element.dropdown__header-text.dropdown__endDate !{headerText}
-                        i(class='material-icons dropdown__header-element dropdown__expand-more dropdown__expand-more_absolute') keyboard_arrow_down
+                    label(for=args.id class=headerClass + ' dropdown__end-date-header')
+                        .dropdown__header-text.dropdown_end-date !{headerText}
+                        i(class='material-icons dropdown__expand-more dropdown__expand-more_absolute') keyboard_arrow_down
 
-        if args.type === 'guests' || args.type === 'comfort'
+        if type === 'guests' || type === 'comfort'
             .dropdown__drop-menu.dropdown__drop-menu_with-border
                 each val in options
-                    .dropdown__option.dropdown__drop-element
+                    .dropdown__option
                         .dropdown__option-title !{val}
                         .dropdown__quantity-selection
-                            button(class='dropdown__subtract-button dropdown__quantity-button' disabled) -
+                            button(class='dropdown__quantity-button dropdown__quantity-button_substract' disabled) -
                             .dropdown__quantity-number 0
-                            button(class='dropdown__add-button dropdown__quantity-button') +
+                            button(class='dropdown__quantity-button dropdown__quantity-button_add') +
                 if buttons
-                    .dropdown__bottom-buttons-panel.dropdown__drop-element
+                    .dropdown__bottom-buttons-panel
                         .dropdown__button-clear
                             +button({type: 'onlyText', text: 'очистить'})
                         .dropdown__button-apply

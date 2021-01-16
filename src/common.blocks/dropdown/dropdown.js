@@ -223,7 +223,7 @@ function onOffClearButton(dropdown) {
 function changeQuantity(dropdown) {
   let quantityElement = null;
 
-  if (this.classList.contains('dropdown__add-button')) {
+  if (this.classList.contains('dropdown__quantity-button_add')) {
     quantityElement = this.previousElementSibling;
     quantityElement.innerText = parseInt(quantityElement.innerText, 10) + 1;
     dropdown.increaseQuantitySum();

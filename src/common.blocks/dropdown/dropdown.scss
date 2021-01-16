@@ -34,21 +34,21 @@
     border-radius: 4px 4px 0 0;
 }
 
-.dropdown__header-element {
-    pointer-events: none;
-    display: inline-block;
-    flex: none;
-}
-
 .dropdown__header-text {
     width: 75%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    pointer-events: none;
+    display: inline-block;
+    flex: none;
 }
 
 .dropdown__expand-more {
     color: rgba(31, 32, 65, 0.5);
+    pointer-events: none;
+    display: inline-block;
+    flex: none;
 }
 
 .dropdown__expand-more_absolute {
@@ -56,7 +56,7 @@
     right: 8px;
 }
 
-.dropdown__date-block {
+.dropdown__date-section {
     width: 100%;
     max-width: 320px;
     flex-direction: row;
@@ -71,7 +71,7 @@
     position: relative;
 }
 
-.dropdown_dateElement {
+.dropdown__date-block {
     width: 47%;
 }
 
@@ -91,7 +91,10 @@
     transform-origin: top;
     transform: scale(1, 0);
     z-index: 99;
-    & .dropdown__drop-element, & .calendar__days, & .calendar__month-selection-section {
+    & .dropdown__option,
+    & .dropdown__bottom-buttons-panel,
+    & .calendar__days,
+    & .calendar__month-selection-section {
         opacity: 0;
     }
 }
@@ -120,14 +123,20 @@
         transition: transform .4s cubic-bezier(.73,.32,.34,1.5);
         transform: scale(1, 1);
         opacity: 1;
-        & .dropdown__drop-element, & .calendar__days, & .calendar__month-selection-section {
+        & .dropdown__option,
+        & .dropdown__bottom-buttons-panel,
+        & .calendar__days,
+        & .calendar__month-selection-section {
             transition: opacity 1.2s ease;
             opacity: 1;
         }
     }
     &:not(:checked) ~ .dropdown__drop-menu {
         transition: transform .5s;
-        & .dropdown__drop-element, & .calendar__days, & .calendar__month-selection-section {
+        & .dropdown__option,
+        & .dropdown__bottom-buttons-panel,
+        & .calendar__days,
+        & .calendar__month-selection-section {
             transition: opacity .3s;
         }
     }
