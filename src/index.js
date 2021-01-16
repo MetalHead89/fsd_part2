@@ -22,6 +22,26 @@ import '@/pug/modules/text-field/text-field.scss';
 
 // dropdown
 import '@/common.blocks/dropdown/dropdown.scss';
+import '@/common.blocks/dropdown/__title/dropdown__title.scss';
+import '@/common.blocks/dropdown/__header/dropdown__header.scss';
+import '@/common.blocks/dropdown/__header/_all-angles-are-round/dropdown__header_all-angles-are-round.scss';
+import '@/common.blocks/dropdown/__header/_top-angles-are-round/dropdown__header_top-angles-are-round.scss';
+import '@/common.blocks/dropdown/__header-text/dropdown__header-text.scss';
+import '@/common.blocks/dropdown/__expand-more/dropdown__expand-more.scss';
+import '@/common.blocks/dropdown/__expand-more/_absolute/dropdown__expand-more_absolute.scss';
+import '@/common.blocks/dropdown/__date-section/dropdown__date-section.scss';
+import '@/common.blocks/dropdown/__start-date-header/dropdown__start-date-header.scss';
+import '@/common.blocks/dropdown/__end-date-header/dropdown__end-date-header.scss';
+import '@/common.blocks/dropdown/__date-block/dropdown__date-block.scss';
+import '@/common.blocks/dropdown/__drop-menu/dropdown__drop-menu.scss';
+import '@/common.blocks/dropdown/__drop-menu/_with-border/dropdown__drop-menu_with-border.scss';
+import '@/common.blocks/dropdown/__check/dropdown__check.scss';
+import '@/common.blocks/dropdown/__option/dropdown__option.scss';
+import '@/common.blocks/dropdown/__quantity-selection/dropdown__quantity-selection.scss';
+import '@/common.blocks/dropdown/__quantity-number/dropdown__quantity-number.scss';
+import '@/common.blocks/dropdown/__quantity-button/dropdown__quantity-button.scss';
+import '@/common.blocks/dropdown/__bottom-buttons-panel/dropdown__bottom-buttons-panel.scss';
+import '@/common.blocks/dropdown/__button-clear/dropdown__button-clear.scss';
 
 import '@/pug/modules/expandable-checkbox-list/expandable-checkbox-list.scss';
 import '@/pug/modules/room-details/room-details.scss';

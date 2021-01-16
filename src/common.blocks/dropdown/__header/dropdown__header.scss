@@ -1,0 +1,17 @@
+.dropdown__header {
+  padding: 9px 15px;
+  padding-right: 10px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(31, 32, 65, 0.75);
+  transition: border-color 0.5s ease;
+  &:hover,
+  &:focus {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    outline: none;
+    cursor: default;
+  }
+}

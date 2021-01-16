@@ -1,0 +1,9 @@
+.dropdown__header-text {
+  width: 75%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  display: inline-block;
+  flex: none;
+}
