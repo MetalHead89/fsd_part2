@@ -2,40 +2,40 @@ include ../../pug/modules/text-field/text-field.pug
 
 mixin footer()
     footer
-        .footer__info_container
+        .footer__info-wrapper
             .footer__info
                 ul(class='footer__info-column footer__info-column_width260 footer__info-column_margin-left')
-                    li(class='footer__info-column-item')
+                    li(class='footer__info-item')
                         img(class='footer__logo' src='../images/logo.svg', alt="logo")
-                    li(class='footer__info-column-item')
+                    li(class='footer__info-item')
                         span Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
                 
                 ul(class='footer__info-column')
-                    li(class='footer__info-column-item footer__info-column-title') Навигация
-                    li(class='footer__info-column-item') О нас
-                    li(class='footer__info-column-item') Новости
-                    li(class='footer__info-column-item') Служба поддержки
-                    li(class='footer__info-column-item') Услуги
+                    li(class='footer__info-item footer__info-title') Навигация
+                    li(class='footer__info-item') О нас
+                    li(class='footer__info-item') Новости
+                    li(class='footer__info-item') Служба поддержки
+                    li(class='footer__info-item') Услуги
                 
                 ul(class='footer__info-column')
-                    li(class='footer__info-column-item footer__info-column-title') О нас
-                    li(class='footer__info-column-item') О сервисе
-                    li(class='footer__info-column-item') Наша команда
-                    li(class='footer__info-column-item') Вакансии
-                    li(class='footer__info-column-item') Инвесторы
+                    li(class='footer__info-item footer__info-title') О нас
+                    li(class='footer__info-item') О сервисе
+                    li(class='footer__info-item') Наша команда
+                    li(class='footer__info-item') Вакансии
+                    li(class='footer__info-item') Инвесторы
 
                 ul(class='footer__info-column')
-                    li(class='footer__info-column-item footer__info-column-title') Служба поддержки
-                    li(class='footer__info-column-item') Соглашения
-                    li(class='footer__info-column-item') Сообщества
-                    li(class='footer__info-column-item') Связь с нами
+                    li(class='footer__info-item footer__info-title') Служба поддержки
+                    li(class='footer__info-item') Соглашения
+                    li(class='footer__info-item') Сообщества
+                    li(class='footer__info-item') Связь с нами
                 
                 ul(class='footer__info-column footer__info-column_width260 footer__info-column_margin-right')
-                    li(class='footer__info-column-item footer__info-column-title') Подписка
-                    li(class='footer__info-column-item') Получайте специальные предложения и новости сервиса
-                    li(class='footer__info-column-item')
+                    li(class='footer__info-item footer__info-title') Подписка
+                    li(class='footer__info-item') Получайте специальные предложения и новости сервиса
+                    li(class='footer__info-item')
                         +text_field('Email', 'subscription')
-        .footer__copyright-container
+        .footer__copyright-wrapper
             .footer__copyright
                 img(class='footer__logo footer__logo-in-copyright-zone' src='assets/images/logo.svg', alt="logo")
                 .footer__copyright-text Copyright © 2018 Toxin отель. Все права зачищены.

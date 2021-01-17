@@ -9,7 +9,7 @@ footer {
     box-sizing: border-box;
 }
 
-.footer__info_container {
+.footer__info-wrapper {
     width: 100%;
     box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
     display: flex;
@@ -32,10 +32,10 @@ footer {
     list-style-type: none;
     margin: 0 15px;
     padding: 0;
-    & .footer__info-column-item:first-child {
+    & .footer__info-item:first-child {
         padding-top: 0;
     }
-    & .footer__info-column-item:last-child {
+    & .footer__info-item:last-child {
         padding-bottom: 0;
     }
 }
@@ -52,14 +52,14 @@ footer {
     width: 260px;
 }
 
-.footer__info-column-item {
+.footer__info-item {
     font-family: 'Montserrat';
     font-size: 14px;
     color: rgba(31, 32, 65, 0.75);
     padding: 7px 0;
 }
 
-.footer__info-column-title {
+.footer__info-title {
     font-weight: bold;
     font-size: 12px;
     text-transform: uppercase;
@@ -70,7 +70,7 @@ footer {
     padding: 0;
 }
 
-.footer__copyright-container {
+.footer__copyright-wrapper {
     box-sizing: border-box;
     width: 100%;
     padding: 24px 20px;
