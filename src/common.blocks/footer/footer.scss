@@ -1,9 +1,7 @@
-@import '../../../scss/vars.scss';
-
 footer {
     width: 100%;
     background: #FFFFFF;
-    box-shadow: 0px 10px 20px $darkShade5;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     display: flex;
     align-items: center;
     display: flex;
@@ -57,7 +55,7 @@ footer {
 .footer__info-column-item {
     font-family: 'Montserrat';
     font-size: 14px;
-    color: $darkShade75;
+    color: rgba(31, 32, 65, 0.75);
     padding: 7px 0;
 }
 
@@ -65,7 +63,7 @@ footer {
     font-weight: bold;
     font-size: 12px;
     text-transform: uppercase;
-    color: $darkShade100;
+    color: #1F2041;
 }
 
 .footer__logo {
@@ -89,7 +87,7 @@ footer {
 
 .footer__social-link {
     font-size: 24px;
-    background: linear-gradient(180deg, $purple 0%, $blue 100%);
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;

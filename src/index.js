@@ -117,7 +117,10 @@ import '@/pug/modules/registrationCard/registrationCard.scss';
 import '@/pug/modules/entryCard/entryCard.scss';
 import '@/pug/modules/roomRateCard/roomRateCard.scss';
 import '@/pug/modules/header/header.scss';
-import '@/pug/modules/footer/footer.scss';
+
+// footer
+import '@/common.blocks/footer/footer.scss';
+
 import '@/scss/landing_page.scss';
 import '@/pug/modules/navbar/navbar.scss';
 import '@/scss/search_room.scss';
