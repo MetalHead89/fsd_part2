@@ -76,8 +76,8 @@ html(lang="ru")
                                 .module
                                     +dropdown({type: 'comfort', id: 'uiComfortDrop', title: 'dropdown'})
                                 .module
-                                    +expandable-checkbox-list([['Завтрак', 'breakfast'], ['Письменный стол', 'desk', true], ['Стул для кормления', 
-                                    'feedingChair', true], ['Кроватка', 'crib', true], ['Телевизор', 'tv'], ['Шампунь', 'shampoo']], 'expandable checkbox list')
+                                    +expandable-checkbox-list({checkboxes: [{label: 'Завтрак', id: 'breakfast'}, {label: 'Письменный стол', id: 'desk', checked: true}, {label: 'Стул для кормления', 
+                                    id: 'feedingChair', checked: true}, {label: 'Кроватка', id: 'crib', checked: true}, {label: 'Телевизор', id: 'tv'}, {label: 'Шампунь', id: 'shampoo'}], title: 'expandable checkbox list', id: 'expandable- checkbox-list'})
                         .form-elements__column.form-elements__column2.form-elements__column_side-paddings
                             .module
                                 h3(class='module__title') Checkbox Buttons

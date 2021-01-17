@@ -41,8 +41,8 @@ block content
                         .search-room__comfort-dropdown-container
                             +dropdown({type: 'comfort', id: 'search-room-comfort-drop', title: 'удобства номера'})
                         .search-room__expandable-checkbox-list-container
-                            +expandable-checkbox-list([['Завтрак', 'breakfast'], ['Письменный стол', 'desk', true], ['Стул для кормления', 
-                                            'feedingChair', true], ['Кроватка', 'crib', true], ['Телевизор', 'tv'], ['Шампунь', 'shampoo']], 'дополнительные удобства')
+                            +expandable-checkbox-list({checkboxes: [{label: 'Завтрак', id: 'breakfast'}, {label: 'Письменный стол', id: 'desk', checked: true}, {label: 'Стул для кормления', 
+                                    id: 'feedingChair', checked: true}, {label: 'Кроватка', id: 'crib', checked: true}, {label: 'Телевизор', id: 'tv'}, {label: 'Шампунь', id: 'shampoo'}], title: 'дополнительные удобства', id: 'expandable- checkbox-list'})
             .search-room__rooms-section
                 h1(class='search-room__rooms-title') Номера, которые мы для вас подобрали
                 .search-room__rooms

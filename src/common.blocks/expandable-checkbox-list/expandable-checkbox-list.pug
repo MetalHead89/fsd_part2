@@ -1,12 +1,11 @@
 include ../checkbox-button/checkbox-button.pug
 
-mixin expandable-checkbox-list(checkboxes, title)
-    - const ID = 'expandableCheckboxList'
+mixin expandable-checkbox-list(args)
     .expandable-checkbox-list
-        input(type="checkbox", name=ID, id=ID class='expandable-checkbox-list__check')
-        label(for=ID class='expandable-checkbox-list__title-section')
-            h3(class='expandable-checkbox-list__title') !{title}
+        input(type="checkbox", id=args.id class='expandable-checkbox-list__check')
+        label(for=args.id class='expandable-checkbox-list__title-section')
+            h3(class='expandable-checkbox-list__title') !{args.title}
             i(class='material-icons expandable-checkbox-list__expand-more') keyboard_arrow_down
         .expandable-checkbox-list__hide-list
-            each checkboxSettings in checkboxes
-                +checkbox-button(checkboxSettings[0], checkboxSettings[1], checkboxSettings[2])
+            each checkbox in args.checkboxes
+                +checkbox-button(checkbox)
