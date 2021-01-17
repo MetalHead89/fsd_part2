@@ -45,6 +45,11 @@ import '@/common.blocks/dropdown/__button-clear/dropdown__button-clear.scss';
 
 // expandable-checkbox-list
 import '@/common.blocks/expandable-checkbox-list/expandable-checkbox-list.scss';
+import '@/common.blocks/expandable-checkbox-list/__check/expandable-checkbox-list__check.scss';
+import '@/common.blocks/expandable-checkbox-list/__title-section/expandable-checkbox-list__title-section.scss';
+import '@/common.blocks/expandable-checkbox-list/__title/expandable-checkbox-list__title.scss';
+import '@/common.blocks/expandable-checkbox-list/__expand-more/expandable-checkbox-list__expand-more.scss';
+import '@/common.blocks/expandable-checkbox-list/__hide-list/expandable-checkbox-list__hide-list.scss';
 
 import '@/pug/modules/room-details/room-details.scss';
 

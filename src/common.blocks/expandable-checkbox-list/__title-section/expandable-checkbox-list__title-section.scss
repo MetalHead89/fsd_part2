@@ -1,0 +1,10 @@
+.expandable-checkbox-list__title-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+  &:hover .expandable-checkbox-list__expand-more {
+    color: rgba(31, 32, 65, 0.75);
+  }
+}
