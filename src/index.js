@@ -43,7 +43,9 @@ import '@/common.blocks/dropdown/__quantity-button/dropdown__quantity-button.scs
 import '@/common.blocks/dropdown/__bottom-buttons-panel/dropdown__bottom-buttons-panel.scss';
 import '@/common.blocks/dropdown/__button-clear/dropdown__button-clear.scss';
 
-import '@/pug/modules/expandable-checkbox-list/expandable-checkbox-list.scss';
+// expandable-checkbox-list
+import '@/common.blocks/expandable-checkbox-list/expandable-checkbox-list.scss';
+
 import '@/pug/modules/room-details/room-details.scss';
 
 // checkbox-button
