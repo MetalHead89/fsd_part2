@@ -1,0 +1,11 @@
+.footer__info-column {
+  list-style-type: none;
+  margin: 0 15px;
+  padding: 0;
+  & .footer__info-item:first-child {
+    padding-top: 0;
+  }
+  & .footer__info-item:last-child {
+    padding-bottom: 0;
+  }
+}

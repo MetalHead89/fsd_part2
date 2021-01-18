@@ -1,0 +1,9 @@
+.footer__logo_hidden {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__logo_hidden {
+    display: block;
+  }
+}
