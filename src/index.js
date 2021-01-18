@@ -85,7 +85,8 @@ import '@/common.blocks/bullet-list/__unordered-list/bullet-list__unordered-list
 import '@/common.blocks/bullet-list/__item/bullet-list__item.scss';
 import '@/common.blocks/bullet-list/__item/_standard-theme/bullet-list__item_standard-theme.scss';
 
-import '@/pug/modules/guest-review/guest-review.scss';
+// guest-review
+import '@/common.blocks/guest-review/guest-review.scss';
 
 // calendar
 import '@/common.blocks/calendar/calendar.scss';
