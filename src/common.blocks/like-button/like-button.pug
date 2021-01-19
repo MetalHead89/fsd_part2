@@ -1,9 +1,9 @@
 mixin like-button(like_count=0, checked=false)
     if checked
-        - var checkedClass = 'like-button_cheked'
+        - var checkedClass = 'like-button_checked'
         - var icon = 'favorite'
     else
-        - var checkedClass = 'like-button_un-cheked'
+        - var checkedClass = 'like-button_unchecked'
         - var icon = 'favorite_border'
 
     div(class='like-button ' + checkedClass)

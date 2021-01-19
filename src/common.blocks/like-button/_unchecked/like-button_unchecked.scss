@@ -1,0 +1,5 @@
+.like-button_unchecked {
+  & .like-button__heart {
+    animation: heartJump2 0.2s ease;
+  }
+}

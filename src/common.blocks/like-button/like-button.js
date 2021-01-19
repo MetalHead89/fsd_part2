@@ -23,14 +23,14 @@ function onClickLikeButton(buttonObject) {
     likeCounter.innerText = parseInt(likeCounter.innerText, 10) + 1;
   }
 
-  buttonObject.likeButton.classList.toggle('like-button_cheked');
-  buttonObject.likeButton.classList.toggle('like-button_un-cheked');
+  buttonObject.likeButton.classList.toggle('like-button_checked');
+  buttonObject.likeButton.classList.toggle('like-button_unchecked');
   buttonObject.likeToggle();
 }
 
 for (let likeIndex = 0; likeIndex < likeButtons.length; likeIndex += 1) {
   const likeButton = likeButtons[likeIndex];
-  const checked = likeButton.classList.contains('like-button_cheked');
+  const checked = likeButton.classList.contains('like-button_checked');
   const buttonObject = new LikeButton(likeButton, checked);
   buttonObject.likeButton.onclick = () => onClickLikeButton(buttonObject);
 }

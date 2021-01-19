@@ -66,6 +66,9 @@ import '@/pug/modules/toggle/toggle.scss';
 
 // like-button
 import '@/common.blocks/like-button/like-button.scss';
+import '@/common.blocks/like-button/_checked/like-button_checked.scss';
+import '@/common.blocks/like-button/_unchecked/like-button_unchecked.scss';
+import '@/common.blocks/like-button/__heart/like-button__heart.scss';
 
 import '@/pug/modules/rate-button/rate-button.scss';
 import '@/pug/modules/range-slider/range-slider.scss';

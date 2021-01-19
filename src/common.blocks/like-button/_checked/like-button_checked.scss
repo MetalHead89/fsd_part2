@@ -1,0 +1,19 @@
+.like-button_checked {
+  color: #bc9cff;
+  border: 1px solid transparent;
+  background-position: 0 100%;
+  background-image: linear-gradient(white, white),
+    linear-gradient(
+      180deg,
+      rgba(31, 32, 65, 0.25) 20%,
+      #bc9cff 90%,
+      #8ba4f9 100%
+    );
+  box-sizing: border-box;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  -webkit-background-clip: padding-box, border-box;
+  & .like-button__heart {
+    animation: heartJump 0.2s ease;
+  }
+}
