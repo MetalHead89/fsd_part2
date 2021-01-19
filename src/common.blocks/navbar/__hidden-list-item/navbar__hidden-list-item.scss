@@ -1,0 +1,7 @@
+.navbar__hidden-list-item {
+  color: rgba(31, 32, 65, 0.5);
+  transition: color 0.5s ease;
+  &:hover {
+    color: rgba(31, 32, 65, 0.75);
+  }
+}
