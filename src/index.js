@@ -87,6 +87,13 @@ import '@/common.blocks/bullet-list/__item/_standard-theme/bullet-list__item_sta
 
 // guest-review
 import '@/common.blocks/guest-review/guest-review.scss';
+import '@/common.blocks/guest-review/__guest/guest-review__guest.scss';
+import '@/common.blocks/guest-review/__photo/guest-review__photo.scss';
+import '@/common.blocks/guest-review/__guest-details/guest-review__guest-details.scss';
+import '@/common.blocks/guest-review/__guest-name/guest-review__guest-name.scss';
+import '@/common.blocks/guest-review/__rewiew/guest-review__rewiew.scss';
+import '@/common.blocks/guest-review/__likes/guest-review__likes.scss';
+import '@/common.blocks/guest-review/__rewiew-text/guest-review__rewiew-text.scss';
 
 // calendar
 import '@/common.blocks/calendar/calendar.scss';
