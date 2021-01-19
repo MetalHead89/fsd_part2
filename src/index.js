@@ -130,7 +130,9 @@ import '@/pug/modules/searchRoomCard/searchRoomCard.scss';
 import '@/pug/modules/registrationCard/registrationCard.scss';
 import '@/pug/modules/entryCard/entryCard.scss';
 import '@/pug/modules/roomRateCard/roomRateCard.scss';
-import '@/pug/modules/header/header.scss';
+
+// header
+import '@/common.blocks/header/header.scss';
 
 // footer
 import '@/common.blocks/footer/footer.scss';
@@ -187,3 +189,4 @@ import '@/common.blocks/calendar/calendar';
 import '@/common.blocks/dropdown/dropdown';
 import '@/common.blocks/like-button/like-button';
 import '@/common.blocks/navbar/navbar';
+import '@/common.blocks/header/header';
