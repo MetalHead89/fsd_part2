@@ -149,7 +149,10 @@ import '@/common.blocks/footer/__copyright/footer__copyright.scss';
 import '@/common.blocks/footer/__social-link/footer__social-link.scss';
 
 import '@/scss/landing_page.scss';
-import '@/pug/modules/navbar/navbar.scss';
+
+// navbar
+import '@/common.blocks/navbar/navbar.scss';
+
 import '@/scss/search_room.scss';
 import '@/scss/room_details.scss';
 import '@/pug/modules/impressions-diagram/impressions-diagram.scss';
@@ -160,3 +163,4 @@ import '@/scss/page_with_links.scss';
 import '@/common.blocks/calendar/calendar';
 import '@/common.blocks/dropdown/dropdown';
 import '@/common.blocks/like-button/like-button';
+import '@/common.blocks/navbar/navbar';
