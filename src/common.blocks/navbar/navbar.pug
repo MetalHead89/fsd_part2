@@ -1,46 +1,48 @@
 mixin navbar(args)
-    if (args.type == 'horizontal')
-        - var navbarClass = 'navbar navbar_horizontal'
-        - var navbarItemClass = 'navbar__item navbar__item_horizontal'
-        - var navbarHiddenListClass = 'navbar__hidden-list navbar__hidden-list_horizontal'
-        - var navbarHiddenListItemClass = 'navbar__hidden-list-item navbar__hidden-list-item_horizontal'
-        - var dropdownTitleClass = 'navbar__dropdown-title'
-        - var separatorClass = 'navbar__separator'
-    else if (args.type == 'vertical')
-        - var navbarClass = 'navbar navbar_vertical'
-        - var navbarItemClass = 'navbar__item navbar__item_vertical'
-        - var navbarHiddenListClass = 'navbar__hidden-list navbar__hidden-list_vertical'
-        - var navbarHiddenListItemClass = 'navbar__hidden-list-item navbar__hidden-list-item_vertical'
-        - var dropdownTitleClass = 'navbar__dropdown-title navbar__dropdown-title_vertical'
-        - var separatorClass = 'navbar__separator navbar__separator_vertical'
+    - let navbarClass = 'navbar__list navbar__list_horizontal'
+    - let navbarItemClass = 'navbar__item navbar__item_horizontal'
+    - let navbarHiddenListClass = 'navbar__hidden-list navbar__hidden-list_horizontal'
+    - let navbarHiddenListItemClass = 'navbar__hidden-list-item navbar__hidden-list-item_horizontal'
+    - let dropdownTitleClass = 'navbar__dropdown-title'
+    - let separatorClass = 'navbar__separator'
 
-    ul(class=navbarClass)
-        li(class=navbarItemClass) О нас
-        li(class=navbarItemClass)
-            div(class=dropdownTitleClass)
-                span Услуги 
-                i(class='material-icons') expand_more
-            ul(class=navbarHiddenListClass)
-                li(class=navbarHiddenListItemClass) Обслуживание номеров
-                li(class=navbarHiddenListItemClass) Парковка
-                li(class=navbarHiddenListItemClass) Персональный сейф
-                li(class=navbarHiddenListItemClass) Интернет
-                li(class=navbarHiddenListItemClass) Кабельное телевидние
-                li(class=navbarHiddenListItemClass) Питание
-        li(class=navbarItemClass) Вакансии
-        li(class=navbarItemClass) Новости
-        li(class=navbarItemClass)
-            div(class=dropdownTitleClass)
-                span Соглашения
-                i(class='material-icons') expand_more
-            ul(class=navbarHiddenListClass)
-                li(class=navbarHiddenListItemClass) Правила проживание
-                li(class=navbarHiddenListItemClass) Бонусная программа
-                li(class=navbarHiddenListItemClass) Политика конфиденциальности
-        li(class='navbar__item navbar__separator-item ' + navbarItemClass)
-            div(class=separatorClass)
-        li(class='navbar__account-name ' + navbarItemClass) Виталий Бакалов
-        li(class='navbar__button-entry-container ' + navbarItemClass)
-            +button({type: 'border', text: 'войти', theme: 'paddings8'})(class='navbar__button-entry')
-        li(class='navbar__button-registration-container ' + navbarItemClass)
-            +button({text: 'зарегистрироваться', theme: 'paddings10'})(class='navbar__button-registration')
+    if (args.type == 'vertical')
+        - navbarClass = 'navbar__list navbar__list_vertical'
+        - navbarItemClass = 'navbar__item navbar__item_vertical'
+        - navbarHiddenListClass = 'navbar__hidden-list navbar__hidden-list_vertical'
+        - navbarHiddenListItemClass = 'navbar__hidden-list-item navbar__hidden-list-item_vertical'
+        - dropdownTitleClass = 'navbar__dropdown-title navbar__dropdown-title_vertical'
+        - separatorClass = 'navbar__separator navbar__separator_vertical'
+
+    <nav class='navbar'>
+        ul(class=navbarClass)
+            li(class=navbarItemClass) О нас
+            li(class=navbarItemClass)
+                div(class=dropdownTitleClass)
+                    span Услуги 
+                    i(class='material-icons') expand_more
+                ul(class=navbarHiddenListClass)
+                    li(class=navbarHiddenListItemClass) Обслуживание номеров
+                    li(class=navbarHiddenListItemClass) Парковка
+                    li(class=navbarHiddenListItemClass) Персональный сейф
+                    li(class=navbarHiddenListItemClass) Интернет
+                    li(class=navbarHiddenListItemClass) Кабельное телевидние
+                    li(class=navbarHiddenListItemClass) Питание
+            li(class=navbarItemClass) Вакансии
+            li(class=navbarItemClass) Новости
+            li(class=navbarItemClass)
+                div(class=dropdownTitleClass)
+                    span Соглашения
+                    i(class='material-icons') expand_more
+                ul(class=navbarHiddenListClass)
+                    li(class=navbarHiddenListItemClass) Правила проживание
+                    li(class=navbarHiddenListItemClass) Бонусная программа
+                    li(class=navbarHiddenListItemClass) Политика конфиденциальности
+            li(class=navbarItemClass + ' navbar__item_hidden')
+                div(class=separatorClass)
+            li(class='navbar__account-name ' + navbarItemClass) Виталий Бакалов
+            li(class='navbar__button-entry-container ' + navbarItemClass)
+                +button({type: 'border', text: 'войти', theme: 'paddings8'})
+            li(class='navbar__button-registration-container ' + navbarItemClass)
+                +button({text: 'зарегистрироваться', theme: 'paddings10'})
+    </nav>

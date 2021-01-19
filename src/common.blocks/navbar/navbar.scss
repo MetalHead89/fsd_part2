@@ -1,4 +1,8 @@
 .navbar {
+    height: 100%;
+}
+
+.navbar__list {
     display: flex;
     list-style-type: none;
     margin: 0;
@@ -6,7 +10,7 @@
     background: white;
 }
 
-.navbar_horizontal {
+.navbar__list_horizontal {
     height: 100%;        
     flex-direction: row;
     & .navbar__item:first-child {
@@ -17,7 +21,7 @@
     }
 }
 
-.navbar_vertical {
+.navbar__list_vertical {
     position: absolute;
     display: none;
     box-sizing: border-box;
@@ -187,11 +191,11 @@
 }
 
 @media screen and (max-width: 950px){
-    .navbar_horizontal {
+    .navbar__list_horizontal {
         display: none;
     }
 
-    .navbar_vertical {
+    .navbar__list_vertical {
         display: flex;
     }
 }

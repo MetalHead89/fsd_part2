@@ -1,5 +1,5 @@
 const burger = document.querySelector('.header__burger');
-const hideMenu = document.querySelector('.navbar_vertical');
+const hideMenu = document.querySelector('.navbar__list_vertical');
 const hideMenuItems = hideMenu.querySelectorAll('.navbar__item_vertical');
 
 burger.onclick = () => {

@@ -48,6 +48,6 @@ for (let name = 0; name < accountNames.length; name += 1) {
 
 for (let item = 0; item < dropdownItems.length; item += 1) {
   dropdownItems[item].onclick = () => {
-    item.nextElementSibling.classList.toggle('navbar__hidden-list_vertical-opened');
+    dropdownItems[item].nextElementSibling.classList.toggle('navbar__hidden-list_vertical-opened');
   };
 }
