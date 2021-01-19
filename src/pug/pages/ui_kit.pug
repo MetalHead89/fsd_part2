@@ -93,8 +93,8 @@ html(lang="ru")
                             .module
                                 h3(class='module-title') like button
                                 .likeButtonSection
-                                    +like-button(2)
-                                    +like-button(12, true)
+                                    +like-button({likesCount: 2})
+                                    +like-button({likesCount: 12, checked: true})
                             .module
                                 h3(class='module-title') rate button
                                 .rateButtonSection
