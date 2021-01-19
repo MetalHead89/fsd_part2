@@ -133,7 +133,7 @@ html(lang="ru")
                                 +roomDetails('location_city', 'Удобство', 'Окно в каждой из спален')
                         .form-elements__column_100-percent-width
                             .module.module__guest-review
-                                +guest-review('../images/reviewPhoto1.png', 'Мурад Сарафанов', 5, 12, true, 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
+                                +guest-review({photo: '../images/reviewPhoto1.png', name: 'Мурад Сарафанов', days: 5, likes: 12, checkedLike: true, review: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
             h1(class="section-title") Cards
             .section-block
                 .cards

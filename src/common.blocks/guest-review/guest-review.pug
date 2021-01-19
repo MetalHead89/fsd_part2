@@ -1,17 +1,18 @@
 include ../../pug/modules/like-button/like-button.pug
 
-mixin guest-review(photo, name, days, likes, checkedLike, rewiew)
+mixin guest-review(args)
+    //- photo, name, days, likes, checkedLike, rewiew
     - let lastVisit = ''
     
-    if days < 7
-        if days === 1
-            - lastVisit = days + ' день '
-        else if (days >= 2 && days <= 4)
-            - lastVisit = days + ' дня '
+    if args.days < 7
+        if args.days === 1
+            - lastVisit = args.days + ' день '
+        else if (args.days >= 2 && args.days <= 4)
+            - lastVisit = args.days + ' дня '
         else
-            - lastVisit = days + ' дней '
+            - lastVisit = args.days + ' дней '
     else
-        - var weeks = parseInt(days / 7)
+        - var weeks = parseInt(args.days / 7)
 
         if weeks === 1
             - lastVisit = 'Неделю '
@@ -31,11 +32,11 @@ mixin guest-review(photo, name, days, likes, checkedLike, rewiew)
 
     .guest-review
         .guest-review__guest
-            img(src=photo class='guest-review__photo' alt='photo')
+            img(src=args.photo class='guest-review__photo' alt='guest photo')
             .guest-review__guest-details
-                .guest-review__guest-name !{name}
+                .guest-review__guest-name !{args.name}
                 .guest-review__last-visit !{lastVisit}
         .guest-review__rewiew
             .guest-review__likes
-                +likeButton(likes, checkedLike)
-            .guest-review__rewiew-text !{rewiew}
+                +likeButton(args.likes, args.checkedLike)
+            .guest-review__rewiew-text !{args.review}
