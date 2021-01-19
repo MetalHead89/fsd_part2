@@ -1,7 +1,7 @@
 let entryCheck = false;
 const entryButtons = document.querySelectorAll('.navbar__button-entry-container');
 const registrationButtons = document.querySelectorAll('.navbar__button-registration-container');
-const accountNames = document.querySelectorAll('.navbar__account-name');
+const accountNames = document.querySelectorAll('.navbar__item_with-name');
 const separators = document.querySelectorAll('.navbar__separator-item');
 const dropdownItems = document.querySelectorAll('.navbar__dropdown-title_vertical');
 

@@ -1,0 +1,13 @@
+.navbar__item {
+  white-space: nowrap;
+  font-family: 'Montserrat';
+  font-size: 14px;
+  color: rgba(31, 32, 65, 0.5);
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+  transition: color 0.5s ease;
+  &:hover {
+    color: rgba(31, 32, 65, 0.75);
+  }
+}

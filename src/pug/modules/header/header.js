@@ -4,7 +4,7 @@ const hideMenuItems = hideMenu.querySelectorAll('.navbar__item_vertical');
 
 burger.onclick = () => {
   if (hideMenu) {
-    hideMenu.classList.toggle('navbar_vertical-opened');
+    hideMenu.classList.toggle('navbar__list_vertical-opened');
     for (let itemIndex = 0; itemIndex < hideMenuItems.length; itemIndex += 1) {
       hideMenuItems[itemIndex].classList.toggle('navbar__item_vertical-opened');
     }

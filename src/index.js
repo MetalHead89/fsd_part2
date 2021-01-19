@@ -152,6 +152,13 @@ import '@/scss/landing_page.scss';
 
 // navbar
 import '@/common.blocks/navbar/navbar.scss';
+import '@/common.blocks/navbar/__list/navbar__list.scss';
+import '@/common.blocks/navbar/__list/_horizontal/navbar__list_horizontal.scss';
+import '@/common.blocks/navbar/__list/_vertical/navbar__list_vertical.scss';
+import '@/common.blocks/navbar/__list/_vertical-opened/navbar__list_vertical-opened.scss';
+import '@/common.blocks/navbar/__item/navbar__item.scss';
+import '@/common.blocks/navbar/__item/_with-name/navbar__item_with-name.scss';
+import '@/common.blocks/navbar/__item/_horizontal/navbar__item_horizontal.scss';
 
 import '@/scss/search_room.scss';
 import '@/scss/room_details.scss';

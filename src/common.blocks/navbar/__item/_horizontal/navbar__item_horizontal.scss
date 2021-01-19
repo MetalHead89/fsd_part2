@@ -1,0 +1,24 @@
+.navbar__item_horizontal {
+  position: relative;
+  justify-content: center;
+  height: 100%;
+  padding: 0 10px;
+  &:hover .navbar__hidden-list {
+    transition: transform 0.4s cubic-bezier(0.73, 0.32, 0.34, 1.5);
+    transform: translateY(100%) scaleY(1);
+    transform-origin: top;
+  }
+  &:not(:hover) .navbar__hidden-list {
+    transition: transform 0.5s;
+    transform: translateY(100%) scaleY(0);
+  }
+
+  &:hover .navbar__hidden-list-item {
+    transition: opacity 0.3s;
+    opacity: 1;
+  }
+
+  &:not(:hover) .navbar__hidden-list-item {
+    transition: opacity 0.3s;
+  }
+}

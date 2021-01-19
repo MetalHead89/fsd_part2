@@ -1,0 +1,5 @@
+.navbar__list_vertical-opened {
+  transition: transform 0.5s cubic-bezier(0.73, 0.32, 0.34, 1.5);
+  transform: translateY(100%) scaleY(1);
+  transform-origin: top;
+}

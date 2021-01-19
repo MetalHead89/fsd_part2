@@ -40,7 +40,7 @@ mixin navbar(args)
                     li(class=navbarHiddenListItemClass) Политика конфиденциальности
             li(class=navbarItemClass + ' navbar__item_hidden')
                 div(class=separatorClass)
-            li(class='navbar__account-name ' + navbarItemClass) Виталий Бакалов
+            li(class=navbarItemClass + ' navbar__item_with-name') Виталий Бакалов
             li(class='navbar__button-entry-container ' + navbarItemClass)
                 +button({type: 'border', text: 'войти', theme: 'paddings8'})
             li(class='navbar__button-registration-container ' + navbarItemClass)

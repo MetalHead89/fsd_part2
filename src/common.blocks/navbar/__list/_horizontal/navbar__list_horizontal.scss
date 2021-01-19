@@ -1,0 +1,16 @@
+.navbar__list_horizontal {
+  height: 100%;
+  flex-direction: row;
+  & .navbar__item:first-child {
+    padding-left: 0;
+  }
+  & .navbar__item:last-child {
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .navbar__list_horizontal {
+    display: none;
+  }
+}
