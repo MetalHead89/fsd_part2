@@ -63,7 +63,10 @@ import '@/common.blocks/checkbox-button/__checkbox-element/checkbox-button__chec
 
 import '@/pug/modules/radio-button/radio-button.scss';
 import '@/pug/modules/toggle/toggle.scss';
-import '@/pug/modules/like-button/like-button.scss';
+
+// like-button
+import '@/common.blocks/like-button/like-button.scss';
+
 import '@/pug/modules/rate-button/rate-button.scss';
 import '@/pug/modules/range-slider/range-slider.scss';
 
@@ -153,3 +156,4 @@ import '@/scss/page_with_links.scss';
 // Scripts
 import '@/common.blocks/calendar/calendar';
 import '@/common.blocks/dropdown/dropdown';
+import '@/common.blocks/like-button/like-button';
