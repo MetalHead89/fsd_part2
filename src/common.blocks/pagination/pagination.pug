@@ -11,11 +11,10 @@ mixin pagination(number_of_pages = 15, active_page = 1)
     else
         - hotelRoomsTotal = hotelRoomsTotal + '+'
 
-    .pagination
+    nav(class='pagination')
         ul(class='pagination__pages')
-
             if active_page != 1
-                    li(class='pagination__button pagination__prev-page')
+                    li(class='pagination__button pagination__button_with-arrow pagination__button_with-prev-arrow')
                         a(href='#' class='pagination__link')
                             i(class='material-icons pagination__arrow') arrow_back
             
@@ -23,27 +22,27 @@ mixin pagination(number_of_pages = 15, active_page = 1)
 
                 if current_page < active_page && active_page - current_page > 2 && current_page > 1 && active_page > 5
                     if !isLeftNumbersHidden
-                        li(class=' pagination__button pagination__page-number') ...
+                        li(class='pagination__button pagination__button_with-number') ...
                         - isLeftNumbersHidden = true
                     - current_page++
                     - continue
                 
                 if current_page > active_page && current_page - active_page > 2 && current_page < number_of_pages && number_of_pages - active_page > 4
                     if !isRightNumbersHidden
-                        li(class='pagination__button pagination__page-number') ...
+                        li(class='pagination__button pagination__button_with-number') ...
                         - isRightNumbersHidden = true
                     - current_page++
                     - continue
 
                 if current_page == active_page
-                    li(class='pagination__button pagination__page-number pagination__active-page') !{current_page}
+                    li(class='pagination__button pagination__button_with-number pagination__button_active-page') !{current_page}
                 else
-                    li(class='pagination__button pagination__page-number')
+                    li(class='pagination__button pagination__button_with-number')
                         a(href='#' class='pagination__link') !{current_page}
                 - current_page++
             
             if active_page != number_of_pages
-                li(class='pagination__button pagination__next-page')
+                li(class='pagination__button pagination__button_with-arrow pagination__button_with-next-arrow')
                     a(href='#' class='pagination__link')
                         i(class='material-icons pagination__arrow') arrow_forward
 
