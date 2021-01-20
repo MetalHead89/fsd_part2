@@ -8,12 +8,18 @@ function setGradient(gradientObject, startColor, endColor) {
 }
 
 function coolieIsValid(cookie) {
-  return cookie.trim() === 'magnificently' || cookie.trim() === 'good'
-    || cookie.trim() === 'satisfactorily' || cookie.trim() === 'disappointed';
+  return (
+    cookie.trim() === 'magnificently' ||
+    cookie.trim() === 'good' ||
+    cookie.trim() === 'satisfactorily' ||
+    cookie.trim() === 'disappointed'
+  );
 }
 
 function numberIsTwoThreeOrFour(number10, number100) {
-  return (number10 >= 2 && number10 <= 4) && !(number100 >= 12 && number100 <= 14);
+  return (
+    number10 >= 2 && number10 <= 4 && !(number100 >= 12 && number100 <= 14)
+  );
 }
 
 function wordGenerator(number) {
@@ -41,8 +47,12 @@ const canvasCenterX = canvas.width / 2;
 const canvasCenterY = canvas.height / 2;
 const roomImpressions = {};
 const separatorSize = 3;
-const votesCounterNumber = document.querySelector('.impressions-diagram__votes-number');
-const votesCounterText = document.querySelector('.impressions-diagram__votes-text');
+const votesCounterNumber = document.querySelector(
+  '.impressions-diagram__votes-number',
+);
+const votesCounterText = document.querySelector(
+  '.impressions-diagram__votes-text',
+);
 let votesSum = 0;
 let startAngle = 0;
 let endAngle = 0 - degToRad(90 + separatorSize / 2);
@@ -54,11 +64,18 @@ function setDiagramSegment(color, votes) {
 
   const impressionPercent = (votes / votesSum) * 100;
   startAngle = endAngle;
-  const degAngle = ((360 * impressionPercent) / 100) - separatorSize;
+  const degAngle = (360 * impressionPercent) / 100 - separatorSize;
   endAngle -= degToRad(degAngle);
 
   canvasContext.beginPath();
-  canvasContext.arc(canvasCenterX, canvasCenterY, 58, startAngle, endAngle, true);
+  canvasContext.arc(
+    canvasCenterX,
+    canvasCenterY,
+    58,
+    startAngle,
+    endAngle,
+    true,
+  );
   canvasContext.lineWidth = 4;
   canvasContext.strokeStyle = color;
   canvasContext.stroke();

@@ -84,7 +84,8 @@ import '@/common.blocks/button/__arrow/button__arrow.scss';
 import '@/common.blocks/button/_with-vertical-paddings-10/button_with-vertical-paddings-10.scss';
 import '@/common.blocks/button/_with-vertical-paddings-8/button_with-vertical-paddings-8.scss';
 
-import '@/pug/modules/pagination/pagination.scss';
+// pagination
+import '@/common.blocks/pagination/pagination.scss';
 
 // bullet-list
 import '@/common.blocks/bullet-list/__unordered-list/bullet-list__unordered-list.scss';
@@ -207,5 +208,6 @@ import '@/common.blocks/calendar/calendar';
 import '@/common.blocks/dropdown/dropdown';
 import '@/common.blocks/like-button/like-button';
 import '@/common.blocks/navbar/navbar';
-import '@/common.blocks/header/header';
-import '@/common.blocks/impressions-diagram/impressions-diagram';
+// import '@/common.blocks/header/header';
+// import '@/common.blocks/impressions-diagram/impressions-diagram';
+import '@/common.blocks/pagination/pagination';
