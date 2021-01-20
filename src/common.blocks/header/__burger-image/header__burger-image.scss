@@ -1,0 +1,25 @@
+.header__burger-image {
+  position: relative;
+  margin: 0;
+  width: 25px;
+  height: 4px;
+  background: #5c5c72ff;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    display: block;
+    width: 25px;
+    height: 4px;
+    background: #5c5c72ff;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    display: block;
+    width: 25px;
+    height: 4px;
+    background: #5c5c72ff;
+  }
+}

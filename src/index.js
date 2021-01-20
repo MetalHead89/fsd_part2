@@ -133,6 +133,11 @@ import '@/pug/modules/roomRateCard/roomRateCard.scss';
 
 // header
 import '@/common.blocks/header/header.scss';
+import '@/common.blocks/header/__menu-check/header__menu-check.scss';
+import '@/common.blocks/header/__content/header__content.scss';
+import '@/common.blocks/header/__logo/header__logo.scss';
+import '@/common.blocks/header/__burger/header__burger.scss';
+import '@/common.blocks/header/__burger-image/header__burger-image.scss';
 
 // footer
 import '@/common.blocks/footer/footer.scss';

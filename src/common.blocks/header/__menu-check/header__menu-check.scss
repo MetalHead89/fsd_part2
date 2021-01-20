@@ -1,0 +1,27 @@
+.header__menu-check {
+  display: none;
+  &:checked ~ .header__burger .header__burger-image {
+    transition: background 0.2s ease-in;
+    background: transparent;
+
+    &::after {
+      transition: top 0.2s ease-in, transform 0.2s ease-in 0.2s;
+      top: 0;
+      transform: rotate(45deg);
+    }
+    &::before {
+      transition: top 0.2s ease-in, transform 0.2s ease-in 0.2s;
+      top: 0;
+      transform: rotate(-45deg);
+    }
+  }
+  &:not(:checked) ~ .header__burger .header__burger-image {
+    transition: background 0.2s ease-in 0.2s;
+    &::after {
+      transition: top 0.2s ease-in 0.2s, transform 0.2s ease-in;
+    }
+    &::before {
+      transition: top 0.2s ease-in 0.2s, transform 0.2s ease-in;
+    }
+  }
+}
