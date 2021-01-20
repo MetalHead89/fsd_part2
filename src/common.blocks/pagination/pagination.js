@@ -115,7 +115,7 @@ class Pagination {
       hotelRoomsTotal = `${hotelRoomsTotal}+`;
     }
 
-    span.classList.add('pagination__signature', 'pagination__signature_position');
+    span.classList.add('pagination__signature', 'pagination__signature_with-top-margin');
     span.innerText = `${startHotelRoomOnPage} – ${endHotelRoomOnPage} из ${hotelRoomsTotal} вариантов аренды`;
     this.pagination.append(span);
 

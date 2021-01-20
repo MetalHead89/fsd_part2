@@ -1,0 +1,16 @@
+.pagination__button {
+  width: 100%;
+  max-width: 40px;
+  min-width: 30px;
+  display: inline-flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: rgba(31, 32, 65, 0.5);
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+}

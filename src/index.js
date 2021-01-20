@@ -86,6 +86,15 @@ import '@/common.blocks/button/_with-vertical-paddings-8/button_with-vertical-pa
 
 // pagination
 import '@/common.blocks/pagination/pagination.scss';
+import '@/common.blocks/pagination/__pages/pagination__pages.scss';
+import '@/common.blocks/pagination/__button/pagination__button.scss';
+import '@/common.blocks/pagination/__button/_with-number/pagination__button_with-number.scss';
+import '@/common.blocks/pagination/__button/_with-arrow/pagination__button_with-arrow.scss';
+import '@/common.blocks/pagination/__button/_active-page/pagination__button_active-page.scss';
+import '@/common.blocks/pagination/__arrow/pagination__arrow.scss';
+import '@/common.blocks/pagination/__signature/pagination__signature.scss';
+import '@/common.blocks/pagination/__signature/_with-top-margin/pagination__signature_with-top-margin.scss';
+import '@/common.blocks/pagination/__link/pagination__link.scss';
 
 // bullet-list
 import '@/common.blocks/bullet-list/__unordered-list/bullet-list__unordered-list.scss';
