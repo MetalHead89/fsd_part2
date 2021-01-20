@@ -71,7 +71,7 @@ block content
                     .search-room__number-card-container
                         +numberCard({roomNumber: 352, lux: false, roomRate: 5000, rating: 3, reviewsNumber: 55, images: ['../images/number12.png', '../images/number2.png', '../images/number3.png', '../images/number5.png']})
                 .search-room__pagination-container
-                    +pagination(15, 1)
+                    +pagination({numberOfPages: 15, activePage: 1})
 
     script
         include ../modules/range-slider/range-slider.js
