@@ -185,7 +185,10 @@ import '@/common.blocks/navbar/__separator/_vertical/navbar__separator_vertical.
 
 import '@/scss/search_room.scss';
 import '@/scss/room_details.scss';
-import '@/pug/modules/impressions-diagram/impressions-diagram.scss';
+
+// impressions-diagram
+import '@/common.blocks/impressions-diagram/impressions-diagram.scss';
+
 import '@/scss/registration_signin_page.scss';
 import '@/scss/page_with_links.scss';
 
@@ -195,3 +198,4 @@ import '@/common.blocks/dropdown/dropdown';
 import '@/common.blocks/like-button/like-button';
 import '@/common.blocks/navbar/navbar';
 import '@/common.blocks/header/header';
+import '@/common.blocks/impressions-diagram/impressions-diagram';

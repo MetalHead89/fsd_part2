@@ -1,5 +1,3 @@
-@import '../../../scss/vars.scss';
-
 .impressions-diagram__diagram-section {
     position: relative;
     width: 120px;
@@ -30,7 +28,7 @@
     font-weight: bold;
     font-size: 24px;
     line-height: 30px;
-    color: $purple;
+    color: #BC9CFF;
 }
 
 .impressions-diagram__votes-text {
@@ -39,7 +37,7 @@
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
-    color: $purple;
+    color: #BC9CFF;
 }
 
 .impressions-diagram__diagram-legend {
