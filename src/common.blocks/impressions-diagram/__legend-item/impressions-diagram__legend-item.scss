@@ -1,0 +1,12 @@
+.impressions-diagram__legend-item {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    left: -15px;
+    top: 7px;
+  }
+}

@@ -1,85 +1,14 @@
-.impressions-diagram__diagram-section {
-    position: relative;
-    width: 120px;
-    height: 120px;
-}
-
 .impressions-diagram {
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    padding: 12px 0;
-    box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px 0;
+  box-sizing: border-box;
 }
 
-.impressions-diagram__votes-counter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -55%);
-    display: flex;
+@media screen and (max-width: 400px) {
+  .impressions-diagram {
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-}
-
-.impressions-diagram__votes-number {
-    font-family: 'Quicksand';
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 30px;
-    color: #BC9CFF;
-}
-
-.impressions-diagram__votes-text {
-    font-family: Montserrat;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: #BC9CFF;
-}
-
-.impressions-diagram__diagram-legend {
-    margin-left: 13%;
-}
-
-.impressions-diagram__legend-item {
-    position: relative;
-    &::before {
-        content: '';
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        left: -15px;
-        top: 7px;
-    }
-}
-
-.impressions-diagram__legend-item_yellow::before {
-    background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
-}
-
-.impressions-diagram__legend-item_green::before {
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-}
-
-.impressions-diagram__legend-item_purple::before {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-}
-
-.impressions-diagram__legend-item_brown::before {
-    background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
-}
-
-@media screen and (max-width: 400px){
-    .impressions-diagram {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .impressions-diagram__diagram-section {
-        margin-bottom: 10px;
-    }
+  }
 }

@@ -188,6 +188,16 @@ import '@/scss/room_details.scss';
 
 // impressions-diagram
 import '@/common.blocks/impressions-diagram/impressions-diagram.scss';
+import '@/common.blocks/impressions-diagram/__diagram-section/impressions-diagram__diagram-section.scss';
+import '@/common.blocks/impressions-diagram/__votes-counter/impressions-diagram__votes-counter.scss';
+import '@/common.blocks/impressions-diagram/__votes-number/impressions-diagram__votes-number.scss';
+import '@/common.blocks/impressions-diagram/__votes-text/impressions-diagram__votes-text.scss';
+import '@/common.blocks/impressions-diagram/__diagram-legend/impressions-diagram__diagram-legend.scss';
+import '@/common.blocks/impressions-diagram/__legend-item/impressions-diagram__legend-item.scss';
+import '@/common.blocks/impressions-diagram/__legend-item/_yellow/impressions-diagram__legend-item_yellow.scss';
+import '@/common.blocks/impressions-diagram/__legend-item/_green/impressions-diagram__legend-item_green.scss';
+import '@/common.blocks/impressions-diagram/__legend-item/_purple/impressions-diagram__legend-item_purple.scss';
+import '@/common.blocks/impressions-diagram/__legend-item/_brown/impressions-diagram__legend-item_brown.scss';
 
 import '@/scss/registration_signin_page.scss';
 import '@/scss/page_with_links.scss';

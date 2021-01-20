@@ -1,0 +1,11 @@
+.impressions-diagram__diagram-section {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+@media screen and (max-width: 400px) {
+  .impressions-diagram__diagram-section {
+    margin-bottom: 10px;
+  }
+}
