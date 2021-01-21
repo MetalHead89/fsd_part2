@@ -1,0 +1,10 @@
+.range-slider__thumb {
+  position: absolute;
+  z-index: 3;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}

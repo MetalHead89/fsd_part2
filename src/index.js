@@ -78,6 +78,18 @@ import '@/pug/modules/rate-button/rate-button.scss';
 
 // range-slider
 import '@/common.blocks/range-slider/range-slider.scss';
+import '@/common.blocks/range-slider/__header-section/range-slider__header-section.scss';
+import '@/common.blocks/range-slider/__title/range-slider__title.scss';
+import '@/common.blocks/range-slider/__range-label/range-slider__range-label.scss';
+import '@/common.blocks/range-slider/__slider/range-slider__slider.scss';
+import '@/common.blocks/range-slider/__track/range-slider__track.scss';
+import '@/common.blocks/range-slider/__range/range-slider__range.scss';
+import '@/common.blocks/range-slider/__thumb/range-slider__thumb.scss';
+import '@/common.blocks/range-slider/__thumb/_left/range-slider__thumb_left.scss';
+import '@/common.blocks/range-slider/__thumb/_right/range-slider__thumb_right.scss';
+import '@/common.blocks/range-slider/__thumb/_left/_hover/range-slider__thumb_left_hover.scss';
+import '@/common.blocks/range-slider/__thumb/_right/_hover/range-slider__thumb_right_hover.scss';
+import '@/common.blocks/range-slider/__input-range/range-slider__input-range.scss';
 
 // button
 import '@/common.blocks/button/button.scss';

@@ -1,0 +1,14 @@
+.range-slider__track {
+  position: absolute;
+  width: 100%;
+  max-width: 266px;
+  height: 6px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 3px;
+  z-index: 1;
+}

@@ -1,0 +1,10 @@
+.range-slider__range {
+  position: absolute;
+  height: 6px;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  box-sizing: border-box;
+  border-radius: 3px;
+}

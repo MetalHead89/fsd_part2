@@ -1,0 +1,28 @@
+.range-slider__input-range {
+  position: absolute;
+  pointer-events: none;
+  -webkit-appearance: none;
+  left: -8px;
+  z-index: 2;
+  width: 106%;
+  height: 10px;
+  box-sizing: border-box;
+  margin: 0;
+  opacity: 0;
+  &::-webkit-slider-thumb {
+    pointer-events: all;
+    width: 16px;
+    height: 16px;
+    border-radius: 10px;
+    border: 0 none;
+    -webkit-appearance: none;
+  }
+  &::-moz-range-thumb {
+    pointer-events: all;
+    width: 16px;
+    height: 16px;
+    border-radius: 10px;
+    border: 0 none;
+    -webkit-appearance: none;
+  }
+}
