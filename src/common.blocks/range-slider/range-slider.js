@@ -1,7 +1,7 @@
-const leftInput = document.querySelector('.range-slider__left-input');
-const rightInput = document.querySelector('.range-slider__right-input');
-const leftThumb = document.querySelector('.range-slider__left-thumb');
-const rightThumb = document.querySelector('.range-slider__right-thumb');
+const leftInput = document.querySelector('.range-slider__input_left');
+const rightInput = document.querySelector('.range-slider__input_right');
+const leftThumb = document.querySelector('.range-slider__thumb_left');
+const rightThumb = document.querySelector('.range-slider__thumb_right');
 const range = document.querySelector('.range-slider__range');
 
 const rangeLable = document.querySelector('.range-slider__range-label');
@@ -40,7 +40,7 @@ setRightValue();
 
 leftInput.addEventListener('input', setLeftValue);
 rightInput.addEventListener('input', setRightValue);
-leftInput.onmouseover = () => { leftThumb.classList.add('range-slider__left-thumb_hover'); };
-rightInput.onmouseover = () => { rightThumb.classList.add('range-slider__right-thumb_hover'); };
-leftInput.onmouseout = () => { leftThumb.classList.remove('range-slider__left-thumb_hover'); };
-rightInput.onmouseout = () => { rightThumb.classList.remove('range-slider__right-thumb_hover'); };
+leftInput.onmouseover = () => { leftThumb.classList.add('range-slider__thumb_left_hover'); };
+rightInput.onmouseover = () => { rightThumb.classList.add('range-slider__thumb_right_hover'); };
+leftInput.onmouseout = () => { leftThumb.classList.remove('range-slider__thumb_left_hover'); };
+rightInput.onmouseout = () => { rightThumb.classList.remove('range-slider__thumb_right_hover'); };

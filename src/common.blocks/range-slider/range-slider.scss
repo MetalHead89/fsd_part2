@@ -69,19 +69,19 @@
     transition: transform .2s ease;
 }
 
-.range-slider__left-thumb {
+.range-slider__thumb_left {
     transform: translate(-8px, -5px);
 }
 
-.range-slider__right-thumb {
+.range-slider__thumb_right {
     transform: translate(8px, -5px);
 }
 
-.range-slider__left-thumb_hover {
+.range-slider__thumb_left_hover {
     transform: translate(-8px, -5px) scale(1.4);
 }
 
-.range-slider__right-thumb_hover {
+.range-slider__thumb_right_hover {
     transform: translate(8px, -5px) scale(1.4);
 }
 
