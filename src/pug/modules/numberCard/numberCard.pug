@@ -35,7 +35,7 @@ mixin numberCard(args)
                     span в сутки
             .number-card__separator
             .number-card__rating-section
-                +rateButton(args.rating)
+                +rateButton({rate: args.rating})
                 .number-card__rating
                     span(class='number-card__accented-text') !{args.reviewsNumber} 
                     span Отзывов

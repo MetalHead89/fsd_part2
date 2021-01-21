@@ -98,8 +98,8 @@ html(lang="ru")
                             .module
                                 h3(class='module-title') rate button
                                 .rateButtonSection
-                                    +rateButton(4)
-                                    +rateButton(5)
+                                    +rateButton({rate: 4})
+                                    +rateButton({rate: 5})
                             .module
                                 h3(class='module-title') RICH CHECKBOX BUTTONS
                                 +checkbox-button({label: 'Широкий коридор', id: 'wideCorridor', checked: false, rich: true, text: 'Ширина коридоров в номере не&nbsp;менее 91 см.'})
