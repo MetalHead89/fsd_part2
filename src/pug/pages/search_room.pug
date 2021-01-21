@@ -26,7 +26,7 @@ block content
                         .search-room__guests-dropdown-container
                             +dropdown({type: 'guests', id: 'search-room-guests', title: 'гости'})
                         .search-room__range-slider-container
-                            +range-slider({title: 'диапазон цены'})
+                            +range-slider({title: 'диапазон цены', min1: 0, min2: 0, max1: 15000, max2: 15000, value1: 5000, value2: 10000})
                             span Стоимость за сутки пребывания в номере
                         .search-room__checkbox-container
                             h3 Checkbox Buttons

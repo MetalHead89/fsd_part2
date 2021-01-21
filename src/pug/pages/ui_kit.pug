@@ -106,7 +106,7 @@ html(lang="ru")
                                 +checkbox-button({label: 'Помощник для инвалидов', id: 'disabledAssistant', checked: false, rich: true, text: 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.'})
                         .form-elements__column.form-elements__column3
                             .module
-                                +range-slider({title: 'Range Slider'})
+                                +range-slider({title: 'Range Slider', min1: 0, min2: 0, max1: 15000, max2: 15000, value1: 5000, value2: 10000})
                             .buttons-block
                                 h3(class='module__title') Buttons
                                 .module
