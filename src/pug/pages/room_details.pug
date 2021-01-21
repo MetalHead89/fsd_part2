@@ -2,7 +2,7 @@ extends ../layouts/website_page
 
 block includs
     include ../../common.blocks/guest-review/guest-review.pug
-    include ../modules/room-details/room-details.pug
+    include ../../common.blocks/room-details/room-details.pug
     include ../../common.blocks/bullet-list/bullet-list.pug
     include ../modules/roomRateCard/roomRateCard.pug
     include ../../common.blocks/impressions-diagram/impressions-diagram.pug
@@ -22,9 +22,9 @@ block content
                 .room-details__top-info-section
                     .room-details__details-container
                         h1(class='room-details__details-title') Сведения о номере
-                        +roomDetails('insert_emoticon', 'Комфорт', 'Шумопоглащающие стены')
-                        +roomDetails('location_city', 'Удобство', 'Окно в каждой из спален')
-                        +roomDetails('whatshot', 'Уют', 'Номер оснащён камином')
+                        +room-details({icon: 'insert_emoticon', title: 'Комфорт', description: 'Шумопоглащающие стены'})
+                        +room-details({icon: 'location_city', title: 'Удобство', description: 'Окно в каждой из спален'})
+                        +room-details({icon: 'whatshot', title: 'Уют', description: 'Номер оснащён камином'})
                     .room-details__impressions-diagram
                         h1(class='room-details__details-title') Впечатления от номера
                         +impressions-diagram({magnificently: 130, good: 65, satisfactorily: 65, disappointed: 0})

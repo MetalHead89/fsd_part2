@@ -3,7 +3,7 @@ include ../modules/type-block/type-block.pug
 include ../modules/text-field/text-field.pug
 include ../../common.blocks/dropdown/dropdown.pug
 include ../../common.blocks/expandable-checkbox-list/expandable-checkbox-list.pug
-include ../modules/room-details/room-details.pug
+include ../../common.blocks/room-details/room-details.pug
 include ../../common.blocks/checkbox-button/checkbox-button.pug
 include ../../common.blocks/radio-button/radio-button.pug
 include ../modules/toggle/toggle.pug
@@ -129,8 +129,8 @@ html(lang="ru")
                     .form-elements__two-column-layout
                         .form-elements__column.form-elements__column_no-margin
                             .module
-                                +roomDetails('insert_emoticon', 'Комфорт', 'Шумопоглащающие стены')
-                                +roomDetails('location_city', 'Удобство', 'Окно в каждой из спален')
+                                +room-details({icon: 'insert_emoticon', title: 'Комфорт', description: 'Шумопоглащающие стены'})
+                                +room-details({icon: 'location_city', title: 'Удобство', description: 'Окно в каждой из спален'})
                         .form-elements__column_100-percent-width
                             .module.module__guest-review
                                 +guest-review({photo: '../images/reviewPhoto1.png', name: 'Мурад Сарафанов', days: 5, likes: 12, checkedLike: true, review: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})

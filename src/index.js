@@ -51,7 +51,11 @@ import '@/common.blocks/expandable-checkbox-list/__title/expandable-checkbox-lis
 import '@/common.blocks/expandable-checkbox-list/__expand-more/expandable-checkbox-list__expand-more.scss';
 import '@/common.blocks/expandable-checkbox-list/__hide-list/expandable-checkbox-list__hide-list.scss';
 
-import '@/pug/modules/room-details/room-details.scss';
+// room-details
+import '@/common.blocks/room-details/room-details.scss';
+import '@/common.blocks/room-details/__icon/room-details__icon.scss';
+import '@/common.blocks/room-details/__text/room-details__text.scss';
+import '@/common.blocks/room-details/__title/room-details__title.scss';
 
 // checkbox-button
 import '@/common.blocks/checkbox-button/checkbox-button.scss';
