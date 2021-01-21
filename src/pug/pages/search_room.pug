@@ -2,7 +2,7 @@ extends ../layouts/website_page
 
 block includs
     include ../../common.blocks/dropdown/dropdown.pug
-    include ../modules/range-slider/range-slider.pug
+    include ../../common.blocks/range-slider/range-slider.pug
     include ../../common.blocks/checkbox-button/checkbox-button.pug
     include ../../common.blocks/expandable-checkbox-list/expandable-checkbox-list.pug
     include ../modules/numberCard/numberCard.pug
@@ -72,9 +72,6 @@ block content
                         +numberCard({roomNumber: 352, lux: false, roomRate: 5000, rating: 3, reviewsNumber: 55, images: ['../images/number12.png', '../images/number2.png', '../images/number3.png', '../images/number5.png']})
                 .search-room__pagination-container
                     +pagination({numberOfPages: 15, activePage: 1})
-
-    script
-        include ../modules/range-slider/range-slider.js
 
 block scripts
     include ../modules/numberCard/numberCard.js

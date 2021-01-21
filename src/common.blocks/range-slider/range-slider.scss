@@ -1,5 +1,3 @@
-@import '../../../scss/vars.scss';
-
 .range-slider {
     position: relative;
     width: 100%;
@@ -43,7 +41,7 @@
     right: 0;
     top: 0;
     bottom: 0;
-    border: 1px solid $darkShade25;
+    border: 1px solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
     border-radius: 3px;
     z-index: 1;
@@ -55,7 +53,7 @@
     z-index: 2;
     top: 0;
     bottom: 0;
-    background: linear-gradient(180deg, $green 0%, $turquoise 100%);
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     box-sizing: border-box;
     border-radius: 3px;
 }
@@ -65,7 +63,7 @@
     z-index: 3;
     width: 12px;
     height: 12px;
-    background: linear-gradient(180deg, $green 0%, $turquoise 100%);
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     border: 2px solid #FFFFFF;
     border-radius: 10px;
     transition: transform .2s ease;

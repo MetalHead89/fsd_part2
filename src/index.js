@@ -75,7 +75,9 @@ import '@/common.blocks/like-button/_unchecked/like-button_unchecked.scss';
 import '@/common.blocks/like-button/__heart/like-button__heart.scss';
 
 import '@/pug/modules/rate-button/rate-button.scss';
-import '@/pug/modules/range-slider/range-slider.scss';
+
+// range-slider
+import '@/common.blocks/range-slider/range-slider.scss';
 
 // button
 import '@/common.blocks/button/button.scss';
@@ -224,3 +226,4 @@ import '@/common.blocks/navbar/navbar';
 import '@/common.blocks/header/header';
 import '@/common.blocks/impressions-diagram/impressions-diagram';
 import '@/common.blocks/pagination/pagination';
+import '@/common.blocks/range-slider/range-slider';
