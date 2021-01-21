@@ -1,10 +1,8 @@
-@import '../../../scss/vars.scss';
-
 .text-field {
     position: relative;
     margin-bottom: 10px;
     &:hover .text-field__field{
-        border: 1px solid $darkShade50;
+        border: 1px solid rgba(31, 32, 65, 0.5);
         outline: none;
     }
 }
@@ -16,20 +14,20 @@
 .text-field__field {
     width: 100%;
     max-width: 500px;
-    border: 1px solid $darkShade25;
+    border: 1px solid rgba(31, 32, 65, 0.25);
     border-radius: 4px;
     padding: 13px 15px 12px;
     box-sizing: border-box;
     font-family: "Montserrat";
     font-weight: 400;
     font-size: 1rem;
-    color: $darkShade75;
+    color: rgba(31, 32, 65, 0.75);
     transition: .5s;
     &::placeholder {
-        color: $darkShade25;
+        color: rgba(31, 32, 65, 0.25);
     }
     &:focus {
-        border: 1px solid $darkShade50;
+        border: 1px solid rgba(31, 32, 65, 0.5);
         outline: none;
     }
 }
@@ -51,9 +49,9 @@
 }
 
 .text-field__arrow-forward {
-    background: -moz-linear-gradient(180deg, $purple 0%, $blue 100%);
-    background: -webkit-linear-gradient(180deg, $purple 0%, $blue 100%);
-    background: linear-linear-gradient(180deg, $purple 0%, $blue 100%);
+    background: -moz-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: -webkit-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: linear-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;

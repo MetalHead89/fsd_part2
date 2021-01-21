@@ -18,7 +18,9 @@ import '@/common.blocks/color-block/__square/_purple/color-block__square_purple.
 
 import '@/scss/ui_kit.scss';
 import '@/pug/modules/type-block/type-block.scss';
-import '@/pug/modules/text-field/text-field.scss';
+
+// text-field
+import '@/common.blocks/text-field/text-field.scss';
 
 // dropdown
 import '@/common.blocks/dropdown/dropdown.scss';
@@ -244,3 +246,4 @@ import '@/common.blocks/header/header';
 import '@/common.blocks/impressions-diagram/impressions-diagram';
 import '@/common.blocks/pagination/pagination';
 import '@/common.blocks/range-slider/range-slider';
+import '@/common.blocks/text-field/text-field';
