@@ -222,5 +222,5 @@ import '@/common.blocks/dropdown/dropdown';
 import '@/common.blocks/like-button/like-button';
 import '@/common.blocks/navbar/navbar';
 import '@/common.blocks/header/header';
-// import '@/common.blocks/impressions-diagram/impressions-diagram';
+import '@/common.blocks/impressions-diagram/impressions-diagram';
 import '@/common.blocks/pagination/pagination';
