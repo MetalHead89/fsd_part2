@@ -74,7 +74,7 @@ import '@/common.blocks/like-button/_checked/like-button_checked.scss';
 import '@/common.blocks/like-button/_unchecked/like-button_unchecked.scss';
 import '@/common.blocks/like-button/__heart/like-button__heart.scss';
 
-import '@/pug/modules/rate-button/rate-button.scss';
+import '@/common.blocks/rate-button/rate-button.scss';
 
 // range-slider
 import '@/common.blocks/range-slider/range-slider.scss';
