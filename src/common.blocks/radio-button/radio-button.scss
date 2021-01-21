@@ -1,75 +1,11 @@
 .radio-button {
-    flex-direction: row;
-    display: flex;
-    flex-wrap: wrap;
-    & .radio-button__radio-section {
-        margin-right: 20px;
-    }
-    & .radio-button__radio-section:last-child {
-        margin-left: 0px;
-    }
-}
-
-.radio-button__radio-element {
-    display: none;
-    &:checked + .radio-button__label {
-        color: rgba(31, 32, 65, 0.75);
-    }
-    &:checked + .radio-button__label:before {
-        border-color: #BC9CFF;
-    }
-    &:checked + .radio-button__label:after {
-        transform: translate(-50%, -50%) scale(1);
-        animation: radioJump 0.2s ease;
-        visibility: visible;
-    }
-}
-
-.radio-button__label {
-    color: rgba(31, 32, 65, 0.5);
-    position: relative;
-    margin-left: 30px;
-    transition: 0.5s ease;
-    &:hover {
-        color: rgba(31, 32, 65, 0.75);
-    }
-    &:hover::before {
-        border-color: #BC9CFF
-    }
-    &::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: -20px;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        background-color: white;
-        border: 1px solid rgba(31, 32, 65, 0.25);
-        transition: border-color 0.5s ease;
-    }
-    &:after {
-        transition: 0.2s ease;
-        content: "";
-        transform: translate(-50%, -50%) scale(.1);
-        visibility: hidden;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        left: -20px;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    }
-}
-
-@keyframes radioJump {
-    50% {
-        -webkit-transform: translate(-50%, -50%) scale(1.2);
-    }
-    100% {
-        -webkit-transform: translate(-50%, -50%) scale(1);
-    }
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  & .radio-button__radio-section {
+    margin-right: 20px;
+  }
+  & .radio-button__radio-section:last-child {
+    margin-left: 0px;
+  }
 }

@@ -63,6 +63,8 @@ import '@/common.blocks/checkbox-button/__checkbox-element/checkbox-button__chec
 
 // radio-button
 import '@/common.blocks/radio-button/radio-button.scss';
+import '@/common.blocks/radio-button/__radio-element/radio-button__radio-element.scss';
+import '@/common.blocks/radio-button/__label/radio-button__label.scss';
 
 import '@/pug/modules/toggle/toggle.scss';
 

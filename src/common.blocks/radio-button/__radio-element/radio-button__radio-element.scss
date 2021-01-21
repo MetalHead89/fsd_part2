@@ -1,0 +1,23 @@
+.radio-button__radio-element {
+  display: none;
+  &:checked + .radio-button__label {
+    color: rgba(31, 32, 65, 0.75);
+  }
+  &:checked + .radio-button__label:before {
+    border-color: #bc9cff;
+  }
+  &:checked + .radio-button__label:after {
+    transform: translate(-50%, -50%) scale(1);
+    animation: radioJump 0.2s ease;
+    visibility: visible;
+  }
+}
+
+@keyframes radioJump {
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+  }
+}
