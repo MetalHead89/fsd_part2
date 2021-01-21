@@ -1,7 +1,8 @@
-mixin range-slider(title='диапазон цены')
+mixin range-slider(args)
+    //- title='диапазон цены'
     .range-slider
         .range-slider__header-section
-            h3(class='range-slider__title') !{title}
+            h3(class='range-slider__title') !{args.title}
             .range-slider__range-label 5 000&#8381 - 10 000&#8381
         input(class='range-slider__input-range range-slider__left-input' type="range" min='0' max='15000' value=5000)
         input(class='range-slider__input-range range-slider__right-input' type="range" min='0' max='15000' value=10000)
