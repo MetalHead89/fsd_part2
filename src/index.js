@@ -174,7 +174,10 @@ import '@/common.blocks/calendar/_without-top-border/calendar_without-top-border
 import '@/pug/modules/numberCard/numberCard.scss';
 import '@/pug/modules/searchRoomCard/searchRoomCard.scss';
 import '@/pug/modules/registrationCard/registrationCard.scss';
-import '@/pug/modules/entryCard/entryCard.scss';
+
+// entry-card
+import '@/common.blocks/entryCard/entryCard.scss';
+
 import '@/pug/modules/roomRateCard/roomRateCard.scss';
 
 // header
