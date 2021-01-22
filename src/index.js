@@ -77,7 +77,7 @@ import '@/common.blocks/radio-button/radio-button.scss';
 import '@/common.blocks/radio-button/__radio-element/radio-button__radio-element.scss';
 import '@/common.blocks/radio-button/__label/radio-button__label.scss';
 
-import '@/pug/modules/toggle/toggle.scss';
+import '@/common.blocks/toggle/toggle.scss';
 
 // like-button
 import '@/common.blocks/like-button/like-button.scss';

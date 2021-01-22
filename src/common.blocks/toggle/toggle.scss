@@ -1,9 +1,7 @@
-@import '../../../scss/vars.scss';
-
 .toggle__checkbox {
     display: none;
     &:checked + .toggle__label::before {
-        border: 1px solid $purple;
+        border: 1px solid #BC9CFF;
     }
     &:checked + .toggle__label::after {
         transform: translate(20px, 0);
@@ -15,13 +13,13 @@
     position: relative;
     display: inline-flex;
     align-content: center;
-    color: $darkShade75;
+    color: rgba(31, 32, 65, 0.75);
     transition: color .5s ease;
     &:hover {
-        color: $darkShade100;
+        color: #1F2041;
     }
     &:hover::before {
-        border-color: $purple;
+        border-color: #BC9CFF;
     }
     
     &:hover::after {
@@ -37,7 +35,7 @@
         box-sizing: border-box;
         width: 40px;
         height: 20px;
-        border: 1px solid $darkShade25;
+        border: 1px solid rgba(31, 32, 65, 0.25);
         border-radius: 10px;
     }
     &::after {
@@ -53,6 +51,6 @@
         border-radius: 10px;
         background-position: top;
         background-size: 100% 500%;
-        background-image: linear-gradient(180deg, $darkShade25 20%, $purple 90%, $blue 100%);
+        background-image: linear-gradient(180deg, rgba(31, 32, 65, 0.25) 20%, #BC9CFF 90%, #8BA4F9 100%);
     }
 }
