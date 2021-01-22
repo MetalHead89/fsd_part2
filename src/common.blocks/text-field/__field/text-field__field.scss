@@ -1,0 +1,20 @@
+.text-field__field {
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  padding: 13px 15px 12px;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 1rem;
+  color: rgba(31, 32, 65, 0.75);
+  transition: 0.5s;
+  &::placeholder {
+    color: rgba(31, 32, 65, 0.25);
+  }
+  &:focus {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    outline: none;
+  }
+}

@@ -1,69 +1,8 @@
 .text-field {
-    position: relative;
-    margin-bottom: 10px;
-    &:hover .text-field__field{
-        border: 1px solid rgba(31, 32, 65, 0.5);
-        outline: none;
-    }
-}
-
-.text-field__title {
-    margin: 5px 0;
-}
-
-.text-field__field {
-    width: 100%;
-    max-width: 500px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    border-radius: 4px;
-    padding: 13px 15px 12px;
-    box-sizing: border-box;
-    font-family: "Montserrat";
-    font-weight: 400;
-    font-size: 1rem;
-    color: rgba(31, 32, 65, 0.75);
-    transition: .5s;
-    &::placeholder {
-        color: rgba(31, 32, 65, 0.25);
-    }
-    &:focus {
-        border: 1px solid rgba(31, 32, 65, 0.5);
-        outline: none;
-    }
-}
-
-.text-field__field-subscription {
-    padding-right: 43px;
-}
-
-.text-field__subscription-btn {
-    position: absolute;
-    transform: translate(-10px, 10px);
-    right: 0;
-    border: none;
-    background: none;
-    padding: 0px;
-    &:focus {
-        outline: none;
-    }
-}
-
-.text-field__arrow-forward {
-    background: -moz-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    background: -webkit-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    background: linear-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color:transparent;
-    transition: .5s;
-}
-
-.text-field__subscription-btn:hover .text-field__arrow-forward {
-    opacity: 0.5;
-}
-
-.text-field__subscription-btn:active .text-field__arrow-forward {
-    transition: none;
-    opacity: 1;
+  position: relative;
+  margin-bottom: 10px;
+  &:hover .text-field__field {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    outline: none;
+  }
 }

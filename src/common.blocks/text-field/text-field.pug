@@ -1,11 +1,10 @@
 mixin text-field(args)
-    //- placeholderText='Email', type='textField', title=none
     - let fieldClass = 'text-field__field'
 
     if args.type === 'masked'
-        - fieldClass += ' text-field__field-masked'
+        - fieldClass += ' text-field__field_masked'
     else if args.type === 'subscription'
-        - fieldClass += ' text-field__field-subscription'
+        - fieldClass += ' text-field__field_subscription'
 
     .text-field
         if args.title

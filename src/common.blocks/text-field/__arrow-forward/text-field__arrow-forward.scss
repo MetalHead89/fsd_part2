@@ -1,0 +1,10 @@
+.text-field__arrow-forward {
+  background: -moz-linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  background: -webkit-linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  background: linear-linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.5s;
+}

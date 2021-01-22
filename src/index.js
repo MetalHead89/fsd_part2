@@ -20,6 +20,11 @@ import '@/scss/ui_kit.scss';
 import '@/pug/modules/type-block/type-block.scss';
 
 // text-field
+import '@/common.blocks/text-field/__arrow-forward/text-field__arrow-forward.scss';
+import '@/common.blocks/text-field/__title/text-field__title.scss';
+import '@/common.blocks/text-field/__field/text-field__field.scss';
+import '@/common.blocks/text-field/__field/_subscription/text-field__field_subscription.scss';
+import '@/common.blocks/text-field/__subscription-btn/text-field__subscription-btn.scss';
 import '@/common.blocks/text-field/text-field.scss';
 
 // dropdown

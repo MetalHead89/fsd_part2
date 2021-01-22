@@ -1,4 +1,4 @@
-const maskedTextField = document.querySelector('.text-field__field-masked');
+const maskedTextField = document.querySelector('.text-field__field_masked');
 
 function getTextWithoutDots(text) {
   /**

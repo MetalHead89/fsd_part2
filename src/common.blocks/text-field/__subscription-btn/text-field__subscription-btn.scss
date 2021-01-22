@@ -1,0 +1,18 @@
+.text-field__subscription-btn {
+  position: absolute;
+  transform: translate(-10px, 10px);
+  right: 0;
+  border: none;
+  background: none;
+  padding: 0px;
+  &:focus {
+    outline: none;
+  }
+  &:hover .text-field__arrow-forward {
+    opacity: 0.5;
+  }
+  &:active .text-field__arrow-forward {
+    transition: none;
+    opacity: 1;
+  }
+}
