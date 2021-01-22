@@ -77,7 +77,9 @@ import '@/common.blocks/radio-button/radio-button.scss';
 import '@/common.blocks/radio-button/__radio-element/radio-button__radio-element.scss';
 import '@/common.blocks/radio-button/__label/radio-button__label.scss';
 
-import '@/common.blocks/toggle/toggle.scss';
+// toggle
+import '@/common.blocks/toggle/__checkbox/toggle__checkbox.scss';
+import '@/common.blocks/toggle/__label/toggle__label.scss';
 
 // like-button
 import '@/common.blocks/like-button/like-button.scss';

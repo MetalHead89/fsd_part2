@@ -1,0 +1,10 @@
+.toggle__checkbox {
+  display: none;
+  &:checked + .toggle__label::before {
+    border: 1px solid #bc9cff;
+  }
+  &:checked + .toggle__label::after {
+    transform: translate(20px, 0);
+    background-position: 0 100%;
+  }
+}
