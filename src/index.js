@@ -20,6 +20,8 @@ import '@/scss/ui_kit.scss';
 
 // type-block
 import '@/common.blocks/type-block/type-block.scss';
+import '@/common.blocks/type-block/__tag/type-block__tag.scss';
+import '@/common.blocks/type-block/__text/type-block__text.scss';
 
 // text-field
 import '@/common.blocks/text-field/__arrow-forward/text-field__arrow-forward.scss';
