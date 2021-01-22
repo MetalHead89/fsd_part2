@@ -59,12 +59,12 @@ html(lang="ru")
                         .form-elements__column.form-elements__column1
                             .module
                                 h3(class='module__title') Text Field
-                                +text_field()
+                                +text-field()
                             .module
                                 +dropdown({type: 'guests', id: 'uiDrop', title: 'dropdown'})
                             .module
                                 h3(class='module__title') masked text field
-                                +text_field('Email', 'masked')
+                                +text-field('Email', 'masked')
                             .module
                                 +dropdown({type: 'date', id: 'uiDateDrop', title: 'date Dropdown', title2: 'date Dropdown'})
                             div(class='module module_width266')
@@ -72,7 +72,7 @@ html(lang="ru")
                                     +dropdown({type: 'filter_date', id: 'uiFilterDateDrop', title: 'filter date dropdown'})
                                 .module
                                     h3(class='module__title') subscription text field
-                                    +text_field('Email', 'subscription')
+                                    +text-field('Email', 'subscription')
                                 .module
                                     +dropdown({type: 'comfort', id: 'uiComfortDrop', title: 'dropdown'})
                                 .module
