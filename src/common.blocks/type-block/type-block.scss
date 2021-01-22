@@ -1,5 +1,3 @@
-@import '../../../scss/vars.scss';
-
 .type-block {
     flex-direction: row;
     display: flex;
@@ -13,7 +11,7 @@
     text-align: right;
     flex: none;
     font-weight: 300;
-    color: $darkShade25;
+    color: rgba(31, 32, 65, 0.25);
 }
 
 .type-block__text {

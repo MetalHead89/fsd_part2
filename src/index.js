@@ -17,7 +17,9 @@ import '@/common.blocks/color-block/__square/_green/color-block__square_green.sc
 import '@/common.blocks/color-block/__square/_purple/color-block__square_purple.scss';
 
 import '@/scss/ui_kit.scss';
-import '@/pug/modules/type-block/type-block.scss';
+
+// type-block
+import '@/common.blocks/type-block/type-block.scss';
 
 // text-field
 import '@/common.blocks/text-field/__arrow-forward/text-field__arrow-forward.scss';
