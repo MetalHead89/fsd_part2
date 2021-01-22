@@ -1,13 +1,12 @@
-mixin type-block(tag, text)
-    if tag == 'h1'
-        - var type = 'H1'
-    else if tag == 'h2'
-        - var type = 'H2'
-    else if tag == 'h3'
-        - var type = 'H3'
-    else
-        - var type = 'Body'
+mixin type-block(args)
+    - let tag = 'Body'
+    if args.tag === 'h1'
+        - tag = 'H1'
+    else if args.tag === 'h2'
+        - tag = 'H2'
+    else if args.tag === 'h3'
+        - tag = 'H3'
 
     .type-block
-        #{tag}(class='type-block__tag') !{type}
-        #{tag}(class='type-block__text') !{text}
+        #{args.tag}(class='type-block__tag') !{tag}
+        #{args.tag}(class='type-block__text') !{args.text}

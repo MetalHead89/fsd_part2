@@ -47,9 +47,14 @@ html(lang="ru")
                         +color-block({theme: 'purple', colorName: 'Purple', colorCode: '#BC9CFF'})
                         +color-block({theme: 'green', colorName: 'Green', colorCode: '#6FCF97'})
                     .colors-and-type__type
-                        - var r = [['h1', 'This one is the sub-section or widget title'], ['h2', 'Next one is the item title inside widgets'], ['h3', 'THIS IS A LABEL OR CTA TEXT'], ['span', 'This is the body text which is used for most of&nbsp;the design, like paragraphs, lists, etc.']]
-                        each blockType in r
-                            +type-block(blockType[0], blockType[1])
+                        //- - var r = [['h1', 'This one is the sub-section or widget title'], ['h2', 'Next one is the item title inside widgets'], ['h3', 'THIS IS A LABEL OR CTA TEXT'], ['span', 'This is the body text which is used for most of&nbsp;the design, like paragraphs, lists, etc.']]
+                        //- each blockType in r
+                        //-     +type-block(blockType[0], blockType[1])
+                        +type-block({tag: 'h1', text: 'This one is the sub-section or widget title'})
+                        +type-block({tag: 'h2', text: 'Next one is the item title inside widgets'})
+                        +type-block({tag: 'h3', text: 'THIS IS A LABEL OR CTA TEXT'})
+                        +type-block({tag: 'span', text: 'This is the body text which is used for most of&nbsp;the design, like paragraphs, lists, etc.'})
+                        
             
             //- Form Elements
             h1(class="section-title") Form Elements
