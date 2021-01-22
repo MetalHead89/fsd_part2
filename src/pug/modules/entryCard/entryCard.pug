@@ -4,8 +4,8 @@ mixin entryCard()
     .entry-card
         h1(class='entry-card__title') Войти
         .entry-card__login-details
-            +text-field('Email', textField)
-            +text-field('Пароль', textField)
+            +text-field({placeholderText: 'Email'})
+            +text-field({placeholderText: 'Пароль'})
         +button({type: 'arrow', text: 'войти'})
         .entry-card__create-account
             .entry-card__create-account-label Нет аккаунта на Toxin?

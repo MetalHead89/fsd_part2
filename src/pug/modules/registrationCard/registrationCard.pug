@@ -7,13 +7,13 @@ mixin registrationCard()
     .registrationCard
         h1(class='registrationCard__title registrationCard__title_margin') Регистрация аккаунта
         .registrationCard__person
-            +text-field('Имя', textField)
-            +text-field('Фамилия', textField)
+            +text-field({placeholderText: 'Имя'})
+            +text-field({placeholderText: 'Фамилия'})
             +radio-button({buttons: [{id: 'radioMale', name: 'radioGender', value: 'male', text: 'Мужчина', checked: true}, {id: 'radioFemale', name: 'radioGender', value: 'female', text: 'Женщина'}]})
-        +text-field('', 'masked', 'Дата рождения')
+        +text-field({placeholderText: 'ДД.ММ.ГГГГ', type: 'masked', title: 'Дата рождения'})
         .registrationCard__login-details
-            +text-field('Email', 'textField', 'Данные для входа в сервис')
-            +text-field('Пароль', 'textField')
+            +text-field({placeholderText: 'Email', title: 'Данные для входа в сервис'})
+            +text-field({placeholderText: 'Пароль'})
             +toggle('Получать спецпредложения', 'toggleSpecialOffers', 'toggleSpecialOffers')
         +button({type: 'arrow', text: 'перейти к оплате'})
         .registrationCard__account-login
