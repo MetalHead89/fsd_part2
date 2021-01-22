@@ -14,7 +14,7 @@ mixin registrationCard()
         .registrationCard__login-details
             +text-field({placeholderText: 'Email', title: 'Данные для входа в сервис'})
             +text-field({placeholderText: 'Пароль'})
-            +toggle('Получать спецпредложения', 'toggleSpecialOffers', 'toggleSpecialOffers')
+            +toggle({text: 'Получать спецпредложения', name: 'toggleSpecialOffers', id: 'toggleSpecialOffers'})
         +button({type: 'arrow', text: 'перейти к оплате'})
         .registrationCard__account-login
             .registrationCard__login-label Уже есть аккаунт на Toxin

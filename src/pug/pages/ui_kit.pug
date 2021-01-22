@@ -89,7 +89,7 @@ html(lang="ru")
                                 +radio-button({buttons: [{id: 'radio1', name: 'radio', value: 'male', text: 'Мужчина', checked: true}, {id: 'radio2', name: 'radio', value: 'female', text: 'Женщина'}]})
                             .module
                                 h3(class='module-title') toggle
-                                +toggle('Получать спецпредложения', 'specialOffers', 'specialOffers')
+                                +toggle({text: 'Получать спецпредложения', name: 'specialOffers', id: 'specialOffers'})
                             .module
                                 h3(class='module-title') like button
                                 .likeButtonSection
