@@ -176,7 +176,7 @@ import '@/pug/modules/searchRoomCard/searchRoomCard.scss';
 import '@/pug/modules/registrationCard/registrationCard.scss';
 
 // entry-card
-import '@/common.blocks/entryCard/entryCard.scss';
+import '@/common.blocks/entry-card/entry-card.scss';
 
 import '@/pug/modules/roomRateCard/roomRateCard.scss';
 
