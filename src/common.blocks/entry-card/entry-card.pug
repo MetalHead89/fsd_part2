@@ -3,11 +3,11 @@ include ../text-field/text-field.pug
 mixin entry-card()
     .entry-card
         h1(class='entry-card__title') Войти
-        .entry-card__login-details
+        .entry-card__login-section
             +text-field({placeholderText: 'Email'})
             +text-field({placeholderText: 'Пароль'})
         +button({type: 'arrow', text: 'войти'})
-        .entry-card__create-account
-            .entry-card__create-account-label Нет аккаунта на Toxin?
-            .entry-card__create-account-button
+        .entry-card__new-account-section
+            .entry-card__label Нет аккаунта на Toxin?
+            .entry-card__button-wrapper
                 +button({type: 'border', text: 'создать'})

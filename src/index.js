@@ -1,6 +1,12 @@
 // Styles
 import '@/scss/fonts.scss';
 import '@/scss/style.scss';
+import '@/scss/ui_kit.scss';
+import '@/scss/landing_page.scss';
+import '@/scss/search_room.scss';
+import '@/scss/room_details.scss';
+import '@/scss/registration_signin_page.scss';
+import '@/scss/page_with_links.scss';
 
 // color-block
 import '@/common.blocks/color-block/color-block.scss';
@@ -15,8 +21,6 @@ import '@/common.blocks/color-block/__square/_dark-shade-75/color-block__square_
 import '@/common.blocks/color-block/__square/_dark-shade-100/color-block__square_dark-shade-100.scss';
 import '@/common.blocks/color-block/__square/_green/color-block__square_green.scss';
 import '@/common.blocks/color-block/__square/_purple/color-block__square_purple.scss';
-
-import '@/scss/ui_kit.scss';
 
 // type-block
 import '@/common.blocks/type-block/type-block.scss';
@@ -177,6 +181,9 @@ import '@/pug/modules/registrationCard/registrationCard.scss';
 
 // entry-card
 import '@/common.blocks/entry-card/entry-card.scss';
+import '@/common.blocks/entry-card/__title/entry-card__title.scss';
+import '@/common.blocks/entry-card/__new-account-section/entry-card__new-account-section.scss';
+import '@/common.blocks/entry-card/__login-section/entry-card__login-section.scss';
 
 import '@/pug/modules/roomRateCard/roomRateCard.scss';
 
@@ -204,8 +211,6 @@ import '@/common.blocks/footer/__copyright-wrapper/footer__copyright-wrapper.scs
 import '@/common.blocks/footer/__copyright/footer__copyright.scss';
 import '@/common.blocks/footer/__social-link/footer__social-link.scss';
 
-import '@/scss/landing_page.scss';
-
 // navbar
 import '@/common.blocks/navbar/navbar.scss';
 import '@/common.blocks/navbar/__list/navbar__list.scss';
@@ -232,9 +237,6 @@ import '@/common.blocks/navbar/__button-entry/navbar__button-entry.scss';
 import '@/common.blocks/navbar/__separator/navbar__separator.scss';
 import '@/common.blocks/navbar/__separator/_vertical/navbar__separator_vertical.scss';
 
-import '@/scss/search_room.scss';
-import '@/scss/room_details.scss';
-
 // impressions-diagram
 import '@/common.blocks/impressions-diagram/impressions-diagram.scss';
 import '@/common.blocks/impressions-diagram/__diagram-section/impressions-diagram__diagram-section.scss';
@@ -247,9 +249,6 @@ import '@/common.blocks/impressions-diagram/__legend-item/_yellow/impressions-di
 import '@/common.blocks/impressions-diagram/__legend-item/_green/impressions-diagram__legend-item_green.scss';
 import '@/common.blocks/impressions-diagram/__legend-item/_purple/impressions-diagram__legend-item_purple.scss';
 import '@/common.blocks/impressions-diagram/__legend-item/_brown/impressions-diagram__legend-item_brown.scss';
-
-import '@/scss/registration_signin_page.scss';
-import '@/scss/page_with_links.scss';
 
 // Scripts
 import '@/common.blocks/calendar/calendar';
