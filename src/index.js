@@ -201,7 +201,9 @@ import '@/common.blocks/number-card/__separator/number-card__separator.scss';
 import '@/common.blocks/number-card/__rating-section/number-card__rating-section.scss';
 
 import '@/pug/modules/searchRoomCard/searchRoomCard.scss';
-import '@/pug/modules/registrationCard/registrationCard.scss';
+
+// registrationCard
+import '@/common.blocks/registrationCard/registrationCard.scss';
 
 // entry-card
 import '@/common.blocks/entry-card/entry-card.scss';
