@@ -17,7 +17,7 @@ include ../../common.blocks/guest-review/guest-review.pug
 include ../../common.blocks/calendar/calendar.pug
 include ../../common.blocks/number-card/number-card.pug
 include ../modules/searchRoomCard/searchRoomCard.pug
-include ../../common.blocks/registrationCard/registrationCard.pug
+include ../../common.blocks/registration-card/registration-card.pug
 include ../../common.blocks/entry-card/entry-card.pug
 include ../modules/roomRateCard/roomRateCard.pug
 include ../../common.blocks/header/header.pug
@@ -146,7 +146,7 @@ html(lang="ru")
                         .module
                             +searchRoomCard()
                         .module
-                            +registrationCard()
+                            +registration-card()
                     .cards_column
                         .module
                             +roomRateCard({'roomNumber': 888, 'lux': true, 'roomRate': 9990, 'serviceCost': -2179, 'additionalServiceCost': 300})

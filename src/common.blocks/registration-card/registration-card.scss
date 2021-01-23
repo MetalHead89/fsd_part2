@@ -1,4 +1,4 @@
-.registrationCard {
+.registration-card {
     width: 100%;
     padding: 30px;
     background: white;
@@ -8,29 +8,29 @@
     border-radius: 4px;
 }
 
-.registrationCard__title {
+.registration-card__title {
     font-family: 'Open Sans';
 }
 
-.registrationCard__account-login {
+.registration-card__account-login {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.registrationCard__title_margin {
+.registration-card__title_margin {
     margin: 8px 0;
 }
 
-.registrationCard__person {
+.registration-card__person {
     margin: 20px 0;
 }
 
-.registrationCard__login-details {
+.registration-card__login-details {
     margin: 20px 0 12px;
 }
 
-.registrationCard__account-login {
+.registration-card__account-login {
     margin-top: 30px;
 }

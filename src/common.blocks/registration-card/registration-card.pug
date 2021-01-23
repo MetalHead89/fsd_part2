@@ -3,20 +3,20 @@ include ../radio-button/radio-button.pug
 include ../button/button.pug
 include ../toggle/toggle.pug
 
-mixin registrationCard()
-    .registrationCard
-        h1(class='registrationCard__title registrationCard__title_margin') Регистрация аккаунта
-        .registrationCard__person
+mixin registration-card()
+    .registration-card
+        h1(class='registration-card__title registration-card__title_margin') Регистрация аккаунта
+        .registration-card__person
             +text-field({placeholderText: 'Имя'})
             +text-field({placeholderText: 'Фамилия'})
             +radio-button({buttons: [{id: 'radioMale', name: 'radioGender', value: 'male', text: 'Мужчина', checked: true}, {id: 'radioFemale', name: 'radioGender', value: 'female', text: 'Женщина'}]})
         +text-field({placeholderText: 'ДД.ММ.ГГГГ', type: 'masked', title: 'Дата рождения'})
-        .registrationCard__login-details
+        .registration-card__login-details
             +text-field({placeholderText: 'Email', title: 'Данные для входа в сервис'})
             +text-field({placeholderText: 'Пароль'})
             +toggle({text: 'Получать спецпредложения', name: 'toggleSpecialOffers', id: 'toggleSpecialOffers'})
         +button({type: 'arrow', text: 'перейти к оплате'})
-        .registrationCard__account-login
-            .registrationCard__login-label Уже есть аккаунт на Toxin
-            .registrationCard__login-button
+        .registration-card__account-login
+            .registration-card__login-label Уже есть аккаунт на Toxin
+            .registration-card__login-button
                 +button({type: 'border', text: 'войти'})
