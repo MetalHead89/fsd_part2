@@ -39,12 +39,12 @@
     z-index: 2;
 }
 
-.number-card__slider-list-item_opacity1{
+.number-card__slider-list-item_opacity-1{
     transition: opacity .5s ease-in;
     opacity: 1;
 }
 
-.number-card__slider-list-item_opacity0{
+.number-card__slider-list-item_opacity-0{
     transition: opacity .5s ease-in;
     opacity: 0;
 }
@@ -69,17 +69,17 @@
     }
 }
 
-.number-card__prevButton {
+.number-card__arrow-button_prev {
     left: 0;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
 }
 
-.number-card__nextButton {
+.number-card__arrow-button_next {
     right: 0;
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 0.99%, rgba(0, 0, 0, 0.5) 100%);
 }
 
-.number-card__slider-dots {
+.number-card__dots-section {
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -98,12 +98,12 @@
     filter: drop-shadow(0px 5px 5px rgba(31, 32, 65, 0.3));
 }
 
-.number-card__unactive-dot {
+.number-card__dot_unactive {
     transition: background.5s ease-in;
     background: transparent;
 }
 
-.number-card__active-dot {
+.number-card__dot_active {
     transition: background .5s ease-in;
     background: white;
 }
@@ -128,7 +128,7 @@
     line-height: 0;
 }
 
-.number-card__number_size19 {
+.number-card__number_size-19 {
     font-size: 19px;
 }
 

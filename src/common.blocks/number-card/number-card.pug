@@ -1,33 +1,30 @@
 include ../rate-button/rate-button.pug
 
 mixin number-card(args)
-    - var dot = 0
-    - var dots = args.images.length
-
     .number-card
         .number-card__slider-section
             <ul class="number-card__slider-list">
                 each img, index in args.images
                     if index == 0
-                        <li class="number-card__slider-list-item number-card__slider-list-item_opacity1"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
+                        <li class="number-card__slider-list-item number-card__slider-list-item_opacity-1"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
                     else
-                        <li class="number-card__slider-list-item number-card__slider-list-item_opacity0"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
+                        <li class="number-card__slider-list-item number-card__slider-list-item_opacity-0"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
             </ul>
-            button(class='number-card__prevButton number-card__arrow-button')
+            button(class='number-card__arrow-button number-card__arrow-button_prev')
                 i(class="material-icons") keyboard_arrow_left
-            button(class='number-card__nextButton number-card__arrow-button')
+            button(class='number-card__arrow-button number-card__arrow-button_next')
                 i(class="material-icons") keyboard_arrow_right
-            .number-card__slider-dots
+            .number-card__dots-section
                 each img, index in args.images
                     if index == 0
-                        .number-card__dot.number-card__active-dot
+                        .number-card__dot.number-card__dot_active
                     else
-                        .number-card__dot.number-card__unactive-dot
+                        .number-card__dot.number-card__dot_unactive
         .number-card__room-info
             .number-card__number-section
                 .number-card__room-number
                     span(class='number-card__number') №
-                    |   #[span(class='number-card__number number-card__number_size19') !{args.roomNumber}]
+                    |   #[span(class='number-card__number number-card__number_size-19') !{args.roomNumber}]
                     if args.lux
                         |    #[span(class='number-card__lux') ЛЮКС]
                 .number-card__room-rate 

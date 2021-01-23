@@ -6,8 +6,8 @@ class NumberCard {
   }
 
   init() {
-    this.buttonPrev = this.numberCard.querySelector('.number-card__prevButton');
-    this.buttonNext = this.numberCard.querySelector('.number-card__nextButton');
+    this.buttonPrev = this.numberCard.querySelector('.number-card__arrow-button_prev');
+    this.buttonNext = this.numberCard.querySelector('.number-card__arrow-button_next');
     this.sliderDots = Array.from(this.numberCard.querySelectorAll('.number-card__dot'));
     this.slides = this.numberCard.querySelectorAll('.number-card__slider-list-item');
 
@@ -19,9 +19,9 @@ class NumberCard {
   }
 
   switchToNextSlide() {
-    const activeSlide = this.numberCard.querySelector('.number-card__slider-list-item_opacity1');
+    const activeSlide = this.numberCard.querySelector('.number-card__slider-list-item_opacity-1');
     const nextSlide = activeSlide.nextElementSibling;
-    const activeDot = this.numberCard.querySelector('.number-card__active-dot');
+    const activeDot = this.numberCard.querySelector('.number-card__dot_active');
     const nextDot = activeDot.nextElementSibling;
 
     if (nextSlide) {
@@ -31,9 +31,9 @@ class NumberCard {
   }
 
   switchToPreviousSlide() {
-    const activeSlide = this.numberCard.querySelector('.number-card__slider-list-item_opacity1');
+    const activeSlide = this.numberCard.querySelector('.number-card__slider-list-item_opacity-1');
     const prevSlide = activeSlide.previousElementSibling;
-    const activeDot = this.numberCard.querySelector('.number-card__active-dot');
+    const activeDot = this.numberCard.querySelector('.number-card__dot_active');
     const prevDot = activeDot.previousElementSibling;
 
     if (prevSlide) {
@@ -43,14 +43,14 @@ class NumberCard {
   }
 
   static switchSlide(activeSlide, nextSlide) {
-    activeSlide.classList.remove('number-card__slider-list-item_opacity1');
-    activeSlide.classList.add('number-card__slider-list-item_opacity0');
-    nextSlide.classList.remove('number-card__slider-list-item_opacity0');
-    nextSlide.classList.add('number-card__slider-list-item_opacity1');
+    activeSlide.classList.remove('number-card__slider-list-item_opacity-1');
+    activeSlide.classList.add('number-card__slider-list-item_opacity-0');
+    nextSlide.classList.remove('number-card__slider-list-item_opacity-0');
+    nextSlide.classList.add('number-card__slider-list-item_opacity-1');
   }
 
   clickToDot(dot) {
-    const activeDot = this.sliderDots.indexOf(this.numberCard.querySelector('.number-card__active-dot'));
+    const activeDot = this.sliderDots.indexOf(this.numberCard.querySelector('.number-card__dot_active'));
     const nextDot = this.sliderDots.indexOf(dot);
 
     NumberCard.switchSlide(this.slides[activeDot], this.slides[nextDot]);
@@ -58,10 +58,10 @@ class NumberCard {
   }
 
   static switchSliderDot(activeDot, nextDot) {
-    activeDot.classList.remove('number-card__active-dot');
-    activeDot.classList.add('number-card__unactive-dot');
-    nextDot.classList.remove('number-card__unactive-dot');
-    nextDot.classList.add('number-card__active-dot');
+    activeDot.classList.remove('number-card__dot_active');
+    activeDot.classList.add('number-card__dot_unactive');
+    nextDot.classList.remove('number-card__dot_unactive');
+    nextDot.classList.add('number-card__dot_active');
   }
 }
 
