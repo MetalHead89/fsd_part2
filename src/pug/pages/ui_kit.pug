@@ -19,7 +19,7 @@ include ../../common.blocks/number-card/number-card.pug
 include ../modules/searchRoomCard/searchRoomCard.pug
 include ../../common.blocks/registration-card/registration-card.pug
 include ../../common.blocks/entry-card/entry-card.pug
-include ../../common.blocks/roomRateCard/roomRateCard.pug
+include ../../common.blocks/room-rate-card/room-rate-card.pug
 include ../../common.blocks/header/header.pug
 include ../../common.blocks/footer/footer.pug
 
@@ -149,7 +149,7 @@ html(lang="ru")
                             +registration-card()
                     .cards_column
                         .module
-                            +roomRateCard({'roomNumber': 888, 'lux': true, 'roomRate': 9990, 'serviceCost': -2179, 'additionalServiceCost': 300})
+                            +room-rate-card({'roomNumber': 888, 'lux': true, 'roomRate': 9990, 'serviceCost': -2179, 'additionalServiceCost': 300})
                         .module
                             +entry-card()
                     .cards_column
