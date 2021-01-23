@@ -216,7 +216,8 @@ import '@/common.blocks/entry-card/__title/entry-card__title.scss';
 import '@/common.blocks/entry-card/__new-account-section/entry-card__new-account-section.scss';
 import '@/common.blocks/entry-card/__login-section/entry-card__login-section.scss';
 
-import '@/pug/modules/roomRateCard/roomRateCard.scss';
+// roomRateCard
+import '@/common.blocks/roomRateCard/roomRateCard.scss';
 
 // header
 import '@/common.blocks/header/header.scss';
@@ -292,3 +293,4 @@ import '@/common.blocks/pagination/pagination';
 import '@/common.blocks/range-slider/range-slider';
 import '@/common.blocks/text-field/text-field';
 import '@/common.blocks/number-card/number-card';
+import '@/common.blocks/roomRateCard/roomRateCard';
