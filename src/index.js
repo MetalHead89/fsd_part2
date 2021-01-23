@@ -175,7 +175,9 @@ import '@/common.blocks/calendar/__range-highlight/_right-rounded/calendar__rang
 import '@/common.blocks/calendar/__day/_selected/calendar__day_selected.scss';
 import '@/common.blocks/calendar/_without-top-border/calendar_without-top-border.scss';
 
-import '@/pug/modules/numberCard/numberCard.scss';
+// numberCard
+import '@/common.blocks/numberCard/numberCard.scss';
+
 import '@/pug/modules/searchRoomCard/searchRoomCard.scss';
 import '@/pug/modules/registrationCard/registrationCard.scss';
 
@@ -260,3 +262,4 @@ import '@/common.blocks/impressions-diagram/impressions-diagram';
 import '@/common.blocks/pagination/pagination';
 import '@/common.blocks/range-slider/range-slider';
 import '@/common.blocks/text-field/text-field';
+import '@/common.blocks/numberCard/numberCard';

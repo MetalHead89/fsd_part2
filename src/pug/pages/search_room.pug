@@ -5,7 +5,7 @@ block includs
     include ../../common.blocks/range-slider/range-slider.pug
     include ../../common.blocks/checkbox-button/checkbox-button.pug
     include ../../common.blocks/expandable-checkbox-list/expandable-checkbox-list.pug
-    include ../modules/numberCard/numberCard.pug
+    include ../../common.blocks/numberCard/numberCard.pug
     include ../../common.blocks/pagination/pagination.pug    
 
 block title
@@ -72,6 +72,3 @@ block content
                         +numberCard({roomNumber: 352, lux: false, roomRate: 5000, rating: 3, reviewsNumber: 55, images: ['../images/number12.png', '../images/number2.png', '../images/number3.png', '../images/number5.png']})
                 .search-room__pagination-container
                     +pagination({numberOfPages: 15, activePage: 1})
-
-block scripts
-    include ../modules/numberCard/numberCard.js

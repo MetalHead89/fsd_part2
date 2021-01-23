@@ -1,10 +1,8 @@
-@import '../../../scss/vars.scss';
-
 .number-card {
     width: 100%;
     max-width: 500px;
     background: white;
-    box-shadow: 0px 10px 20px $darkShade5;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     border-radius: 4px;
     flex-direction: column;
 }
@@ -126,7 +124,7 @@
     font-family: 'Quicksand';
     font-weight: bold;
     font-size: 14px;
-    color: $darkShade100;
+    color: #1F2041;
     line-height: 0;
 }
 
@@ -139,7 +137,7 @@
     font-weight: bold;
     font-size: 12px;
     text-transform: uppercase;
-    color: $purple;
+    color: #BC9CFF;
     line-height: 0;
 }
 
@@ -152,7 +150,7 @@
     font-family: 'Montserrat';
     font-weight: bold;
     font-size: 14px;
-    color: $darkShade50;
+    color: rgba(31, 32, 65, 0.5);
 }
 
 .number-card__separator {
