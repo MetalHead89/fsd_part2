@@ -200,8 +200,8 @@ import '@/common.blocks/number-card/__accented-text/number-card__accented-text.s
 import '@/common.blocks/number-card/__separator/number-card__separator.scss';
 import '@/common.blocks/number-card/__rating-section/number-card__rating-section.scss';
 
-// searchRoomCard
-import '@/common.blocks/searchRoomCard/searchRoomCard.scss';
+// search-room-card
+import '@/common.blocks/search-room-card/search-room-card.scss';
 
 // registration-card
 import '@/common.blocks/registration-card/registration-card.scss';
