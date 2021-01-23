@@ -204,6 +204,11 @@ import '@/pug/modules/searchRoomCard/searchRoomCard.scss';
 
 // registration-card
 import '@/common.blocks/registration-card/registration-card.scss';
+import '@/common.blocks/registration-card/__title/registration-card__title.scss';
+import '@/common.blocks/registration-card/__title/_margin-8/registration-card__title_margin-8.scss';
+import '@/common.blocks/registration-card/__account-login/registration-card__account-login.scss';
+import '@/common.blocks/registration-card/__person/registration-card__person.scss';
+import '@/common.blocks/registration-card/__login-details/registration-card__login-details.scss';
 
 // entry-card
 import '@/common.blocks/entry-card/entry-card.scss';
