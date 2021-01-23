@@ -1,0 +1,8 @@
+.number-card__slider-image {
+  border-radius: 4px 4px 0 0;
+  display: block;
+  width: 100%;
+  transition: opacity 1s ease-in;
+  position: absolute;
+  z-index: 2;
+}

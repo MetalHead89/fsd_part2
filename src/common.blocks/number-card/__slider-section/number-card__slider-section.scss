@@ -1,0 +1,12 @@
+.number-card__slider-section {
+  position: relative;
+  width: 100%;
+  &:hover .number-card__arrow-button {
+    opacity: 1;
+  }
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 56%;
+  }
+}

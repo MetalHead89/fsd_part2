@@ -177,6 +177,28 @@ import '@/common.blocks/calendar/_without-top-border/calendar_without-top-border
 
 // number-card
 import '@/common.blocks/number-card/number-card.scss';
+import '@/common.blocks/number-card/__slider-section/number-card__slider-section.scss';
+import '@/common.blocks/number-card/__slider-list/number-card__slider-list.scss';
+import '@/common.blocks/number-card/__slider-image/number-card__slider-image.scss';
+import '@/common.blocks/number-card/__slider-list-item/number-card__slider-list-item.scss';
+import '@/common.blocks/number-card/__slider-list-item/_opacity-0/number-card__slider-list-item_opacity-0.scss';
+import '@/common.blocks/number-card/__slider-list-item/_opacity-1/number-card__slider-list-item_opacity-1.scss';
+import '@/common.blocks/number-card/__arrow-button/number-card__arrow-button.scss';
+import '@/common.blocks/number-card/__arrow-button/_prev/number-card__arrow-button_prev.scss';
+import '@/common.blocks/number-card/__arrow-button/_next/number-card__arrow-button_next.scss';
+import '@/common.blocks/number-card/__dots-section/number-card__dots-section.scss';
+import '@/common.blocks/number-card/__dot/number-card__dot.scss';
+import '@/common.blocks/number-card/__dot/_unactive/number-card__dot_unactive.scss';
+import '@/common.blocks/number-card/__dot/_active/number-card__dot_active.scss';
+import '@/common.blocks/number-card/__room-info/number-card__room-info.scss';
+import '@/common.blocks/number-card/__number-section/number-card__number-section.scss';
+import '@/common.blocks/number-card/__number/number-card__number.scss';
+import '@/common.blocks/number-card/__number/_size-19/number-card__number_size-19.scss';
+import '@/common.blocks/number-card/__lux/number-card__lux.scss';
+import '@/common.blocks/number-card/__room-rate/number-card__room-rate.scss';
+import '@/common.blocks/number-card/__accented-text/number-card__accented-text.scss';
+import '@/common.blocks/number-card/__separator/number-card__separator.scss';
+import '@/common.blocks/number-card/__rating-section/number-card__rating-section.scss';
 
 import '@/pug/modules/searchRoomCard/searchRoomCard.scss';
 import '@/pug/modules/registrationCard/registrationCard.scss';
