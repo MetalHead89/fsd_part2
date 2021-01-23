@@ -13,8 +13,8 @@ mixin room-rate-card(args)
                 .room-rate-card__cost !{args.roomRate.toLocaleString('ru-RU')}₽&#32 
                 .room-rate-card__room-rate-label в сутки
         +dropdown({type: 'date', id: 'roomRateDateDrop', title: 'прибытие', title2: 'выезд'})
-        .room-rate-card__dropGuests
-            +dropdown({type: 'guests', id: 'roomRateDrop', title: 'гости'}))
+        .room-rate-card__drop-guests
+            +dropdown({type: 'guests', id: 'roomRateDrop', title: 'гости'})
         .room-rate-card__room-rate-calc
             .room-rate-card__daily-calc !{args.roomRate}
             .room-rate-card__room-rate 0₽

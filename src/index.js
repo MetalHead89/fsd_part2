@@ -218,6 +218,29 @@ import '@/common.blocks/entry-card/__login-section/entry-card__login-section.scs
 
 // room-rate-card
 import '@/common.blocks/room-rate-card/room-rate-card.scss';
+import '@/common.blocks/room-rate-card/__room-info/room-rate-card__room-info.scss';
+import '@/common.blocks/room-rate-card/__room-number/room-rate-card__room-number.scss';
+import '@/common.blocks/room-rate-card/__number/room-rate-card__number.scss';
+import '@/common.blocks/room-rate-card/__number/_size-19/room-rate-card__number_size-19.scss';
+import '@/common.blocks/room-rate-card/__lux/room-rate-card__lux.scss';
+import '@/common.blocks/room-rate-card/__price-per-day/room-rate-card__price-per-day.scss';
+import '@/common.blocks/room-rate-card/__cost/room-rate-card__cost.scss';
+import '@/common.blocks/room-rate-card/__room-rate-label/room-rate-card__room-rate-label.scss';
+import '@/common.blocks/room-rate-card/__drop-guests/room-rate-card__drop-guests.scss';
+import '@/common.blocks/room-rate-card/__room-rate-calc/room-rate-card__room-rate-calc.scss';
+import '@/common.blocks/room-rate-card/__services/room-rate-card__services.scss';
+import '@/common.blocks/room-rate-card/__service-info/room-rate-card__service-info.scss';
+import '@/common.blocks/room-rate-card/__service-tooltip/room-rate-card__service-tooltip.scss';
+import '@/common.blocks/room-rate-card/__additional-service-tooltip/room-rate-card__additional-service-tooltip.scss';
+import '@/common.blocks/room-rate-card/__additional-services/room-rate-card__additional-services.scss';
+import '@/common.blocks/room-rate-card/__additional-service-info/room-rate-card__additional-service-info.scss';
+import '@/common.blocks/room-rate-card/__services-label/room-rate-card__services-label.scss';
+import '@/common.blocks/room-rate-card/__additionals-services-label/room-rate-card__additionals-services-label.scss';
+import '@/common.blocks/room-rate-card/__result/room-rate-card__result.scss';
+import '@/common.blocks/room-rate-card/__result-dots/room-rate-card__result-dots.scss';
+import '@/common.blocks/room-rate-card/__result-label/room-rate-card__result-label.scss';
+import '@/common.blocks/room-rate-card/__result-cost/room-rate-card__result-cost.scss';
+import '@/common.blocks/room-rate-card/__tooltip/room-rate-card__tooltip.scss';
 
 // header
 import '@/common.blocks/header/header.scss';
