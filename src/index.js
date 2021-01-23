@@ -202,6 +202,10 @@ import '@/common.blocks/number-card/__rating-section/number-card__rating-section
 
 // search-room-card
 import '@/common.blocks/search-room-card/search-room-card.scss';
+import '@/common.blocks/search-room-card/__title/search-room-card__title.scss';
+import '@/common.blocks/search-room-card/__dropdown/search-room-card__dropdown.scss';
+import '@/common.blocks/search-room-card/__title/_margins/search-room-card__title_margins.scss';
+import '@/common.blocks/search-room-card/__button/search-room-card__button.scss';
 
 // registration-card
 import '@/common.blocks/registration-card/registration-card.scss';
