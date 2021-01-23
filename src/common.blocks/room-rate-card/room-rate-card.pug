@@ -6,15 +6,15 @@ mixin room-rate-card(args)
         .room-rate-card__room-info
             .room-rate-card__room-number
                 .room-rate-card__number №&#32
-                .room-rate-card__number.room-rate-card__number_size19 !{args.roomNumber}&#32
+                .room-rate-card__number.room-rate-card__number_size-19 !{args.roomNumber}&#32
                 if args.lux
                     .room-rate-card__lux ЛЮКС
             .room-rate-card__price-per-day 
                 .room-rate-card__cost !{args.roomRate.toLocaleString('ru-RU')}₽&#32 
                 .room-rate-card__room-rate-label в сутки
-        +dropdown('date', 'roomRateDateDrop', 'прибытие', 'выезд')
+        +dropdown({type: 'date', id: 'roomRateDateDrop', title: 'прибытие', title2: 'выезд'})
         .room-rate-card__dropGuests
-            +dropdown('guests', 'roomRateDrop', 'гости')
+            +dropdown({type: 'guests', id: 'roomRateDrop', title: 'гости'}))
         .room-rate-card__room-rate-calc
             .room-rate-card__daily-calc !{args.roomRate}
             .room-rate-card__room-rate 0₽
