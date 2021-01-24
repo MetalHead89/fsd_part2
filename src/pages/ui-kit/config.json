@@ -38,5 +38,6 @@
     }
   ],
   "textField": { "placeholderText": "Email" },
-  "dropdown": { "type": "guests", "id": "uiDrop", "title": "dropdown" }
+  "dropdown": { "type": "guests", "id": "uiDrop", "title": "dropdown" },
+  "maskedTextField": { "placeholderText": "ДД.ММ.ГГГГ", "type": "masked" }
 }
