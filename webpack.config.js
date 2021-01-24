@@ -27,40 +27,44 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pug/pages/page_with_links.pug'),
+      template: path.resolve(__dirname, 'src/pages/page_with_links.pug'),
     }),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pug/pages/ui_kit.pug'),
+      template: path.resolve(__dirname, 'src/pages/ui_kit.pug'),
       filename: 'assets/pages/ui_kit.html',
     }),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pug/pages/landing_page.pug'),
+      template: path.resolve(__dirname, 'src/pages/landing_page.pug'),
       filename: 'assets/pages/landing_page.html',
     }),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pug/pages/search_room.pug'),
+      template: path.resolve(__dirname, 'src/pages/search_room.pug'),
       filename: 'assets/pages/search_room.html',
     }),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pug/pages/room_details.pug'),
+      template: path.resolve(__dirname, 'src/pages/room_details.pug'),
       filename: 'assets/pages/room_details.html',
     }),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pug/pages/registration_page.pug'),
+      template: path.resolve(__dirname, 'src/pages/registration_page.pug'),
       filename: 'assets/pages/registration_page.html',
     }),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pug/pages/signin_page.pug'),
+      template: path.resolve(__dirname, 'src/pages/signin_page.pug'),
       filename: 'assets/pages/signin_page.html',
     }),
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin([
-      { filename: '[name].css' },
-    ]),
+    new MiniCssExtractPlugin([{ filename: '[name].css' }]),
     new CopyWebpackPlugin({
       patterns: [
-        { from: path.resolve(__dirname, 'src/assets/fonts'), to: path.resolve(__dirname, 'dist/assets/fonts') },
-        { from: path.resolve(__dirname, 'src/assets/images'), to: path.resolve(__dirname, 'dist/assets/images') },
+        {
+          from: path.resolve(__dirname, 'src/assets/fonts'),
+          to: path.resolve(__dirname, 'dist/assets/fonts'),
+        },
+        {
+          from: path.resolve(__dirname, 'src/assets/images'),
+          to: path.resolve(__dirname, 'dist/assets/images'),
+        },
       ],
     }),
   ],
@@ -76,10 +80,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.pug$/,
@@ -90,12 +91,14 @@ module.exports = {
       },
       {
         test: /\.(woff(2)?|ttf|eot)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
           },
-        }],
+        ],
       },
       {
         test: /\.(png|jpg|svg|gif)$/,
