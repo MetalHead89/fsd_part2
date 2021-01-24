@@ -54,7 +54,7 @@ html(lang="ru")
                                 h3(class='module__title') Text Field
                                 +text-field(config.textField)
                             .module
-                                +dropdown({type: 'guests', id: 'uiDrop', title: 'dropdown'})
+                                +dropdown(config.dropdown)
                             .module
                                 h3(class='module__title') masked text field
                                 +text-field({placeholderText: 'ДД.ММ.ГГГГ', type: 'masked'})
