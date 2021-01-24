@@ -36,5 +36,6 @@
       "tag": "span",
       "text": "This is the body text which is used for most of&nbsp;the design, like paragraphs, lists, etc."
     }
-  ]
+  ],
+  "textField": { "placeholderText": "Email" }
 }

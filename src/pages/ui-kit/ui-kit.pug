@@ -52,7 +52,7 @@ html(lang="ru")
                         .form-elements__column.form-elements__column1
                             .module
                                 h3(class='module__title') Text Field
-                                +text-field({placeholderText: 'Email'})
+                                +text-field(config.textField)
                             .module
                                 +dropdown({type: 'guests', id: 'uiDrop', title: 'dropdown'})
                             .module
