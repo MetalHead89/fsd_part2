@@ -30,8 +30,8 @@ module.exports = {
       template: path.resolve(__dirname, 'src/pages/page_with_links.pug'),
     }),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pages/ui_kit.pug'),
-      filename: 'assets/pages/ui_kit.html',
+      template: path.resolve(__dirname, 'src/pages/ui-kit.pug'),
+      filename: 'assets/pages/ui-kit.html',
     }),
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, 'src/pages/landing_page.pug'),
