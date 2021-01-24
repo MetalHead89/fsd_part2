@@ -27,5 +27,14 @@
     },
     { "theme": "purple", "colorName": "Purple", "colorCode": "#BC9CFF" },
     { "theme": "green", "colorName": "Green", "colorCode": "#6FCF97" }
+  ],
+  "typeBlocks": [
+    { "tag": "h1", "text": "This one is the sub-section or widget title" },
+    { "tag": "h2", "text": "Next one is the item title inside widgets" },
+    { "tag": "h3", "text": "THIS IS A LABEL OR CTA TEXT" },
+    {
+      "tag": "span",
+      "text": "This is the body text which is used for most of&nbsp;the design, like paragraphs, lists, etc."
+    }
   ]
 }
