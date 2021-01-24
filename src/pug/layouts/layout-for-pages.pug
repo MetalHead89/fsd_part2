@@ -10,9 +10,9 @@ html(lang="ru")
         title 
             block title
     body
-        .header-container
-            +header({type: 'horizontal'})
+        +header({type: 'horizontal'})
 
-        block content
+        article
+            block content
 
         +footer()
