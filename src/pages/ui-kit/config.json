@@ -39,5 +39,11 @@
   ],
   "textField": { "placeholderText": "Email" },
   "dropdown": { "type": "guests", "id": "uiDrop", "title": "dropdown" },
-  "maskedTextField": { "placeholderText": "ДД.ММ.ГГГГ", "type": "masked" }
+  "maskedTextField": { "placeholderText": "ДД.ММ.ГГГГ", "type": "masked" },
+  "dateDropdown": {
+    "type": "date",
+    "id": "uiDateDrop",
+    "title": "date Dropdown",
+    "title2": "date Dropdown"
+  }
 }
