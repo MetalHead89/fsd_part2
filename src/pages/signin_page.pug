@@ -1,4 +1,4 @@
-extends ../pug/layouts/registration_signin_page
+extends layout-for-pages/layout-for-pages
 
 block includs
     include ../common.blocks/entry-card/entry-card.pug
@@ -7,5 +7,10 @@ block includs
 block title
     | Registration Page
 
-block card
-    +entry-card()
+block content
+    .registration-signin-page__body
+        .registration-signin-page__background.registration-signin-page__background1
+        .registration-signin-page__background.registration-signin-page__background2
+        .registration-signin-page__body-content-container
+            .registration-signin-page__registration-card-container
+                +entry-card()
