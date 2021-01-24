@@ -45,5 +45,10 @@
     "id": "uiDateDrop",
     "title": "date Dropdown",
     "title2": "date Dropdown"
+  },
+  "filterDateDropdown": {
+    "type": "filter_date",
+    "id": "uiFilterDateDrop",
+    "title": "filter date dropdown"
   }
 }
