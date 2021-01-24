@@ -1,3 +1,5 @@
+- const config = require('./config.json')
+
 include ../../common.blocks/color-block/color-block.pug
 include ../../common.blocks/type-block/type-block.pug
 include ../../common.blocks/text-field/text-field.pug
@@ -37,15 +39,8 @@ html(lang="ru")
             .section-block
                 .colors-and-type
                     .colors-and-type__colors
-                        //- each color in colorBloks
-                        //-     +color-block(color)
-                        +color-block({theme: 'darkShade100', colorName: 'Dark Shade 100%', colorCode: '#1F2041'})
-                        +color-block({theme: 'darkShade75', colorName: 'Dark Shade 75%', colorCode: '#1F2041'})
-                        +color-block({theme: 'darkShade50', colorName: 'Dark Shade 50%', colorCode: '#1F2041'})
-                        +color-block({theme: 'darkShade25', colorName: 'Dark Shade 25%', colorCode: '#1F2041'})
-                        +color-block({theme: 'darkShade5', colorName: 'Dark Shade 5%', colorCode: '#1F2041'})
-                        +color-block({theme: 'purple', colorName: 'Purple', colorCode: '#BC9CFF'})
-                        +color-block({theme: 'green', colorName: 'Green', colorCode: '#6FCF97'})
+                        each colorBlock in config.colorBlocks
+                            +color-block({theme: colorBlock.theme, colorName: colorBlock.colorName, colorCode: colorBlock.colorCode})
                     .colors-and-type__type
                         //- - var r = [['h1', 'This one is the sub-section or widget title'], ['h2', 'Next one is the item title inside widgets'], ['h3', 'THIS IS A LABEL OR CTA TEXT'], ['span', 'This is the body text which is used for most of&nbsp;the design, like paragraphs, lists, etc.']]
                         //- each blockType in r

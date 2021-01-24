@@ -1,0 +1,31 @@
+{
+  "colorBlocks": [
+    {
+      "theme": "darkShade100",
+      "colorName": "Dark Shade 100%",
+      "colorCode": "#1F2041"
+    },
+    {
+      "theme": "darkShade75",
+      "colorName": "Dark Shade 75%",
+      "colorCode": "#1F2041"
+    },
+    {
+      "theme": "darkShade50",
+      "colorName": "Dark Shade 50%",
+      "colorCode": "#1F2041"
+    },
+    {
+      "theme": "darkShade25",
+      "colorName": "Dark Shade 25%",
+      "colorCode": "#1F2041"
+    },
+    {
+      "theme": "darkShade5",
+      "colorName": "Dark Shade 5%",
+      "colorCode": "#1F2041"
+    },
+    { "theme": "purple", "colorName": "Purple", "colorCode": "#BC9CFF" },
+    { "theme": "green", "colorName": "Green", "colorCode": "#6FCF97" }
+  ]
+}
