@@ -39,7 +39,9 @@ html(lang="ru")
                 .colors-and-type
                     .colors-and-type__colors
                         each colorBlock in config.colorBlocks
-                            +color-block({theme: colorBlock.theme, colorName: colorBlock.colorName, colorCode: colorBlock.colorCode})
+                            +color-block({theme: colorBlock.theme, 
+                            colorName: colorBlock.colorName, 
+                            colorCode: colorBlock.colorCode})
                     .colors-and-type__type
                         each typeBlock in config.typeBlocks
                             +type-block({tag: typeBlock.tag, text: typeBlock.text})
@@ -65,68 +67,74 @@ html(lang="ru")
                                     +dropdown(config.filterDateDropdown)
                                 .module
                                     h3(class='module__title') subscription text field
-                                    +text-field({placeholderText: 'Email', type: 'subscription'})
+                                    +text-field(config.subscriptionTextField)
                                 .module
-                                    +dropdown({type: 'comfort', id: 'uiComfortDrop', title: 'dropdown'})
+                                    +dropdown(config.comfortDropDown)
                                 .module
-                                    +expandable-checkbox-list({checkboxes: [{label: 'Завтрак', id: 'breakfast'}, {label: 'Письменный стол', id: 'desk', checked: true}, {label: 'Стул для кормления', 
-                                    id: 'feedingChair', checked: true}, {label: 'Кроватка', id: 'crib', checked: true}, {label: 'Телевизор', id: 'tv'}, {label: 'Шампунь', id: 'shampoo'}], title: 'expandable checkbox list', id: 'expandable- checkbox-list'})
+                                    +expandable-checkbox-list(config.expandableCheckboxList)
                         .form-elements__column.form-elements__column2.form-elements__column_side-paddings
                             .module
                                 h3(class='module__title') Checkbox Buttons
-                                +checkbox-button({label: 'Можно курить', id: 'noSmoking'})
-                                +checkbox-button({label: 'Можно с питомцами', id: 'pets', checked: true})
-                                +checkbox-button({label: 'Можно пригласить гостей (до&nbsp10&nbspчеловек)', id: 'guests', checked: true})
+                                each checkboxButton in config.checkboxButtons
+                                    +checkbox-button({ label: checkboxButton.label, 
+                                    id: checkboxButton.id, 
+                                    checked: checkboxButton.checked })
                             .module
                                 h3(class='module-title') Radio Buttons
-                                +radio-button({buttons: [{id: 'radio1', name: 'radio', value: 'male', text: 'Мужчина', checked: true}, {id: 'radio2', name: 'radio', value: 'female', text: 'Женщина'}]})
+                                +radio-button(config.radioButton)
                             .module
                                 h3(class='module-title') toggle
-                                +toggle({text: 'Получать спецпредложения', name: 'specialOffers', id: 'specialOffers'})
+                                +toggle(config.toggle)
                             .module
                                 h3(class='module-title') like button
                                 .likeButtonSection
-                                    +like-button({likesCount: 2})
-                                    +like-button({likesCount: 12, checked: true})
+                                    each likeButton in config.likeButtons
+                                        +like-button({ likesCount: likeButton.likesCount, checked: likeButton.checked })
                             .module
                                 h3(class='module-title') rate button
                                 .rateButtonSection
-                                    +rate-button({rate: 4})
-                                    +rate-button({rate: 5})
+                                    each rateButton in config.rateButtons
+                                        +rate-button({ rate: rateButton.rate })
                             .module
                                 h3(class='module-title') RICH CHECKBOX BUTTONS
-                                +checkbox-button({label: 'Широкий коридор', id: 'wideCorridor', checked: false, rich: true, text: 'Ширина коридоров в номере не&nbsp;менее 91 см.'})
-                                +checkbox-button({label: 'Помощник для инвалидов', id: 'disabledAssistant', checked: false, rich: true, text: 'На 1 этаже вас встретит специалист и&nbsp;проводит до номера.'})
+                                each richCheckboxButton in config.richCheckboxButtons
+                                        +checkbox-button({label: richCheckboxButton.label, 
+                                        id: richCheckboxButton.id, 
+                                        checked: richCheckboxButton.checked, 
+                                        rich: richCheckboxButton.rich, 
+                                        text: richCheckboxButton.text})
                         .form-elements__column.form-elements__column3
                             .module
-                                +range-slider({title: 'Range Slider', min1: 0, min2: 0, max1: 15000, max2: 15000, value1: 5000, value2: 10000})
+                                +range-slider(config.rangeSlider)
                             .buttons-block
                                 h3(class='module__title') Buttons
                                 .module
-                                    +button({text: 'click me'})
+                                    +button(config.button)
                                 .module
-                                    +button({text: 'click me', type: 'border'})
+                                    +button(config.borderButton)
                                 .module.module-2-buttons
-                                    +button({text: 'click me', type: 'onlyText'})
-                                    +button({text: 'click me', type: 'onlyText', theme: 'gray'})
+                                    each onlyTextButton in config.onlyTextButtons
+                                        +button({text: onlyTextButton.text, 
+                                        type: onlyTextButton.type, 
+                                        theme: onlyTextButton.theme})
                                 .module
-                                    +button({text: 'перейти к оплате', type: 'arrow'})
+                                    +button(config.arrowButton)
                                 .module
                                     h3(class='module__title') Pagination
-                                    +pagination({numberOfPages: 15, activePage: 1})
+                                    +pagination(config.pagination)
                                 .module.module__bullet-list
                                     h3(class='module__title') bullet list
-                                    +bullet-list({
-                                        menuItems: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а&nbsp;выезд до 12:00']
-                                    })
+                                    +bullet-list(config.bulletList)
                     .form-elements__two-column-layout
                         .form-elements__column.form-elements__column_no-margin
                             .module
-                                +room-details({icon: 'insert_emoticon', title: 'Комфорт', description: 'Шумопоглащающие стены'})
-                                +room-details({icon: 'location_city', title: 'Удобство', description: 'Окно в каждой из спален'})
+                                each roomDetails in config.roomsDetails
+                                        +room-details({icon: roomDetails.icon, 
+                                        title: roomDetails.title, description: 
+                                        roomDetails.description})
                         .form-elements__column_100-percent-width
                             .module.module__guest-review
-                                +guest-review({photo: '../images/reviewPhoto1.png', name: 'Мурад Сарафанов', days: 5, likes: 12, checkedLike: true, review: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
+                                +guest-review(config.guestReview)
             h1(class="section-title") Cards
             .section-block
                 .cards

@@ -50,5 +50,114 @@
     "type": "filter_date",
     "id": "uiFilterDateDrop",
     "title": "filter date dropdown"
+  },
+  "subscriptionTextField": {
+    "placeholderText": "Email",
+    "type": "subscription"
+  },
+  "comfortDropDown": {
+    "type": "comfort",
+    "id": "uiComfortDrop",
+    "title": "dropdown"
+  },
+  "expandableCheckboxList": {
+    "checkboxes": [
+      { "label": "Завтрак", "id": "breakfast" },
+      { "label": "Письменный стол", "id": "desk", "checked": true },
+      { "label": "Стул для кормления", "id": "feedingChair", "checked": true },
+      { "label": "Кроватка", "id": "crib", "checked": true },
+      { "label": "Телевизор", "id": "tv" },
+      { "label": "Шампунь", "id": "shampoo" }
+    ],
+    "title": "expandable checkbox list",
+    "id": "expandable- checkbox-list"
+  },
+  "checkboxButtons": [
+    { "label": "Можно курить", "id": "noSmoking" },
+    { "label": "Можно с питомцами", "id": "pets", "checked": true },
+    {
+      "label": "Можно пригласить гостей (до&nbsp10&nbspчеловек)",
+      "id": "guests",
+      "checked": true
+    }
+  ],
+  "radioButton": {
+    "buttons": [
+      {
+        "id": "radio1",
+        "name": "radio",
+        "value": "male",
+        "text": "Мужчина",
+        "checked": true
+      },
+      { "id": "radio2", "name": "radio", "value": "female", "text": "Женщина" }
+    ]
+  },
+  "toggle": {
+    "text": "Получать спецпредложения",
+    "name": "specialOffers",
+    "id": "specialOffers"
+  },
+  "likeButtons": [{ "likesCount": 2 }, { "likesCount": 12, "checked": true }],
+  "rateButtons": [{ "rate": 4 }, { "rate": 5 }],
+  "richCheckboxButtons": [
+    {
+      "label": "Широкий коридор",
+      "id": "wideCorridor",
+      "checked": false,
+      "rich": true,
+      "text": "Ширина коридоров в номере не&nbsp;менее 91 см."
+    },
+    {
+      "label": "Помощник для инвалидов",
+      "id": "disabledAssistant",
+      "checked": false,
+      "rich": true,
+      "text": "На 1 этаже вас встретит специалист и&nbsp;проводит до номера."
+    }
+  ],
+  "rangeSlider": {
+    "title": "Range Slider",
+    "min1": 0,
+    "min2": 0,
+    "max1": 15000,
+    "max2": 15000,
+    "value1": 5000,
+    "value2": 10000
+  },
+  "button": { "text": "click me" },
+  "borderButton": { "text": "click me", "type": "border" },
+  "onlyTextButtons": [
+    { "text": "click me", "type": "onlyText" },
+    { "text": "click me", "type": "onlyText", "theme": "gray" }
+  ],
+  "arrowButton": { "text": "перейти к оплате", "type": "arrow" },
+  "pagination": { "numberOfPages": 15, "activePage": 1 },
+  "bulletList": {
+    "menuItems": [
+      "Нельзя с питомцами",
+      "Без вечеринок и мероприятий",
+      "Время прибытия — после 13:00, а&nbsp;выезд до 12:00"
+    ]
+  },
+  "roomsDetails": [
+    {
+      "icon": "insert_emoticon",
+      "title": "Комфорт",
+      "description": "Шумопоглащающие стены"
+    },
+    {
+      "icon": "location_city",
+      "title": "Удобство",
+      "description": "Окно в каждой из спален"
+    }
+  ],
+  "guestReview": {
+    "photo": "../images/reviewPhoto1.png",
+    "name": "Мурад Сарафанов",
+    "days": 5,
+    "likes": 12,
+    "checkedLike": true,
+    "review": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
   }
 }
