@@ -12,9 +12,9 @@ mixin room-rate-card(args)
             .room-rate-card__price-per-day 
                 .room-rate-card__cost !{args.roomRate.toLocaleString('ru-RU')}₽&#32 
                 .room-rate-card__room-rate-label в сутки
-        +dropdown({type: 'date', id: 'roomRateDateDrop', title: 'прибытие', title2: 'выезд'})
+        +dropdown(args.dropdown1)
         .room-rate-card__drop-guests
-            +dropdown({type: 'guests', id: 'roomRateDrop', title: 'гости'})
+            +dropdown(args.dropdown2)
         .room-rate-card__room-rate-calc
             .room-rate-card__daily-calc !{args.roomRate}
             .room-rate-card__room-rate 0₽
@@ -34,4 +34,4 @@ mixin room-rate-card(args)
             .room-rate-card__result-label Итого
             .room-rate-card__result-dots
             .room-rate-card__result-cost 0₽
-        +button({type: 'arrow', text: 'забронировать'})
+        +button(args.button)

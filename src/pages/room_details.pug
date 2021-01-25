@@ -46,4 +46,25 @@ block content
                         h1(class='room-details__details-title room-details__details-title_cancel') Отмена
                         .room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
             .room-details__rate-card-container
-                +room-rate-card({'roomNumber': 888, 'lux': true, 'roomRate': 9990, 'serviceCost': -2179, 'additionalServiceCost': 300})
+                +room-rate-card({
+                    "roomNumber": 888,
+                    "lux": true,
+                    "roomRate": 9990,
+                    "serviceCost": -2179,
+                    "additionalServiceCost": 300,
+                    "dropdown1": {
+                        "type": "date",
+                        "id": "roomRateDateDrop",
+                        "title": "прибытие",
+                        "title2": "выезд"
+                    },
+                    "dropdown2": {
+                        "type": "guests",
+                        "id": "roomRateDrop",
+                        "title": "гости"
+                    },
+                    "button": {
+                        "type": "arrow",
+                        "text": "забронировать" 
+                    }
+  })

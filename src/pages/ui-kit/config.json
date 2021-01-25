@@ -174,5 +174,20 @@
       "title": "гости"
     },
     "button": { "type": "arrow", "text": "подобрать номер" }
+  },
+  "roomRateCard": {
+    "roomNumber": 888,
+    "lux": true,
+    "roomRate": 9990,
+    "serviceCost": -2179,
+    "additionalServiceCost": 300,
+    "dropdown1": {
+      "type": "date",
+      "id": "roomRateDateDrop",
+      "title": "прибытие",
+      "title2": "выезд"
+    },
+    "dropdown2": { "type": "guests", "id": "roomRateDrop", "title": "гости" },
+    "button": { "type": "arrow", "text": "забронировать" }
   }
 }
