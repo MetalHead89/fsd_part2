@@ -13,4 +13,43 @@ block content
         .registration-signin-page__background.registration-signin-page__background2
         .registration-signin-page__body-content-container
             .registration-signin-page__registration-card-container
-                +registration-card()
+                +registration-card({
+                    "title": "Регистрация аккаунта",
+                    "textFieldName": { "placeholderText": "Имя" },
+                    "textFieldSurname": { "placeholderText": "Фамилия" },
+                    "radioButton": {
+                    "buttons": [
+                        {
+                        "id": "radioMale",
+                        "name": "radioGender",
+                        "value": "male",
+                        "text": "Мужчина",
+                        "checked": true
+                        },
+                        {
+                        "id": "radioFemale",
+                        "name": "radioGender",
+                        "value": "female",
+                        "text": "Женщина"
+                        }
+                    ]
+                    },
+                    "textFieldBirth": {
+                    "placeholderText": "ДД.ММ.ГГГГ",
+                    "type": "masked",
+                    "title": "Дата рождения"
+                    },
+                    "textFieldEmail": {
+                    "placeholderText": "Email",
+                    "title": "Данные для входа в сервис"
+                    },
+                    "textFieldPassword": { "placeholderText": "Пароль" },
+                    "toggle": {
+                    "text": "Получать спецпредложения",
+                    "name": "toggleSpecialOffers",
+                    "id": "toggleSpecialOffers"
+                    },
+                    "buttonPayment": { "type": "arrow", "text": "перейти к оплате" },
+                    "loginLabel": "Уже есть аккаунт на Toxin",
+                    "buttonEntry": { "type": "border", "text": "войти" }
+                })
