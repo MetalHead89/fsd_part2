@@ -229,5 +229,13 @@
     },
     "dropdown2": { "type": "guests", "id": "roomRateDrop", "title": "гости" },
     "button": { "type": "arrow", "text": "забронировать" }
+  },
+  "entryCard": {
+    "title": "Войти",
+    "textFieldEmail": { "placeholderText": "Email" },
+    "textFieldPassword": { "placeholderText": "Пароль" },
+    "buttonEntry": { "type": "arrow", "text": "войти" },
+    "accountSectionLabel": "Нет аккаунта на Toxin?",
+    "buttonCreateAccount": { "type": "border", "text": "создать" }
   }
 }

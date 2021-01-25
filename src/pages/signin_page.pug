@@ -13,4 +13,11 @@ block content
         .registration-signin-page__background.registration-signin-page__background2
         .registration-signin-page__body-content-container
             .registration-signin-page__registration-card-container
-                +entry-card()
+                +entry-card({
+                    "title": "Войти",
+                    "textFieldEmail": { "placeholderText": "Email" },
+                    "textFieldPassword": { "placeholderText": "Пароль" },
+                    "buttonEntry": { "type": "arrow", "text": "войти" },
+                    "accountSectionLabel": "Нет аккаунта на Toxin?",
+                    "buttonCreateAccount": { "type": "border", "text": "создать" }
+                })
