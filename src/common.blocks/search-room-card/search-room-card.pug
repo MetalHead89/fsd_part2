@@ -1,12 +1,12 @@
 include ../dropdown/dropdown.pug
 include ../button/button.pug
 
-mixin search-room-card()
+mixin search-room-card(args)
     .search-room-card
-        h1(class='search-room-card__title search-room-card__title_margins') Найдём номера под ваши пожелания
+        h1(class='search-room-card__title search-room-card__title_margins') !{args.title}
         .search-room-card__dropdown
-            +dropdown({type: 'date', id: 'searchRoomDateDrop', title: 'прибытие', title2: 'выезд'})
+            +dropdown(args.dropdown1)
         .search-room-card__dropdown
-            +dropdown({type: 'guests', id: 'searchRoomGuestsDrop', title: 'гости'})
+            +dropdown(args.dropdown2)
         .search-room-card__button
-            +button({type: 'arrow', text: 'подобрать номер'})
+            +button(args.button)

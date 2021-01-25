@@ -135,12 +135,14 @@ html(lang="ru")
                         .form-elements__column_100-percent-width
                             .module.module__guest-review
                                 +guest-review(config.guestReview)
+
+            //- CARDS
             h1(class="section-title") Cards
             .section-block
                 .cards
                     .cards_column
                         .module
-                            +search-room-card()
+                            +search-room-card(config.searchRoomCard)
                         .module
                             +registration-card()
                     .cards_column

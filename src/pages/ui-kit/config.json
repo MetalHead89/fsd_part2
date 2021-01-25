@@ -159,5 +159,20 @@
     "likes": 12,
     "checkedLike": true,
     "review": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+  },
+  "searchRoomCard": {
+    "title": "Найдём номера под ваши пожелания",
+    "dropdown1": {
+      "type": "date",
+      "id": "searchRoomDateDrop",
+      "title": "прибытие",
+      "title2": "выезд"
+    },
+    "dropdown2": {
+      "type": "guests",
+      "id": "searchRoomGuestsDrop",
+      "title": "гости"
+    },
+    "button": { "type": "arrow", "text": "подобрать номер" }
   }
 }
