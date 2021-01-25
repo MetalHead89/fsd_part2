@@ -1,4 +1,5 @@
 // Styles
+import '@/pages/ui-kit/ui-kit.scss';
 import '@/scss/fonts.scss';
 import '@/scss/style.scss';
 import '@/scss/ui_kit.scss';
