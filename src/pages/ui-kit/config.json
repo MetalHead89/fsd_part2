@@ -237,5 +237,33 @@
     "buttonEntry": { "type": "arrow", "text": "войти" },
     "accountSectionLabel": "Нет аккаунта на Toxin?",
     "buttonCreateAccount": { "type": "border", "text": "создать" }
-  }
+  },
+  "numberCards": [
+    {
+      "roomNumber": 888,
+      "lux": true,
+      "roomRate": 9990,
+      "rating": 5,
+      "reviewsNumber": 145,
+      "images": [
+        "../images/number1.png",
+        "../images/number6.png",
+        "../images/number10.png",
+        "../images/number7.png"
+      ]
+    },
+    {
+      "roomNumber": 840,
+      "lux": false,
+      "roomRate": 9900,
+      "rating": 4,
+      "reviewsNumber": 65,
+      "images": [
+        "../images/number2.png",
+        "../images/number12.png",
+        "../images/number8.png",
+        "../images/number3.png"
+      ]
+    }
+  ]
 }
