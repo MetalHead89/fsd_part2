@@ -32,18 +32,20 @@ html(lang="ru")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title UI kit
     body
-        section
-            //- COLORS AND TYPE
-            h1(class="section-title") Colors & Type
+        //- COLORS AND TYPE
+        section(class="section")
+            h1(class="section__title") Colors & Type
             .colors-and-type
                 .colors-and-type__colors
                     each colorBlock in config.colorBlocks
-                        +color-block({theme: colorBlock.theme, 
-                        colorName: colorBlock.colorName, 
-                        colorCode: colorBlock.colorCode})
+                        .colors-and-type__color-block
+                            +color-block({theme: colorBlock.theme, 
+                            colorName: colorBlock.colorName, 
+                            colorCode: colorBlock.colorCode})
                 .colors-and-type__type
                     each typeBlock in config.typeBlocks
-                        +type-block({tag: typeBlock.tag, text: typeBlock.text})
+                        .colors-and-type__type-block
+                            +type-block({tag: typeBlock.tag, text: typeBlock.text})
             
         .central-container
             //- FORM ELEMENTS
