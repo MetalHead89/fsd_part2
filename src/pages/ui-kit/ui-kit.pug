@@ -173,8 +173,9 @@ html(lang="ru")
                         each numberCard in config.numberCards
                             .cards__block-wrapper
                                 +number-card(numberCard)
-            h1(class="section-title") Headers & Footers
-
-        .central-container
-        +header()
-        +footer()
+                                
+        //- HEADERS & FOOTERS
+        section
+            h1(class="headers-and-footers__title") Headers & Footers
+            +header()
+            +footer()

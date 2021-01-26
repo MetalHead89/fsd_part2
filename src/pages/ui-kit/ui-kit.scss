@@ -4,11 +4,6 @@
   padding: 0 20px 100px 20px;
 }
 
-// .section__title {
-//   font-family: 'Montserrat';
-//   margin-bottom: 50px;
-// }
-
 // COLORS AND TYPE SECTION
 
 .colors-and-type-section__title {
@@ -265,5 +260,21 @@
       'one one'
       'two two'
       'three three';
+  }
+}
+
+// HEADERS & FOOTERS
+
+.headers-and-footers__title {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-family: 'Montserrat';
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+  .headers-and-footers__title {
+    text-align: center;
   }
 }
