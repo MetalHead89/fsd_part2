@@ -155,25 +155,24 @@ html(lang="ru")
         //- CARDS
         section(class="section")
             h1(class="section-title") Cards
-            .section-block
-                .cards
-                    .cards_column
-                        .cards__block-wrapper
-                            +search-room-card(config.searchRoomCard)
-                        .cards__block-wrapper
-                            +registration-card(config.registrationCard)
-                    .cards_column
-                        .cards__block-wrapper
-                            +room-rate-card(config.roomRateCard)
-                        .cards__block-wrapper
-                            +entry-card(config.entryCard)
-                    .cards_column
-                        .cards__block-wrapper.cards__block-wrapper_width-320
-                            +calendar()
-                        .cards__column_width-270
-                            each numberCard in config.numberCards
-                                .cards__block-wrapper
-                                    +number-card(numberCard)
+            .cards
+                .cards__column.cards__column-one
+                    .cards__block-wrapper
+                        +search-room-card(config.searchRoomCard)
+                    .cards__block-wrapper
+                        +registration-card(config.registrationCard)
+                .cards__column.cards__column-two
+                    .cards__block-wrapper
+                        +room-rate-card(config.roomRateCard)
+                    .cards__block-wrapper
+                        +entry-card(config.entryCard)
+                .cards__column.cards__column-three
+                    .cards__block-wrapper.cards__block-wrapper_width-320
+                        +calendar()
+                    .cards__column_width-270
+                        each numberCard in config.numberCards
+                            .cards__block-wrapper
+                                +number-card(numberCard)
             h1(class="section-title") Headers & Footers
 
         .central-container
