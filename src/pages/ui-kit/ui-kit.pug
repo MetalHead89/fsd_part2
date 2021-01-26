@@ -49,8 +49,8 @@ html(lang="ru")
                         .colors-and-type__type-block
                             +type-block({tag: typeBlock.tag, text: typeBlock.text})
             
+        //- FORM ELEMENTS
         section(class="section")
-            //- FORM ELEMENTS
             h1(class="form-elements__title") Form Elements
             .form-elements
                 section(class="form-elements__three-column-section")
@@ -151,28 +151,31 @@ html(lang="ru")
                     .form-elements__column_width-713
                         .form-elements__block-wrapper
                             +guest-review(config.guestReview)
-        .central-container
-            //- CARDS
+        
+        //- CARDS
+        section(class="section")
             h1(class="section-title") Cards
             .section-block
                 .cards
                     .cards_column
-                        .form-elements__block-wrapper
+                        .cards__block-wrapper
                             +search-room-card(config.searchRoomCard)
-                        .form-elements__block-wrapper
+                        .cards__block-wrapper
                             +registration-card(config.registrationCard)
                     .cards_column
-                        .form-elements__block-wrapper
+                        .cards__block-wrapper
                             +room-rate-card(config.roomRateCard)
-                        .form-elements__block-wrapper
+                        .cards__block-wrapper
                             +entry-card(config.entryCard)
                     .cards_column
-                        .form-elements__block-wrapper.form-elements__block-wrapper_calendar
+                        .cards__block-wrapper.cards__block-wrapper_width-320
                             +calendar()
-                        .cards_column-270
+                        .cards__column_width-270
                             each numberCard in config.numberCards
-                                .form-elements__block-wrapper
+                                .cards__block-wrapper
                                     +number-card(numberCard)
             h1(class="section-title") Headers & Footers
+
+        .central-container
         +header()
         +footer()
