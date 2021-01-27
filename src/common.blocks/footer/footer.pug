@@ -1,48 +1,25 @@
 include ../text-field/text-field.pug
 
-mixin footer()
-    footer(claass='footer')
+mixin footer(args)
+    footer(class='footer')
         .footer__info-wrapper
             .footer__info
-                ul(class='footer__info-column footer__info-column_width-260 footer__info-column_margin-left-0')
-                    li(class='footer__info-item')
-                        img(class='footer__logo' src='/assets/images/logo.svg', alt="logo")
-                    li(class='footer__info-item')
-                        span Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-                
-                ul(class='footer__info-column')
-                    li(class='footer__info-title') Навигация
-                    li(class='footer__info-item') О нас
-                    li(class='footer__info-item') Новости
-                    li(class='footer__info-item') Служба поддержки
-                    li(class='footer__info-item') Услуги
-                
-                ul(class='footer__info-column')
-                    li(class='footer__info-title') О нас
-                    li(class='footer__info-item') О сервисе
-                    li(class='footer__info-item') Наша команда
-                    li(class='footer__info-item') Вакансии
-                    li(class='footer__info-item') Инвесторы
-
-                ul(class='footer__info-column')
-                    li(class='footer__info-title') Служба поддержки
-                    li(class='footer__info-item') Соглашения
-                    li(class='footer__info-item') Сообщества
-                    li(class='footer__info-item') Связь с нами
-                
-                ul(class='footer__info-column footer__info-column_width-260 footer__info-column_margin-right-0')
-                    li(class='footer__info-title') Подписка
-                    li(class='footer__info-item') Получайте специальные предложения и новости сервиса
-                    li(class='footer__info-item')
-                        +text-field({placeholderText: 'Email', type: 'subscription'})
+                each list in args.info
+                    ul(class=list.listStyle)
+                        if list.title
+                            li(class='footer__info-title') !{list.title}
+                        each item in list.items
+                            if item.image
+                                img(class=item.image.class, src=item.image.src, alt=item.image.alt)
+                            else if item.textField
+                                +text-field(item.textField)
+                            else
+                                li(class='footer__info-item') !{item}
         .footer__copyright-wrapper
             .footer__copyright
-                img(class='footer__logo footer__logo_hidden' src='/assets/images/logo.svg', alt="logo")
-                .footer__copyright-text Copyright © 2018 Toxin отель. Все права зачищены.
+                img(class='footer__logo footer__logo_hidden' src=args.copyright.image, alt="logo")
+                .footer__copyright-text !{args.copyright.text}
                 .footer__socials-icons
-                    a(href='https://twitter.com/', class='footer__social-link')
-                        i(class='fab fa-twitter')
-                    a(href='https://www.facebook.com/' class='footer__social-link')
-                        i(class='fab fa-facebook-square')
-                    a(href='https://www.instagram.com/' class='footer__social-link')
-                        i(class='fab fa-instagram')
+                    each socialLink in args.copyright.social
+                        a(href=socialLink.href, class='footer__social-link')
+                            i(class=socialLink.class)
