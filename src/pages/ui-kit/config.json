@@ -266,8 +266,9 @@
       ]
     }
   ],
-  "navbar": {
-    "nav": [
+  "header": {
+    "logoPath": "../images/logo.svg",
+    "navbar": [
       "О нас",
       {
         "title": "Услуги",

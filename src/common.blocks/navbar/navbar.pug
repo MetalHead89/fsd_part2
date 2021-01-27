@@ -16,28 +16,17 @@ mixin navbar(args)
 
     <nav class='navbar'>
         ul(class=navbarClass)
-            li(class=navbarItemClass) О нас
-            li(class=navbarItemClass)
-                div(class=dropdownTitleClass)
-                    span Услуги 
-                    i(class='material-icons') expand_more
-                ul(class=navbarHiddenListClass)
-                    li(class=navbarHiddenListItemClass) Обслуживание номеров
-                    li(class=navbarHiddenListItemClass) Парковка
-                    li(class=navbarHiddenListItemClass) Персональный сейф
-                    li(class=navbarHiddenListItemClass) Интернет
-                    li(class=navbarHiddenListItemClass) Кабельное телевидние
-                    li(class=navbarHiddenListItemClass) Питание
-            li(class=navbarItemClass) Вакансии
-            li(class=navbarItemClass) Новости
-            li(class=navbarItemClass)
-                div(class=dropdownTitleClass)
-                    span Соглашения
-                    i(class='material-icons') expand_more
-                ul(class=navbarHiddenListClass)
-                    li(class=navbarHiddenListItemClass) Правила проживания
-                    li(class=navbarHiddenListItemClass) Бонусная программа
-                    li(class=navbarHiddenListItemClass) Политика конфиденциальности
+            each item in args.items
+                if item.items
+                    li(class=navbarItemClass)
+                        div(class=dropdownTitleClass)
+                            span !{item.title} 
+                            i(class='material-icons') expand_more
+                        ul(class=navbarHiddenListClass)
+                            each hiddenItem in item.items
+                                li(class=navbarHiddenListItemClass) !{hiddenItem}
+                else
+                    li(class=navbarItemClass) !{item}
             li(class=navbarItemClass + ' navbar__item_with-separator')
                 div(class=separatorClass)
             li(class=navbarItemClass + ' navbar__item_with-name') Виталий Бакалов
