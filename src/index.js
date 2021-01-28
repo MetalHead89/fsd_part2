@@ -6,7 +6,7 @@ import '@/pages/landing-page/landing-page.scss';
 import '@/scss/search_room.scss';
 import '@/scss/room_details.scss';
 import '@/pages/registration-page/registration-page.scss';
-import '@/scss/registration_signin_page.scss';
+import '@/pages/signin-page/signin-page.scss';
 import '@/pages/page-with-links/page-with-links.scss';
 
 // color-block

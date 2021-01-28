@@ -5,19 +5,12 @@ block includs
     
 
 block title
-    | Registration Page
+    | Signin Page
 
 block content
-    .registration-signin-page__body
-        .registration-signin-page__background.registration-signin-page__background1
-        .registration-signin-page__background.registration-signin-page__background2
-        .registration-signin-page__body-content-container
-            .registration-signin-page__registration-card-container
-                +entry-card({
-                    "title": "Войти",
-                    "textFieldEmail": { "placeholderText": "Email" },
-                    "textFieldPassword": { "placeholderText": "Пароль" },
-                    "buttonEntry": { "type": "arrow", "text": "войти" },
-                    "accountSectionLabel": "Нет аккаунта на Toxin?",
-                    "buttonCreateAccount": { "type": "border", "text": "создать" }
-                })
+    .signin
+        .signin__background.signin__background_first
+        .signin__background.signin__background_second
+        .signin__content-container
+            .signin__card-container
+                +entry-card(config.signinPage)
