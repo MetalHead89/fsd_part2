@@ -50,8 +50,8 @@ module.exports = {
       filename: 'assets/pages/registration-page.html',
     }),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pages/signin_page.pug'),
-      filename: 'assets/pages/signin_page.html',
+      template: path.resolve(__dirname, 'src/pages/signin-page/signin-page.pug'),
+      filename: 'assets/pages/signin-page.html',
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin([{ filename: '[name].css' }]),

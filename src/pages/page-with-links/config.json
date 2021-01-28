@@ -5,6 +5,6 @@
     { "href": "assets/pages/search_room.html", "text": "Search room" },
     { "href": "assets/pages/room_details", "text": "Room details" },
     { "href": "assets/pages/registration-page.html", "text": "Registration" },
-    { "href": "assets/pages/signin_page.html", "text": "Sign in" }
+    { "href": "assets/pages/signin-page.html", "text": "Sign in" }
   ]
 }
