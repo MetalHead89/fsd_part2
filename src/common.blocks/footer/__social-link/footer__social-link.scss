@@ -5,15 +5,11 @@
   -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 0 11px;
   transition: opacity 0.5s ease-in;
   &:hover {
     opacity: 75%;
   }
-  &:first-child {
-    margin-right: 0;
-  }
-  &:last-child {
-    margin-right: 0;
+  & + .footer__social-link {
+    margin-left: 22px;
   }
 }

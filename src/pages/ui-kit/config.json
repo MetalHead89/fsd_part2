@@ -296,7 +296,7 @@
   "footer": {
     "info": [
       {
-        "listStyle": "footer__info-column footer__info-column_width-260 footer__info-column_margin-left-0",
+        "listStyle": "footer__info-column footer__info-column_width-260",
         "image": {
           "class": "footer__logo",
           "src": "/assets/images/logo.svg",
@@ -323,7 +323,7 @@
         "items": ["Соглашения", "Сообщества", "Связь с нами"]
       },
       {
-        "listStyle": "footer__info-column footer__info-column_width-260 footer__info-column_margin-left-0",
+        "listStyle": "footer__info-column footer__info-column_width-260",
         "title": "Подписка",
         "items": [
           "Получайте специальные предложения и новости сервиса",

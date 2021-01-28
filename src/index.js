@@ -260,8 +260,6 @@ import '@/common.blocks/footer/footer.scss';
 import '@/common.blocks/footer/__info-wrapper/footer__info-wrapper.scss';
 import '@/common.blocks/footer/__info/footer__info.scss';
 import '@/common.blocks/footer/__info-column/footer__info-column.scss';
-import '@/common.blocks/footer/__info-column/_margin-left-0/footer__info-column_margin-left-0.scss';
-import '@/common.blocks/footer/__info-column/_margin-right-0/footer__info-column_margin-right-0.scss';
 import '@/common.blocks/footer/__info-column/_width-260/footer__info-column_width-260.scss';
 import '@/common.blocks/footer/__info-item/footer__info-item.scss';
 import '@/common.blocks/footer/__info-title/footer__info-title.scss';
@@ -269,6 +267,7 @@ import '@/common.blocks/footer/__logo/footer__logo.scss';
 import '@/common.blocks/footer/__logo/_hidden/footer__logo_hidden.scss';
 import '@/common.blocks/footer/__copyright-wrapper/footer__copyright-wrapper.scss';
 import '@/common.blocks/footer/__copyright/footer__copyright.scss';
+import '@/common.blocks/footer/__copyright-text/footer__copyright-text.scss';
 import '@/common.blocks/footer/__social-link/footer__social-link.scss';
 
 // navbar
