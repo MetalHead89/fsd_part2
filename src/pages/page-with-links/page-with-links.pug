@@ -1,14 +1,7 @@
+- const config = require("./config.json")
+
 nav(class="links-wrapper")
     ul.links
-        li.links__item
-            a(class="links__link" href="assets/pages/ui-kit.html") UI kit
-        li.links__item
-            a(class="links__link" href="assets/pages/landing-page.html") Landing page
-        li.links__item
-            a(class="links__link" href="assets/pages/search_room.html") Search room
-        li.links__item
-            a(class="links__link" href="assets/pages/room_details.html") Room details
-        li.links__item
-            a(class="links__link" href="assets/pages/registration_page.html") Registration
-        li.links__item
-            a(class="links__link" href="assets/pages/signin_page.html") Sign in
+        each link in config.links
+            li.links__item
+                a(class="links__link" href=link.href) !{link.text}
