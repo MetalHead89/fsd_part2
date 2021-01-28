@@ -1,5 +1,3 @@
-@import 'vars.scss';
-
 .links-wrapper {
     height: 100vh;
     display: flex;
@@ -24,9 +22,9 @@
 
 .links__link {
     text-decoration: none;
-    color: $blue;
+    color: #8BA4F9;
     transition: color .3s ease-in;
     &:hover {
-        color: $purple;
+        color: #BC9CFF;
     }
 }
