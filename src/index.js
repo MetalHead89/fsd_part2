@@ -2,7 +2,7 @@
 import '@/pages/ui-kit/ui-kit.scss';
 import '@/scss/fonts.scss';
 import '@/scss/style.scss';
-import '@/scss/landing_page.scss';
+import '@/pages/landing-page/landing-page.scss';
 import '@/scss/search_room.scss';
 import '@/scss/room_details.scss';
 import '@/scss/registration_signin_page.scss';
