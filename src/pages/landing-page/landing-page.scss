@@ -3,7 +3,7 @@
     z-index: 3;
 }
 
-.landing-page__landing-body {
+.landing-page {
     position: relative;
     width: 100%;
     height: 100%;
@@ -11,19 +11,19 @@
     box-sizing: border-box;
 }
 
-.background1 {
+.landing-page__background_first {
     background: url('../../assets/images/landing-image-1.png');
-    animation: landing-animation1 40s infinite;
+    animation: landing-animation-1 40s infinite;
 }
 
-.background2 {
+.landing-page__background_second {
     background: url('../../assets/images/landing-image-2.png');
-    animation: landing-animation2 40s infinite;
+    animation: landing-animation-2 40s infinite;
 }
 
-.background3 {
+.landing-page__background_third {
     background: url('../../assets/images/landing-image-3.png');
-    animation: landing-animation3 40s infinite;
+    animation: landing-animation-3 40s infinite;
 }
 
 .landing-page__background {
@@ -39,7 +39,7 @@
     z-index: 1;
 }
 
-.landing-page__body-content-container {
+.landing-page__content-container {
     position: relative;
     width: 100%;
     height: 100%;
@@ -50,7 +50,7 @@
     margin: 0 auto;
 }
 
-.landing-page__search-card-container {
+.landing-page__card-container {
     width: 100%;
     max-width: 380px;
 }
@@ -67,7 +67,7 @@
     color: rgba(31, 32, 65, 0.75);
 }
 
-@keyframes landing-animation1 {
+@keyframes landing-animation-1 {
     0% {
         opacity: 1;
     }
@@ -85,7 +85,7 @@
     }
 }
 
-@keyframes landing-animation2 {
+@keyframes landing-animation-2 {
     0% {
         opacity: 0;
     }
@@ -106,7 +106,7 @@
     }
 }
 
-@keyframes landing-animation3 {
+@keyframes landing-animation-3 {
     0% {
         opacity: 0;
     }
