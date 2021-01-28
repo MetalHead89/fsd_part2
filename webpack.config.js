@@ -46,8 +46,8 @@ module.exports = {
       filename: 'assets/pages/room_details.html',
     }),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pages/registration_page.pug'),
-      filename: 'assets/pages/registration_page.html',
+      template: path.resolve(__dirname, 'src/pages/registration-page/registration-page.pug'),
+      filename: 'assets/pages/registration-page.html',
     }),
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, 'src/pages/signin_page.pug'),
