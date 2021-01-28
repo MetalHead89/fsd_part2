@@ -34,8 +34,8 @@ module.exports = {
       filename: 'assets/pages/ui-kit.html',
     }),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pages/landing_page.pug'),
-      filename: 'assets/pages/landing_page.html',
+      template: path.resolve(__dirname, 'src/pages/landing-page/landing-page.pug'),
+      filename: 'assets/pages/landing-page.html',
     }),
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, 'src/pages/search_room.pug'),
