@@ -1,0 +1,18 @@
+{
+  "searchRoomCard": {
+    "title": "Найдём номера под ваши пожелания",
+    "dropdown1": {
+      "type": "date",
+      "id": "searchRoomDateDrop",
+      "title": "прибытие",
+      "title2": "выезд"
+    },
+    "dropdown2": {
+      "type": "guests",
+      "id": "searchRoomGuestsDrop",
+      "title": "гости"
+    },
+    "button": { "type": "arrow", "text": "подобрать номер" }
+  },
+  "bodyText": "Лучшие номера для вашей работы, отдыха и просто вдохновения"
+}

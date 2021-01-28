@@ -13,14 +13,5 @@ block content
         .landing-page__background.background3
         .landing-page__body-content-container
             .landing-page__search-card-container
-                +search-room-card({"title": "Найдём номера под ваши пожелания",
-                "dropdown1": {"type": "date",
-                "id": "searchRoomDateDrop",
-                "title": "прибытие",
-                "title2": "выезд"},
-                "dropdown2": {"type": "guests",
-                "id": "searchRoomGuestsDrop",
-                "title": "гости"},
-                "button": { "type": "arrow", "text": "подобрать номер" }
-  })
-            .landing-page__body-text Лучшие номера для вашей работы, отдыха и просто вдохновения
+                +search-room-card(config.searchRoomCard)
+            .landing-page__body-text !{config.bodyText}
