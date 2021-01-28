@@ -27,7 +27,7 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pages/page_with_links.pug'),
+      template: path.resolve(__dirname, 'src/pages/page-with-links/page-with-links.pug'),
     }),
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, 'src/pages/ui-kit/ui-kit.pug'),
