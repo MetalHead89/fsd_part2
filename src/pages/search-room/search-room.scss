@@ -1,4 +1,4 @@
-.search-room__body {
+.search-room {
     box-sizing: border-box;
     background: white;
     width: 100%;
@@ -26,7 +26,7 @@
 .search-room__filter {
     padding: 20px;
     display: none;
-    flex-direction: raw;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     cursor: pointer;
