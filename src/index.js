@@ -1,7 +1,6 @@
 // Styles
 import '@/pages/ui-kit/ui-kit.scss';
-import '@/scss/fonts.scss';
-import '@/scss/style.scss';
+import '@/pages/layout-for-pages/layout-for-pages.scss';
 import '@/pages/landing-page/landing-page.scss';
 import '@/pages/search-room/search-room.scss';
 import '@/pages/room-details/room-details.scss';
