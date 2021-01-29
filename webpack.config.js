@@ -38,8 +38,8 @@ module.exports = {
       filename: 'assets/pages/landing-page.html',
     }),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pages/search_room.pug'),
-      filename: 'assets/pages/search_room.html',
+      template: path.resolve(__dirname, 'src/pages/search-room/search-room.pug'),
+      filename: 'assets/pages/search-room.html',
     }),
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, 'src/pages/room-details/room-details.pug'),

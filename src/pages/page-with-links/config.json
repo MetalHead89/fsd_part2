@@ -2,7 +2,7 @@
   "links": [
     { "href": "assets/pages/ui-kit.html", "text": "UI kit" },
     { "href": "assets/pages/landing-page.html", "text": "Landing page" },
-    { "href": "assets/pages/search_room.html", "text": "Search room" },
+    { "href": "assets/pages/search-room.html", "text": "Search room" },
     { "href": "assets/pages/room-details.html", "text": "Room details" },
     { "href": "assets/pages/registration-page.html", "text": "Registration" },
     { "href": "assets/pages/signin-page.html", "text": "Sign in" }
