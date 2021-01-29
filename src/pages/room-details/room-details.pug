@@ -21,50 +21,25 @@ block content
             .room-details__room-info
                 .room-details__top-info-section
                     .room-details__details-container
-                        h1(class='room-details__details-title') Сведения о номере
-                        +room-details({icon: 'insert_emoticon', title: 'Комфорт', description: 'Шумопоглащающие стены'})
-                        +room-details({icon: 'location_city', title: 'Удобство', description: 'Окно в каждой из спален'})
-                        +room-details({icon: 'whatshot', title: 'Уют', description: 'Номер оснащён камином'})
+                        h1(class='room-details__details-title') !{config.roomDetailsTitle}
+                        each detail in config.roomDetails
+                            +room-details(detail)
                     .room-details__impressions-diagram
-                        h1(class='room-details__details-title') Впечатления от номера
-                        +impressions-diagram({magnificently: 130, good: 65, satisfactorily: 65, disappointed: 0})
+                        h1(class='room-details__details-title') !{config.roomImpressionsTitle}
+                        +impressions-diagram(config.impressionsDiagram)
 
                 .room-details__reviews-header
-                    h1(class='room-details__details-title') Отзывы посетителей номера
-                    .room-details__reviews-count  2 отзыва
-                .room-details__guest-review-container
-                    +guest-review({photo: '../images/reviewPhoto1.png', name: 'Мурад Сарафанов', days: 5, likes: 12, checkedLike: true, review: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
-                .room-details__guest-review-container
-                    +guest-review({photo: '../images/reviewPhoto2.png', name: 'Патрисия Стёклышкова', days: 7, likes: 2, checkedLike: false, review: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'})
+                    h1(class='room-details__details-title') !{config.guestReviewsTitle}
+                    .room-details__reviews-count  !{config.guestReviews.length} отзыва
+                each review in config.guestReviews
+                    .room-details__guest-review-container
+                        +guest-review(review)
                 .room-details__bottom-info-section
                     .room-details__details-container.room-details__details-container_bullet-list
-                        h1(class='room-details__details-title room-details__details-title_bullet-list') Правила
-                        +bullet-list({
-                            menuItems: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а&nbsp;выезд до 12:00']
-                        })
+                        h1(class='room-details__details-title room-details__details-title_bullet-list') !{config.rulesTitle}
+                        +bullet-list(config.bulletList)
                     .room-details__details-container
-                        h1(class='room-details__details-title room-details__details-title_cancel') Отмена
-                        .room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                        h1(class='room-details__details-title room-details__details-title_cancel') !{config.cancelTitle}
+                        .room-details__cancel-text !{config.cancelText}
             .room-details__rate-card-container
-                +room-rate-card({
-                    "roomNumber": 888,
-                    "lux": true,
-                    "roomRate": 9990,
-                    "serviceCost": -2179,
-                    "additionalServiceCost": 300,
-                    "dropdown1": {
-                        "type": "date",
-                        "id": "roomRateDateDrop",
-                        "title": "прибытие",
-                        "title2": "выезд"
-                    },
-                    "dropdown2": {
-                        "type": "guests",
-                        "id": "roomRateDrop",
-                        "title": "гости"
-                    },
-                    "button": {
-                        "type": "arrow",
-                        "text": "забронировать" 
-                    }
-  })
+                +room-rate-card(config.roomRateCard)

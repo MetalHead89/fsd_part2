@@ -1,3 +1,78 @@
 {
-  "test": "test"
+  "roomDetailsTitle": "Сведения о номере",
+  "roomDetails": [
+    {
+      "icon": "insert_emoticon",
+      "title": "Комфорт",
+      "description": "Шумопоглащающие стены"
+    },
+    {
+      "icon": "location_city",
+      "title": "Удобство",
+      "description": "Окно в каждой из спален"
+    },
+    {
+      "icon": "whatshot",
+      "title": "Уют",
+      "description": "Номер оснащён камином"
+    }
+  ],
+  "roomImpressionsTitle": "Впечатления от номера",
+  "impressionsDiagram": {
+    "magnificently": 130,
+    "good": 65,
+    "satisfactorily": 65,
+    "disappointed": 0
+  },
+  "guestReviewsTitle": "Отзывы посетителей номера",
+  "guestReviews": [
+    {
+      "photo": "../images/reviewPhoto1.png",
+      "name": "Мурад Сарафанов",
+      "days": 5,
+      "likes": 12,
+      "checkedLike": true,
+      "review": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+    },
+    {
+      "photo": "../images/reviewPhoto2.png",
+      "name": "Патрисия Стёклышкова",
+      "days": 7,
+      "likes": 2,
+      "checkedLike": false,
+      "review": "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
+    }
+  ],
+  "rulesTitle": "Правила",
+  "bulletList": {
+    "menuItems": [
+      "Нельзя с питомцами",
+      "Без вечеринок и мероприятий",
+      "Время прибытия — после 13:00, а&nbsp;выезд до 12:00"
+    ]
+  },
+  "cancelTitle": "Отмена",
+  "cancelText": "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.",
+  "roomRateCard": {
+    "roomNumber": 888,
+    "lux": true,
+    "roomRate": 9990,
+    "serviceCost": -2179,
+    "additionalServiceCost": 300,
+    "dropdown1": {
+      "type": "date",
+      "id": "roomRateDateDrop",
+      "title": "прибытие",
+      "title2": "выезд"
+    },
+    "dropdown2": {
+      "type": "guests",
+      "id": "roomRateDrop",
+      "title": "гости"
+    },
+    "button": {
+      "type": "arrow",
+      "text": "забронировать"
+    }
+  }
 }
