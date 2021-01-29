@@ -3,7 +3,7 @@ import '@/pages/ui-kit/ui-kit.scss';
 import '@/scss/fonts.scss';
 import '@/scss/style.scss';
 import '@/pages/landing-page/landing-page.scss';
-import '@/scss/search_room.scss';
+import '@/pages/search-room/search-room.scss';
 import '@/pages/room-details/room-details.scss';
 import '@/pages/registration-page/registration-page.scss';
 import '@/pages/signin-page/signin-page.scss';
