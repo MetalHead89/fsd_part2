@@ -1,0 +1,82 @@
+{
+  "header": {
+    "logoPath": "../images/logo.svg",
+    "navbar": [
+      "О нас",
+      {
+        "title": "Услуги",
+        "items": [
+          "Обслуживание номеров",
+          "Парковка",
+          "Персональный сейф",
+          "Интернет",
+          "Кабельное телевидние",
+          "Питание"
+        ]
+      },
+      "Вакансии",
+      "Новости",
+      {
+        "title": "Соглашения",
+        "items": [
+          "Правила проживания",
+          "Бонусная программа",
+          "Политика конфиденциальности"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "info": [
+      {
+        "listStyle": "footer__info-column footer__info-column_width-260",
+        "image": {
+          "class": "footer__logo",
+          "src": "/assets/images/logo.svg",
+          "alt": "logo"
+        },
+        "items": [
+          "<img class='footer__logo' src='/assets/images/logo.svg', alt='logo'/>",
+          "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+        ]
+      },
+      {
+        "listStyle": "footer__info-column",
+        "title": "Навигация",
+        "items": ["О нас", "Новости", "Служба поддержки", "Услуги"]
+      },
+      {
+        "listStyle": "footer__info-column",
+        "title": "О нас",
+        "items": ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"]
+      },
+      {
+        "listStyle": "footer__info-column",
+        "title": "Служба поддержки",
+        "items": ["Соглашения", "Сообщества", "Связь с нами"]
+      },
+      {
+        "listStyle": "footer__info-column footer__info-column_width-260",
+        "title": "Подписка",
+        "items": [
+          "Получайте специальные предложения и новости сервиса",
+          {
+            "textField": { "placeholderText": "Email", "type": "subscription" }
+          }
+        ]
+      }
+    ],
+    "copyright": {
+      "image": "/assets/images/logo.svg",
+      "text": "Copyright © 2018 Toxin отель. Все права зачищены.",
+      "social": [
+        { "href": "https://twitter.com/", "class": "fab fa-twitter" },
+        {
+          "href": "https://www.facebook.com/",
+          "class": "fab fa-facebook-square"
+        },
+        { "href": "https://www.instagram.com/", "class": "fab fa-instagram" }
+      ]
+    }
+  }
+}

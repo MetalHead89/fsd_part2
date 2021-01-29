@@ -1,4 +1,5 @@
 - const config = require('./config.json')
+- const layoutConfig = require('../layout-for-pages/config.json')
 
 include ../../common.blocks/header/header.pug
 include ../../common.blocks/footer/footer.pug
@@ -13,34 +14,9 @@ html(lang="ru")
         title 
             block title
     body
-        +header({navbar: {
-            "navbar": [
-            "О нас",
-            {
-                "title": "Услуги",
-                "items": [
-                "Обслуживание номеров",
-                "Парковка",
-                "Персональный сейф",
-                "Интернет",
-                "Кабельное телевидние",
-                "Питание"
-                ]
-            },
-            "Вакансии",
-            "Новости",
-            {
-                "title": "Соглашения",
-                "items": [
-                "Правила проживания",
-                "Бонусная программа",
-                "Политика конфиденциальности"
-                ]
-            }
-            ]
-        }})
+        +header(layoutConfig.header)
 
         article
             block content
 
-        //- +footer()
+        +footer(layoutConfig.footer)
