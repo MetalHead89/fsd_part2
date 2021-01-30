@@ -1,7 +1,14 @@
 - const config = require("./config.json")
 
-nav(class="links-wrapper")
-    ul.links
-        each link in config.links
-            li.links__item
-                a(class="links__link" href=link.href) !{link.text}
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Links
+    body
+        nav(class="links-wrapper")
+            ul.links
+                each link in config.links
+                    li.links__item
+                        a(class="links__link" href=link.href) !{link.text}
