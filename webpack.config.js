@@ -27,30 +27,49 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pages/page-with-links/page-with-links.pug'),
+      template: path.resolve(
+        __dirname,
+        'src/pages/page-with-links/page-with-links.pug'
+      ),
+      favicon: path.resolve(__dirname, 'favicon.ico'),
     }),
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, 'src/pages/ui-kit/ui-kit.pug'),
       filename: 'assets/pages/ui-kit.html',
     }),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pages/landing-page/landing-page.pug'),
+      template: path.resolve(
+        __dirname,
+        'src/pages/landing-page/landing-page.pug'
+      ),
       filename: 'assets/pages/landing-page.html',
     }),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pages/search-room/search-room.pug'),
+      template: path.resolve(
+        __dirname,
+        'src/pages/search-room/search-room.pug'
+      ),
       filename: 'assets/pages/search-room.html',
     }),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pages/room-details/room-details.pug'),
+      template: path.resolve(
+        __dirname,
+        'src/pages/room-details/room-details.pug'
+      ),
       filename: 'assets/pages/room-details.html',
     }),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pages/registration-page/registration-page.pug'),
+      template: path.resolve(
+        __dirname,
+        'src/pages/registration-page/registration-page.pug'
+      ),
       filename: 'assets/pages/registration-page.html',
     }),
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pages/signin-page/signin-page.pug'),
+      template: path.resolve(
+        __dirname,
+        'src/pages/signin-page/signin-page.pug'
+      ),
       filename: 'assets/pages/signin-page.html',
     }),
     new CleanWebpackPlugin(),
