@@ -1,9 +1,15 @@
 let entryCheck = false;
-const entryButtons = document.querySelectorAll('.navbar__button-entry-container');
-const registrationButtons = document.querySelectorAll('.navbar__button-registration-container');
+const entryButtons = document.querySelectorAll(
+  '.navbar__button-entry-container'
+);
+const registrationButtons = document.querySelectorAll(
+  '.navbar__button-registration-container'
+);
 const accountNames = document.querySelectorAll('.navbar__item_with-name');
 const separators = document.querySelectorAll('.navbar__item_with-separator');
-const dropdownItems = document.querySelectorAll('.navbar__dropdown-title_vertical');
+const dropdownItems = document.querySelectorAll(
+  '.navbar__dropdown-title_vertical'
+);
 
 function signIn() {
   if (entryCheck) {
@@ -48,6 +54,8 @@ for (let name = 0; name < accountNames.length; name += 1) {
 
 for (let item = 0; item < dropdownItems.length; item += 1) {
   dropdownItems[item].onclick = () => {
-    dropdownItems[item].nextElementSibling.classList.toggle('navbar__hidden-list_vertical-opened');
+    dropdownItems[item].nextElementSibling.classList.toggle(
+      'navbar__hidden-list_vertical-opened'
+    );
   };
 }

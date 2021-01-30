@@ -7,7 +7,8 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "watch": "webpack --mode development --watch",
-    "start": "webpack-dev-server --mode development --open"
+    "start": "webpack-dev-server --mode development --open",
+    "prettier": "prettier --single-quote --trailing-comma es5 --write \"src/**/*.scss\""
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
+    "prettier": "^2.2.1",
     "pug": "^3.0.0",
     "pug-loader": "^2.4.0",
     "sass-loader": "^9.0.2",

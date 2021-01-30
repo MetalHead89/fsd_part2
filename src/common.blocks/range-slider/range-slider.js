@@ -39,7 +39,7 @@ class Slider {
 
     that.value = Math.min(
       parseInt(that.value, 10),
-      parseInt(this.rightInput.value, 10),
+      parseInt(this.rightInput.value, 10)
     );
     const percent = ((that.value - min) / (max - min)) * 100;
     this.leftThumb.style.left = `${percent}%`;
@@ -47,7 +47,7 @@ class Slider {
 
     const rangeNumbers = this.rangeLable.innerText.split('-');
     this.rangeLable.innerText = `${parseInt(that.value, 10).toLocaleString(
-      'ru-RU',
+      'ru-RU'
     )}${String.fromCharCode(8381)} - ${rangeNumbers[1]}`;
   }
 
@@ -58,7 +58,7 @@ class Slider {
 
     that.value = Math.max(
       parseInt(that.value, 10),
-      parseInt(this.leftInput.value, 10) + 1,
+      parseInt(this.leftInput.value, 10) + 1
     );
     const percent = ((that.value - min) / (max - min)) * 100;
     this.rightThumb.style.right = `${100 - percent}%`;
@@ -67,7 +67,7 @@ class Slider {
     const rangeNumbers = this.rangeLable.innerText.split('-');
     this.rangeLable.innerText = `${rangeNumbers[0]} - ${parseInt(
       that.value,
-      10,
+      10
     ).toLocaleString('ru-RU')}${String.fromCharCode(8381)}`;
   }
 }

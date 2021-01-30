@@ -6,9 +6,16 @@ class Pagination {
   }
 
   init() {
-    this.pagesNumbers = document.querySelectorAll('.pagination__button_with-number');
-    this.pagesCount = parseInt(this.pagesNumbers[this.pagesNumbers.length - 1].innerText, 10);
-    this.prevButton = document.querySelector('.pagination__button_with-prev-arrow');
+    this.pagesNumbers = document.querySelectorAll(
+      '.pagination__button_with-number'
+    );
+    this.pagesCount = parseInt(
+      this.pagesNumbers[this.pagesNumbers.length - 1].innerText,
+      10
+    );
+    this.prevButton = document.querySelector(
+      '.pagination__button_with-prev-arrow'
+    );
     this.nextButton = document.querySelector('.pagination__button_with-number');
 
     if (this.prevButton) {
@@ -20,13 +27,17 @@ class Pagination {
     }
 
     for (let page = 0; page < this.pagesNumbers.length; page += 1) {
-      this.pagesNumbers[page].onclick = this.onClickToPageNumber.bind(this,
-        this.pagesNumbers[page]);
+      this.pagesNumbers[page].onclick = this.onClickToPageNumber.bind(
+        this,
+        this.pagesNumbers[page]
+      );
     }
   }
 
   clickToPrevButton() {
-    const oldActivePage = document.querySelector('.pagination__button_active-page');
+    const oldActivePage = document.querySelector(
+      '.pagination__button_active-page'
+    );
     oldActivePage.classList.remove('pagination__button_active-page');
 
     this.createNewPagination.bind(this, oldActivePage.previousElementSibling)();
@@ -34,7 +45,9 @@ class Pagination {
   }
 
   clickToNextButton() {
-    const oldActivePage = document.querySelector('.pagination__button_active-page');
+    const oldActivePage = document.querySelector(
+      '.pagination__button_active-page'
+    );
     oldActivePage.classList.remove('pagination__button_active-page');
 
     this.createNewPagination.bind(this, oldActivePage.nextElementSibling)();
@@ -42,7 +55,9 @@ class Pagination {
   }
 
   onClickToPageNumber(button) {
-    const oldActivePage = document.querySelector('.pagination__button_active-page');
+    const oldActivePage = document.querySelector(
+      '.pagination__button_active-page'
+    );
     oldActivePage.classList.remove('pagination__button_active-page');
 
     this.createNewPagination.bind(this, button)();
@@ -50,13 +65,21 @@ class Pagination {
   }
 
   static numberDontFitOnTheLeft(currentPage, activePage) {
-    return currentPage < activePage && activePage - currentPage > 2
-      && currentPage > 1 && activePage > 5;
+    return (
+      currentPage < activePage &&
+      activePage - currentPage > 2 &&
+      currentPage > 1 &&
+      activePage > 5
+    );
   }
 
   static numberDontFitOnTheRight(currentPage, activePage, pagesCount) {
-    return currentPage > activePage && currentPage - activePage > 2
-      && currentPage < pagesCount && pagesCount - activePage > 4;
+    return (
+      currentPage > activePage &&
+      currentPage - activePage > 2 &&
+      currentPage < pagesCount &&
+      pagesCount - activePage > 4
+    );
   }
 
   createNewPagination(button) {
@@ -75,19 +98,35 @@ class Pagination {
       this.createPaginationButon.bind(this, button, ul, 'prevButton')();
     }
 
-    for (let currentPage = 1; currentPage <= parseInt(this.pagesCount, 10); currentPage += 1) {
+    for (
+      let currentPage = 1;
+      currentPage <= parseInt(this.pagesCount, 10);
+      currentPage += 1
+    ) {
       if (Pagination.numberDontFitOnTheLeft(currentPage, activePage)) {
         if (!isLeftNumbersHidden) {
           this.createPaginationButon.bind(this, button, ul, 'numbersPruning')();
           isLeftNumbersHidden = true;
         }
-      } else if (Pagination.numberDontFitOnTheRight(currentPage, activePage, this.pagesCount)) {
+      } else if (
+        Pagination.numberDontFitOnTheRight(
+          currentPage,
+          activePage,
+          this.pagesCount
+        )
+      ) {
         if (!isRightNumbersHidden) {
           this.createPaginationButon.bind(this, button, ul, 'numbersPruning')();
           isRightNumbersHidden = true;
         }
       } else {
-        this.createPaginationButon.bind(this, button, ul, 'pageNumber', currentPage)();
+        this.createPaginationButon.bind(
+          this,
+          button,
+          ul,
+          'pageNumber',
+          currentPage
+        )();
       }
     }
 
@@ -104,7 +143,10 @@ class Pagination {
    */
   createNewPaginationSignature() {
     const span = document.createElement('span');
-    const activePageNumber = parseInt(document.querySelector('.pagination__button_active-page').innerText, 10);
+    const activePageNumber = parseInt(
+      document.querySelector('.pagination__button_active-page').innerText,
+      10
+    );
     let hotelRoomsTotal = (this.pagesCount - 1) * 12;
     const endHotelRoomOnPage = activePageNumber * 12;
     const startHotelRoomOnPage = endHotelRoomOnPage - 11;
@@ -115,11 +157,16 @@ class Pagination {
       hotelRoomsTotal = `${hotelRoomsTotal}+`;
     }
 
-    span.classList.add('pagination__signature', 'pagination__signature_with-top-margin');
+    span.classList.add(
+      'pagination__signature',
+      'pagination__signature_with-top-margin'
+    );
     span.innerText = `${startHotelRoomOnPage} – ${endHotelRoomOnPage} из ${hotelRoomsTotal} вариантов аренды`;
     this.pagination.append(span);
 
-    const paginationSignatureElements = document.querySelectorAll('.pagination__signature');
+    const paginationSignatureElements = document.querySelectorAll(
+      '.pagination__signature'
+    );
     paginationSignatureElements[0].remove();
   }
 
@@ -142,11 +189,19 @@ class Pagination {
       span.classList.add('material-icons', 'pagination__arrow');
 
       if (type === 'prevButton') {
-        li.classList.add('pagination__button', 'pagination__button_with-arrow', 'pagination__button_with-prev-arrow');
+        li.classList.add(
+          'pagination__button',
+          'pagination__button_with-arrow',
+          'pagination__button_with-prev-arrow'
+        );
         span.innerText = 'arrow_back';
         li.onclick = this.clickToPrevButton.bind(this);
       } else {
-        li.classList.add('pagination__button', 'pagination__button_with-arrow', 'pagination__button_with-next-arrow');
+        li.classList.add(
+          'pagination__button',
+          'pagination__button_with-arrow',
+          'pagination__button_with-next-arrow'
+        );
         span.innerText = 'arrow_forward';
         li.onclick = this.clickToNextButton.bind(this);
       }
@@ -158,10 +213,17 @@ class Pagination {
       li.innerText = '...';
     } else if (type === 'pageNumber') {
       if (parseInt(button.innerText, 10) === page) {
-        li.classList.add('pagination__button', 'pagination__button_with-number', 'pagination__button_active-page');
+        li.classList.add(
+          'pagination__button',
+          'pagination__button_with-number',
+          'pagination__button_active-page'
+        );
         li.innerText = page;
       } else {
-        li.classList.add('pagination__button', 'pagination__button_with-number');
+        li.classList.add(
+          'pagination__button',
+          'pagination__button_with-number'
+        );
         li.append(a);
         a.innerText = page;
       }

@@ -11,10 +11,10 @@ class Diagram {
     this.roomImpressions = {};
     this.separatorSize = 3;
     this.votesCounterNumber = document.querySelector(
-      '.impressions-diagram__votes-number',
+      '.impressions-diagram__votes-number'
     );
     this.votesCounterText = document.querySelector(
-      '.impressions-diagram__votes-text',
+      '.impressions-diagram__votes-text'
     );
     this.votesSum = 0;
     this.startAngle = 0;
@@ -25,20 +25,20 @@ class Diagram {
       0,
       0,
       0,
-      120,
+      120
     );
     const goodGradient = this.canvasContext.createLinearGradient(0, 0, 0, 120);
     const satisfactorilyGradient = this.canvasContext.createLinearGradient(
       0,
       0,
       0,
-      120,
+      120
     );
     const disappointedGradient = this.canvasContext.createLinearGradient(
       0,
       0,
       0,
-      120,
+      120
     );
     Diagram.setGradient(magnificentlyGradient, '#FFE39C', '#FFBA9C');
     Diagram.setGradient(goodGradient, '#6FCF97', '#66D2EA');
@@ -62,16 +62,16 @@ class Diagram {
 
     this.setDiagramSegment(
       magnificentlyGradient,
-      this.roomImpressions.magnificently,
+      this.roomImpressions.magnificently
     );
     this.setDiagramSegment(goodGradient, this.roomImpressions.good);
     this.setDiagramSegment(
       satisfactorilyGradient,
-      this.roomImpressions.satisfactorily,
+      this.roomImpressions.satisfactorily
     );
     this.setDiagramSegment(
       disappointedGradient,
-      this.roomImpressions.disappointed,
+      this.roomImpressions.disappointed
     );
   }
 
@@ -135,7 +135,7 @@ class Diagram {
       58,
       this.startAngle,
       this.endAngle,
-      true,
+      true
     );
     this.canvasContext.lineWidth = 4;
     this.canvasContext.strokeStyle = color;

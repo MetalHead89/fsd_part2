@@ -6,20 +6,31 @@ class NumberCard {
   }
 
   init() {
-    this.buttonPrev = this.numberCard.querySelector('.number-card__arrow-button_prev');
-    this.buttonNext = this.numberCard.querySelector('.number-card__arrow-button_next');
-    this.sliderDots = Array.from(this.numberCard.querySelectorAll('.number-card__dot'));
-    this.slides = this.numberCard.querySelectorAll('.number-card__slider-list-item');
+    this.buttonPrev = this.numberCard.querySelector(
+      '.number-card__arrow-button_prev'
+    );
+    this.buttonNext = this.numberCard.querySelector(
+      '.number-card__arrow-button_next'
+    );
+    this.sliderDots = Array.from(
+      this.numberCard.querySelectorAll('.number-card__dot')
+    );
+    this.slides = this.numberCard.querySelectorAll(
+      '.number-card__slider-list-item'
+    );
 
     this.buttonNext.onclick = () => this.switchToNextSlide();
     this.buttonPrev.onclick = () => this.switchToPreviousSlide();
     for (let dot = 0; dot < this.sliderDots.length; dot += 1) {
-      this.sliderDots[dot].onclick = () => this.clickToDot(this.sliderDots[dot]);
+      this.sliderDots[dot].onclick = () =>
+        this.clickToDot(this.sliderDots[dot]);
     }
   }
 
   switchToNextSlide() {
-    const activeSlide = this.numberCard.querySelector('.number-card__slider-list-item_opacity-1');
+    const activeSlide = this.numberCard.querySelector(
+      '.number-card__slider-list-item_opacity-1'
+    );
     const nextSlide = activeSlide.nextElementSibling;
     const activeDot = this.numberCard.querySelector('.number-card__dot_active');
     const nextDot = activeDot.nextElementSibling;
@@ -31,7 +42,9 @@ class NumberCard {
   }
 
   switchToPreviousSlide() {
-    const activeSlide = this.numberCard.querySelector('.number-card__slider-list-item_opacity-1');
+    const activeSlide = this.numberCard.querySelector(
+      '.number-card__slider-list-item_opacity-1'
+    );
     const prevSlide = activeSlide.previousElementSibling;
     const activeDot = this.numberCard.querySelector('.number-card__dot_active');
     const prevDot = activeDot.previousElementSibling;
@@ -50,11 +63,16 @@ class NumberCard {
   }
 
   clickToDot(dot) {
-    const activeDot = this.sliderDots.indexOf(this.numberCard.querySelector('.number-card__dot_active'));
+    const activeDot = this.sliderDots.indexOf(
+      this.numberCard.querySelector('.number-card__dot_active')
+    );
     const nextDot = this.sliderDots.indexOf(dot);
 
     NumberCard.switchSlide(this.slides[activeDot], this.slides[nextDot]);
-    NumberCard.switchSliderDot(this.sliderDots[activeDot], this.sliderDots[nextDot]);
+    NumberCard.switchSliderDot(
+      this.sliderDots[activeDot],
+      this.sliderDots[nextDot]
+    );
   }
 
   static switchSliderDot(activeDot, nextDot) {

@@ -1,12 +1,12 @@
 .color-block__square {
-    flex: none;
-    width: 100%;
-    max-width: 70px;
-    border-radius: 6px;
-    display: inline-block;
-    &:after {
-        content: "";
-        padding-top: 100%;
-        display: block;
-    }
+  flex: none;
+  width: 100%;
+  max-width: 70px;
+  border-radius: 6px;
+  display: inline-block;
+  &:after {
+    content: '';
+    padding-top: 100%;
+    display: block;
+  }
 }

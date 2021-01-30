@@ -1,30 +1,30 @@
 .links-wrapper {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .links {
-    font-family: "Roboto";
-    font-weight: 700;
-    font-size: 1.8rem;
-    display: inline-block;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 1.8rem;
+  display: inline-block;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
 .links__item {
-    margin: 20px;
+  margin: 20px;
 }
 
 .links__link {
-    text-decoration: none;
-    color: #8BA4F9;
-    transition: color .3s ease-in;
-    &:hover {
-        color: #BC9CFF;
-    }
+  text-decoration: none;
+  color: #8ba4f9;
+  transition: color 0.3s ease-in;
+  &:hover {
+    color: #bc9cff;
+  }
 }

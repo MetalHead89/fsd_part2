@@ -1,125 +1,125 @@
 .landing-page__header-container {
-    position: relative;
-    z-index: 3;
+  position: relative;
+  z-index: 3;
 }
 
 .landing-page {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .landing-page__background_first {
-    background: url('../../assets/images/landing-image-1.png');
-    animation: landing-animation-1 40s infinite;
+  background: url('../../assets/images/landing-image-1.png');
+  animation: landing-animation-1 40s infinite;
 }
 
 .landing-page__background_second {
-    background: url('../../assets/images/landing-image-2.png');
-    animation: landing-animation-2 40s infinite;
+  background: url('../../assets/images/landing-image-2.png');
+  animation: landing-animation-2 40s infinite;
 }
 
 .landing-page__background_third {
-    background: url('../../assets/images/landing-image-3.png');
-    animation: landing-animation-3 40s infinite;
+  background: url('../../assets/images/landing-image-3.png');
+  animation: landing-animation-3 40s infinite;
 }
 
 .landing-page__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center center;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
 }
 
 .landing-page__content-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    max-width: 1160px;
-    padding: 70px 0;
-    z-index: 1;
-    margin: 0 auto;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  max-width: 1160px;
+  padding: 70px 0;
+  z-index: 1;
+  margin: 0 auto;
 }
 
 .landing-page__card-container {
-    width: 100%;
-    max-width: 380px;
+  width: 100%;
+  max-width: 380px;
 }
 
 .landing-page__body-text {
-    position: absolute;
-    width: 297px;
-    text-align: right;
-    bottom: 0;
-    right: 0;
-    padding-bottom: 18px;
-    font-family: Montserrat;
-    font-size: 14px;
-    color: rgba(31, 32, 65, 0.75);
+  position: absolute;
+  width: 297px;
+  text-align: right;
+  bottom: 0;
+  right: 0;
+  padding-bottom: 18px;
+  font-family: Montserrat;
+  font-size: 14px;
+  color: rgba(31, 32, 65, 0.75);
 }
 
 @keyframes landing-animation-1 {
-    0% {
-        opacity: 1;
-    }
-    27% {
-        opacity: 1;
-    }
-    33% {
-        opacity: 0;
-    }
-    94% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 1;
+  }
+  27% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+  94% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes landing-animation-2 {
-    0% {
-        opacity: 0;
-    }
-    27% {
-        opacity: 0;
-    }
-    33% {
-        opacity: 1;
-    }
-    60% {
-        opacity: 1;
-    }
-    66% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
+  27% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes landing-animation-3 {
-    0% {
-        opacity: 0;
-    }
-    60% {
-        opacity: 0;
-    }
-    66% {
-        opacity: 1;
-    }
-    94% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

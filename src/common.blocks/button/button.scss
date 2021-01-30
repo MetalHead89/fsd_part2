@@ -1,22 +1,22 @@
 .button {
-    position: relative;
-    box-sizing: border-box;
-    padding: 15px 20px;
-    border-radius: 22px;
-    font-weight: bold;
-    font-family: 'Montserrat';
-    font-size: 12px;
-    text-transform: uppercase;
-    border: none;
-    transition: .5s;
-    &:focus {
-        outline: none;
-    }
-    &:hover {
-        opacity: 0.5;
-    }
-    &:active {
-        transition: none;
-        opacity: 1;
-    }
+  position: relative;
+  box-sizing: border-box;
+  padding: 15px 20px;
+  border-radius: 22px;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  font-size: 12px;
+  text-transform: uppercase;
+  border: none;
+  transition: 0.5s;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    opacity: 0.5;
+  }
+  &:active {
+    transition: none;
+    opacity: 1;
+  }
 }

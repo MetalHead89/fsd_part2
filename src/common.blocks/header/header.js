@@ -7,9 +7,7 @@ class BurgerMenu {
 
   init() {
     const hideMenu = document.querySelector('.navbar__list_vertical');
-    const hideMenuItems = hideMenu.querySelectorAll(
-      '.navbar__item_vertical'
-    );
+    const hideMenuItems = hideMenu.querySelectorAll('.navbar__item_vertical');
 
     this.burger.onclick = () => {
       if (hideMenu) {
