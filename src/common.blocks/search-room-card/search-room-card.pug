@@ -3,10 +3,11 @@ include ../button/button.pug
 
 mixin search-room-card(args)
     .search-room-card
-        h1(class='search-room-card__title search-room-card__title_margins') !{args.title}
-        .search-room-card__dropdown
-            +dropdown(args.dropdown1)
-        .search-room-card__dropdown
-            +dropdown(args.dropdown2)
-        .search-room-card__button
-            +button(args.button)
+        form
+            h1(class='search-room-card__title search-room-card__title_margins') !{args.title}
+            .search-room-card__dropdown
+                +dropdown(args.dropdown1)
+            .search-room-card__dropdown
+                +dropdown(args.dropdown2)
+            .search-room-card__button
+                +button(args.button)
