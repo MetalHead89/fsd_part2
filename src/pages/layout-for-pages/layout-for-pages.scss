@@ -1,167 +1,167 @@
-// FONTS
+// // FONTS
 
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/assets/fonts/montserrat/montserratLight.woff') format('woff');
-  font-style: normal;
-  font-weight: 300;
-}
+// @font-face {
+//   font-family: 'Montserrat';
+//   src: url('/assets/fonts/montserrat/montserratLight.woff') format('woff');
+//   font-style: normal;
+//   font-weight: 300;
+// }
 
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/assets/fonts/montserrat/montserrat.woff') format('woff');
-  font-style: normal;
-  font-weight: 400;
-}
+// @font-face {
+//   font-family: 'Montserrat';
+//   src: url('/assets/fonts/montserrat/montserrat.woff') format('woff');
+//   font-style: normal;
+//   font-weight: 400;
+// }
 
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/assets/fonts/montserrat/montserratBold.woff') format('woff');
-  font-style: normal;
-  font-weight: 700;
-}
+// @font-face {
+//   font-family: 'Montserrat';
+//   src: url('/assets/fonts/montserrat/montserratBold.woff') format('woff');
+//   font-style: normal;
+//   font-weight: 700;
+// }
 
-@font-face {
-  font-family: 'Quicksand';
-  src: url('/assets/fonts/quicksand/quicksand.woff') format('woff');
-  font-style: normal;
-  font-weight: 400;
-}
+// @font-face {
+//   font-family: 'Quicksand';
+//   src: url('/assets/fonts/quicksand/quicksand.woff') format('woff');
+//   font-style: normal;
+//   font-weight: 400;
+// }
 
-@font-face {
-  font-family: 'Quicksand';
-  src: url('/assets/fonts/quicksand/quicksandBold.woff') format('woff');
-  font-style: normal;
-  font-weight: 700;
-}
+// @font-face {
+//   font-family: 'Quicksand';
+//   src: url('/assets/fonts/quicksand/quicksandBold.woff') format('woff');
+//   font-style: normal;
+//   font-weight: 700;
+// }
 
-@font-face {
-  font-family: 'Open Sans';
-  src: url('/assets/fonts/openSans/openSansBold.woff') format('woff');
-  font-style: normal;
-  font-weight: 700;
-}
+// @font-face {
+//   font-family: 'Open Sans';
+//   src: url('/assets/fonts/openSans/openSansBold.woff') format('woff');
+//   font-style: normal;
+//   font-weight: 700;
+// }
 
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: normal;
-  src: url('/assets/fonts/materialIcons/materialIcons.woff') format('woff');
-}
+// @font-face {
+//   font-family: 'Material Icons';
+//   font-style: normal;
+//   font-weight: normal;
+//   src: url('/assets/fonts/materialIcons/materialIcons.woff') format('woff');
+// }
 
-@font-face {
-  font-family: 'Font Awesome 5 Brands';
-  font-style: normal;
-  font-weight: normal;
-  font-display: block;
-  src: url('/assets/fonts/fontAwesome/fontAwesomeBrands.woff') format('woff');
-}
+// @font-face {
+//   font-family: 'Font Awesome 5 Brands';
+//   font-style: normal;
+//   font-weight: normal;
+//   font-display: block;
+//   src: url('/assets/fonts/fontAwesome/fontAwesomeBrands.woff') format('woff');
+// }
 
-@font-face {
-  font-family: 'Roboto';
-  src: url('/assets/fonts/roboto/robotoRegular.woff') format('woff');
-  font-style: normal;
-  font-weight: normal;
-}
+// @font-face {
+//   font-family: 'Roboto';
+//   src: url('/assets/fonts/roboto/robotoRegular.woff') format('woff');
+//   font-style: normal;
+//   font-weight: normal;
+// }
 
-@font-face {
-  font-family: 'Roboto';
-  src: url('/assets/fonts/roboto/robotoBold.woff') format('woff');
-  font-style: normal;
-  font-weight: 700;
-}
+// @font-face {
+//   font-family: 'Roboto';
+//   src: url('/assets/fonts/roboto/robotoBold.woff') format('woff');
+//   font-style: normal;
+//   font-weight: 700;
+// }
 
-// Font Awesome Brand Style
-.fab {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  line-height: 1;
-  font-family: 'Font Awesome 5 Brands';
-  font-weight: 400;
-}
+// // Font Awesome Brand Style
+// .fab {
+//   -moz-osx-font-smoothing: grayscale;
+//   -webkit-font-smoothing: antialiased;
+//   display: inline-block;
+//   font-style: normal;
+//   font-variant: normal;
+//   text-rendering: auto;
+//   line-height: 1;
+//   font-family: 'Font Awesome 5 Brands';
+//   font-weight: 400;
+// }
 
-// Font Awesome Icons
-.fa-facebook-square:before {
-  content: '\f082';
-}
+// // Font Awesome Icons
+// .fa-facebook-square:before {
+//   content: '\f082';
+// }
 
-.fa-twitter:before {
-  content: '\f099';
-}
+// .fa-twitter:before {
+//   content: '\f099';
+// }
 
-.fa-instagram:before {
-  content: '\f16d';
-}
+// .fa-instagram:before {
+//   content: '\f16d';
+// }
 
-// Material Icons Font
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 1.71rem; /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
+// // Material Icons Font
+// .material-icons {
+//   font-family: 'Material Icons';
+//   font-weight: normal;
+//   font-style: normal;
+//   font-size: 1.71rem; /* Preferred icon size */
+//   display: inline-block;
+//   line-height: 1;
+//   text-transform: none;
+//   letter-spacing: normal;
+//   word-wrap: normal;
+//   white-space: nowrap;
+//   direction: ltr;
 
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
+//   /* Support for all WebKit browsers. */
+//   -webkit-font-smoothing: antialiased;
+//   /* Support for Safari and Chrome. */
+//   text-rendering: optimizeLegibility;
 
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
+//   /* Support for Firefox. */
+//   -moz-osx-font-smoothing: grayscale;
 
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}
+//   /* Support for IE. */
+//   font-feature-settings: 'liga';
+// }
 
-// TEXT
+// // TEXT
 
-html {
-  font-size: 14px;
-}
+// html {
+//   font-size: 14px;
+// }
 
-body {
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
-  margin: 0;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.71rem;
-  color: rgba(31, 32, 65, 0.75);
-}
+// body {
+//   font-family: Montserrat, Helvetica, Arial, sans-serif;
+//   margin: 0;
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: 1.71rem;
+//   color: rgba(31, 32, 65, 0.75);
+// }
 
-h1 {
-  font-family: Quicksand, Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1.71rem;
-  line-height: 2.15rem;
-  color: #1f2041;
-}
+// h1 {
+//   font-family: Quicksand, Helvetica, Arial, sans-serif;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 1.71rem;
+//   line-height: 2.15rem;
+//   color: #1f2041;
+// }
 
-h2 {
-  font-family: Quicksand, Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1.35rem;
-  line-height: 1.72rem;
-  color: #1f2041;
-}
+// h2 {
+//   font-family: Quicksand, Helvetica, Arial, sans-serif;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 1.35rem;
+//   line-height: 1.72rem;
+//   color: #1f2041;
+// }
 
-h3 {
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 0.85rem;
-  line-height: 1.08rem;
-  text-transform: uppercase;
-  color: #1f2041;
-}
+// h3 {
+//   font-family: Montserrat, Helvetica, Arial, sans-serif;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 0.85rem;
+//   line-height: 1.08rem;
+//   text-transform: uppercase;
+//   color: #1f2041;
+// }
