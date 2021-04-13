@@ -1,4 +1,4 @@
 mixin toggle(args)
-    .toggle
-        input(class='toggle__checkbox' type="checkbox", name=args.name, id=args.id)
-        label(class='toggle__label' for=args.id) !{args.text}
+  .toggle
+    input.toggle__checkbox(type="checkbox", name=args.name, id=args.id)
+    label.toggle__label(for=args.id) !{args.text}

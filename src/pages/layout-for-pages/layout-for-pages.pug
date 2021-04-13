@@ -1,22 +1,22 @@
-- const config = require('./config.json')
-- const layoutConfig = require('../layout-for-pages/config.json')
+- const config = require('./config.json');
+- const layoutConfig = require('../layout-for-pages/config.json');
 
 include ../../common.blocks/header/header.pug
 include ../../common.blocks/footer/footer.pug
 
 block includs
 
-<!DOCTYPE html>
+doctype html
 html(lang="ru")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title 
-            block title
-    body
-        +header(layoutConfig.header)
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title 
+      block title
+  body
+    +header(layoutConfig.header)
 
-        article
-            block content
+    article
+      block content
 
-        +footer(layoutConfig.footer)
+    +footer(layoutConfig.footer)

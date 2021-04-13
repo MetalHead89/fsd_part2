@@ -194,7 +194,7 @@
   display: grid;
   grid-column-gap: 10px;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: 'one two three';
+  grid-template-areas: "one two three";
 }
 
 .cards__title {
@@ -238,8 +238,8 @@
     justify-items: center;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      'one two'
-      'three three';
+      "one two"
+      "three three";
   }
 
   .cards__title {
@@ -257,9 +257,9 @@
   .cards {
     grid-template-columns: 1fr;
     grid-template-areas:
-      'one one'
-      'two two'
-      'three three';
+      "one one"
+      "two two"
+      "three three";
   }
 }
 

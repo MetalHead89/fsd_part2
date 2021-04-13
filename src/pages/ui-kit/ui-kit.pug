@@ -1,4 +1,4 @@
-- const config = require('./config.json')
+- const config = require('./config.json');
 
 include ../../common.blocks/color-block/color-block.pug
 include ../../common.blocks/type-block/type-block.pug
@@ -25,157 +25,134 @@ include ../../common.blocks/room-rate-card/room-rate-card.pug
 include ../../common.blocks/header/header.pug
 include ../../common.blocks/footer/footer.pug
 
-<!DOCTYPE html>
+doctype html
 html(lang="ru")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title UI kit
-    body
-        //- COLORS AND TYPE
-        section(class="section")
-            h1(class="colors-and-type-section__title") Colors & Type
-            .colors-and-type
-                .colors-and-type__colors
-                    each colorBlock in config.colorBlocks
-                        .colors-and-type__color-block
-                            +color-block({
-                                theme: colorBlock.theme, 
-                                colorName: colorBlock.colorName, 
-                                colorCode: colorBlock.colorCode
-                            })
-                .colors-and-type__type
-                    each typeBlock in config.typeBlocks
-                        .colors-and-type__type-block
-                            +type-block({tag: typeBlock.tag, text: typeBlock.text})
-            
-        //- FORM ELEMENTS
-        section(class="section")
-            h1(class="form-elements__title") Form Elements
-            .form-elements
-                section(class="form-elements__three-column-section")
-                    .form-elements__column
-                        .form-elements__block-wrapper
-                            h3(class='form-elements__block-title') Text Field
-                            +text-field(config.textField)
-                        .form-elements__block-wrapper
-                            +dropdown(config.dropdown)
-                        .form-elements__block-wrapper
-                            h3(class='form-elements__block-title') masked text field
-                            +text-field(config.maskedTextField)
-                        .form-elements__block-wrapper
-                            +dropdown(config.dateDropdown)
-                        div(class='form-elements__block-wrapper form-elements__block-wrapper_width-266')
-                            .form-elements__block-wrapper
-                                +dropdown(config.filterDateDropdown)
-                            .form-elements__block-wrapper
-                                h3(class='form-elements__block-title') subscription text field
-                                +text-field(config.subscriptionTextField)
-                            .form-elements__block-wrapper
-                                +dropdown(config.comfortDropDown)
-                            .form-elements__block-wrapper
-                                +expandable-checkbox-list(config.expandableCheckboxList)
-                    .form-elements__column
-                        .form-elements__block-wrapper
-                            h3(class='form-elements__block-title') Checkbox Buttons
-                            each checkboxButton in config.checkboxButtons
-                                +checkbox-button({
-                                    label: checkboxButton.label, 
-                                    id: checkboxButton.id, 
-                                    checked: checkboxButton.checked
-                                })
-                        .form-elements__block-wrapper
-                            h3(class='module-title') Radio Buttons
-                            +radio-button(config.radioButton)
-                        .form-elements__block-wrapper
-                            h3(class='module-title') toggle
-                            +toggle(config.toggle)
-                        .form-elements__block-wrapper
-                            h3(class='module-title') like button
-                            .form-elements__like-buttons-group
-                                each likeButton in config.likeButtons
-                                    .form-elements__like-button-block
-                                        +like-button({
-                                            likesCount: likeButton.likesCount, 
-                                            checked: likeButton.checked
-                                        })
-                        .form-elements__block-wrapper
-                            h3(class='module-title') rate button
-                            .form-elements__rate-buttons-group
-                                each rateButton in config.rateButtons
-                                    .form-elements__rate-button-block
-                                        +rate-button({ rate: rateButton.rate })
-                        .form-elements__block-wrapper
-                            h3(class='module-title') RICH CHECKBOX BUTTONS
-                            each richCheckboxButton in config.richCheckboxButtons
-                                    +checkbox-button({
-                                        label: richCheckboxButton.label, 
-                                        id: richCheckboxButton.id, 
-                                        checked: richCheckboxButton.checked, 
-                                        rich: richCheckboxButton.rich, 
-                                        text: richCheckboxButton.text
-                                    })
-                    .form-elements__column
-                        .form-elements__block-wrapper
-                            +range-slider(config.rangeSlider)
-                        .form-elements__block-wrapper
-                            h3(class='form-elements__block-title form-elements__block-title_vertical-margins-15') Buttons
-                            .form-elements__block-wrapper
-                                +button(config.button)
-                            .form-elements__block-wrapper
-                                +button(config.borderButton)
-                            .form-elements__block-wrapper
-                                .form-elements__only-text-buttons-group
-                                    each onlyTextButton in config.onlyTextButtons
-                                        .form-elements__only-text-button-block
-                                            +button({
-                                                text: onlyTextButton.text, 
-                                                type: onlyTextButton.type, 
-                                                theme: onlyTextButton.theme
-                                            })
-                            .form-elements__block-wrapper
-                                +button(config.arrowButton)
-                        .form-elements__block-wrapper
-                            h3(class='form-elements__block-title form-elements__block-title_vertical-margins-15') Pagination
-                            +pagination(config.pagination)
-                        .form-elements__block-wrapper.form-elements__block-wrapper__bullet-list
-                            h3(class='form-elements__block-title') bullet list
-                            +bullet-list(config.bulletList)
-                section(class="form-elements__two-column-section")
-                    .form-elements__column
-                        .form-elements__block-wrapper
-                            each roomDetails in config.roomsDetails
-                                    +room-details({icon: roomDetails.icon, 
-                                    title: roomDetails.title, description: 
-                                    roomDetails.description})
-                    .form-elements__column_width-713
-                        .form-elements__block-wrapper
-                            +guest-review(config.guestReview)
-        
-        //- CARDS
-        section(class="section")
-            h1(class="cards__title") Cards
-            .cards
-                .cards__column.cards__column-one
-                    .cards__block-wrapper
-                        +search-room-card(config.searchRoomCard)
-                    .cards__block-wrapper
-                        +registration-card(config.registrationCard)
-                .cards__column.cards__column-two
-                    .cards__block-wrapper
-                        +room-rate-card(config.roomRateCard)
-                    .cards__block-wrapper
-                        +entry-card(config.entryCard)
-                .cards__column.cards__column-three
-                    .cards__block-wrapper.cards__block-wrapper_width-320
-                        +calendar()
-                    .cards__column_width-270
-                        each numberCard in config.numberCards
-                            .cards__block-wrapper
-                                +number-card(numberCard)
-                                
-        //- HEADERS & FOOTERS
-        section(class="section")
-            h1(class="headers-and-footers__title") Headers & Footers
-            +header(config.header)
-            +footer(config.footer)
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title UI kit
+  body
+    //- COLORS AND TYPE
+    section.section
+      h1.colors-and-type-section__title Colors & Type
+      .colors-and-type
+        .colors-and-type__colors
+          each colorBlock in config.colorBlocks
+            .colors-and-type__color-block
+              +color-block({ theme: colorBlock.theme, colorName: colorBlock.colorName, colorCode: colorBlock.colorCode })
+        .colors-and-type__type
+          each typeBlock in config.typeBlocks
+            .colors-and-type__type-block
+              +type-block({tag: typeBlock.tag, text: typeBlock.text})
+
+    //- FORM ELEMENTS
+    section.section
+      h1.form-elements__title Form Elements
+      .form-elements
+        section.form-elements__three-column-section
+          .form-elements__column
+            .form-elements__block-wrapper
+              h3.form-elements__block-title Text Field
+              +text-field(config.textField)
+            .form-elements__block-wrapper
+              +dropdown(config.dropdown)
+            .form-elements__block-wrapper
+              h3.form-elements__block-title masked text field
+              +text-field(config.maskedTextField)
+            .form-elements__block-wrapper
+              +dropdown(config.dateDropdown)
+            .form-elements__block-wrapper.form-elements__block-wrapper_width-266
+              .form-elements__block-wrapper
+                +dropdown(config.filterDateDropdown)
+              .form-elements__block-wrapper
+                h3.form-elements__block-title subscription text field
+                +text-field(config.subscriptionTextField)
+              .form-elements__block-wrapper
+                +dropdown(config.comfortDropDown)
+              .form-elements__block-wrapper
+                +expandable-checkbox-list(config.expandableCheckboxList)
+          .form-elements__column
+            .form-elements__block-wrapper
+              h3.form-elements__block-title Checkbox Buttons
+              each checkboxButton in config.checkboxButtons
+                +checkbox-button({ label: checkboxButton.label, id: checkboxButton.id, checked: checkboxButton.checked })
+            .form-elements__block-wrapper
+              h3.module-title Radio Buttons
+              +radio-button(config.radioButton)
+            .form-elements__block-wrapper
+              h3.module-title toggle
+              +toggle(config.toggle)
+            .form-elements__block-wrapper
+              h3.module-title like button
+              .form-elements__like-buttons-group
+                each likeButton in config.likeButtons
+                  .form-elements__like-button-block
+                    +like-button({ likesCount: likeButton.likesCount, checked: likeButton.checked })
+            .form-elements__block-wrapper
+              h3.module-title rate button
+              .form-elements__rate-buttons-group
+                each rateButton in config.rateButtons
+                  .form-elements__rate-button-block
+                    +rate-button({ rate: rateButton.rate })
+            .form-elements__block-wrapper
+              h3.module-title RICH CHECKBOX BUTTONS
+              each richCheckboxButton in config.richCheckboxButtons
+                +checkbox-button({ label: richCheckboxButton.label, id: richCheckboxButton.id, checked: richCheckboxButton.checked, rich: richCheckboxButton.rich, text: richCheckboxButton.text })
+          .form-elements__column
+            .form-elements__block-wrapper
+              +range-slider(config.rangeSlider)
+            .form-elements__block-wrapper
+              h3.form-elements__block-title.form-elements__block-title_vertical-margins-15 Buttons
+              .form-elements__block-wrapper
+                +button(config.button)
+              .form-elements__block-wrapper
+                +button(config.borderButton)
+              .form-elements__block-wrapper
+                .form-elements__only-text-buttons-group
+                  each onlyTextButton in config.onlyTextButtons
+                    .form-elements__only-text-button-block
+                      +button({ text: onlyTextButton.text, type: onlyTextButton.type, theme: onlyTextButton.theme })
+              .form-elements__block-wrapper
+                +button(config.arrowButton)
+            .form-elements__block-wrapper
+              h3.form-elements__block-title.form-elements__block-title_vertical-margins-15 Pagination
+              +pagination(config.pagination)
+            .form-elements__block-wrapper.form-elements__block-wrapper__bullet-list
+              h3.form-elements__block-title bullet list
+              +bullet-list(config.bulletList)
+        section.form-elements__two-column-section
+          .form-elements__column
+            .form-elements__block-wrapper
+              each roomDetails in config.roomsDetails
+                +room-details({icon: roomDetails.icon, title: roomDetails.title, description: roomDetails.description})
+          .form-elements__column_width-713
+            .form-elements__block-wrapper
+              +guest-review(config.guestReview)
+
+    //- CARDS
+    section.section
+      h1.cards__title Cards
+      .cards
+        .cards__column.cards__column-one
+          .cards__block-wrapper
+            +search-room-card(config.searchRoomCard)
+          .cards__block-wrapper
+            +registration-card(config.registrationCard)
+        .cards__column.cards__column-two
+          .cards__block-wrapper
+            +room-rate-card(config.roomRateCard)
+          .cards__block-wrapper
+            +entry-card(config.entryCard)
+        .cards__column.cards__column-three
+          .cards__block-wrapper.cards__block-wrapper_width-320
+            +calendar
+          .cards__column_width-270
+            each numberCard in config.numberCards
+              .cards__block-wrapper
+                +number-card(numberCard)
+
+    //- HEADERS & FOOTERS
+    section.section
+      h1.headers-and-footers__title Headers & Footers
+      +header(config.header)
+      +footer(config.footer)

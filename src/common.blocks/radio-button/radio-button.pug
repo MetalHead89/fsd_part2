@@ -1,6 +1,12 @@
 mixin radio-button(args)
-    .radio-button
-        each radio in args.buttons
-            .radio-button__radio-section
-                input(class='radio-button__radio-element' type='radio' id=radio.id name=radio.name value=radio.value checked=radio.checked)
-                label(class='radio-button__label' for=radio.id) !{radio.text}
+  .radio-button
+    each radio in args.buttons
+      .radio-button__radio-section
+        input.radio-button__radio-element(
+          type="radio",
+          id=radio.id,
+          name=radio.name,
+          value=radio.value,
+          checked=radio.checked
+        )
+        label.radio-button__label(for=radio.id) !{radio.text}

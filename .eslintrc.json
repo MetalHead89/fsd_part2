@@ -1,33 +1,32 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": [
-        "airbnb-base"
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["airbnb-base"],
+  "plugins": ["fsd"],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    "fsd/hof-name-prefix": "error",
+    "fsd/no-heavy-constructor": "error",
+    "fsd/jq-cache-dom-elements": "error",
+    "fsd/jq-use-js-prefix-in-selector": "error",
+    "fsd/no-function-declaration-in-event-listener": "error",
+    "fsd/split-conditionals": "error",
+    "import/no-unresolved": "off",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always",
+        "objects": "always",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+      }
     ],
-    "plugins": [
-        "fsd"
-    ],
-    "parserOptions": {
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "rules": {
-        "fsd/hof-name-prefix": "error",
-        "fsd/no-heavy-constructor": "error",
-        "fsd/jq-cache-dom-elements": "error",
-        "fsd/jq-use-js-prefix-in-selector": "error",
-        "fsd/no-function-declaration-in-event-listener": "error",
-        "fsd/split-conditionals": "error",
-        "import/no-unresolved": "off",
-        "comma-dangle": ["error", {
-            "arrays": "always",
-            "objects": "always",
-            "imports": "never",
-            "exports": "never",
-            "functions": "never"
-        }],
-        "operator-linebreak": 0
-    }
+    "operator-linebreak": 0
+  }
 }

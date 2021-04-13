@@ -1,14 +1,14 @@
 include ../text-field/text-field.pug
 
 mixin entry-card(args)
-    .entry-card
-        form
-            h1(class='entry-card__title') !{args.title}
-            .entry-card__login-section
-                +text-field(args.textFieldEmail)
-                +text-field(args.textFieldPassword)
-            +button(args.buttonEntry)
-            .entry-card__new-account-section
-                .entry-card__label !{args.accountSectionLabel}
-                .entry-card__button-wrapper
-                    +button(args.buttonCreateAccount)
+  .entry-card
+    form
+      h1.entry-card__title !{args.title}
+      .entry-card__login-section
+        +text-field(args.textFieldEmail)
+        +text-field(args.textFieldPassword)
+      +button(args.buttonEntry)
+      .entry-card__new-account-section
+        .entry-card__label !{args.accountSectionLabel}
+        .entry-card__button-wrapper
+          +button(args.buttonCreateAccount)

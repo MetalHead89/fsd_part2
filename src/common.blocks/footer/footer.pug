@@ -1,25 +1,28 @@
 include ../text-field/text-field.pug
 
 mixin footer(args)
-    footer(class='footer')
-        .footer__info-wrapper
-            .footer__info
-                each list in args.info
-                    ul(class=list.listStyle)
-                        if list.title
-                            li(class='footer__info-title') !{list.title}
-                        each item in list.items
-                            if item.image
-                                img(class=item.image.class, src=item.image.src, alt=item.image.alt)
-                            else if item.textField
-                                +text-field(item.textField)
-                            else
-                                li(class='footer__info-item') !{item}
-        .footer__copyright-wrapper
-            .footer__copyright
-                img(class='footer__logo footer__logo_hidden' src=args.copyright.image, alt="logo")
-                .footer__copyright-text !{args.copyright.text}
-                .footer__socials-icons
-                    each socialLink in args.copyright.social
-                        a(href=socialLink.href, class='footer__social-link')
-                            i(class=socialLink.class)
+  footer.footer
+    .footer__info-wrapper
+      .footer__info
+        each list in args.info
+          ul(class=list.listStyle)
+            if list.title
+              li.footer__info-title !{list.title}
+            each item in list.items
+              if item.image
+                img(class=item.image.class, src=item.image.src, alt=item.image.alt)
+              else if item.textField
+                +text-field(item.textField)
+              else
+                li.footer__info-item !{item}
+    .footer__copyright-wrapper
+      .footer__copyright
+        img.footer__logo.footer__logo_hidden(
+          src=args.copyright.image,
+          alt="logo"
+        )
+        .footer__copyright-text !{args.copyright.text}
+        .footer__socials-icons
+          each socialLink in args.copyright.social
+            a.footer__social-link(href=socialLink.href)
+              i(class=socialLink.class)

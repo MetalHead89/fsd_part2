@@ -4,20 +4,20 @@ include ../button/button.pug
 include ../toggle/toggle.pug
 
 mixin registration-card(args)
-    .registration-card
-        form
-            h1(class='registration-card__title registration-card__title_margin-8') !{args.title}
-            .registration-card__person
-                +text-field(args.textFieldName)
-                +text-field(args.textFieldSurname)
-                +radio-button(args.radioButton)
-            +text-field(args.textFieldBirth)
-            .registration-card__login-details
-                +text-field(args.textFieldEmail)
-                +text-field(args.textFieldPassword)
-                +toggle(args.toggle)
-            +button(args.buttonPayment)
-            .registration-card__account-login
-                .registration-card__login-label !{args.loginLabel}
-                .registration-card__login-button
-                    +button(args.buttonEntry)
+  .registration-card
+    form
+      h1.registration-card__title.registration-card__title_margin-8 !{args.title}
+      .registration-card__person
+        +text-field(args.textFieldName)
+        +text-field(args.textFieldSurname)
+        +radio-button(args.radioButton)
+      +text-field(args.textFieldBirth)
+      .registration-card__login-details
+        +text-field(args.textFieldEmail)
+        +text-field(args.textFieldPassword)
+        +toggle(args.toggle)
+      +button(args.buttonPayment)
+      .registration-card__account-login
+        .registration-card__login-label !{args.loginLabel}
+        .registration-card__login-button
+          +button(args.buttonEntry)

@@ -2,11 +2,11 @@ include ../button/button.pug
 include ../navbar/navbar.pug
 
 mixin header(args)
-    header(class='header')
-        .header__content
-            img(class='header__logo' src=args.logoPath, alt="logo")
-            input(type="checkbox", name="header", id="header", class='header__menu-check')
-            +navbar({type: 'horizontal', items: args.navbar})
-            label(for="header", class='header__burger')
-                .header__burger-image
-    +navbar({type: 'vertical', items: args.navbar})
+  header.header
+    .header__content
+      img.header__logo(src=args.logoPath, alt="logo")
+      input#header.header__menu-check(type="checkbox", name="header")
+      +navbar({type: 'horizontal', items: args.navbar})
+      label.header__burger(for="header")
+        .header__burger-image
+  +navbar({type: 'vertical', items: args.navbar})

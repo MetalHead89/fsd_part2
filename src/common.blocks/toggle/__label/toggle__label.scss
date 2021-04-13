@@ -18,7 +18,7 @@
   &::before {
     flex: none;
     transition: 0.5s ease;
-    content: '';
+    content: "";
     margin-right: 10px;
     display: inline-block;
     box-sizing: border-box;
@@ -29,7 +29,7 @@
   }
   &::after {
     transition: all 0.5s;
-    content: '';
+    content: "";
     position: absolute;
     top: 4px;
     left: 4px;

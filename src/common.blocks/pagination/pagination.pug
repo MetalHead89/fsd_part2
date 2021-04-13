@@ -1,49 +1,48 @@
 mixin pagination(args)
-    - let current_page = 1
-    - let isLeftNumbersHidden = false
-    - let isRightNumbersHidden = false
-    - let hotelRoomsTotal = (args.numberOfPages - 1) * 12
-    - const endHotelRoomOnPage = args.activePage * 12
-    - const startHotelRoomOnPage = endHotelRoomOnPage - 11
+  - let current_page = 1;
+  - let isLeftNumbersHidden = false;
+  - let isRightNumbersHidden = false;
+  - let hotelRoomsTotal = (args.numberOfPages - 1) * 12;
+  - const endHotelRoomOnPage = args.activePage * 12;
+  - const startHotelRoomOnPage = endHotelRoomOnPage - 11;
 
-    if hotelRoomsTotal > 100
-        - hotelRoomsTotal = '100+'
-    else
-        - hotelRoomsTotal = hotelRoomsTotal + '+'
+  if hotelRoomsTotal > 100
+    - hotelRoomsTotal = '100+';
+  else
+    - hotelRoomsTotal = hotelRoomsTotal + '+';
 
-    nav(class='pagination')
-        ul(class='pagination__pages')
-            if args.activePage != 1
-                    li(class='pagination__button pagination__button_with-arrow pagination__button_with-prev-arrow')
-                        a(href='#' class='pagination__link')
-                            i(class='material-icons pagination__arrow') arrow_back
-            
-            while current_page <= args.numberOfPages
+  nav.pagination
+    ul.pagination__pages
+      if args.activePage != 1
+        li.pagination__button.pagination__button_with-arrow.pagination__button_with-prev-arrow
+          a.pagination__link(href="#")
+            i.material-icons.pagination__arrow arrow_back
 
-                if current_page < args.activePage && args.activePage - current_page > 2 && current_page > 1 && args.activePage > 5
-                    if !isLeftNumbersHidden
-                        li(class='pagination__button pagination__button_with-number') ...
-                        - isLeftNumbersHidden = true
-                    - current_page++
-                    - continue
-                
-                if current_page > args.activePage && current_page - args.activePage > 2 && current_page < args.numberOfPages && args.numberOfPages - args.activePage > 4
-                    if !isRightNumbersHidden
-                        li(class='pagination__button pagination__button_with-number') ...
-                        - isRightNumbersHidden = true
-                    - current_page++
-                    - continue
+      while current_page <= args.numberOfPages
+        if current_page < args.activePage && args.activePage - current_page > 2 && current_page > 1 && args.activePage > 5
+          if !isLeftNumbersHidden
+            li.pagination__button.pagination__button_with-number ...
+            - isLeftNumbersHidden = true;
+          - current_page++;
+          - continue;
 
-                if current_page == args.activePage
-                    li(class='pagination__button pagination__button_with-number pagination__button_active-page') !{current_page}
-                else
-                    li(class='pagination__button pagination__button_with-number')
-                        a(href='#' class='pagination__link') !{current_page}
-                - current_page++
-            
-            if args.activePage != args.numberOfPages
-                li(class='pagination__button pagination__button_with-arrow pagination__button_with-next-arrow')
-                    a(href='#' class='pagination__link')
-                        i(class='material-icons pagination__arrow') arrow_forward
+        if current_page > args.activePage && current_page - args.activePage > 2 && current_page < args.numberOfPages && args.numberOfPages - args.activePage > 4
+          if !isRightNumbersHidden
+            li.pagination__button.pagination__button_with-number ...
+            - isRightNumbersHidden = true;
+          - current_page++;
+          - continue;
 
-        span(class='pagination__signature pagination__signature_with-top-margin') !{startHotelRoomOnPage} – !{endHotelRoomOnPage} из !{hotelRoomsTotal} вариантов аренды
+        if current_page == args.activePage
+          li.pagination__button.pagination__button_with-number.pagination__button_active-page !{current_page}
+        else
+          li.pagination__button.pagination__button_with-number
+            a.pagination__link(href="#") !{current_page}
+        - current_page++;
+
+      if args.activePage != args.numberOfPages
+        li.pagination__button.pagination__button_with-arrow.pagination__button_with-next-arrow
+          a.pagination__link(href="#")
+            i.material-icons.pagination__arrow arrow_forward
+
+    span.pagination__signature.pagination__signature_with-top-margin !{startHotelRoomOnPage} – !{endHotelRoomOnPage} из !{hotelRoomsTotal} вариантов аренды

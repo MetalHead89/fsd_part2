@@ -1,41 +1,40 @@
 include ../like-button/like-button.pug
 
 mixin guest-review(args)
-    - let lastVisit = ''
-    
-    if args.days < 7
-        if args.days === 1
-            - lastVisit = args.days + ' день '
-        else if (args.days >= 2 && args.days <= 4)
-            - lastVisit = args.days + ' дня '
-        else
-            - lastVisit = args.days + ' дней '
+  - let lastVisit = '';
+
+  if args.days < 7
+    if args.days === 1
+      - lastVisit = args.days + ' день ';
+    else if (args.days >= 2 && args.days <= 4)
+      - lastVisit = args.days + ' дня ';
     else
-        - var weeks = parseInt(args.days / 7)
+      - lastVisit = args.days + ' дней ';
+  else
+    - var weeks = parseInt(args.days / 7);
 
-        if weeks === 1
-            - lastVisit = 'Неделю '
-        else
-            - let weeks10 = weeks % 10
-            - let weeks100 = weeks % 100
+    if weeks === 1
+      - lastVisit = 'Неделю ';
+    else
+      - let weeks10 = weeks % 10;
+      - let weeks100 = weeks % 100;
 
-            if weeks10 === 1 && weeks100 !== 11
-                - lastVisit = weeks + ' неделю '
-            else if (weeks10 >= 2 && weeks10 <= 4) && !(weeks100 >= 12 && weeks100 <= 14)
-                - lastVisit = weeks + ' недели '
-            else
-                - lastVisit = weeks + ' недель '
+      if weeks10 === 1 && weeks100 !== 11
+        - lastVisit = weeks + ' неделю ';
+      else if (weeks10 >= 2 && weeks10 <= 4) && !(weeks100 >= 12 && weeks100 <= 14)
+        - lastVisit = weeks + ' недели ';
+      else
+        - lastVisit = weeks + ' недель ';
 
-    - lastVisit = lastVisit + ' назад '
+  - lastVisit = lastVisit + ' назад ';
 
-
-    .guest-review
-        .guest-review__guest
-            img(src=args.photo class='guest-review__photo' alt='guest photo')
-            .guest-review__guest-details
-                .guest-review__guest-name !{args.name}
-                .guest-review__last-visit !{lastVisit}
-        .guest-review__rewiew
-            .guest-review__likes
-                +like-button({likesCount: args.likes, checked: args.checkedLike})
-            .guest-review__rewiew-text !{args.review}
+  .guest-review
+    .guest-review__guest
+      img.guest-review__photo(src=args.photo, alt="guest photo")
+      .guest-review__guest-details
+        .guest-review__guest-name !{args.name}
+        .guest-review__last-visit !{lastVisit}
+    .guest-review__rewiew
+      .guest-review__likes
+        +like-button({likesCount: args.likes, checked: args.checkedLike})
+      .guest-review__rewiew-text !{args.review}

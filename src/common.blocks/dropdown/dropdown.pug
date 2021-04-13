@@ -2,76 +2,78 @@ include ../button/button.pug
 include ../calendar/calendar.pug
 
 mixin dropdown(args)
-    - let type = ''
-    - let options = []
-    - let buttons = false
-    - let dropdownClass = 'dropdown'
-    - let headerText = ''
-    - let headerClass = ''
-    - let calendarTheme = ''
-    
-    if args.type === 'comfort'
-        - type = 'comfort'
-        - options = ['спальни', 'кровати', 'ванные комнаты']
-        - buttons = false
-        - dropdownClass += ' dropdown_comfort'
-        - headerText = 'Выберите удобства'
-        - headerClass = 'dropdown__header dropdown__header_top-angles-are-round'
-    else if args.type === 'date'
-        - type = 'date'
-        - dropdownClass += ' dropdown_date'
-        - headerText = 'ДД.ММ.ГГГГ'
-        - headerClass = 'dropdown__header dropdown__header_all-angles-are-round'
-    else if args.type === 'filter_date'
-        - type = 'filter_date'
-        - title = 'даты пребывания в отеле'
-        - dropdownClass += ' dropdown_filter-date'
-        - headerText = 'Выберите период'
-        - headerClass = 'dropdown__header dropdown__header_all-angles-are-round'
-        - calendarTheme = 'without-top-border'
+  - let type = '';
+  - let options = [];
+  - let buttons = false;
+  - let dropdownClass = 'dropdown';
+  - let headerText = '';
+  - let headerClass = '';
+  - let calendarTheme = '';
+
+  if args.type === 'comfort'
+    - type = 'comfort';
+    - options = ['спальни', 'кровати', 'ванные комнаты'];
+    - buttons = false;
+    - dropdownClass += ' dropdown_comfort';
+    - headerText = 'Выберите удобства';
+    - headerClass = 'dropdown__header dropdown__header_top-angles-are-round';
+  else if args.type === 'date'
+    - type = 'date';
+    - dropdownClass += ' dropdown_date';
+    - headerText = 'ДД.ММ.ГГГГ';
+    - headerClass = 'dropdown__header dropdown__header_all-angles-are-round';
+  else if args.type === 'filter_date'
+    - type = 'filter_date';
+    - title = 'даты пребывания в отеле';
+    - dropdownClass += ' dropdown_filter-date';
+    - headerText = 'Выберите период';
+    - headerClass = 'dropdown__header dropdown__header_all-angles-are-round';
+    - calendarTheme = 'without-top-border';
+  else
+    - type = 'guests';
+    - options = ['взрослые', 'дети', 'младенцы'];
+    - buttons = true;
+    - dropdownClass += ' dropdown_guests';
+    - headerText = 'Сколько гостей';
+    - headerClass = 'dropdown__header dropdown__header_all-angles-are-round';
+
+  div(class=dropdownClass)
+    input.dropdown__check(type="checkbox", id=args.id)
+    if type != 'date'
+      h3.dropdown__title !{args.title}
+      label(for=args.id, class=headerClass)
+        .dropdown__header-text !{headerText}
+        i.material-icons.dropdown__expand-more keyboard_arrow_down
     else
-        - type = 'guests'
-        - options = ['взрослые', 'дети', 'младенцы']
-        - buttons = true
-        - dropdownClass += ' dropdown_guests'
-        - headerText = 'Сколько гостей'
-        - headerClass = 'dropdown__header dropdown__header_all-angles-are-round'
+      .dropdown__date-section
+        .dropdown__date-block.dropdown__date-block_right-padding
+          h3.dropdown__title !{args.title}
+          label(for=args.id, class=headerClass + ' dropdown__start-date-header')
+            .dropdown__header-text.dropdown_start-date !{headerText}
+            i.material-icons.dropdown__expand-more.dropdown__expand-more_absolute keyboard_arrow_down
+        .dropdown__date-block.dropdown__date-block_left-padding
+          h3.dropdown__title !{args.title2}
+          label(for=args.id, class=headerClass + ' dropdown__end-date-header')
+            .dropdown__header-text.dropdown_end-date !{headerText}
+            i.material-icons.dropdown__expand-more.dropdown__expand-more_absolute keyboard_arrow_down
 
-    div(class=dropdownClass)
-        input(type="checkbox" id=args.id class='dropdown__check')
-        if type != 'date'
-            h3(class="dropdown__title") !{args.title}
-            label(for=args.id class=headerClass)
-                .dropdown__header-text !{headerText}
-                i(class='material-icons dropdown__expand-more') keyboard_arrow_down
-        else
-            .dropdown__date-section
-                .dropdown__date-block.dropdown__date-block_right-padding
-                    h3(class="dropdown__title") !{args.title}
-                    label(for=args.id class=headerClass + ' dropdown__start-date-header')
-                        .dropdown__header-text.dropdown_start-date !{headerText}
-                        i(class='material-icons dropdown__expand-more dropdown__expand-more_absolute') keyboard_arrow_down
-                .dropdown__date-block.dropdown__date-block_left-padding
-                    h3(class="dropdown__title") !{args.title2}
-                    label(for=args.id class=headerClass + ' dropdown__end-date-header')
-                        .dropdown__header-text.dropdown_end-date !{headerText}
-                        i(class='material-icons dropdown__expand-more dropdown__expand-more_absolute') keyboard_arrow_down
-
-        if type === 'guests' || type === 'comfort'
-            .dropdown__drop-menu.dropdown__drop-menu_with-border
-                each val in options
-                    .dropdown__option
-                        .dropdown__option-title !{val}
-                        .dropdown__quantity-selection
-                            button(class='dropdown__quantity-button dropdown__quantity-button_substract' disabled) -
-                            .dropdown__quantity-number 0
-                            button(class='dropdown__quantity-button dropdown__quantity-button_add') +
-                if buttons
-                    .dropdown__bottom-buttons-panel
-                        .dropdown__button-clear
-                            +button({type: 'onlyText', text: 'очистить'})
-                        .dropdown__button-apply
-                            +button({type: 'onlyText', text: 'применить'})
-        else
-            .dropdown__drop-menu
-                +calendar({theme: calendarTheme})
+    if type === 'guests' || type === 'comfort'
+      .dropdown__drop-menu.dropdown__drop-menu_with-border
+        each val in options
+          .dropdown__option
+            .dropdown__option-title !{val}
+            .dropdown__quantity-selection
+              button.dropdown__quantity-button.dropdown__quantity-button_substract(
+                disabled
+              ) -
+              .dropdown__quantity-number 0
+              button.dropdown__quantity-button.dropdown__quantity-button_add +
+        if buttons
+          .dropdown__bottom-buttons-panel
+            .dropdown__button-clear
+              +button({type: 'onlyText', text: 'очистить'})
+            .dropdown__button-apply
+              +button({type: 'onlyText', text: 'применить'})
+    else
+      .dropdown__drop-menu
+        +calendar({theme: calendarTheme})

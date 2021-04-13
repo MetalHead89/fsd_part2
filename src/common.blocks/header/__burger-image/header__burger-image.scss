@@ -5,7 +5,7 @@
   height: 4px;
   background: #5c5c72ff;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -8px;
     display: block;
@@ -14,7 +14,7 @@
     background: #5c5c72ff;
   }
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 8px;
     display: block;

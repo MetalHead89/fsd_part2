@@ -1,15 +1,15 @@
 mixin text-field(args)
-    - let fieldClass = 'text-field__field'
+  - let fieldClass = 'text-field__field';
 
-    if args.type === 'masked'
-        - fieldClass += ' text-field__field_masked'
-    else if args.type === 'subscription'
-        - fieldClass += ' text-field__field_subscription'
+  if args.type === 'masked'
+    - fieldClass += ' text-field__field_masked';
+  else if args.type === 'subscription'
+    - fieldClass += ' text-field__field_subscription';
 
-    .text-field
-        if args.title
-            h3(class='text-field__title') !{args.title}
-        input(type="text" placeholder=args.placeholderText class=fieldClass)
-        if args.type === 'subscription'
-            button(class='text-field__subscription-btn')
-                span(class='material-icons text-field__arrow-forward') arrow_forward
+  .text-field
+    if args.title
+      h3.text-field__title !{args.title}
+    input(type="text", placeholder=args.placeholderText, class=fieldClass)
+    if args.type === 'subscription'
+      button.text-field__subscription-btn
+        span.material-icons.text-field__arrow-forward arrow_forward

@@ -1,38 +1,38 @@
 include ../rate-button/rate-button.pug
 
 mixin number-card(args)
-    .number-card
-        .number-card__slider-section
-            <ul class="number-card__slider-list">
-                each img, index in args.images
-                    if index == 0
-                        <li class="number-card__slider-list-item number-card__slider-list-item_opacity-1"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
-                    else
-                        <li class="number-card__slider-list-item number-card__slider-list-item_opacity-0"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
-            </ul>
-            button(class='number-card__arrow-button number-card__arrow-button_prev')
-                i(class="material-icons") keyboard_arrow_left
-            button(class='number-card__arrow-button number-card__arrow-button_next')
-                i(class="material-icons") keyboard_arrow_right
-            .number-card__dots-section
-                each img, index in args.images
-                    if index == 0
-                        .number-card__dot.number-card__dot_active
-                    else
-                        .number-card__dot.number-card__dot_unactive
-        .number-card__room-info
-            .number-card__number-section
-                .number-card__room-number
-                    span(class='number-card__number') №
-                    |   #[span(class='number-card__number number-card__number_size-19') !{args.roomNumber}]
-                    if args.lux
-                        |    #[span(class='number-card__lux') ЛЮКС]
-                .number-card__room-rate 
-                    span(class='number-card__accented-text') !{args.roomRate.toLocaleString('ru-RU')}&#8381 
-                    span в сутки
-            .number-card__separator
-            .number-card__rating-section
-                +rate-button({rate: args.rating})
-                .number-card__rating
-                    span(class='number-card__accented-text') !{args.reviewsNumber} 
-                    span Отзывов
+  .number-card
+    .number-card__slider-section
+      <ul class="number-card__slider-list">
+        each img, index in args.images
+          if index == 0
+            <li class="number-card__slider-list-item number-card__slider-list-item_opacity-1"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
+          else
+            <li class="number-card__slider-list-item number-card__slider-list-item_opacity-0"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
+      </ul>
+      button.number-card__arrow-button.number-card__arrow-button_prev
+        i.material-icons keyboard_arrow_left
+      button.number-card__arrow-button.number-card__arrow-button_next
+        i.material-icons keyboard_arrow_right
+      .number-card__dots-section
+        each img, index in args.images
+          if index == 0
+            .number-card__dot.number-card__dot_active
+          else
+            .number-card__dot.number-card__dot_unactive
+    .number-card__room-info
+      .number-card__number-section
+        .number-card__room-number
+          span.number-card__number №
+          |              #[span.number-card__number.number-card__number_size-19 !{args.roomNumber}]
+          if args.lux
+            | #[span.number-card__lux ЛЮКС]
+        .number-card__room-rate 
+          span.number-card__accented-text !{args.roomRate.toLocaleString('ru-RU')}&#8381
+          span в сутки
+      .number-card__separator
+      .number-card__rating-section
+        +rate-button({rate: args.rating})
+        .number-card__rating
+          span.number-card__accented-text !{args.reviewsNumber}
+          span Отзывов

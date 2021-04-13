@@ -1,17 +1,17 @@
 extends ../layout-for-pages/layout-for-pages
 
 block includs
-    include ../../common.blocks/search-room-card/search-room-card.pug
+  include ../../common.blocks/search-room-card/search-room-card.pug
 
 block title
-    | Landing Page
+  | Landing Page
 
 block content
-    .landing-page
-        .landing-page__background.landing-page__background_first
-        .landing-page__background.landing-page__background_second
-        .landing-page__background.landing-page__background_third
-        .landing-page__content-container
-            .landing-page__card-container
-                +search-room-card(config.searchRoomCard)
-            .landing-page__body-text !{config.bodyText}
+  .landing-page
+    .landing-page__background.landing-page__background_first
+    .landing-page__background.landing-page__background_second
+    .landing-page__background.landing-page__background_third
+    .landing-page__content-container
+      .landing-page__card-container
+        +search-room-card(config.searchRoomCard)
+      .landing-page__body-text !{config.bodyText}

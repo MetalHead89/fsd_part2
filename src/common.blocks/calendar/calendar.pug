@@ -1,56 +1,56 @@
 include ../button/button.pug
 
 mixin calendar(args)
-    - const WEEK_DAYS = 7
-    - let maxDaysCount = 31
-    - let weeksCount = 5
-    - let week = 1    
-    - let dayNumber = 28
-    - let calendarDayClass = 'calendar__day  calendar__day-number_other-month'
-    - let currentDay = 6
-    - let isPrevMonth = true
-    - let calendarStyle = 'calendar calendar_standart-theme'
-    
-    if (args !== undefined && args.theme === 'without-top-border')
-        - calendarStyle += ' calendar_without-top-border'
+  - const WEEK_DAYS = 7;
+  - let maxDaysCount = 31;
+  - let weeksCount = 5;
+  - let week = 1;
+  - let dayNumber = 28;
+  - let calendarDayClass = 'calendar__day  calendar__day-number_other-month';
+  - let currentDay = 6;
+  - let isPrevMonth = true;
+  - let calendarStyle = 'calendar calendar_standart-theme';
 
-    div(class=calendarStyle)
-        .calendar__month-selection-section
-            i(class='material-icons calendar__month-button calendar__month-button_standart-theme calendar__month-button_with-back-arrow') arrow_back
-            span(class='calendar__month-name') Сентябрь 1989
-            i(class='material-icons calendar__month-button calendar__month-button_standart-theme calendar__month-button_with-forward-arrow') arrow_forward
-        .calendar__days-section
-            .calendar__names-of-week-days-section.calendar__names-of-week-days-section_standart-theme
-                for day in ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
-                    span(class='calendar__week-day') !{day}
+  if (args !== undefined && args.theme === 'without-top-border')
+    - calendarStyle += ' calendar_without-top-border';
 
-            while week <= weeksCount
-                .calendar__week-section
-                    - let weekDay = 1
+  div(class=calendarStyle)
+    .calendar__month-selection-section
+      i.material-icons.calendar__month-button.calendar__month-button_standart-theme.calendar__month-button_with-back-arrow arrow_back
+      span.calendar__month-name Сентябрь 1989
+      i.material-icons.calendar__month-button.calendar__month-button_standart-theme.calendar__month-button_with-forward-arrow arrow_forward
+    .calendar__days-section
+      .calendar__names-of-week-days-section.calendar__names-of-week-days-section_standart-theme
+        each day in ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
+          span.calendar__week-day !{day}
 
-                    while weekDay <= WEEK_DAYS
-                        if isPrevMonth && dayNumber > maxDaysCount
-                            - maxDaysCount = 30
-                            - dayNumber = 1
-                            - isPrevMonth = false
-                            - calendarDayClass = 'calendar__day'
-                        if dayNumber == currentDay
-                            - calendarDayClass = 'calendar__day calendar__day_current'
-                        if !isPrevMonth && dayNumber > maxDaysCount
-                            - dayNumber = 1
-                            - calendarDayClass = 'calendar__day  calendar__day_other-month'
+      while week <= weeksCount
+        .calendar__week-section
+          - let weekDay = 1;
 
-                        span(class=calendarDayClass) !{dayNumber}
+          while weekDay <= WEEK_DAYS
+            if isPrevMonth && dayNumber > maxDaysCount
+              - maxDaysCount = 30;
+              - dayNumber = 1;
+              - isPrevMonth = false;
+              - calendarDayClass = 'calendar__day';
+            if dayNumber == currentDay
+              - calendarDayClass = 'calendar__day calendar__day_current';
+            if !isPrevMonth && dayNumber > maxDaysCount
+              - dayNumber = 1;
+              - calendarDayClass = 'calendar__day  calendar__day_other-month';
 
-                        if dayNumber == currentDay
-                            - calendarDayClass = 'calendar__day'
+            span(class=calendarDayClass) !{dayNumber}
 
-                        - dayNumber += 1
-                        - weekDay += 1
-                - week += 1
+            if dayNumber == currentDay
+              - calendarDayClass = 'calendar__day';
 
-        .calendar__buttons-panel
-            .calendar__button-clear
-                +button({type: 'onlyText', text: 'очистить'})
-            .calendar__button-apply
-                +button({type: 'onlyText', text: 'применить'})
+            - dayNumber += 1;
+            - weekDay += 1;
+        - week += 1;
+
+    .calendar__buttons-panel
+      .calendar__button-clear
+        +button({type: 'onlyText', text: 'очистить'})
+      .calendar__button-apply
+        +button({type: 'onlyText', text: 'применить'})

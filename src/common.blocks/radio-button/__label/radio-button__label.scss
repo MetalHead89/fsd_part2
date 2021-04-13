@@ -10,7 +10,7 @@
     border-color: #bc9cff;
   }
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: -20px;
@@ -24,7 +24,7 @@
   }
   &:after {
     transition: 0.2s ease;
-    content: '';
+    content: "";
     transform: translate(-50%, -50%) scale(0.1);
     visibility: hidden;
     position: absolute;

@@ -1,51 +1,53 @@
 extends ../layout-for-pages/layout-for-pages
 
 block includs
-    include ../../common.blocks/dropdown/dropdown.pug
-    include ../../common.blocks/range-slider/range-slider.pug
-    include ../../common.blocks/checkbox-button/checkbox-button.pug
-    include ../../common.blocks/expandable-checkbox-list/expandable-checkbox-list.pug
-    include ../../common.blocks/number-card/number-card.pug
-    include ../../common.blocks/pagination/pagination.pug    
+  include ../../common.blocks/dropdown/dropdown.pug
+  include ../../common.blocks/range-slider/range-slider.pug
+  include ../../common.blocks/checkbox-button/checkbox-button.pug
+  include ../../common.blocks/expandable-checkbox-list/expandable-checkbox-list.pug
+  include ../../common.blocks/number-card/number-card.pug
+  include ../../common.blocks/pagination/pagination.pug
 
 block title
-    | Serach Room
+  | Serach Room
 
 block content
-    .search-room
-        .search-room__content
-            aside(class="search-room__sidebar")
-                label(class='search-room__filter' for='search-room__filter-check')
-                    h3 Дополнительные опции для поиска номера
-                    i(class='material-icons search-room__filter-expand-more') keyboard_arrow_down
-                input(type='checkbox' id='search-room__filter-check' class='search-room__filter-check')
-                .search-room__filter-options
-                    .search-room__option-column-one
-                        .search-room__filter-date-container
-                            +dropdown(config.filterDateDropdown)
-                        .search-room__guests-dropdown-container
-                            +dropdown(config.guestsDropdown)
-                        .search-room__range-slider-container
-                            +range-slider(config.rangeSlider)
-                            span Стоимость за сутки пребывания в номере
-                        .search-room__checkbox-container
-                            h3 Правила дома
-                            each checkbox in config.rulesCheckboxes
-                                +checkbox-button(checkbox)
-                    .search-room__option-column-two
-                        .search-room__rich-checkbox-container
-                            h3 Доступность
-                            each checkbox in config.availabilityCheckboxes
-                                +checkbox-button(checkbox)
-                        .search-room__comfort-dropdown-container
-                            +dropdown(config.comfortDropdown)
-                        .search-room__expandable-checkbox-list-container
-                            +expandable-checkbox-list(config.expandableCheckboxList)
-            .search-room__rooms-section
-                h1(class='search-room__rooms-title') Номера, которые мы для вас подобрали
-                .search-room__rooms
-                    each numberCard in config.numberCards
-                        .search-room__number-card-container
-                            +number-card(numberCard)
-                .search-room__pagination-container
-                    +pagination(config.pagination)
+  .search-room
+    .search-room__content
+      aside.search-room__sidebar
+        label.search-room__filter(for="search-room__filter-check")
+          h3 Дополнительные опции для поиска номера
+          i.material-icons.search-room__filter-expand-more keyboard_arrow_down
+        input#search-room__filter-check.search-room__filter-check(
+          type="checkbox"
+        )
+        .search-room__filter-options
+          .search-room__option-column-one
+            .search-room__filter-date-container
+              +dropdown(config.filterDateDropdown)
+            .search-room__guests-dropdown-container
+              +dropdown(config.guestsDropdown)
+            .search-room__range-slider-container
+              +range-slider(config.rangeSlider)
+              span Стоимость за сутки пребывания в номере
+            .search-room__checkbox-container
+              h3 Правила дома
+              each checkbox in config.rulesCheckboxes
+                +checkbox-button(checkbox)
+          .search-room__option-column-two
+            .search-room__rich-checkbox-container
+              h3 Доступность
+              each checkbox in config.availabilityCheckboxes
+                +checkbox-button(checkbox)
+            .search-room__comfort-dropdown-container
+              +dropdown(config.comfortDropdown)
+            .search-room__expandable-checkbox-list-container
+              +expandable-checkbox-list(config.expandableCheckboxList)
+      .search-room__rooms-section
+        h1.search-room__rooms-title Номера, которые мы для вас подобрали
+        .search-room__rooms
+          each numberCard in config.numberCards
+            .search-room__number-card-container
+              +number-card(numberCard)
+        .search-room__pagination-container
+          +pagination(config.pagination)

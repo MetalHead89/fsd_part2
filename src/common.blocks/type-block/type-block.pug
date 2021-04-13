@@ -1,12 +1,12 @@
 mixin type-block(args)
-    - let tag = 'Body'
-    if args.tag === 'h1'
-        - tag = 'H1'
-    else if args.tag === 'h2'
-        - tag = 'H2'
-    else if args.tag === 'h3'
-        - tag = 'H3'
+  - let tag = 'Body';
+  if args.tag === 'h1'
+    - tag = 'H1';
+  else if args.tag === 'h2'
+    - tag = 'H2';
+  else if args.tag === 'h3'
+    - tag = 'H3';
 
-    .type-block
-        #{args.tag}(class='type-block__tag') !{tag}
-        #{args.tag}(class='type-block__text') !{args.text}
+  .type-block
+    #{args.tag}.type-block__tag !{tag}
+    #{args.tag}.type-block__text !{args.text}
