@@ -7,6 +7,8 @@ mixin button(args)
     - button_class += ' button_only-text';
     if args.theme === 'gray'
       - button_class += ' button_only-text_gray';
+    else
+      - button_class += ' button_only-text_purple';
   else if args.type == 'arrow'
     - button_class += ' button_with-arrow';
   else
