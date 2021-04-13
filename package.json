@@ -6,9 +6,7 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "watch": "webpack --mode development --watch",
-    "start": "webpack-dev-server --mode development --open",
-    "prettier": "prettier --single-quote --trailing-comma es5 --write \"src/**/*.scss\""
+    "start": "webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",
