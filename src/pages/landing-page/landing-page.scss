@@ -1,14 +1,14 @@
-.landing-page__header-container {
-  position: relative;
-  z-index: 3;
-}
-
 .landing-page {
   position: relative;
   width: 100%;
   height: 100%;
   padding: 0 20px;
   box-sizing: border-box;
+}
+
+.landing-page__header-container {
+  position: relative;
+  z-index: 3;
 }
 
 .landing-page__background_first {

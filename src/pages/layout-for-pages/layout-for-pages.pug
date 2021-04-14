@@ -14,9 +14,13 @@ html(lang="ru")
     title 
       block title
   body
-    +header(layoutConfig.header)
+    .site-container
+      section.header-section
+        +header(layoutConfig.header)
 
-    article
-      block content
+      section.content-section
+        article
+          block content
 
-    +footer(layoutConfig.footer)
+      section.footer-section
+        +footer(layoutConfig.footer)
