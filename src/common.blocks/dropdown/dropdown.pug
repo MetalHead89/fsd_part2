@@ -64,10 +64,12 @@ mixin dropdown(args)
             .dropdown__option-title !{val}
             .dropdown__quantity-selection
               button.dropdown__quantity-button.dropdown__quantity-button_substract(
-                disabled
+                type='button' disabled
               ) -
               .dropdown__quantity-number 0
-              button.dropdown__quantity-button.dropdown__quantity-button_add +
+              button.dropdown__quantity-button.dropdown__quantity-button_add(
+                type='button'
+              ) +
         if buttons
           .dropdown__bottom-buttons-panel
             .dropdown__button-clear
