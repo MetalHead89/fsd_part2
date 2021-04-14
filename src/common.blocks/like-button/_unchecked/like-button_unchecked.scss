@@ -1,4 +1,5 @@
 .like-button_unchecked {
+  color: rgba(31, 32, 65, 0.25);
   & .like-button__heart {
     animation: heartJump2 0.2s ease;
   }
