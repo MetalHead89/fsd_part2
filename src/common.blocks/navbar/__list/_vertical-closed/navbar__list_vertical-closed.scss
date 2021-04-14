@@ -1,0 +1,5 @@
+.navbar__list_vertical-closed {
+  transform: translateY(100%) scaleY(0);
+  transition: transform 0.5s ease-in;
+  transform-origin: top;
+}

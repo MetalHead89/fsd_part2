@@ -1,7 +1,7 @@
 .navbar__hidden-list_vertical {
+  padding: 0;
   align-items: center;
   overflow: hidden;
-  max-height: 0;
   transition: max-height 0.3s ease-in;
   & .header__hidden-list-item:last-child {
     padding-bottom: 0;
