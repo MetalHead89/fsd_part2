@@ -24,15 +24,15 @@ mixin number-card(args)
       .number-card__number-section
         .number-card__room-number
           span.number-card__number №
-          |              #[span.number-card__number.number-card__number_size-19 !{args.roomNumber}]
+          |  #[span.number-card__number.number-card__number_size-19 !{args.roomNumber}]
           if args.lux
-            | #[span.number-card__lux ЛЮКС]
+            |  #[span.number-card__lux ЛЮКС]
         .number-card__room-rate 
           span.number-card__accented-text !{args.roomRate.toLocaleString('ru-RU')}&#8381
-          span в сутки
+          span  в сутки
       .number-card__separator
       .number-card__rating-section
         +rate-button({rate: args.rating})
         .number-card__rating
           span.number-card__accented-text !{args.reviewsNumber}
-          span Отзывов
+          span  Отзывов
