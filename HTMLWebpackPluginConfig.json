@@ -1,0 +1,36 @@
+{
+  "plugins": [
+    {
+      "template": "src/pages/page-with-links/page-with-links.pug",
+      "favicon": "favicon.ico"
+    },
+    {
+      "template": "src/pages/page-with-links/page-with-links.pug",
+      "favicon": "favicon.ico"
+    },
+    {
+      "template": "src/pages/ui-kit/ui-kit.pug",
+      "filename": "assets/pages/ui-kit.html"
+    },
+    {
+      "template": "src/pages/landing-page/landing-page.pug",
+      "filename": "assets/pages/landing-page.html"
+    },
+    {
+      "template": "src/pages/search-room/search-room.pug",
+      "filename": "assets/pages/search-room.html"
+    },
+    {
+      "template": "src/pages/room-details/room-details.pug",
+      "filename": "assets/pages/room-details.html"
+    },
+    {
+      "template": "src/pages/registration-page/registration-page.pug",
+      "filename": "assets/pages/registration-page.html"
+    },
+    {
+      "template": "src/pages/signin-page/signin-page.pug",
+      "filename": "assets/pages/signin-page.html"
+    }
+  ]
+}

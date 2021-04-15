@@ -1,8 +1,27 @@
 const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const htmlWebpackPluginProps = require('./HTMLWebpackPluginConfig.json');
+
+function createHTMLWebpackPlugins(props) {
+  return props.map((item) => {
+    const pluginProps = {};
+
+    if (item.template) {
+      pluginProps.template = path.resolve(__dirname, item.template);
+    }
+    if (item.filename) {
+      pluginProps.filename = item.filename;
+    }
+    if (item.favicon) {
+      pluginProps.favicon = path.resolve(__dirname, item.favicon);
+    }
+
+    return new HTMLWebpackPlugin(pluginProps);
+  });
+}
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -26,52 +45,7 @@ module.exports = {
     port: 4200,
   },
   plugins: [
-    new HTMLWebpackPlugin({
-      template: path.resolve(
-        __dirname,
-        'src/pages/page-with-links/page-with-links.pug'
-      ),
-      favicon: path.resolve(__dirname, 'favicon.ico'),
-    }),
-    new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src/pages/ui-kit/ui-kit.pug'),
-      filename: 'assets/pages/ui-kit.html',
-    }),
-    new HTMLWebpackPlugin({
-      template: path.resolve(
-        __dirname,
-        'src/pages/landing-page/landing-page.pug'
-      ),
-      filename: 'assets/pages/landing-page.html',
-    }),
-    new HTMLWebpackPlugin({
-      template: path.resolve(
-        __dirname,
-        'src/pages/search-room/search-room.pug'
-      ),
-      filename: 'assets/pages/search-room.html',
-    }),
-    new HTMLWebpackPlugin({
-      template: path.resolve(
-        __dirname,
-        'src/pages/room-details/room-details.pug'
-      ),
-      filename: 'assets/pages/room-details.html',
-    }),
-    new HTMLWebpackPlugin({
-      template: path.resolve(
-        __dirname,
-        'src/pages/registration-page/registration-page.pug'
-      ),
-      filename: 'assets/pages/registration-page.html',
-    }),
-    new HTMLWebpackPlugin({
-      template: path.resolve(
-        __dirname,
-        'src/pages/signin-page/signin-page.pug'
-      ),
-      filename: 'assets/pages/signin-page.html',
-    }),
+    ...createHTMLWebpackPlugins(htmlWebpackPluginProps.plugins),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin([{ filename: '[name].css' }]),
     new CopyWebpackPlugin({
