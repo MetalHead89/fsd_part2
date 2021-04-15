@@ -17,10 +17,11 @@ mixin footer(args)
                 li.footer__info-item !{item}
     .footer__copyright-wrapper
       .footer__copyright
-        img.footer__logo.footer__logo_hidden(
-          src=args.copyright.image,
-          alt="logo"
-        )
+        a(href="#")
+          img.footer__logo.footer__logo_hidden(
+            src=args.copyright.image,
+            alt="logo"
+          )
         .footer__copyright-text !{args.copyright.text}
         .footer__socials-icons
           each socialLink in args.copyright.social

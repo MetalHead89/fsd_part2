@@ -303,24 +303,38 @@
           "alt": "logo"
         },
         "items": [
-          "<img class='footer__logo' src='../images/logo.svg', alt='logo'/>",
+          "<a href='#'><img class='footer__logo' src='../images/logo.svg', alt='logo'/></a>",
           "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
         ]
       },
       {
         "listStyle": "footer__info-column",
         "title": "Навигация",
-        "items": ["О нас", "Новости", "Служба поддержки", "Услуги"]
+        "items": [
+          "<a class='footer__link' href='#'>О нас</a>",
+          "<a class='footer__link' href='#'>Новости</a>",
+          "<a class='footer__link' href='#'>Служба поддержки</a>",
+          "<a class='footer__link' href='#'>Услуги</a>"
+        ]
       },
       {
         "listStyle": "footer__info-column",
         "title": "О нас",
-        "items": ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"]
+        "items": [
+          "<a class='footer__link' href='#'>О сервисе</a>",
+          "<a class='footer__link' href='#'>Наша команда</a>",
+          "<a class='footer__link' href='#'>Вакансии</a>",
+          "<a class='footer__link' href='#'>Инвесторы</a>"
+        ]
       },
       {
         "listStyle": "footer__info-column",
         "title": "Служба поддержки",
-        "items": ["Соглашения", "Сообщества", "Связь с нами"]
+        "items": [
+          "<a class='footer__link' href='#'>Соглашения</a>",
+          "<a class='footer__link' href='#'>Сообщества</a>",
+          "<a class='footer__link' href='#'>Связь с нами</a>"
+        ]
       },
       {
         "listStyle": "footer__info-column footer__info-column_width-260",

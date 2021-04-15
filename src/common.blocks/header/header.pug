@@ -4,7 +4,8 @@ include ../navbar/navbar.pug
 mixin header(args)
   header.header
     .header__content
-      img.header__logo(src=args.logoPath, alt="logo")
+      a(href="#")
+        img.header__logo(src=args.logoPath, alt="logo")
       input#header.header__menu-check(type="checkbox", name="header")
       +navbar({type: 'horizontal', items: args.navbar})
       label.header__burger(for="header")

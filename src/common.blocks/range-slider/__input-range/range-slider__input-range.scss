@@ -9,6 +9,7 @@
   box-sizing: border-box;
   margin: 0;
   opacity: 0;
+  cursor: pointer;
   &::-webkit-slider-thumb {
     pointer-events: all;
     width: 16px;

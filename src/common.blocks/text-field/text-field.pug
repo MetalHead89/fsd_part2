@@ -11,5 +11,7 @@ mixin text-field(args)
       h3.text-field__title !{args.title}
     input(type="text", placeholder=args.placeholderText, class=fieldClass)
     if args.type === 'subscription'
-      button.text-field__subscription-btn
+      button.text-field__subscription-btn(
+        type='button'
+      )
         span.material-icons.text-field__arrow-forward arrow_forward

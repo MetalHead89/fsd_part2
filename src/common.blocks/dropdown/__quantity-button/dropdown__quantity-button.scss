@@ -9,6 +9,7 @@
   border-radius: 15px;
   background: #ffffff;
   transition: 0.5s;
+  cursor: pointer;
   &:focus {
     outline: none;
   }
@@ -24,5 +25,6 @@
   &:disabled {
     border: 1px solid rgba(31, 32, 65, 0.25);
     color: rgba(31, 32, 65, 0.25);
+    cursor: default;
   }
 }
