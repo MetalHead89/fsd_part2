@@ -3,19 +3,19 @@ UI Kit и страницы по поиску номеров для отеля To
 ### Локальная установка
 
 1. Скопировать репозиторий:
-   git@github.com:MetalHead89/fsd_part2.git
+> git clone git@github.com:MetalHead89/fsd_part2.git
 2. Установить зависимости:
-   npm install
+> npm install
 
 ### Команды
 
 1. Запуск сервера разработки:
-   npm start
+> npm start
 2. Development сборка:
-   npm run dev
+> npm run dev
 3. Production сборка:
-   npm run build
+> npm run build
 
 ### Демо страница
 
-https://metalhead89.github.io/fsd_demo_part2/
+> https://metalhead89.github.io/fsd_demo_part2/
