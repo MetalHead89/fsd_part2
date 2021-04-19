@@ -1,4 +1,4 @@
-.signin {
+.sign-in {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -19,12 +19,12 @@
 
     &_first {
       background: url('../../assets/images/registration-sign-in-background-1.png');
-      animation: signin-animation-1 40s infinite;
+      animation: sign-in-animation-1 40s infinite;
     }
 
     &_second {
       background: url('../../assets/images/registration-sign-in-background-2.png');
-      animation: signin-animation-2 40s infinite;
+      animation: sign-in-animation-2 40s infinite;
     }
   }
 
@@ -48,7 +48,7 @@
   }
 }
 
-@keyframes signin-animation-1 {
+@keyframes sign-in-animation-1 {
   0% {
     opacity: 1;
   }
@@ -66,7 +66,7 @@
   }
 }
 
-@keyframes signin-animation-2 {
+@keyframes sign-in-animation-2 {
   0% {
     opacity: 0;
   }

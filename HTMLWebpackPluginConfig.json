@@ -29,8 +29,8 @@
       "filename": "assets/pages/registration-page.html"
     },
     {
-      "template": "src/pages/signin-page/signin-page.pug",
-      "filename": "assets/pages/signin-page.html"
+      "template": "src/pages/sign-in-page/sign-in-page.pug",
+      "filename": "assets/pages/sign-in-page.html"
     }
   ]
 }
