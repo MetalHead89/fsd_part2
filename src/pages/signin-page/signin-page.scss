@@ -4,48 +4,48 @@
   height: 100vh;
   min-height: 700px;
   box-sizing: border-box;
-}
 
-.signin__background_first {
-  background: url("../../assets/images/registration-sign-in-background-1.png");
-  animation: signin-animation-1 40s infinite;
-}
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    z-index: 0;
 
-.signin__background_second {
-  background: url("../../assets/images/registration-sign-in-background-2.png");
-  animation: signin-animation-2 40s infinite;
-}
+    &_first {
+      background: url('../../assets/images/registration-sign-in-background-1.png');
+      animation: signin-animation-1 40s infinite;
+    }
 
-.signin__background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center center;
-  display: flex;
-  justify-content: center;
-  z-index: 0;
-}
+    &_second {
+      background: url('../../assets/images/registration-sign-in-background-2.png');
+      animation: signin-animation-2 40s infinite;
+    }
+  }
 
-.signin__content-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  max-width: 1160px;
-  padding: 20px 0;
-  z-index: 1;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  &__content-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    max-width: 1160px;
+    padding: 20px 0;
+    z-index: 1;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.signin__card-container {
-  width: 380px;
-  margin: 0 10px;
+  &__card-container {
+    width: 380px;
+    margin: 0 10px;
+  }
 }
 
 @keyframes signin-animation-1 {
