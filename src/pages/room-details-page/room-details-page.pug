@@ -1,0 +1,46 @@
+extends ../layout-for-pages/layout-for-pages
+
+block includs
+  include ../../common.blocks/guest-review/guest-review.pug
+  include ../../common.blocks/room-details/room-details.pug
+  include ../../common.blocks/bullet-list/bullet-list.pug
+  include ../../common.blocks/room-rate-card/room-rate-card.pug
+  include ../../common.blocks/impressions-diagram/impressions-diagram.pug
+
+block title
+  | Room Details
+
+block content
+  .room-details-page
+    .room-details-page__room-photos
+      .room-details-page__main-photo
+      .room-details-page__additional-photos
+        .room-details-page__additional-photo-1
+        .room-details-page__additional-photo-2
+    .room-details-page__details-section
+      .room-details-page__central-container
+        .room-details-page__room-info
+          .room-details-page__top-info-section
+            .room-details-page__details-container
+              h1.room-details-page__details-title !{config.roomDetailsTitle}
+              each detail in config.roomDetails
+                +room-details(detail)
+            .room-details-page__impressions-diagram
+              h1.room-details-page__details-title !{config.roomImpressionsTitle}
+              +impressions-diagram(config.impressionsDiagram)
+
+          .room-details-page__reviews-header
+            h1.room-details-page__details-title !{config.guestReviewsTitle}
+            .room-details-page__reviews-count  !{config.guestReviews.length} отзыва
+          each review in config.guestReviews
+            .room-details-page__guest-review-container
+              +guest-review(review)
+          .room-details-page__bottom-info-section
+            .room-details-page__details-container.room-details-page__details-container_bullet-list
+              h1.room-details-page__details-title.room-details-page__details-title_bullet-list !{config.rulesTitle}
+              +bullet-list(config.bulletList)
+            .room-details-page__details-container
+              h1.room-details-page__details-title.room-details-page__details-title_cancel !{config.cancelTitle}
+              .room-details-page__cancel-text !{config.cancelText}
+        .room-details-page__rate-card-container
+          +room-rate-card(config.roomRateCard)

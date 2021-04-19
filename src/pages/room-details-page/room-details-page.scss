@@ -1,4 +1,4 @@
-.room-details {
+.room-details-page {
   &__room-photos {
     display: flex;
     flex-direction: row;
@@ -128,7 +128,7 @@
 }
 
 @media screen and (max-width: 1120px) {
-  .room-details {
+  .room-details-page {
     &__top-info-section {
       margin-left: 5%;
       flex-direction: column;
@@ -156,7 +156,7 @@
 }
 
 @media screen and (max-width: 850px) {
-  .room-details {
+  .room-details-page {
     &__rate-card-container {
       position: static;
       margin: 30px auto 0;
@@ -176,7 +176,7 @@
 }
 
 @media screen and (max-width: 660px) {
-  .room-details {
+  .room-details-page {
     &__top-info-section {
       flex-direction: column;
     }

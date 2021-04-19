@@ -21,8 +21,8 @@
       "filename": "assets/pages/search-room.html"
     },
     {
-      "template": "src/pages/room-details/room-details.pug",
-      "filename": "assets/pages/room-details.html"
+      "template": "src/pages/room-details-page/room-details-page.pug",
+      "filename": "assets/pages/room-details-page.html"
     },
     {
       "template": "src/pages/registration-page/registration-page.pug",
