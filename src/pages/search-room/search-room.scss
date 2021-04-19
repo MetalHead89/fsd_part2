@@ -99,6 +99,8 @@
   }
 
   &__rooms-section {
+    display: flex;
+    flex-direction: column;
     width: 71.8%;
   }
 
