@@ -1,4 +1,48 @@
+@import '../../scss/mixins';
+
 .expandable-checkbox-list {
   width: 100%;
   max-width: 500px;
+
+  &__check {
+    display: none;
+    &:checked ~ .expandable-checkbox-list__hide-list {
+      display: block;
+    }
+    &:checked
+      ~ .expandable-checkbox-list__title-section
+      .expandable-checkbox-list__expand-more {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__expand-more {
+    color: rgba(31, 32, 65, 0.5);
+    transition: 0.5s ease;
+  }
+
+  &__hide-list {
+    flex: none;
+    display: none;
+  }
+
+  &__title {
+    @include h3;
+    color: #1f2041;
+    margin-bottom: 17px;
+    margin: 0;
+  }
+
+  &__title-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+    cursor: pointer;
+
+    &:hover .expandable-checkbox-list__expand-more {
+      color: rgba(31, 32, 65, 0.75);
+    }
+  }
 }
