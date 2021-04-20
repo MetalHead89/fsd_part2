@@ -1,5 +1,65 @@
+@import '../../scss/mixins.scss';
+
 .color-block {
   flex-direction: row;
   display: flex;
   align-items: center;
+
+  &__color-code {
+    font-family: Quicksand, Helvetica, Arial, sans-serif;
+    font-size: 1.35rem;
+    font-weight: normal;
+  }
+
+  &__color-name {
+    @include h2;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
+  &__description {
+    padding-left: 7%;
+  }
+
+  &__square {
+    flex: none;
+    width: 100%;
+    max-width: 70px;
+    border-radius: 6px;
+    display: inline-block;
+
+    &:after {
+      content: '';
+      padding-top: 100%;
+      display: block;
+    }
+
+    &_dark-shade-5 {
+      background: rgba(31, 32, 65, 0.05);
+    }
+
+    &_dark-shade-25 {
+      background: rgba(31, 32, 65, 0.25);
+    }
+
+    &_dark-shade-50 {
+      background: rgba(31, 32, 65, 0.5);
+    }
+
+    &_dark-shade-75 {
+      background: rgba(31, 32, 65, 0.75);
+    }
+
+    &_dark-shade-100 {
+      background: #1f2041;
+    }
+
+    &_green {
+      background: #6fcf97;
+    }
+
+    &_purple {
+      background: #bc9cff;
+    }
+  }
 }
