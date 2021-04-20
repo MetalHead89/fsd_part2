@@ -6,4 +6,150 @@
   cursor: default;
   box-sizing: border-box;
   border-radius: 4px;
+
+  &_standart-theme {
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  }
+
+  &_without-top-border {
+    border-radius: 0 0 4px 4px;
+    border-color: rgba(31, 32, 65, 0.5);
+    border-top: none;
+  }
+
+  &__buttons-panel {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    max-width: 40px;
+    width: 100%;
+
+    &:before {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    &_current {
+      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+      color: white;
+      font-weight: bold;
+      border-radius: 22px;
+    }
+
+    &_other-month {
+      color: rgba(31, 32, 65, 0.25);
+    }
+
+    &_selectable {
+      transition: opacity 0.5s ease;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    &_selected {
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-radius: 22px;
+      color: white;
+      font-weight: bold;
+    }
+  }
+
+  &__days-section {
+    margin-top: 30px;
+  }
+
+  &__month-button {
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:active {
+      transition: opacity 0s ease;
+      opacity: 1;
+    }
+
+    &_standart-theme {
+      color: #bc9cff;
+    }
+  }
+
+  &__month-name {
+    padding: 0 10px;
+    text-align: center;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 19px;
+
+    &_standart-theme.scss {
+      color: #1f2041;
+    }
+  }
+
+  &__month-selection-section {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__names-of-week-days-section {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 12px;
+
+    &_standart-theme {
+      color: #bc9cff;
+    }
+  }
+
+  &__range-highlight {
+    background: linear-gradient(
+      180deg,
+      RGBA(188, 156, 255, 0.25) 0%,
+      RGBA(139, 164, 249, 0.25) 100%
+    );
+
+    &_left-rounded {
+      border-radius: 22px 0 0 22px;
+    }
+
+    &_right-rounded {
+      border-radius: 0 22px 22px 0;
+    }
+  }
+
+  &__week-day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    max-width: 40px;
+    width: 100%;
+
+    &:before {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  &__week-section {
+    display: flex;
+    justify-content: space-between;
+  }
 }
