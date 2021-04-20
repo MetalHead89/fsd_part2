@@ -1,4 +1,5 @@
 import './index.scss';
+require.context('@/scss', true, /\.scss$/);
 require.context('@/pages', true, /\.scss$/);
 require.context('@/common.blocks', true, /\.scss$/);
 
