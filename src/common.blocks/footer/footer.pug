@@ -12,13 +12,14 @@ mixin footer(args)
               if item.image
                 img(class=item.image.class, src=item.image.src, alt=item.image.alt)
               else if item.textField
-                +text-field(item.textField)
+                li.footer__info-item
+                  +text-field(item.textField)
               else
                 li.footer__info-item !{item}
     .footer__copyright-wrapper
       .footer__copyright
-        a(href="#")
-          img.footer__logo.footer__logo_hidden(
+        a(href="#").footer__logo.footer__logo_hidden
+          img(
             src=args.copyright.image,
             alt="logo"
           )
