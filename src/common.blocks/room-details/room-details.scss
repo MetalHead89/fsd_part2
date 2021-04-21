@@ -6,4 +6,23 @@
   flex-direction: row;
   display: flex;
   align-items: center;
+
+  &__icon {
+    font-size: 48px;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__text {
+    padding-left: 10px;
+    flex-direction: column;
+    display: inline-flex;
+  }
+
+  &__title {
+    font-weight: bold;
+  }
 }
