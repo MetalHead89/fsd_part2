@@ -5,4 +5,255 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  &__additional-service-info {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    line-height: 18px;
+    justify-content: space-between;
+  }
+
+  &__additional-service-tooltip {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__additional-services {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  &__additionals-services-label {
+    width: 90%;
+  }
+
+  &__cost {
+    display: inline;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  &__drop-guests {
+    margin: 20px 0;
+  }
+
+  &__lux {
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #bc9cff;
+    display: inline;
+  }
+
+  &__number {
+    display: inline;
+
+    &_size-19 {
+      font-size: 24px;
+    }
+  }
+
+  &__price-per-day {
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: rgba(31, 32, 65, 0.5);
+  }
+
+  &__result {
+    display: flex;
+    flex-direction: row;
+    line-height: 12px;
+    align-items: flex-end;
+    margin: 25px 0;
+  }
+
+  &__result-cost {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 19px;
+    color: #1f2041;
+  }
+
+  &__result-dots {
+    margin: 0 3px;
+    width: 100%;
+    border-bottom: 1px dashed rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+  }
+
+  &__result-label {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 19px;
+    color: #1f2041;
+  }
+
+  &__room-info {
+    margin: 13px 0 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__room-number {
+    font-family: Quicksand, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #1f2041;
+  }
+
+  &__room-rate-calc {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgba(31, 32, 65, 0.75);
+  }
+
+  &__room-rate-label {
+    display: inline;
+  }
+
+  &__service-info {
+    width: 75%;
+    display: flex;
+    line-height: 18px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__service-tooltip {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__services {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__services-label {
+    width: 90%;
+  }
+
+  &__tooltip {
+    position: relative;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgba(31, 32, 65, 0.25);
+    cursor: default;
+
+    &:before {
+      content: '';
+      z-index: 3;
+      border: 5px solid transparent;
+      user-select: none;
+      pointer-events: none;
+      position: absolute;
+      display: none;
+      opacity: 0;
+    }
+
+    &:after {
+      content: attr(tooltip);
+      max-width: 200px;
+      min-width: 150px;
+      z-index: 2;
+      user-select: none;
+      pointer-events: none;
+      position: absolute;
+      display: none;
+      opacity: 0;
+      font-family: Montserrat, Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      font-size: 12px;
+      color: rgba(31, 32, 65, 0.25);
+      text-align: center;
+      padding: 10px;
+      border-radius: 3px;
+      box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
+      background: #333;
+      color: #fff;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      display: block;
+    }
+
+    &:not([flow])::before,
+    &[flow^='up']::before {
+      bottom: 100%;
+      border-bottom-width: 0;
+      border-top-color: #333;
+    }
+
+    &:not([flow])::after,
+    &[flow^='up']::after {
+      bottom: calc(100% + 5px);
+    }
+
+    &:not([flow])::before,
+    &:not([flow])::after,
+    &[flow^='up']::before,
+    &[flow^='up']::after {
+      left: 50%;
+      transform: translate(-50%, -0.5em);
+    }
+
+    &:not([flow]):hover::before,
+    &:not([flow]):hover::after,
+    &[flow^='up']:hover::before,
+    &[flow^='up']:hover::after,
+    &[flow^='down']:hover::before,
+    &[flow^='down']:hover::after {
+      animation: tooltips-vert 300ms ease-out forwards;
+    }
+
+    &[flow^='left']:hover::before,
+    &[flow^='left']:hover::after,
+    &[flow^='right']:hover::before,
+    &[flow^='right']:hover::after {
+      animation: tooltips-horiz 300ms ease-out forwards;
+    }
+  }
+}
+
+@keyframes tooltips-vert {
+  to {
+    opacity: 0.9;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes tooltips-horiz {
+  to {
+    opacity: 0.9;
+    transform: translate(0, -50%);
+  }
 }
