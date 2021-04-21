@@ -6,17 +6,17 @@ class Pagination {
   }
 
   init() {
-    this.pagesNumbers = document.querySelectorAll(
+    this.pagesNumbers = this.pagination.querySelectorAll(
       '.pagination__button_with-number'
     );
     this.pagesCount = parseInt(
       this.pagesNumbers[this.pagesNumbers.length - 1].innerText,
       10
     );
-    this.prevButton = document.querySelector(
+    this.prevButton = this.pagination.querySelector(
       '.pagination__button_with-prev-arrow'
     );
-    this.nextButton = document.querySelector('.pagination__button_with-number');
+    this.nextButton = this.pagination.querySelector('.pagination__button_with-next-arrow');
 
     if (this.prevButton) {
       this.prevButton.onclick = this.clickToPrevButton.bind(this);
@@ -95,7 +95,7 @@ class Pagination {
     this.pagination.append(ul);
 
     if (parseInt(button.innerText, 10) !== 1) {
-      this.createPaginationButon.bind(this, button, ul, 'prevButton')();
+      this.createPaginationButton.bind(this, button, ul, 'prevButton')();
     }
 
     for (
@@ -105,7 +105,7 @@ class Pagination {
     ) {
       if (Pagination.numberDontFitOnTheLeft(currentPage, activePage)) {
         if (!isLeftNumbersHidden) {
-          this.createPaginationButon.bind(this, button, ul, 'numbersPruning')();
+          this.createPaginationButton.bind(this, button, ul, 'numbersPruning')();
           isLeftNumbersHidden = true;
         }
       } else if (
@@ -116,11 +116,11 @@ class Pagination {
         )
       ) {
         if (!isRightNumbersHidden) {
-          this.createPaginationButon.bind(this, button, ul, 'numbersPruning')();
+          this.createPaginationButton.bind(this, button, ul, 'numbersPruning')();
           isRightNumbersHidden = true;
         }
       } else {
-        this.createPaginationButon.bind(
+        this.createPaginationButton.bind(
           this,
           button,
           ul,
@@ -131,7 +131,7 @@ class Pagination {
     }
 
     if (parseInt(button.innerText, 10) !== this.pagesCount) {
-      this.createPaginationButon.bind(this, button, ul, 'nextButton')();
+      this.createPaginationButton.bind(this, button, ul, 'nextButton')();
     }
 
     const paginationElements = document.querySelectorAll('.pagination__pages');
@@ -139,7 +139,7 @@ class Pagination {
   }
 
   /**
-   * Созёт новй подпись к пагинации, удаляет старую
+   * Создаёт новй подпись к пагинации, удаляет старую
    */
   createNewPaginationSignature() {
     const span = document.createElement('span');
@@ -173,7 +173,7 @@ class Pagination {
   /**
    * Добавляет кнопки в пагинацию
    */
-  createPaginationButon(button, ul, type, page = null) {
+  createPaginationButton(button, ul, type, page = null) {
     let a = null;
 
     if (type !== 'numbersPruning' && parseInt(button.innerText, 10) !== page) {

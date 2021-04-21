@@ -21,14 +21,14 @@ mixin pagination(args)
       while current_page <= args.numberOfPages
         if current_page < args.activePage && args.activePage - current_page > 2 && current_page > 1 && args.activePage > 5
           if !isLeftNumbersHidden
-            li.pagination__button.pagination__button_with-number ...
+            li.pagination__button ...
             - isLeftNumbersHidden = true;
           - current_page++;
           - continue;
 
         if current_page > args.activePage && current_page - args.activePage > 2 && current_page < args.numberOfPages && args.numberOfPages - args.activePage > 4
           if !isRightNumbersHidden
-            li.pagination__button.pagination__button_with-number ...
+            li.pagination__button ...
             - isRightNumbersHidden = true;
           - current_page++;
           - continue;
