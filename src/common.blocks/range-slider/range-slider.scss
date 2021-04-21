@@ -2,4 +2,118 @@
   position: relative;
   width: 100%;
   max-width: 266px;
+
+  &__header-section {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  &__input-range {
+    position: absolute;
+    pointer-events: none;
+    -webkit-appearance: none;
+    left: -8px;
+    z-index: 2;
+    width: 106%;
+    height: 10px;
+    box-sizing: border-box;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+
+    &::-webkit-slider-thumb {
+      pointer-events: all;
+      width: 16px;
+      height: 16px;
+      border-radius: 10px;
+      border: 0 none;
+      -webkit-appearance: none;
+    }
+
+    &::-moz-range-thumb {
+      pointer-events: all;
+      width: 16px;
+      height: 16px;
+      border-radius: 10px;
+      border: 0 none;
+      -webkit-appearance: none;
+    }
+  }
+
+  &__range {
+    position: absolute;
+    height: 6px;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    box-sizing: border-box;
+    border-radius: 3px;
+  }
+
+  &__range-label {
+    text-align: right;
+    display: inline-block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: rgba(31, 32, 65, 0.5);
+  }
+
+  &__slider {
+    position: relative;
+    width: 100%;
+    max-width: 266px;
+    height: 10px;
+    z-index: 1;
+  }
+
+  &__thumb {
+    position: absolute;
+    z-index: 3;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+
+    &_left {
+      transform: translate(-8px, -5px);
+
+      &_hover {
+        transform: translate(-8px, -5px) scale(1.4);
+      }
+    }
+
+    &_right {
+      transform: translate(8px, -5px);
+
+      &_hover {
+        transform: translate(8px, -5px) scale(1.4);
+      }
+    }
+  }
+
+  &__title {
+    display: inline-block;
+  }
+
+  &__track {
+    position: absolute;
+    width: 100%;
+    max-width: 266px;
+    height: 6px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 3px;
+    z-index: 1;
+  }
 }
