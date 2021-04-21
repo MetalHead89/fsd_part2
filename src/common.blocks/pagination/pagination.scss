@@ -2,4 +2,89 @@
   width: 100%;
   display: inline-flex;
   flex-direction: column;
+
+  &__arrow {
+    font-size: 1.71rem;
+    color: white;
+  }
+
+  &__button {
+    width: 100%;
+    max-width: 40px;
+    min-width: 30px;
+    display: inline-flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    &_active-page {
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-radius: 22px;
+      cursor: pointer;
+    }
+
+    &_with-arrow {
+      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+      border-radius: 22px;
+      transition: 0.5s ease;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    &_with-number a:hover {
+      opacity: 0.5;
+      cursor: pointer;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: rgba(31, 32, 65, 0.5);
+    display: inline-block;
+    width: 100%;
+    max-width: 40px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  &__pages {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__signature {
+    display: inline-block;
+    font-size: 1rem;
+    color: rgba(31, 32, 65, 0.75);
+    text-align: center;
+
+    &_with-top-margin {
+      margin-top: 10px;
+    }
+  }
 }
