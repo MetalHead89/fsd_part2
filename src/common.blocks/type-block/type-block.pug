@@ -1,12 +1,17 @@
 mixin type-block(args)
   - let tag = 'Body';
+  - let tagTextClass = '';
+
   if args.tag === 'h1'
     - tag = 'H1';
+    - tagTextClass = 'type-block__text_header-one'
   else if args.tag === 'h2'
     - tag = 'H2';
+    - tagTextClass = 'type-block__text_header-two'
   else if args.tag === 'h3'
     - tag = 'H3';
+    - tagTextClass = 'type-block__text_header-three'
 
   .type-block
     #{args.tag}.type-block__tag !{tag}
-    #{args.tag}.type-block__text !{args.text}
+    #{args.tag}(class=`type-block__text ${tagTextClass}`) !{args.text}
