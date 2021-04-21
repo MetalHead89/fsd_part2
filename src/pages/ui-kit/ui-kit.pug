@@ -34,7 +34,7 @@ html(lang="ru")
   body
     //- COLORS AND TYPE
     section.section
-      h1.colors-and-type-section__title Colors & Type
+      h1.section__title Colors & Type
       .colors-and-type
         .colors-and-type__colors
           each colorBlock in config.colorBlocks
@@ -47,7 +47,7 @@ html(lang="ru")
 
     //- FORM ELEMENTS
     section.section
-      h1.form-elements__title Form Elements
+      h1.section__title Form Elements
       .form-elements
         section.form-elements__three-column-section
           .form-elements__column
@@ -77,25 +77,25 @@ html(lang="ru")
               each checkboxButton in config.checkboxButtons
                 +checkbox-button({ label: checkboxButton.label, id: checkboxButton.id, checked: checkboxButton.checked })
             .form-elements__block-wrapper
-              h3.module-title Radio Buttons
+              h3.form-elements__block-title Radio Buttons
               +radio-button(config.radioButton)
             .form-elements__block-wrapper
-              h3.module-title toggle
+              h3.form-elements__block-title toggle
               +toggle(config.toggle)
             .form-elements__block-wrapper
-              h3.module-title like button
+              h3.form-elements__block-title like button
               .form-elements__like-buttons-group
                 each likeButton in config.likeButtons
                   .form-elements__like-button-block
                     +like-button({ likesCount: likeButton.likesCount, checked: likeButton.checked })
             .form-elements__block-wrapper
-              h3.module-title rate button
+              h3.form-elements__block-title rate button
               .form-elements__rate-buttons-group
                 each rateButton in config.rateButtons
                   .form-elements__rate-button-block
                     +rate-button({ rate: rateButton.rate })
             .form-elements__block-wrapper
-              h3.module-title RICH CHECKBOX BUTTONS
+              h3.form-elements__block-title RICH CHECKBOX BUTTONS
               each richCheckboxButton in config.richCheckboxButtons
                 +checkbox-button({ label: richCheckboxButton.label, id: richCheckboxButton.id, checked: richCheckboxButton.checked, rich: richCheckboxButton.rich, text: richCheckboxButton.text })
           .form-elements__column
@@ -131,7 +131,7 @@ html(lang="ru")
 
     //- CARDS
     section.section
-      h1.cards__title Cards
+      h1.section__title Cards
       .cards
         .cards__column.cards__column-one
           .cards__block-wrapper
@@ -153,6 +153,6 @@ html(lang="ru")
 
     //- HEADERS & FOOTERS
     section.section
-      h1.headers-and-footers__title Headers & Footers
+      h1.section__title Headers & Footers
       +header(config.header)
       +footer(config.footer)

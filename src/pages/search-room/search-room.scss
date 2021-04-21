@@ -1,3 +1,5 @@
+@import '../../scss/mixins';
+
 .search-room {
   height: 100%;
   box-sizing: border-box;
@@ -75,6 +77,10 @@
     }
   }
 
+  &__section-title {
+    @include h3;
+  }
+
   &__checkbox-container {
     margin-top: 23px;
 
@@ -105,7 +111,8 @@
   }
 
   &__rooms-title {
-    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    @include h1;
+
     width: 100%;
     margin-top: 30px;
     margin-bottom: 11px;

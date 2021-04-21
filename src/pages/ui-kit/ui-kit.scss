@@ -1,17 +1,17 @@
+@import '../../scss/mixins';
+
 .section {
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 20px 100px 20px;
-}
 
-// COLORS AND TYPE SECTION
-
-.colors-and-type-section {
   &__title {
-    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    @include h1;
     margin-bottom: 50px;
   }
 }
+
+// COLORS AND TYPE SECTION
 
 .colors-and-type {
   width: 100%;
@@ -105,6 +105,7 @@
   }
 
   &__block-title {
+    @include h3;
     margin-bottom: 5px;
 
     &_vertical-margins-15 {
@@ -153,6 +154,12 @@
 }
 
 @media screen and (max-width: 905px) {
+  .section {
+    &__title {
+      text-align: center;
+    }
+  }
+
   .form-elements {
     &__three-column-section {
       justify-content: space-around;
@@ -166,10 +173,6 @@
 
     &__three-column-layout {
       margin-bottom: 0;
-    }
-
-    &__title {
-      text-align: center;
     }
   }
 }
@@ -209,11 +212,6 @@
   grid-column-gap: 10px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 'one two three';
-
-  &__title {
-    font-family: Montserrat, Helvetica, Arial, sans-serif;
-    margin-bottom: 50px;
-  }
 
   &__column {
     width: 100%;
@@ -255,10 +253,6 @@
       'one two'
       'three three';
 
-    &__title {
-      text-align: center;
-    }
-
     &__column-three {
       display: flex;
       flex-direction: column;
@@ -274,25 +268,5 @@
       'one one'
       'two two'
       'three three';
-  }
-}
-
-// HEADERS & FOOTERS
-
-.headers-and-footers {
-  &__title {
-    max-width: 1160px;
-    margin: 0 auto;
-    padding: 0 20px;
-    font-family: Montserrat, Helvetica, Arial, sans-serif;
-    margin-bottom: 50px;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .headers-and-footers {
-    &__title {
-      text-align: center;
-    }
   }
 }
