@@ -5,4 +5,180 @@
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   border-radius: 4px;
   flex-direction: column;
+
+  &__accented-text {
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgba(31, 32, 65, 0.5);
+  }
+
+  &__arrow-button {
+    transition: opacity 0.5s ease-in;
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 3;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+    width: 42px;
+    height: 100%;
+    border: none;
+    color: white;
+    background: none;
+    cursor: pointer;
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+
+    &_next {
+      right: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 0, 0, 0) 0.99%,
+        rgba(0, 0, 0, 0.5) 100%
+      );
+    }
+
+    &_prev {
+      left: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0) 99.99%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+  }
+
+  &__dot {
+    margin: 0 1.5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid white;
+    filter: drop-shadow(0px 5px 5px rgba(31, 32, 65, 0.3));
+
+    &_active {
+      transition: background 0.5s ease-in;
+      background: white;
+    }
+
+    &_unactive {
+      transition: background.5s ease-in;
+      background: transparent;
+      cursor: pointer;
+    }
+  }
+
+  &__dots-section {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    bottom: 15px;
+    right: 13px;
+    z-index: 3;
+  }
+
+  &__lux {
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #bc9cff;
+    line-height: 0;
+  }
+
+  &__number {
+    display: inline;
+    font-family: Quicksand, Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #1f2041;
+    line-height: 0;
+
+    &_size-19 {
+      font-size: 19px;
+    }
+  }
+
+  &__number-section {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__rating-section {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__room-info {
+    padding: 20px;
+  }
+
+  &__room-rate {
+    display: inline-block;
+    font-size: 12px;
+  }
+
+  &__separator {
+    margin: 8px 0;
+    height: 1px;
+    background: rgba(31, 32, 65, 0.1);
+    width: 100%;
+  }
+
+  &__slider-image {
+    border-radius: 4px 4px 0 0;
+    display: block;
+    width: 100%;
+    transition: opacity 1s ease-in;
+    position: absolute;
+    z-index: 2;
+  }
+
+  &__slider-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &__slider-list-item {
+    transition: opacity 0.5s ease-in;
+
+    &_opacity-0 {
+      opacity: 0;
+    }
+
+    &_opacity-1 {
+      opacity: 1;
+    }
+  }
+
+  &__slider-section {
+    position: relative;
+    width: 100%;
+    &:hover .number-card__arrow-button {
+      opacity: 1;
+    }
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 56%;
+    }
+  }
 }
