@@ -1,6 +1,219 @@
 .navbar {
+  flex: 0;
   position: relative;
   height: 100%;
   width: 100%;
+  align-content: flex-end;
   z-index: 100;
+
+  &__button-entry {
+    width: 87px;
+    height: 34px;
+  }
+
+  &__button-registration {
+    width: 196px;
+    height: 34px;
+  }
+
+  &__dropdown-title {
+    display: flex;
+    flex-direction: row;
+    color: rgba(31, 32, 65, 0.5);
+    text-decoration: none;
+
+    &_vertical {
+      padding-left: 7px;
+      justify-content: center;
+    }
+  }
+
+  &__hidden-list {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    list-style-type: none;
+    transform-origin: top;
+
+    &_horizontal {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: white;
+      box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+      transform: translateY(100%);
+      padding: inherit;
+    }
+
+    &_vertical {
+      padding: 0;
+      align-items: center;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in;
+
+      & .header__hidden-list-item:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    &_vertical-closed {
+      max-height: 0;
+    }
+
+    &_vertical-opened {
+      max-height: 15rem;
+    }
+  }
+
+  &__hidden-list-item {
+    color: rgba(31, 32, 65, 0.5);
+    transition: color 0.5s ease;
+
+    &:hover {
+      color: rgba(31, 32, 65, 0.75);
+    }
+
+    &_horizontal {
+      opacity: 0;
+      padding: 5px 0;
+    }
+
+    &_vertical {
+      padding: 5px 0;
+      text-align: center;
+      opacity: 0.6;
+    }
+  }
+
+  &__item {
+    white-space: nowrap;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: rgba(31, 32, 65, 0.5);
+    flex-direction: column;
+    transition: 0.5s ease;
+    cursor: pointer;
+
+    &:hover {
+      color: rgba(31, 32, 65, 0.75);
+    }
+
+    &_horizontal {
+      display: flex;
+      position: relative;
+      justify-content: center;
+      height: 100%;
+      padding: 0 10px;
+
+      &:hover .navbar__hidden-list {
+        transition: transform 0.4s cubic-bezier(0.73, 0.32, 0.34, 1.5);
+        transform: translateY(100%) scaleY(1);
+        transform-origin: top;
+      }
+
+      &:not(:hover) .navbar__hidden-list {
+        transition: transform 0.5s;
+        transform: translateY(100%) scaleY(0);
+      }
+
+      &:hover .navbar__hidden-list-item {
+        transition: opacity 0.3s;
+        opacity: 1;
+      }
+
+      &:not(:hover) .navbar__hidden-list-item {
+        transition: opacity 0.3s;
+      }
+    }
+
+    &_vertical {
+      display: flex;
+      padding: 5px 0;
+      transition: 0.3s ease-in;
+    }
+
+    &_vertical-closed {
+      opacity: 0;
+    }
+
+    &_vertical-opened {
+      opacity: 1;
+    }
+
+    &_with-name {
+      display: none;
+    }
+
+    &_with-separator {
+      display: none;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    background: white;
+
+    &_horizontal {
+      padding: 0;
+      display: flex;
+      height: 100%;
+      flex-direction: row;
+    }
+
+    &_vertical {
+      position: absolute;
+      display: none;
+      box-sizing: border-box;
+      width: 100%;
+      font-size: 18px;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      padding: 20px 40px;
+      box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    }
+
+    &_vertical-closed {
+      transform: translateY(100%) scaleY(0);
+      transition: transform 0.5s ease-in;
+      transform-origin: top;
+    }
+
+    &_vertical-opened {
+      transition: transform 0.5s cubic-bezier(0.73, 0.32, 0.34, 1.5);
+      transform: translateY(100%) scaleY(1);
+      transform-origin: top;
+    }
+  }
+
+  &__separator {
+    margin: 0;
+    height: 30px;
+    width: 1px;
+    background: rgba(31, 32, 65, 0.1);
+
+    &_vertical {
+      height: 1px;
+      width: 150px;
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .navbar {
+    &__list {
+      &_horizontal {
+        display: none;
+      }
+
+      &_vertical {
+        display: flex;
+      }
+    }
+  }
 }
