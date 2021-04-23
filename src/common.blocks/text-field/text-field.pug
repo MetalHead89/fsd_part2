@@ -1,16 +1,16 @@
 mixin text-field(args)
   - let fieldClass = 'text-field__field';
 
-  if args.type === 'masked'
+  if args.masked
     - fieldClass += ' text-field__field_masked';
-  else if args.type === 'subscription'
+  else if args.subscription
     - fieldClass += ' text-field__field_subscription';
 
   .text-field
     if args.title
       h3.text-field__title !{args.title}
-    input(type="text", placeholder=args.placeholderText, class=fieldClass)
-    if args.type === 'subscription'
+    input(type=args.type, placeholder=args.placeholderText, class=fieldClass)
+    if args.subscription
       button.text-field__subscription-btn(
         type='button'
       )

@@ -1,8 +1,8 @@
 {
   "registrationPage": {
     "title": "Регистрация аккаунта",
-    "textFieldName": { "placeholderText": "Имя" },
-    "textFieldSurname": { "placeholderText": "Фамилия" },
+    "textFieldName": { "placeholderText": "Имя", "type": "text" },
+    "textFieldSurname": { "placeholderText": "Фамилия", "type": "text" },
     "radioButton": {
       "buttons": [
         {
@@ -22,14 +22,16 @@
     },
     "textFieldBirth": {
       "placeholderText": "ДД.ММ.ГГГГ",
-      "type": "masked",
+      "type": "text",
+      "masked": true,
       "title": "Дата рождения"
     },
     "textFieldEmail": {
       "placeholderText": "Email",
-      "title": "Данные для входа в сервис"
+      "title": "Данные для входа в сервис",
+      "type": "email"
     },
-    "textFieldPassword": { "placeholderText": "Пароль" },
+    "textFieldPassword": { "placeholderText": "Пароль", "type": "password" },
     "toggle": {
       "text": "Получать спецпредложения",
       "name": "toggleSpecialOffers",

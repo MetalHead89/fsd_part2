@@ -75,7 +75,7 @@
         "items": [
           "Получайте специальные предложения и новости сервиса",
           {
-            "textField": { "placeholderText": "Email", "type": "subscription" }
+            "textField": { "placeholderText": "Email", "type": "email", "subscription": true }
           }
         ]
       }

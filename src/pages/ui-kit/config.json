@@ -37,9 +37,13 @@
       "text": "This is the body text which is used for most of&nbsp;the design, like paragraphs, lists, etc."
     }
   ],
-  "textField": { "placeholderText": "Email" },
+  "textField": { "placeholderText": "Email", "type": "email" },
   "dropdown": { "type": "guests", "id": "uiDrop", "title": "dropdown" },
-  "maskedTextField": { "placeholderText": "ДД.ММ.ГГГГ", "type": "masked" },
+  "maskedTextField": {
+    "placeholderText": "ДД.ММ.ГГГГ",
+    "masked": true,
+    "type": "text"
+  },
   "dateDropdown": {
     "type": "date",
     "id": "uiDateDrop",
@@ -53,7 +57,8 @@
   },
   "subscriptionTextField": {
     "placeholderText": "Email",
-    "type": "subscription"
+    "subscription": true,
+    "type": "email"
   },
   "comfortDropDown": {
     "type": "comfort",
@@ -177,8 +182,8 @@
   },
   "registrationCard": {
     "title": "Регистрация аккаунта",
-    "textFieldName": { "placeholderText": "Имя" },
-    "textFieldSurname": { "placeholderText": "Фамилия" },
+    "textFieldName": { "placeholderText": "Имя", "type": "text" },
+    "textFieldSurname": { "placeholderText": "Фамилия", "type": "text" },
     "radioButton": {
       "buttons": [
         {
@@ -198,14 +203,16 @@
     },
     "textFieldBirth": {
       "placeholderText": "ДД.ММ.ГГГГ",
-      "type": "masked",
-      "title": "Дата рождения"
+      "masked": true,
+      "title": "Дата рождения",
+      "type": "text"
     },
     "textFieldEmail": {
       "placeholderText": "Email",
-      "title": "Данные для входа в сервис"
+      "title": "Данные для входа в сервис",
+      "type": "email"
     },
-    "textFieldPassword": { "placeholderText": "Пароль" },
+    "textFieldPassword": { "placeholderText": "Пароль", "type": "password" },
     "toggle": {
       "text": "Получать спецпредложения",
       "name": "toggleSpecialOffers",
@@ -232,8 +239,8 @@
   },
   "entryCard": {
     "title": "Войти",
-    "textFieldEmail": { "placeholderText": "Email" },
-    "textFieldPassword": { "placeholderText": "Пароль" },
+    "textFieldEmail": { "placeholderText": "Email", "type": "email" },
+    "textFieldPassword": { "placeholderText": "Пароль", "type": "password" },
     "buttonEntry": { "type": "arrow", "text": "войти" },
     "accountSectionLabel": "Нет аккаунта на Toxin?",
     "buttonCreateAccount": { "type": "border", "text": "создать" }
@@ -342,7 +349,11 @@
         "items": [
           "Получайте специальные предложения и новости сервиса",
           {
-            "textField": { "placeholderText": "Email", "type": "subscription" }
+            "textField": {
+              "placeholderText": "Email",
+              "type": "email",
+              "subscription": true
+            }
           }
         ]
       }

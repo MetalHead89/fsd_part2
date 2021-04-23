@@ -1,8 +1,8 @@
 {
   "signinPage": {
     "title": "Войти",
-    "textFieldEmail": { "placeholderText": "Email" },
-    "textFieldPassword": { "placeholderText": "Пароль" },
+    "textFieldEmail": { "placeholderText": "Email", "type": "email" },
+    "textFieldPassword": { "placeholderText": "Пароль", "type": "password" },
     "buttonEntry": { "type": "arrow", "text": "войти" },
     "accountSectionLabel": "Нет аккаунта на Toxin?",
     "buttonCreateAccount": { "type": "border", "text": "создать" }
