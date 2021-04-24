@@ -3,23 +3,16 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const htmlWebpackPluginProps = require('./HTMLWebpackPluginConfig.json');
+const fs = require('fs');
 
-function createHTMLWebpackPlugins(props) {
-  return props.map((item) => {
-    const pluginProps = {};
+function generateHTMLpages(pagesDir) {
+  const pages = fs.readdirSync(path.resolve(__dirname, pagesDir));
 
-    if (item.template) {
-      pluginProps.template = path.resolve(__dirname, item.template);
-    }
-    if (item.filename) {
-      pluginProps.filename = item.filename;
-    }
-    if (item.favicon) {
-      pluginProps.favicon = path.resolve(__dirname, item.favicon);
-    }
-
-    return new HTMLWebpackPlugin(pluginProps);
+  return pages.map((page) => {
+    return new HTMLWebpackPlugin({
+      template: path.resolve(__dirname, `${pagesDir}/${page}/${page}.pug`),
+      filename: `assets/pages/${page}.html`,
+    });
   });
 }
 
@@ -45,7 +38,14 @@ module.exports = {
     port: 4200,
   },
   plugins: [
-    ...createHTMLWebpackPlugins(htmlWebpackPluginProps.plugins),
+    new HTMLWebpackPlugin({
+      template: path.resolve(
+        __dirname,
+        'src/pages/page-with-links/page-with-links.pug'
+      ),
+      favicon: path.resolve(__dirname, 'favicon.ico'),
+    }),
+    ...generateHTMLpages('src/pages'),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin([{ filename: '[name].css' }]),
     new CopyWebpackPlugin({
