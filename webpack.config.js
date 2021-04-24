@@ -5,15 +5,27 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const fs = require('fs');
 
-function generateHTMLpages(pagesDir) {
-  const pages = fs.readdirSync(path.resolve(__dirname, pagesDir));
+function generateHTMLplugins(pagesDir) {
+  const links = fs.readdirSync(path.resolve(__dirname, pagesDir));
+  const plugins = [];
 
-  return pages.map((page) => {
-    return new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, `${pagesDir}/${page}/${page}.pug`),
-      filename: `assets/pages/${page}.html`,
-    });
+  links.forEach((item) => {
+    if (item.indexOf('.') >= 0) {
+      const [fileName, fileExt] = item.split('.');
+      if (fileExt === 'pug') {
+        plugins.push(
+          new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, `${pagesDir}/${item}`),
+            filename: `assets/pages/${fileName}.html`,
+          })
+        );
+      }
+    } else {
+      plugins.push(...generateHTMLplugins(`${pagesDir}/${item}`));
+    }
   });
+
+  return plugins;
 }
 
 module.exports = {
@@ -45,7 +57,7 @@ module.exports = {
       ),
       favicon: path.resolve(__dirname, 'favicon.ico'),
     }),
-    ...generateHTMLpages('src/pages'),
+    ...generateHTMLplugins('src/pages'),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin([{ filename: '[name].css' }]),
     new CopyWebpackPlugin({
