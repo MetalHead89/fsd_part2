@@ -5,23 +5,30 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const fs = require('fs');
 
+function createHTMLPlugin(dir, file) {
+  const [fileName, fileExt] = file.split('.');
+
+  if (fileExt === 'pug') {
+    return [
+      new HTMLWebpackPlugin({
+        template: path.resolve(__dirname, `${dir}/${file}`),
+        filename: `assets/pages/${fileName}.html`,
+      }),
+    ];
+  }
+
+  return [];
+}
+
 function generateHTMLplugins(pagesDir) {
   const links = fs.readdirSync(path.resolve(__dirname, pagesDir));
   const plugins = [];
 
   links.forEach((item) => {
-    if (item.indexOf('.') >= 0) {
-      const [fileName, fileExt] = item.split('.');
-      if (fileExt === 'pug') {
-        plugins.push(
-          new HTMLWebpackPlugin({
-            template: path.resolve(__dirname, `${pagesDir}/${item}`),
-            filename: `assets/pages/${fileName}.html`,
-          })
-        );
-      }
-    } else {
+    if (item.indexOf('.') < 0) {
       plugins.push(...generateHTMLplugins(`${pagesDir}/${item}`));
+    } else {
+      plugins.push(...createHTMLPlugin(pagesDir, item));
     }
   });
 
