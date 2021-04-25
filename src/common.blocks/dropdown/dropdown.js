@@ -15,6 +15,23 @@ class Dropdown {
       [this.clearButton] = clearButtonWrapper.children;
       this.clearButton.style.display = 'none';
     }
+    const applyButtonWrapper = this.dropdown.querySelector(
+      '.dropdown__button-apply'
+    );
+    if (applyButtonWrapper !== null) {
+      [this.applyButton] = applyButtonWrapper.children;
+      this.applyButton.addEventListener('click', this.closeDropMenu.bind(this));
+    }
+    const calendarApplyButtonWrapper = this.dropdown.querySelector(
+      '.calendar__button-apply'
+    );
+    if (calendarApplyButtonWrapper !== null) {
+      [this.calendarApplyButton] = calendarApplyButtonWrapper.children;
+      this.calendarApplyButton.addEventListener(
+        'click',
+        this.closeDropMenu.bind(this)
+      );
+    }
     this.dropdownHeaderText = this.dropdown.querySelector(
       '.dropdown__header-text'
     );
@@ -65,6 +82,11 @@ class Dropdown {
 
   clearButtonHide() {
     this.clearButton.style.display = 'none';
+  }
+
+  closeDropMenu() {
+    this.dropCheck.checked = false;
+    this.closeTimer = null;
   }
 }
 
@@ -286,6 +308,12 @@ function closeOpenDropdowns() {
   }
 }
 
+function closeAllDropdowns() {
+  dropdowns.forEach((dropdown) => {
+    dropdown.querySelector('.dropdown__check').checked = false;
+  });
+}
+
 for (
   let dropdownIndex = 0;
   dropdownIndex < dropdowns.length;
@@ -329,8 +357,9 @@ for (
     dropdownObject
   );
   dropdownObject.dropMenu.onmouseover = resetCloseTimer.bind(dropdownObject);
-  dropdownObject.dropdownHeader.onclick = closeOpenDropdowns.bind(
-    dropdownObject
+  dropdownObject.dropdownHeader.addEventListener(
+    'click',
+    closeOpenDropdowns.bind(dropdownObject)
   );
   if (dropdownObject.dropdownType === 'date') {
     dropdownObject.dropdownStartDayHeader.onclick = closeOpenDropdowns.bind(
@@ -341,3 +370,14 @@ for (
     );
   }
 }
+
+function clickToBody(evt) {
+  if (
+    !evt.target.classList.contains('dropdown__drop-menu') &&
+    !evt.target.offsetParent.classList.contains('dropdown__drop-menu')
+  ) {
+    closeAllDropdowns();
+  }
+}
+
+document.body.addEventListener('mouseup', clickToBody);
