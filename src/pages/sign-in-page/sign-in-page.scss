@@ -20,11 +20,15 @@
     &_first {
       background: url('../../assets/images/registration-sign-in-background-1.png');
       animation: sign-in-animation-1 40s infinite;
+      background-size: cover;
+      background-position: center center;
     }
 
     &_second {
       background: url('../../assets/images/registration-sign-in-background-2.png');
       animation: sign-in-animation-2 40s infinite;
+      background-size: cover;
+      background-position: center center;
     }
   }
 
