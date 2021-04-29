@@ -74,6 +74,7 @@
   &__link {
     text-decoration: none;
     color: rgba(31, 32, 65, 0.75);
+    transition: 0.5s ease;
     &:hover {
       opacity: 0.5;
     }
