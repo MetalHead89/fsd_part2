@@ -9,38 +9,38 @@ class Dropdown {
     this.quantitySum = 0;
     this.dropdownType = Dropdown.getDropdownType(this.dropdown);
     const clearButtonWrapper = this.dropdown.querySelector(
-      '.dropdown__button-clear',
+      '.dropdown__button-clear'
     );
     if (clearButtonWrapper !== null) {
       [this.clearButton] = clearButtonWrapper.children;
       this.clearButton.style.display = 'none';
     }
     const applyButtonWrapper = this.dropdown.querySelector(
-      '.dropdown__button-apply',
+      '.dropdown__button-apply'
     );
     if (applyButtonWrapper !== null) {
       [this.applyButton] = applyButtonWrapper.children;
       this.applyButton.addEventListener('click', this.closeDropMenu.bind(this));
     }
     const calendarApplyButtonWrapper = this.dropdown.querySelector(
-      '.calendar__button-apply',
+      '.calendar__button-apply'
     );
     if (calendarApplyButtonWrapper !== null) {
       [this.calendarApplyButton] = calendarApplyButtonWrapper.children;
       this.calendarApplyButton.addEventListener(
         'click',
-        this.closeDropMenu.bind(this),
+        this.closeDropMenu.bind(this)
       );
     }
     this.dropdownHeaderText = this.dropdown.querySelector(
-      '.dropdown__header-text',
+      '.dropdown__header-text'
     );
     this.dropdownHeader = this.dropdown.querySelector('.dropdown__header');
     this.dropdownStartDayHeader = this.dropdown.querySelector(
-      '.dropdown__start-date-header',
+      '.dropdown__start-date-header'
     );
     this.dropdownEndDayHeader = this.dropdown.querySelector(
-      '.dropdown__end-date-header',
+      '.dropdown__end-date-header'
     );
     this.dropMenu = this.dropdown.querySelector('.dropdown__drop-menu');
     this.dropCheck = this.dropdown.querySelector('.dropdown__check');
@@ -149,7 +149,7 @@ function changeDropdownHeaderText(dropdown) {
    */
 
   const quantityNumbers = dropdown.dropdown.querySelectorAll(
-    '.dropdown__quantity-number',
+    '.dropdown__quantity-number'
   );
   let headerText = '';
 
@@ -168,7 +168,7 @@ function changeDropdownHeaderText(dropdown) {
         }
         headerText += `${guests[key]} ${dropdownWordGenerator(
           key,
-          guests[key],
+          guests[key]
         )}`;
       }
     });
@@ -190,7 +190,7 @@ function changeDropdownHeaderText(dropdown) {
         }
         headerText += `${comfort[key]} ${dropdownWordGenerator(
           key,
-          comfort[key],
+          comfort[key]
         )}`;
       }
     });
@@ -208,9 +208,9 @@ function resetOptionsValues() {
    */
 
   const quantityElements = this.dropdown.querySelectorAll(
-    '.dropdown__quantity-number',
+    '.dropdown__quantity-number'
   );
-  this.clearButton.removeAttribute('style');
+  this.clearButton.style.display = 'none';
 
   for (
     let quantityIndex = 0;
@@ -223,6 +223,7 @@ function resetOptionsValues() {
     quantity.previousElementSibling.disabled = true;
   }
 
+  this.quantitySum = 0;
   changeDropdownHeaderText(this);
 }
 
@@ -270,7 +271,7 @@ function closeDropMenu() {
 function startCloseTimer() {
   this.closeTimer = setTimeout(
     closeDropMenu.bind(this),
-    this.DROPDOWN_CLOSE_TIME,
+    this.DROPDOWN_CLOSE_TIME
   );
 }
 
@@ -324,7 +325,7 @@ for (
 
   if (dropdownObject.dropdownType === 'guests') {
     dropdownObject.clearButton.onclick = resetOptionsValues.bind(
-      dropdownObject,
+      dropdownObject
     );
   }
 
@@ -333,7 +334,7 @@ for (
     dropdownObject.dropdownType === 'comfort'
   ) {
     const dropdownQuantityButtons = dropdownObject.dropdown.querySelectorAll(
-      '.dropdown__quantity-button',
+      '.dropdown__quantity-button'
     );
 
     for (
@@ -344,29 +345,29 @@ for (
       const button = dropdownQuantityButtons[buttonIndex];
       button.addEventListener(
         'click',
-        changeQuantity.bind(button, dropdownObject),
+        changeQuantity.bind(button, dropdownObject)
       );
     }
   }
 
   dropdownObject.dropdownHeader.onmouseout = autoCloseDropdown.bind(
-    dropdownObject,
+    dropdownObject
   );
   dropdownObject.dropMenu.onmouseout = autoCloseDropdown.bind(dropdownObject);
   dropdownObject.dropdownHeader.onmouseover = resetCloseTimer.bind(
-    dropdownObject,
+    dropdownObject
   );
   dropdownObject.dropMenu.onmouseover = resetCloseTimer.bind(dropdownObject);
   dropdownObject.dropdownHeader.addEventListener(
     'click',
-    closeOpenDropdowns.bind(dropdownObject),
+    closeOpenDropdowns.bind(dropdownObject)
   );
   if (dropdownObject.dropdownType === 'date') {
     dropdownObject.dropdownStartDayHeader.onclick = closeOpenDropdowns.bind(
-      dropdownObject,
+      dropdownObject
     );
     dropdownObject.dropdownEndDayHeader.onclick = closeOpenDropdowns.bind(
-      dropdownObject,
+      dropdownObject
     );
   }
 }
