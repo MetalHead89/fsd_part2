@@ -1,4 +1,6 @@
-.like-button {
+$like-button: '.like-button';
+
+#{$like-button} {
   width: 40px;
   height: 20px;
   box-sizing: border-box;
@@ -46,14 +48,16 @@
     background-origin: border-box;
     background-clip: padding-box, border-box;
     -webkit-background-clip: padding-box, border-box;
-    & .like-button__heart {
+    
+    & #{$like-button}__heart {
       animation: heartJump 0.2s ease;
     }
   }
 
   &_unchecked {
     color: rgba(31, 32, 65, 0.25);
-    & .like-button__heart {
+    
+    & #{$like-button}__heart {
       animation: heartJump2 0.2s ease;
     }
   }

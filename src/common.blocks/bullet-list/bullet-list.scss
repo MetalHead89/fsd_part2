@@ -4,7 +4,7 @@
     list-style-type: none;
     margin: 10px 0;
 
-    &::before {
+    &:before {
       border-radius: 50%;
       position: absolute;
       content: '';
@@ -16,7 +16,8 @@
 
     &_standard-theme {
       color: rgba(31, 32, 65, 0.75);
-      &::before {
+
+      &:before {
         background: rgba(31, 32, 65, 0.25);
       }
     }

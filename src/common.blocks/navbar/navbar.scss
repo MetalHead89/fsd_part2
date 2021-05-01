@@ -1,4 +1,6 @@
-.navbar {
+$navbar: '.navbar';
+
+#{$navbar} {
   flex: 0;
   position: relative;
   height: 100%;
@@ -51,10 +53,6 @@
       align-items: center;
       overflow: hidden;
       transition: max-height 0.3s ease-in;
-
-      & .header__hidden-list-item:last-child {
-        padding-bottom: 0;
-      }
     }
 
     &_vertical-closed {
@@ -106,24 +104,28 @@
       height: 100%;
       padding: 0 10px;
 
-      &:hover .navbar__hidden-list {
-        transition: transform 0.4s cubic-bezier(0.73, 0.32, 0.34, 1.5);
-        transform: translateY(100%) scaleY(1);
-        transform-origin: top;
+      &:hover {
+        & #{$navbar}__hidden-list {
+          transition: transform 0.4s cubic-bezier(0.73, 0.32, 0.34, 1.5);
+          transform: translateY(100%) scaleY(1);
+          transform-origin: top;
+        }
+
+        & #{$navbar}__hidden-list-item {
+          transition: opacity 0.3s;
+          opacity: 1;
+        }
       }
 
-      &:not(:hover) .navbar__hidden-list {
-        transition: transform 0.5s;
-        transform: translateY(100%) scaleY(0);
-      }
+      &:not(:hover) {
+        & #{$navbar}__hidden-list {
+          transition: transform 0.5s;
+          transform: translateY(100%) scaleY(0);
+        }
 
-      &:hover .navbar__hidden-list-item {
-        transition: opacity 0.3s;
-        opacity: 1;
-      }
-
-      &:not(:hover) .navbar__hidden-list-item {
-        transition: opacity 0.3s;
+        & #{$navbar}__hidden-list-item {
+          transition: opacity 0.3s;
+        }
       }
     }
 
@@ -160,6 +162,10 @@
       display: flex;
       height: 100%;
       flex-direction: row;
+
+      @media screen and (max-width: 950px) {
+        display: none;
+      }
     }
 
     &_vertical {
@@ -176,6 +182,10 @@
       align-items: center;
       padding: 20px 40px;
       box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+
+      @media screen and (max-width: 950px) {
+        display: flex;
+      }
     }
 
     &_vertical-closed {
@@ -200,20 +210,6 @@
     &_vertical {
       height: 1px;
       width: 150px;
-    }
-  }
-}
-
-@media screen and (max-width: 950px) {
-  .navbar {
-    &__list {
-      &_horizontal {
-        display: none;
-      }
-
-      &_vertical {
-        display: flex;
-      }
     }
   }
 }

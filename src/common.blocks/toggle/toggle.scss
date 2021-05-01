@@ -1,14 +1,18 @@
-.toggle {
+$toggle: '.toggle';
+
+#{$toggle} {
   &__checkbox {
     display: none;
 
-    &:checked + .toggle__label::before {
-      border: 1px solid #bc9cff;
-    }
+    &:checked + #{$toggle}__label {
+      &:before {
+        border: 1px solid #bc9cff;
+      }
 
-    &:checked + .toggle__label::after {
-      transform: translate(20px, 0);
-      background-position: 0 100%;
+      &:after {
+        transform: translate(20px, 0);
+        background-position: 0 100%;
+      }
     }
   }
 
@@ -22,17 +26,17 @@
 
     &:hover {
       color: #1f2041;
+
+      &:before {
+        border-color: #bc9cff;
+      }
+
+      &:after {
+        background-position: 0 100%;
+      }
     }
 
-    &:hover::before {
-      border-color: #bc9cff;
-    }
-
-    &:hover::after {
-      background-position: 0 100%;
-    }
-
-    &::before {
+    &:before {
       flex: none;
       transition: 0.5s ease;
       content: '';
@@ -45,7 +49,7 @@
       border-radius: 10px;
     }
 
-    &::after {
+    &:after {
       transition: all 0.5s;
       content: '';
       position: absolute;

@@ -1,4 +1,6 @@
-.checkbox-button {
+$checkbox-button: '.checkbox-button';
+
+#{$checkbox-button} {
   position: relative;
   margin: 12px 0;
   padding-left: 30px;
@@ -11,12 +13,16 @@
 
   &__checkbox-element {
     display: none;
-    &:checked + .checkbox-button__label:before {
-      border-color: #bc9cff;
-    }
-    &:checked + .checkbox-button__label:after {
-      transform: rotate(45deg) scale(1);
-      animation: jumpUp 0.2s ease;
+
+    &:checked + #{$checkbox-button}__label {
+      &:before {
+        border-color: #bc9cff;
+      }
+
+      &:after {
+        transform: rotate(45deg) scale(1);
+        animation: jumpUp 0.2s ease;
+      }
     }
   }
 
@@ -29,6 +35,10 @@
 
     &:hover {
       color: rgba(31, 32, 65, 0.75);
+
+      &:before {
+        border-color: #bc9cff;
+      }
     }
 
     &:before {
@@ -41,10 +51,6 @@
       top: -1px;
       border-radius: 4px;
       transition: border-color 0.5s ease;
-    }
-
-    &:hover::before {
-      border-color: #bc9cff;
     }
 
     &:after {

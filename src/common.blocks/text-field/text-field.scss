@@ -1,10 +1,12 @@
 @import '../../scss/mixins';
 
-.text-field {
+$text-field: '.text-field';
+
+#{$text-field} {
   position: relative;
   margin-bottom: 10px;
 
-  &:hover .text-field__field {
+  &:hover #{$text-field}__field {
     border: 1px solid rgba(31, 32, 65, 0.5);
     outline: none;
   }
@@ -60,11 +62,11 @@
       outline: none;
     }
 
-    &:hover .text-field__arrow-forward {
+    &:hover #{$text-field}__arrow-forward {
       opacity: 0.5;
     }
 
-    &:active .text-field__arrow-forward {
+    &:active #{$text-field}__arrow-forward {
       transition: none;
       opacity: 1;
     }

@@ -201,45 +201,41 @@
       color: #fff;
     }
 
-    &:hover::before,
-    &:hover::after {
+    &:hover:before,
+    &:hover:after {
       display: block;
     }
 
-    &:not([flow])::before,
-    &[flow^='up']::before {
-      bottom: 100%;
-      border-bottom-width: 0;
-      border-top-color: #333;
+    &:not([flow]),
+    &[flow^='up'] {
+      &:before {
+        bottom: 100%;
+        border-bottom-width: 0;
+        border-top-color: #333;
+        left: 50%;
+        transform: translate(-50%, -0.5em);
+      }
+
+      &:after {
+        bottom: calc(100% + 5px);
+        left: 50%;
+        transform: translate(-50%, -0.5em);
+      }
+
+      &:hover {
+        &:before,
+        &:after {
+          animation: tooltips-vert 300ms ease-out forwards;
+        }
+      }
     }
 
-    &:not([flow])::after,
-    &[flow^='up']::after {
-      bottom: calc(100% + 5px);
-    }
-
-    &:not([flow])::before,
-    &:not([flow])::after,
-    &[flow^='up']::before,
-    &[flow^='up']::after {
-      left: 50%;
-      transform: translate(-50%, -0.5em);
-    }
-
-    &:not([flow]):hover::before,
-    &:not([flow]):hover::after,
-    &[flow^='up']:hover::before,
-    &[flow^='up']:hover::after,
-    &[flow^='down']:hover::before,
-    &[flow^='down']:hover::after {
-      animation: tooltips-vert 300ms ease-out forwards;
-    }
-
-    &[flow^='left']:hover::before,
-    &[flow^='left']:hover::after,
-    &[flow^='right']:hover::before,
-    &[flow^='right']:hover::after {
-      animation: tooltips-horiz 300ms ease-out forwards;
+    &[flow^='down']:hover,
+    &[flow^='right']:hover {
+      &:before,
+      &:after {
+        animation: tooltips-vert 300ms ease-out forwards;
+      }
     }
   }
 }

@@ -1,4 +1,6 @@
-.header {
+$header: '.header';
+
+#{$header} {
   position: relative;
   width: 100%;
   display: flex;
@@ -19,6 +21,13 @@
     display: none;
     position: relative;
     z-index: 11;
+
+    @media screen and (max-width: 950px) {
+      display: block;
+      height: 20px;
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__burger-image {
@@ -28,7 +37,7 @@
     height: 4px;
     background: #5c5c72ff;
 
-    &::before {
+    &:before {
       content: '';
       position: absolute;
       top: -8px;
@@ -38,7 +47,7 @@
       background: #5c5c72ff;
     }
 
-    &::after {
+    &:after {
       content: '';
       position: absolute;
       top: 8px;
@@ -68,41 +77,30 @@
   &__menu-check {
     display: none;
 
-    &:checked ~ .header__burger .header__burger-image {
+    &:checked ~ #{$header}__burger #{$header}__burger-image {
       transition: background 0.2s ease-in;
       background: transparent;
 
-      &::after {
+      &:after {
         transition: top 0.2s ease-in, transform 0.2s ease-in 0.2s;
         top: 0;
         transform: rotate(45deg);
       }
-      &::before {
+      &:before {
         transition: top 0.2s ease-in, transform 0.2s ease-in 0.2s;
         top: 0;
         transform: rotate(-45deg);
       }
     }
 
-    &:not(:checked) ~ .header__burger .header__burger-image {
+    &:not(:checked) ~ #{$header}__burger #{$header}__burger-image {
       transition: background 0.2s ease-in 0.2s;
-      &::after {
+      &:after {
         transition: top 0.2s ease-in 0.2s, transform 0.2s ease-in;
       }
-      &::before {
+      &:before {
         transition: top 0.2s ease-in 0.2s, transform 0.2s ease-in;
       }
-    }
-  }
-}
-
-@media screen and (max-width: 950px) {
-  .header {
-    &__burger {
-      display: block;
-      height: 20px;
-      display: flex;
-      align-items: center;
     }
   }
 }

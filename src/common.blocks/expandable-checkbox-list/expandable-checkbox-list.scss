@@ -1,18 +1,23 @@
 @import '../../scss/mixins';
 
-.expandable-checkbox-list {
+$expandable-checkbox-list: '.expandable-checkbox-list';
+
+#{$expandable-checkbox-list} {
   width: 100%;
   max-width: 500px;
 
   &__check {
     display: none;
-    &:checked ~ .expandable-checkbox-list__hide-list {
-      display: block;
-    }
-    &:checked
-      ~ .expandable-checkbox-list__title-section
-      .expandable-checkbox-list__expand-more {
-      transform: rotate(180deg);
+
+    &:checked {
+      & ~ #{$expandable-checkbox-list}__hide-list {
+        display: block;
+      }
+
+      & ~ #{$expandable-checkbox-list}__title-section
+        #{$expandable-checkbox-list}__expand-more {
+        transform: rotate(180deg);
+      }
     }
   }
 
@@ -41,7 +46,7 @@
     padding-right: 10px;
     cursor: pointer;
 
-    &:hover .expandable-checkbox-list__expand-more {
+    &:hover #{$expandable-checkbox-list}__expand-more {
       color: rgba(31, 32, 65, 0.75);
     }
   }
