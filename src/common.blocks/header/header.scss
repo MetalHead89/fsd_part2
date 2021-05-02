@@ -1,5 +1,9 @@
 $header: '.header';
 
+.header-section {
+  display: flex;
+}
+
 #{$header} {
   position: relative;
   width: 100%;

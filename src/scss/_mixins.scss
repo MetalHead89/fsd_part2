@@ -25,3 +25,20 @@
   text-transform: uppercase;
   color: #1f2041;
 }
+
+@mixin site-container() {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+@mixin content-section() {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+@mixin article() {
+  width: 100%;
+}

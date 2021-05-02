@@ -1,3 +1,17 @@
+@import '../../scss/mixins';
+
+.site-container {
+  @include site-container;
+}
+
+.content-section {
+  @include content-section;
+}
+
+article {
+  @include article;
+}
+
 .landing-page {
   position: relative;
   width: 100%;
@@ -21,7 +35,7 @@
     display: flex;
     justify-content: center;
     z-index: 1;
-    
+
     &_first {
       background: url('../../assets/images/landing-image-1.png');
       animation: landing-animation-1 40s infinite;

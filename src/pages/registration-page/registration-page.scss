@@ -1,3 +1,17 @@
+@import '../../scss/mixins';
+
+.site-container {
+  @include site-container;
+}
+
+.content-section {
+  @include content-section;
+}
+
+article {
+  @include article;
+}
+
 .registration {
   position: relative;
   width: 100%;
