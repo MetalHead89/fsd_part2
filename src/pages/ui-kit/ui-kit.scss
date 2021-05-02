@@ -8,10 +8,22 @@
   &__title {
     @include h1;
     margin-bottom: 50px;
+
+    @media screen and (max-width: 905px) {
+      text-align: center;
+    }
   }
 }
 
 // COLORS AND TYPE SECTION
+
+.colors-and-type-section {
+  &__title {
+    @media screen and (max-width: 500px) {
+      text-align: center;
+    }
+  }
+}
 
 .colors-and-type {
   width: 100%;
@@ -19,11 +31,21 @@
   display: flex;
   align-items: flex-start;
 
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__type {
     padding-left: 20px;
     margin: -50px 0;
     max-width: 420px;
     flex-direction: column;
+
+    @media screen and (max-width: 500px) {
+      padding: 0;
+    }
   }
 
   &__type-block {
@@ -37,34 +59,16 @@
     width: 59%;
     min-width: 190px;
     flex-direction: column;
-  }
 
-  &__color-block {
-    margin: 20px 0;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .colors-and-type-section {
-    &__title {
-      text-align: center;
-    }
-  }
-
-  .colors-and-type {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    &__colors {
+    @media screen and (max-width: 500px) {
       min-width: 0;
       padding: 0;
       margin-bottom: 50px;
     }
+  }
 
-    &__type {
-      padding: 0;
-    }
+  &__color-block {
+    margin: 20px 0;
   }
 }
 
@@ -77,11 +81,30 @@
     justify-content: space-between;
     margin-bottom: 100px;
     flex-wrap: wrap;
+
+    @media screen and (max-width: 905px) {
+      justify-content: space-around;
+      margin-bottom: 50px;
+    }
+
+    @media screen and (max-width: 610px) {
+      margin: 0;
+    }
   }
 
   &__column {
     width: 30%;
     max-width: 320px;
+
+    @media screen and (max-width: 905px) {
+      width: 40%;
+      max-width: 320px;
+    }
+
+    @media screen and (max-width: 675px) {
+      width: 100%;
+      max-width: 320px;
+    }
 
     &_100-percent-width {
       width: 100%;
@@ -92,6 +115,10 @@
       max-width: 713px;
       display: flex;
       align-items: center;
+
+      @media screen and (max-width: 610px) {
+        padding: 0;
+      }
     }
   }
 
@@ -150,57 +177,16 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-  }
-}
 
-@media screen and (max-width: 905px) {
-  .section {
-    &__title {
-      text-align: center;
-    }
-  }
-
-  .form-elements {
-    &__three-column-section {
-      justify-content: space-around;
-      margin-bottom: 50px;
-    }
-
-    &__column {
-      width: 40%;
-      max-width: 320px;
-    }
-
-    &__three-column-layout {
-      margin-bottom: 0;
-    }
-  }
-}
-
-@media screen and (max-width: 675px) {
-  .form-elements {
-    &__column {
-      width: 100%;
-      max-width: 320px;
-    }
-  }
-}
-
-@media screen and (max-width: 610px) {
-  .form-elements {
-    &__two-column-section {
+    @media screen and (max-width: 610px) {
       flex-wrap: wrap;
       justify-content: center;
     }
+  }
 
-    &__three-column-section {
-      margin: 0;
-    }
-
-    &__column {
-      &_width-713 {
-        padding: 0;
-      }
+  &__three-column-layout {
+    @media screen and (max-width: 905px) {
+      margin-bottom: 0;
     }
   }
 }
@@ -212,6 +198,22 @@
   grid-column-gap: 10px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 'one two three';
+
+  @media screen and (max-width: 1000px) {
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'one two'
+      'three three';
+  }
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'one one'
+      'two two'
+      'three three';
+  }
 
   &__column {
     width: 100%;
@@ -233,6 +235,12 @@
 
   &__column-three {
     grid-area: three;
+
+    @media screen and (max-width: 1000px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__block-wrapper {
@@ -242,31 +250,5 @@
     &_width-320 {
       max-width: 320px;
     }
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .cards {
-    justify-items: center;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      'one two'
-      'three three';
-
-    &__column-three {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .cards {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      'one one'
-      'two two'
-      'three three';
   }
 }

@@ -1,4 +1,5 @@
 @import '../../scss/mixins';
+@import './animations';
 
 .site-container {
   @include site-container;
@@ -78,62 +79,5 @@ article {
     font-family: Montserrat, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: rgba(31, 32, 65, 0.75);
-  }
-}
-
-@keyframes landing-animation-1 {
-  0% {
-    opacity: 1;
-  }
-  27% {
-    opacity: 1;
-  }
-  33% {
-    opacity: 0;
-  }
-  94% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes landing-animation-2 {
-  0% {
-    opacity: 0;
-  }
-  27% {
-    opacity: 0;
-  }
-  33% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  66% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes landing-animation-3 {
-  0% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 0;
-  }
-  66% {
-    opacity: 1;
-  }
-  94% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }

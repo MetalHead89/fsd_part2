@@ -1,3 +1,5 @@
+@import './animations';
+
 $checkbox-button: '.checkbox-button';
 
 #{$checkbox-button} {
@@ -86,14 +88,5 @@ $checkbox-button: '.checkbox-button';
     font-size: 0.85rem;
     color: rgba(31, 32, 65, 0.5);
     line-height: 14px;
-  }
-}
-
-@keyframes jumpUp {
-  50% {
-    -webkit-transform: scale(1.2) rotate(45deg);
-  }
-  100% {
-    -webkit-transform: scale(1) rotate(45deg);
   }
 }

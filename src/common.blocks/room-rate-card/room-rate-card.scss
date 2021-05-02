@@ -1,3 +1,5 @@
+@import './animations';
+
 .room-rate-card {
   padding: 30px;
   background: white;
@@ -237,19 +239,5 @@
         animation: tooltips-vert 300ms ease-out forwards;
       }
     }
-  }
-}
-
-@keyframes tooltips-vert {
-  to {
-    opacity: 0.9;
-    transform: translate(-50%, 0);
-  }
-}
-
-@keyframes tooltips-horiz {
-  to {
-    opacity: 0.9;
-    transform: translate(0, -50%);
   }
 }

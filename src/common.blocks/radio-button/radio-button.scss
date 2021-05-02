@@ -1,3 +1,5 @@
+@import './animations';
+
 $radio-button: '.radio-button';
 
 #{$radio-button} {
@@ -74,14 +76,5 @@ $radio-button: '.radio-button';
         visibility: visible;
       }
     }
-  }
-}
-
-@keyframes radioJump {
-  50% {
-    -webkit-transform: translate(-50%, -50%) scale(1.2);
-  }
-  100% {
-    -webkit-transform: translate(-50%, -50%) scale(1);
   }
 }

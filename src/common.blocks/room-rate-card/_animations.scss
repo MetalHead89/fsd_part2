@@ -1,0 +1,13 @@
+@keyframes tooltips-vert {
+  to {
+    opacity: 0.9;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes tooltips-horiz {
+  to {
+    opacity: 0.9;
+    transform: translate(0, -50%);
+  }
+}

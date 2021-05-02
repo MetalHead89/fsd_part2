@@ -61,30 +61,68 @@ article {
     max-width: 1160px;
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 850px) {
+      flex-direction: column;
+    }
   }
 
   &__room-info {
     max-width: 61.2%;
+
+    @media screen and (max-width: 1120px) {
+      max-width: 100%;
+    }
   }
 
   &__details-container {
-    & .room-details:first-of-type {
-      padding-top: 10px;
+    @media screen and (max-width: 660px) {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    & .room-details:last-child {
-      border: none;
-      padding-bottom: 18px;
+    & .room-details {
+      &:first-of-type {
+        padding-top: 10px;
+      }
+
+      &:last-child {
+        border: none;
+        padding-bottom: 18px;
+      }
     }
 
     &_bullet-list {
       max-width: 300px;
+
+      @media screen and (max-width: 660px) {
+        margin-bottom: 20px;
+      }
     }
   }
 
   &__top-info-section {
     display: flex;
     justify-content: start;
+
+    @media screen and (max-width: 1120px) {
+      margin-left: 5%;
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 850px) {
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+
+    @media screen and (max-width: 660px) {
+      flex-direction: column;
+    }
   }
 
   &__impressions-diagram {
@@ -92,6 +130,14 @@ article {
     min-width: 240px;
     box-sizing: border-box;
     margin-left: 11.3%;
+
+    @media screen and (max-width: 1120px) {
+      margin-left: 0;
+    }
+
+    @media screen and (max-width: 660px) {
+      margin: 0 auto 30px;
+    }
   }
 
   &__details-title {
@@ -102,10 +148,19 @@ article {
     &_bullet-list {
       padding-left: 20px;
       padding-bottom: 8px;
+
+      @media screen and (max-width: 660px) {
+        text-align: center;
+        padding-left: 0;
+      }
     }
 
     &_cancel {
       padding-bottom: 8px;
+
+      @media screen and (max-width: 660px) {
+        text-align: center;
+      }
     }
   }
 
@@ -128,6 +183,15 @@ article {
     padding-top: 8px;
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 1120px) {
+      justify-content: space-evenly;
+    }
+
+    @media screen and (max-width: 660px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__cancel-text {
@@ -138,92 +202,16 @@ article {
     width: 100%;
     max-width: 380px;
     padding-top: 15px;
-  }
-}
 
-@media screen and (max-width: 1120px) {
-  .room-details-page {
-    &__top-info-section {
-      margin-left: 5%;
-      flex-direction: column;
-      margin-bottom: 30px;
-    }
-
-    &__impressions-diagram {
-      margin-left: 0;
-    }
-
-    &__rate-card-container {
+    @media screen and (max-width: 1120px) {
       position: absolute;
       right: 5%;
       padding-right: 20px;
     }
 
-    &__room-info {
-      max-width: 100%;
-    }
-
-    &__bottom-info-section {
-      justify-content: space-evenly;
-    }
-  }
-}
-
-@media screen and (max-width: 850px) {
-  .room-details-page {
-    &__rate-card-container {
+    @media screen and (max-width: 850px) {
       position: static;
       margin: 30px auto 0;
-    }
-
-    &__central-container {
-      flex-direction: column;
-    }
-
-    &__top-info-section {
-      flex-direction: row;
-      justify-content: space-evenly;
-      margin-bottom: 0;
-      margin-left: 0;
-    }
-  }
-}
-
-@media screen and (max-width: 660px) {
-  .room-details-page {
-    &__top-info-section {
-      flex-direction: column;
-    }
-
-    &__impressions-diagram {
-      margin: 0 auto 30px;
-    }
-
-    &__details-container {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      &_bullet-list {
-        margin-bottom: 20px;
-      }
-    }
-
-    &__bottom-info-section {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    &__details-title {
-      &_bullet-list {
-        text-align: center;
-        padding-left: 0;
-      }
-
-      &_cancel {
-        text-align: center;
-      }
     }
   }
 }

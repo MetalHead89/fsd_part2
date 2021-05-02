@@ -1,5 +1,7 @@
 @import '../../scss/mixins';
 
+$search-room: '.search-room';
+
 .site-container {
   @include site-container;
 }
@@ -12,7 +14,7 @@ article {
   @include article;
 }
 
-.search-room {
+#{$search-room} {
   height: 100%;
   box-sizing: border-box;
   background: white;
@@ -29,12 +31,21 @@ article {
     max-width: 1160px;
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 870px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__sidebar {
     width: 27%;
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: 870px) {
+      width: 100%;
+    }
   }
 
   &__filter {
@@ -45,29 +56,70 @@ article {
     justify-content: center;
     cursor: pointer;
 
-    &:hover,
-    & h3:hover {
+    &:hover {
       transition: color 0.5s ease-in;
       color: rgba(31, 32, 65, 0.5);
     }
 
-    & h3:not(:hover) {
-      transition: color 0.5s ease-in;
-    }
-
     & h3 {
       margin: 0;
+
+      :hover {
+        transition: color 0.5s ease-in;
+        color: rgba(31, 32, 65, 0.5);
+      }
+
+      &:not(:hover) {
+        transition: color 0.5s ease-in;
+      }
+    }
+
+    @media screen and (max-width: 870px) {
+      display: flex;
     }
   }
 
   &__filter-check {
     display: none;
+
+    @media screen and (max-width: 870px) {
+      &:checked ~ #{$search-room}__filter-options {
+        max-width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        & #{$search-room}__option-column-one,
+        & #{$search-room}__option-column-two {
+          width: 40%;
+          max-width: 266px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      &:checked ~ #{$search-room}__filter-options {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+
+        & #{$search-room}__option-column-one,
+        & #{$search-room}__option-column-two {
+          width: 100%;
+        }
+      }
+    }
   }
 
   &__filter-options {
     width: 100%;
     max-width: 266px;
     display: block;
+
+    @media screen and (max-width: 870px) {
+      display: none;
+      margin: 0 auto;
+    }
   }
 
   &__filter-date-container {
@@ -120,6 +172,11 @@ article {
     display: flex;
     flex-direction: column;
     width: 71.8%;
+
+    @media screen and (max-width: 870px) {
+      width: 100%;
+      padding: 0;
+    }
   }
 
   &__rooms-title {
@@ -128,6 +185,10 @@ article {
     width: 100%;
     margin-top: 30px;
     margin-bottom: 11px;
+
+    @media screen and (max-width: 1120px) {
+      text-align: center;
+    }
   }
 
   &__rooms {
@@ -136,12 +197,30 @@ article {
     flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 1120px) {
+      justify-content: space-evenly;
+    }
   }
 
   &__number-card-container {
     margin: 10px 0;
     flex: none;
     width: 32.5%;
+
+    @media screen and (max-width: 1120px) {
+      margin: 10px 0;
+      width: 47%;
+    }
+
+    @media screen and (max-width: 870px) {
+      width: 47%;
+    }
+
+    @media screen and (max-width: 600px) {
+      width: 80%;
+      min-width: 260px;
+    }
   }
 
   &__pagination-container {
@@ -149,90 +228,5 @@ article {
     display: flex;
     justify-content: center;
     padding-top: 33px;
-  }
-}
-
-@media screen and (max-width: 1120px) {
-  .search-room {
-    &__rooms {
-      justify-content: space-evenly;
-    }
-
-    &__number-card-container {
-      margin: 10px 0;
-      width: 47%;
-    }
-
-    &__rooms-title {
-      text-align: center;
-    }
-  }
-}
-
-@media screen and (max-width: 870px) {
-  .search-room {
-    &__sidebar {
-      width: 100%;
-    }
-
-    &__filter-check {
-      &:checked ~ .search-room__filter-options {
-        max-width: 100%;
-        display: flex;
-        justify-content: space-around;
-
-        & .search-room__option-column-one,
-        & .search-room__option-column-two {
-          width: 40%;
-          max-width: 266px;
-        }
-      }
-    }
-
-    &__number-card-container {
-      width: 47%;
-    }
-
-    &__content {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    &__filter-options {
-      display: none;
-      margin: 0 auto;
-    }
-
-    &__rooms-section {
-      width: 100%;
-      padding: 0;
-    }
-
-    &__filter {
-      display: flex;
-    }
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .search-room {
-    &__filter-check {
-      &:checked ~ .search-room__filter-options {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-
-        & .search-room__option-column-one,
-        & .search-room__option-column-two {
-          width: 100%;
-        }
-      }
-    }
-
-    &__number-card-container {
-      width: 80%;
-      min-width: 260px;
-    }
   }
 }
