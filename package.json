@@ -28,6 +28,7 @@
     "copy-webpack-plugin": "^6.4.1",
     "css-loader": "^4.3.0",
     "css-mqpacker": "^7.0.0",
+    "cssnano": "^5.0.2",
     "eslint": "^7.18.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-fsd": "^1.0.1",
