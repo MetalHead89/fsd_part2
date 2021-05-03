@@ -49,7 +49,6 @@ $like-button: '.like-button';
     box-sizing: border-box;
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    -webkit-background-clip: padding-box, border-box;
 
     & #{$like-button}__heart {
       animation: heartJump 0.2s ease;
