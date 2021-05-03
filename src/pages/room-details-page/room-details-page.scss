@@ -105,7 +105,7 @@ article {
 
   &__top-info-section {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
 
     @media screen and (max-width: 1120px) {
       margin-left: 5%;
