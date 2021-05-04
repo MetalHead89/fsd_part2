@@ -29,18 +29,18 @@ $dropdown: '.dropdown';
       & ~ #{$dropdown}__header {
         border-radius: 4px 4px 0 0;
         border: 1px solid rgba(31, 32, 65, 0.5);
+      }
 
-        & ~ #{$dropdown}__drop-menu {
-          transition: transform 0.4s cubic-bezier(0.73, 0.32, 0.34, 1.5);
-          transform: scale(1, 1);
+      & ~ #{$dropdown}__drop-menu {
+        transition: transform 0.4s cubic-bezier(0.73, 0.32, 0.34, 1.5);
+        transform: scale(1, 1);
+        opacity: 1;
+        & #{$dropdown}__option,
+        & #{$dropdown}__bottom-buttons-panel,
+        & .calendar__days,
+        & .calendar__month-selection-section {
+          transition: opacity 1.2s ease;
           opacity: 1;
-          & #{$dropdown}__option,
-          & #{$dropdown}__bottom-buttons-panel,
-          & #{$dropdown}__days,
-          & #{$dropdown}__month-selection-section {
-            transition: opacity 1.2s ease;
-            opacity: 1;
-          }
         }
       }
     }
@@ -52,11 +52,11 @@ $dropdown: '.dropdown';
 
       & ~ #{$dropdown}__drop-menu {
         transition: transform 0.5s;
-        
+
         & #{$dropdown}__option,
         & #{$dropdown}__bottom-buttons-panel,
-        & #{$dropdown}__days,
-        & #{$dropdown}__month-selection-section {
+        & .calendar__days,
+        & .calendar__month-selection-section {
           transition: opacity 0.3s;
         }
       }
