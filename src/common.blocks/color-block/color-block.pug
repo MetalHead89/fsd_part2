@@ -2,21 +2,21 @@ mixin color-block(args)
   - let colorSquareClass = 'color-block__square';
 
   if args.theme === 'darkShade100'
-    - colorSquareClass += ' color-block__square_dark-shade-100';
+    - colorSquareClass += ' color-block__square_theme_dark-shade-100';
   else if args.theme === 'darkShade75'
-    - colorSquareClass += ' color-block__square_dark-shade-75';
+    - colorSquareClass += ' color-block__square_theme_dark-shade-75';
   else if args.theme === 'darkShade50'
-    - colorSquareClass += ' color-block__square_dark-shade-50';
+    - colorSquareClass += ' color-block__square_theme_dark-shade-50';
   else if args.theme === 'darkShade25'
-    - colorSquareClass += ' color-block__square_dark-shade-25';
+    - colorSquareClass += ' color-block__square_theme_dark-shade-25';
   else if args.theme === 'darkShade5'
-    - colorSquareClass += ' color-block__square_dark-shade-5';
+    - colorSquareClass += ' color-block__square_theme_dark-shade-5';
   else if args.theme === 'purple'
-    - colorSquareClass += ' color-block__square_purple';
+    - colorSquareClass += ' color-block__square_theme_purple';
   else if args.theme === 'green'
-    - colorSquareClass += ' color-block__square_green';
+    - colorSquareClass += ' color-block__square_theme_green';
   else
-    - colorSquareClass += ' color-block__square_dark-shade-100';
+    - colorSquareClass += ' color-block__square_theme_dark-shade-100';
 
   .color-block
     div(class=colorSquareClass)

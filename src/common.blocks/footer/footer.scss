@@ -54,14 +54,12 @@ $footer: '.footer';
 
   &__info-column {
     list-style-type: none;
-    padding: 0;
+    padding: 0 30px;
+    max-width: 260px;
 
-    & + #{$footer}__info-column {
-      margin-left: 30px;
-    }
-
-    &_width-260 {
-      width: 260px;
+    &:first-child,
+    &:last-child {
+      padding: 0;
     }
   }
 

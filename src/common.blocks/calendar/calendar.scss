@@ -7,7 +7,7 @@
   box-sizing: border-box;
   border-radius: 4px;
 
-  &_standart-theme {
+  &_theme_default {
     border: 1px solid rgba(31, 32, 65, 0.25);
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   }
@@ -83,7 +83,7 @@
       opacity: 1;
     }
 
-    &_standart-theme {
+    &_theme_default {
       color: #bc9cff;
     }
   }
@@ -95,7 +95,7 @@
     font-weight: bold;
     font-size: 19px;
 
-    &_standart-theme {
+    &_theme_default {
       color: #1f2041;
     }
   }
@@ -112,7 +112,7 @@
     font-weight: bold;
     font-size: 12px;
 
-    &_standart-theme {
+    &_theme_default {
       color: #bc9cff;
     }
   }

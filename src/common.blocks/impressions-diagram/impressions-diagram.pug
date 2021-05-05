@@ -7,10 +7,10 @@ mixin impressions-diagram(diagramArgs)
         .impressions-diagram__votes-text голосов
 
     .impressions-diagram__diagram-legend
-      .impressions-diagram__legend-item.impressions-diagram__legend-item_yellow Великолепно
-      .impressions-diagram__legend-item.impressions-diagram__legend-item_green Хорошо
-      .impressions-diagram__legend-item.impressions-diagram__legend-item_purple Удовлетворительно
-      .impressions-diagram__legend-item.impressions-diagram__legend-item_brown Разочарован
+      .impressions-diagram__legend-item.impressions-diagram__legend-item_color_yellow Великолепно
+      .impressions-diagram__legend-item.impressions-diagram__legend-item_color_green Хорошо
+      .impressions-diagram__legend-item.impressions-diagram__legend-item_color_purple Удовлетворительно
+      .impressions-diagram__legend-item.impressions-diagram__legend-item_color_brown Разочарован
   script.
     document.cookie = 'magnificently=' + !{diagramArgs.magnificently}
     document.cookie = 'good=' + !{diagramArgs.good}

@@ -6,18 +6,18 @@ mixin button(args)
   else if args.type === 'onlyText'
     - button_class += ' button_only-text';
     if args.theme === 'gray'
-      - button_class += ' button_only-text_gray';
+      - button_class += ' button_only-text_theme_gray';
     else
-      - button_class += ' button_only-text_purple';
+      - button_class += ' button_only-text_theme_purple';
   else if args.type == 'arrow'
     - button_class += ' button_with-arrow';
   else
     - button_class += ' button_regular';
 
-  if args.theme === 'paddings10'
-    - button_class += ' button_with-vertical-paddings-10';
-  if args.theme === 'paddings8'
-    - button_class += ' button_with-vertical-paddings-8';
+  if args.theme === 'paddingsL'
+    - button_class += ' button_paddings_l';
+  if args.theme === 'paddingsS'
+    - button_class += ' button_paddings_s';
 
   button(type="button", value=args.text, class=button_class) !{args.text}
     if args.type == 'arrow'

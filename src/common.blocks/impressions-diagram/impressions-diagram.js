@@ -146,5 +146,6 @@ class Diagram {
 
 const canvas = document.querySelector('.impressions-diagram__diagram');
 if (canvas !== null) {
-  const diagram = new Diagram(canvas);
+  // eslint-disable-next-line no-new
+  new Diagram(canvas);
 }

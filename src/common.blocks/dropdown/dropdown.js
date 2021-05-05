@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+
 class Dropdown {
   constructor(dropdown) {
     this.dropdown = dropdown;
@@ -145,7 +147,7 @@ function dropdownWordGenerator(word, number) {
 
 function changeDropdownHeaderText(dropdown) {
   /**
-   * Изеняет текст хедера dropdown элемента
+   * Изменяет текст хедера dropdown элемента
    */
 
   const quantityNumbers = dropdown.dropdown.querySelectorAll(
@@ -204,7 +206,7 @@ function changeDropdownHeaderText(dropdown) {
 
 function resetOptionsValues() {
   /**
-   * Сбрасывет все значения dropdown на дефолтные
+   * Сбрасывает все значения dropdown на дефолтные
    */
 
   const quantityElements = this.dropdown.querySelectorAll(
@@ -309,9 +311,13 @@ function closeOpenDropdowns() {
   }
 }
 
+function closeDropdown() {
+  this.querySelector('.dropdown__check').checked = false;
+}
+
 function closeAllDropdowns() {
   dropdowns.forEach((dropdown) => {
-    dropdown.querySelector('.dropdown__check').checked = false;
+    closeDropdown.apply(dropdown);
   });
 }
 

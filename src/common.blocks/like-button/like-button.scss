@@ -51,7 +51,7 @@ $like-button: '.like-button';
     background-clip: padding-box, border-box;
 
     & #{$like-button}__heart {
-      animation: heartJump 0.2s ease;
+      animation: heart-jump 0.2s ease;
     }
   }
 
@@ -59,7 +59,7 @@ $like-button: '.like-button';
     color: rgba(31, 32, 65, 0.25);
 
     & #{$like-button}__heart {
-      animation: heartJump2 0.2s ease;
+      animation: heart-jump2 0.2s ease;
     }
   }
 

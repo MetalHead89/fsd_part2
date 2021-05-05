@@ -34,7 +34,7 @@ mixin guest-review(args)
       .guest-review__guest-details
         .guest-review__guest-name !{args.name}
         .guest-review__last-visit !{lastVisit}
-    .guest-review__rewiew
+    .guest-review__review
       .guest-review__likes
         +like-button({likesCount: args.likes, checked: args.checkedLike})
-      .guest-review__rewiew-text !{args.review}
+      .guest-review__review-text !{args.review}

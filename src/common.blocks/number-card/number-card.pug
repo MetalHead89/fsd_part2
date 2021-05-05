@@ -6,9 +6,9 @@ mixin number-card(args)
       <ul class="number-card__slider-list">
         each img, index in args.images
           if index == 0
-            <li class="number-card__slider-list-item number-card__slider-list-item_opacity-1"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
+            <li class="number-card__slider-list-item number-card__slider-list-item_transparent"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
           else
-            <li class="number-card__slider-list-item number-card__slider-list-item_opacity-0"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
+            <li class="number-card__slider-list-item number-card__slider-list-item_not-transparent"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
       </ul>
       button.number-card__arrow-button.number-card__arrow-button_prev(
         type='button'
@@ -23,12 +23,12 @@ mixin number-card(args)
           if index == 0
             .number-card__dot.number-card__dot_active
           else
-            .number-card__dot.number-card__dot_unactive
+            .number-card__dot.number-card__dot_inactive
     .number-card__room-info
       .number-card__number-section
         .number-card__room-number
           span.number-card__number №
-          |  #[span.number-card__number.number-card__number_size-19 !{args.roomNumber}]
+          |  #[span.number-card__number.number-card__number_size_l !{args.roomNumber}]
           if args.lux
             |  #[span.number-card__lux ЛЮКС]
         .number-card__room-rate 

@@ -72,7 +72,7 @@ $number-card: '.number-card';
       background: white;
     }
 
-    &_unactive {
+    &_inactive {
       transition: background.5s ease-in;
       background: transparent;
       cursor: pointer;
@@ -105,7 +105,7 @@ $number-card: '.number-card';
     color: #1f2041;
     line-height: 0;
 
-    &_size-19 {
+    &_size_l {
       font-size: 19px;
     }
   }
@@ -162,11 +162,11 @@ $number-card: '.number-card';
   &__slider-list-item {
     transition: opacity 0.5s ease-in;
 
-    &_opacity-0 {
+    &_not-transparent {
       opacity: 0;
     }
 
-    &_opacity-1 {
+    &_transparent {
       opacity: 1;
     }
   }

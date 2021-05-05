@@ -22,14 +22,15 @@ class NumberCard {
     this.buttonNext.onclick = () => this.switchToNextSlide();
     this.buttonPrev.onclick = () => this.switchToPreviousSlide();
     for (let dot = 0; dot < this.sliderDots.length; dot += 1) {
-      this.sliderDots[dot].onclick = () =>
+      this.sliderDots[dot].onclick = () => {
         this.clickToDot(this.sliderDots[dot]);
+      };
     }
   }
 
   switchToNextSlide() {
     const activeSlide = this.numberCard.querySelector(
-      '.number-card__slider-list-item_opacity-1'
+      '.number-card__slider-list-item_transparent'
     );
     const nextSlide = activeSlide.nextElementSibling;
     const activeDot = this.numberCard.querySelector('.number-card__dot_active');
@@ -43,7 +44,7 @@ class NumberCard {
 
   switchToPreviousSlide() {
     const activeSlide = this.numberCard.querySelector(
-      '.number-card__slider-list-item_opacity-1'
+      '.number-card__slider-list-item_transparent'
     );
     const prevSlide = activeSlide.previousElementSibling;
     const activeDot = this.numberCard.querySelector('.number-card__dot_active');
@@ -56,10 +57,10 @@ class NumberCard {
   }
 
   static switchSlide(activeSlide, nextSlide) {
-    activeSlide.classList.remove('number-card__slider-list-item_opacity-1');
-    activeSlide.classList.add('number-card__slider-list-item_opacity-0');
-    nextSlide.classList.remove('number-card__slider-list-item_opacity-0');
-    nextSlide.classList.add('number-card__slider-list-item_opacity-1');
+    activeSlide.classList.remove('number-card__slider-list-item_transparent');
+    activeSlide.classList.add('number-card__slider-list-item_not-transparent');
+    nextSlide.classList.remove('number-card__slider-list-item_not-transparent');
+    nextSlide.classList.add('number-card__slider-list-item_transparent');
   }
 
   clickToDot(dot) {
@@ -77,8 +78,8 @@ class NumberCard {
 
   static switchSliderDot(activeDot, nextDot) {
     activeDot.classList.remove('number-card__dot_active');
-    activeDot.classList.add('number-card__dot_unactive');
-    nextDot.classList.remove('number-card__dot_unactive');
+    activeDot.classList.add('number-card__dot_inactive');
+    nextDot.classList.remove('number-card__dot_inactive');
     nextDot.classList.add('number-card__dot_active');
   }
 }

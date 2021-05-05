@@ -34,32 +34,34 @@
       display: block;
     }
 
-    &_dark-shade-5 {
-      background: rgba(31, 32, 65, 0.05);
-    }
+    &_theme {
+      &_dark-shade-5 {
+        background: rgba(31, 32, 65, 0.05);
+      }
 
-    &_dark-shade-25 {
-      background: rgba(31, 32, 65, 0.25);
-    }
+      &_dark-shade-25 {
+        background: rgba(31, 32, 65, 0.25);
+      }
 
-    &_dark-shade-50 {
-      background: rgba(31, 32, 65, 0.5);
-    }
+      &_dark-shade-50 {
+        background: rgba(31, 32, 65, 0.5);
+      }
 
-    &_dark-shade-75 {
-      background: rgba(31, 32, 65, 0.75);
-    }
+      &_dark-shade-75 {
+        background: rgba(31, 32, 65, 0.75);
+      }
 
-    &_dark-shade-100 {
-      background: #1f2041;
-    }
+      &_dark-shade-100 {
+        background: #1f2041;
+      }
 
-    &_green {
-      background: #6fcf97;
-    }
+      &_green {
+        background: #6fcf97;
+      }
 
-    &_purple {
-      background: #bc9cff;
+      &_purple {
+        background: #bc9cff;
+      }
     }
   }
 }
