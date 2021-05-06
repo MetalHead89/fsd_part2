@@ -9,15 +9,15 @@
     padding-left: 30px;
     margin: 0;
 
-    &_header-one {
+    &_header-size_l {
       @include h1;
     }
 
-    &_header-two {
+    &_header-size_m {
       @include h2;
     }
 
-    &_header-three {
+    &_header-size_s {
       @include h3;
     }
   }

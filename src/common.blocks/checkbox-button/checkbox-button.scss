@@ -7,7 +7,7 @@ $checkbox-button: '.checkbox-button';
   margin: 12px 0;
   padding-left: 30px;
 
-  &_rich {
+  &_type_rich {
     box-sizing: border-box;
     width: 100%;
     margin: 10px 0;
@@ -70,7 +70,7 @@ $checkbox-button: '.checkbox-button';
       border-image-slice: 1;
     }
 
-    &_rich {
+    &_type_rich {
       width: 100%;
       font-weight: bold;
       color: rgba(31, 32, 65, 0.75);

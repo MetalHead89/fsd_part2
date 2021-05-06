@@ -4,13 +4,13 @@ mixin type-block(args)
 
   if args.tag === 'h1'
     - tag = 'H1';
-    - tagTextClass = 'type-block__text_header-one'
+    - tagTextClass = 'type-block__text_header-size_l'
   else if args.tag === 'h2'
     - tag = 'H2';
-    - tagTextClass = 'type-block__text_header-two'
+    - tagTextClass = 'type-block__text_header-size_m'
   else if args.tag === 'h3'
     - tag = 'H3';
-    - tagTextClass = 'type-block__text_header-three'
+    - tagTextClass = 'type-block__text_header-size_s'
 
   .type-block
     #{args.tag}.type-block__tag !{tag}

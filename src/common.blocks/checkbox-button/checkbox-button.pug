@@ -4,8 +4,8 @@ mixin checkbox-button(args)
   - let labelClass = 'checkbox-button__label';
 
   if args.rich
-    - checkboxClass += ' checkbox-button_rich';
-    - labelClass += ' checkbox-button__label_rich';
+    - checkboxClass += ' checkbox-button_type_rich';
+    - labelClass += ' checkbox-button__label_type_rich';
 
   div(class=checkboxClass)
     input.checkbox-button__checkbox-element(

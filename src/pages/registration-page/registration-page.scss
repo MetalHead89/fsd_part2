@@ -30,14 +30,14 @@ article {
     justify-content: center;
     z-index: 0;
 
-    &_first {
+    &_image-one {
       background: url('../../assets/images/registration-sign-in-background-1.png');
       animation: registration-animation-1 40s infinite;
       background-size: cover;
       background-position: center center;
     }
 
-    &_second {
+    &_image-two {
       background: url('../../assets/images/registration-sign-in-background-2.png');
       animation: registration-animation-2 40s infinite;
       background-size: cover;

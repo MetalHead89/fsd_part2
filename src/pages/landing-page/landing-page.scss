@@ -35,21 +35,21 @@ article {
     justify-content: center;
     z-index: 1;
 
-    &_first {
+    &_image-one {
       background: url('../../assets/images/landing-image-1.png');
       animation: landing-animation-1 40s infinite;
       background-size: cover;
       background-position: center center;
     }
 
-    &_second {
+    &_image-two {
       background: url('../../assets/images/landing-image-2.png');
       animation: landing-animation-2 40s infinite;
       background-size: cover;
       background-position: center center;
     }
 
-    &_third {
+    &_image-three {
       background: url('../../assets/images/landing-image-3.png');
       animation: landing-animation-3 40s infinite;
       background-size: cover;

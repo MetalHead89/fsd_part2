@@ -94,7 +94,7 @@ article {
       }
     }
 
-    &_bullet-list {
+    &_size_s {
       max-width: 300px;
 
       @media screen and (max-width: 660px) {
@@ -145,7 +145,7 @@ article {
     font-size: 19px;
     margin-bottom: 6px;
 
-    &_bullet-list {
+    &_paddings_left-and-bottom {
       padding-left: 20px;
       padding-bottom: 8px;
 
