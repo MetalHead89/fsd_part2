@@ -380,9 +380,11 @@ for (
 
 function clickIsOutsideDropdown(evt) {
   return (
-    !evt.target.classList.contains('dropdown__header') &&
-    !evt.target.classList.contains('dropdown__drop-menu') &&
-    !evt.target.offsetParent.classList.contains('dropdown__drop-menu')
+    (!evt.target.classList.contains('dropdown__header') &&
+      !evt.target.classList.contains('dropdown__drop-menu') &&
+      evt.target.offsetParent &&
+      !evt.target.offsetParent.classList.contains('dropdown__drop-menu')) ||
+    !evt.target.offsetParent
   );
 }
 
