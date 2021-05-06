@@ -212,4 +212,8 @@ $navbar: '.navbar';
       width: 150px;
     }
   }
+
+  &__expand-more-button {
+    user-select: none;
+  }
 }

@@ -8,6 +8,7 @@
   text-transform: uppercase;
   transition: 0.5s;
   cursor: pointer;
+  user-select: none;
 
   &:focus {
     outline: none;

@@ -31,6 +31,7 @@
     box-sizing: border-box;
     max-width: 40px;
     width: 100%;
+    user-select: none;
 
     &:before {
       content: '';
@@ -73,6 +74,7 @@
   &__month-button {
     transition: opacity 0.5s ease;
     cursor: pointer;
+    user-select: none;
 
     &:hover {
       opacity: 0.5;

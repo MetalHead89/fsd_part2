@@ -14,7 +14,8 @@ $expandable-checkbox-list: '.expandable-checkbox-list';
         display: block;
       }
 
-      & ~ #{$expandable-checkbox-list}__title-section
+      &
+        ~ #{$expandable-checkbox-list}__title-section
         #{$expandable-checkbox-list}__expand-more {
         transform: rotate(180deg);
       }
@@ -24,6 +25,7 @@ $expandable-checkbox-list: '.expandable-checkbox-list';
   &__expand-more {
     color: rgba(31, 32, 65, 0.5);
     transition: 0.5s ease;
+    user-select: none;
   }
 
   &__hide-list {

@@ -16,6 +16,7 @@ $text-field: '.text-field';
     background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: 0.5s;
+    user-select: none;
   }
 
   &__field {

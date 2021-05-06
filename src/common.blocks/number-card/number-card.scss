@@ -174,6 +174,7 @@ $number-card: '.number-card';
   &__slider-section {
     position: relative;
     width: 100%;
+    user-select: none;
 
     &:hover #{$number-card}__arrow-button {
       opacity: 1;

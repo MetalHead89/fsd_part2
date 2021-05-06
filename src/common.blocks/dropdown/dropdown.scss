@@ -35,7 +35,7 @@ $dropdown: '.dropdown';
         transition: transform 0.4s cubic-bezier(0.73, 0.32, 0.34, 1.5);
         transform: scale(1, 1);
         opacity: 1;
-        
+
         & #{$dropdown}__option,
         & #{$dropdown}__bottom-buttons-panel,
         & .calendar__days,
@@ -112,6 +112,7 @@ $dropdown: '.dropdown';
     pointer-events: none;
     display: inline-block;
     flex: none;
+    user-select: none;
 
     &_absolute {
       position: absolute;
@@ -180,6 +181,7 @@ $dropdown: '.dropdown';
     background: #ffffff;
     transition: 0.5s;
     cursor: pointer;
+    user-select: none;
 
     &:focus {
       outline: none;

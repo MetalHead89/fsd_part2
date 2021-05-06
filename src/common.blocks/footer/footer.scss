@@ -104,6 +104,7 @@ $footer: '.footer';
 
   &__logo {
     padding: 0;
+    user-select: none;
 
     &_hidden {
       display: none;
