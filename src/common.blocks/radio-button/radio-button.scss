@@ -72,7 +72,7 @@ $radio-button: '.radio-button';
 
       &:after {
         transform: translate(-50%, -50%) scale(1);
-        animation: radioJump 0.2s ease;
+        animation: radio-jump 0.2s ease;
         visibility: visible;
       }
     }

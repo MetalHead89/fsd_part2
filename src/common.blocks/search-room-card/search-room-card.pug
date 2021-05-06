@@ -4,7 +4,7 @@ include ../button/button.pug
 mixin search-room-card(args)
   .search-room-card
     form
-      h1.search-room-card__title.search-room-card__title_margins !{args.title}
+      h1.search-room-card__title.search-room-card__title !{args.title}
       .search-room-card__dropdown
         +dropdown(args.dropdown1)
       .search-room-card__dropdown

@@ -1,11 +1,11 @@
-@keyframes tooltips-vert {
+@keyframes tooltips-vertical {
   to {
     opacity: 0.9;
     transform: translate(-50%, 0);
   }
 }
 
-@keyframes tooltips-horiz {
+@keyframes tooltips-horizontal {
   to {
     opacity: 0.9;
     transform: translate(0, -50%);

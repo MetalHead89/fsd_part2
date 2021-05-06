@@ -6,7 +6,7 @@ include ../toggle/toggle.pug
 mixin registration-card(args)
   .registration-card
     form
-      h1.registration-card__title.registration-card__title_margin-8 !{args.title}
+      h1.registration-card__title.registration-card__title !{args.title}
       .registration-card__person
         +text-field(args.textFieldName)
         +text-field(args.textFieldSurname)

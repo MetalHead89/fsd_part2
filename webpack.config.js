@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -20,13 +22,13 @@ function createHTMLPlugin(dir, file) {
   return [];
 }
 
-function generateHTMLplugins(pagesDir) {
+function generateHTMLPlugins(pagesDir) {
   const links = fs.readdirSync(path.resolve(__dirname, pagesDir));
   const plugins = [];
 
   links.forEach((item) => {
     if (item.indexOf('.') < 0) {
-      plugins.push(...generateHTMLplugins(`${pagesDir}/${item}`));
+      plugins.push(...generateHTMLPlugins(`${pagesDir}/${item}`));
     } else {
       plugins.push(...createHTMLPlugin(pagesDir, item));
     }
@@ -64,7 +66,7 @@ module.exports = {
       ),
       favicon: path.resolve(__dirname, 'favicon.ico'),
     }),
-    ...generateHTMLplugins('src/pages'),
+    ...generateHTMLPlugins('src/pages'),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin([{ filename: '[name].css' }]),
     new CopyWebpackPlugin({

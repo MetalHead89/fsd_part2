@@ -106,11 +106,11 @@
       max-width: 320px;
     }
 
-    &_100-percent-width {
+    &_size_stretch {
       width: 100%;
     }
 
-    &_width-713 {
+    &_size_s {
       padding-left: 50px;
       max-width: 713px;
       display: flex;
@@ -126,7 +126,7 @@
     margin-bottom: 22px;
     width: 100%;
 
-    &_width-266 {
+    &_size_s {
       max-width: 266px;
     }
   }
@@ -135,7 +135,7 @@
     @include h3;
     margin-bottom: 5px;
 
-    &_vertical-margins-15 {
+    &_big-vertical-margins {
       margin: 15px 0;
     }
   }
@@ -219,7 +219,7 @@
     width: 100%;
     max-width: 380px;
 
-    &_width-270 {
+    &_width_s {
       width: 100%;
       max-width: 270px;
     }
@@ -247,7 +247,7 @@
     margin-bottom: 22px;
     width: 100%;
 
-    &_width-320 {
+    &_width_s {
       max-width: 320px;
     }
   }

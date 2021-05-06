@@ -1,4 +1,4 @@
-class MaskedFeld {
+class MaskedField {
   constructor(field) {
     this.field = field;
 
@@ -7,8 +7,8 @@ class MaskedFeld {
 
   init() {
     this.field.oninput = this.onInputMaskedTextField.bind(this);
-    this.field.onpaste = MaskedFeld.onPasteMaskedTextField;
-    this.field.onkeydown = this.onKeydowMaskedTextField.bind(this);
+    this.field.onpaste = MaskedField.onPasteMaskedTextField;
+    this.field.onkeydown = this.onKeydownMaskedTextField.bind(this);
   }
 
   static getTextWithoutDots(text) {
@@ -30,7 +30,7 @@ class MaskedFeld {
     const clipboardData = event.clipboardData || window.clipboardData;
     const pastedData = clipboardData.getData('Text');
 
-    if (Number.isNaN(Number(MaskedFeld.getTextWithoutDots(pastedData)))) {
+    if (Number.isNaN(Number(MaskedField.getTextWithoutDots(pastedData)))) {
       event.preventDefault();
     }
   }
@@ -51,7 +51,7 @@ class MaskedFeld {
     );
   }
 
-  onKeydowMaskedTextField(event) {
+  onKeydownMaskedTextField(event) {
     /**
      * Сдвигает каретку во время удаления, если она стоит до или перед точкой
      */
@@ -82,7 +82,7 @@ class MaskedFeld {
     let caretPosition = this.field.selectionStart;
     let text = this.field.value;
 
-    if (Number.isNaN(Number(MaskedFeld.getTextWithoutDots(text)))) {
+    if (Number.isNaN(Number(MaskedField.getTextWithoutDots(text)))) {
       const startCaretPosition = caretPosition - event.data.length;
       text = `${text.slice(0, startCaretPosition)}${text.slice(caretPosition)}`;
       if (text.length > 1) {
@@ -93,12 +93,12 @@ class MaskedFeld {
     }
 
     if (
-      MaskedFeld.deleteContentAndLengthMoreThanTwo(event.inputType, text.length)
+      MaskedField.deleteContentAndLengthMoreThanTwo(event.inputType, text.length)
     ) {
       caretPosition -= 1;
     }
 
-    text = MaskedFeld.getTextWithoutDots(text);
+    text = MaskedField.getTextWithoutDots(text);
 
     if (text.length >= 2 && text.length < 4) {
       text = `${text.slice(0, 2)}.${text.slice(2)}`;
@@ -117,5 +117,6 @@ class MaskedFeld {
 const maskedTextFields = document.querySelectorAll('.text-field__field_masked');
 
 for (let field = 0; field < maskedTextFields.length; field += 1) {
-  const maskedField = new MaskedFeld(maskedTextFields[field]);
+  // eslint-disable-next-line no-new
+  new MaskedField(maskedTextFields[field]);
 }

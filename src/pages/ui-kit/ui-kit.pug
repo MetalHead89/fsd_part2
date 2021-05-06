@@ -61,7 +61,7 @@ html(lang="ru")
               +text-field(config.maskedTextField)
             .form-elements__block-wrapper
               +dropdown(config.dateDropdown)
-            .form-elements__block-wrapper.form-elements__block-wrapper_width-266
+            .form-elements__block-wrapper.form-elements__block-wrapper_size_s
               .form-elements__block-wrapper
                 +dropdown(config.filterDateDropdown)
               .form-elements__block-wrapper
@@ -102,7 +102,7 @@ html(lang="ru")
             .form-elements__block-wrapper
               +range-slider(config.rangeSlider)
             .form-elements__block-wrapper
-              h3.form-elements__block-title.form-elements__block-title_vertical-margins-15 Buttons
+              h3.form-elements__block-title.form-elements__block-title_big-vertical-margins Buttons
               .form-elements__block-wrapper
                 +button(config.button)
               .form-elements__block-wrapper
@@ -115,7 +115,7 @@ html(lang="ru")
               .form-elements__block-wrapper
                 +button(config.arrowButton)
             .form-elements__block-wrapper
-              h3.form-elements__block-title.form-elements__block-title_vertical-margins-15 Pagination
+              h3.form-elements__block-title.form-elements__block-title_big-vertical-margins Pagination
               +pagination(config.pagination)
             .form-elements__block-wrapper.form-elements__block-wrapper__bullet-list
               h3.form-elements__block-title bullet list
@@ -125,7 +125,7 @@ html(lang="ru")
             .form-elements__block-wrapper
               each roomDetails in config.roomsDetails
                 +room-details({icon: roomDetails.icon, title: roomDetails.title, description: roomDetails.description})
-          .form-elements__column_width-713
+          .form-elements__column_size_s
             .form-elements__block-wrapper
               +guest-review(config.guestReview)
 
@@ -144,9 +144,9 @@ html(lang="ru")
           .cards__block-wrapper
             +entry-card(config.entryCard)
         .cards__column.cards__column-three
-          .cards__block-wrapper.cards__block-wrapper_width-320
+          .cards__block-wrapper.cards__block-wrapper_width_s
             +calendar
-          .cards__column_width-270
+          .cards__column_width_s
             each numberCard in config.numberCards
               .cards__block-wrapper
                 +number-card(numberCard)

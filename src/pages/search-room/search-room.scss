@@ -134,7 +134,7 @@ article {
     margin-top: 18px;
     font-size: 12px;
 
-    & span {
+    & #{$search-room}__range-slider-remark {
       display: inline-block;
       color: rgba(31, 32, 65, 0.5);
       margin-top: 5px;
@@ -148,13 +148,13 @@ article {
   &__checkbox-container {
     margin-top: 23px;
 
-    & h3 {
+    & #{$search-room}__section-title {
       margin-bottom: 18px;
     }
   }
 
   &__rich-checkbox-container {
-    & h3 {
+    & #{$search-room}__section-title {
       margin-top: 31px;
       margin-bottom: 17px;
     }

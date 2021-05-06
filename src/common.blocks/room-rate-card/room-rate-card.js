@@ -131,5 +131,6 @@ class RoomRateCard {
 
 const roomRateCards = document.querySelectorAll('.room-rate-card');
 for (let card = 0; card < roomRateCards.length; card += 1) {
-  const rateCard = new RoomRateCard(roomRateCards[card]);
+  // eslint-disable-next-line no-new
+  new RoomRateCard(roomRateCards[card]);
 }

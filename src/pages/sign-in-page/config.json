@@ -1,5 +1,5 @@
 {
-  "signinPage": {
+  "signInPage": {
     "title": "Войти",
     "textFieldEmail": { "placeholderText": "Email", "type": "email" },
     "textFieldPassword": { "placeholderText": "Пароль", "type": "password" },

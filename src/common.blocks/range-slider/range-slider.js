@@ -11,7 +11,7 @@ class Slider {
     this.leftThumb = this.slider.querySelector('.range-slider__thumb_left');
     this.rightThumb = this.slider.querySelector('.range-slider__thumb_right');
     this.range = this.slider.querySelector('.range-slider__range');
-    this.rangeLable = this.slider.querySelector('.range-slider__range-label');
+    this.rangeLabel = this.slider.querySelector('.range-slider__range-label');
 
     this.setLeftValue();
     this.setRightValue();
@@ -45,8 +45,8 @@ class Slider {
     this.leftThumb.style.left = `${percent}%`;
     this.range.style.left = `${percent}%`;
 
-    const rangeNumbers = this.rangeLable.innerText.split('-');
-    this.rangeLable.innerText = `${parseInt(that.value, 10).toLocaleString(
+    const rangeNumbers = this.rangeLabel.innerText.split('-');
+    this.rangeLabel.innerText = `${parseInt(that.value, 10).toLocaleString(
       'ru-RU'
     )}${String.fromCharCode(8381)} - ${rangeNumbers[1]}`;
   }
@@ -64,8 +64,8 @@ class Slider {
     this.rightThumb.style.right = `${100 - percent}%`;
     this.range.style.right = `${100 - percent}%`;
 
-    const rangeNumbers = this.rangeLable.innerText.split('-');
-    this.rangeLable.innerText = `${rangeNumbers[0]} - ${parseInt(
+    const rangeNumbers = this.rangeLabel.innerText.split('-');
+    this.rangeLabel.innerText = `${rangeNumbers[0]} - ${parseInt(
       that.value,
       10
     ).toLocaleString('ru-RU')}${String.fromCharCode(8381)}`;
@@ -74,5 +74,6 @@ class Slider {
 
 const sliders = document.querySelectorAll('.range-slider');
 for (let slider = 0; slider < sliders.length; slider += 1) {
-  const newSlider = new Slider(sliders[slider]);
+  // eslint-disable-next-line no-new
+  new Slider(sliders[slider]);
 }

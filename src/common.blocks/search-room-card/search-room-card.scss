@@ -18,9 +18,5 @@
 
   &__title {
     @include h1;
-
-    &_margins {
-      margin: 8px 0 10px;
-    }
   }
 }

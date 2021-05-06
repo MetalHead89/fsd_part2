@@ -2,7 +2,7 @@
   "name": "fsd_part2",
   "version": "1.0.0",
   "description": "",
-  "rivate": true,
+  "private": true,
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/MetalHead89/fsd_part2.git"
   },
-  "author": "Vialij Bakalov",
+  "author": "Vitalij Bakalov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MetalHead89/fsd_part2/issues"

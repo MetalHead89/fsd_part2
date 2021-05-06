@@ -35,7 +35,7 @@
     margin-bottom: 40px;
   }
 
-  &__additionals-services-label {
+  &__additional-services-label {
     width: 90%;
   }
 
@@ -61,7 +61,7 @@
   &__number {
     display: inline;
 
-    &_size-19 {
+    &_size-l {
       font-size: 24px;
     }
   }
@@ -227,7 +227,7 @@
       &:hover {
         &:before,
         &:after {
-          animation: tooltips-vert 300ms ease-out forwards;
+          animation: tooltips-vertical 300ms ease-out forwards;
         }
       }
     }
@@ -236,7 +236,7 @@
     &[flow^='right']:hover {
       &:before,
       &:after {
-        animation: tooltips-vert 300ms ease-out forwards;
+        animation: tooltips-vertical 300ms ease-out forwards;
       }
     }
   }

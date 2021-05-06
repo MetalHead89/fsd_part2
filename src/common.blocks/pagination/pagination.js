@@ -16,7 +16,9 @@ class Pagination {
     this.prevButton = this.pagination.querySelector(
       '.pagination__button_with-prev-arrow'
     );
-    this.nextButton = this.pagination.querySelector('.pagination__button_with-next-arrow');
+    this.nextButton = this.pagination.querySelector(
+      '.pagination__button_with-next-arrow'
+    );
 
     if (this.prevButton) {
       this.prevButton.onclick = this.clickToPrevButton.bind(this);
@@ -105,7 +107,12 @@ class Pagination {
     ) {
       if (Pagination.numberDontFitOnTheLeft(currentPage, activePage)) {
         if (!isLeftNumbersHidden) {
-          this.createPaginationButton.bind(this, button, ul, 'numbersPruning')();
+          this.createPaginationButton.bind(
+            this,
+            button,
+            ul,
+            'numbersPruning'
+          )();
           isLeftNumbersHidden = true;
         }
       } else if (
@@ -116,7 +123,12 @@ class Pagination {
         )
       ) {
         if (!isRightNumbersHidden) {
-          this.createPaginationButton.bind(this, button, ul, 'numbersPruning')();
+          this.createPaginationButton.bind(
+            this,
+            button,
+            ul,
+            'numbersPruning'
+          )();
           isRightNumbersHidden = true;
         }
       } else {
@@ -235,7 +247,7 @@ class Pagination {
   }
 }
 
-const paginations = document.querySelectorAll('.pagination');
-for (let pagination = 0; pagination < paginations.length; pagination += 1) {
-  pagination = new Pagination(paginations[pagination]);
+const paginationItems = document.querySelectorAll('.pagination');
+for (let pagination = 0; pagination < paginationItems.length; pagination += 1) {
+  pagination = new Pagination(paginationItems[pagination]);
 }
