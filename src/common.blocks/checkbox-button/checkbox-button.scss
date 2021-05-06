@@ -3,8 +3,9 @@
 $checkbox-button: '.checkbox-button';
 
 #{$checkbox-button} {
+  line-height: 1.3;
   position: relative;
-  margin: 12px 0;
+  margin: 11px 0;
   padding-left: 30px;
 
   &_type_rich {
@@ -29,8 +30,6 @@ $checkbox-button: '.checkbox-button';
   }
 
   &__label {
-    display: block;
-    line-height: 18px;
     color: rgba(31, 32, 65, 0.5);
     transition: color 0.5s ease;
     cursor: pointer;
