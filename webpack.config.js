@@ -15,6 +15,7 @@ function createHTMLPlugin(dir, file) {
       new HTMLWebpackPlugin({
         template: path.resolve(__dirname, `${dir}/${file}`),
         filename: `assets/pages/${fileName}.html`,
+        minify: { removeRedundantAttributes: false },
       }),
     ];
   }
