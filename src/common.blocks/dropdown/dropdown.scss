@@ -56,9 +56,10 @@ $dropdown: '.dropdown';
 
         & #{$dropdown}__option,
         & #{$dropdown}__bottom-buttons-panel,
-        & .calendar__days,
+        & .calendar__days-section,
         & .calendar__month-selection-section {
           transition: opacity 0.3s;
+          opacity: 0;
         }
       }
     }
