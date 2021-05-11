@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const fs = require('fs');
 
 function createHTMLPlugin(dir, file) {
@@ -81,6 +82,9 @@ module.exports = {
           to: path.resolve(__dirname, 'dist/assets/images'),
         },
       ],
+    }),
+    new StylelintPlugin({
+      configFile: path.resolve(__dirname, 'src/js/stylelint.config.js'),
     }),
   ],
   module: {
