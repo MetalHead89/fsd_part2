@@ -1,0 +1,178 @@
+@keyframes jump-up {
+  50% {
+    -webkit-transform: scale(1.2) rotate(45deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(45deg);
+  }
+}
+
+@keyframes heart-jump {
+  50% {
+    -webkit-transform: scale(1.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes heart-jump2 {
+  50% {
+    -webkit-transform: scale(0.7);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes radio-jump {
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes tooltips-vertical {
+  to {
+    opacity: 0.9;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes tooltips-horizontal {
+  to {
+    opacity: 0.9;
+    transform: translate(0, -50%);
+  }
+}
+
+@keyframes landing-animation-1 {
+  0% {
+    opacity: 1;
+  }
+  27% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+  94% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes landing-animation-2 {
+  0% {
+    opacity: 0;
+  }
+  27% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes landing-animation-3 {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes registration-animation-1 {
+  0% {
+    opacity: 1;
+  }
+  44% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  94% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes registration-animation-2 {
+  0% {
+    opacity: 0;
+  }
+  44% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sign-in-animation-1 {
+  0% {
+    opacity: 1;
+  }
+  44% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  94% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes sign-in-animation-2 {
+  0% {
+    opacity: 0;
+  }
+  44% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
