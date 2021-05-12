@@ -44,7 +44,7 @@ module.exports = {
   mode: 'development',
   entry: '@/index.js',
   output: {
-    filename: '[name].[contenthash].js',
+    filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
@@ -64,19 +64,15 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: path.resolve(
         __dirname,
-        'src/pages/page-with-links/page-with-links.pug'
+        'src/pages/page-with-links/page-with-links.pug',
       ),
       favicon: path.resolve(__dirname, 'favicon.ico'),
     }),
     ...generateHTMLPlugins('src/pages'),
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin([{ filename: '[name].css' }]),
+    new MiniCssExtractPlugin([{ filename: 'style.css' }]),
     new CopyWebpackPlugin({
       patterns: [
-        {
-          from: path.resolve(__dirname, 'src/assets/fonts'),
-          to: path.resolve(__dirname, 'dist/assets/fonts'),
-        },
         {
           from: path.resolve(__dirname, 'src/assets/images'),
           to: path.resolve(__dirname, 'dist/assets/images'),
@@ -146,14 +142,21 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
+              name: 'assets/fonts/[name].[ext]',
             },
           },
         ],
       },
       {
         test: /\.(png|jpg|svg|gif)$/,
-        use: ['file-loader'],
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/images/[name].[ext]',
+            },
+          },
+        ],
       },
     ],
   },
