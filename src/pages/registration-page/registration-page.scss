@@ -32,14 +32,14 @@ article {
 
     &_image-one {
       background: url('../../assets/images/registration-sign-in-background-1.png');
-      animation: registration-animation-1 40s infinite;
+      animation: background-first-image 40s infinite;
       background-size: cover;
       background-position: center center;
     }
 
     &_image-two {
       background: url('../../assets/images/registration-sign-in-background-2.png');
-      animation: registration-animation-2 40s infinite;
+      animation: background-second-image 40s infinite;
       background-size: cover;
       background-position: center center;
     }

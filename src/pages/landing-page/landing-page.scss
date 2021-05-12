@@ -37,21 +37,21 @@ article {
 
     &_image-one {
       background: url('../../assets/images/landing-image-1.png');
-      animation: landing-animation-1 40s infinite;
+      animation: landing-first-image 40s infinite;
       background-size: cover;
       background-position: center center;
     }
 
     &_image-two {
       background: url('../../assets/images/landing-image-2.png');
-      animation: landing-animation-2 40s infinite;
+      animation: landing-second-image 40s infinite;
       background-size: cover;
       background-position: center center;
     }
 
     &_image-three {
       background: url('../../assets/images/landing-image-3.png');
-      animation: landing-animation-3 40s infinite;
+      animation: landing-third-image 40s infinite;
       background-size: cover;
       background-position: center center;
     }

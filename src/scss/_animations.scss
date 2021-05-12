@@ -1,4 +1,4 @@
-@keyframes jump-up {
+@keyframes checkbox-jump {
   50% {
     -webkit-transform: scale(1.2) rotate(45deg);
   }
@@ -7,7 +7,7 @@
   }
 }
 
-@keyframes heart-jump {
+@keyframes heart-check {
   50% {
     -webkit-transform: scale(1.3);
   }
@@ -16,7 +16,7 @@
   }
 }
 
-@keyframes heart-jump2 {
+@keyframes heart-uncheck {
   50% {
     -webkit-transform: scale(0.7);
   }
@@ -48,7 +48,7 @@
   }
 }
 
-@keyframes landing-animation-1 {
+@keyframes landing-first-image {
   0% {
     opacity: 1;
   }
@@ -66,7 +66,7 @@
   }
 }
 
-@keyframes landing-animation-2 {
+@keyframes landing-second-image {
   0% {
     opacity: 0;
   }
@@ -87,7 +87,7 @@
   }
 }
 
-@keyframes landing-animation-3 {
+@keyframes landing-third-image {
   0% {
     opacity: 0;
   }
@@ -105,7 +105,7 @@
   }
 }
 
-@keyframes registration-animation-1 {
+@keyframes background-first-image {
   0% {
     opacity: 1;
   }
@@ -123,43 +123,7 @@
   }
 }
 
-@keyframes registration-animation-2 {
-  0% {
-    opacity: 0;
-  }
-  44% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  94% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes sign-in-animation-1 {
-  0% {
-    opacity: 1;
-  }
-  44% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  94% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes sign-in-animation-2 {
+@keyframes background-second-image {
   0% {
     opacity: 0;
   }
