@@ -56,8 +56,8 @@
       }
     },
     "endDate": {
+      "title": "date Dropdown",
       "input": {
-        "title": "date Dropdown",
         "placeholderText": "ДД.ММ.ГГГГ",
         "masked": true,
         "type": "text"

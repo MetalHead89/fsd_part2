@@ -104,10 +104,6 @@ $dropdown: '.dropdown';
     }
   }
 
-  &__end-date-header {
-    position: relative;
-  }
-
   &__expand-more {
     color: rgba(31, 32, 65, 0.5);
     pointer-events: none;
@@ -218,8 +214,16 @@ $dropdown: '.dropdown';
     text-align: center;
   }
 
-  &__start-date-header {
+  &__start-date-input,
+  &__end-date-input {
     position: relative;
+  }
+
+  &__date-arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
   }
 
   &__title {
