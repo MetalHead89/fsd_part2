@@ -1,5 +1,6 @@
 include ../button/button.pug
 include ../calendar/calendar.pug
+include ../text-field/text-field.pug
 
 mixin dropdown(args)
   - let type = '';
@@ -47,15 +48,19 @@ mixin dropdown(args)
     else
       .dropdown__date-section
         .dropdown__date-block.dropdown__date-block_right-padding
-          h3.dropdown__title !{args.title}
-          label(for=args.id, class=headerClass + ' dropdown__start-date-header')
-            .dropdown__header-text.dropdown_start-date !{headerText}
-            i.material-icons.dropdown__expand-more.dropdown__expand-more_absolute keyboard_arrow_down
+          h3.dropdown__title !{args.startDate.title}
+          div(for=args.id, class='dropdown__start-date-input')
+            +text-field(args.startDate.input)
+          //- label(for=args.id, class=headerClass + ' dropdown__start-date-header')
+          //-   .dropdown__header-text.dropdown_start-date !{headerText}
+          //-   i.material-icons.dropdown__expand-more.dropdown__expand-more_absolute keyboard_arrow_down
         .dropdown__date-block.dropdown__date-block_left-padding
-          h3.dropdown__title !{args.title2}
-          label(for=args.id, class=headerClass + ' dropdown__end-date-header')
-            .dropdown__header-text.dropdown_end-date !{headerText}
-            i.material-icons.dropdown__expand-more.dropdown__expand-more_absolute keyboard_arrow_down
+          h3.dropdown__title !{args.endDate.title}
+          div(for=args.id, class='dropdown__end-date-input')
+            +text-field(args.endDate.input)
+          //- label(for=args.id, class=headerClass + ' dropdown__end-date-header')
+          //-   .dropdown__header-text.dropdown_end-date !{headerText}
+          //-   i.material-icons.dropdown__expand-more.dropdown__expand-more_absolute keyboard_arrow_down
 
     if type === 'guests' || type === 'comfort'
       .dropdown__drop-menu.dropdown__drop-menu_with-border

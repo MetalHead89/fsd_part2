@@ -38,12 +38,14 @@ class Dropdown {
       '.dropdown__header-text'
     );
     this.dropdownHeader = this.dropdown.querySelector('.dropdown__header');
-    this.dropdownStartDayHeader = this.dropdown.querySelector(
-      '.dropdown__start-date-header'
-    );
-    this.dropdownEndDayHeader = this.dropdown.querySelector(
-      '.dropdown__end-date-header'
-    );
+    if (this.dropdownType === 'date') {
+      this.dropdownStartDay = this.dropdown
+        .querySelector('.dropdown__start-date-input')
+        .querySelector('.text-field__field');
+      this.dropdownEndDay = this.dropdown
+        .querySelector('.dropdown__end-date-input')
+        .querySelector('.text-field__field');
+    }
     this.dropMenu = this.dropdown.querySelector('.dropdown__drop-menu');
     this.dropCheck = this.dropdown.querySelector('.dropdown__check');
     this.closeTimer = null;
@@ -293,7 +295,7 @@ function resetCloseTimer() {
 const dropdowns = document.querySelectorAll('.dropdown');
 
 function closeOpenDropdowns() {
-  if (!this.dropCheck.checked) {
+  if (this.dropCheck.checked === false) {
     for (
       let dropdownIndex = 0;
       dropdownIndex < dropdowns.length;
@@ -319,6 +321,11 @@ function closeAllDropdowns() {
   dropdowns.forEach((dropdown) => {
     closeDropdown.apply(dropdown);
   });
+}
+
+function inputDateIsFocused() {
+  closeOpenDropdowns.bind(this)();
+  this.dropCheck.checked = true;
 }
 
 for (
@@ -356,23 +363,26 @@ for (
     }
   }
 
-  dropdownObject.dropdownHeader.onmouseout = autoCloseDropdown.bind(
-    dropdownObject
-  );
-  dropdownObject.dropMenu.onmouseout = autoCloseDropdown.bind(dropdownObject);
-  dropdownObject.dropdownHeader.onmouseover = resetCloseTimer.bind(
-    dropdownObject
-  );
-  dropdownObject.dropMenu.onmouseover = resetCloseTimer.bind(dropdownObject);
-  dropdownObject.dropdownHeader.addEventListener(
-    'click',
-    closeOpenDropdowns.bind(dropdownObject)
-  );
-  if (dropdownObject.dropdownType === 'date') {
-    dropdownObject.dropdownStartDayHeader.onclick = closeOpenDropdowns.bind(
+  if (dropdownObject.dropdownHeader !== null) {
+    dropdownObject.dropdownHeader.onmouseout = autoCloseDropdown.bind(
       dropdownObject
     );
-    dropdownObject.dropdownEndDayHeader.onclick = closeOpenDropdowns.bind(
+    dropdownObject.dropdownHeader.onmouseover = resetCloseTimer.bind(
+      dropdownObject
+    );
+    dropdownObject.dropdownHeader.addEventListener(
+      'click',
+      closeOpenDropdowns.bind(dropdownObject)
+    );
+  }
+
+  dropdownObject.dropMenu.onmouseout = autoCloseDropdown.bind(dropdownObject);
+  dropdownObject.dropMenu.onmouseover = resetCloseTimer.bind(dropdownObject);
+  if (dropdownObject.dropdownType === 'date') {
+    dropdownObject.dropdownStartDay.onfocus = inputDateIsFocused.bind(
+      dropdownObject
+    );
+    dropdownObject.dropdownEndDay.onfocus = inputDateIsFocused.bind(
       dropdownObject
     );
   }
@@ -382,6 +392,7 @@ function clickIsOutsideDropdown(evt) {
   return (
     (!evt.target.classList.contains('dropdown__header') &&
       !evt.target.classList.contains('dropdown__drop-menu') &&
+      !evt.target.classList.contains('text-field__field') &&
       evt.target.offsetParent &&
       !evt.target.offsetParent.classList.contains('dropdown__drop-menu')) ||
     !evt.target.offsetParent

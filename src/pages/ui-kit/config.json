@@ -47,8 +47,22 @@
   "dateDropdown": {
     "type": "date",
     "id": "uiDateDrop",
-    "title": "date Dropdown",
-    "title2": "date Dropdown"
+    "startDate": {
+      "title": "date Dropdown",
+      "input": {
+        "placeholderText": "ДД.ММ.ГГГГ",
+        "masked": true,
+        "type": "text"
+      }
+    },
+    "endDate": {
+      "input": {
+        "title": "date Dropdown",
+        "placeholderText": "ДД.ММ.ГГГГ",
+        "masked": true,
+        "type": "text"
+      }
+    }
   },
   "filterDateDropdown": {
     "type": "filter_date",
@@ -170,8 +184,22 @@
     "dropdown1": {
       "type": "date",
       "id": "searchRoomDateDrop",
-      "title": "прибытие",
-      "title2": "выезд"
+      "startDate": {
+        "title": "прибытие",
+        "input": {
+          "placeholderText": "ДД.ММ.ГГГГ",
+          "masked": true,
+          "type": "text"
+        }
+      },
+      "endDate": {
+        "input": {
+          "title": "выезд",
+          "placeholderText": "ДД.ММ.ГГГГ",
+          "masked": true,
+          "type": "text"
+        }
+      }
     },
     "dropdown2": {
       "type": "guests",
@@ -231,8 +259,22 @@
     "dropdown1": {
       "type": "date",
       "id": "roomRateDateDrop",
-      "title": "прибытие",
-      "title2": "выезд"
+      "startDate": {
+        "title": "прибытие",
+        "input": {
+          "placeholderText": "ДД.ММ.ГГГГ",
+          "masked": true,
+          "type": "text"
+        }
+      },
+      "endDate": {
+        "input": {
+          "title": "выезд",
+          "placeholderText": "ДД.ММ.ГГГГ",
+          "masked": true,
+          "type": "text"
+        }
+      }
     },
     "dropdown2": { "type": "guests", "id": "roomRateDrop", "title": "гости" },
     "button": { "type": "arrow", "text": "забронировать" }

@@ -4,8 +4,22 @@
     "dropdown1": {
       "type": "date",
       "id": "searchRoomDateDrop",
-      "title": "прибытие",
-      "title2": "выезд"
+      "startDate": {
+        "title": "прибытие",
+        "input": {
+          "placeholderText": "ДД.ММ.ГГГГ",
+          "masked": true,
+          "type": "text"
+        }
+      },
+      "endDate": {
+        "input": {
+          "title": "выезд",
+          "placeholderText": "ДД.ММ.ГГГГ",
+          "masked": true,
+          "type": "text"
+        }
+      }
     },
     "dropdown2": {
       "type": "guests",
