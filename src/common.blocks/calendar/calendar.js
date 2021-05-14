@@ -29,6 +29,15 @@ class Calendar {
     this.month = this.currentDate.getMonth();
     this.dateRange = [];
     this.choiceMode = false;
+    [this.startInput, this.endInput] = this.getStartAndEndDatesFields();
+
+    if (this.startInput !== null) {
+      this.startInput.addEventListener('blur', this.setStartRange.bind(this));
+    }
+
+    if (this.endInput !== null) {
+      this.endInput.addEventListener('blur', this.setEndRange.bind(this));
+    }
 
     this.calendarDays = this.calendar.querySelectorAll('.calendar__day');
     this.prevMonthButton = this.calendar.querySelector(
@@ -49,6 +58,71 @@ class Calendar {
 
     this.prevMonthButton.onclick = () => this.switchMonth(this.prevMonthButton);
     this.nextMonthButton.onclick = () => this.switchMonth(this.nextMonthButton);
+  }
+
+  setStartRange() {}
+
+  setEndRange() {
+    const date = Calendar.getDate(this.endInput.value);
+    if (
+      this.startInput.value === '' &&
+      date.getTime() >= this.currentDate.getTime()
+    ) {
+      this.startInput.value = Calendar.dateToString(this.currentDate);
+    }
+  }
+
+  static dateToString(date) {
+    const day = date.getDate();
+    let month = (date.getMonth() + 1).toString();
+    const year = date.getFullYear();
+
+    if (month.length < 2) {
+      month = `0${month}`;
+    }
+
+    return `${day}.${month}.${year}`;
+  }
+
+  static getDate(date) {
+    const [day, month, year] = date.split('.');
+    let newDate = null;
+
+    if (Calendar.dateIsValid(day, month, year)) {
+      newDate = new Date(year, month, day, 0, 0, 0, 0);
+    }
+
+    return newDate;
+  }
+
+  static dateIsValid(day, month, year) {
+    return (
+      day !== '' &&
+      month !== '' &&
+      year !== '' &&
+      day >= 1 &&
+      day <= 31 &&
+      month >= 0 &&
+      month <= 12 &&
+      year > 0
+    );
+  }
+
+  getStartAndEndDatesFields() {
+    const parent = this.calendar.offsetParent.offsetParent;
+    let startInput = null;
+    let endInput = null;
+
+    if (parent != null && parent.classList.contains('dropdown_date')) {
+      startInput = parent
+        .querySelector('.dropdown__start-date-input')
+        .querySelector('.text-field__field');
+      endInput = parent
+        .querySelector('.dropdown__end-date-input')
+        .querySelector('.text-field__field');
+    }
+
+    return [startInput, endInput];
   }
 
   switchMonth(button) {
