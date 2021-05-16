@@ -221,7 +221,7 @@ class Pagination {
       li.append(a);
       a.append(span);
     } else if (type === 'numbersPruning') {
-      li.classList.add('pagination__button', 'pagination__button_with-number');
+      li.classList.add('pagination__button');
       li.innerText = '...';
     } else if (type === 'pageNumber') {
       if (parseInt(button.innerText, 10) === page) {

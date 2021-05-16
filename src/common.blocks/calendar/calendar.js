@@ -60,7 +60,16 @@ class Calendar {
     this.nextMonthButton.onclick = () => this.switchMonth(this.nextMonthButton);
   }
 
-  setStartRange() {}
+  setStartRange() {
+    const startDate = Calendar.getDate(this.startInput.value);
+    // const endDate = Calendar.getDate(this.endInput.value);
+
+    if (startDate !== null) {
+      // console.log(this.dateRange[0]);
+      // this.startInput.value = Calendar.dateToString(startDate);
+      // this.dateRange
+    }
+  }
 
   setEndRange() {
     const date = Calendar.getDate(this.endInput.value);
@@ -85,17 +94,19 @@ class Calendar {
   }
 
   static getDate(date) {
-    const [day, month, year] = date.split('.');
     let newDate = null;
 
-    if (Calendar.dateIsValid(day, month, year)) {
+    if (Calendar.dateIsValid(date)) {
+      const [day, month, year] = date.split('.');
       newDate = new Date(year, month, day, 0, 0, 0, 0);
     }
 
     return newDate;
   }
 
-  static dateIsValid(day, month, year) {
+  static dateIsValid(date) {
+    const [day, month, year] = date.split('.');
+
     return (
       day !== '' &&
       month !== '' &&
