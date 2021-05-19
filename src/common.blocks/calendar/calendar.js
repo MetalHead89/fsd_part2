@@ -62,7 +62,6 @@ class Calendar {
 
   setStartRange() {
     const startDate = Calendar.getDate(this.startInput.value);
-    // const endDate = Calendar.getDate(this.endInput.value);
 
     if (startDate.getTime() < this.currentDate.getTime()) {
       this.startInput.value = Calendar.dateToString(this.currentDate);
