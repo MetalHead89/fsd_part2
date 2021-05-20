@@ -64,6 +64,13 @@ class Calendar {
     const startDate = Calendar.getDate(this.startInput.value);
     const endDate = Calendar.getDate(this.endInput.value);
 
+    if (startDate === null) {
+      this.startInput.value = '';
+    } else if (startDate.getTime() < this.currentDate.getTime()) {
+      this.startInput.value = Calendar.dateToString(this.currentDate);
+      this.startDate = this.currentDate;
+    }
+
     if (Calendar.isStartDateGreaterEndDate(startDate, endDate)) {
       this.dateRange = [endDate];
       this.startInput.value = '';
@@ -77,6 +84,13 @@ class Calendar {
   setEndRange() {
     const startDate = Calendar.getDate(this.startInput.value);
     const endDate = Calendar.getDate(this.endInput.value);
+
+    if (endDate === null) {
+      this.endInput.value = '';
+    } else if (endDate.getTime() < this.currentDate.getTime()) {
+      this.endInput.value = Calendar.dateToString(this.currentDate);
+      this.endDate = this.currentDate;
+    }
 
     if (Calendar.isEndDateGreaterStartDate(startDate, endDate)) {
       this.dateRange = [startDate];
