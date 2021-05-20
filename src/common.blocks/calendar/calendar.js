@@ -41,18 +41,18 @@ class Calendar {
 
     this.calendarDays = this.calendar.querySelectorAll('.calendar__day');
     this.prevMonthButton = this.calendar.querySelector(
-      '.calendar__month-button_with-back-arrow'
+      '.calendar__month-button_with-back-arrow',
     );
     this.nextMonthButton = this.calendar.querySelector(
-      '.calendar__month-button_with-forward-arrow'
+      '.calendar__month-button_with-forward-arrow',
     );
     [this.clearButton] = this.calendar.querySelector(
-      '.calendar__button-clear'
+      '.calendar__button-clear',
     ).children;
     this.clearButton.style.display = 'none';
     this.clearButton.onclick = () => this.clearRange();
     [this.applyButton] = this.calendar.querySelector(
-      '.calendar__button-apply'
+      '.calendar__button-apply',
     ).children;
     this.applyButton.onclick = () => this.applyRange();
 
@@ -62,20 +62,49 @@ class Calendar {
 
   setStartRange() {
     const startDate = Calendar.getDate(this.startInput.value);
+    const endDate = Calendar.getDate(this.endInput.value);
 
-    if (startDate.getTime() < this.currentDate.getTime()) {
-      this.startInput.value = Calendar.dateToString(this.currentDate);
+    if (Calendar.isStartDateGreaterEndDate(startDate, endDate)) {
+      this.dateRange = [endDate];
+      this.startInput.value = '';
     }
+
+    // if (startDate.getTime() < this.currentDate.getTime()) {
+    //   this.startInput.value = Calendar.dateToString(this.currentDate);
+    // }
   }
 
   setEndRange() {
-    const date = Calendar.getDate(this.endInput.value);
-    if (
-      this.startInput.value === '' &&
-      date.getTime() >= this.currentDate.getTime()
-    ) {
-      this.startInput.value = Calendar.dateToString(this.currentDate);
+    const startDate = Calendar.getDate(this.startInput.value);
+    const endDate = Calendar.getDate(this.endInput.value);
+
+    if (Calendar.isEndDateGreaterStartDate(startDate, endDate)) {
+      this.dateRange = [startDate];
+      this.endInput.value = '';
     }
+    // const date = Calendar.getDate(this.endInput.value);
+    // if (
+    //   this.startInput.value === '' &&
+    //   date.getTime() >= this.currentDate.getTime()
+    // ) {
+    //   this.startInput.value = Calendar.dateToString(this.currentDate);
+    // }
+  }
+
+  static isStartDateGreaterEndDate(startDate, endDate) {
+    return (
+      startDate !== null &&
+      endDate !== null &&
+      startDate.getTime() >= endDate.getTime()
+    );
+  }
+
+  static isEndDateGreaterStartDate(startDate, endDate) {
+    return (
+      startDate !== null &&
+      endDate !== null &&
+      endDate.getTime() <= startDate.getTime()
+    );
   }
 
   static dateToString(date) {
@@ -135,7 +164,7 @@ class Calendar {
 
   switchMonth(button) {
     const date = button.classList.contains(
-      'calendar__month-button_with-back-arrow'
+      'calendar__month-button_with-back-arrow',
     )
       ? new Date(this.year, this.month - 1)
       : new Date(this.year, this.month + 1);
@@ -143,7 +172,7 @@ class Calendar {
 
     if (this.dateRange.length > 0) {
       const selectableDays = this.calendar.querySelectorAll(
-        '.calendar__day_selectable'
+        '.calendar__day_selectable',
       );
 
       for (let dayIndex = 0; dayIndex < selectableDays.length; dayIndex += 1) {
@@ -182,12 +211,12 @@ class Calendar {
       day.classList.remove('calendar__day_selected');
       day.parentNode.classList.remove('calendar__range-highlight_left-rounded');
       day.parentNode.classList.remove(
-        'calendar__range-highlight_right-rounded'
+        'calendar__range-highlight_right-rounded',
       );
     } else if (this.dateRange.length === 2 && this.dayIsSelected(day)) {
       this.dateRange.splice(
         this.dateRange.indexOf(this.getDateFromCalendar(day).getTime()),
-        1
+        1,
       );
       this.choiceMode = true;
       day.classList.remove('calendar__day_selected');
@@ -196,7 +225,7 @@ class Calendar {
       this.dayIsSelectableAndLessThanStartingPointOfRange(day)
     ) {
       const selectedDays = this.calendar.querySelectorAll(
-        '.calendar__day_selected'
+        '.calendar__day_selected',
       );
 
       if (selectedDays[0]) {
@@ -211,7 +240,7 @@ class Calendar {
       this.dayIsSelectableAndGreaterThanStartingPointOfRange(day)
     ) {
       const selectedDays = this.calendar.querySelectorAll(
-        '.calendar__day_selected'
+        '.calendar__day_selected',
       );
 
       if (selectedDays.length === 2) {
@@ -290,17 +319,17 @@ class Calendar {
 
   showRange(range) {
     const selectableDays = this.calendar.querySelectorAll(
-      '.calendar__day_selectable'
+      '.calendar__day_selectable',
     );
 
     for (let dayIndex = 0; dayIndex < selectableDays.length; dayIndex += 1) {
       const selectableDay = selectableDays[dayIndex];
 
       selectableDay.parentNode.classList.remove(
-        'calendar__range-highlight_left-rounded'
+        'calendar__range-highlight_left-rounded',
       );
       selectableDay.parentNode.classList.remove(
-        'calendar__range-highlight_right-rounded'
+        'calendar__range-highlight_right-rounded',
       );
       selectableDay.parentNode.classList.remove('calendar__range-highlight');
     }
@@ -343,7 +372,7 @@ class Calendar {
 
   clearRange() {
     const selectableDays = this.calendar.querySelectorAll(
-      '.calendar__day_selectable'
+      '.calendar__day_selectable',
     );
 
     for (let dayIndex = 0; dayIndex < selectableDays.length; dayIndex += 1) {
@@ -352,7 +381,7 @@ class Calendar {
       day.classList.remove('calendar__day_selected');
       day.parentNode.classList.remove('calendar__range-highlight_left-rounded');
       day.parentNode.classList.remove(
-        'calendar__range-highlight_right-rounded'
+        'calendar__range-highlight_right-rounded',
       );
       day.parentNode.classList.remove('calendar__range-highlight');
     }
@@ -381,14 +410,14 @@ class Calendar {
 
       if (parent && parent.classList.contains('dropdown_date')) {
         parent.querySelector(
-          '.dropdown_start-date'
+          '.dropdown_start-date',
         ).innerText = startDate.toLocaleString('ru', {
           day: 'numeric',
           month: 'numeric',
           year: 'numeric',
         });
         parent.querySelector(
-          '.dropdown_end-date'
+          '.dropdown_end-date',
         ).innerText = endDate.toLocaleString('ru', {
           day: 'numeric',
           month: 'numeric',
@@ -430,7 +459,7 @@ class Calendar {
      */
 
     const weekBlocks = this.calendar.querySelectorAll(
-      '.calendar__week-section'
+      '.calendar__week-section',
     );
 
     for (
@@ -456,7 +485,7 @@ class Calendar {
     const firstDayMonth = date.getDay() === 0 ? 7 : date.getDay();
     const calendarBody = this.calendar.querySelector('.calendar__days-section');
     const weeksInCalendar = Math.ceil(
-      (daysInCurrentMonth + firstDayMonth - 1) / 7
+      (daysInCurrentMonth + firstDayMonth - 1) / 7,
     );
 
     this.calendarTitle.innerText = `${this.MONTHS[this.month]} ${this.year}`;
@@ -466,7 +495,7 @@ class Calendar {
     calendarDate = new Date(
       date.getFullYear(),
       date.getMonth() - 1,
-      daysInPrevMonths - firstDayMonth + 2
+      daysInPrevMonths - firstDayMonth + 2,
     );
 
     for (let week = 0; week < weeksInCalendar; week += 1) {
