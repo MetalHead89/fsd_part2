@@ -74,6 +74,8 @@ class Calendar {
     if (Calendar.isStartDateGreaterEndDate(startDate, endDate)) {
       this.dateRange = [endDate];
       this.startInput.value = '';
+    } else {
+      this.activateCalendarDays(startDate, endDate);
     }
 
     // if (startDate.getTime() < this.currentDate.getTime()) {
@@ -95,6 +97,8 @@ class Calendar {
     if (Calendar.isEndDateGreaterStartDate(startDate, endDate)) {
       this.dateRange = [startDate];
       this.endInput.value = '';
+    } else {
+      this.activateCalendarDays(startDate, endDate);
     }
     // const date = Calendar.getDate(this.endInput.value);
     // if (
@@ -103,6 +107,22 @@ class Calendar {
     // ) {
     //   this.startInput.value = Calendar.dateToString(this.currentDate);
     // }
+  }
+
+  activateCalendarDays(startDate, endDate) {
+    if (startDate !== null && endDate !== null) {
+      this.dateRange = [startDate, endDate];
+      this.choiceMode = false;
+    } else if (startDate !== null && endDate === null) {
+      this.dateRange = [startDate];
+      this.choiceMode = true;
+    } else if (startDate === null && endDate !== null) {
+      this.dateRange = [endDate];
+      this.choiceMode = true;
+    } else {
+      this.dateRange = [];
+      this.choiceMode = false;
+    }
   }
 
   static isStartDateGreaterEndDate(startDate, endDate) {
