@@ -240,21 +240,29 @@ class Calendar {
   }
 
   selectDay(day) {
+    const selectedDate = this.getDateFromCalendar(day);
     if (this.dateRange.length === 0 && Calendar.dayIsSelectable(day)) {
-      this.dateRange.push(this.getDateFromCalendar(day).getTime());
+      this.dateRange.push(selectedDate.getTime());
       this.choiceMode = true;
       day.classList.add('calendar__day_selected');
+      this.startInput.value = Calendar.dateToString(selectedDate);
     } else if (
       this.dateRange.length === 1 &&
       this.dayIsSelectableAndNotEqualToStartingPointOfRange(day)
     ) {
-      this.dateRange.push(this.getDateFromCalendar(day).getTime());
+      this.dateRange.push(selectedDate.getTime());
       this.choiceMode = false;
       day.classList.add('calendar__day_selected');
+      this.dateRange.sort(Calendar.compareNumbers)[0];
+      this.startInput.value = Calendar.dateToString(
+        new Date(this.dateRange[0])
+      );
+      this.endInput.value = Calendar.dateToString(new Date(this.dateRange[1]));
     } else if (
       this.dateRange.length === 1 &&
       this.dayIsSelectableAndEqualToStartingPointOfRange(day)
     ) {
+      this.startInput.value = '';
       this.dateRange.pop();
       this.choiceMode = false;
       day.classList.remove('calendar__day_selected');
@@ -263,12 +271,13 @@ class Calendar {
         'calendar__range-highlight_right-rounded'
       );
     } else if (this.dateRange.length === 2 && this.dayIsSelected(day)) {
-      this.dateRange.splice(
-        this.dateRange.indexOf(this.getDateFromCalendar(day).getTime()),
-        1
-      );
+      this.dateRange.splice(this.dateRange.indexOf(selectedDate.getTime()), 1);
       this.choiceMode = true;
       day.classList.remove('calendar__day_selected');
+      this.startInput.value = Calendar.dateToString(
+        new Date(this.dateRange[0])
+      );
+      this.endInput.value = '';
     } else if (
       this.dateRange.length === 2 &&
       this.dayIsSelectableAndLessThanStartingPointOfRange(day)
@@ -283,6 +292,7 @@ class Calendar {
 
       day.classList.add('calendar__day_selected');
       this.dateRange[0] = this.getDateFromCalendar(day).getTime();
+      this.startInput.value = Calendar.dateToString(selectedDate);
       this.showRange(this.dateRange);
     } else if (
       this.dateRange.length === 2 &&
@@ -303,6 +313,7 @@ class Calendar {
 
       day.classList.add('calendar__day_selected');
       this.dateRange[1] = this.getDateFromCalendar(day).getTime();
+      this.endInput.value = Calendar.dateToString(selectedDate);
       this.showRange(this.dateRange);
     }
 
