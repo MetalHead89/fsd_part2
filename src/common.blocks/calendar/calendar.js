@@ -54,7 +54,7 @@ class Calendar {
     [this.applyButton] = this.calendar.querySelector(
       '.calendar__button-apply'
     ).children;
-    this.applyButton.onclick = () => this.applyRange();
+    // this.applyButton.onclick = () => this.applyRange();
 
     this.prevMonthButton.onclick = () => this.switchMonth(this.prevMonthButton);
     this.nextMonthButton.onclick = () => this.switchMonth(this.nextMonthButton);
@@ -245,7 +245,7 @@ class Calendar {
       this.dateRange.push(selectedDate.getTime());
       this.choiceMode = true;
       day.classList.add('calendar__day_selected');
-      this.startInput.value = Calendar.dateToString(selectedDate);
+      // this.startInput.value = Calendar.dateToString(selectedDate);
     } else if (
       this.dateRange.length === 1 &&
       this.dayIsSelectableAndNotEqualToStartingPointOfRange(day)
@@ -253,16 +253,16 @@ class Calendar {
       this.dateRange.push(selectedDate.getTime());
       this.choiceMode = false;
       day.classList.add('calendar__day_selected');
-      this.dateRange.sort(Calendar.compareNumbers)[0];
-      this.startInput.value = Calendar.dateToString(
-        new Date(this.dateRange[0])
-      );
-      this.endInput.value = Calendar.dateToString(new Date(this.dateRange[1]));
+      this.dateRange.sort(Calendar.compareNumbers);
+      // this.startInput.value = Calendar.dateToString(
+      //   new Date(this.dateRange[0])
+      // );
+      // this.endInput.value = Calendar.dateToString(new Date(this.dateRange[1]));
     } else if (
       this.dateRange.length === 1 &&
       this.dayIsSelectableAndEqualToStartingPointOfRange(day)
     ) {
-      this.startInput.value = '';
+      // this.startInput.value = '';
       this.dateRange.pop();
       this.choiceMode = false;
       day.classList.remove('calendar__day_selected');
@@ -274,10 +274,10 @@ class Calendar {
       this.dateRange.splice(this.dateRange.indexOf(selectedDate.getTime()), 1);
       this.choiceMode = true;
       day.classList.remove('calendar__day_selected');
-      this.startInput.value = Calendar.dateToString(
-        new Date(this.dateRange[0])
-      );
-      this.endInput.value = '';
+      // this.startInput.value = Calendar.dateToString(
+      //   new Date(this.dateRange[0])
+      // );
+      // this.endInput.value = '';
     } else if (
       this.dateRange.length === 2 &&
       this.dayIsSelectableAndLessThanStartingPointOfRange(day)
@@ -292,7 +292,7 @@ class Calendar {
 
       day.classList.add('calendar__day_selected');
       this.dateRange[0] = this.getDateFromCalendar(day).getTime();
-      this.startInput.value = Calendar.dateToString(selectedDate);
+      // this.startInput.value = Calendar.dateToString(selectedDate);
       this.showRange(this.dateRange);
     } else if (
       this.dateRange.length === 2 &&
@@ -313,7 +313,7 @@ class Calendar {
 
       day.classList.add('calendar__day_selected');
       this.dateRange[1] = this.getDateFromCalendar(day).getTime();
-      this.endInput.value = Calendar.dateToString(selectedDate);
+      // this.endInput.value = Calendar.dateToString(selectedDate);
       this.showRange(this.dateRange);
     }
 
@@ -322,6 +322,8 @@ class Calendar {
     } else {
       this.clearButton.style.display = 'none';
     }
+
+    this.applyRange();
   }
 
   static dayIsSelectable(day) {
@@ -464,44 +466,80 @@ class Calendar {
     this.dateRange.sort(Calendar.compareNumbers);
     const parent = this.calendar.offsetParent.offsetParent;
 
-    if (this.dateRange.length === 2) {
-      const startDate = new Date(this.dateRange[0]);
-      const endDate = new Date(this.dateRange[1]);
+    if (parent && parent.classList.contains('dropdown_date')) {
+      if (typeof this.dateRange[0] !== 'undefined') {
+        this.startInput.value = Calendar.dateToString(
+          new Date(this.dateRange[0])
+        );
+      } else {
+        this.startInput.value = '';
+      }
 
-      if (parent && parent.classList.contains('dropdown_date')) {
-        parent.querySelector(
-          '.dropdown_start-date'
-        ).innerText = startDate.toLocaleString('ru', {
-          day: 'numeric',
-          month: 'numeric',
-          year: 'numeric',
-        });
-        parent.querySelector(
-          '.dropdown_end-date'
-        ).innerText = endDate.toLocaleString('ru', {
-          day: 'numeric',
-          month: 'numeric',
-          year: 'numeric',
-        });
-      } else if (parent && parent.classList.contains('dropdown_filter-date')) {
+      if (typeof this.dateRange[1] !== 'undefined') {
+        this.endInput.value = Calendar.dateToString(
+          new Date(this.dateRange[1])
+        );
+      } else {
+        this.endInput.value = '';
+      }
+    } else if (parent && parent.classList.contains('dropdown_filter-date')) {
+      if (this.dateRange.length === 2) {
+        const startDate = new Date(this.dateRange[0]);
+        const endDate = new Date(this.dateRange[1]);
+
         parent.querySelector('.dropdown__header-text').innerText =
           `${startDate.getDate()} ` +
           `${this.MONTHS[startDate.getMonth()].toLowerCase().slice(0, 3)} - ` +
           `${endDate.getDate()} ${this.MONTHS[endDate.getMonth()]
             .toLowerCase()
             .slice(0, 3)} `;
-      }
-    } else {
-      if (parent && parent.classList.contains('dropdown_date')) {
-        parent.querySelector('.dropdown_start-date').innerText = 'ДД.ММ.ГГГГ';
-        parent.querySelector('.dropdown_end-date').innerText = 'ДД.ММ.ГГГГ';
-      }
-
-      if (parent && parent.classList.contains('dropdown_filter-date')) {
+      } else {
         parent.querySelector('.dropdown__header-text').innerText =
           'Выберите период';
       }
     }
+
+    // this.dateRange.sort(Calendar.compareNumbers);
+    // const parent = this.calendar.offsetParent.offsetParent;
+
+    // if (this.dateRange.length === 2) {
+    // const startDate = new Date(this.dateRange[0]);
+    // const endDate = new Date(this.dateRange[1]);
+
+    //   if (parent && parent.classList.contains('dropdown_date')) {
+    //     parent.querySelector(
+    //       '.dropdown_start-date'
+    //     ).innerText = startDate.toLocaleString('ru', {
+    //       day: 'numeric',
+    //       month: 'numeric',
+    //       year: 'numeric',
+    //     });
+    //     parent.querySelector(
+    //       '.dropdown_end-date'
+    //     ).innerText = endDate.toLocaleString('ru', {
+    //       day: 'numeric',
+    //       month: 'numeric',
+    //       year: 'numeric',
+    //     });
+    //   } else if (parent && parent.classList.contains('dropdown_filter-date')) {
+    //     parent.querySelector('.dropdown__header-text').innerText =
+    //       `${startDate.getDate()} ` +
+    //       `${this.MONTHS[startDate.getMonth()].toLowerCase().slice(0, 3)} - ` +
+    //       `${endDate.getDate()} ${this.MONTHS[endDate.getMonth()]
+    //         .toLowerCase()
+    //         .slice(0, 3)} `;
+    //   }
+    // } else {
+    //   if (parent && parent.classList.contains('dropdown_date')) {
+    //     parent.querySelector('.dropdown_start-date').innerText = 'ДД.ММ.ГГГГ';
+    //     parent.querySelector('.dropdown_end-date').innerText = 'ДД.ММ.ГГГГ';
+    //   }
+
+    //   if (parent && parent.classList.contains('dropdown_filter-date')) {
+    //     parent.querySelector('.dropdown__header-text').innerText =
+    //       'Выберите период';
+    //   }
+    // }
   }
 
   refreshCalendar(date = new Date(this.year, this.month)) {
