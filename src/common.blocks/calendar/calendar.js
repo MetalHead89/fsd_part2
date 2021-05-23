@@ -80,10 +80,6 @@ class Calendar {
 
     this.clearSelectedDays();
     this.showSelectedDays();
-
-    // if (startDate.getTime() < this.currentDate.getTime()) {
-    //   this.startInput.value = Calendar.dateToString(this.currentDate);
-    // }
   }
 
   setEndRange() {
@@ -106,24 +102,22 @@ class Calendar {
 
     this.clearSelectedDays();
     this.showSelectedDays();
-    // const date = Calendar.getDate(this.endInput.value);
-    // if (
-    //   this.startInput.value === '' &&
-    //   date.getTime() >= this.currentDate.getTime()
-    // ) {
-    //   this.startInput.value = Calendar.dateToString(this.currentDate);
-    // }
   }
 
   clearSelectedDays() {
-    const selectedDays = this.calendar.querySelectorAll(
-      '.calendar__day_selected'
+    const selectableDays = this.calendar.querySelectorAll(
+      '.calendar__day_selectable'
     );
 
-    if (selectedDays.length > 0) {
-      selectedDays.forEach((day) => {
-        day.classList.remove('calendar__day_selected');
-      });
+    for (let dayIndex = 0; dayIndex < selectableDays.length; dayIndex += 1) {
+      const day = selectableDays[dayIndex];
+
+      day.classList.remove('calendar__day_selected');
+      day.parentNode.classList.remove('calendar__range-highlight_left-rounded');
+      day.parentNode.classList.remove(
+        'calendar__range-highlight_right-rounded'
+      );
+      day.parentNode.classList.remove('calendar__range-highlight');
     }
   }
 
@@ -176,7 +170,7 @@ class Calendar {
 
     if (Calendar.dateIsValid(date)) {
       const [day, month, year] = date.split('.');
-      newDate = new Date(year, month, day, 0, 0, 0, 0);
+      newDate = new Date(year, month - 1, day, 0, 0, 0, 0);
     }
 
     return newDate;
@@ -191,7 +185,7 @@ class Calendar {
       year !== '' &&
       day >= 1 &&
       day <= 31 &&
-      month >= 0 &&
+      month > 0 &&
       month <= 12 &&
       year > 0
     );
@@ -222,25 +216,6 @@ class Calendar {
       : new Date(this.year, this.month + 1);
     this.refreshCalendar(date);
     this.showSelectedDays();
-
-    // if (this.dateRange.length > 0) {
-    //   const selectableDays = this.calendar.querySelectorAll(
-    //     '.calendar__day_selectable',
-    //   );
-
-    //   for (let dayIndex = 0; dayIndex < selectableDays.length; dayIndex += 1) {
-    //     const day = selectableDays[dayIndex];
-
-    //     if (
-    //       this.dateRange.indexOf(this.getDateFromCalendar(day).getTime()) !== -1
-    //     ) {
-    //       day.classList.add('calendar__day_selected');
-    //     }
-    //   }
-
-    //   this.dateRange.sort(Calendar.compareNumbers);
-    //   this.showRange(this.dateRange);
-    // }
   }
 
   showSelectedDays() {
