@@ -1,8 +1,8 @@
-mixin bullet-list(args)
+mixin bullet-list( {menuItems, theme} = {})
   .bullet-list
     ul.bullet-list__unordered-list
-      each item in args.menuItems
+      each item in menuItems
         - let itemClass = 'bullet-list__item';
-        if (args.theme === undefined)
+        if (theme === undefined)
           - itemClass += ' bullet-list__item_theme_default';
         li(class=itemClass) !{item}

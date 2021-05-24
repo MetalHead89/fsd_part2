@@ -1,6 +1,6 @@
 include ../button/button.pug
 
-mixin calendar(args)
+mixin calendar( {theme} = {} )
   - const WEEK_DAYS = 7;
   - let maxDaysCount = 31;
   - let weeksCount = 5;
@@ -11,7 +11,7 @@ mixin calendar(args)
   - let isPrevMonth = true;
   - let calendarStyle = 'calendar calendar_theme_default';
 
-  if (args !== undefined && args.theme === 'without-top-border')
+  if (theme !== undefined && theme === 'without-top-border')
     - calendarStyle += ' calendar_without-top-border';
 
   div(class=calendarStyle)

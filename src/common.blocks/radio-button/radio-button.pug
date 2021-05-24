@@ -1,6 +1,6 @@
-mixin radio-button(args)
+mixin radio-button( {buttons} = {} )
   .radio-button
-    each radio in args.buttons
+    each radio in buttons
       .radio-button__radio-section
         input.radio-button__radio-element(
           type="radio",

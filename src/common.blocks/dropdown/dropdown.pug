@@ -2,8 +2,7 @@ include ../button/button.pug
 include ../calendar/calendar.pug
 include ../text-field/text-field.pug
 
-mixin dropdown(args)
-  - let type = '';
+mixin dropdown( {type, id, startDate, endDate} = {} )
   - let options = [];
   - let buttons = false;
   - let dropdownClass = 'dropdown';
@@ -11,27 +10,23 @@ mixin dropdown(args)
   - let headerClass = '';
   - let calendarTheme = '';
 
-  if args.type === 'comfort'
-    - type = 'comfort';
+  if type === 'comfort'
     - options = ['спальни', 'кровати', 'ванные комнаты'];
     - buttons = false;
     - dropdownClass += ' dropdown_comfort';
     - headerText = 'Выберите удобства';
     - headerClass = 'dropdown__header dropdown__header_top-angles-are-round';
-  else if args.type === 'date'
-    - type = 'date';
+  else if type === 'date'
     - dropdownClass += ' dropdown_date';
     - headerText = 'ДД.ММ.ГГГГ';
     - headerClass = 'dropdown__header dropdown__header_all-angles-are-round';
-  else if args.type === 'filter_date'
-    - type = 'filter_date';
+  else if type === 'filter_date'
     - title = 'даты пребывания в отеле';
     - dropdownClass += ' dropdown_filter-date';
     - headerText = 'Выберите период';
     - headerClass = 'dropdown__header dropdown__header_all-angles-are-round';
     - calendarTheme = 'without-top-border';
   else
-    - type = 'guests';
     - options = ['взрослые', 'дети', 'младенцы'];
     - buttons = true;
     - dropdownClass += ' dropdown_guests';
@@ -39,23 +34,23 @@ mixin dropdown(args)
     - headerClass = 'dropdown__header dropdown__header_all-angles-are-round';
 
   div(class=dropdownClass)
-    input.dropdown__check(type="checkbox", id=args.id)
+    input.dropdown__check(type="checkbox", id=id)
     if type != 'date'
-      h3.dropdown__title !{args.title}
-      label(for=args.id, class=headerClass)
+      h3.dropdown__title !{title}
+      label(for=id, class=headerClass)
         .dropdown__header-text !{headerText}
         i.material-icons.dropdown__expand-more keyboard_arrow_down
     else
       .dropdown__date-section
         .dropdown__date-block.dropdown__date-block_right-padding
-          h3.dropdown__title !{args.startDate.title}
-          div(for=args.id, class='dropdown__start-date-input')
-            +text-field(args.startDate.input)
+          h3.dropdown__title !{startDate.title}
+          div(for=id, class='dropdown__start-date-input')
+            +text-field(startDate.input)
             i.material-icons.dropdown__date-arrow keyboard_arrow_down
         .dropdown__date-block.dropdown__date-block_left-padding
-          h3.dropdown__title !{args.endDate.title}
-          div(for=args.id, class='dropdown__end-date-input')
-            +text-field(args.endDate.input)
+          h3.dropdown__title !{endDate.title}
+          div(for=id, class='dropdown__end-date-input')
+            +text-field(endDate.input)
             i.material-icons.dropdown__date-arrow keyboard_arrow_down
 
     if type === 'guests' || type === 'comfort'

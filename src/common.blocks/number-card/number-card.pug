@@ -1,10 +1,10 @@
 include ../rate-button/rate-button.pug
 
-mixin number-card(args)
+mixin number-card( {images, roomNumber, lux, roomRate, rating, reviewsNumber} = {} )
   .number-card
     .number-card__slider-section
       <ul class="number-card__slider-list">
-        each img, index in args.images
+        each img, index in images
           if index == 0
             <li class="number-card__slider-list-item number-card__slider-list-item_transparent"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
           else
@@ -19,7 +19,7 @@ mixin number-card(args)
       )
         i.material-icons keyboard_arrow_right
       .number-card__dots-section
-        each img, index in args.images
+        each img, index in images
           if index == 0
             .number-card__dot.number-card__dot_active
           else
@@ -28,15 +28,15 @@ mixin number-card(args)
       .number-card__number-section
         .number-card__room-number
           span.number-card__number №
-          |  #[span.number-card__number.number-card__number_size_l !{args.roomNumber}]
-          if args.lux
+          |  #[span.number-card__number.number-card__number_size_l !{roomNumber}]
+          if lux
             |  #[span.number-card__lux ЛЮКС]
         .number-card__room-rate 
-          span.number-card__accented-text !{args.roomRate.toLocaleString('ru-RU')}&#8381
+          span.number-card__accented-text !{roomRate.toLocaleString('ru-RU')}&#8381
           span  в сутки
       .number-card__separator
       .number-card__rating-section
-        +rate-button({rate: args.rating})
+        +rate-button({rate: rating})
         .number-card__rating
-          span.number-card__accented-text !{args.reviewsNumber}
+          span.number-card__accented-text !{reviewsNumber}
           span  Отзывов

@@ -1,10 +1,10 @@
 include ../text-field/text-field.pug
 
-mixin footer(args)
+mixin footer( {info, copyright} = {} )
   footer.footer
     .footer__info-wrapper
       .footer__info
-        each list in args.info
+        each list in info
           ul(class=list.listStyle)
             if list.title
               li.footer__info-title !{list.title}
@@ -20,11 +20,11 @@ mixin footer(args)
       .footer__copyright
         a(href="#").footer__logo.footer__logo_hidden
           img(
-            src=args.copyright.image,
+            src=copyright.image,
             alt="logo"
           )
-        .footer__copyright-text !{args.copyright.text}
+        .footer__copyright-text !{copyright.text}
         .footer__socials-icons
-          each socialLink in args.copyright.social
+          each socialLink in copyright.social
             a.footer__social-link(href=socialLink.href)
               i(class=socialLink.class)

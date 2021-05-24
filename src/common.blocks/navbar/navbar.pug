@@ -1,4 +1,4 @@
-mixin navbar(args)
+mixin navbar( {type, items} = {} )
   - let navbarClass = 'navbar__list navbar__list_horizontal';
   - let navbarItemClass = 'navbar__item navbar__item_horizontal';
   - let navbarHiddenListClass = 'navbar__hidden-list navbar__hidden-list_horizontal';
@@ -6,7 +6,7 @@ mixin navbar(args)
   - let dropdownTitleClass = 'navbar__dropdown-title';
   - let separatorClass = 'navbar__separator';
 
-  if (args.type == 'vertical')
+  if (type == 'vertical')
     - navbarClass = 'navbar__list navbar__list_vertical';
     - navbarItemClass = 'navbar__item navbar__item_vertical';
     - navbarHiddenListClass = 'navbar__hidden-list navbar__hidden-list_vertical';
@@ -16,7 +16,7 @@ mixin navbar(args)
 
   <nav class='navbar'>
     ul(class=navbarClass)
-      each item in args.items
+      each item in items
         if item.items
           li(class=navbarItemClass)
             div(class=dropdownTitleClass)

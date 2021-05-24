@@ -1,14 +1,14 @@
 include ../button/button.pug
 include ../navbar/navbar.pug
 
-mixin header(args)
+mixin header( {logoPath, navbar} = {} )
   header.header
     .header__container
       .header__content
         a(href="#")
-          img.header__logo(src=args.logoPath, alt="logo")
+          img.header__logo(src=logoPath, alt="logo")
         input#header.header__menu-check(type="checkbox", name="header")
-        +navbar({type: 'horizontal', items: args.navbar})
+        +navbar({type: 'horizontal', items: navbar})
         label.header__burger(for="header")
           .header__burger-image
-    +navbar({type: 'vertical', items: args.navbar})
+    +navbar({type: 'vertical', items: navbar})

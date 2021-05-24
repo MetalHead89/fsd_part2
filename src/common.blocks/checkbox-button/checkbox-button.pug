@@ -1,18 +1,18 @@
-mixin checkbox-button(args)
+mixin checkbox-button( {rich, checked, id, label, text} = {} )
   - let additionalClass = '';
   - let checkboxClass = 'checkbox-button';
   - let labelClass = 'checkbox-button__label';
 
-  if args.rich
+  if rich
     - checkboxClass += ' checkbox-button_type_rich';
     - labelClass += ' checkbox-button__label_type_rich';
 
   div(class=checkboxClass)
     input.checkbox-button__checkbox-element(
       type="checkbox",
-      checked=args.checked,
-      id=args.id
+      checked=checked,
+      id=id
     )
-    label(class=labelClass, for=args.id) !{args.label}
-    if args.rich
-      .checkbox-button__rich-text !{args.text}
+    label(class=labelClass, for=id) !{label}
+    if rich
+      .checkbox-button__rich-text !{text}

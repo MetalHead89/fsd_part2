@@ -1,4 +1,4 @@
-mixin impressions-diagram(diagramArgs)
+mixin impressions-diagram( {magnificently, good, satisfactorily, disappointed} = {} )
   .impressions-diagram
     .impressions-diagram__diagram-section
       canvas.impressions-diagram__diagram(width=120, height=120)
@@ -12,7 +12,7 @@ mixin impressions-diagram(diagramArgs)
       .impressions-diagram__legend-item.impressions-diagram__legend-item_color_purple Удовлетворительно
       .impressions-diagram__legend-item.impressions-diagram__legend-item_color_brown Разочарован
   script.
-    document.cookie = 'magnificently=' + !{diagramArgs.magnificently}
-    document.cookie = 'good=' + !{diagramArgs.good}
-    document.cookie = 'satisfactorily=' + !{diagramArgs.satisfactorily}
-    document.cookie = 'disappointed=' + !{diagramArgs.disappointed}
+    document.cookie = 'magnificently=' + !{magnificently}
+    document.cookie = 'good=' + !{good}
+    document.cookie = 'satisfactorily=' + !{satisfactorily}
+    document.cookie = 'disappointed=' + !{disappointed}

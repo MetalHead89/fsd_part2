@@ -1,19 +1,19 @@
-mixin color-block(args)
+mixin color-block( {theme, colorName, colorCode} = {} )
   - let colorSquareClass = 'color-block__square';
 
-  if args.theme === 'darkShade100'
+  if theme === 'darkShade100'
     - colorSquareClass += ' color-block__square_theme_dark-shade-100';
-  else if args.theme === 'darkShade75'
+  else if theme === 'darkShade75'
     - colorSquareClass += ' color-block__square_theme_dark-shade-75';
-  else if args.theme === 'darkShade50'
+  else if theme === 'darkShade50'
     - colorSquareClass += ' color-block__square_theme_dark-shade-50';
-  else if args.theme === 'darkShade25'
+  else if theme === 'darkShade25'
     - colorSquareClass += ' color-block__square_theme_dark-shade-25';
-  else if args.theme === 'darkShade5'
+  else if theme === 'darkShade5'
     - colorSquareClass += ' color-block__square_theme_dark-shade-5';
-  else if args.theme === 'purple'
+  else if theme === 'purple'
     - colorSquareClass += ' color-block__square_theme_purple';
-  else if args.theme === 'green'
+  else if theme === 'green'
     - colorSquareClass += ' color-block__square_theme_green';
   else
     - colorSquareClass += ' color-block__square_theme_dark-shade-100';
@@ -21,5 +21,5 @@ mixin color-block(args)
   .color-block
     div(class=colorSquareClass)
     .color-block__description
-      h2.color-block__color-name !{args.colorName}
-      .color-block__color-code !{args.colorCode}
+      h2.color-block__color-name !{colorName}
+      .color-block__color-code !{colorCode}
