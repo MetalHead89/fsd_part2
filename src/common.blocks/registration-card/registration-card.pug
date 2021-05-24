@@ -3,21 +3,21 @@ include ../radio-button/radio-button.pug
 include ../button/button.pug
 include ../toggle/toggle.pug
 
-mixin registration-card(args)
+mixin registration-card( {title, textFieldName, textFieldSurname, radioButton, textFieldBirth, textFieldEmail, textFieldPassword, toggle, buttonPayment, loginLabel, buttonEntry} = {} )
   .registration-card
     form
-      h1.registration-card__title.registration-card__title !{args.title}
+      h1.registration-card__title.registration-card__title !{title}
       .registration-card__person
-        +text-field(args.textFieldName)
-        +text-field(args.textFieldSurname)
-        +radio-button(args.radioButton)
-      +text-field(args.textFieldBirth)
+        +text-field(textFieldName)
+        +text-field(textFieldSurname)
+        +radio-button(radioButton)
+      +text-field(textFieldBirth)
       .registration-card__login-details
-        +text-field(args.textFieldEmail)
-        +text-field(args.textFieldPassword)
-        +toggle(args.toggle)
-      +button(args.buttonPayment)
+        +text-field(textFieldEmail)
+        +text-field(textFieldPassword)
+        +toggle(toggle)
+      +button(buttonPayment)
       .registration-card__account-login
-        .registration-card__login-label !{args.loginLabel}
+        .registration-card__login-label !{loginLabel}
         .registration-card__login-button
-          +button(args.buttonEntry)
+          +button(buttonEntry)

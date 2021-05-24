@@ -1,19 +1,19 @@
-mixin range-slider(args)
+mixin range-slider( {title, min1, max1, value1, min2, max2, value2} = {} )
   .range-slider
     .range-slider__header-section
-      h3.range-slider__title !{args.title}
+      h3.range-slider__title !{title}
       .range-slider__range-label
     input.range-slider__input-range.range-slider__input_left(
       type="range",
-      min=args.min1,
-      max=args.max1,
-      value=args.value1
+      min=min1,
+      max=max1,
+      value=value1
     )
     input.range-slider__input-range.range-slider__input_right(
       type="range",
-      min=args.min1,
-      max=args.max2,
-      value=args.value2
+      min=min2,
+      max=max2,
+      value=value2
     )
     .range-slider__slider
       .range-slider__track

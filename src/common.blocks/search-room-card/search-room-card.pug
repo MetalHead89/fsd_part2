@@ -1,13 +1,13 @@
 include ../dropdown/dropdown.pug
 include ../button/button.pug
 
-mixin search-room-card(args)
+mixin search-room-card( {title, dropdown1, dropdown2, button} = {} )
   .search-room-card
     form
-      h1.search-room-card__title.search-room-card__title !{args.title}
+      h1.search-room-card__title.search-room-card__title !{title}
       .search-room-card__dropdown
-        +dropdown(args.dropdown1)
+        +dropdown(dropdown1)
       .search-room-card__dropdown
-        +dropdown(args.dropdown2)
+        +dropdown(dropdown2)
       .search-room-card__button
-        +button(args.button)
+        +button(button)
