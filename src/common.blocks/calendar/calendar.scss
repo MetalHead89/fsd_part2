@@ -6,11 +6,8 @@
   cursor: default;
   box-sizing: border-box;
   border-radius: 4px;
-
-  &_theme_default {
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  }
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
   &_without-top-border {
     border-radius: 0 0 4px 4px;
@@ -75,6 +72,7 @@
     transition: opacity 0.5s ease;
     cursor: pointer;
     user-select: none;
+    color: #bc9cff;
 
     &:hover {
       opacity: 0.5;
@@ -84,10 +82,6 @@
       transition: opacity 0s ease;
       opacity: 1;
     }
-
-    &_theme_default {
-      color: #bc9cff;
-    }
   }
 
   &__month-name {
@@ -96,10 +90,7 @@
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     font-weight: bold;
     font-size: 19px;
-
-    &_theme_default {
-      color: #1f2041;
-    }
+    color: #1f2041;
   }
 
   &__month-selection-section {
@@ -113,10 +104,7 @@
     justify-content: space-between;
     font-weight: bold;
     font-size: 12px;
-
-    &_theme_default {
-      color: #bc9cff;
-    }
+    color: #bc9cff;
   }
 
   &__range-highlight {

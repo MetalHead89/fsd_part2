@@ -1,6 +1,15 @@
 mixin color-block( {theme, colorName, colorCode} = {} )
   - let colorSquareClass = 'color-block__square';
 
+  if theme === undefined
+      theme = 'darkShade100'
+
+  if colorName === undefined
+    colorName = 'Dark Shade 100%'
+
+  if colorCode === undefined
+    colorCode = '#1F2041'
+
   if theme === 'darkShade100'
     - colorSquareClass += ' color-block__square_theme_dark-shade-100';
   else if theme === 'darkShade75'
