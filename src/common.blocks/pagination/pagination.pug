@@ -1,4 +1,11 @@
 mixin pagination( {numberOfPages, activePage} = {} )
+
+  if numberOfPages === undefined
+    - numberOfPages = 1
+  
+  if activePage === undefined
+    - activePage = 1
+
   - let current_page = 1;
   - let isLeftNumbersHidden = false;
   - let isRightNumbersHidden = false;

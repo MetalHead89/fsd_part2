@@ -1,6 +1,16 @@
 include ../checkbox-button/checkbox-button.pug
 
 mixin expandable-checkbox-list( {id, title, checkboxes} = {} )
+
+  if id === undefined
+    - id = check-id
+  
+  if title === undefined
+    - title = 'checkbox'
+  
+  if checkboxes === undefined
+    - checkboxes = []
+
   .expandable-checkbox-list
     input.expandable-checkbox-list__check(type="checkbox", id=id)
     label.expandable-checkbox-list__title-section(for=id)

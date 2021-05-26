@@ -10,6 +10,18 @@ mixin dropdown( {type, id, startDate, endDate} = {} )
   - let headerClass = '';
   - let calendarTheme = '';
 
+  if type === undefined
+    - type = 'comfort'
+  
+  if id === undefined
+    - id = 'drop-id'
+
+  if startDate === undefined
+    - startDate = {'title': 'date Dropdown', 'input': {'placeholderText': 'ДД.ММ.ГГГГ', 'masked': true, 'type': 'text'}}
+
+  if endDate === undefined
+    - endDate = {'title': 'date Dropdown', 'input': {'placeholderText': 'ДД.ММ.ГГГГ', 'masked': true, 'type': 'text'}}
+
   if type === 'comfort'
     - options = ['спальни', 'кровати', 'ванные комнаты'];
     - buttons = false;

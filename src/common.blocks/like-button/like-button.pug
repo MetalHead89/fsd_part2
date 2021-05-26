@@ -1,4 +1,12 @@
 mixin like-button( {checked, likesCount} = {} )
+
+  if checked === undefined
+    - checked = false
+
+  if likesCount === undefined
+    - likesCount = 0
+
+
   - let checkedClass = 'like-button_unchecked';
   - let icon = 'favorite_border';
   if checked

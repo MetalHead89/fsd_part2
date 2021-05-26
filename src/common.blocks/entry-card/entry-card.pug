@@ -1,6 +1,24 @@
 include ../text-field/text-field.pug
 
 mixin entry-card( {title, textFieldEmail, textFieldPassword, buttonEntry, accountSectionLabel ,buttonCreateAccount} = {} )
+  if title === undefined
+    - title = 'Войти'
+  
+  if textFieldEmail === undefined
+    - textFieldEmail = { 'placeholderText': 'Email', 'type': 'email' }
+    
+  if textFieldPassword === undefined
+    - textFieldPassword = { 'placeholderText': 'Пароль', 'type': 'password' }
+
+  if buttonEntry === undefined
+    - buttonEntry = { 'type': 'arrow', 'text': 'войти' }
+
+  if accountSectionLabel === undefined
+    - accountSectionLabel = 'Нет аккаунта на Toxin?'
+
+  if buttonCreateAccount === undefined
+    - buttonCreateAccount = { 'type': 'border', 'text': 'создать' }
+
   .entry-card
     form
       h1.entry-card__title !{title}

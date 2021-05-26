@@ -2,6 +2,13 @@ include ../button/button.pug
 include ../navbar/navbar.pug
 
 mixin header( {logoPath, navbar} = {} )
+
+  if logoPath === undefined
+    - logoPath = ''
+
+  if navbar === undefined
+    - navbar = []
+
   header.header
     .header__container
       .header__content

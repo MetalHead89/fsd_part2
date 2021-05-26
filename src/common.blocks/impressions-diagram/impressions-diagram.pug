@@ -1,4 +1,18 @@
 mixin impressions-diagram( {magnificently, good, satisfactorily, disappointed} = {} )
+
+  if magnificently === undefined
+    - magnificently = 0
+
+  if good === undefined
+    - good = 0
+
+  if satisfactorily === undefined
+    - satisfactorily = 0
+
+  if disappointed === undefined
+    - disappointed = 0
+
+
   .impressions-diagram
     .impressions-diagram__diagram-section
       canvas.impressions-diagram__diagram(width=120, height=120)

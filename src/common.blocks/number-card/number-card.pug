@@ -1,6 +1,25 @@
 include ../rate-button/rate-button.pug
 
 mixin number-card( {images, roomNumber, lux, roomRate, rating, reviewsNumber} = {} )
+
+  if images === undefined
+    - images = []
+
+  if roomNumber === undefined
+    - roomNumber = 1
+
+  if lux === undefined
+    - lux = false
+
+  if roomRate === undefined
+    - roomRate = 10000
+
+  if rating === undefined
+    - rating = 5
+
+  if reviewsNumber === undefined
+    - reviewsNumber = 0
+
   .number-card
     .number-card__slider-section
       <ul class="number-card__slider-list">

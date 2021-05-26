@@ -1,6 +1,13 @@
 include ../text-field/text-field.pug
 
 mixin footer( {info, copyright} = {} )
+
+  if info === undefined
+    - info = []
+
+  if copyright === undefined
+    - copyright = {'image': '', 'text': 'footer-item', 'social': []}
+
   footer.footer
     .footer__info-wrapper
       .footer__info
