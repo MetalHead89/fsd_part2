@@ -1,4 +1,13 @@
 mixin toggle( {name, id, text} = {} )
+  if name === undefined 
+    - name = 'toggle'
+
+  if id === undefined 
+    - id = 'toggle'
+
+  if text === undefined 
+    - text = 'Получать спецпредложения'
+
   .toggle
     input.toggle__checkbox(type="checkbox", name=name, id=id)
     label.toggle__label(for=id) !{text}

@@ -2,12 +2,19 @@ include ../dropdown/dropdown.pug
 include ../button/button.pug
 
 mixin search-room-card( {title, dropdown1, dropdown2, button} = {} )
+  if title === undefined
+    - title = 'Найдём номера под ваши пожелания'
+
+
   .search-room-card
     form
       h1.search-room-card__title.search-room-card__title !{title}
-      .search-room-card__dropdown
-        +dropdown(dropdown1)
-      .search-room-card__dropdown
-        +dropdown(dropdown2)
-      .search-room-card__button
-        +button(button)
+      if dropdown1 !== undefined
+        .search-room-card__dropdown
+          +dropdown(dropdown1)
+      if dropdown2 !== undefined
+        .search-room-card__dropdown
+          +dropdown(dropdown2)
+      if button !== undefined
+        .search-room-card__button
+          +button(button)

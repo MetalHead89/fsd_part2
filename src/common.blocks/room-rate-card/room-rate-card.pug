@@ -2,6 +2,25 @@ include ../dropdown/dropdown.pug
 include ../button/button.pug
 
 mixin room-rate-card( {roomNumber, lux, roomRate, dropdown1, dropdown2, serviceCost, additionalServiceCost, button} = {} )
+
+  if roomNumber === undefined
+    - roomNumber = 1
+
+  if lux === undefined
+    - lux = false
+
+  if roomRate === undefined
+    - roomRate = 10000
+
+  if serviceCost === undefined
+    - serviceCost = 0
+
+  if additionalServiceCost === undefined
+    - additionalServiceCost = 0
+
+  if button === undefined
+    - button = { 'type': 'arrow', 'text': 'забронировать' }
+
   .room-rate-card
     form
       .room-rate-card__room-info
@@ -13,9 +32,11 @@ mixin room-rate-card( {roomNumber, lux, roomRate, dropdown1, dropdown2, serviceC
         .room-rate-card__price-per-day 
           .room-rate-card__cost !{roomRate.toLocaleString('ru-RU')}₽&#32
           .room-rate-card__room-rate-label в сутки
-      +dropdown(dropdown1)
-      .room-rate-card__drop-guests
-        +dropdown(dropdown2)
+      if dropdown1 !== undefined
+        +dropdown(dropdown1)
+      if dropdown2 !== undefined
+        .room-rate-card__drop-guests
+          +dropdown(dropdown2)
       .room-rate-card__room-rate-calc
         .room-rate-card__daily-calc !{roomRate}
         .room-rate-card__room-rate 0₽

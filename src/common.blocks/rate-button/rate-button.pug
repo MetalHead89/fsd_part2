@@ -1,4 +1,8 @@
 mixin rate-button( {rate} = {} )
+
+  if rate === undefined 
+    - rate = 0
+    
   .rate-button
     - for (var i = 0; i < 5; i++)
       if i < rate

@@ -1,4 +1,14 @@
 mixin text-field( {masked, subscription, title, type, placeholderText} = {} )
+
+  if title === undefined 
+    - title = 'text-field'
+
+  if type === undefined 
+    - type = 'text'
+
+  if placeholderText === undefined 
+    - placeholderText = 'text'
+
   - let fieldClass = 'text-field__field';
 
   if masked

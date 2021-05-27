@@ -1,4 +1,26 @@
 mixin range-slider( {title, min1, max1, value1, min2, max2, value2} = {} )
+
+  if title === undefined
+    - title = 'RANGE SLIDER'
+
+  if min1 === undefined
+    - min1 = 0
+
+  if max1 === undefined
+    - max1 = 15000
+
+  if value1 === undefined
+    - value1 = 5000
+
+  if min2 === undefined
+    - min2 = 0
+
+  if max2 === undefined
+    - max2 = 15000
+
+  if value2 === undefined
+    - value2 = 10000
+
   .range-slider
     .range-slider__header-section
       h3.range-slider__title !{title}
