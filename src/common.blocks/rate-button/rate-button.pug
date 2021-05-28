@@ -5,7 +5,7 @@ mixin rate-button( {rate} = {} )
     
   .rate-button
     - for (var i = 0; i < 5; i++)
-      if i < rate
-        span.material-icons.rate-button__star star
-      else
-        span.material-icons.rate-button__star star_border
+      - let starIcon = 'star'
+      if i >= rate
+        - starIcon = 'star_border'
+      span.material-icons.rate-button__star #{starIcon}

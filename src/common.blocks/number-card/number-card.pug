@@ -20,14 +20,16 @@ mixin number-card( {images, roomNumber, lux, roomRate, rating, reviewsNumber} = 
   if reviewsNumber === undefined
     - reviewsNumber = 0
 
+  - roomImageClass = 'number-card__slider-list-item number-card__slider-list-item'
+
   .number-card
     .number-card__slider-section
       <ul class="number-card__slider-list">
         each img, index in images
-          if index == 0
-            <li class="number-card__slider-list-item number-card__slider-list-item_transparent"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
-          else
-            <li class="number-card__slider-list-item number-card__slider-list-item_not-transparent"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
+          - let transparent = 'transparent'
+          if index !== 0
+            - transparent = 'not-transparent'
+          <li class="number-card__slider-list-item number-card__slider-list-item_!{transparent}"><img class='number-card__slider-image' src=!{img} alt="room-image"></li>
       </ul>
       button.number-card__arrow-button.number-card__arrow-button_prev(
         type='button'
