@@ -1,37 +1,32 @@
 include ../text-field/text-field.pug
 
 mixin footer( {info, copyright} = {} )
-
-  if info === undefined
-    - info = []
-
-  if copyright === undefined
-    - copyright = {'image': '', 'text': 'footer-item', 'social': []}
-
   footer.footer
-    .footer__info-wrapper
-      .footer__info
-        each list in info
-          ul(class=list.listStyle)
-            if list.title
-              li.footer__info-title !{list.title}
-            each item in list.items
-              if item.image
-                img(class=item.image.class, src=item.image.src, alt=item.image.alt)
-              else if item.textField
-                li.footer__info-item
-                  +text-field(item.textField)
-              else
-                li.footer__info-item !{item}
-    .footer__copyright-wrapper
-      .footer__copyright
-        a(href="#").footer__logo.footer__logo_hidden
-          img(
-            src=copyright.image,
-            alt="logo"
-          )
-        .footer__copyright-text !{copyright.text}
-        .footer__socials-icons
-          each socialLink in copyright.social
-            a.footer__social-link(href=socialLink.href)
-              i(class=socialLink.class)
+    if info !== undefined
+      .footer__info-wrapper
+        .footer__info
+          each list in info
+            ul(class=list.listStyle)
+              if list.title
+                li.footer__info-title !{list.title}
+              each item in list.items
+                if item.image
+                  img(class=item.image.class, src=item.image.src, alt=item.image.alt)
+                else if item.textField
+                  li.footer__info-item
+                    +text-field(item.textField)
+                else
+                  li.footer__info-item !{item}
+    if copyright !== undefined
+      .footer__copyright-wrapper
+        .footer__copyright
+          a(href="#").footer__logo.footer__logo_hidden
+            img(
+              src=copyright.image,
+              alt="logo"
+            )
+          .footer__copyright-text !{copyright.text}
+          .footer__socials-icons
+            each socialLink in copyright.social
+              a.footer__social-link(href=socialLink.href)
+                i(class=socialLink.class)

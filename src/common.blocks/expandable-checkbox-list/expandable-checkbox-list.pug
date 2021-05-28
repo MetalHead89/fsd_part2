@@ -3,10 +3,10 @@ include ../checkbox-button/checkbox-button.pug
 mixin expandable-checkbox-list( {id, title, checkboxes} = {} )
 
   if id === undefined
-    - id = check-id
+    - id = 'check-list' + Math.random() * (9999 - 0) + 0
   
   if title === undefined
-    - title = 'checkbox'
+    - title = 'check-list'
   
   if checkboxes === undefined
     - checkboxes = []

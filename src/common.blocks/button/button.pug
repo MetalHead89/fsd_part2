@@ -1,14 +1,8 @@
 mixin button( {type, theme, text} = {} )
   - let button_class = 'button';
 
-  if type === undefined
-    - type = 'regular'
-
-  if theme === undefined
-    - theme = ''
-
   if text === undefined
-    - text = 'Button'
+      - text = 'Button'
 
   if type === 'border'
     - button_class += ' button_with-border';

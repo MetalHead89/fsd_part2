@@ -3,7 +3,7 @@ mixin toggle( {name, id, text} = {} )
     - name = 'toggle'
 
   if id === undefined 
-    - id = 'toggle'
+    - id = 'toggle' + Math.random() * (9999 - 0) + 0
 
   if text === undefined 
     - text = 'Получать спецпредложения'

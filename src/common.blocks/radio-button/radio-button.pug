@@ -1,16 +1,14 @@
 mixin radio-button( {buttons} = {} )
 
-  if buttons === undefined
-    - buttons = [{'id': 'radio1', 'name': 'radio', 'value': '1', 'text': "radio-1", 'checked': true}, {'id': 'radio2', 'name': 'radio', 'value': '2', 'text': "radio-2", 'checked': false}]
-
-  .radio-button
-    each radio in buttons
-      .radio-button__radio-section
-        input.radio-button__radio-element(
-          type="radio",
-          id=radio.id,
-          name=radio.name,
-          value=radio.value,
-          checked=radio.checked
-        )
-        label.radio-button__label(for=radio.id) !{radio.text}
+  if buttons !== undefined
+    .radio-button
+      each radio in buttons
+        .radio-button__radio-section
+          input.radio-button__radio-element(
+            type="radio",
+            id=radio.id,
+            name=radio.name,
+            value=radio.value,
+            checked=radio.checked
+          )
+          label.radio-button__label(for=radio.id) !{radio.text}
