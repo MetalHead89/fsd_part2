@@ -2,5 +2,4 @@ mixin bullet-list( {menuItems} = {})
   .bullet-list
     ul.bullet-list__unordered-list
       each item in menuItems
-        - let itemClass = 'bullet-list__item';
-        li(class=itemClass) !{item}
+        li(class="bullet-list__item") !{item}
