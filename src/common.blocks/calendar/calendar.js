@@ -486,48 +486,6 @@ class Calendar {
           'Выберите период';
       }
     }
-
-    // this.dateRange.sort(Calendar.compareNumbers);
-    // const parent = this.calendar.offsetParent.offsetParent;
-
-    // if (this.dateRange.length === 2) {
-    // const startDate = new Date(this.dateRange[0]);
-    // const endDate = new Date(this.dateRange[1]);
-
-    //   if (parent && parent.classList.contains('dropdown_date')) {
-    //     parent.querySelector(
-    //       '.dropdown_start-date'
-    //     ).innerText = startDate.toLocaleString('ru', {
-    //       day: 'numeric',
-    //       month: 'numeric',
-    //       year: 'numeric',
-    //     });
-    //     parent.querySelector(
-    //       '.dropdown_end-date'
-    //     ).innerText = endDate.toLocaleString('ru', {
-    //       day: 'numeric',
-    //       month: 'numeric',
-    //       year: 'numeric',
-    //     });
-    //   } else if (parent && parent.classList.contains('dropdown_filter-date')) {
-    //     parent.querySelector('.dropdown__header-text').innerText =
-    //       `${startDate.getDate()} ` +
-    //       `${this.MONTHS[startDate.getMonth()].toLowerCase().slice(0, 3)} - ` +
-    //       `${endDate.getDate()} ${this.MONTHS[endDate.getMonth()]
-    //         .toLowerCase()
-    //         .slice(0, 3)} `;
-    //   }
-    // } else {
-    //   if (parent && parent.classList.contains('dropdown_date')) {
-    //     parent.querySelector('.dropdown_start-date').innerText = 'ДД.ММ.ГГГГ';
-    //     parent.querySelector('.dropdown_end-date').innerText = 'ДД.ММ.ГГГГ';
-    //   }
-
-    //   if (parent && parent.classList.contains('dropdown_filter-date')) {
-    //     parent.querySelector('.dropdown__header-text').innerText =
-    //       'Выберите период';
-    //   }
-    // }
   }
 
   refreshCalendar(date = new Date(this.year, this.month)) {
