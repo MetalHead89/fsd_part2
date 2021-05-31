@@ -253,6 +253,7 @@ class Calendar {
       this.choiceMode = false;
       day.classList.add('calendar__day_selected');
       this.dateRange.sort(Calendar.compareNumbers);
+      this.showRange(this.dateRange);
     } else if (
       this.dateRange.length === 1 &&
       this.dayIsSelectableAndEqualToStartingPointOfRange(day)
