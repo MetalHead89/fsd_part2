@@ -1,4 +1,4 @@
-mixin button( {type, theme, text} = {} )
+mixin button( {type, text, disabled = false} = {} )
   - let button_class = 'button';
 
   if text === undefined
@@ -8,10 +8,6 @@ mixin button( {type, theme, text} = {} )
     - button_class += ' button_with-border';
   else if type === 'onlyText'
     - button_class += ' button_only-text';
-    if theme === 'gray'
-      - button_class += ' button_only-text_theme_gray';
-    else
-      - button_class += ' button_only-text_theme_purple';
   else if type == 'arrow'
     - button_class += ' button_with-arrow';
   else
@@ -22,6 +18,6 @@ mixin button( {type, theme, text} = {} )
   if theme === 'paddingsS'
     - button_class += ' button_paddings_s';
 
-  button(type="button", value=text, class=button_class) !{text}
+  button(type="button", value=text, disabled=disabled, class=button_class) !{text}
     if type == 'arrow'
       i.material-icons.button__arrow arrow_forward

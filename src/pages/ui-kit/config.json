@@ -148,7 +148,7 @@
   "borderButton": { "text": "click me", "type": "border" },
   "onlyTextButtons": [
     { "text": "click me", "type": "onlyText" },
-    { "text": "click me", "type": "onlyText", "theme": "gray" }
+    { "disabled": true, "text": "click me", "type": "onlyText" }
   ],
   "arrowButton": { "text": "перейти к оплате", "type": "arrow" },
   "pagination": { "numberOfPages": 15, "activePage": 1 },

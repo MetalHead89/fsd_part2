@@ -38,7 +38,7 @@ mixin calendar( {theme} = {} )
               - calendarDayClass = 'calendar__day calendar__day_current';
             if !isPrevMonth && dayNumber > maxDaysCount
               - dayNumber = 1;
-              - calendarDayClass = 'calendar__day  calendar__day_other-month';
+              - calendarDayClass = 'calendar__day calendar__day_other-month';
 
             span(class=calendarDayClass) !{dayNumber}
 

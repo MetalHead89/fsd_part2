@@ -7,15 +7,18 @@
   font-size: 12px;
   text-transform: uppercase;
   transition: 0.5s;
-  cursor: pointer;
   user-select: none;
 
   &:focus {
     outline: none;
   }
 
-  &:hover {
-    opacity: 0.5;
+  &:not(:disabled) {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
 
   &:active {
@@ -29,15 +32,10 @@
     height: unset;
     padding: 0;
     border: 0;
+    color: #bc9cff;
 
-    &_theme {
-      &_gray {
-        color: rgba(31, 32, 65, 0.5);
-      }
-
-      &_purple {
-        color: #bc9cff;
-      }
+    &:disabled {
+      color: rgba(31, 32, 65, 0.5);
     }
   }
 

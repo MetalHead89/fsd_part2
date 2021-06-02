@@ -111,7 +111,7 @@ html(lang="ru")
                 .form-elements__only-text-buttons-group
                   each onlyTextButton in config.onlyTextButtons
                     .form-elements__only-text-button-block
-                      +button({ text: onlyTextButton.text, type: onlyTextButton.type, theme: onlyTextButton.theme })
+                      +button({ text: onlyTextButton.text, type: onlyTextButton.type, disabled: onlyTextButton.disabled })
               .form-elements__block-wrapper
                 +button(config.arrowButton)
             .form-elements__block-wrapper
