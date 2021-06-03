@@ -122,6 +122,7 @@ $room-card: '.room-card';
     display: flex;
     justify-content: space-between;
     align-items: center;
+    line-height: 0;
   }
 
   &__room-info {
