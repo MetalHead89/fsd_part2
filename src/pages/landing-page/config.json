@@ -13,8 +13,8 @@
         }
       },
       "endDate": {
+        "title": "выезд",
         "input": {
-          "title": "выезд",
           "placeholderText": "ДД.ММ.ГГГГ",
           "masked": true,
           "type": "text"

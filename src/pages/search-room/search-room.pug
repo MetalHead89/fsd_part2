@@ -39,7 +39,8 @@ block content
             .search-room__rich-checkbox-container
               h3.search-room__section-title Доступность
               each checkbox in config.availabilityCheckboxes
-                +checkbox-button(checkbox)
+                .search-room__checkbox-wrapper
+                  +checkbox-button(checkbox)
             .search-room__comfort-dropdown-container
               +dropdown(config.comfortDropdown)
             .search-room__expandable-checkbox-list-container

@@ -29,8 +29,10 @@ mixin navbar( {type, items} = {} )
       li(class=navbarItemClass + ' navbar__item_with-separator')
         div(class=separatorClass)
       li(class=navbarItemClass + ' navbar__item_with-name') Виталий Бакалов
-      li(class='navbar__button-entry-container ' + navbarItemClass)
-        +button({type: 'border', text: 'войти', theme: 'paddingsS'})
-      li(class='navbar__button-registration-container ' + navbarItemClass)
-        +button({text: 'зарегистрироваться', theme: 'paddingsL'})
+      li(class=navbarItemClass)
+        .navbar__button-entry-container
+          +button({type: 'border', text: 'войти', theme: 'paddingsS'})
+      li(class=navbarItemClass)
+        navbar__button-registration-container
+          +button({text: 'зарегистрироваться', theme: 'paddingsL'})
   </nav>

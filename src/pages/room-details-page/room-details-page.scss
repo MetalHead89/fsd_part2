@@ -48,7 +48,7 @@ article {
 
   &__details-section {
     width: 100%;
-    padding: 0 20px 72px;
+    padding: 0 20px 63px;
     display: flex;
     justify-content: center;
     box-sizing: border-box;
@@ -56,7 +56,7 @@ article {
   }
 
   &__central-container {
-    padding-top: 55px;
+    padding-top: 50px;
     width: 100%;
     max-width: 1160px;
     display: flex;
@@ -129,7 +129,7 @@ article {
     width: 50%;
     min-width: 240px;
     box-sizing: border-box;
-    margin-left: 11.3%;
+    margin-left: 15%;
 
     @media screen and (max-width: 1120px) {
       margin-left: 0;
@@ -141,9 +141,9 @@ article {
   }
 
   &__details-title {
-    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
     font-size: 19px;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
 
     &_paddings_left-and-bottom {
       padding-left: 20px;
@@ -166,7 +166,7 @@ article {
 
   &__guest-review-container {
     width: 100%;
-    padding: 11px 0;
+    padding: 12px 0;
   }
 
   &__reviews-count {
@@ -174,13 +174,14 @@ article {
   }
 
   &__reviews-header {
+    margin-top: -5px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
   }
 
   &__bottom-info-section {
-    padding-top: 8px;
+    padding-top: 5px;
     display: flex;
     justify-content: space-between;
 
@@ -201,7 +202,7 @@ article {
   &__rate-card-container {
     width: 100%;
     max-width: 380px;
-    padding-top: 15px;
+    padding-top: 19px;
 
     @media screen and (max-width: 1120px) {
       position: absolute;
