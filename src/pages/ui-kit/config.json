@@ -144,8 +144,11 @@
     "value1": 5000,
     "value2": 10000
   },
-  "button": { "text": "click me" },
-  "borderButton": { "text": "click me", "type": "border" },
+  "buttons": [{ "text": "click me" }, { "text": "click me", "disabled": true }],
+  "borderButtons": [
+    { "text": "click me", "type": "border" },
+    { "text": "click me", "type": "border", "disabled": true }
+  ],
   "onlyTextButtons": [
     { "text": "click me", "type": "onlyText" },
     { "disabled": true, "text": "click me", "type": "onlyText" }

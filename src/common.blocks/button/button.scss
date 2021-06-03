@@ -44,6 +44,10 @@
     border: none;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     color: #ffffff;
+
+    &:disabled {
+      opacity: 50%;
+    }
   }
 
   &_with-arrow {
@@ -57,12 +61,17 @@
 
   &_with-border {
     color: #bc9cff;
-    padding: 13px 20px;
+    padding: 13px 18px;
     border: 2px solid transparent;
     background-image: linear-gradient(white, white),
       linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     background-origin: border-box;
     background-clip: padding-box, border-box;
+
+    &:disabled {
+      background-image: linear-gradient(white, white),
+        linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
+    }
   }
 
   &_paddings_s {

@@ -106,9 +106,15 @@ html(lang="ru")
             .form-elements__block-wrapper
               h3.form-elements__block-title.form-elements__block-title_big-vertical-margins Buttons
               .form-elements__block-wrapper
-                +button(config.button)
+                .form-elements__buttons-group
+                  each button in config.buttons
+                    .form-elements__button-wrapper
+                      +button(button)
               .form-elements__block-wrapper
-                +button(config.borderButton)
+                .form-elements__buttons-group
+                  each button in config.borderButtons
+                    .form-elements__button-wrapper
+                      +button(button)
               .form-elements__block-wrapper
                 .form-elements__only-text-buttons-group
                   each onlyTextButton in config.onlyTextButtons
