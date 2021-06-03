@@ -287,7 +287,7 @@
     "accountSectionLabel": "Нет аккаунта на Toxin?",
     "buttonCreateAccount": { "type": "border", "text": "создать" }
   },
-  "numberCards": [
+  "roomCards": [
     {
       "roomNumber": 888,
       "lux": true,
@@ -295,10 +295,10 @@
       "rating": 5,
       "reviewsNumber": 145,
       "images": [
-        "../images/number1.png",
-        "../images/number6.png",
-        "../images/number10.png",
-        "../images/number7.png"
+        "../images/room1.png",
+        "../images/room6.png",
+        "../images/room10.png",
+        "../images/room7.png"
       ]
     },
     {
@@ -308,10 +308,10 @@
       "rating": 4,
       "reviewsNumber": 65,
       "images": [
-        "../images/number2.png",
-        "../images/number12.png",
-        "../images/number8.png",
-        "../images/number3.png"
+        "../images/room2.png",
+        "../images/room12.png",
+        "../images/room8.png",
+        "../images/room3.png"
       ]
     }
   ],

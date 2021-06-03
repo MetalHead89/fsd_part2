@@ -1,6 +1,6 @@
-$number-card: '.number-card';
+$room-card: '.room-card';
 
-#{$number-card} {
+#{$room-card} {
   width: 100%;
   max-width: 500px;
   background: white;
@@ -175,7 +175,7 @@ $number-card: '.number-card';
     width: 100%;
     user-select: none;
 
-    &:hover #{$number-card}__arrow-button {
+    &:hover #{$room-card}__arrow-button {
       opacity: 1;
     }
 

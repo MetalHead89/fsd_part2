@@ -18,7 +18,7 @@ mixin text-field( {masked, subscription, title, type, placeholderText} = {} )
       h3.text-field__title !{title}
     input(type=type, placeholder=placeholderText, class=fieldClass)
     if subscription
-      button.text-field__subscription-btn(
+      button.text-field__subscription-button(
         type='button'
       )
         span.material-icons.text-field__arrow-forward arrow_forward

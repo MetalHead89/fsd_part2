@@ -5,7 +5,7 @@ block includes
   include ../../common.blocks/range-slider/range-slider.pug
   include ../../common.blocks/checkbox-button/checkbox-button.pug
   include ../../common.blocks/expandable-checkbox-list/expandable-checkbox-list.pug
-  include ../../common.blocks/number-card/number-card.pug
+  include ../../common.blocks/room-card/room-card.pug
   include ../../common.blocks/pagination/pagination.pug
 
 block title
@@ -46,8 +46,8 @@ block content
       .search-room__rooms-section
         h1.search-room__rooms-title Номера, которые мы для вас подобрали
         .search-room__rooms
-          each numberCard in config.numberCards
-            .search-room__number-card-container
-              +number-card(numberCard)
+          each roomCard in config.roomCards
+            .search-room__room-card-container
+              +room-card(roomCard)
         .search-room__pagination-container
           +pagination(config.pagination)
