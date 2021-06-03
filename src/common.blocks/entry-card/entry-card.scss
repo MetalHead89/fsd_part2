@@ -9,7 +9,7 @@
   border-radius: 4px;
 
   &__login-section {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   &__new-account-section {
@@ -22,5 +22,9 @@
   &__title {
     @include h1;
     margin: 8px 0 20px;
+  }
+
+  &__text-field-wrapper {
+    padding-bottom: 9px;
   }
 }

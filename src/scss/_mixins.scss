@@ -26,6 +26,11 @@
   color: #1f2041;
 }
 
+@mixin typeBlockTag() {
+  font-weight: 400;
+  color: rgba(31, 32, 65, 0.25);
+}
+
 @mixin site-container() {
   display: flex;
   flex-direction: column;

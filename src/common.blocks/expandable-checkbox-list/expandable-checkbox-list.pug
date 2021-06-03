@@ -18,4 +18,5 @@ mixin expandable-checkbox-list( {id, title, checkboxes} = {} )
       i.material-icons.expandable-checkbox-list__expand-more keyboard_arrow_down
     .expandable-checkbox-list__hide-list
       each checkbox in checkboxes
-        +checkbox-button(checkbox)
+        .expandable-checkbox-list__checkbox-container
+          +checkbox-button(checkbox)

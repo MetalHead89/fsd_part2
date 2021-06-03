@@ -42,13 +42,17 @@ mixin registration-card( {title, textFieldName, textFieldSurname, radioButton, t
     form
       h1.registration-card__title !{title}
       .registration-card__person
-        +text-field(textFieldName)
-        +text-field(textFieldSurname)
+        .registration-card__text-field-wrapper
+          +text-field(textFieldName)
+        .registration-card__text-field-wrapper
+          +text-field(textFieldSurname)
         +radio-button(radioButton)
       +text-field(textFieldBirth)
       .registration-card__login-details
-        +text-field(textFieldEmail)
-        +text-field(textFieldPassword)
+        .registration-card__text-field-wrapper
+          +text-field(textFieldEmail)
+        .registration-card__text-field-wrapper
+          +text-field(textFieldPassword)
         +toggle(toggle)
       +button(buttonPayment)
       .registration-card__account-login

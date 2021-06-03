@@ -75,6 +75,10 @@
 // FORM ELEMENTS SECTION
 
 .form-elements {
+  &__checkbox-container {
+    padding: 6px 0;
+  }
+
   &__three-column-section {
     width: 100%;
     display: flex;

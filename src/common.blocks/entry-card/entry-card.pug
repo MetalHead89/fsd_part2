@@ -23,8 +23,10 @@ mixin entry-card( {title, textFieldEmail, textFieldPassword, buttonEntry, accoun
     form
       h1.entry-card__title !{title}
       .entry-card__login-section
-        +text-field(textFieldEmail)
-        +text-field(textFieldPassword)
+        .entry-card__text-field-wrapper
+          +text-field(textFieldEmail)
+        .entry-card__text-field-wrapper
+          +text-field(textFieldPassword)
       +button(buttonEntry)
       .entry-card__new-account-section
         .entry-card__label !{accountSectionLabel}

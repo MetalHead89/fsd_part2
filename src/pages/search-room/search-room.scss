@@ -145,6 +145,10 @@ article {
     @include h3;
   }
 
+  &__checkbox-wrapper {
+    padding: 6px 0;
+  }
+
   &__checkbox-container {
     margin-top: 23px;
 

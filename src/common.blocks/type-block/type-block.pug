@@ -1,17 +1,21 @@
 mixin type-block( {tag, text} = {} )
   - let tagName = 'Body';
+  - let tagClass = 'type-block__tag';
   - let tagTextClass = '';
 
   if tag === 'h1'
     - tagName = 'H1';
+    - tagClass += ' type-block__tag_size_l'
     - tagTextClass = 'type-block__text_header-size_l'
   else if tag === 'h2'
     - tagName = 'H2';
+    - tagClass += ' type-block__tag_size_m'
     - tagTextClass = 'type-block__text_header-size_m'
   else if tag === 'h3'
     - tagName = 'H3';
+    - tagClass += ' type-block__tag_size_s'
     - tagTextClass = 'type-block__text_header-size_s'
 
   .type-block
-    #{tag}.type-block__tag !{tagName}
+    #{tag}(class=tagClass) !{tagName}
     #{tag}(class=`type-block__text ${tagTextClass}`) !{text}

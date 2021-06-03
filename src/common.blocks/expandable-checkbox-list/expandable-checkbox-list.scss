@@ -52,4 +52,8 @@ $expandable-checkbox-list: '.expandable-checkbox-list';
       color: rgba(31, 32, 65, 0.75);
     }
   }
+
+  &__checkbox-container {
+    padding: 6px 0;
+  }
 }

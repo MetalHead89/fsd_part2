@@ -75,7 +75,6 @@ $dropdown: '.dropdown';
     flex-direction: row;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 6px;
   }
 
   &__drop-menu {
@@ -101,6 +100,10 @@ $dropdown: '.dropdown';
       padding: 2px 6px 2px 15px;
       flex-direction: column;
       border-radius: 0 0 4px 4px;
+    }
+
+    &_separate-from-dropdown {
+      padding-top: 5px;
     }
   }
 

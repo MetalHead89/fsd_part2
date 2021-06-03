@@ -18,5 +18,7 @@
 
   &__title {
     @include h1;
+    margin-top: 10px;
+    margin-bottom: 8px;
   }
 }

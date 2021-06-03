@@ -75,7 +75,8 @@ html(lang="ru")
             .form-elements__block-wrapper
               h3.form-elements__block-title Checkbox Buttons
               each checkboxButton in config.checkboxButtons
-                +checkbox-button({ label: checkboxButton.label, id: checkboxButton.id, checked: checkboxButton.checked })
+                .form-elements__checkbox-container
+                  +checkbox-button({ label: checkboxButton.label, id: checkboxButton.id, checked: checkboxButton.checked })
             .form-elements__block-wrapper
               h3.form-elements__block-title Radio Buttons
               +radio-button(config.radioButton)
@@ -97,7 +98,8 @@ html(lang="ru")
             .form-elements__block-wrapper
               h3.form-elements__block-title RICH CHECKBOX BUTTONS
               each richCheckboxButton in config.richCheckboxButtons
-                +checkbox-button({ label: richCheckboxButton.label, id: richCheckboxButton.id, checked: richCheckboxButton.checked, rich: richCheckboxButton.rich, text: richCheckboxButton.text })
+                .form-elements__checkbox-container
+                  +checkbox-button({ label: richCheckboxButton.label, id: richCheckboxButton.id, checked: richCheckboxButton.checked, rich: richCheckboxButton.rich, text: richCheckboxButton.text })
           .form-elements__column
             .form-elements__block-wrapper
               +range-slider(config.rangeSlider)

@@ -33,7 +33,8 @@ block content
             .search-room__checkbox-container
               h3.search-room__section-title Правила дома
               each checkbox in config.rulesCheckboxes
-                +checkbox-button(checkbox)
+                .search-room__checkbox-wrapper
+                  +checkbox-button(checkbox)
           .search-room__option-column-two
             .search-room__rich-checkbox-container
               h3.search-room__section-title Доступность

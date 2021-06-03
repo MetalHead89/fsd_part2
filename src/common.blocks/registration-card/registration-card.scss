@@ -18,14 +18,21 @@
   }
 
   &__login-details {
-    margin: 20px 0 12px;
+    margin: 18px 0 17px;
   }
 
   &__person {
-    margin: 20px 0;
+    padding-top: 10px;
+    padding-bottom: 17px
   }
 
   &__title {
     @include h1;
+    margin-top: 10px;
+    margin-bottom: 8px;
+  }
+
+  &__text-field-wrapper {
+    padding-bottom: 9px;
   }
 }
