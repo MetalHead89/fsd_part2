@@ -1,8 +1,6 @@
 include ../text-field/text-field.pug
 
-mixin entry-card( {title, textFieldEmail, textFieldPassword, buttonEntry, accountSectionLabel ,buttonCreateAccount} = {} )
-  if title === undefined
-    - title = 'Войти'
+mixin entry-card({ title = 'Войти', textFieldEmail, textFieldPassword, buttonEntry, accountSectionLabel ,buttonCreateAccount } = {})
   
   if textFieldEmail === undefined
     - textFieldEmail = { 'placeholderText': 'Email', 'type': 'email' }

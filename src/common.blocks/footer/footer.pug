@@ -1,6 +1,6 @@
 include ../text-field/text-field.pug
 
-mixin footer( {info, copyright} = {} )
+mixin footer({ info, copyright } = {})
   footer.footer
     if info !== undefined
       .footer__info-wrapper
@@ -17,6 +17,7 @@ mixin footer( {info, copyright} = {} )
                     +text-field(item.textField)
                 else
                   li.footer__info-item !{item}
+
     if copyright !== undefined
       .footer__copyright-wrapper
         .footer__copyright
@@ -26,6 +27,7 @@ mixin footer( {info, copyright} = {} )
               alt="logo"
             )
           .footer__copyright-text !{copyright.text}
+          
           .footer__socials-icons
             each socialLink in copyright.social
               a.footer__social-link(href=socialLink.href)

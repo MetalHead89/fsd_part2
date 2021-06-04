@@ -1,10 +1,6 @@
-mixin navbar( {type, items} = {} )
-
-  if type === undefined
+mixin navbar({ type = 'horizontal', items } = {})
+  if type !== 'horizontal' && type !== 'vertical'
     - type = 'horizontal'
-
-  if items === undefined
-    - items = []
 
   - let navbarClass = `navbar__list navbar__list_${type}`;
   - let navbarItemClass = `navbar__item navbar__item_${type}`;
@@ -26,6 +22,7 @@ mixin navbar( {type, items} = {} )
                 li(class=navbarHiddenListItemClass) !{hiddenItem}
         else
           li(class=navbarItemClass) !{item}
+          
       li(class=navbarItemClass + ' navbar__item_with-separator')
         div(class=separatorClass)
       li(class=navbarItemClass + ' navbar__item_with-name') Виталий Бакалов

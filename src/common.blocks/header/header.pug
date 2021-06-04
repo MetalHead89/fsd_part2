@@ -1,14 +1,7 @@
 include ../button/button.pug
 include ../navbar/navbar.pug
 
-mixin header( {logoPath, navbar} = {} )
-
-  if logoPath === undefined
-    - logoPath = ''
-
-  if navbar === undefined
-    - navbar = []
-
+mixin header({ logoPath, navbar = [] } = {})
   header.header
     .header__container
       .header__content
@@ -18,4 +11,5 @@ mixin header( {logoPath, navbar} = {} )
         +navbar({type: 'horizontal', items: navbar})
         label.header__burger(for="header")
           .header__burger-image
+          
     +navbar({type: 'vertical', items: navbar})

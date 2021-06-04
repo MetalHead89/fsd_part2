@@ -1,8 +1,5 @@
-mixin button( {type, text, disabled = false, theme} = {} )
+mixin button({ type, text = 'click me', disabled = false, theme } = {})
   - let button_class = 'button';
-
-  if text === undefined
-      - text = 'Button'
 
   if type === 'border'
     - button_class += ' button_with-border';

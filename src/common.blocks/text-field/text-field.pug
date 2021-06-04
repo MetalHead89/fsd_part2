@@ -1,11 +1,4 @@
-mixin text-field( {masked, subscription, title, type, placeholderText} = {} )
-
-  if type === undefined 
-    - type = 'text'
-
-  if placeholderText === undefined 
-    - placeholderText = 'text'
-
+mixin text-field({ masked, subscription, title, type = 'text', placeholderText = 'text' } = {})
   - let fieldClass = 'text-field__field';
 
   if masked
@@ -16,7 +9,9 @@ mixin text-field( {masked, subscription, title, type, placeholderText} = {} )
   .text-field
     if title
       h3.text-field__title !{title}
+
     input(type=type, placeholder=placeholderText, class=fieldClass)
+    
     if subscription
       button.text-field__subscription-button(
         type='button'

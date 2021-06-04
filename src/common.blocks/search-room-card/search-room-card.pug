@@ -1,20 +1,19 @@
 include ../dropdown/dropdown.pug
 include ../button/button.pug
 
-mixin search-room-card( {title, dropdown1, dropdown2, button} = {} )
-  if title === undefined
-    - title = 'Найдём номера под ваши пожелания'
-
-
+mixin search-room-card({ title = 'Найдём номера под ваши пожелания', dropdown1, dropdown2, button } = {})
   .search-room-card
     form
       h1.search-room-card__title !{title}
+
       if dropdown1 !== undefined
         .search-room-card__dropdown
           +dropdown(dropdown1)
+
       if dropdown2 !== undefined
         .search-room-card__dropdown
           +dropdown(dropdown2)
+          
       if button !== undefined
         .search-room-card__button
           +button(button)

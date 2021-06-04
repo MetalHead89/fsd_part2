@@ -1,17 +1,4 @@
-mixin impressions-diagram( {magnificently, good, satisfactorily, disappointed} = {} )
-
-  if magnificently === undefined
-    - magnificently = 0
-
-  if good === undefined
-    - good = 0
-
-  if satisfactorily === undefined
-    - satisfactorily = 0
-
-  if disappointed === undefined
-    - disappointed = 0
-
+mixin impressions-diagram({ magnificently = 0, good = 0, satisfactorily = 0, disappointed = 0 } = {})
   - let diagramLegendItemClass = 'impressions-diagram__legend-item impressions-diagram__legend-item_color'
 
 
@@ -27,6 +14,7 @@ mixin impressions-diagram( {magnificently, good, satisfactorily, disappointed} =
       div(class = diagramLegendItemClass + "_green") Хорошо
       div(class = diagramLegendItemClass + "_purple") Удовлетворительно
       div(class = diagramLegendItemClass + "_brown") Разочарован
+      
   script.
     document.cookie = 'magnificently=' + !{magnificently}
     document.cookie = 'good=' + !{good}

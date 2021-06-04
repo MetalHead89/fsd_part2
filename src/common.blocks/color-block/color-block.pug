@@ -1,11 +1,5 @@
-mixin color-block( {theme, colorName, colorCode} = {} )
+mixin color-block({ theme, colorName = 'Dark Shade 100%', colorCode = '#1F2041' } = {})
   - let colorSquareClass = 'color-block__square';
-
-  if colorName === undefined
-    colorName = 'Dark Shade 100%'
-
-  if colorCode === undefined
-    colorCode = '#1F2041'
     
   if theme === 'darkShade75'
     - colorSquareClass += ' color-block__square_theme_dark-shade-75';

@@ -1,22 +1,6 @@
 include ../rate-button/rate-button.pug
 
-mixin room-card( {images, roomNumber, lux, roomRate, rating, reviewsNumber} = {} )
-
-  if images === undefined
-    - images = []
-
-  if roomNumber === undefined
-    - roomNumber = 1
-
-  if roomRate === undefined
-    - roomRate = 10000
-
-  if rating === undefined
-    - rating = 5
-
-  if reviewsNumber === undefined
-    - reviewsNumber = 0
-
+mixin room-card({ images, roomNumber = 1, lux, roomRate = 10000, rating = 5, reviewsNumber = 0 } = {})
   - roomImageClass = 'room-card__slider-list-item'
 
   .room-card
@@ -28,20 +12,24 @@ mixin room-card( {images, roomNumber, lux, roomRate, rating, reviewsNumber} = {}
             - transparent = 'not-transparent'
           <li class="room-card__slider-list-item room-card__slider-list-item_!{transparent}"><img class='room-card__slider-image' src=!{img} alt="room-image"></li>
       </ul>
+
       button.room-card__arrow-button.room-card__arrow-button_prev(
         type='button'
       )
         i.material-icons keyboard_arrow_left
+
       button.room-card__arrow-button.room-card__arrow-button_next(
         type='button'
       )
         i.material-icons keyboard_arrow_right
+
       .room-card__dots-section
         each img, index in images
           if index == 0
             .room-card__dot.room-card__dot_active
           else
             .room-card__dot.room-card__dot_inactive
+
     .room-card__room-info
       .room-card__number-section
         .room-card__room-number
@@ -49,9 +37,11 @@ mixin room-card( {images, roomNumber, lux, roomRate, rating, reviewsNumber} = {}
           |  #[span.room-card__number.room-card__number_size_l !{roomNumber}]
           if lux
             |  #[span.room-card__lux ЛЮКС]
+
         .room-card__room-rate 
           span.room-card__accented-text !{roomRate.toLocaleString('ru-RU')}&#8381
           span  в сутки
+          
       .room-card__separator
       .room-card__rating-section
         +rate-button({rate: rating})

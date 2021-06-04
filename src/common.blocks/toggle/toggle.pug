@@ -1,12 +1,6 @@
-mixin toggle( {name, id, text} = {} )
-  if name === undefined 
-    - name = 'toggle'
-
+mixin toggle({ name = 'toggle', id, text = 'Получать спецпредложения' } = {})
   if id === undefined 
     - id = 'toggle' + Math.random() * (9999 - 0) + 0
-
-  if text === undefined 
-    - text = 'Получать спецпредложения'
 
   .toggle
     input.toggle__checkbox(type="checkbox", name=name, id=id)

@@ -1,10 +1,7 @@
-mixin like-button( {checked, likesCount} = {} )
-  if likesCount === undefined
-    - likesCount = 0
-
-
+mixin like-button({ checked, likesCount = 0 } = {})
   - let checkedClass = 'like-button_unchecked';
   - let icon = 'favorite_border';
+  
   if checked
     - checkedClass = 'like-button_checked';
     - icon = 'favorite';

@@ -3,11 +3,7 @@ include ../radio-button/radio-button.pug
 include ../button/button.pug
 include ../toggle/toggle.pug
 
-mixin registration-card( {title, textFieldName, textFieldSurname, radioButton, textFieldBirth, textFieldEmail, textFieldPassword, toggle, buttonPayment, loginLabel, buttonEntry} = {} )
-  
-  if title === undefined 
-    - title = 'Регистрация'
-
+mixin registration-card({ title = 'Регистрация', textFieldName, textFieldSurname, radioButton, textFieldBirth, textFieldEmail, textFieldPassword, toggle, buttonPayment, loginLabel = 'Уже есть аккаунт на Toxin', buttonEntry} = {})
   if textFieldName === undefined 
     - textFieldName = { 'placeholderText': 'Имя', 'type': 'text' }
 
@@ -15,25 +11,22 @@ mixin registration-card( {title, textFieldName, textFieldSurname, radioButton, t
     - textFieldSurname = { 'placeholderText': 'Фамилия', 'type': 'text' }
 
   if radioButton === undefined 
-    - radioButton = {'buttons': [{'id': 'radioMale', 'name': 'radioGender', 'value': 'male', 'text': 'Мужчина', 'checked': true}, {'id': 'radioFemale', 'name': 'radioGender',' value': 'female', 'text': 'Женщина'}]}
+    - radioButton = { 'buttons': [{ 'id': 'radioMale', 'name': 'radioGender', 'value': 'male', 'text': 'Мужчина', 'checked': true }, { 'id': 'radioFemale', 'name': 'radioGender',' value': 'female', 'text': 'Женщина' }]}
 
   if textFieldBirth === undefined 
-    - textFieldBirth = {'placeholderText': 'ДД.ММ.ГГГГ', 'masked': true, 'title': 'Дата рождения', 'type': 'text'}
+    - textFieldBirth = { 'placeholderText': 'ДД.ММ.ГГГГ', 'masked': true, 'title': 'Дата рождения', 'type': 'text' }
 
   if textFieldEmail === undefined 
-    - textFieldEmail = {'placeholderText': 'Email', 'title': 'Данные для входа в сервис', 'type': 'email'}
+    - textFieldEmail = { 'placeholderText': 'Email', 'title': 'Данные для входа в сервис', 'type': 'email' }
 
   if textFieldPassword === undefined 
-    - textFieldPassword = {'placeholderText': 'Пароль', 'type': 'password'}
+    - textFieldPassword = { 'placeholderText': 'Пароль', 'type': 'password' }
 
   if toggle === undefined 
-    - toggle = {'text': 'Получать спецпредложения', 'name': 'toggleSpecialOffers', 'id': 'toggleSpecialOffers'}
+    - toggle = { 'text': 'Получать спецпредложения', 'name': 'toggleSpecialOffers', 'id': 'toggleSpecialOffers' }
 
   if buttonPayment === undefined 
     - buttonPayment = { 'type': 'arrow', 'text': 'перейти к оплате' }
-
-  if loginLabel === undefined 
-    - loginLabel = 'Уже есть аккаунт на Toxin'
 
   if buttonEntry === undefined 
     - buttonEntry = { 'type': 'border', 'text': 'войти' }
@@ -41,12 +34,14 @@ mixin registration-card( {title, textFieldName, textFieldSurname, radioButton, t
   .registration-card
     form
       h1.registration-card__title !{title}
+
       .registration-card__person
         .registration-card__text-field-wrapper
           +text-field(textFieldName)
         .registration-card__text-field-wrapper
           +text-field(textFieldSurname)
         +radio-button(radioButton)
+
       +text-field(textFieldBirth)
       .registration-card__login-details
         .registration-card__text-field-wrapper
@@ -54,6 +49,7 @@ mixin registration-card( {title, textFieldName, textFieldSurname, radioButton, t
         .registration-card__text-field-wrapper
           +text-field(textFieldPassword)
         +toggle(toggle)
+        
       +button(buttonPayment)
       .registration-card__account-login
         .registration-card__login-label !{loginLabel}

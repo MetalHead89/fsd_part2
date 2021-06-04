@@ -2,7 +2,7 @@ include ../button/button.pug
 include ../calendar/calendar.pug
 include ../text-field/text-field.pug
 
-mixin dropdown( {type, id, startDate, endDate, title} = {} )
+mixin dropdown({ type, id, startDate, endDate, title } = {})
   - let options = [];
   - let buttons = false;
   - let dropdownClass = 'dropdown';
@@ -14,10 +14,10 @@ mixin dropdown( {type, id, startDate, endDate, title} = {} )
   if id === undefined
     - id = 'dropdown' + Math.random() * (9999 - 0) + 0
 
-  if startDate === undefined
+  if type === 'date' && startDate === undefined
     - startDate = dateObject
 
-  if endDate === undefined
+  if type === 'date' && endDate === undefined
     - endDate = dateObject
 
   if type === 'comfort'
@@ -45,6 +45,7 @@ mixin dropdown( {type, id, startDate, endDate, title} = {} )
 
   div(class=dropdownClass)
     input.dropdown__check(type="checkbox", id=id)
+    
     if type != 'date'
       h3.dropdown__title !{title}
       label(for=id, class=headerClass)

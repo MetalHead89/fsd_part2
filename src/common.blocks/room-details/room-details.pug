@@ -1,14 +1,4 @@
-mixin room-details( {icon, title, description} = {} )
-
-  if icon === undefined 
-    - icon = ''
-
-  if title === undefined 
-    - title = 'Комфорт'
-
-  if description === undefined 
-    - description = ''
-
+mixin room-details({ icon = '', title = 'Комфорт', description = '' } = {})
   .room-details
     i.material-icons.room-details__icon !{icon}
     .room-details__text

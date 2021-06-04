@@ -1,42 +1,23 @@
-mixin range-slider( {title, min1, max1, value1, min2, max2, value2} = {} )
-
-  if title === undefined
-    - title = 'RANGE SLIDER'
-
-  if min1 === undefined
-    - min1 = 0
-
-  if max1 === undefined
-    - max1 = 15000
-
-  if value1 === undefined
-    - value1 = 5000
-
-  if min2 === undefined
-    - min2 = 0
-
-  if max2 === undefined
-    - max2 = 15000
-
-  if value2 === undefined
-    - value2 = 10000
-
+mixin range-slider({ title = 'RANGE SLIDER', min1 = 0, max1 = 15000, value1 = 5000, min2 = 0, max2 = 15000, value2 = 1000 } = {})
   .range-slider
     .range-slider__header-section
       h3.range-slider__title !{title}
       .range-slider__range-label
+
     input.range-slider__input.range-slider__input_left(
       type="range",
       min=min1,
       max=max1,
       value=value1
     )
+
     input.range-slider__input.range-slider__input_right(
       type="range",
       min=min2,
       max=max2,
       value=value2
     )
+    
     .range-slider__slider
       .range-slider__track
       .range-slider__range
