@@ -220,6 +220,10 @@ $dropdown: '.dropdown';
   &__start-date-input,
   &__end-date-input {
     position: relative;
+
+    & .text-field__field {
+      cursor: pointer;
+    }
   }
 
   &__date-arrow {
