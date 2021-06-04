@@ -39,6 +39,10 @@
     },
     "buttonPayment": { "type": "arrow", "text": "перейти к оплате" },
     "loginLabel": "Уже есть аккаунт на Toxin",
-    "buttonEntry": { "type": "border", "text": "войти" }
+    "buttonEntry": {
+      "type": "border",
+      "text": "войти",
+      "theme": "horizontalPaddingsL"
+    }
   }
 }

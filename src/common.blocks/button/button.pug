@@ -14,6 +14,10 @@ mixin button({ type, text = 'click me', disabled = false, theme } = {})
     - button_class += ' button_paddings_l';
   if theme === 'paddingsS'
     - button_class += ' button_paddings_s';
+  if theme === 'horizontalPaddingsL'
+    - button_class += ' button_horizontal-paddings-size_l';
+  if theme === 'horizontalPaddingsS'
+    - button_class += ' button_horizontal-paddings-size_s';
 
   button(type="button", value=text, disabled=disabled, class=button_class) !{text}
     if type == 'arrow'

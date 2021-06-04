@@ -251,7 +251,11 @@
     },
     "buttonPayment": { "type": "arrow", "text": "перейти к оплате" },
     "loginLabel": "Уже есть аккаунт на Toxin",
-    "buttonEntry": { "type": "border", "text": "войти" }
+    "buttonEntry": {
+      "type": "border",
+      "text": "войти",
+      "theme": "horizontalPaddingsL"
+    }
   },
   "roomRateCard": {
     "roomNumber": 888,
@@ -286,9 +290,16 @@
     "title": "Войти",
     "textFieldEmail": { "placeholderText": "Email", "type": "email" },
     "textFieldPassword": { "placeholderText": "Пароль", "type": "password" },
-    "buttonEntry": { "type": "arrow", "text": "войти" },
+    "buttonEntry": {
+      "type": "arrow",
+      "text": "войти"
+    },
     "accountSectionLabel": "Нет аккаунта на Toxin?",
-    "buttonCreateAccount": { "type": "border", "text": "создать" }
+    "buttonCreateAccount": {
+      "type": "border",
+      "text": "создать",
+      "theme": "horizontalPaddingsS"
+    }
   },
   "roomCards": [
     {
