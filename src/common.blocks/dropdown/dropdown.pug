@@ -84,5 +84,10 @@ mixin dropdown({ type, id, startDate, endDate, title } = {})
             .dropdown__button-apply
               +button({type: 'onlyText', text: 'применить'})
     else
-      .dropdown__drop-menu.dropdown__drop-menu_separate-from-dropdown
-        +calendar({theme: calendarTheme})
+      - let dropMenuClass = 'dropdown__drop-menu'
+
+      if type === 'date'
+        - dropMenuClass += ' dropdown__drop-menu_separate-from-dropdown'
+      
+      div(class=dropMenuClass)
+        +calendar({ theme: calendarTheme })
