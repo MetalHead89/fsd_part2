@@ -34,7 +34,7 @@ mixin calendar({ theme } = {})
               - dayNumber = 1;
               - isPrevMonth = false;
               - calendarDayClass = 'calendar__day';
-            if dayNumber == currentDay
+            if dayNumber === currentDay
               - calendarDayClass = 'calendar__day calendar__day_current';
             if !isPrevMonth && dayNumber > maxDaysCount
               - dayNumber = 1;
@@ -42,7 +42,7 @@ mixin calendar({ theme } = {})
 
             span(class=calendarDayClass) !{dayNumber}
 
-            if dayNumber == currentDay
+            if dayNumber === currentDay
               - calendarDayClass = 'calendar__day';
 
             - dayNumber += 1;

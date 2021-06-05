@@ -7,9 +7,7 @@ mixin room-card({ images, roomNumber = 1, lux, roomRate = 10000, rating = 5, rev
     .room-card__slider-section
       <ul class="room-card__slider-list">
         each img, index in images
-          - let transparent = 'transparent'
-          if index !== 0
-            - transparent = 'not-transparent'
+          - let transparent = index !== 0 ? 'not-transparent' :'transparent'
           <li class="room-card__slider-list-item room-card__slider-list-item_!{transparent}"><img class='room-card__slider-image' src=!{img} alt="room-image"></li>
       </ul>
 
