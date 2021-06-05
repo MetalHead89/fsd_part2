@@ -19,8 +19,8 @@
     "value2": 10000
   },
   "rulesCheckboxes": [
-    { "label": "Можно курить", "id": "noSmoking" },
-    { "label": "Можно с питомцами", "id": "pets", "checked": true },
+    { "label": "Можно курить" },
+    { "label": "Можно с питомцами", "checked": true },
     {
       "label": "Можно пригласить гостей (до&nbsp10&nbspчеловек)",
       "id": "guests",
@@ -30,14 +30,12 @@
   "availabilityCheckboxes": [
     {
       "label": "Широкий коридор",
-      "id": "wideCorridor",
       "checked": false,
       "rich": true,
       "text": "Ширина коридоров в номере не&nbsp;менее 91 см."
     },
     {
       "label": "Помощник для инвалидов",
-      "id": "disabledAssistant",
       "checked": false,
       "rich": true,
       "text": "На 1 этаже вас встретит специалист и&nbsp;проводит до номера."
@@ -50,12 +48,12 @@
   },
   "expandableCheckboxList": {
     "checkboxes": [
-      { "label": "Завтрак", "id": "breakfast" },
-      { "label": "Письменный стол", "id": "desk", "checked": true },
-      { "label": "Стул для кормления", "id": "feedingChair", "checked": true },
-      { "label": "Кроватка", "id": "crib", "checked": true },
-      { "label": "Телевизор", "id": "tv" },
-      { "label": "Шампунь", "id": "shampoo" }
+      { "label": "Завтрак" },
+      { "label": "Письменный стол", "checked": true },
+      { "label": "Стул для кормления", "checked": true },
+      { "label": "Кроватка", "checked": true },
+      { "label": "Телевизор" },
+      { "label": "Шампунь" }
     ],
     "title": "дополнительные удобства",
     "id": "expandable- checkbox-list"

@@ -10,35 +10,20 @@ $checkbox-button: '.checkbox-button';
   &_type_rich {
     box-sizing: border-box;
     width: 100%;
+
+    #{$checkbox-button}__label {
+      width: 100%;
+      font-weight: bold;
+      color: rgba(31, 32, 65, 0.75);
+
+      &:hover {
+        color: #1f2041;
+      }
+    }
   }
 
   &__checkbox-element {
-    display: none;
-
-    &:checked + #{$checkbox-button}__label {
-      &:before {
-        border-color: #bc9cff;
-      }
-
-      &:after {
-        transform: rotate(45deg) scale(1);
-        animation: checkbox-jump 0.2s ease;
-      }
-    }
-  }
-
-  &__label {
-    color: rgba(31, 32, 65, 0.5);
-    transition: color 0.5s ease;
-    cursor: pointer;
-
-    &:hover {
-      color: rgba(31, 32, 65, 0.75);
-
-      &:before {
-        border-color: #bc9cff;
-      }
-    }
+    appearance: none;
 
     &:before {
       content: '';
@@ -67,13 +52,28 @@ $checkbox-button: '.checkbox-button';
       border-image-slice: 1;
     }
 
-    &_type_rich {
-      width: 100%;
-      font-weight: bold;
+    &:checked {
+      &:before {
+        border-color: #bc9cff;
+      }
+
+      &:after {
+        transform: rotate(45deg) scale(1);
+        animation: checkbox-jump 0.2s ease;
+      }
+    }
+  }
+
+  &__label {
+    color: rgba(31, 32, 65, 0.5);
+    transition: color 0.5s ease;
+    cursor: pointer;
+
+    &:hover #{$checkbox-button}__checkbox-element {
       color: rgba(31, 32, 65, 0.75);
 
-      &:hover {
-        color: #1f2041;
+      &:before {
+        border-color: #bc9cff;
       }
     }
   }

@@ -1,21 +1,12 @@
-mixin checkbox-button({ rich, checked, id, label = 'option', text } = {})
-  - let additionalClass = '';
-  - let checkboxClass = 'checkbox-button';
-  - let labelClass = 'checkbox-button__label';
-
-  if id === undefined
-    - id = 'checkbox' + Math.random() * (9999 - 0) + 0
-
-  if rich
-    - checkboxClass += ' checkbox-button_type_rich';
-    - labelClass += ' checkbox-button__label_type_rich';
+mixin checkbox-button({ rich, checked, label = 'option', text } = {})
+  - let checkboxClass = rich ? 'checkbox-button checkbox-button_type_rich' : 'checkbox-button';
 
   div(class=checkboxClass)
-    input.checkbox-button__checkbox-element(
-      type="checkbox",
-      checked=checked,
-      id=id
-    )
-    label(class=labelClass, for=id) !{label}
+    label.checkbox-button__label !{label}
+      input.checkbox-button__checkbox-element(
+        type="checkbox",
+        checked=checked,
+      )
+      
     if rich
       .checkbox-button__text !{text}
