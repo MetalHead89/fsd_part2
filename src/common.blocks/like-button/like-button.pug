@@ -7,5 +7,5 @@ mixin like-button({ checked, likesCount = 0 } = {})
     - icon = 'favorite';
 
   div(class='like-button ' + checkedClass)
-    i.material-icons.like-button__heart !{icon}
+    i.like-button__heart !{icon}
     .like-button__like-counter !{likesCount}

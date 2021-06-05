@@ -1,3 +1,5 @@
+@import '../../scss/mixins';
+
 .room-details {
   width: 100%;
   max-width: 280px;
@@ -8,6 +10,8 @@
   align-items: center;
 
   &__icon {
+    @include material-icon;
+
     font-size: 48px;
     background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     background-clip: text;

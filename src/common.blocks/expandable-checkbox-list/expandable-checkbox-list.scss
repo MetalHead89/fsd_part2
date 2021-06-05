@@ -23,6 +23,8 @@ $expandable-checkbox-list: '.expandable-checkbox-list';
   }
 
   &__expand-more {
+    @include material-icon;
+
     color: rgba(31, 32, 65, 0.5);
     transition: 0.5s ease;
     user-select: none;

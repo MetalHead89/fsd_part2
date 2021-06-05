@@ -1,4 +1,5 @@
 @import '../../scss/animations';
+@import '../../scss/mixins';
 
 $like-button: '.like-button';
 
@@ -64,6 +65,8 @@ $like-button: '.like-button';
   }
 
   &__heart {
+    @include material-icon;
+
     font-size: 0.71rem;
   }
 

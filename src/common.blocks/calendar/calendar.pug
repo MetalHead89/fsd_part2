@@ -16,9 +16,9 @@ mixin calendar({ theme } = {})
 
   div(class=calendarStyle)
     .calendar__month-selection-section
-      i.material-icons.calendar__month-button.calendar__month-button_with-back-arrow arrow_back
+      i.calendar__month-button.calendar__month-button_with-back-arrow arrow_back
       span.calendar__month-name Сентябрь 1989
-      i.material-icons.calendar__month-button.calendar__month-button_with-forward-arrow arrow_forward
+      i.calendar__month-button.calendar__month-button_with-forward-arrow arrow_forward
     .calendar__days-section
       .calendar__names-of-week-days-section
         each day in ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']

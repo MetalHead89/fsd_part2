@@ -16,12 +16,12 @@ mixin room-card({ images, roomNumber = 1, lux, roomRate = 10000, rating = 5, rev
       button.room-card__arrow-button.room-card__arrow-button_prev(
         type='button'
       )
-        i.material-icons keyboard_arrow_left
+        i.room-card__arrow keyboard_arrow_left
 
       button.room-card__arrow-button.room-card__arrow-button_next(
         type='button'
       )
-        i.material-icons keyboard_arrow_right
+        i.room-card__arrow keyboard_arrow_right
 
       .room-card__dots-section
         each img, index in images

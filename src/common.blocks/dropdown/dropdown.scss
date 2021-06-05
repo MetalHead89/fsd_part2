@@ -108,6 +108,8 @@ $dropdown: '.dropdown';
   }
 
   &__expand-more {
+    @include material-icon;
+
     color: rgba(31, 32, 65, 0.5);
     pointer-events: none;
     display: inline-block;
@@ -227,6 +229,8 @@ $dropdown: '.dropdown';
   }
 
   &__date-arrow {
+    @include material-icon;
+
     position: absolute;
     top: 50%;
     right: 10px;

@@ -125,7 +125,7 @@ html(lang="ru")
             .form-elements__block-wrapper
               h3.form-elements__block-title.form-elements__block-title_big-vertical-margins Pagination
               +pagination(config.pagination)
-            .form-elements__block-wrapper.form-elements__block-wrapper__bullet-list
+            .form-elements__block-wrapper
               h3.form-elements__block-title bullet list
               +bullet-list(config.bulletList)
         section.form-elements__two-column-section
@@ -141,17 +141,17 @@ html(lang="ru")
     section.section
       h1.section__title Cards
       .cards
-        .cards__column.cards__column-one
+        .cards__column.cards_first-column
           .cards__block-wrapper
             +search-room-card(config.searchRoomCard)
           .cards__block-wrapper
             +registration-card(config.registrationCard)
-        .cards__column.cards__column-two
+        .cards__column.cards_second-column
           .cards__block-wrapper
             +room-rate-card(config.roomRateCard)
           .cards__block-wrapper
             +entry-card(config.entryCard)
-        .cards__column.cards__column-three
+        .cards__column.cards_third-column
           .cards__block-wrapper.cards__block-wrapper_width_s
             +calendar
           .cards__column_width_s

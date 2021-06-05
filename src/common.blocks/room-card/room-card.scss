@@ -1,3 +1,5 @@
+@import '../../scss/mixins';
+
 $room-card: '.room-card';
 
 #{$room-card} {
@@ -55,6 +57,10 @@ $room-card: '.room-card';
         rgba(255, 255, 255, 0) 100%
       );
     }
+  }
+
+  &__arrow {
+    @include material-icon;
   }
 
   &__dot {

@@ -239,15 +239,15 @@
     }
   }
 
-  &__column-one {
+  &_first-column {
     grid-area: one;
   }
 
-  &__column-two {
+  &_second-column {
     grid-area: two;
   }
 
-  &__column-three {
+  &_third-column {
     grid-area: three;
 
     @media screen and (max-width: 1000px) {

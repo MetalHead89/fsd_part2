@@ -1,3 +1,5 @@
+@import '../../scss/mixins';
+
 .pagination {
   width: 100%;
   display: inline-flex;
@@ -5,6 +7,8 @@
   user-select: none;
 
   &__arrow {
+    @include material-icon;
+
     font-size: 1.71rem;
     color: white;
   }

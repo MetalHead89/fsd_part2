@@ -46,23 +46,23 @@ mixin dropdown({ type, id, startDate, endDate, title } = {})
   div(class=dropdownClass)
     input.dropdown__check(type="checkbox", id=id)
     
-    if type != 'date'
+    if type !== 'date'
       h3.dropdown__title !{title}
       label(for=id, class=headerClass)
         .dropdown__header-text !{headerText}
-        i.material-icons.dropdown__expand-more keyboard_arrow_down
+        i.dropdown__expand-more keyboard_arrow_down
     else
       .dropdown__date-section
         .dropdown__date-block.dropdown__date-block_right-padding
           h3.dropdown__title !{startDate.title}
           div(for=id, class='dropdown__start-date-input')
             +text-field(startDate.input)
-            i.material-icons.dropdown__date-arrow keyboard_arrow_down
+            i.dropdown__date-arrow keyboard_arrow_down
         .dropdown__date-block.dropdown__date-block_left-padding
           h3.dropdown__title !{endDate.title}
           div(for=id, class='dropdown__end-date-input')
             +text-field(endDate.input)
-            i.material-icons.dropdown__date-arrow keyboard_arrow_down
+            i.dropdown__date-arrow keyboard_arrow_down
 
     if type === 'guests' || type === 'comfort'
       .dropdown__drop-menu.dropdown__drop-menu_with-border

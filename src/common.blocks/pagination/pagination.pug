@@ -13,10 +13,10 @@ mixin pagination({ numberOfPages = 1, activePage = 1 } = {})
 
   nav.pagination
     ul.pagination__pages
-      if activePage != 1
+      if activePage !== 1
         li.pagination__button.pagination__button_with-arrow.pagination__button_with-prev-arrow
           a.pagination__link(href="#")
-            i.material-icons.pagination__arrow arrow_back
+            i.pagination__arrow arrow_back
 
       while current_page <= numberOfPages
         if current_page < activePage && activePage - current_page > 2 && current_page > 1 && activePage > 5
@@ -43,6 +43,6 @@ mixin pagination({ numberOfPages = 1, activePage = 1 } = {})
       if activePage != numberOfPages
         li.pagination__button.pagination__button_with-arrow.pagination__button_with-next-arrow
           a.pagination__link(href="#")
-            i.material-icons.pagination__arrow arrow_forward
+            i.pagination__arrow arrow_forward
 
     span.pagination__signature.pagination__signature_with-top-margin !{startHotelRoomOnPage} – !{endHotelRoomOnPage} из !{hotelRoomsTotal} вариантов аренды

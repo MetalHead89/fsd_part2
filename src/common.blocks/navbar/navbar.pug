@@ -16,7 +16,7 @@ mixin navbar({ type = 'horizontal', items } = {})
           li(class=navbarItemClass)
             div(class=dropdownTitleClass)
               span !{item.title}
-              i.material-icons.navbar__expand-more-button expand_more
+              i.navbar__expand-more-button expand_more
             ul(class=navbarHiddenListClass)
               each hiddenItem in item.items
                 li(class=navbarHiddenListItemClass) !{hiddenItem}
