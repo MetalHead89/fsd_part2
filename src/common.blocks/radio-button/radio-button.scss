@@ -33,6 +33,7 @@ $radio-button: '.radio-button';
 
   &__radio-element {
     appearance: none;
+    cursor: pointer;
 
     &:before {
       content: '';

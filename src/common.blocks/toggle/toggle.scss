@@ -3,6 +3,7 @@ $toggle: '.toggle';
 #{$toggle} {
   &__checkbox {
     appearance: none;
+    cursor: pointer;
 
     &:before {
       position: absolute;

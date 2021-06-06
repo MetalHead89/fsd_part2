@@ -15,15 +15,12 @@ $checkbox-button: '.checkbox-button';
       width: 100%;
       font-weight: bold;
       color: rgba(31, 32, 65, 0.75);
-
-      &:hover {
-        color: #1f2041;
-      }
     }
   }
 
   &__checkbox-element {
     appearance: none;
+    cursor: pointer;
 
     &:before {
       content: '';
@@ -68,10 +65,12 @@ $checkbox-button: '.checkbox-button';
     color: rgba(31, 32, 65, 0.5);
     transition: color 0.5s ease;
     cursor: pointer;
+    
+    &:hover {
+      color: #1f2041;
+    }
 
     &:hover #{$checkbox-button}__checkbox-element {
-      color: rgba(31, 32, 65, 0.75);
-
       &:before {
         border-color: #bc9cff;
       }
