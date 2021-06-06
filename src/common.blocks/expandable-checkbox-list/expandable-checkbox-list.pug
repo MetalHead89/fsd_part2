@@ -1,17 +1,14 @@
 include ../checkbox-button/checkbox-button.pug
 
-mixin expandable-checkbox-list({ id = 'check-list', title, checkboxes } = {})
-
-  if id === undefined
-    - id = 'check-list' + Math.random() * (9999 - 0) + 0
+mixin expandable-checkbox-list({ title, checkboxes } = {})
 
   .expandable-checkbox-list
-    input.expandable-checkbox-list__check(type="checkbox", id=id)
-    label.expandable-checkbox-list__title-section(for=id)
-      h3.expandable-checkbox-list__title !{title}
-      i.expandable-checkbox-list__expand-more keyboard_arrow_down
-      
-    .expandable-checkbox-list__hide-list    
-      each checkbox in checkboxes
-        .expandable-checkbox-list__checkbox-container
-          +checkbox-button(checkbox)
+    label
+      input.expandable-checkbox-list__check(type="checkbox")
+      .expandable-checkbox-list__title-section
+        h3.expandable-checkbox-list__title !{title}
+        i.expandable-checkbox-list__expand-more keyboard_arrow_down
+      .expandable-checkbox-list__hide-list    
+        each checkbox in checkboxes
+          .expandable-checkbox-list__checkbox-container
+            +checkbox-button(checkbox)

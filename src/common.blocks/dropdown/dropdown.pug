@@ -2,7 +2,7 @@ include ../button/button.pug
 include ../calendar/calendar.pug
 include ../text-field/text-field.pug
 
-mixin dropdown({ type, id, startDate, endDate, title } = {})
+mixin dropdown({ type, startDate, endDate, title } = {})
   - let options = [];
   - let buttons = false;
   - let dropdownClass = 'dropdown';
@@ -10,9 +10,6 @@ mixin dropdown({ type, id, startDate, endDate, title } = {})
   - let headerClass = '';
   - let calendarTheme = '';
   - let dateObject = {'title': 'date Dropdown', 'input': {'placeholderText': 'ДД.ММ.ГГГГ', 'masked': true, 'type': 'text'}}
-  
-  if id === undefined
-    - id = 'dropdown' + Math.random() * (9999 - 0) + 0
 
   if type === 'date' && startDate === undefined
     - startDate = dateObject
@@ -44,23 +41,23 @@ mixin dropdown({ type, id, startDate, endDate, title } = {})
     - headerClass = 'dropdown__header dropdown__header_all-angles-are-round';
 
   div(class=dropdownClass)
-    input.dropdown__check(type="checkbox", id=id)
+    input.dropdown__check(type="checkbox")
     
     if type !== 'date'
       h3.dropdown__title !{title}
-      label(for=id, class=headerClass)
+      label(class=headerClass)
         .dropdown__header-text !{headerText}
         i.dropdown__expand-more keyboard_arrow_down
     else
       .dropdown__date-section
         .dropdown__date-block.dropdown__date-block_right-padding
           h3.dropdown__title !{startDate.title}
-          div(for=id, class='dropdown__start-date-input')
+          div(class='dropdown__start-date-input')
             +text-field(startDate.input)
             i.dropdown__date-arrow keyboard_arrow_down
         .dropdown__date-block.dropdown__date-block_left-padding
           h3.dropdown__title !{endDate.title}
-          div(for=id, class='dropdown__end-date-input')
+          div(class='dropdown__end-date-input')
             +text-field(endDate.input)
             i.dropdown__date-arrow keyboard_arrow_down
 

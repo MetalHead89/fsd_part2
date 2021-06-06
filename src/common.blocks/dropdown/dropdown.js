@@ -328,6 +328,11 @@ function inputDateIsFocused() {
   this.dropCheck.checked = true;
 }
 
+function clickToHeader() {
+  closeOpenDropdowns.bind(this)();
+  this.dropCheck.checked = !this.dropCheck.checked;
+}
+
 for (
   let dropdownIndex = 0;
   dropdownIndex < dropdowns.length;
@@ -378,12 +383,20 @@ for (
 
   dropdownObject.dropMenu.onmouseout = autoCloseDropdown.bind(dropdownObject);
   dropdownObject.dropMenu.onmouseover = resetCloseTimer.bind(dropdownObject);
+
   if (dropdownObject.dropdownType === 'date') {
     dropdownObject.dropdownStartDay.onfocus = inputDateIsFocused.bind(
       dropdownObject
     );
     dropdownObject.dropdownEndDay.onfocus = inputDateIsFocused.bind(
       dropdownObject
+    );
+  }
+
+  if (dropdownObject.dropdownHeader) {
+    dropdownObject.dropdownHeader.addEventListener(
+      'click',
+      clickToHeader.bind(dropdownObject)
     );
   }
 }

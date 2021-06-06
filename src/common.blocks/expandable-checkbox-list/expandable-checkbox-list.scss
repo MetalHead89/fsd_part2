@@ -31,6 +31,7 @@ $expandable-checkbox-list: '.expandable-checkbox-list';
   }
 
   &__hide-list {
+    padding-top: 10px;
     flex: none;
     display: none;
   }

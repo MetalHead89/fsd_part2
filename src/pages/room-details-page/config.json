@@ -61,7 +61,6 @@
     "additionalServiceCost": 300,
     "dropdown1": {
       "type": "date",
-      "id": "roomRateDateDrop",
       "startDate": {
         "title": "прибытие",
         "input": {
@@ -81,7 +80,6 @@
     },
     "dropdown2": {
       "type": "guests",
-      "id": "roomRateDrop",
       "title": "гости"
     },
     "button": {

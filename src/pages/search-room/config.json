@@ -1,12 +1,10 @@
 {
   "filterDateDropdown": {
     "type": "filter_date",
-    "id": "search-room-filer-date",
     "title": "даты пребывания в отеле"
   },
   "guestsDropdown": {
     "type": "guests",
-    "id": "search-room-guests",
     "title": "гости"
   },
   "rangeSlider": {
@@ -43,7 +41,6 @@
   ],
   "comfortDropdown": {
     "type": "comfort",
-    "id": "search-room-comfort-drop",
     "title": "удобства номера"
   },
   "expandableCheckboxList": {
@@ -55,8 +52,7 @@
       { "label": "Телевизор" },
       { "label": "Шампунь" }
     ],
-    "title": "дополнительные удобства",
-    "id": "expandable- checkbox-list"
+    "title": "дополнительные удобства"
   },
   "roomCards": [
     {

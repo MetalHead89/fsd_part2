@@ -6,14 +6,12 @@
     "radioButton": {
       "buttons": [
         {
-          "id": "radioMale",
           "name": "radioGender",
           "value": "male",
           "text": "Мужчина",
           "checked": true
         },
         {
-          "id": "radioFemale",
           "name": "radioGender",
           "value": "female",
           "text": "Женщина"
@@ -34,8 +32,7 @@
     "textFieldPassword": { "placeholderText": "Пароль", "type": "password" },
     "toggle": {
       "text": "Получать спецпредложения",
-      "name": "toggleSpecialOffers",
-      "id": "toggleSpecialOffers"
+      "name": "toggleSpecialOffers"
     },
     "buttonPayment": { "type": "arrow", "text": "перейти к оплате" },
     "loginLabel": "Уже есть аккаунт на Toxin",

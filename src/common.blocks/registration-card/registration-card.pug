@@ -11,7 +11,7 @@ mixin registration-card({ title = 'Регистрация', textFieldName, textF
     - textFieldSurname = { 'placeholderText': 'Фамилия', 'type': 'text' }
 
   if radioButton === undefined 
-    - radioButton = { 'buttons': [{ 'id': 'radioMale', 'name': 'radioGender', 'value': 'male', 'text': 'Мужчина', 'checked': true }, { 'id': 'radioFemale', 'name': 'radioGender',' value': 'female', 'text': 'Женщина' }]}
+    - radioButton = { 'buttons': [{ 'name': 'radioGender', 'value': 'male', 'text': 'Мужчина', 'checked': true }, { 'name': 'radioGender',' value': 'female', 'text': 'Женщина' }]}
 
   if textFieldBirth === undefined 
     - textFieldBirth = { 'placeholderText': 'ДД.ММ.ГГГГ', 'masked': true, 'title': 'Дата рождения', 'type': 'text' }
@@ -23,7 +23,7 @@ mixin registration-card({ title = 'Регистрация', textFieldName, textF
     - textFieldPassword = { 'placeholderText': 'Пароль', 'type': 'password' }
 
   if toggle === undefined 
-    - toggle = { 'text': 'Получать спецпредложения', 'name': 'toggleSpecialOffers', 'id': 'toggleSpecialOffers' }
+    - toggle = { 'text': 'Получать спецпредложения', 'name': 'toggleSpecialOffers' }
 
   if buttonPayment === undefined 
     - buttonPayment = { 'type': 'arrow', 'text': 'перейти к оплате' }

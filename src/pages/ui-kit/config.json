@@ -38,7 +38,7 @@
     }
   ],
   "textField": { "placeholderText": "Email", "type": "email" },
-  "dropdown": { "type": "guests", "id": "uiDrop", "title": "dropdown" },
+  "dropdown": { "type": "guests", "title": "dropdown" },
   "maskedTextField": {
     "placeholderText": "ДД.ММ.ГГГГ",
     "masked": true,
@@ -46,7 +46,6 @@
   },
   "dateDropdown": {
     "type": "date",
-    "id": "uiDateDrop",
     "startDate": {
       "title": "date Dropdown",
       "input": {
@@ -66,7 +65,6 @@
   },
   "filterDateDropdown": {
     "type": "filter_date",
-    "id": "uiFilterDateDrop",
     "title": "filter date dropdown"
   },
   "subscriptionTextField": {
@@ -76,7 +74,6 @@
   },
   "comfortDropDown": {
     "type": "comfort",
-    "id": "uiComfortDrop",
     "title": "dropdown"
   },
   "expandableCheckboxList": {
@@ -88,8 +85,7 @@
       { "label": "Телевизор" },
       { "label": "Шампунь" }
     ],
-    "title": "expandable checkbox list",
-    "id": "expandable- checkbox-list"
+    "title": "expandable checkbox list"
   },
   "checkboxButtons": [
     { "label": "Можно курить" },
@@ -102,19 +98,17 @@
   "radioButton": {
     "buttons": [
       {
-        "id": "radio1",
         "name": "radio",
         "value": "male",
         "text": "Мужчина",
         "checked": true
       },
-      { "id": "radio2", "name": "radio", "value": "female", "text": "Женщина" }
+      { "name": "radio", "value": "female", "text": "Женщина" }
     ]
   },
   "toggle": {
     "text": "Получать спецпредложения",
-    "name": "specialOffers",
-    "id": "specialOffers"
+    "name": "specialOffers"
   },
   "likeButtons": [{ "likesCount": 2 }, { "likesCount": 12, "checked": true }],
   "rateButtons": [{ "rate": 4 }, { "rate": 5 }],
@@ -184,7 +178,6 @@
     "title": "Найдём номера под ваши пожелания",
     "dropdown1": {
       "type": "date",
-      "id": "searchRoomDateDrop",
       "startDate": {
         "title": "прибытие",
         "input": {
@@ -204,7 +197,6 @@
     },
     "dropdown2": {
       "type": "guests",
-      "id": "searchRoomGuestsDrop",
       "title": "гости"
     },
     "button": { "type": "arrow", "text": "подобрать номер" }
@@ -216,14 +208,12 @@
     "radioButton": {
       "buttons": [
         {
-          "id": "radioMale",
           "name": "radioGender",
           "value": "male",
           "text": "Мужчина",
           "checked": true
         },
         {
-          "id": "radioFemale",
           "name": "radioGender",
           "value": "female",
           "text": "Женщина"
@@ -244,8 +234,7 @@
     "textFieldPassword": { "placeholderText": "Пароль", "type": "password" },
     "toggle": {
       "text": "Получать спецпредложения",
-      "name": "toggleSpecialOffers",
-      "id": "toggleSpecialOffers"
+      "name": "toggleSpecialOffers"
     },
     "buttonPayment": { "type": "arrow", "text": "перейти к оплате" },
     "loginLabel": "Уже есть аккаунт на Toxin",
@@ -263,7 +252,6 @@
     "additionalServiceCost": 300,
     "dropdown1": {
       "type": "date",
-      "id": "roomRateDateDrop",
       "startDate": {
         "title": "прибытие",
         "input": {
@@ -281,7 +269,7 @@
         }
       }
     },
-    "dropdown2": { "type": "guests", "id": "roomRateDrop", "title": "гости" },
+    "dropdown2": { "type": "guests", "title": "гости" },
     "button": { "type": "arrow", "text": "забронировать" }
   },
   "entryCard": {

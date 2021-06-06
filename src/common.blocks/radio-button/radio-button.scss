@@ -25,10 +25,14 @@ $radio-button: '.radio-button';
     &:hover {
       color: rgba(31, 32, 65, 0.75);
 
-      &:before {
+      & #{$radio-button}__radio-element:before {
         border-color: #bc9cff;
       }
     }
+  }
+
+  &__radio-element {
+    appearance: none;
 
     &:before {
       content: '';
@@ -57,14 +61,8 @@ $radio-button: '.radio-button';
       border-radius: 50%;
       background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     }
-  }
 
-  &__radio-element {
-    display: none;
-
-    &:checked + #{$radio-button}__label {
-      color: rgba(31, 32, 65, 0.75);
-
+    &:checked {
       &:before {
         border-color: #bc9cff;
       }
