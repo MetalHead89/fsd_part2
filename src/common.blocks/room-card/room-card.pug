@@ -1,6 +1,6 @@
 include ../rate-button/rate-button.pug
 
-mixin room-card({ images, roomNumber = 1, lux, roomRate = 10000, rating = 5, reviewsNumber = 0 } = {})
+mixin room-card({ images, roomNumber = 1, isLux, roomRate = 10000, rating = 5, reviewsNumber = 0 } = {})
   - roomImageClass = 'room-card__slider-list-item'
 
   .room-card
@@ -33,7 +33,7 @@ mixin room-card({ images, roomNumber = 1, lux, roomRate = 10000, rating = 5, rev
         .room-card__room-number
           span.room-card__number №
           |  #[span.room-card__number.room-card__number_size_l !{roomNumber}]
-          if lux
+          if isLux
             |  #[span.room-card__lux ЛЮКС]
 
         .room-card__room-rate 

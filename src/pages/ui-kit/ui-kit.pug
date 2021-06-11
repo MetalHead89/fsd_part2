@@ -76,7 +76,7 @@ html(lang="ru")
               h3.form-elements__block-title Checkbox Buttons
               each checkboxButton in config.checkboxButtons
                 .form-elements__checkbox-container
-                  +checkbox-button({ label: checkboxButton.label, id: checkboxButton.id, checked: checkboxButton.checked })
+                  +checkbox-button({ label: checkboxButton.label, id: checkboxButton.id, isChecked: checkboxButton.isChecked })
             .form-elements__block-wrapper
               h3.form-elements__block-title Radio Buttons
               +radio-button(config.radioButton)
@@ -88,7 +88,7 @@ html(lang="ru")
               .form-elements__like-buttons-group
                 each likeButton in config.likeButtons
                   .form-elements__like-button-block
-                    +like-button({ likesCount: likeButton.likesCount, checked: likeButton.checked })
+                    +like-button({ likesCount: likeButton.likesCount, isChecked: likeButton.isChecked })
             .form-elements__block-wrapper
               h3.form-elements__block-title rate button
               .form-elements__rate-buttons-group
@@ -99,7 +99,7 @@ html(lang="ru")
               h3.form-elements__block-title RICH CHECKBOX BUTTONS
               each richCheckboxButton in config.richCheckboxButtons
                 .form-elements__checkbox-container
-                  +checkbox-button({ label: richCheckboxButton.label, id: richCheckboxButton.id, checked: richCheckboxButton.checked, rich: richCheckboxButton.rich, text: richCheckboxButton.text })
+                  +checkbox-button({ label: richCheckboxButton.label, id: richCheckboxButton.id, isChecked: richCheckboxButton.isChecked, isRich: richCheckboxButton.isRich, text: richCheckboxButton.text })
           .form-elements__column
             .form-elements__block-wrapper
               +range-slider(config.rangeSlider)
@@ -119,7 +119,7 @@ html(lang="ru")
                 .form-elements__only-text-buttons-group
                   each onlyTextButton in config.onlyTextButtons
                     .form-elements__only-text-button-block
-                      +button({ text: onlyTextButton.text, type: onlyTextButton.type, disabled: onlyTextButton.disabled })
+                      +button({ text: onlyTextButton.text, type: onlyTextButton.type, isDisabled: onlyTextButton.isDisabled })
               .form-elements__block-wrapper
                 +button(config.arrowButton)
             .form-elements__block-wrapper

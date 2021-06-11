@@ -1,4 +1,4 @@
-mixin button({ type, text = 'click me', disabled = false, theme } = {})
+mixin button({ type, text = 'click me', isDisabled = false, theme } = {})
   - let button_class = 'button';
 
   if type === 'border'
@@ -19,6 +19,6 @@ mixin button({ type, text = 'click me', disabled = false, theme } = {})
   else if theme === 'horizontalPaddingsS'
     - button_class += ' button_horizontal-paddings-size_s';
 
-  button(type="button", value=text, disabled=disabled, class=button_class) !{text}
+  button(type="button", value=text, disabled=isDisabled, class=button_class) !{text}
     if type == 'arrow'
       i.button__arrow arrow_forward

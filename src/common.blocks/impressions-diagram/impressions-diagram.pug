@@ -1,5 +1,5 @@
 mixin impressions-diagram({ magnificently = 0, good = 0, satisfactorily = 0, disappointed = 0 } = {})
-  - let diagramLegendItemClass = 'impressions-diagram__legend-item impressions-diagram__legend-item_color'
+  - let diagramLegendItemClass = 'impressions-diagram__legend-item impressions-diagram__legend-item_theme'
 
 
   .impressions-diagram
@@ -10,10 +10,10 @@ mixin impressions-diagram({ magnificently = 0, good = 0, satisfactorily = 0, dis
         .impressions-diagram__votes-text голосов
 
     .impressions-diagram__diagram-legend
-      div(class = diagramLegendItemClass + "_yellow") Великолепно
-      div(class = diagramLegendItemClass + "_green") Хорошо
-      div(class = diagramLegendItemClass + "_purple") Удовлетворительно
-      div(class = diagramLegendItemClass + "_brown") Разочарован
+      div(class = diagramLegendItemClass + "_magnificently") Великолепно
+      div(class = diagramLegendItemClass + "_good") Хорошо
+      div(class = diagramLegendItemClass + "_satisfactorily") Удовлетворительно
+      div(class = diagramLegendItemClass + "_disappointed") Разочарован
       
   script.
     document.cookie = 'magnificently=' + !{magnificently}

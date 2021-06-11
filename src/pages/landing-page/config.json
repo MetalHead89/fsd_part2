@@ -7,7 +7,7 @@
         "title": "прибытие",
         "input": {
           "placeholderText": "ДД.ММ.ГГГГ",
-          "masked": true,
+          "isMasked": true,
           "type": "text"
         }
       },
@@ -15,7 +15,7 @@
         "title": "выезд",
         "input": {
           "placeholderText": "ДД.ММ.ГГГГ",
-          "masked": true,
+          "isMasked": true,
           "type": "text"
         }
       }

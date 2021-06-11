@@ -37,20 +37,20 @@
       top: 7px;
     }
 
-    &_color {
-      &_brown:before {
+    &_theme {
+      &_disappointed:before {
         background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
       }
 
-      &_green:before {
+      &_good:before {
         background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
       }
 
-      &_purple:before {
+      &_satisfactorily:before {
         background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       }
 
-      &_yellow:before {
+      &_magnificently:before {
         background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
       }
     }

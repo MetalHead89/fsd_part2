@@ -78,7 +78,7 @@
             "textField": {
               "placeholderText": "Email",
               "type": "email",
-              "subscription": true
+              "isSubscription": true
             }
           }
         ]

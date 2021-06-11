@@ -1,7 +1,7 @@
 include ../dropdown/dropdown.pug
 include ../button/button.pug
 
-mixin room-rate-card({ roomNumber = 1, lux, roomRate = 10000, dropdown1, dropdown2, serviceCost = 0, additionalServiceCost = 0, button } = {})
+mixin room-rate-card({ roomNumber = 1, isLux, roomRate = 10000, dropdown1, dropdown2, serviceCost = 0, additionalServiceCost = 0, button } = {})
   if button === undefined
     - button = { 'type': 'arrow', 'text': 'забронировать' }
 
@@ -11,7 +11,7 @@ mixin room-rate-card({ roomNumber = 1, lux, roomRate = 10000, dropdown1, dropdow
         .room-rate-card__room-number
           .room-rate-card__number №&#32
           .room-rate-card__number.room-rate-card__number_size-l !{roomNumber}&#32
-          if lux
+          if isLux
             .room-rate-card__lux ЛЮКС
         .room-rate-card__price-per-day 
           .room-rate-card__cost !{roomRate.toLocaleString('ru-RU')}₽&#32

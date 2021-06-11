@@ -1,6 +1,6 @@
 include ../like-button/like-button.pug
 
-mixin guest-review({ days = 0, photo, name = 'Иванов Иван Иванович', likes = 0, checkedLike, review } = {})
+mixin guest-review({ days = 0, photo, name = 'Иванов Иван Иванович', likes = 0, isCheckedLike, review } = {})
   - let lastVisit = '';
 
   if days < 7
@@ -37,5 +37,5 @@ mixin guest-review({ days = 0, photo, name = 'Иванов Иван Иванов
         
     .guest-review__review
       .guest-review__likes
-        +like-button({likesCount: likes, checked: checkedLike})
+        +like-button({likesCount: likes, isChecked: isCheckedLike})
       .guest-review__review-text !{review}

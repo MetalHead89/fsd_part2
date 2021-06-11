@@ -1,12 +1,12 @@
-mixin checkbox-button({ rich, checked, label = 'option', text } = {})
-  - let checkboxClass = rich ? 'checkbox-button checkbox-button_type_rich' : 'checkbox-button';
+mixin checkbox-button({ isRich, isChecked, label = 'option', text } = {})
+  - let checkboxClass = isRich ? 'checkbox-button checkbox-button_type_rich' : 'checkbox-button';
 
   div(class=checkboxClass)
     label.checkbox-button__label !{label}
       input.checkbox-button__checkbox-element(
         type="checkbox",
-        checked=checked,
+        checked=isChecked,
       )
       
-    if rich
+    if isRich
       .checkbox-button__text !{text}

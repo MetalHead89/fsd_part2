@@ -9,7 +9,7 @@
           "name": "radioGender",
           "value": "male",
           "text": "Мужчина",
-          "checked": true
+          "isChecked": true
         },
         {
           "name": "radioGender",
@@ -21,7 +21,7 @@
     "textFieldBirth": {
       "placeholderText": "ДД.ММ.ГГГГ",
       "type": "text",
-      "masked": true,
+      "isMasked": true,
       "title": "Дата рождения"
     },
     "textFieldEmail": {

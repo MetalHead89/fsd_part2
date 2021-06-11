@@ -1,6 +1,6 @@
-mixin like-button({ checked, likesCount = 0 } = {})
-  - let checkedClass = checked ? 'like-button_checked' : 'like-button_unchecked';
-  - let icon = checked ? 'favorite' :'favorite_border';
+mixin like-button({ isChecked, likesCount = 0 } = {})
+  - let checkedClass = isChecked ? 'like-button_checked' : 'like-button_unchecked';
+  - let icon = isChecked ? 'favorite' :'favorite_border';
 
   div(class='like-button ' + checkedClass)
     i.like-button__heart !{icon}

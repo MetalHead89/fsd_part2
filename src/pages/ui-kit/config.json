@@ -41,7 +41,7 @@
   "dropdown": { "type": "guests", "title": "dropdown" },
   "maskedTextField": {
     "placeholderText": "ДД.ММ.ГГГГ",
-    "masked": true,
+    "isMasked": true,
     "type": "text"
   },
   "dateDropdown": {
@@ -50,7 +50,7 @@
       "title": "date Dropdown",
       "input": {
         "placeholderText": "ДД.ММ.ГГГГ",
-        "masked": true,
+        "isMasked": true,
         "type": "text"
       }
     },
@@ -58,7 +58,7 @@
       "title": "date Dropdown",
       "input": {
         "placeholderText": "ДД.ММ.ГГГГ",
-        "masked": true,
+        "isMasked": true,
         "type": "text"
       }
     }
@@ -69,7 +69,7 @@
   },
   "subscriptionTextField": {
     "placeholderText": "Email",
-    "subscription": true,
+    "isSubscription": true,
     "type": "email"
   },
   "comfortDropDown": {
@@ -79,9 +79,9 @@
   "expandableCheckboxList": {
     "checkboxes": [
       { "label": "Завтрак" },
-      { "label": "Письменный стол", "checked": true },
-      { "label": "Стул для кормления", "checked": true },
-      { "label": "Кроватка", "checked": true },
+      { "label": "Письменный стол", "isChecked": true },
+      { "label": "Стул для кормления", "isChecked": true },
+      { "label": "Кроватка", "isChecked": true },
       { "label": "Телевизор" },
       { "label": "Шампунь" }
     ],
@@ -89,10 +89,10 @@
   },
   "checkboxButtons": [
     { "label": "Можно курить" },
-    { "label": "Можно с питомцами", "checked": true },
+    { "label": "Можно с питомцами", "isChecked": true },
     {
       "label": "Можно пригласить гостей (до&nbsp10&nbspчеловек)",
-      "checked": true
+      "isChecked": true
     }
   ],
   "radioButton": {
@@ -101,7 +101,7 @@
         "name": "radio",
         "value": "male",
         "text": "Мужчина",
-        "checked": true
+        "isChecked": true
       },
       { "name": "radio", "value": "female", "text": "Женщина" }
     ]
@@ -110,20 +110,20 @@
     "text": "Получать спецпредложения",
     "name": "specialOffers"
   },
-  "likeButtons": [{ "likesCount": 2 }, { "likesCount": 12, "checked": true }],
+  "likeButtons": [{ "likesCount": 2 }, { "likesCount": 12, "isChecked": true }],
   "rateButtons": [{ "rate": 4 }, { "rate": 5 }],
   "richCheckboxButtons": [
     {
       "label": "Широкий коридор",
-      "checked": false,
-      "rich": true,
+      "isChecked": false,
+      "isRich": true,
       "text": "Ширина коридоров в номере не&nbsp;менее 91 см."
     },
     {
       "label": "Помощник для инвалидов",
       "id": "disabledAssistant",
-      "checked": false,
-      "rich": true,
+      "isChecked": false,
+      "isRich": true,
       "text": "На 1 этаже вас встретит специалист и&nbsp;проводит до номера."
     }
   ],
@@ -136,14 +136,14 @@
     "value1": 5000,
     "value2": 10000
   },
-  "buttons": [{ "text": "click me" }, { "text": "click me", "disabled": true }],
+  "buttons": [{ "text": "click me" }, { "text": "click me", "isDisabled": true }],
   "borderButtons": [
     { "text": "click me", "type": "border" },
-    { "text": "click me", "type": "border", "disabled": true }
+    { "text": "click me", "type": "border", "isDisabled": true }
   ],
   "onlyTextButtons": [
     { "text": "click me", "type": "onlyText" },
-    { "disabled": true, "text": "click me", "type": "onlyText" }
+    { "isDisabled": true, "text": "click me", "type": "onlyText" }
   ],
   "arrowButton": { "text": "перейти к оплате", "type": "arrow" },
   "pagination": { "numberOfPages": 15, "activePage": 1 },
@@ -171,7 +171,7 @@
     "name": "Мурад Сарафанов",
     "days": 5,
     "likes": 12,
-    "checkedLike": true,
+    "isCheckedLike": true,
     "review": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
   },
   "searchRoomCard": {
@@ -182,7 +182,7 @@
         "title": "прибытие",
         "input": {
           "placeholderText": "ДД.ММ.ГГГГ",
-          "masked": true,
+          "isMasked": true,
           "type": "text"
         }
       },
@@ -190,7 +190,7 @@
         "title": "выезд",
         "input": {
           "placeholderText": "ДД.ММ.ГГГГ",
-          "masked": true,
+          "isMasked": true,
           "type": "text"
         }
       }
@@ -211,7 +211,7 @@
           "name": "radioGender",
           "value": "male",
           "text": "Мужчина",
-          "checked": true
+          "isChecked": true
         },
         {
           "name": "radioGender",
@@ -222,7 +222,7 @@
     },
     "textFieldBirth": {
       "placeholderText": "ДД.ММ.ГГГГ",
-      "masked": true,
+      "isMasked": true,
       "title": "Дата рождения",
       "type": "text"
     },
@@ -246,7 +246,7 @@
   },
   "roomRateCard": {
     "roomNumber": 888,
-    "lux": true,
+    "isLux": true,
     "roomRate": 9990,
     "serviceCost": -2179,
     "additionalServiceCost": 300,
@@ -256,7 +256,7 @@
         "title": "прибытие",
         "input": {
           "placeholderText": "ДД.ММ.ГГГГ",
-          "masked": true,
+          "isMasked": true,
           "type": "text"
         }
       },
@@ -264,7 +264,7 @@
         "title": "выезд",
         "input": {
           "placeholderText": "ДД.ММ.ГГГГ",
-          "masked": true,
+          "isMasked": true,
           "type": "text"
         }
       }
@@ -290,7 +290,7 @@
   "roomCards": [
     {
       "roomNumber": 888,
-      "lux": true,
+      "isLux": true,
       "roomRate": 9990,
       "rating": 5,
       "reviewsNumber": 145,
@@ -303,7 +303,7 @@
     },
     {
       "roomNumber": 840,
-      "lux": false,
+      "isLux": false,
       "roomRate": 9900,
       "rating": 4,
       "reviewsNumber": 65,
@@ -394,7 +394,7 @@
             "textField": {
               "placeholderText": "Email",
               "type": "email",
-              "subscription": true
+              "isSubscription": true
             }
           }
         ]

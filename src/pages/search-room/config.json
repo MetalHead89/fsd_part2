@@ -18,24 +18,24 @@
   },
   "rulesCheckboxes": [
     { "label": "Можно курить" },
-    { "label": "Можно с питомцами", "checked": true },
+    { "label": "Можно с питомцами", "isChecked": true },
     {
       "label": "Можно пригласить гостей (до&nbsp10&nbspчеловек)",
       "id": "guests",
-      "checked": true
+      "isChecked": true
     }
   ],
   "availabilityCheckboxes": [
     {
       "label": "Широкий коридор",
-      "checked": false,
-      "rich": true,
+      "isChecked": false,
+      "isRich": true,
       "text": "Ширина коридоров в номере не&nbsp;менее 91 см."
     },
     {
       "label": "Помощник для инвалидов",
-      "checked": false,
-      "rich": true,
+      "isChecked": false,
+      "isRich": true,
       "text": "На 1 этаже вас встретит специалист и&nbsp;проводит до номера."
     }
   ],
@@ -46,9 +46,9 @@
   "expandableCheckboxList": {
     "checkboxes": [
       { "label": "Завтрак" },
-      { "label": "Письменный стол", "checked": true },
-      { "label": "Стул для кормления", "checked": true },
-      { "label": "Кроватка", "checked": true },
+      { "label": "Письменный стол", "isChecked": true },
+      { "label": "Стул для кормления", "isChecked": true },
+      { "label": "Кроватка", "isChecked": true },
       { "label": "Телевизор" },
       { "label": "Шампунь" }
     ],
@@ -57,7 +57,7 @@
   "roomCards": [
     {
       "roomNumber": 888,
-      "lux": true,
+      "isLux": true,
       "roomRate": 9990,
       "rating": 5,
       "reviewsNumber": 145,
@@ -70,7 +70,7 @@
     },
     {
       "roomNumber": 840,
-      "lux": false,
+      "isLux": false,
       "roomRate": 9900,
       "rating": 4,
       "reviewsNumber": 65,
@@ -83,7 +83,7 @@
     },
     {
       "roomNumber": 980,
-      "lux": true,
+      "isLux": true,
       "roomRate": 8500,
       "rating": 3,
       "reviewsNumber": 35,
@@ -96,7 +96,7 @@
     },
     {
       "roomNumber": 856,
-      "lux": false,
+      "isLux": false,
       "roomRate": 7300,
       "rating": 5,
       "reviewsNumber": 19,
@@ -109,7 +109,7 @@
     },
     {
       "roomNumber": 740,
-      "lux": false,
+      "isLux": false,
       "roomRate": 6000,
       "rating": 4,
       "reviewsNumber": 44,
@@ -122,7 +122,7 @@
     },
     {
       "roomNumber": 982,
-      "lux": false,
+      "isLux": false,
       "roomRate": 5800,
       "rating": 3,
       "reviewsNumber": 56,
@@ -135,7 +135,7 @@
     },
     {
       "roomNumber": 678,
-      "lux": false,
+      "isLux": false,
       "roomRate": 5500,
       "rating": 5,
       "reviewsNumber": 45,
@@ -148,7 +148,7 @@
     },
     {
       "roomNumber": 450,
-      "lux": false,
+      "isLux": false,
       "roomRate": 5300,
       "rating": 4,
       "reviewsNumber": 39,
@@ -161,7 +161,7 @@
     },
     {
       "roomNumber": 350,
-      "lux": false,
+      "isLux": false,
       "roomRate": 5000,
       "rating": 3,
       "reviewsNumber": 77,
@@ -174,7 +174,7 @@
     },
     {
       "roomNumber": 666,
-      "lux": false,
+      "isLux": false,
       "roomRate": 5000,
       "rating": 5,
       "reviewsNumber": 25,
@@ -187,7 +187,7 @@
     },
     {
       "roomNumber": 444,
-      "lux": false,
+      "isLux": false,
       "roomRate": 5000,
       "rating": 3,
       "reviewsNumber": 15,
@@ -200,7 +200,7 @@
     },
     {
       "roomNumber": 352,
-      "lux": false,
+      "isLux": false,
       "roomRate": 5000,
       "rating": 3,
       "reviewsNumber": 55,
