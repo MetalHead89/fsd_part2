@@ -1,6 +1,6 @@
 mixin type-block({ tag, text } = {})
-  - let tagName = 'Body';
   - let tagClass = 'type-block__tag';
+  - let tagName = '';
   - let tagTextClass = '';
 
   if tag === 'h1'
@@ -15,6 +15,9 @@ mixin type-block({ tag, text } = {})
     - tagName = 'H3';
     - tagClass += ' type-block__tag_size_s'
     - tagTextClass = 'type-block__text_header-size_s'
+  else
+    - tag = 'span'
+    - tagName = 'Body'
 
   .type-block
     #{tag}(class=tagClass) !{tagName}
