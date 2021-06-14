@@ -58,8 +58,6 @@ class RoomCard {
 
   static switchSlide(activeSlide, nextSlide) {
     activeSlide.classList.remove('room-card__slider-list-item_transparent');
-    activeSlide.classList.add('room-card__slider-list-item_not-transparent');
-    nextSlide.classList.remove('room-card__slider-list-item_not-transparent');
     nextSlide.classList.add('room-card__slider-list-item_transparent');
   }
 

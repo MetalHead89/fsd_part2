@@ -1,15 +1,17 @@
 include ../rate-button/rate-button.pug
 
 mixin room-card({ images, roomNumber = 1, isLux, roomRate = 10000, rating = 5, reviewsNumber = 0 } = {})
-  - roomImageClass = 'room-card__slider-list-item'
-
   .room-card
     .room-card__slider-section
-      <ul class="room-card__slider-list">
+      ul(class='room-card__slider-list')
         each img, index in images
-          - let transparent = index !== 0 ? 'not-transparent' :'transparent'
-          <li class="room-card__slider-list-item room-card__slider-list-item_!{transparent}"><img class='room-card__slider-image' src=!{img} alt="room-image"></li>
-      </ul>
+          - let listItemClass = 'room-card__slider-list-item'
+
+          if index === 0
+            - listItemClass += ` ${listItemClass}_transparent`
+            
+          li(class=listItemClass)
+            img(class='room-card__slider-image' src=img alt="room-image")
 
       button.room-card__arrow-button.room-card__arrow-button_prev(
         type='button'
