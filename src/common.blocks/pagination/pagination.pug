@@ -6,7 +6,7 @@ mixin pagination({ numberOfPages = 1, activePage = 1 } = {})
   - const endHotelRoomOnPage = activePage * 12;
   - const startHotelRoomOnPage = endHotelRoomOnPage - 11;
 
-  - hotelRoomsTotal = hotelRoomsTotal > 100 ? '100+' : hotelRoomsTotal + '+';
+  - hotelRoomsTotal = hotelRoomsTotal > 100 ? '100+' : `${hotelRoomsTotal}+`;
 
   nav.pagination
     ul.pagination__pages
