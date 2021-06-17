@@ -170,7 +170,7 @@ $room-card: '.room-card';
     transition: opacity 0.5s ease-in;
     opacity: 0;
 
-    &_transparent {
+    &_opaque {
       opacity: 1;
     }
   }

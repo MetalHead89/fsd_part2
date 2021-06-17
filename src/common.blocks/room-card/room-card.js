@@ -30,7 +30,7 @@ class RoomCard {
 
   switchToNextSlide() {
     const activeSlide = this.roomCard.querySelector(
-      '.room-card__slider-list-item_transparent'
+      '.room-card__slider-list-item_opaque'
     );
     const nextSlide = activeSlide.nextElementSibling;
     const activeDot = this.roomCard.querySelector('.room-card__dot_active');
@@ -44,7 +44,7 @@ class RoomCard {
 
   switchToPreviousSlide() {
     const activeSlide = this.roomCard.querySelector(
-      '.room-card__slider-list-item_transparent'
+      '.room-card__slider-list-item_opaque'
     );
     const prevSlide = activeSlide.previousElementSibling;
     const activeDot = this.roomCard.querySelector('.room-card__dot_active');
@@ -57,8 +57,8 @@ class RoomCard {
   }
 
   static switchSlide(activeSlide, nextSlide) {
-    activeSlide.classList.remove('room-card__slider-list-item_transparent');
-    nextSlide.classList.add('room-card__slider-list-item_transparent');
+    activeSlide.classList.remove('room-card__slider-list-item_opaque');
+    nextSlide.classList.add('room-card__slider-list-item_opaque');
   }
 
   clickToDot(dot) {
