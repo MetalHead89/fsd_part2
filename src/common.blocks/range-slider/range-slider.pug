@@ -2,16 +2,16 @@ mixin range-slider({ title = 'RANGE SLIDER', min1 = 0, max1 = 15000, value1 = 50
   .range-slider
     .range-slider__header-section
       h3.range-slider__title !{title}
-      .range-slider__range-label
+      .range-slider__range-label.js-range-slider__range-label
 
-    input.range-slider__input.range-slider__input_left(
+    input.range-slider__input.js-range-slider__input_left(
       type="range",
       min=min1,
       max=max1,
       value=value1
     )
 
-    input.range-slider__input.range-slider__input_right(
+    input.range-slider__input.js-range-slider__input_right(
       type="range",
       min=min2,
       max=max2,
@@ -20,6 +20,6 @@ mixin range-slider({ title = 'RANGE SLIDER', min1 = 0, max1 = 15000, value1 = 50
     
     .range-slider__slider
       .range-slider__track
-      .range-slider__range
-      .range-slider__thumb.range-slider__thumb_left
-      .range-slider__thumb.range-slider__thumb_right
+      .range-slider__range.js-range-slider__range
+      .range-slider__thumb.range-slider__thumb_left.js-range-slider__thumb_left
+      .range-slider__thumb.range-slider__thumb_right.js-range-slider__thumb_right

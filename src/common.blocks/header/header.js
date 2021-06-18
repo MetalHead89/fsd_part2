@@ -6,8 +6,8 @@ class BurgerMenu {
   }
 
   init() {
-    const hideMenu = document.querySelector('.navbar__list_vertical');
-    const hideMenuItems = hideMenu.querySelectorAll('.navbar__item_vertical');
+    const hideMenu = document.querySelector('.js-navbar__list_vertical');
+    const hideMenuItems = hideMenu.querySelectorAll('.js-navbar__item_vertical');
     hideMenu.classList.add('navbar__list_vertical-closed');
     hideMenuItems.forEach((item) => {
       item.classList.add('navbar__item_vertical-closed');
@@ -34,7 +34,7 @@ class BurgerMenu {
   }
 }
 
-const burger = document.querySelector('.header__burger');
+const burger = document.querySelector('.js-header__burger');
 if (burger !== null) {
   // eslint-disable-next-line no-new
   new BurgerMenu(burger);

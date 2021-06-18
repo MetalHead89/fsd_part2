@@ -6,12 +6,12 @@ class Slider {
   }
 
   init() {
-    this.leftInput = this.slider.querySelector('.range-slider__input_left');
-    this.rightInput = this.slider.querySelector('.range-slider__input_right');
-    this.leftThumb = this.slider.querySelector('.range-slider__thumb_left');
-    this.rightThumb = this.slider.querySelector('.range-slider__thumb_right');
-    this.range = this.slider.querySelector('.range-slider__range');
-    this.rangeLabel = this.slider.querySelector('.range-slider__range-label');
+    this.leftInput = this.slider.querySelector('.js-range-slider__input_left');
+    this.rightInput = this.slider.querySelector('.js-range-slider__input_right');
+    this.leftThumb = this.slider.querySelector('.js-range-slider__thumb_left');
+    this.rightThumb = this.slider.querySelector('.js-range-slider__thumb_right');
+    this.range = this.slider.querySelector('.js-range-slider__range');
+    this.rangeLabel = this.slider.querySelector('.js-range-slider__range-label');
 
     this.setLeftValue();
     this.setRightValue();

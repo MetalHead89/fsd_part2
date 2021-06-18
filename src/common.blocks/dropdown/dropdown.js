@@ -11,21 +11,21 @@ class Dropdown {
     this.quantitySum = 0;
     this.dropdownType = Dropdown.getDropdownType(this.dropdown);
     const clearButtonWrapper = this.dropdown.querySelector(
-      '.dropdown__button-clear'
+      '.js-dropdown__button-clear'
     );
     if (clearButtonWrapper !== null) {
       [this.clearButton] = clearButtonWrapper.children;
       this.clearButton.style.display = 'none';
     }
     const applyButtonWrapper = this.dropdown.querySelector(
-      '.dropdown__button-apply'
+      '.js-dropdown__button-apply'
     );
     if (applyButtonWrapper !== null) {
       [this.applyButton] = applyButtonWrapper.children;
       this.applyButton.addEventListener('click', this.closeDropMenu.bind(this));
     }
     const calendarApplyButtonWrapper = this.dropdown.querySelector(
-      '.calendar__button-apply'
+      '.js-calendar__button-apply'
     );
     if (calendarApplyButtonWrapper !== null) {
       [this.calendarApplyButton] = calendarApplyButtonWrapper.children;
@@ -35,19 +35,19 @@ class Dropdown {
       );
     }
     this.dropdownHeaderText = this.dropdown.querySelector(
-      '.dropdown__header-text'
+      '.js-dropdown__header-text'
     );
-    this.dropdownHeader = this.dropdown.querySelector('.dropdown__header');
+    this.dropdownHeader = this.dropdown.querySelector('.js-dropdown__header');
     if (this.dropdownType === 'date') {
       this.dropdownStartDay = this.dropdown
-        .querySelector('.dropdown__start-date-input')
-        .querySelector('.text-field__field');
+        .querySelector('.js-dropdown__start-date-input')
+        .querySelector('.js-text-field__field');
       this.dropdownEndDay = this.dropdown
-        .querySelector('.dropdown__end-date-input')
-        .querySelector('.text-field__field');
+        .querySelector('.js-dropdown__end-date-input')
+        .querySelector('.js-text-field__field');
     }
-    this.dropMenu = this.dropdown.querySelector('.dropdown__drop-menu');
-    this.dropCheck = this.dropdown.querySelector('.dropdown__check');
+    this.dropMenu = this.dropdown.querySelector('.js-dropdown__drop-menu');
+    this.dropCheck = this.dropdown.querySelector('.js-dropdown__check');
     this.closeTimer = null;
     this.DROPDOWN_CLOSE_TIME = 7000;
   }
@@ -153,7 +153,7 @@ function changeDropdownHeaderText(dropdown) {
    */
 
   const quantityNumbers = dropdown.dropdown.querySelectorAll(
-    '.dropdown__quantity-number'
+    '.js-dropdown__quantity-number'
   );
   let headerText = '';
 
@@ -212,7 +212,7 @@ function resetOptionsValues() {
    */
 
   const quantityElements = this.dropdown.querySelectorAll(
-    '.dropdown__quantity-number'
+    '.js-dropdown__quantity-number'
   );
   this.clearButton.style.display = 'none';
 
@@ -292,7 +292,7 @@ function resetCloseTimer() {
   this.closeTimer = null;
 }
 
-const dropdowns = document.querySelectorAll('.dropdown');
+const dropdowns = document.querySelectorAll('.js-dropdown');
 
 function closeOpenDropdowns() {
   if (this.dropCheck.checked === false) {
@@ -305,16 +305,16 @@ function closeOpenDropdowns() {
 
       if (
         dropdown !== this &&
-        dropdown.querySelector('.dropdown__check').checked
+        dropdown.querySelector('.js-dropdown__check').checked
       ) {
-        dropdown.querySelector('.dropdown__check').checked = false;
+        dropdown.querySelector('.js-dropdown__check').checked = false;
       }
     }
   }
 }
 
 function closeDropdown() {
-  this.querySelector('.dropdown__check').checked = false;
+  this.querySelector('.js-dropdown__check').checked = false;
 }
 
 function closeAllDropdowns() {
@@ -352,7 +352,7 @@ for (
     dropdownObject.dropdownType === 'comfort'
   ) {
     const dropdownQuantityButtons = dropdownObject.dropdown.querySelectorAll(
-      '.dropdown__quantity-button'
+      '.js-dropdown__quantity-button'
     );
 
     for (

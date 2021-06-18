@@ -6,26 +6,26 @@ mixin calendar({ theme } = {})
   - let weeksCount = 5;
   - let week = 1;
   - let dayNumber = 28;
-  - let calendarDayClass = 'calendar__day calendar__day_other-month';
+  - let calendarDayClass = 'calendar__day calendar__day_other-month js-calendar__day';
   - let currentDay = 6;
   - let isPrevMonth = true;
-  - let calendarStyle = 'calendar';
+  - let calendarStyle = 'calendar js-calendar';
 
   if (theme !== undefined && theme === 'without-top-border')
     - calendarStyle += ' calendar_without-top-border';
 
   div(class=calendarStyle)
     .calendar__month-selection-section
-      i.calendar__month-button.calendar__month-button_with-back-arrow arrow_back
-      span.calendar__month-name Сентябрь 1989
-      i.calendar__month-button.calendar__month-button_with-forward-arrow arrow_forward
-    .calendar__days-section
+      i.calendar__month-button.calendar__month-button_with-back-arrow.js-calendar__month-button_with-back-arrow arrow_back
+      span.calendar__month-name.js-calendar__month-name Сентябрь 1989
+      i.calendar__month-button.calendar__month-button_with-forward-arrow.js-calendar__month-button_with-forward-arrow arrow_forward
+    .calendar__days-section.js-calendar__days-section
       .calendar__names-of-week-days-section
         each day in ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
           span.calendar__week-day !{day}
 
       while week <= weeksCount
-        .calendar__week-section
+        .calendar__week-section.js-calendar__week-section
           - let weekDay = 1;
 
           while weekDay <= WEEK_DAYS
@@ -33,24 +33,24 @@ mixin calendar({ theme } = {})
               - maxDaysCount = 30;
               - dayNumber = 1;
               - isPrevMonth = false;
-              - calendarDayClass = 'calendar__day';
+              - calendarDayClass = 'calendar__day js-calendar__day';
             if dayNumber === currentDay
-              - calendarDayClass = 'calendar__day calendar__day_current';
+              - calendarDayClass = 'calendar__day calendar__day_current js-calendar__day';
             if !isPrevMonth && dayNumber > maxDaysCount
               - dayNumber = 1;
-              - calendarDayClass = 'calendar__day calendar__day_other-month';
+              - calendarDayClass = 'calendar__day calendar__day_other-month js-calendar__day';
 
             span(class=calendarDayClass) !{dayNumber}
 
             if dayNumber === currentDay
-              - calendarDayClass = 'calendar__day';
+              - calendarDayClass = 'calendar__day js-calendar__day';
 
             - dayNumber += 1;
             - weekDay += 1;
         - week += 1;
 
     .calendar__buttons-panel
-      .calendar__button-clear
+      .calendar__button-clear.js-calendar__button-clear
         +button({type: 'onlyText', text: 'очистить'})
-      .calendar__button-apply
+      .calendar__button-apply.js-calendar__button-apply
         +button({type: 'onlyText', text: 'применить'})

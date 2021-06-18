@@ -9,7 +9,7 @@ class LikeButton {
   }
 }
 
-const likeButtons = document.querySelectorAll('.like-button');
+const likeButtons = document.querySelectorAll('.js-like-button');
 
 function onClickLikeButton(buttonObject) {
   const heart = buttonObject.likeButton.children[0];

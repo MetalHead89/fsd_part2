@@ -11,10 +11,10 @@ class Diagram {
     this.roomImpressions = {};
     this.separatorSize = 3;
     this.votesCounterNumber = document.querySelector(
-      '.impressions-diagram__votes-number'
+      '.js-impressions-diagram__votes-number'
     );
     this.votesCounterText = document.querySelector(
-      '.impressions-diagram__votes-text'
+      '.js-impressions-diagram__votes-text'
     );
     this.votesSum = 0;
     this.startAngle = 0;
@@ -144,7 +144,7 @@ class Diagram {
   }
 }
 
-const canvas = document.querySelector('.impressions-diagram__diagram');
+const canvas = document.querySelector('.js-impressions-diagram__diagram');
 if (canvas !== null) {
   // eslint-disable-next-line no-new
   new Diagram(canvas);

@@ -24,7 +24,7 @@ class Calendar {
   calendarInit() {
     this.currentDate = new Date();
     this.currentDate.setHours(0, 0, 0, 0);
-    this.calendarTitle = this.calendar.querySelector('.calendar__month-name');
+    this.calendarTitle = this.calendar.querySelector('.js-calendar__month-name');
     this.year = this.currentDate.getFullYear();
     this.month = this.currentDate.getMonth();
     this.dateRange = [];
@@ -39,22 +39,21 @@ class Calendar {
       this.endInput.addEventListener('blur', this.setEndRange.bind(this));
     }
 
-    this.calendarDays = this.calendar.querySelectorAll('.calendar__day');
+    this.calendarDays = this.calendar.querySelectorAll('.js-calendar__day');
     this.prevMonthButton = this.calendar.querySelector(
-      '.calendar__month-button_with-back-arrow',
+      '.js-calendar__month-button_with-back-arrow',
     );
     this.nextMonthButton = this.calendar.querySelector(
-      '.calendar__month-button_with-forward-arrow',
+      '.js-calendar__month-button_with-forward-arrow',
     );
     [this.clearButton] = this.calendar.querySelector(
-      '.calendar__button-clear',
+      '.js-calendar__button-clear',
     ).children;
     this.clearButton.style.display = 'none';
     this.clearButton.onclick = () => this.clearRange();
     [this.applyButton] = this.calendar.querySelector(
-      '.calendar__button-apply',
+      '.js-calendar__button-apply',
     ).children;
-    // this.applyButton.onclick = () => this.applyRange();
 
     this.prevMonthButton.onclick = () => this.switchMonth(this.prevMonthButton);
     this.nextMonthButton.onclick = () => this.switchMonth(this.nextMonthButton);
@@ -106,13 +105,13 @@ class Calendar {
 
   clearSelectedDays() {
     const selectableDays = this.calendar.querySelectorAll(
-      '.calendar__day_selectable',
+      '.js-calendar__day_selectable',
     );
 
     for (let dayIndex = 0; dayIndex < selectableDays.length; dayIndex += 1) {
       const day = selectableDays[dayIndex];
 
-      day.classList.remove('calendar__day_selected');
+      day.classList.remove('calendar__day_selected', 'js-calendar__day_selected');
       day.parentNode.classList.remove('calendar__range-highlight_left-rounded');
       day.parentNode.classList.remove(
         'calendar__range-highlight_right-rounded',
@@ -198,11 +197,11 @@ class Calendar {
 
     if (parent != null && parent.classList.contains('dropdown_date')) {
       startInput = parent
-        .querySelector('.dropdown__start-date-input')
-        .querySelector('.text-field__field');
+        .querySelector('.js-dropdown__start-date-input')
+        .querySelector('.js-text-field__field');
       endInput = parent
-        .querySelector('.dropdown__end-date-input')
-        .querySelector('.text-field__field');
+        .querySelector('.js-dropdown__end-date-input')
+        .querySelector('.js-text-field__field');
     }
 
     return [startInput, endInput];
@@ -221,7 +220,7 @@ class Calendar {
   showSelectedDays() {
     if (this.dateRange.length > 0) {
       const selectableDays = this.calendar.querySelectorAll(
-        '.calendar__day_selectable',
+        '.js-calendar__day_selectable',
       );
 
       for (let dayIndex = 0; dayIndex < selectableDays.length; dayIndex += 1) {
@@ -230,7 +229,7 @@ class Calendar {
         if (
           this.dateRange.indexOf(this.getDateFromCalendar(day).getTime()) !== -1
         ) {
-          day.classList.add('calendar__day_selected');
+          day.classList.add('calendar__day_selected', 'js-calendar__day_selected');
         }
       }
 
@@ -244,14 +243,14 @@ class Calendar {
     if (this.dateRange.length === 0 && Calendar.dayIsSelectable(day)) {
       this.dateRange.push(selectedDate.getTime());
       this.choiceMode = true;
-      day.classList.add('calendar__day_selected');
+      day.classList.add('calendar__day_selected', 'js-calendar__day_selected');
     } else if (
       this.dateRange.length === 1 &&
       this.dayIsSelectableAndNotEqualToStartingPointOfRange(day)
     ) {
       this.dateRange.push(selectedDate.getTime());
       this.choiceMode = false;
-      day.classList.add('calendar__day_selected');
+      day.classList.add('calendar__day_selected', 'js-calendar__day_selected');
       this.dateRange.sort(Calendar.compareNumbers);
       this.showRange(this.dateRange);
     } else if (
@@ -260,7 +259,7 @@ class Calendar {
     ) {
       this.dateRange.pop();
       this.choiceMode = false;
-      day.classList.remove('calendar__day_selected');
+      day.classList.remove('calendar__day_selected', 'js-calendar__day_selected');
       day.parentNode.classList.remove('calendar__range-highlight_left-rounded');
       day.parentNode.classList.remove(
         'calendar__range-highlight_right-rounded',
@@ -268,20 +267,20 @@ class Calendar {
     } else if (this.dateRange.length === 2 && this.dayIsSelected(day)) {
       this.dateRange.splice(this.dateRange.indexOf(selectedDate.getTime()), 1);
       this.choiceMode = true;
-      day.classList.remove('calendar__day_selected');
+      day.classList.remove('calendar__day_selected', 'js-calendar__day_selected');
     } else if (
       this.dateRange.length === 2 &&
       this.dayIsSelectableAndLessThanStartingPointOfRange(day)
     ) {
       const selectedDays = this.calendar.querySelectorAll(
-        '.calendar__day_selected',
+        '.js-calendar__day_selected',
       );
 
       if (selectedDays[0]) {
-        selectedDays[0].classList.remove('calendar__day_selected');
+        selectedDays[0].classList.remove('calendar__day_selected', 'js-calendar__day_selected');
       }
 
-      day.classList.add('calendar__day_selected');
+      day.classList.add('calendar__day_selected', 'js-calendar__day_selected');
       this.dateRange[0] = this.getDateFromCalendar(day).getTime();
       this.showRange(this.dateRange);
     } else if (
@@ -289,19 +288,19 @@ class Calendar {
       this.dayIsSelectableAndGreaterThanStartingPointOfRange(day)
     ) {
       const selectedDays = this.calendar.querySelectorAll(
-        '.calendar__day_selected',
+        '.js-calendar__day_selected',
       );
 
       if (selectedDays.length === 2) {
-        selectedDays[1].classList.remove('calendar__day_selected');
+        selectedDays[1].classList.remove('calendar__day_selected', 'js-calendar__day_selected');
       } else if (
         selectedDays.length === 1 &&
         this.dayIsSelectableAndNotEqualToStartingPointOfRange(selectedDays[0])
       ) {
-        selectedDays[0].classList.remove('calendar__day_selected');
+        selectedDays[0].classList.remove('calendar__day_selected', 'js-calendar__day_selected');
       }
 
-      day.classList.add('calendar__day_selected');
+      day.classList.add('calendar__day_selected', 'js-calendar__day_selected');
       this.dateRange[1] = this.getDateFromCalendar(day).getTime();
       this.showRange(this.dateRange);
     }
@@ -370,7 +369,7 @@ class Calendar {
 
   showRange(range) {
     const selectableDays = this.calendar.querySelectorAll(
-      '.calendar__day_selectable',
+      '.js-calendar__day_selectable',
     );
 
     for (let dayIndex = 0; dayIndex < selectableDays.length; dayIndex += 1) {
@@ -423,13 +422,13 @@ class Calendar {
 
   clearRange() {
     const selectableDays = this.calendar.querySelectorAll(
-      '.calendar__day_selectable',
+      '.js-calendar__day_selectable',
     );
 
     for (let dayIndex = 0; dayIndex < selectableDays.length; dayIndex += 1) {
       const day = selectableDays[dayIndex];
 
-      day.classList.remove('calendar__day_selected');
+      day.classList.remove('calendar__day_selected', 'js-calendar__day_selected');
       day.parentNode.classList.remove('calendar__range-highlight_left-rounded');
       day.parentNode.classList.remove(
         'calendar__range-highlight_right-rounded',
@@ -446,7 +445,7 @@ class Calendar {
       this.startInput.value = '';
       this.endInput.value = '';
     } else if (parent && parent.classList.contains('dropdown_filter-date')) {
-      parent.querySelector('.dropdown__header-text').innerText =
+      parent.querySelector('.js-dropdown__header-text').innerText =
         'Выберите период';
     }
   }
@@ -476,14 +475,14 @@ class Calendar {
         const startDate = new Date(this.dateRange[0]);
         const endDate = new Date(this.dateRange[1]);
 
-        parent.querySelector('.dropdown__header-text').innerText =
+        parent.querySelector('.js-dropdown__header-text').innerText =
           `${startDate.getDate()} ` +
           `${this.MONTHS[startDate.getMonth()].toLowerCase().slice(0, 3)} - ` +
           `${endDate.getDate()} ${this.MONTHS[endDate.getMonth()]
             .toLowerCase()
             .slice(0, 3)} `;
       } else {
-        parent.querySelector('.dropdown__header-text').innerText =
+        parent.querySelector('.js-dropdown__header-text').innerText =
           'Выберите период';
       }
     }
@@ -504,7 +503,7 @@ class Calendar {
      */
 
     const weekBlocks = this.calendar.querySelectorAll(
-      '.calendar__week-section',
+      '.js-calendar__week-section',
     );
 
     for (
@@ -528,7 +527,7 @@ class Calendar {
     const daysInPrevMonths =
       32 - new Date(this.year, this.month - 1, 32).getDate();
     const firstDayMonth = date.getDay() === 0 ? 7 : date.getDay();
-    const calendarBody = this.calendar.querySelector('.calendar__days-section');
+    const calendarBody = this.calendar.querySelector('.js-calendar__days-section');
     const weeksInCalendar = Math.ceil(
       (daysInCurrentMonth + firstDayMonth - 1) / 7,
     );
@@ -545,7 +544,7 @@ class Calendar {
 
     for (let week = 0; week < weeksInCalendar; week += 1) {
       const weekDiv = document.createElement('div');
-      weekDiv.className = 'calendar__week-section';
+      weekDiv.className = 'calendar__week-section js-calendar__week-section';
 
       for (let weekDayNumber = 0; weekDayNumber < 7; weekDayNumber += 1) {
         let classList = 'calendar__day';
@@ -569,7 +568,7 @@ class Calendar {
           calendarDay.classList.add('calendar__day_current');
         }
         if (calendarDate >= this.currentDate) {
-          calendarDay.classList.add('calendar__day_selectable');
+          calendarDay.classList.add('calendar__day_selectable', 'js-calendar__day_selectable');
         }
 
         calendarDate.setDate(calendarDate.getDate() + 1);
@@ -588,7 +587,7 @@ class Calendar {
   }
 }
 
-const calendars = document.querySelectorAll('.calendar');
+const calendars = document.querySelectorAll('.js-calendar');
 
 for (
   let calendarIndex = 0;

@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+
 class Pagination {
   constructor(pagination) {
     this.pagination = pagination;
@@ -7,17 +9,17 @@ class Pagination {
 
   init() {
     this.pagesNumbers = this.pagination.querySelectorAll(
-      '.pagination__button_with-number'
+      '.js-pagination__button_with-number',
     );
     this.pagesCount = parseInt(
       this.pagesNumbers[this.pagesNumbers.length - 1].innerText,
-      10
+      10,
     );
     this.prevButton = this.pagination.querySelector(
-      '.pagination__button_with-prev-arrow'
+      '.js-pagination__button_with-prev-arrow',
     );
     this.nextButton = this.pagination.querySelector(
-      '.pagination__button_with-next-arrow'
+      '.js-pagination__button_with-next-arrow',
     );
 
     if (this.prevButton) {
@@ -31,16 +33,19 @@ class Pagination {
     for (let page = 0; page < this.pagesNumbers.length; page += 1) {
       this.pagesNumbers[page].onclick = this.onClickToPageNumber.bind(
         this,
-        this.pagesNumbers[page]
+        this.pagesNumbers[page],
       );
     }
   }
 
   clickToPrevButton() {
     const oldActivePage = document.querySelector(
-      '.pagination__button_active-page'
+      '.js-pagination__button_active-page',
     );
-    oldActivePage.classList.remove('pagination__button_active-page');
+    oldActivePage.classList.remove(
+      'pagination__button_active-page',
+      'js-pagination__button_active-page',
+    );
 
     this.createNewPagination.bind(this, oldActivePage.previousElementSibling)();
     this.createNewPaginationSignature.bind(this);
@@ -48,9 +53,12 @@ class Pagination {
 
   clickToNextButton() {
     const oldActivePage = document.querySelector(
-      '.pagination__button_active-page'
+      '.js-pagination__button_active-page',
     );
-    oldActivePage.classList.remove('pagination__button_active-page');
+    oldActivePage.classList.remove(
+      'pagination__button_active-page',
+      'js-pagination__button_active-page',
+    );
 
     this.createNewPagination.bind(this, oldActivePage.nextElementSibling)();
     this.createNewPaginationSignature(this);
@@ -58,9 +66,12 @@ class Pagination {
 
   onClickToPageNumber(button) {
     const oldActivePage = document.querySelector(
-      '.pagination__button_active-page'
+      '.js-pagination__button_active-page',
     );
-    oldActivePage.classList.remove('pagination__button_active-page');
+    oldActivePage.classList.remove(
+      'pagination__button_active-page',
+      'js-pagination__button_active-page',
+    );
 
     this.createNewPagination.bind(this, button)();
     this.createNewPaginationSignature(this);
@@ -93,7 +104,7 @@ class Pagination {
     let isLeftNumbersHidden = false;
     let isRightNumbersHidden = false;
 
-    ul.classList.add('pagination__pages');
+    ul.classList.add('pagination__pages', 'js-pagination__pages');
     this.pagination.append(ul);
 
     if (parseInt(button.innerText, 10) !== 1) {
@@ -111,7 +122,7 @@ class Pagination {
             this,
             button,
             ul,
-            'numbersPruning'
+            'numbersPruning',
           )();
           isLeftNumbersHidden = true;
         }
@@ -119,7 +130,7 @@ class Pagination {
         Pagination.numberDontFitOnTheRight(
           currentPage,
           activePage,
-          this.pagesCount
+          this.pagesCount,
         )
       ) {
         if (!isRightNumbersHidden) {
@@ -127,7 +138,7 @@ class Pagination {
             this,
             button,
             ul,
-            'numbersPruning'
+            'numbersPruning',
           )();
           isRightNumbersHidden = true;
         }
@@ -137,7 +148,7 @@ class Pagination {
           button,
           ul,
           'pageNumber',
-          currentPage
+          currentPage,
         )();
       }
     }
@@ -146,7 +157,9 @@ class Pagination {
       this.createPaginationButton.bind(this, button, ul, 'nextButton')();
     }
 
-    const paginationElements = document.querySelectorAll('.pagination__pages');
+    const paginationElements = document.querySelectorAll(
+      '.js-pagination__pages',
+    );
     paginationElements[0].remove();
   }
 
@@ -156,8 +169,8 @@ class Pagination {
   createNewPaginationSignature() {
     const span = document.createElement('span');
     const activePageNumber = parseInt(
-      document.querySelector('.pagination__button_active-page').innerText,
-      10
+      document.querySelector('.js-pagination__button_active-page').innerText,
+      10,
     );
     let hotelRoomsTotal = (this.pagesCount - 1) * 12;
     const endHotelRoomOnPage = activePageNumber * 12;
@@ -171,13 +184,14 @@ class Pagination {
 
     span.classList.add(
       'pagination__signature',
-      'pagination__signature_with-top-margin'
+      'pagination__signature_with-top-margin',
+      'js-pagination__signature'
     );
     span.innerText = `${startHotelRoomOnPage} – ${endHotelRoomOnPage} из ${hotelRoomsTotal} вариантов аренды`;
     this.pagination.append(span);
 
     const paginationSignatureElements = document.querySelectorAll(
-      '.pagination__signature'
+      '.js-pagination__signature',
     );
     paginationSignatureElements[0].remove();
   }
@@ -204,7 +218,7 @@ class Pagination {
         li.classList.add(
           'pagination__button',
           'pagination__button_with-arrow',
-          'pagination__button_with-prev-arrow'
+          'js-pagination__button_with-prev-arrow',
         );
         span.innerText = 'arrow_back';
         li.onclick = this.clickToPrevButton.bind(this);
@@ -212,7 +226,7 @@ class Pagination {
         li.classList.add(
           'pagination__button',
           'pagination__button_with-arrow',
-          'pagination__button_with-next-arrow'
+          'js-pagination__button_with-next-arrow',
         );
         span.innerText = 'arrow_forward';
         li.onclick = this.clickToNextButton.bind(this);
@@ -228,13 +242,16 @@ class Pagination {
         li.classList.add(
           'pagination__button',
           'pagination__button_with-number',
-          'pagination__button_active-page'
+          'js-pagination__button_with-number',
+          'pagination__button_active-page',
+          'js-pagination__button_active-page',
         );
         li.innerText = page;
       } else {
         li.classList.add(
           'pagination__button',
-          'pagination__button_with-number'
+          'pagination__button_with-number',
+          'js-pagination__button_with-number',
         );
         li.append(a);
         a.innerText = page;
@@ -247,7 +264,7 @@ class Pagination {
   }
 }
 
-const paginationItems = document.querySelectorAll('.pagination');
+const paginationItems = document.querySelectorAll('.js-pagination');
 for (let pagination = 0; pagination < paginationItems.length; pagination += 1) {
   pagination = new Pagination(paginationItems[pagination]);
 }

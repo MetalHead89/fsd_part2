@@ -1,14 +1,14 @@
 let entryCheck = false;
 const entryButtons = document.querySelectorAll(
-  '.navbar__button-entry-container'
+  '.js-navbar__button-entry-container'
 );
 const registrationButtons = document.querySelectorAll(
-  '.navbar__button-registration-container'
+  '.js-navbar__button-registration-container'
 );
-const accountNames = document.querySelectorAll('.navbar__item_with-name');
-const separators = document.querySelectorAll('.navbar__item_with-separator');
+const accountNames = document.querySelectorAll('.js-navbar__item_with-name');
+const separators = document.querySelectorAll('.js-navbar__item_with-separator');
 const dropdownItems = document.querySelectorAll(
-  '.navbar__dropdown-title_vertical'
+  '.js-navbar__dropdown-title_vertical'
 );
 dropdownItems.forEach((item) => {
   item.nextElementSibling.classList.toggle(
