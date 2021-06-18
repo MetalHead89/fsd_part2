@@ -76,8 +76,6 @@ class RoomCard {
 
   static switchSliderDot(activeDot, nextDot) {
     activeDot.classList.remove('room-card__dot_active');
-    activeDot.classList.add('room-card__dot_inactive');
-    nextDot.classList.remove('room-card__dot_inactive');
     nextDot.classList.add('room-card__dot_active');
   }
 }

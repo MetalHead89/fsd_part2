@@ -24,7 +24,6 @@ function onClickLikeButton(buttonObject) {
   }
 
   buttonObject.likeButton.classList.toggle('like-button_checked');
-  buttonObject.likeButton.classList.toggle('like-button_unchecked');
   buttonObject.likeToggle();
 }
 

@@ -23,10 +23,10 @@ mixin room-card({ images, roomNumber = 1, isLux, roomRate = 10000, rating = 5, r
 
       .room-card__dots-section
         each img, index in images
-          if index == 0
-            .room-card__dot.room-card__dot_active
-          else
-            .room-card__dot.room-card__dot_inactive
+          - let dotStyle = 'room-card__dot'
+          - dotStyle += index == 0 ? ` ${dotStyle}_active` : ''
+          
+          div(class=dotStyle)
 
     .room-card__room-info
       .room-card__number-section

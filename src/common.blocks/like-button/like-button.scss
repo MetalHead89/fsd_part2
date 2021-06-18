@@ -30,6 +30,11 @@ $like-button: '.like-button';
   background-origin: border-box;
   background-clip: padding-box, border-box;
   user-select: none;
+  color: rgba(31, 32, 65, 0.25);
+
+  & #{$like-button}__heart {
+    animation: heart-uncheck 0.2s ease;
+  }
 
   &:hover {
     color: #bc9cff;
@@ -53,14 +58,6 @@ $like-button: '.like-button';
 
     & #{$like-button}__heart {
       animation: heart-check 0.2s ease;
-    }
-  }
-
-  &_unchecked {
-    color: rgba(31, 32, 65, 0.25);
-
-    & #{$like-button}__heart {
-      animation: heart-uncheck 0.2s ease;
     }
   }
 

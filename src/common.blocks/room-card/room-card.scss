@@ -70,17 +70,15 @@ $room-card: '.room-card';
     border-radius: 50%;
     box-sizing: border-box;
     border: 1px solid white;
+    transition: background.5s ease-in;
+    background: transparent;
+    cursor: pointer;
     filter: drop-shadow(0px 5px 5px rgba(31, 32, 65, 0.3));
 
     &_active {
       transition: background 0.5s ease-in;
       background: white;
-    }
-
-    &_inactive {
-      transition: background.5s ease-in;
-      background: transparent;
-      cursor: pointer;
+      cursor: default;
     }
   }
 
