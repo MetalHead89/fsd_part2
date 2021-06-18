@@ -5,7 +5,7 @@ mixin room-rate-card({ roomNumber = 1, isLux, roomRate = 10000, dropdown1, dropd
   if button === undefined
     - button = { 'type': 'arrow', 'text': 'забронировать' }
 
-  .room-rate-card
+  .room-rate-card.js-room-rate-card
     form
       .room-rate-card__room-info
         .room-rate-card__room-number
@@ -25,17 +25,17 @@ mixin room-rate-card({ roomNumber = 1, isLux, roomRate = 10000, dropdown1, dropd
           +dropdown(dropdown2)
 
       .room-rate-card__room-rate-calc
-        .room-rate-card__daily-calc !{roomRate}
-        .room-rate-card__room-rate 0₽
+        .js-room-rate-card__daily-calc !{roomRate}
+        .js-room-rate-card__room-rate 0₽
 
       .room-rate-card__services
         .room-rate-card__service-info
-          .room-rate-card__services-label Сбор за услуги
+          .room-rate-card__services-label.js-room-rate-card__services-label Сбор за услуги
           .room-rate-card__service-tooltip
             span.room-rate-card__tooltip(
               tooltip="Суммарная стоимость выбранных услуг"
             ) i
-        .room-rate-card__total-services-cost !{serviceCost}₽
+        .js-room-rate-card__total-services-cost !{serviceCost}₽
 
       .room-rate-card__additional-services
         .room-rate-card__additional-service-info
@@ -44,10 +44,10 @@ mixin room-rate-card({ roomNumber = 1, isLux, roomRate = 10000, dropdown1, dropd
             span.room-rate-card__tooltip(
               tooltip="Суммарная стоимость выбранных дополнительных услуг"
             ) i
-        .room-rate-card__total-services-additional-cost !{additionalServiceCost}
+        .js-room-rate-card__total-services-additional-cost !{additionalServiceCost}
         
       .room-rate-card__result
         .room-rate-card__result-label Итого
         .room-rate-card__result-dots
-        .room-rate-card__result-cost 0₽
+        .room-rate-card__result-cost.js-room-rate-card__result-cost 0₽
       +button(button)

@@ -2,7 +2,7 @@ mixin text-field({ isMasked, isSubscription, title, type = 'text', placeholderTe
   - let fieldClass = 'text-field__field js-text-field__field';
 
   if isMasked
-    - fieldClass += ' text-field__field_masked';
+    - fieldClass += ' js-text-field__field_masked';
   else if isSubscription
     - fieldClass += ' text-field__field_paddings_l';
 

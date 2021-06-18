@@ -1,30 +1,30 @@
 include ../rate-button/rate-button.pug
 
 mixin room-card({ images, roomNumber = 1, isLux, roomRate = 10000, rating = 5, reviewsNumber = 0 } = {})
-  .room-card
+  .room-card.js-room-card
     .room-card__slider-section
       ul(class='room-card__slider-list')
         each img, index in images
-          - let listItemClass = 'room-card__slider-list-item'
-          - listItemClass += index === 0 ? ` ${listItemClass}_opaque` : ''
+          - let listItemClass = 'room-card__slider-list-item js-room-card__slider-list-item'
+          - listItemClass += index === 0 ? ' room-card__slider-list-item_opaque js-room-card__slider-list-item_opaque' : ''
             
           li(class=listItemClass)
             img(class='room-card__slider-image' src=img alt="room-image")
 
-      button.room-card__arrow-button.room-card__arrow-button_prev(
+      button.room-card__arrow-button.room-card__arrow-button_prev.js-room-card__arrow-button_prev(
         type='button'
       )
         i.room-card__arrow keyboard_arrow_left
 
-      button.room-card__arrow-button.room-card__arrow-button_next(
+      button.room-card__arrow-button.room-card__arrow-button_next.js-room-card__arrow-button_next(
         type='button'
       )
         i.room-card__arrow keyboard_arrow_right
 
       .room-card__dots-section
         each img, index in images
-          - let dotStyle = 'room-card__dot'
-          - dotStyle += index == 0 ? ` ${dotStyle}_active` : ''
+          - let dotStyle = 'room-card__dot js-room-card__dot'
+          - dotStyle += index == 0 ? ' room-card__dot_active js-room-card__dot_active' : ''
           
           div(class=dotStyle)
 

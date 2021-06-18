@@ -114,7 +114,7 @@ class MaskedField {
   }
 }
 
-const maskedTextFields = document.querySelectorAll('.text-field__field_masked');
+const maskedTextFields = document.querySelectorAll('.js-text-field__field_masked');
 
 for (let field = 0; field < maskedTextFields.length; field += 1) {
   // eslint-disable-next-line no-new
