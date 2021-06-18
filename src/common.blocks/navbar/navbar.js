@@ -1,4 +1,4 @@
-let entryCheck = false;
+let isEntryCheck = false;
 const entryButtons = document.querySelectorAll(
   '.js-navbar__button-entry-container'
 );
@@ -17,7 +17,7 @@ dropdownItems.forEach((item) => {
 });
 
 function signIn() {
-  if (entryCheck) {
+  if (isEntryCheck) {
     for (let button = 0; button < entryButtons.length; button += 1) {
       entryButtons[button].removeAttribute('style');
     }
@@ -30,7 +30,7 @@ function signIn() {
     for (let separator = 0; separator < separators.length; separator += 1) {
       separators[separator].removeAttribute('style');
     }
-    entryCheck = false;
+    isEntryCheck = false;
   } else {
     for (let button = 0; button < entryButtons.length; button += 1) {
       entryButtons[button].style.display = 'none';
@@ -45,7 +45,7 @@ function signIn() {
     for (let separator = 0; separator < separators.length; separator += 1) {
       separators[separator].style.display = 'flex';
     }
-    entryCheck = true;
+    isEntryCheck = true;
   }
 }
 

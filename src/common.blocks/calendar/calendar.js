@@ -28,7 +28,7 @@ class Calendar {
     this.year = this.currentDate.getFullYear();
     this.month = this.currentDate.getMonth();
     this.dateRange = [];
-    this.choiceMode = false;
+    this.isChoiceMode = false;
     [this.startInput, this.endInput] = this.getStartAndEndDatesFields();
 
     if (this.startInput !== null) {
@@ -123,16 +123,16 @@ class Calendar {
   activateCalendarDays(startDate, endDate) {
     if (startDate !== null && endDate !== null) {
       this.dateRange = [startDate.getTime(), endDate.getTime()];
-      this.choiceMode = false;
+      this.isChoiceMode = false;
     } else if (startDate !== null && endDate === null) {
       this.dateRange = [startDate.getTime()];
-      this.choiceMode = true;
+      this.isChoiceMode = true;
     } else if (startDate === null && endDate !== null) {
       this.dateRange = [endDate.getTime()];
-      this.choiceMode = true;
+      this.isChoiceMode = true;
     } else {
       this.dateRange = [];
-      this.choiceMode = false;
+      this.isChoiceMode = false;
     }
   }
 
@@ -208,12 +208,12 @@ class Calendar {
   }
 
   switchMonth(button) {
-    const date = button.classList.contains(
+    const isDate = button.classList.contains(
       'calendar__month-button_with-back-arrow',
     )
       ? new Date(this.year, this.month - 1)
       : new Date(this.year, this.month + 1);
-    this.refreshCalendar(date);
+    this.refreshCalendar(isDate);
     this.showSelectedDays();
   }
 
@@ -242,14 +242,14 @@ class Calendar {
     const selectedDate = this.getDateFromCalendar(day);
     if (this.dateRange.length === 0 && Calendar.dayIsSelectable(day)) {
       this.dateRange.push(selectedDate.getTime());
-      this.choiceMode = true;
+      this.isChoiceMode = true;
       day.classList.add('calendar__day_selected', 'js-calendar__day_selected');
     } else if (
       this.dateRange.length === 1 &&
       this.dayIsSelectableAndNotEqualToStartingPointOfRange(day)
     ) {
       this.dateRange.push(selectedDate.getTime());
-      this.choiceMode = false;
+      this.isChoiceMode = false;
       day.classList.add('calendar__day_selected', 'js-calendar__day_selected');
       this.dateRange.sort(Calendar.compareNumbers);
       this.showRange(this.dateRange);
@@ -258,7 +258,7 @@ class Calendar {
       this.dayIsSelectableAndEqualToStartingPointOfRange(day)
     ) {
       this.dateRange.pop();
-      this.choiceMode = false;
+      this.isChoiceMode = false;
       day.classList.remove('calendar__day_selected', 'js-calendar__day_selected');
       day.parentNode.classList.remove('calendar__range-highlight_left-rounded');
       day.parentNode.classList.remove(
@@ -266,7 +266,7 @@ class Calendar {
       );
     } else if (this.dateRange.length === 2 && this.dayIsSelected(day)) {
       this.dateRange.splice(this.dateRange.indexOf(selectedDate.getTime()), 1);
-      this.choiceMode = true;
+      this.isChoiceMode = true;
       day.classList.remove('calendar__day_selected', 'js-calendar__day_selected');
     } else if (
       this.dateRange.length === 2 &&
@@ -356,7 +356,7 @@ class Calendar {
   }
 
   setRangeHighlight(day) {
-    if (this.choiceMode && day.classList.contains('calendar__day_selectable')) {
+    if (this.isChoiceMode && day.classList.contains('calendar__day_selectable')) {
       const range = [
         this.dateRange[0],
         this.getDateFromCalendar(day).getTime(),
@@ -437,7 +437,7 @@ class Calendar {
     }
 
     this.dateRange = [];
-    this.choiceMode = false;
+    this.isChoiceMode = false;
     this.clearButton.style.display = 'none';
 
     const parent = this.calendar.offsetParent.offsetParent;

@@ -1,11 +1,11 @@
 class LikeButton {
-  constructor(button, checked) {
-    this.likeChecked = checked;
+  constructor(button, isChecked) {
+    this.isLikeChecked = isChecked;
     this.likeButton = button;
   }
 
   likeToggle() {
-    this.likeChecked = !this.likeChecked;
+    this.isLikeChecked = !this.isLikeChecked;
   }
 }
 
@@ -15,7 +15,7 @@ function onClickLikeButton(buttonObject) {
   const heart = buttonObject.likeButton.children[0];
   const likeCounter = buttonObject.likeButton.children[1];
 
-  if (buttonObject.likeChecked) {
+  if (buttonObject.isLikeChecked) {
     likeCounter.innerText = parseInt(likeCounter.innerText, 10) - 1;
     heart.innerText = 'favorite_border';
   } else {
@@ -29,7 +29,7 @@ function onClickLikeButton(buttonObject) {
 
 for (let likeIndex = 0; likeIndex < likeButtons.length; likeIndex += 1) {
   const likeButton = likeButtons[likeIndex];
-  const checked = likeButton.classList.contains('like-button_checked');
-  const buttonObject = new LikeButton(likeButton, checked);
+  const isChecked = likeButton.classList.contains('like-button_checked');
+  const buttonObject = new LikeButton(likeButton, isChecked);
   buttonObject.likeButton.onclick = () => onClickLikeButton(buttonObject);
 }
