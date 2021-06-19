@@ -21,6 +21,7 @@ $text-field: '.text-field';
   }
 
   &__field {
+    cursor: pointer;
     width: 100%;
     max-width: 500px;
     border: 1px solid rgba(31, 32, 65, 0.25);

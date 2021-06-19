@@ -224,6 +224,8 @@ $dropdown: '.dropdown';
     position: relative;
 
     & .text-field__field {
+      padding-right: 30px;
+      text-overflow: ellipsis;
       cursor: pointer;
     }
   }
