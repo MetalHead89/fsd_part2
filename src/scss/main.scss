@@ -9,4 +9,8 @@ html {
 
 body {
   margin: 0;
+  
+  @media screen and (max-width: 300px) {
+    overflow-wrap: anywhere;
+  }
 }
