@@ -7,9 +7,8 @@ mixin header({ logoPath, navbar = [] } = {})
       .header__content
         a(href="#")
           img.header__logo(src=logoPath, alt="logo")
-        input#header.header__menu-check(type="checkbox", name="header")
         +navbar({type: 'horizontal', items: navbar})
-        label.header__burger.js-header__burger(for="header")
+        label.header__burger.js-header__burger
           .header__burger-image
           
     +navbar({type: 'vertical', items: navbar})
