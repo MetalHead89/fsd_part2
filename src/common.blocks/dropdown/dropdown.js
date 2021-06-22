@@ -11,6 +11,9 @@ class Dropdown {
   dropdownInit() {
     this.quantitySum = 0;
     this.dropdownType = Dropdown.getDropdownType(this.dropdown);
+    this.dropMenu = this.dropdown.querySelector('.js-dropdown__drop-menu');
+    this.dropCheck = this.dropdown.querySelector('.js-dropdown__check');
+
     const clearButtonWrapper = this.dropdown.querySelector(
       '.js-dropdown__button-clear'
     );
@@ -18,23 +21,21 @@ class Dropdown {
       [this.clearButton] = clearButtonWrapper.children;
       this.clearButton.style.display = 'none';
     }
+
     const applyButtonWrapper = this.dropdown.querySelector(
       '.js-dropdown__button-apply'
     );
     if (applyButtonWrapper !== null) {
       [this.applyButton] = applyButtonWrapper.children;
-      // this.applyButton.addEventListener('click', this.closeDropMenu.bind(this));
     }
+
     const calendarApplyButtonWrapper = this.dropdown.querySelector(
       '.js-calendar__button-apply'
     );
     if (calendarApplyButtonWrapper !== null) {
       [this.calendarApplyButton] = calendarApplyButtonWrapper.children;
-      // this.calendarApplyButton.addEventListener(
-      //   'click',
-      //   this.closeDropMenu.bind(this),
-      // );
     }
+
     this.dropdownHeaderText = this.dropdown.querySelector(
       '.js-dropdown__header-text'
     );
@@ -47,10 +48,6 @@ class Dropdown {
         .querySelector('.js-dropdown__end-date-input')
         .querySelector('.js-text-field__field');
     }
-    this.dropMenu = this.dropdown.querySelector('.js-dropdown__drop-menu');
-    this.dropCheck = this.dropdown.querySelector('.js-dropdown__check');
-    // this.closeTimer = null;
-    // this.DROPDOWN_CLOSE_TIME = 7000;
   }
 
   addEventListeners() {
@@ -87,28 +84,11 @@ class Dropdown {
     }
 
     if (this.dropdownHeader !== null) {
-      // this.dropdownHeader.addEventListener(
-      //   'mouseout',
-      //   this.handleHeaderMouseout.bind(this)
-      // );
-      // this.dropdownHeader.addEventListener(
-      //   'mouseover',
-      //   this.handleHeaderMouseover.bind(this)
-      // );
       this.dropdownHeader.addEventListener(
         'click',
         this.handleHeaderClick.bind(this)
       );
     }
-
-    // this.dropMenu.addEventListener(
-    //   'mouseout',
-    //   this.handleDropMenuMouseout.bind(this)
-    // );
-    // this.dropMenu.addEventListener(
-    //   'mouseover',
-    //   this.handleDropMenuMouseover.bind(this)
-    // );
 
     if (this.dropdownType === 'date') {
       this.dropdownStartDay.addEventListener(
@@ -120,38 +100,11 @@ class Dropdown {
         this.handleEndDateInputOnfocus.bind(this)
       );
     }
-
-    // if (this.dropdownHeader) {
-    //   this.dropdownHeader.addEventListener(
-    //     'click',
-    //     this.handleHeaderClick.bind(this),
-    //   );
-    // }
   }
 
   handleButtonApplyClick() {
     this.closeDropMenu();
   }
-
-  // handleHeaderClick() {
-  //   this.closeOpenDropdowns();
-  // }
-
-  // handleHeaderMouseout() {
-  //   this.autoCloseDropdown();
-  // }
-
-  // handleHeaderMouseover() {
-  //   this.resetCloseTimer();
-  // }
-
-  // handleDropMenuMouseout() {
-  //   this.autoCloseDropdown();
-  // }
-
-  // handleDropMenuMouseover() {
-  //   this.resetCloseTimer();
-  // }
 
   handleHeaderClick() {
     this.closeOpenDropdowns();
@@ -380,26 +333,6 @@ class Dropdown {
     }
   }
 
-  // startCloseTimer() {
-  //   this.closeTimer = setTimeout(
-  //     this.closeDropMenu(),
-  //     this.DROPDOWN_CLOSE_TIME,
-  //   );
-  // }
-
-  // autoCloseDropdown() {
-  //   if (this.dropCheck.checked) {
-  //     if (this.closeTimer == null) {
-  //       this.startCloseTimer();
-  //     }
-  //   }
-  // }
-
-  // resetCloseTimer() {
-  //   clearTimeout(this.closeTimer);
-  //   this.closeTimer = null;
-  // }
-
   closeOpenDropdowns() {
     if (this.dropCheck.checked === false) {
       const dropdowns = document.querySelectorAll('.js-dropdown');
@@ -417,46 +350,10 @@ class Dropdown {
     this.dropdown.querySelector('.js-dropdown__check').checked = false;
   }
 
-  // function closeAllDropdowns() {
-  //   dropdowns.forEach((dropdown) => {
-  //     closeDropdown.apply(dropdown);
-  //   });
-  // }
-
   OpenDateDropdown() {
     this.closeOpenDropdowns();
     this.dropCheck.checked = true;
   }
-
-  // static clickIsOutsideDropdown(evt) {
-  //   return (
-  //     (!evt.target.classList.contains('dropdown__header') &&
-  //       !evt.target.classList.contains('dropdown__drop-menu') &&
-  //       !evt.target.classList.contains('text-field__field') &&
-  //       evt.target.offsetParent &&
-  //       !evt.target.offsetParent.classList.contains('dropdown__drop-menu')) ||
-  //     !evt.target.offsetParent
-  //   );
-  // }
-
-  // clickToBody(evt) {
-  //   if (Dropdown.clickIsOutsideDropdown(evt)) {
-  //     this.closeDropdown();
-  //   }
-  // }
 }
 
 export default Dropdown;
-
-// const dropdowns = document.querySelectorAll('.js-dropdown');
-
-// for (
-//   let dropdownIndex = 0;
-//   dropdownIndex < dropdowns.length;
-//   dropdownIndex += 1
-// ) {
-//   const dropdown = dropdowns[dropdownIndex];
-//   const dropdownObject = new Dropdown(dropdown);
-// }
-
-// document.body.addEventListener('mouseup', clickToBody);
