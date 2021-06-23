@@ -1,20 +1,20 @@
 class Diagram {
-  constructor(canvas) {
-    this.canvas = canvas;
+  constructor(diagram) {
+    this.diagram = diagram;
     this.init();
   }
 
   init() {
-    this.canvasContext = this.canvas.getContext('2d');
-    this.canvasCenterX = this.canvas.width / 2;
-    this.canvasCenterY = this.canvas.height / 2;
+    this.canvasContext = this.diagram.getContext('2d');
+    this.canvasCenterX = this.diagram.width / 2;
+    this.canvasCenterY = this.diagram.height / 2;
     this.roomImpressions = {};
     this.separatorSize = 3;
     this.votesCounterNumber = document.querySelector(
-      '.js-impressions-diagram__votes-number'
+      '.js-impressions-diagram__votes-number',
     );
     this.votesCounterText = document.querySelector(
-      '.js-impressions-diagram__votes-text'
+      '.js-impressions-diagram__votes-text',
     );
     this.votesSum = 0;
     this.startAngle = 0;
@@ -25,20 +25,20 @@ class Diagram {
       0,
       0,
       0,
-      120
+      120,
     );
     const goodGradient = this.canvasContext.createLinearGradient(0, 0, 0, 120);
     const satisfactorilyGradient = this.canvasContext.createLinearGradient(
       0,
       0,
       0,
-      120
+      120,
     );
     const disappointedGradient = this.canvasContext.createLinearGradient(
       0,
       0,
       0,
-      120
+      120,
     );
     Diagram.setGradient(magnificentlyGradient, '#FFE39C', '#FFBA9C');
     Diagram.setGradient(goodGradient, '#6FCF97', '#66D2EA');
@@ -62,16 +62,16 @@ class Diagram {
 
     this.setDiagramSegment(
       magnificentlyGradient,
-      this.roomImpressions.magnificently
+      this.roomImpressions.magnificently,
     );
     this.setDiagramSegment(goodGradient, this.roomImpressions.good);
     this.setDiagramSegment(
       satisfactorilyGradient,
-      this.roomImpressions.satisfactorily
+      this.roomImpressions.satisfactorily,
     );
     this.setDiagramSegment(
       disappointedGradient,
-      this.roomImpressions.disappointed
+      this.roomImpressions.disappointed,
     );
   }
 
@@ -135,7 +135,7 @@ class Diagram {
       58,
       this.startAngle,
       this.endAngle,
-      true
+      true,
     );
     this.canvasContext.lineWidth = 4;
     this.canvasContext.strokeStyle = color;
@@ -144,8 +144,4 @@ class Diagram {
   }
 }
 
-const canvas = document.querySelector('.js-impressions-diagram__diagram');
-if (canvas !== null) {
-  // eslint-disable-next-line no-new
-  new Diagram(canvas);
-}
+export default Diagram;
