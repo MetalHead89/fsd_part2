@@ -3,33 +3,76 @@ class Slider {
     this.slider = slider;
 
     this.init();
+    this.addEventListeners();
   }
 
   init() {
     this.leftInput = this.slider.querySelector('.js-range-slider__input_left');
-    this.rightInput = this.slider.querySelector('.js-range-slider__input_right');
+    this.rightInput = this.slider.querySelector(
+      '.js-range-slider__input_right'
+    );
     this.leftThumb = this.slider.querySelector('.js-range-slider__thumb_left');
-    this.rightThumb = this.slider.querySelector('.js-range-slider__thumb_right');
+    this.rightThumb = this.slider.querySelector(
+      '.js-range-slider__thumb_right'
+    );
     this.range = this.slider.querySelector('.js-range-slider__range');
-    this.rangeLabel = this.slider.querySelector('.js-range-slider__range-label');
+    this.rangeLabel = this.slider.querySelector(
+      '.js-range-slider__range-label'
+    );
 
     this.setLeftValue();
     this.setRightValue();
+  }
 
-    this.leftInput.addEventListener('input', this.setLeftValue.bind(this));
-    this.rightInput.addEventListener('input', this.setRightValue.bind(this));
-    this.leftInput.onmouseover = () => {
-      this.leftThumb.classList.add('range-slider__thumb_left_hover');
-    };
-    this.rightInput.onmouseover = () => {
-      this.rightThumb.classList.add('range-slider__thumb_right_hover');
-    };
-    this.leftInput.onmouseout = () => {
-      this.leftThumb.classList.remove('range-slider__thumb_left_hover');
-    };
-    this.rightInput.onmouseout = () => {
-      this.rightThumb.classList.remove('range-slider__thumb_right_hover');
-    };
+  addEventListeners() {
+    this.leftInput.addEventListener(
+      'input',
+      this.handleInputLeftInput.bind(this)
+    );
+    this.rightInput.addEventListener(
+      'input',
+      this.handleInputRightInput.bind(this)
+    );
+    this.leftInput.addEventListener(
+      'mouseover',
+      this.handleInputLeftMouseover.bind(this)
+    );
+    this.rightInput.addEventListener(
+      'mouseover',
+      this.handleInputRightMouseover.bind(this)
+    );
+    this.leftInput.addEventListener(
+      'mouseout',
+      this.handleInputLeftMouseout.bind(this)
+    );
+    this.rightInput.addEventListener(
+      'mouseout',
+      this.handleInputRightMouseout.bind(this)
+    );
+  }
+
+  handleInputLeftInput() {
+    this.setLeftValue();
+  }
+
+  handleInputLeftMouseover() {
+    this.leftThumb.classList.add('range-slider__thumb_left_hover');
+  }
+
+  handleInputLeftMouseout() {
+    this.leftThumb.classList.remove('range-slider__thumb_left_hover');
+  }
+
+  handleInputRightInput() {
+    this.setRightValue();
+  }
+
+  handleInputRightMouseover() {
+    this.rightThumb.classList.add('range-slider__thumb_right_hover');
+  }
+
+  handleInputRightMouseout() {
+    this.rightThumb.classList.remove('range-slider__thumb_right_hover');
   }
 
   setLeftValue() {
@@ -72,8 +115,4 @@ class Slider {
   }
 }
 
-const sliders = document.querySelectorAll('.range-slider');
-for (let slider = 0; slider < sliders.length; slider += 1) {
-  // eslint-disable-next-line no-new
-  new Slider(sliders[slider]);
-}
+export default Slider;
