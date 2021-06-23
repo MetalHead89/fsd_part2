@@ -1,3 +1,7 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-return-assign */
+
 class Navbar {
   constructor(navbar) {
     this.navbar = navbar;
@@ -7,17 +11,10 @@ class Navbar {
   }
 
   init() {
-    this.isEntryCheck = false;
     this.entryButton = this.navbar.querySelector(
       '.js-navbar__button-entry-container',
     );
-    this.registrationButton = this.navbar.querySelector(
-      '.js-navbar__button-registration-container',
-    );
     this.accountName = this.navbar.querySelector('.js-navbar__item_with-name');
-    this.separator = this.navbar.querySelector(
-      '.js-navbar__item_with-separator',
-    );
     this.dropdownItems = this.navbar.querySelectorAll(
       '.js-navbar__dropdown-title_vertical',
     );
@@ -63,19 +60,30 @@ class Navbar {
   }
 
   signIn() {
-    if (this.isEntryCheck) {
-      this.entryButton.removeAttribute('style');
-      this.registrationButton.removeAttribute('style');
-      this.accountName.removeAttribute('style');
-      this.separator.removeAttribute('style');
-      this.isEntryCheck = false;
+    const entryButtons = document.querySelectorAll(
+      '.js-navbar__button-entry-container',
+    );
+    const registrationButtons = document.querySelectorAll(
+      '.js-navbar__button-registration-container',
+    );
+    const accountsNames = document.querySelectorAll(
+      '.js-navbar__item_with-name',
+    );
+    const separators = document.querySelectorAll(
+      '.js-navbar__item_with-separator',
+    );
+
+    if (this.entryButton.style.display === 'none') {
+      entryButtons.forEach((item) => item.removeAttribute('style'));
+      registrationButtons.forEach((item) => item.removeAttribute('style'));
+      accountsNames.forEach((item) => item.removeAttribute('style'));
+      separators.forEach((item) => item.removeAttribute('style'));
     } else {
-      this.entryButton.style.display = 'none';
-      this.registrationButton.style.display = 'none';
-      this.accountName.style.display = 'flex';
-      this.accountName.style.paddingRight = 0;
-      this.separator.style.display = 'flex';
-      this.isEntryCheck = true;
+      entryButtons.forEach((item) => (item.style.display = 'none'));
+      registrationButtons.forEach((item) => (item.style.display = 'none'));
+      accountsNames.forEach((item) => (item.style.display = 'flex'));
+      accountsNames.forEach((item) => (item.style.paddingRight = 0));
+      separators.forEach((item) => (item.style.display = 'flex'));
     }
   }
 }
