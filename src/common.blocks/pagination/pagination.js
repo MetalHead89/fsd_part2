@@ -5,72 +5,81 @@ class Pagination {
     this.pagination = pagination;
 
     this.init();
+    this.addEventListeners();
   }
 
   init() {
     this.pagesNumbers = this.pagination.querySelectorAll(
-      '.js-pagination__button_with-number',
+      '.js-pagination__button_with-number'
     );
     this.pagesCount = parseInt(
       this.pagesNumbers[this.pagesNumbers.length - 1].innerText,
-      10,
+      10
     );
     this.prevButton = this.pagination.querySelector(
-      '.js-pagination__button_with-prev-arrow',
+      '.js-pagination__button_with-prev-arrow'
     );
     this.nextButton = this.pagination.querySelector(
-      '.js-pagination__button_with-next-arrow',
+      '.js-pagination__button_with-next-arrow'
     );
+  }
 
+  addEventListeners() {
     if (this.prevButton) {
-      this.prevButton.onclick = this.clickToPrevButton.bind(this);
+      this.prevButton.addEventListener(
+        'click',
+        this.handleButtonWithPrevArrowClick.bind(this)
+      );
     }
 
     if (this.nextButton) {
-      this.nextButton.onclick = this.clickToNextButton.bind(this);
-    }
-
-    for (let page = 0; page < this.pagesNumbers.length; page += 1) {
-      this.pagesNumbers[page].onclick = this.onClickToPageNumber.bind(
-        this,
-        this.pagesNumbers[page],
+      this.nextButton.addEventListener(
+        'click',
+        this.handleButtonWithNextArrowClick.bind(this)
       );
     }
+
+    this.pagesNumbers.forEach((item) => {
+      item.addEventListener(
+        'click',
+        this.handleButtonWithNumberClick.bind(this, item)
+      );
+    });
   }
 
-  clickToPrevButton() {
+  handleButtonWithPrevArrowClick() {
     const oldActivePage = document.querySelector(
-      '.js-pagination__button_active-page',
+      '.js-pagination__button_active-page'
     );
     oldActivePage.classList.remove(
       'pagination__button_active-page',
-      'js-pagination__button_active-page',
+      'js-pagination__button_active-page'
     );
 
     this.createNewPagination.bind(this, oldActivePage.previousElementSibling)();
     this.createNewPaginationSignature.bind(this);
   }
 
-  clickToNextButton() {
+  handleButtonWithNextArrowClick() {
     const oldActivePage = document.querySelector(
-      '.js-pagination__button_active-page',
+      '.js-pagination__button_active-page'
     );
     oldActivePage.classList.remove(
       'pagination__button_active-page',
-      'js-pagination__button_active-page',
+      'js-pagination__button_active-page'
     );
 
     this.createNewPagination.bind(this, oldActivePage.nextElementSibling)();
     this.createNewPaginationSignature(this);
   }
 
-  onClickToPageNumber(button) {
+  handleButtonWithNumberClick(button) {
     const oldActivePage = document.querySelector(
-      '.js-pagination__button_active-page',
+      '.js-pagination__button_active-page'
     );
     oldActivePage.classList.remove(
       'pagination__button_active-page',
-      'js-pagination__button_active-page',
+      'js-pagination__button_active-page'
     );
 
     this.createNewPagination.bind(this, button)();
@@ -122,7 +131,7 @@ class Pagination {
             this,
             button,
             ul,
-            'numbersPruning',
+            'numbersPruning'
           )();
           isLeftNumbersHidden = true;
         }
@@ -130,7 +139,7 @@ class Pagination {
         Pagination.numberDontFitOnTheRight(
           currentPage,
           activePage,
-          this.pagesCount,
+          this.pagesCount
         )
       ) {
         if (!isRightNumbersHidden) {
@@ -138,7 +147,7 @@ class Pagination {
             this,
             button,
             ul,
-            'numbersPruning',
+            'numbersPruning'
           )();
           isRightNumbersHidden = true;
         }
@@ -148,7 +157,7 @@ class Pagination {
           button,
           ul,
           'pageNumber',
-          currentPage,
+          currentPage
         )();
       }
     }
@@ -158,7 +167,7 @@ class Pagination {
     }
 
     const paginationElements = document.querySelectorAll(
-      '.js-pagination__pages',
+      '.js-pagination__pages'
     );
     paginationElements[0].remove();
   }
@@ -170,7 +179,7 @@ class Pagination {
     const span = document.createElement('span');
     const activePageNumber = parseInt(
       document.querySelector('.js-pagination__button_active-page').innerText,
-      10,
+      10
     );
     let hotelRoomsTotal = (this.pagesCount - 1) * 12;
     const endHotelRoomOnPage = activePageNumber * 12;
@@ -191,7 +200,7 @@ class Pagination {
     this.pagination.append(span);
 
     const paginationSignatureElements = document.querySelectorAll(
-      '.js-pagination__signature',
+      '.js-pagination__signature'
     );
     paginationSignatureElements[0].remove();
   }
@@ -218,18 +227,24 @@ class Pagination {
         li.classList.add(
           'pagination__button',
           'pagination__button_with-arrow',
-          'js-pagination__button_with-prev-arrow',
+          'js-pagination__button_with-prev-arrow'
         );
         span.innerText = 'arrow_back';
-        li.onclick = this.clickToPrevButton.bind(this);
+        li.addEventListener(
+          'click',
+          this.handleButtonWithPrevArrowClick.bind(this)
+        );
       } else {
         li.classList.add(
           'pagination__button',
           'pagination__button_with-arrow',
-          'js-pagination__button_with-next-arrow',
+          'js-pagination__button_with-next-arrow'
         );
         span.innerText = 'arrow_forward';
-        li.onclick = this.clickToNextButton.bind(this);
+        li.addEventListener(
+          'click',
+          this.handleButtonWithNextArrowClick.bind(this)
+        );
       }
 
       li.append(a);
@@ -244,27 +259,27 @@ class Pagination {
           'pagination__button_with-number',
           'js-pagination__button_with-number',
           'pagination__button_active-page',
-          'js-pagination__button_active-page',
+          'js-pagination__button_active-page'
         );
         li.innerText = page;
       } else {
         li.classList.add(
           'pagination__button',
           'pagination__button_with-number',
-          'js-pagination__button_with-number',
+          'js-pagination__button_with-number'
         );
         li.append(a);
         a.innerText = page;
       }
 
-      li.onclick = this.onClickToPageNumber.bind(this, li);
+      li.addEventListener(
+        'click',
+        this.handleButtonWithNumberClick.bind(this, li)
+      );
     }
 
     ul.append(li);
   }
 }
 
-const paginationItems = document.querySelectorAll('.js-pagination');
-for (let pagination = 0; pagination < paginationItems.length; pagination += 1) {
-  pagination = new Pagination(paginationItems[pagination]);
-}
+export default Pagination;
