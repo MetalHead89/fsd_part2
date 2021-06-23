@@ -1,69 +1,123 @@
-let isEntryCheck = false;
-const entryButtons = document.querySelectorAll(
-  '.js-navbar__button-entry-container'
-);
-const registrationButtons = document.querySelectorAll(
-  '.js-navbar__button-registration-container'
-);
-const accountNames = document.querySelectorAll('.js-navbar__item_with-name');
-const separators = document.querySelectorAll('.js-navbar__item_with-separator');
-const dropdownItems = document.querySelectorAll(
-  '.js-navbar__dropdown-title_vertical'
-);
-dropdownItems.forEach((item) => {
-  item.nextElementSibling.classList.toggle(
-    'navbar__hidden-list_vertical-closed'
-  );
-});
+class Navbar {
+  constructor(navbar) {
+    this.navbar = navbar;
 
-function signIn() {
-  if (isEntryCheck) {
-    for (let button = 0; button < entryButtons.length; button += 1) {
-      entryButtons[button].removeAttribute('style');
+    this.init();
+    this.addEventListeners();
+  }
+
+  init() {
+    this.isEntryCheck = false;
+    this.entryButtons = this.navbar.querySelectorAll(
+      '.js-navbar__button-entry-container',
+    );
+    this.registrationButtons = this.navbar.querySelectorAll(
+      '.js-navbar__button-registration-container',
+    );
+    this.accountNames = this.navbar.querySelectorAll(
+      '.js-navbar__item_with-name',
+    );
+    this.separators = this.navbar.querySelectorAll(
+      '.js-navbar__item_with-separator',
+    );
+    this.dropdownItems = this.navbar.querySelectorAll(
+      '.js-navbar__dropdown-title_vertical',
+    );
+    this.dropdownItems.forEach((item) => {
+      item.nextElementSibling.classList.toggle(
+        'navbar__hidden-list_vertical-closed',
+      );
+    });
+  }
+
+  addEventListeners() {
+    for (let button = 0; button < this.entryButtons.length; button += 1) {
+      this.entryButtons[button].addEventListener(
+        'click',
+        this.handleButtonEntryClick.bind(this),
+      );
     }
-    for (let button = 0; button < registrationButtons.length; button += 1) {
-      registrationButtons[button].removeAttribute('style');
+
+    for (let name = 0; name < this.accountNames.length; name += 1) {
+      this.accountNames[name].addEventListener(
+        'click',
+        this.handleNavbarItemWithNameClick.bind(this),
+      );
     }
-    for (let name = 0; name < accountNames.length; name += 1) {
-      accountNames[name].removeAttribute('style');
+
+    for (let item = 0; item < this.dropdownItems.length; item += 1) {
+      this.dropdownItems[item].addEventListener(
+        'click',
+        this.handleDropdownTitleClick,
+      );
     }
-    for (let separator = 0; separator < separators.length; separator += 1) {
-      separators[separator].removeAttribute('style');
+  }
+
+  handleButtonEntryClick() {
+    this.signIn();
+  }
+
+  handleNavbarItemWithNameClick() {
+    this.signIn();
+  }
+
+  handleDropdownTitleClick() {
+    this.nextElementSibling.classList.toggle(
+      'navbar__hidden-list_vertical-opened',
+    );
+    this.nextElementSibling.classList.toggle(
+      'navbar__hidden-list_vertical-closed',
+    );
+  }
+
+  signIn() {
+    if (this.isEntryCheck) {
+      for (let button = 0; button < this.entryButtons.length; button += 1) {
+        this.entryButtons[button].removeAttribute('style');
+      }
+      for (
+        let button = 0;
+        button < this.registrationButtons.length;
+        button += 1
+      ) {
+        this.registrationButtons[button].removeAttribute('style');
+      }
+      for (let name = 0; name < this.accountNames.length; name += 1) {
+        this.accountNames[name].removeAttribute('style');
+      }
+      for (
+        let separator = 0;
+        separator < this.separators.length;
+        separator += 1
+      ) {
+        this.separators[separator].removeAttribute('style');
+      }
+      this.isEntryCheck = false;
+    } else {
+      for (let button = 0; button < this.entryButtons.length; button += 1) {
+        this.entryButtons[button].style.display = 'none';
+      }
+      for (
+        let button = 0;
+        button < this.registrationButtons.length;
+        button += 1
+      ) {
+        this.registrationButtons[button].style.display = 'none';
+      }
+      for (let name = 0; name < this.accountNames.length; name += 1) {
+        this.accountNames[name].style.display = 'flex';
+        this.accountNames[name].style.paddingRight = 0;
+      }
+      for (
+        let separator = 0;
+        separator < this.separators.length;
+        separator += 1
+      ) {
+        this.separators[separator].style.display = 'flex';
+      }
+      this.isEntryCheck = true;
     }
-    isEntryCheck = false;
-  } else {
-    for (let button = 0; button < entryButtons.length; button += 1) {
-      entryButtons[button].style.display = 'none';
-    }
-    for (let button = 0; button < registrationButtons.length; button += 1) {
-      registrationButtons[button].style.display = 'none';
-    }
-    for (let name = 0; name < accountNames.length; name += 1) {
-      accountNames[name].style.display = 'flex';
-      accountNames[name].style.paddingRight = 0;
-    }
-    for (let separator = 0; separator < separators.length; separator += 1) {
-      separators[separator].style.display = 'flex';
-    }
-    isEntryCheck = true;
   }
 }
 
-for (let button = 0; button < entryButtons.length; button += 1) {
-  entryButtons[button].onclick = signIn;
-}
-
-for (let name = 0; name < accountNames.length; name += 1) {
-  accountNames[name].onclick = signIn;
-}
-
-for (let item = 0; item < dropdownItems.length; item += 1) {
-  dropdownItems[item].onclick = () => {
-    dropdownItems[item].nextElementSibling.classList.toggle(
-      'navbar__hidden-list_vertical-opened'
-    );
-    dropdownItems[item].nextElementSibling.classList.toggle(
-      'navbar__hidden-list_vertical-closed'
-    );
-  };
-}
+export default Navbar;
