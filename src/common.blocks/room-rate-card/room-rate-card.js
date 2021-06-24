@@ -103,7 +103,7 @@ class RoomRateCard {
       this.startDate.value.length === 10 &&
       this.endDate.value.length === 10
     ) {
-      return new Date(endDay - startDay).getDate();
+      return (endDay - startDay) / 86400000 + 1;
     }
 
     return null;
@@ -123,7 +123,7 @@ class RoomRateCard {
 
   calculateCost() {
     const lengthOfStay = this.getLengthOfStay();
-
+    console.log(lengthOfStay);
     if (lengthOfStay !== null) {
       const priceRoomForAllTime = this.dailyCost * lengthOfStay;
       this.dailyCostCalc.innerText = `${this.dailyCost.toLocaleString(
