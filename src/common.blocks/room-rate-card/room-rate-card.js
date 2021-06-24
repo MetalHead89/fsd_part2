@@ -91,7 +91,6 @@ class RoomRateCard {
   }
 
   getLengthOfStay() {
-    console.log(this.startDate.value);
     const startDay = Date.parse(
       this.startDate.value.split('.').reverse().join('-'),
     );
@@ -100,7 +99,10 @@ class RoomRateCard {
       this.endDate.value.split('.').reverse().join('-'),
     );
 
-    if (this.startDate.value !== '' && this.endDate.value !== '') {
+    if (
+      this.startDate.value.length === 10 &&
+      this.endDate.value.length === 10
+    ) {
       return new Date(endDay - startDay).getDate();
     }
 
@@ -137,6 +139,16 @@ class RoomRateCard {
         this.serviceCost +
         this.additionalServiceCost
       ).toLocaleString('ru-RU')}₽`;
+    } else {
+      this.dailyCostCalc.innerText = `${this.dailyCost.toLocaleString(
+        'ru-RU',
+      )}₽ x 0 ${RoomRateCard.getWord(0)}`;
+      this.roomRateCard.querySelector(
+        '.js-room-rate-card__room-rate',
+      ).innerText = `${'0'.toLocaleString('ru-RU')}₽`;
+      this.roomRateCard.querySelector(
+        '.js-room-rate-card__result-cost',
+      ).innerText = `${'0'.toLocaleString('ru-RU')}₽`;
     }
   }
 }
