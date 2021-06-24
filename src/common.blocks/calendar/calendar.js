@@ -1,5 +1,7 @@
 /* eslint-disable comma-dangle */
 
+import { length } from 'file-loader';
+
 class Calendar {
   constructor(calendar) {
     this.MONTHS = [
@@ -52,12 +54,21 @@ class Calendar {
 
   addEventListeners() {
     if (this.startInput !== null) {
-      this.startInput.addEventListener('blur', this.handleStartDateInputBlur.bind(this));
+      this.startInput.addEventListener(
+        'blur',
+        this.handleStartDateInputBlur.bind(this),
+      );
     }
     if (this.endInput !== null) {
-      this.endInput.addEventListener('blur', this.handleEndDateInputBlur.bind(this));
+      this.endInput.addEventListener(
+        'blur',
+        this.handleEndDateInputBlur.bind(this),
+      );
     }
-    this.clearButton.addEventListener('click', this.handleButtonClearClick.bind(this));
+    this.clearButton.addEventListener(
+      'click',
+      this.handleButtonClearClick.bind(this),
+    );
     this.prevMonthButton.addEventListener(
       'click',
       this.handleMonthButtonClick.bind(this, this.prevMonthButton),
@@ -165,11 +176,15 @@ class Calendar {
   }
 
   static dateToString(date) {
-    const day = date.getDate();
+    let day = date.getDate();
     let month = (date.getMonth() + 1).toString();
     const year = date.getFullYear();
 
-    if (month.length < 2) {
+    if (day.toString().length < 2) {
+      day = `0${day}`;
+    }
+
+    if (month.toString().length < 2) {
       month = `0${month}`;
     }
 
@@ -495,6 +510,7 @@ class Calendar {
         this.startInput.value = Calendar.dateToString(
           new Date(this.dateRange[0]),
         );
+        this.startInput.dispatchEvent(new Event('input'));
       } else {
         this.startInput.value = '';
       }
@@ -503,6 +519,7 @@ class Calendar {
         this.endInput.value = Calendar.dateToString(
           new Date(this.dateRange[1]),
         );
+        this.endInput.dispatchEvent(new Event('input'));
       } else {
         this.endInput.value = '';
       }
