@@ -1,14 +1,14 @@
-class MaskedField {
+class TextField {
   constructor(field) {
     this.field = field;
 
-    this.init();
+    this.addEventListeners();
   }
 
-  init() {
-    this.field.oninput = this.onInputMaskedTextField.bind(this);
-    this.field.onpaste = MaskedField.onPasteMaskedTextField;
-    this.field.onkeydown = this.onKeydownMaskedTextField.bind(this);
+  addEventListeners() {
+    this.field.addEventListener('input', this.handleFieldInput.bind(this));
+    this.field.addEventListener('paste', this.handleFieldPaste);
+    this.field.addEventListener('keydown', this.handleFieldKeydown.bind(this));
   }
 
   static getTextWithoutDots(text) {
@@ -21,7 +21,7 @@ class MaskedField {
     return text.split('.').join('');
   }
 
-  static onPasteMaskedTextField(event) {
+  static handleFieldPaste(event) {
     /**
      * Проверяет, что вставляемый текст содержит в себе только цифры и точки.
      * В случае неудачной проверки отменяет вставку
@@ -30,7 +30,7 @@ class MaskedField {
     const clipboardData = event.clipboardData || window.clipboardData;
     const pastedData = clipboardData.getData('Text');
 
-    if (Number.isNaN(Number(MaskedField.getTextWithoutDots(pastedData)))) {
+    if (Number.isNaN(Number(TextField.getTextWithoutDots(pastedData)))) {
       event.preventDefault();
     }
   }
@@ -51,7 +51,7 @@ class MaskedField {
     );
   }
 
-  onKeydownMaskedTextField(event) {
+  handleFieldKeydown(event) {
     /**
      * Сдвигает каретку во время удаления, если она стоит до или перед точкой
      */
@@ -74,7 +74,7 @@ class MaskedField {
     );
   }
 
-  onInputMaskedTextField(event) {
+  handleFieldInput(event) {
     /**
      * Ограничивает ввод символов, не являющихся буквами
      * Расставляет разделители.
@@ -82,7 +82,7 @@ class MaskedField {
     let caretPosition = this.field.selectionStart;
     let text = this.field.value;
 
-    if (Number.isNaN(Number(MaskedField.getTextWithoutDots(text)))) {
+    if (Number.isNaN(Number(TextField.getTextWithoutDots(text)))) {
       const startCaretPosition = caretPosition - event.data.length;
       text = `${text.slice(0, startCaretPosition)}${text.slice(caretPosition)}`;
       if (text.length > 1) {
@@ -93,12 +93,12 @@ class MaskedField {
     }
 
     if (
-      MaskedField.deleteContentAndLengthMoreThanTwo(event.inputType, text.length)
+      TextField.deleteContentAndLengthMoreThanTwo(event.inputType, text.length)
     ) {
       caretPosition -= 1;
     }
 
-    text = MaskedField.getTextWithoutDots(text);
+    text = TextField.getTextWithoutDots(text);
 
     if (text.length >= 2 && text.length < 4) {
       text = `${text.slice(0, 2)}.${text.slice(2)}`;
@@ -114,9 +114,4 @@ class MaskedField {
   }
 }
 
-const maskedTextFields = document.querySelectorAll('.js-text-field__field_masked');
-
-for (let field = 0; field < maskedTextFields.length; field += 1) {
-  // eslint-disable-next-line no-new
-  new MaskedField(maskedTextFields[field]);
-}
+export default TextField;
