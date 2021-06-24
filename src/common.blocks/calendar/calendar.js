@@ -510,7 +510,7 @@ class Calendar {
         this.startInput.value = Calendar.dateToString(
           new Date(this.dateRange[0]),
         );
-        this.startInput.dispatchEvent(new Event('input'));
+        this.startInput.dispatchEvent(new Event('change'));
       } else {
         this.startInput.value = '';
       }
@@ -519,7 +519,7 @@ class Calendar {
         this.endInput.value = Calendar.dateToString(
           new Date(this.dateRange[1]),
         );
-        this.endInput.dispatchEvent(new Event('input'));
+        this.endInput.dispatchEvent(new Event('change'));
       } else {
         this.endInput.value = '';
       }
