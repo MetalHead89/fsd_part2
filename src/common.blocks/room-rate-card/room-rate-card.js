@@ -7,9 +7,6 @@ class RoomRateCard {
   }
 
   init() {
-    this.calendarDays = this.roomRateCard.querySelectorAll(
-      '.js-calendar__day_selectable',
-    );
     this.dailyCostCalc = this.roomRateCard.querySelector(
       '.js-room-rate-card__daily-calc',
     );
@@ -68,28 +65,24 @@ class RoomRateCard {
   addEventListeners() {
     if (this.startDate) {
       this.startDate.addEventListener(
-        'input',
-        this.handleStartDateInputDOMSubtreeModified.bind(this),
+        'change',
+        this.handleStartDateChange.bind(this),
       );
     }
 
     if (this.endDate) {
       this.endDate.addEventListener(
-        'input',
-        this.handleEndDateInputDOMSubtreeModified.bind(this),
+        'change',
+        this.handleEndDateChange.bind(this),
       );
     }
-
-    // this.calendarDays.forEach((item) => {
-    //   item.addEventListener('click', this.handleSelectableDayClick.bind(this));
-    // });
   }
 
-  handleStartDateInputDOMSubtreeModified() {
+  handleStartDateChange() {
     this.calculateCost();
   }
 
-  handleEndDateInputDOMSubtreeModified() {
+  handleEndDateChange() {
     this.calculateCost();
   }
 
@@ -98,6 +91,7 @@ class RoomRateCard {
   }
 
   getLengthOfStay() {
+    console.log(this.startDate.value);
     const startDay = Date.parse(
       this.startDate.value.split('.').reverse().join('-'),
     );
