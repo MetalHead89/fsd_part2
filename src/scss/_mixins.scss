@@ -1,5 +1,7 @@
+@import './_vars';
+
 @mixin h1() {
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-family: $montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 1.71rem;
@@ -8,7 +10,7 @@
 }
 
 @mixin h2() {
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-family: $montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 1.35rem;
@@ -17,7 +19,7 @@
 }
 
 @mixin h3() {
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-family: $montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 0.85rem;

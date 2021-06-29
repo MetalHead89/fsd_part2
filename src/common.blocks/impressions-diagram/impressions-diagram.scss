@@ -1,3 +1,5 @@
+@import '../../scss/vars';
+
 .impressions-diagram {
   width: 100%;
   display: flex;
@@ -68,7 +70,7 @@
   }
 
   &__votes-number {
-    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-family: $montserrat;
     font-weight: bold;
     font-size: 24px;
     line-height: 30px;
@@ -76,7 +78,7 @@
   }
 
   &__votes-text {
-    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-family: $montserrat;
     font-weight: bold;
     font-size: 12px;
     line-height: 15px;

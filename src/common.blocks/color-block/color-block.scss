@@ -1,4 +1,5 @@
 @import '../../scss/mixins.scss';
+@import '../../scss/vars';
 
 .color-block {
   flex-direction: row;
@@ -6,7 +7,7 @@
   align-items: center;
 
   &__color-code {
-    font-family: Quicksand, Helvetica, Arial, sans-serif;
+    font-family: $quicksand;
     font-size: 1.35rem;
     font-weight: normal;
   }

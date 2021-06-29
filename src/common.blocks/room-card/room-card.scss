@@ -1,4 +1,5 @@
 @import '../../scss/mixins';
+@import '../../scss/vars';
 
 $room-card: '.room-card';
 
@@ -11,7 +12,7 @@ $room-card: '.room-card';
   flex-direction: column;
 
   &__accented-text {
-    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-family: $montserrat;
     font-weight: bold;
     font-size: 14px;
     color: rgba(31, 32, 65, 0.5);
@@ -92,7 +93,7 @@ $room-card: '.room-card';
   }
 
   &__lux {
-    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-family: $montserrat;
     font-weight: bold;
     font-size: 12px;
     text-transform: uppercase;
@@ -102,7 +103,7 @@ $room-card: '.room-card';
 
   &__number {
     display: inline;
-    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-family: $montserrat;
     font-weight: bold;
     font-size: 14px;
     color: #1f2041;

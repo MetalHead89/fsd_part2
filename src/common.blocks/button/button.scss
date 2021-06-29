@@ -1,11 +1,12 @@
 @import '../../scss/mixins';
+@import '../../scss/vars';
 
 .button {
   position: relative;
   box-sizing: border-box;
   border-radius: 22px;
   font-weight: bold;
-  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-family: $montserrat;
   font-size: 12px;
   text-transform: uppercase;
   transition: 0.5s;

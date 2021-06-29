@@ -1,3 +1,5 @@
+@import '../../scss/vars';
+
 $footer: '.footer';
 
 .footer-section {
@@ -63,14 +65,14 @@ $footer: '.footer';
   }
 
   &__info-item {
-    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-family: $montserrat;
     font-size: 14px;
     color: rgba(31, 32, 65, 0.75);
     padding: 7px 0;
   }
 
   &__info-title {
-    font-family: Montserrat, Helvetica, Arial, sans-serif;
+    font-family: $montserrat;
     font-weight: bold;
     font-size: 12px;
     text-transform: uppercase;

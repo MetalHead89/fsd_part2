@@ -1,4 +1,5 @@
 @import '../../scss/mixins';
+@import '../../scss/vars';
 
 .calendar {
   width: 100%;
@@ -91,7 +92,7 @@
   &__month-name {
     padding: 0 10px;
     text-align: center;
-    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-family: $open-sans;
     font-weight: bold;
     font-size: 19px;
     color: #1f2041;
