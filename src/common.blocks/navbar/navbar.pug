@@ -10,7 +10,7 @@ mixin navbar({ type = 'horizontal', items } = {})
   - let dropdownTitleClass = `navbar__dropdown-title navbar__dropdown-title_${typeModifier} js-navbar__dropdown-title_${typeModifier}`;
   - let separatorClass = `navbar__separator navbar__separator_${typeModifier}`;
 
-  <nav class='navbar'>
+  <nav class='navbar js-navbar'>
     ul(class=navbarClass)
       each item in items
         if item.items
