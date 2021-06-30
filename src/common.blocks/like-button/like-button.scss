@@ -33,6 +33,9 @@ $like-button: '.like-button';
   color: rgba(31, 32, 65, 0.25);
 
   & #{$like-button}__heart {
+    @include material-icon;
+
+    font-size: 0.71rem;
     animation: heart-uncheck 0.2s ease;
   }
 
@@ -59,12 +62,6 @@ $like-button: '.like-button';
     & #{$like-button}__heart {
       animation: heart-check 0.2s ease;
     }
-  }
-
-  &__heart {
-    @include material-icon;
-
-    font-size: 0.71rem;
   }
 
   &__like-counter {
