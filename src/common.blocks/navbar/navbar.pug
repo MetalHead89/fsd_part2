@@ -1,12 +1,19 @@
-mixin navbar({ type = 'horizontal', items, vertical = false } = {})
+mixin navbar({ items, vertical = false } = {})
   - let modifier = vertical ? '_vertical' : '' 
-  
-  - let navbarClass = `navbar__list navbar__list${modifier} js-navbar__list${modifier}`;
-  - let navbarItemClass = `navbar__item navbar__item${modifier} js-navbar__item${modifier}`;
-  - let navbarHiddenListClass = `navbar__hidden-list navbar__hidden-list${modifier}`;
-  - let navbarHiddenListItemClass = `navbar__hidden-list-item navbar__hidden-list-item${modifier}`;
-  - let dropdownTitleClass = `navbar__dropdown-title navbar__dropdown-title${modifier} js-navbar__dropdown-title${modifier}`;
-  - let separatorClass = `navbar__separator navbar__separator${modifier}`;
+
+  - let navbarClass = `navbar__list js-navbar__list${modifier}`
+  - let navbarItemClass = `navbar__item js-navbar__item${modifier}`
+  - let navbarHiddenListClass = `navbar__hidden-list`
+  - let navbarHiddenListItemClass = `navbar__hidden-list-item`
+  - let dropdownTitleClass = `navbar__dropdown-title js-navbar__dropdown-title${modifier}`
+  - let separatorClass = `navbar__separator`
+
+  - navbarClass += vertical ? ' navbar__list_vertical' : ''
+  - navbarItemClass += vertical ? ' navbar__item_vertical' : ''
+  - navbarHiddenListClass += vertical ? ' navbar__hidden-list_vertical' : ''
+  - navbarHiddenListItemClass += vertical ? ' navbar__hidden-list-item_vertical' : ''
+  - dropdownTitleClass += vertical ? ' navbar__dropdown-title_vertical' : ''
+  - separatorClass += vertical ? ' navbar__separator_vertical' : ''
 
   <nav class='navbar js-navbar'>
     ul(class=navbarClass)
