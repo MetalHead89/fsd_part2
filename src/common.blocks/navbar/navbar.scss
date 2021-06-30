@@ -40,44 +40,41 @@ $navbar: '.navbar';
     margin: 0;
     list-style-type: none;
     transform-origin: top;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: white;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    padding: inherit;
 
-    &_horizontal {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      background: white;
-      box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-      transform: translateY(100%);
-      padding: inherit;
-    }
+    transition: transform 0.5s;
+    transform: translateY(100%) scaleY(0);
 
     &_vertical {
+      position: unset;
+      box-shadow: none;
+      transform: none;
       padding: 0;
       align-items: center;
       overflow: hidden;
+      max-height: 0;
       transition: max-height 0.3s ease-in;
     }
 
-    &_vertical-closed {
-      max-height: 0;
-    }
-
-    &_vertical-opened {
+    &_opened {
+      transition: max-height 0.3s ease-in;
       max-height: 15rem;
     }
   }
 
   &__hidden-list-item {
+    opacity: 0;
+    padding: 5px 0;
     color: rgba(31, 32, 65, 0.5);
-    transition: color 0.5s ease;
+    transition: color 0.5s ease, opacity 0.3s;
 
     &:hover {
       color: rgba(31, 32, 65, 0.75);
-    }
-
-    &_horizontal {
-      opacity: 0;
-      padding: 5px 0;
     }
 
     &_vertical {
@@ -95,54 +92,45 @@ $navbar: '.navbar';
     flex-direction: column;
     transition: 0.5s ease;
     cursor: pointer;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 100%;
+    padding: 0 10px;
 
     &:hover {
       color: rgba(31, 32, 65, 0.75);
-    }
 
-    &_horizontal {
-      display: flex;
-      position: relative;
-      justify-content: center;
-      height: 100%;
-      padding: 0 10px;
-
-      &:hover {
-        & #{$navbar}__hidden-list {
-          transition: transform 0.4s cubic-bezier(0.73, 0.32, 0.34, 1.5);
-          transform: translateY(100%) scaleY(1);
-          transform-origin: top;
-        }
-
-        & #{$navbar}__hidden-list-item {
-          transition: opacity 0.3s;
-          opacity: 1;
-        }
+      & #{$navbar}__hidden-list {
+        color: rgba(31, 32, 65, 0.5);
+        transition: transform 0.4s cubic-bezier(0.73, 0.32, 0.34, 1.5);
+        transform: translateY(100%) scaleY(1);
+        transform-origin: top;
       }
 
-      &:not(:hover) {
-        & #{$navbar}__hidden-list {
-          transition: transform 0.5s;
-          transform: translateY(100%) scaleY(0);
-        }
-
-        & #{$navbar}__hidden-list-item {
-          transition: opacity 0.3s;
-        }
+      & #{$navbar}__hidden-list-item {
+        transition: opacity 0.3s;
+        opacity: 1;
       }
     }
 
     &_vertical {
-      display: flex;
       padding: 5px 0;
-      transition: 0.3s ease-in;
-    }
-
-    &_vertical-closed {
       opacity: 0;
+
+      &:hover {
+        & #{$navbar}__hidden-list {
+          transition: 0.3s ease-in;
+          transform: unset;
+        }
+
+        & #{$navbar}__hidden-list-item {
+          opacity: 0.6;
+        }
+      }
     }
 
-    &_vertical-opened {
+    &_opened {
       opacity: 1;
     }
 
@@ -164,18 +152,17 @@ $navbar: '.navbar';
     margin: 0;
     background: white;
 
-    &_horizontal {
-      padding: 0;
-      display: flex;
-      height: 100%;
-      flex-direction: row;
+    padding: 0;
+    display: flex;
+    height: 100%;
+    flex-direction: row;
 
-      @media screen and (max-width: 950px) {
-        display: none;
-      }
+    @media screen and (max-width: 950px) {
+      display: none;
     }
 
     &_vertical {
+      height: unset;
       position: absolute;
       display: none;
       box-sizing: border-box;
@@ -190,18 +177,16 @@ $navbar: '.navbar';
       padding: 20px 40px;
       box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
+      transform: translateY(100%) scaleY(0);
+      transition: transform 0.5s ease-in;
+      transform-origin: top;
+
       @media screen and (max-width: 950px) {
         display: flex;
       }
     }
 
-    &_vertical-closed {
-      transform: translateY(100%) scaleY(0);
-      transition: transform 0.5s ease-in;
-      transform-origin: top;
-    }
-
-    &_vertical-opened {
+    &_opened {
       transition: transform 0.5s cubic-bezier(0.73, 0.32, 0.34, 1.5);
       transform: translateY(100%) scaleY(1);
       transform-origin: top;

@@ -18,11 +18,6 @@ class Navbar {
     this.dropdownItems = this.navbar.querySelectorAll(
       '.js-navbar__dropdown-title_vertical',
     );
-    this.dropdownItems.forEach((item) => {
-      item.nextElementSibling.classList.toggle(
-        'navbar__hidden-list_vertical-closed',
-      );
-    });
   }
 
   addEventListeners() {
@@ -52,10 +47,7 @@ class Navbar {
 
   handleDropdownTitleClick() {
     this.nextElementSibling.classList.toggle(
-      'navbar__hidden-list_vertical-opened',
-    );
-    this.nextElementSibling.classList.toggle(
-      'navbar__hidden-list_vertical-closed',
+      'navbar__hidden-list_opened',
     );
   }
 
