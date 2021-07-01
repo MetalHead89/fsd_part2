@@ -5,5 +5,5 @@ mixin like-button({ isChecked, likesCount = 0 } = {})
   - buttonClass += isChecked ? ' like-button_checked' : '';
 
   div(class=buttonClass)
-    i.like-button__heart !{icon}
-    .like-button__like-counter !{likesCount}
+    i.like-button__heart.js-like-button__heart !{icon}
+    .like-button__like-counter.js-like-button__like-counter !{likesCount}
