@@ -1,114 +1,118 @@
 class Slider {
   constructor(slider) {
-    this.slider = slider;
+    this._slider = slider;
 
-    this.init();
-    this.addEventListeners();
+    this._init();
+    this._addEventListeners();
   }
 
-  init() {
-    this.leftInput = this.slider.querySelector('.js-range-slider__input_left');
-    this.rightInput = this.slider.querySelector(
+  _init() {
+    this._leftInput = this._slider.querySelector(
+      '.js-range-slider__input_left'
+    );
+    this._rightInput = this._slider.querySelector(
       '.js-range-slider__input_right'
     );
-    this.leftThumb = this.slider.querySelector('.js-range-slider__thumb_left');
-    this.rightThumb = this.slider.querySelector(
+    this._leftThumb = this._slider.querySelector(
+      '.js-range-slider__thumb_left'
+    );
+    this._rightThumb = this._slider.querySelector(
       '.js-range-slider__thumb_right'
     );
-    this.range = this.slider.querySelector('.js-range-slider__range');
-    this.rangeLabel = this.slider.querySelector(
+    this._range = this._slider.querySelector('.js-range-slider__range');
+    this._rangeLabel = this._slider.querySelector(
       '.js-range-slider__range-label'
     );
 
-    this.setLeftValue();
-    this.setRightValue();
+    this._handleInputLeftInput = this._handleInputLeftInput.bind(this);
+    this._handleInputRightInput = this._handleInputRightInput.bind(this);
+    this._handleInputLeftMouseover = this._handleInputLeftMouseover.bind(this);
+    this._handleInputRightMouseover = this._handleInputRightMouseover.bind(
+      this
+    );
+    this._handleInputLeftMouseout = this._handleInputLeftMouseout.bind(this);
+    this._handleInputRightMouseout = this._handleInputRightMouseout.bind(this);
+
+    this._setLeftValue();
+    this._setRightValue();
   }
 
-  addEventListeners() {
-    this.leftInput.addEventListener(
-      'input',
-      this.handleInputLeftInput.bind(this)
-    );
-    this.rightInput.addEventListener(
-      'input',
-      this.handleInputRightInput.bind(this)
-    );
-    this.leftInput.addEventListener(
+  _addEventListeners() {
+    this._leftInput.addEventListener('input', this._handleInputLeftInput);
+    this._rightInput.addEventListener('input', this._handleInputRightInput);
+    this._leftInput.addEventListener(
       'mouseover',
-      this.handleInputLeftMouseover.bind(this)
+      this._handleInputLeftMouseover
     );
-    this.rightInput.addEventListener(
+    this._rightInput.addEventListener(
       'mouseover',
-      this.handleInputRightMouseover.bind(this)
+      this._handleInputRightMouseover
     );
-    this.leftInput.addEventListener(
+    this._leftInput.addEventListener('mouseout', this._handleInputLeftMouseout);
+    this._rightInput.addEventListener(
       'mouseout',
-      this.handleInputLeftMouseout.bind(this)
-    );
-    this.rightInput.addEventListener(
-      'mouseout',
-      this.handleInputRightMouseout.bind(this)
+      this._handleInputRightMouseout
     );
   }
 
-  handleInputLeftInput() {
-    this.setLeftValue();
+  _handleInputLeftInput() {
+    this._setLeftValue();
   }
 
-  handleInputLeftMouseover() {
-    this.leftThumb.classList.add('range-slider__thumb_left_hover');
+  _handleInputLeftMouseover() {
+    this._leftThumb.classList.add('range-slider__thumb_left_hover');
   }
 
-  handleInputLeftMouseout() {
-    this.leftThumb.classList.remove('range-slider__thumb_left_hover');
+  _handleInputLeftMouseout() {
+    this._leftThumb.classList.remove('range-slider__thumb_left_hover');
   }
 
-  handleInputRightInput() {
-    this.setRightValue();
+  _handleInputRightInput() {
+    this._setRightValue();
   }
 
-  handleInputRightMouseover() {
-    this.rightThumb.classList.add('range-slider__thumb_right_hover');
+  _handleInputRightMouseover() {
+    this._rightThumb.classList.add('range-slider__thumb_right_hover');
   }
 
-  handleInputRightMouseout() {
-    this.rightThumb.classList.remove('range-slider__thumb_right_hover');
+  _handleInputRightMouseout() {
+    this._rightThumb.classList.remove('range-slider__thumb_right_hover');
   }
 
-  setLeftValue() {
-    const that = this.leftInput;
+  _setLeftValue() {
+    const that = this._leftInput;
     const min = parseInt(that.min, 10);
     const max = parseInt(that.max, 10);
 
     that.value = Math.min(
       parseInt(that.value, 10),
-      parseInt(this.rightInput.value, 10)
+      parseInt(this._rightInput.value, 10)
     );
     const percent = ((that.value - min) / (max - min)) * 100;
-    this.leftThumb.style.left = `${percent}%`;
-    this.range.style.left = `${percent}%`;
+    this._leftThumb.style.left = `${percent}%`;
+    this._range.style.left = `${percent}%`;
 
-    const rangeNumbers = this.rangeLabel.innerText.split('-');
-    this.rangeLabel.innerText = `${parseInt(that.value, 10).toLocaleString(
+    const rangeNumbers = this._rangeLabel.innerText.split('-');
+    this._rangeLabel.innerText = `${parseInt(that.value, 10).toLocaleString(
       'ru-RU'
     )}${String.fromCharCode(8381)} - ${rangeNumbers[1]}`;
   }
 
-  setRightValue() {
-    const that = this.rightInput;
+  _setRightValue() {
+    const that = this._rightInput;
     const min = parseInt(that.min, 10);
     const max = parseInt(that.max, 10);
 
     that.value = Math.max(
       parseInt(that.value, 10),
-      parseInt(this.leftInput.value, 10) + 1
+      parseInt(this._leftInput.value, 10) + 1
     );
     const percent = ((that.value - min) / (max - min)) * 100;
-    this.rightThumb.style.right = `${100 - percent}%`;
-    this.range.style.right = `${100 - percent}%`;
+    this._rightThumb.style.right = `${100 - percent}%`;
+    this._range.style.right = `${100 - percent}%`;
 
-    const rangeNumbers = this.rangeLabel.innerText.split('-');
-    this.rangeLabel.innerText = `${rangeNumbers[0]} - ${parseInt(
+    const rangeNumbers = this._rangeLabel.innerText.split('-');
+    this._rangeLabel.innerText = `${rangeNumbers[0]} - ${parseInt(
       that.value,
       10
     ).toLocaleString('ru-RU')}${String.fromCharCode(8381)}`;

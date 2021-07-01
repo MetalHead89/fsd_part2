@@ -1,107 +1,105 @@
 class RoomRateCard {
   constructor(card) {
-    this.roomRateCard = card;
+    this._roomRateCard = card;
 
-    this.init();
-    this.addEventListeners();
+    this._init();
+    this._addEventListeners();
   }
 
-  init() {
-    this.dailyCostCalc = this.roomRateCard.querySelector(
+  _init() {
+    this._dailyCostCalc = this._roomRateCard.querySelector(
       '.js-room-rate-card__daily-calc'
     );
-    this.startDate = this.roomRateCard
+    this._startDate = this._roomRateCard
       .querySelector('.js-dropdown__start-date-input')
       .querySelector('.js-text-field__field');
-    this.endDate = this.roomRateCard
+    this._endDate = this._roomRateCard
       .querySelector('.js-dropdown__end-date-input')
       .querySelector('.js-text-field__field');
-    this.dailyCost = parseInt(this.dailyCostCalc.innerText, 10);
-    this.serviceCost = parseInt(
-      this.roomRateCard.querySelector('.js-room-rate-card__total-services-cost')
-        .innerText,
+    this._dailyCost = parseInt(this._dailyCostCalc.innerText, 10);
+    this._serviceCost = parseInt(
+      this._roomRateCard.querySelector(
+        '.js-room-rate-card__total-services-cost'
+      ).innerText,
       10
     );
-    this.additionalServiceCost = parseInt(
-      this.roomRateCard.querySelector(
+    this._additionalServiceCost = parseInt(
+      this._roomRateCard.querySelector(
         '.js-room-rate-card__total-services-additional-cost'
       ).innerText,
       10
     );
 
-    this.dailyCostCalc.innerText = `${this.dailyCost.toLocaleString(
+    this._dailyCostCalc.innerText = `${this._dailyCost.toLocaleString(
       'ru-RU'
     )}₽ x 1 сутки`;
-    this.roomRateCard.querySelector(
+    this._roomRateCard.querySelector(
       '.js-room-rate-card__room-rate'
-    ).innerText = `${this.dailyCost.toLocaleString('ru-RU')}₽`;
+    ).innerText = `${this._dailyCost.toLocaleString('ru-RU')}₽`;
 
-    if (this.serviceCost < 0) {
-      this.roomRateCard.querySelector(
+    if (this._serviceCost < 0) {
+      this._roomRateCard.querySelector(
         '.js-room-rate-card__services-label'
       ).innerText = `Сбор за услуги: скидка ${Math.abs(
-        this.serviceCost
+        this._serviceCost
       ).toLocaleString('ru-RU')}₽`;
-      this.roomRateCard.querySelector(
+      this._roomRateCard.querySelector(
         '.js-room-rate-card__total-services-cost'
       ).innerText = '0₽';
     } else {
-      this.roomRateCard.querySelector(
+      this._roomRateCard.querySelector(
         '.js-room-rate-card__total-services-cost'
-      ).innerText = `${this.serviceCost.toLocaleString('ru-RU')}₽`;
+      ).innerText = `${this._serviceCost.toLocaleString('ru-RU')}₽`;
     }
-    this.roomRateCard.querySelector(
+    this._roomRateCard.querySelector(
       '.js-room-rate-card__total-services-additional-cost'
-    ).innerText = `${this.additionalServiceCost.toLocaleString('ru-RU')}₽`;
-    this.roomRateCard.querySelector(
+    ).innerText = `${this._additionalServiceCost.toLocaleString('ru-RU')}₽`;
+    this._roomRateCard.querySelector(
       '.js-room-rate-card__result-cost'
     ).innerText = `${(
-      this.dailyCost +
-      this.serviceCost +
-      this.additionalServiceCost
+      this._dailyCost +
+      this._serviceCost +
+      this._additionalServiceCost
     ).toLocaleString('ru-RU')}₽`;
+
+    this._handleStartDateChange = this._handleStartDateChange.bind(this);
+    this._handleEndDateChange = this._handleEndDateChange.bind(this);
   }
 
-  addEventListeners() {
-    if (this.startDate) {
-      this.startDate.addEventListener(
-        'change',
-        this.handleStartDateChange.bind(this)
-      );
+  _addEventListeners() {
+    if (this._startDate) {
+      this._startDate.addEventListener('change', this._handleStartDateChange);
     }
 
-    if (this.endDate) {
-      this.endDate.addEventListener(
-        'change',
-        this.handleEndDateChange.bind(this)
-      );
+    if (this._endDate) {
+      this._endDate.addEventListener('change', this._handleEndDateChange);
     }
   }
 
-  handleStartDateChange() {
-    this.calculateCost();
+  _handleStartDateChange() {
+    this._calculateCost();
   }
 
-  handleEndDateChange() {
-    this.calculateCost();
+  _handleEndDateChange() {
+    this._calculateCost();
   }
 
-  handleSelectableDayClick() {
-    this.calculateCost();
+  _handleSelectableDayClick() {
+    this._calculateCost();
   }
 
-  getLengthOfStay() {
+  _getLengthOfStay() {
     const startDay = Date.parse(
-      this.startDate.value.split('.').reverse().join('-')
+      this._startDate.value.split('.').reverse().join('-')
     );
 
     const endDay = Date.parse(
-      this.endDate.value.split('.').reverse().join('-')
+      this._endDate.value.split('.').reverse().join('-')
     );
 
     if (
-      this.startDate.value.length === 10 &&
-      this.endDate.value.length === 10
+      this._startDate.value.length === 10 &&
+      this._endDate.value.length === 10
     ) {
       return (endDay - startDay) / 86400000 + 1;
     }
@@ -121,32 +119,32 @@ class RoomRateCard {
     return word;
   }
 
-  calculateCost() {
-    const lengthOfStay = this.getLengthOfStay();
+  _calculateCost() {
+    const lengthOfStay = this._getLengthOfStay();
 
     if (lengthOfStay !== null) {
-      const priceRoomForAllTime = this.dailyCost * lengthOfStay;
-      this.dailyCostCalc.innerText = `${this.dailyCost.toLocaleString(
+      const priceRoomForAllTime = this._dailyCost * lengthOfStay;
+      this._dailyCostCalc.innerText = `${this._dailyCost.toLocaleString(
         'ru-RU'
       )}₽ x ${lengthOfStay} ${RoomRateCard.getWord(lengthOfStay)}`;
-      this.roomRateCard.querySelector(
+      this._roomRateCard.querySelector(
         '.js-room-rate-card__room-rate'
       ).innerText = `${priceRoomForAllTime.toLocaleString('ru-RU')}₽`;
-      this.roomRateCard.querySelector(
+      this._roomRateCard.querySelector(
         '.js-room-rate-card__result-cost'
       ).innerText = `${(
         priceRoomForAllTime +
-        this.serviceCost +
-        this.additionalServiceCost
+        this._serviceCost +
+        this._additionalServiceCost
       ).toLocaleString('ru-RU')}₽`;
     } else {
-      this.dailyCostCalc.innerText = `${this.dailyCost.toLocaleString(
+      this._dailyCostCalc.innerText = `${this._dailyCost.toLocaleString(
         'ru-RU'
       )}₽ x 0 ${RoomRateCard.getWord(0)}`;
-      this.roomRateCard.querySelector(
+      this._roomRateCard.querySelector(
         '.js-room-rate-card__room-rate'
       ).innerText = `${'0'.toLocaleString('ru-RU')}₽`;
-      this.roomRateCard.querySelector(
+      this._roomRateCard.querySelector(
         '.js-room-rate-card__result-cost'
       ).innerText = `${'0'.toLocaleString('ru-RU')}₽`;
     }

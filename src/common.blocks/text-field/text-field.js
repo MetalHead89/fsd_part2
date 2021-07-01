@@ -1,14 +1,18 @@
 class TextField {
   constructor(field) {
-    this.field = field;
+    this._field = field;
 
-    this.addEventListeners();
+    this._handleFieldInput = this._handleFieldInput.bind(this);
+    this._handleFieldPaste = TextField.handleFieldPaste.bind(this);
+    this._handleFieldKeydown = this._handleFieldKeydown.bind(this);
+
+    this._addEventListeners();
   }
 
-  addEventListeners() {
-    this.field.addEventListener('input', this.handleFieldInput.bind(this));
-    this.field.addEventListener('paste', this.handleFieldPaste);
-    this.field.addEventListener('keydown', this.handleFieldKeydown.bind(this));
+  _addEventListeners() {
+    this._field.addEventListener('input', this._handleFieldInput);
+    this._field.addEventListener('paste', this._handleFieldPaste);
+    this._field.addEventListener('keydown', this._handleFieldKeydown);
   }
 
   static getTextWithoutDots(text) {
@@ -35,34 +39,34 @@ class TextField {
     }
   }
 
-  isBackspaceAndCaretBeforeDot(key) {
+  _isBackspaceAndCaretBeforeDot(key) {
     return (
       key === 'Backspace' &&
-      this.field.selectionStart === this.field.selectionEnd &&
-      this.field.value.substr(this.field.selectionStart - 1, 1) === '.'
+      this._field.selectionStart === this._field.selectionEnd &&
+      this._field.value.substr(this._field.selectionStart - 1, 1) === '.'
     );
   }
 
-  isDeleteAndCaretAfterDot(key) {
+  _isDeleteAndCaretAfterDot(key) {
     return (
       key === 'Delete' &&
-      this.field.selectionStart === this.field.selectionEnd &&
-      this.field.value.substr(this.field.selectionStart, 1) === '.'
+      this._field.selectionStart === this._field.selectionEnd &&
+      this._field.value.substr(this._field.selectionStart, 1) === '.'
     );
   }
 
-  handleFieldKeydown(event) {
+  _handleFieldKeydown(event) {
     /**
      * Сдвигает каретку во время удаления, если она стоит до или перед точкой
      */
-    if (this.isBackspaceAndCaretBeforeDot.call(this, event.key)) {
-      this.field.selectionStart -= 1;
-      this.field.selectionEnd -= 1;
+    if (this._isBackspaceAndCaretBeforeDot.call(this, event.key)) {
+      this._field.selectionStart -= 1;
+      this._field.selectionEnd -= 1;
     }
 
-    if (this.isDeleteAndCaretAfterDot.call(this, event.key)) {
-      this.field.selectionStart += 1;
-      this.field.selectionEnd += 1;
+    if (this._isDeleteAndCaretAfterDot.call(this, event.key)) {
+      this._field.selectionStart += 1;
+      this._field.selectionEnd += 1;
     }
   }
 
@@ -74,13 +78,13 @@ class TextField {
     );
   }
 
-  handleFieldInput(event) {
+  _handleFieldInput(event) {
     /**
      * Ограничивает ввод символов, не являющихся буквами
      * Расставляет разделители.
      */
-    let caretPosition = this.field.selectionStart;
-    let text = this.field.value;
+    let caretPosition = this._field.selectionStart;
+    let text = this._field.value;
 
     if (Number.isNaN(Number(TextField.getTextWithoutDots(text)))) {
       const startCaretPosition = caretPosition - event.data.length;
@@ -108,9 +112,9 @@ class TextField {
       caretPosition += 1;
     }
 
-    this.field.value = text;
-    this.field.selectionStart = caretPosition;
-    this.field.selectionEnd = caretPosition;
+    this._field.value = text;
+    this._field.selectionStart = caretPosition;
+    this._field.selectionEnd = caretPosition;
   }
 }
 
