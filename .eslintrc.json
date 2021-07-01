@@ -17,6 +17,7 @@
     "fsd/no-function-declaration-in-event-listener": "error",
     "fsd/split-conditionals": "error",
     "import/no-unresolved": "off",
+    "no-underscore-dangle": "off",
     "comma-dangle": [
       "error",
       {

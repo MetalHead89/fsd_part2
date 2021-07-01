@@ -1,35 +1,34 @@
 class Header {
   constructor(header) {
-    this.header = header;
+    this._header = header;
 
-    this.init();
-    this.addEventListeners();
+    this._init();
+    this._addEventListeners();
   }
 
-  init() {
-    this.burger = this.header.querySelector('.js-header__burger');
-    this.hideMenu = this.header.querySelector('.js-navbar__list_vertical');
-
-    this.hideMenuItems = this.hideMenu.querySelectorAll(
-      '.js-navbar__item_vertical'
+  _init() {
+    this._burger = this._header.querySelector('.js-header__burger');
+    this._hideMenu = this._header.querySelector('.js-navbar__list_vertical');
+    this._hideMenuItems = this._hideMenu.querySelectorAll(
+      '.js-navbar__item_vertical',
     );
+
+    this._handleBurgerClick = this._handleBurgerClick.bind(this);
   }
 
-  addEventListeners() {
-    this.burger.addEventListener('click', this.handleBurgerClick.bind(this));
+  _addEventListeners() {
+    this._burger.addEventListener('click', this._handleBurgerClick);
   }
 
-  handleBurgerClick() {
-    if (this.hideMenu) {
-      this.hideMenu.classList.toggle('navbar__list_opened');
+  _handleBurgerClick() {
+    if (this._hideMenu) {
+      this._hideMenu.classList.toggle('navbar__list_opened');
       for (
         let itemIndex = 0;
-        itemIndex < this.hideMenuItems.length;
+        itemIndex < this._hideMenuItems.length;
         itemIndex += 1
       ) {
-        this.hideMenuItems[itemIndex].classList.toggle(
-          'navbar__item_opened'
-        );
+        this._hideMenuItems[itemIndex].classList.toggle('navbar__item_opened');
       }
     }
   }

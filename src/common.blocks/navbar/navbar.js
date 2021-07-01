@@ -4,54 +4,61 @@
 
 class Navbar {
   constructor(navbar) {
-    this.navbar = navbar;
+    this._navbar = navbar;
 
-    this.init();
-    this.addEventListeners();
+    this._init();
+    this._addEventListeners();
   }
 
-  init() {
-    this.entryButton = this.navbar.querySelector(
+  _init() {
+    this._entryButton = this._navbar.querySelector(
       '.js-navbar__button-entry-container',
     );
-    this.accountName = this.navbar.querySelector('.js-navbar__item_with-name');
-    this.dropdownItems = this.navbar.querySelectorAll(
+    this._accountName = this._navbar.querySelector(
+      '.js-navbar__item_with-name',
+    );
+    this._dropdownItems = this._navbar.querySelectorAll(
       '.js-navbar__dropdown-title_vertical',
     );
+
+    this._handleButtonEntryClick = this._handleButtonEntryClick.bind(this);
+    this._handleNavbarItemWithNameClick = this._handleNavbarItemWithNameClick.bind(
+      this,
+    );
+    this._handleDropdownTitleClick = Navbar.handleDropdownTitleClick.bind(this);
   }
 
-  addEventListeners() {
-    this.entryButton.addEventListener(
+  _addEventListeners() {
+    this._entryButton.addEventListener('click', this._handleButtonEntryClick);
+
+    this._accountName.addEventListener(
       'click',
-      this.handleButtonEntryClick.bind(this),
+      this._handleNavbarItemWithNameClick,
     );
 
-    this.accountName.addEventListener(
-      'click',
-      this.handleNavbarItemWithNameClick.bind(this),
-    );
-
-    this.dropdownItems.forEach((item) => {
+    this._dropdownItems.forEach((item) => {
       const modifyItem = item;
-      modifyItem.addEventListener('click', this.handleDropdownTitleClick);
+      modifyItem.addEventListener('click', this._handleDropdownTitleClick);
     });
   }
 
-  handleButtonEntryClick() {
-    this.signIn();
+  _handleButtonEntryClick() {
+    this._signIn();
   }
 
-  handleNavbarItemWithNameClick() {
-    this.signIn();
+  _handleNavbarItemWithNameClick() {
+    this._signIn();
   }
 
-  handleDropdownTitleClick() {
-    this.nextElementSibling.classList.toggle(
+  static handleDropdownTitleClick(event) {
+    const dropdownTitle = event.target.parentElement;
+
+    dropdownTitle.nextElementSibling.classList.toggle(
       'navbar__hidden-list_opened',
     );
   }
 
-  signIn() {
+  _signIn() {
     const entryButtons = document.querySelectorAll(
       '.js-navbar__button-entry-container',
     );
@@ -65,7 +72,7 @@ class Navbar {
       '.js-navbar__item_with-separator',
     );
 
-    if (this.entryButton.style.display === 'none') {
+    if (this._entryButton.style.display === 'none') {
       entryButtons.forEach((item) => item.removeAttribute('style'));
       registrationButtons.forEach((item) => item.removeAttribute('style'));
       accountsNames.forEach((item) => item.removeAttribute('style'));

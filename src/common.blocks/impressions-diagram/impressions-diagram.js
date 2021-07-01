@@ -1,40 +1,40 @@
 class Diagram {
   constructor(diagram) {
-    this.diagram = diagram;
-    this.init();
+    this._diagram = diagram;
+    this._init();
   }
 
-  init() {
-    this.canvasContext = this.diagram.getContext('2d');
-    this.canvasCenterX = this.diagram.width / 2;
-    this.canvasCenterY = this.diagram.height / 2;
-    this.roomImpressions = {};
-    this.separatorSize = 3;
-    this.votesCounterNumber = document.querySelector(
+  _init() {
+    this._canvasContext = this._diagram.getContext('2d');
+    this._canvasCenterX = this._diagram.width / 2;
+    this._canvasCenterY = this._diagram.height / 2;
+    this._roomImpressions = {};
+    this._separatorSize = 3;
+    this._votesCounterNumber = document.querySelector(
       '.js-impressions-diagram__votes-number',
     );
-    this.votesCounterText = document.querySelector(
+    this._votesCounterText = document.querySelector(
       '.js-impressions-diagram__votes-text',
     );
-    this.votesSum = 0;
-    this.startAngle = 0;
-    this.endAngle = 0 - Diagram.degToRad(90 + this.separatorSize / 2);
+    this._votesSum = 0;
+    this._startAngle = 0;
+    this._endAngle = 0 - Diagram.degToRad(90 + this._separatorSize / 2);
 
     // Установка градиентов
-    const magnificentlyGradient = this.canvasContext.createLinearGradient(
+    const magnificentlyGradient = this._canvasContext.createLinearGradient(
       0,
       0,
       0,
       120,
     );
-    const goodGradient = this.canvasContext.createLinearGradient(0, 0, 0, 120);
-    const satisfactorilyGradient = this.canvasContext.createLinearGradient(
+    const goodGradient = this._canvasContext.createLinearGradient(0, 0, 0, 120);
+    const satisfactorilyGradient = this._canvasContext.createLinearGradient(
       0,
       0,
       0,
       120,
     );
-    const disappointedGradient = this.canvasContext.createLinearGradient(
+    const disappointedGradient = this._canvasContext.createLinearGradient(
       0,
       0,
       0,
@@ -52,26 +52,26 @@ class Diagram {
       const cookie = cookies[cookieIndex].split('=');
 
       if (Diagram.coolieIsValid(cookie[0])) {
-        this.roomImpressions[cookie[0].trim()] = parseInt(cookie[1], 10);
-        this.votesSum += parseInt(cookie[1], 10);
+        this._roomImpressions[cookie[0].trim()] = parseInt(cookie[1], 10);
+        this._votesSum += parseInt(cookie[1], 10);
       }
     }
 
-    this.votesCounterNumber.innerText = this.votesSum;
-    this.votesCounterText.innerText = Diagram.wordGenerator(this.votesSum);
+    this._votesCounterNumber.innerText = this._votesSum;
+    this._votesCounterText.innerText = Diagram.wordGenerator(this._votesSum);
 
-    this.setDiagramSegment(
+    this._setDiagramSegment(
       magnificentlyGradient,
-      this.roomImpressions.magnificently,
+      this._roomImpressions.magnificently,
     );
-    this.setDiagramSegment(goodGradient, this.roomImpressions.good);
-    this.setDiagramSegment(
+    this._setDiagramSegment(goodGradient, this._roomImpressions.good);
+    this._setDiagramSegment(
       satisfactorilyGradient,
-      this.roomImpressions.satisfactorily,
+      this._roomImpressions.satisfactorily,
     );
-    this.setDiagramSegment(
+    this._setDiagramSegment(
       disappointedGradient,
-      this.roomImpressions.disappointed,
+      this._roomImpressions.disappointed,
     );
   }
 
@@ -118,29 +118,29 @@ class Diagram {
     );
   }
 
-  setDiagramSegment(color, votes) {
+  _setDiagramSegment(color, votes) {
     if (votes === 0) {
       return;
     }
 
-    const impressionPercent = (votes / this.votesSum) * 100;
-    this.startAngle = this.endAngle;
-    const degAngle = (360 * impressionPercent) / 100 - this.separatorSize;
-    this.endAngle -= Diagram.degToRad(degAngle);
+    const impressionPercent = (votes / this._votesSum) * 100;
+    this._startAngle = this._endAngle;
+    const degAngle = (360 * impressionPercent) / 100 - this._separatorSize;
+    this._endAngle -= Diagram.degToRad(degAngle);
 
-    this.canvasContext.beginPath();
-    this.canvasContext.arc(
-      this.canvasCenterX,
-      this.canvasCenterY,
+    this._canvasContext.beginPath();
+    this._canvasContext.arc(
+      this._canvasCenterX,
+      this._canvasCenterY,
       58,
-      this.startAngle,
-      this.endAngle,
+      this._startAngle,
+      this._endAngle,
       true,
     );
-    this.canvasContext.lineWidth = 4;
-    this.canvasContext.strokeStyle = color;
-    this.canvasContext.stroke();
-    this.endAngle -= Diagram.degToRad(this.separatorSize);
+    this._canvasContext.lineWidth = 4;
+    this._canvasContext.strokeStyle = color;
+    this._canvasContext.stroke();
+    this._endAngle -= Diagram.degToRad(this._separatorSize);
   }
 }
 

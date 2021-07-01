@@ -2,121 +2,125 @@
 
 class Dropdown {
   constructor(dropdown) {
-    this.dropdown = dropdown;
+    this._dropdown = dropdown;
 
-    this.dropdownInit();
-    this.addEventListeners();
+    this._dropdownInit();
+    this._addEventListeners();
   }
 
-  dropdownInit() {
-    this.quantitySum = 0;
-    this.dropdownType = Dropdown.getDropdownType(this.dropdown);
-    this.dropMenu = this.dropdown.querySelector('.js-dropdown__drop-menu');
-    this.dropCheck = this.dropdown.querySelector('.js-dropdown__check');
+  _dropdownInit() {
+    this._quantitySum = 0;
+    this._dropdownType = Dropdown.getDropdownType(this._dropdown);
+    this._dropMenu = this._dropdown.querySelector('.js-dropdown__drop-menu');
+    this._dropCheck = this._dropdown.querySelector('.js-dropdown__check');
 
-    const clearButtonWrapper = this.dropdown.querySelector(
-      '.js-dropdown__button-clear'
+    const clearButtonWrapper = this._dropdown.querySelector(
+      '.js-dropdown__button-clear',
     );
     if (clearButtonWrapper !== null) {
-      [this.clearButton] = clearButtonWrapper.children;
-      this.clearButton.style.display = 'none';
+      [this._clearButton] = clearButtonWrapper.children;
+      this._clearButton.style.display = 'none';
     }
 
-    const applyButtonWrapper = this.dropdown.querySelector(
-      '.js-dropdown__button-apply'
+    const applyButtonWrapper = this._dropdown.querySelector(
+      '.js-dropdown__button-apply',
     );
     if (applyButtonWrapper !== null) {
-      [this.applyButton] = applyButtonWrapper.children;
+      [this._applyButton] = applyButtonWrapper.children;
     }
 
-    const calendarApplyButtonWrapper = this.dropdown.querySelector(
-      '.js-calendar__button-apply'
+    const calendarApplyButtonWrapper = this._dropdown.querySelector(
+      '.js-calendar__button-apply',
     );
     if (calendarApplyButtonWrapper !== null) {
-      [this.calendarApplyButton] = calendarApplyButtonWrapper.children;
+      [this._calendarApplyButton] = calendarApplyButtonWrapper.children;
     }
 
-    this.dropdownHeaderText = this.dropdown.querySelector(
-      '.js-dropdown__header-text'
+    this._dropdownHeaderText = this._dropdown.querySelector(
+      '.js-dropdown__header-text',
     );
-    this.dropdownHeader = this.dropdown.querySelector('.js-dropdown__header');
-    if (this.dropdownType === 'date') {
-      this.dropdownStartDay = this.dropdown
+    this._dropdownHeader = this._dropdown.querySelector('.js-dropdown__header');
+    if (this._dropdownType === 'date') {
+      this._dropdownStartDay = this._dropdown
         .querySelector('.js-dropdown__start-date-input')
         .querySelector('.js-text-field__field');
-      this.dropdownEndDay = this.dropdown
+      this._dropdownEndDay = this._dropdown
         .querySelector('.js-dropdown__end-date-input')
         .querySelector('.js-text-field__field');
     }
+
+    this._handleButtonClearClick = this._handleButtonClearClick.bind(this);
+    this._handleButtonApplyClick = this._handleButtonApplyClick.bind(this);
+    this._handleQuantityButtonClick = this._handleQuantityButtonClick.bind(
+      this,
+    );
+    this._handleHeaderClick = this._handleHeaderClick.bind(this);
+    this._handleStartDateInputOnfocus = this._handleStartDateInputOnfocus.bind(
+      this,
+    );
+    this._handleEndDateInputOnfocus = this._handleEndDateInputOnfocus.bind(
+      this,
+    );
   }
 
-  addEventListeners() {
-    if (this.dropdownType === 'guests') {
-      this.clearButton.onclick = this.handleButtonClearClick.bind(this);
+  _addEventListeners() {
+    if (this._dropdownType === 'guests') {
+      this._clearButton.addEventListener('click', this._handleButtonClearClick);
     }
 
-    if (this.applyButton !== undefined) {
-      this.applyButton.addEventListener(
+    if (this._applyButton !== undefined) {
+      this._applyButton.addEventListener('click', this._handleButtonApplyClick);
+    }
+
+    if (this._calendarApplyButton !== undefined) {
+      this._calendarApplyButton.addEventListener(
         'click',
-        this.handleButtonApplyClick.bind(this)
+        this._handleButtonApplyClick,
       );
     }
 
-    if (this.calendarApplyButton !== undefined) {
-      this.calendarApplyButton.addEventListener(
-        'click',
-        this.handleButtonApplyClick.bind(this)
-      );
-    }
-
-    if (this.dropdownType === 'guests' || this.dropdownType === 'comfort') {
-      const dropdownQuantityButtons = this.dropdown.querySelectorAll(
-        '.js-dropdown__quantity-button'
+    if (this._dropdownType === 'guests' || this._dropdownType === 'comfort') {
+      const dropdownQuantityButtons = this._dropdown.querySelectorAll(
+        '.js-dropdown__quantity-button',
       );
 
       dropdownQuantityButtons.forEach((item) => {
         const button = item;
-        button.addEventListener(
-          'click',
-          this.handleQuantityButtonClick.bind(this, button)
-        );
+        button.addEventListener('click', this._handleQuantityButtonClick);
       });
     }
 
-    if (this.dropdownHeader !== null) {
-      this.dropdownHeader.addEventListener(
-        'click',
-        this.handleHeaderClick.bind(this)
-      );
+    if (this._dropdownHeader !== null) {
+      this._dropdownHeader.addEventListener('click', this._handleHeaderClick);
     }
 
-    if (this.dropdownType === 'date') {
-      this.dropdownStartDay.addEventListener(
+    if (this._dropdownType === 'date') {
+      this._dropdownStartDay.addEventListener(
         'focus',
-        this.handleStartDateInputOnfocus.bind(this)
+        this._handleStartDateInputOnfocus,
       );
-      this.dropdownEndDay.addEventListener(
+      this._dropdownEndDay.addEventListener(
         'focus',
-        this.handleEndDateInputOnfocus.bind(this)
+        this._handleEndDateInputOnfocus,
       );
     }
   }
 
-  handleButtonApplyClick() {
-    this.closeDropMenu();
+  _handleButtonApplyClick() {
+    this._closeDropMenu();
   }
 
-  handleHeaderClick() {
-    this.closeOpenDropdowns();
-    this.dropCheck.checked = !this.dropCheck.checked;
+  _handleHeaderClick() {
+    this._closeOpenDropdowns();
+    this._dropCheck.checked = !this._dropCheck.checked;
   }
 
-  handleStartDateInputOnfocus() {
-    this.OpenDateDropdown();
+  _handleStartDateInputOnfocus() {
+    this._OpenDateDropdown();
   }
 
-  handleEndDateInputOnfocus() {
-    this.OpenDateDropdown();
+  _handleEndDateInputOnfocus() {
+    this._OpenDateDropdown();
   }
 
   static getDropdownType(dropdown) {
@@ -135,29 +139,29 @@ class Dropdown {
     return type;
   }
 
-  setHeaderText(text) {
-    this.dropdownHeaderText.innerText = text;
+  _setHeaderText(text) {
+    this._dropdownHeaderText.innerText = text;
   }
 
-  increaseQuantitySum() {
-    this.quantitySum += 1;
+  _increaseQuantitySum() {
+    this._quantitySum += 1;
   }
 
-  decreaseQuantitySum() {
-    this.quantitySum -= 1;
+  _decreaseQuantitySum() {
+    this._quantitySum -= 1;
   }
 
-  clearButtonShow() {
-    this.clearButton.style.display = 'inline-block';
+  _clearButtonShow() {
+    this._clearButton.style.display = 'inline-block';
   }
 
-  clearButtonHide() {
-    this.clearButton.style.display = 'none';
+  _clearButtonHide() {
+    this._clearButton.style.display = 'none';
   }
 
-  closeDropMenu() {
-    this.dropCheck.checked = false;
-    this.closeTimer = null;
+  _closeDropMenu() {
+    this._dropCheck.checked = false;
+    this._closeTimer = null;
   }
 
   static numberIsTwoThreeOrFour(number10, number100) {
@@ -213,17 +217,17 @@ class Dropdown {
     return generatedWord;
   }
 
-  changeDropdownHeaderText() {
+  _changeDropdownHeaderText() {
     /**
      * Изменяет текст хедера dropdown элемента
      */
 
-    const quantityNumbers = this.dropdown.querySelectorAll(
-      '.js-dropdown__quantity-number'
+    const quantityNumbers = this._dropdown.querySelectorAll(
+      '.js-dropdown__quantity-number',
     );
     let headerText = '';
 
-    if (this.dropdownType === 'guests') {
+    if (this._dropdownType === 'guests') {
       const guests = {
         guests:
           parseInt(quantityNumbers[0].innerText, 10) +
@@ -238,7 +242,7 @@ class Dropdown {
           }
           headerText += `${guests[key]} ${Dropdown.dropdownWordGenerator(
             key,
-            guests[key]
+            guests[key],
           )}`;
         }
       });
@@ -246,7 +250,7 @@ class Dropdown {
       if (headerText === '') {
         headerText = 'Сколько гостей';
       }
-    } else if (this.dropdownType === 'comfort') {
+    } else if (this._dropdownType === 'comfort') {
       const comfort = {
         bedroomsCount: parseInt(quantityNumbers[0].innerText, 10),
         bedsCount: parseInt(quantityNumbers[1].innerText, 10),
@@ -260,7 +264,7 @@ class Dropdown {
           }
           headerText += `${comfort[key]} ${Dropdown.dropdownWordGenerator(
             key,
-            comfort[key]
+            comfort[key],
           )}`;
         }
       });
@@ -269,18 +273,18 @@ class Dropdown {
         headerText = 'Выберите удобства';
       }
     }
-    this.setHeaderText(headerText);
+    this._setHeaderText(headerText);
   }
 
-  handleButtonClearClick() {
+  _handleButtonClearClick() {
     /**
      * Сбрасывает все значения dropdown на дефолтные
      */
 
-    const quantityElements = this.dropdown.querySelectorAll(
-      '.js-dropdown__quantity-number'
+    const quantityElements = this._dropdown.querySelectorAll(
+      '.js-dropdown__quantity-number',
     );
-    this.clearButton.style.display = 'none';
+    this._clearButton.style.display = 'none';
 
     for (
       let quantityIndex = 0;
@@ -293,31 +297,31 @@ class Dropdown {
       quantity.previousElementSibling.disabled = true;
     }
 
-    this.quantitySum = 0;
-    this.changeDropdownHeaderText();
+    this._quantitySum = 0;
+    this._changeDropdownHeaderText();
   }
 
-  handleQuantityButtonClick(button) {
+  _handleQuantityButtonClick(event) {
     let quantityElement = null;
 
-    if (button.classList.contains('dropdown__quantity-button_add')) {
-      quantityElement = button.previousElementSibling;
+    if (event.target.classList.contains('dropdown__quantity-button_add')) {
+      quantityElement = event.target.previousElementSibling;
       quantityElement.innerText = parseInt(quantityElement.innerText, 10) + 1;
-      this.increaseQuantitySum();
+      this._increaseQuantitySum();
     } else {
-      quantityElement = button.nextElementSibling;
+      quantityElement = event.target.nextElementSibling;
       quantityElement.innerText = parseInt(quantityElement.innerText, 10) - 1;
-      this.decreaseQuantitySum();
+      this._decreaseQuantitySum();
     }
 
-    this.onOffQuantityButton.bind(quantityElement)();
-    if (this.dropdownType === 'guests') {
-      this.onOffClearButton();
+    this._onOffQuantityButton.bind(quantityElement)();
+    if (this._dropdownType === 'guests') {
+      this._onOffClearButton();
     }
-    this.changeDropdownHeaderText();
+    this._changeDropdownHeaderText();
   }
 
-  onOffQuantityButton() {
+  _onOffQuantityButton() {
     if (parseInt(this.innerText, 10) > 0) {
       this.previousElementSibling.disabled = false;
     } else {
@@ -325,16 +329,16 @@ class Dropdown {
     }
   }
 
-  onOffClearButton() {
-    if (this.quantitySum > 0) {
-      this.clearButtonShow();
+  _onOffClearButton() {
+    if (this._quantitySum > 0) {
+      this._clearButtonShow();
     } else {
-      this.clearButtonHide();
+      this._clearButtonHide();
     }
   }
 
-  closeOpenDropdowns() {
-    if (this.dropCheck.checked === false) {
+  _closeOpenDropdowns() {
+    if (this._dropCheck.checked === false) {
       const dropdowns = document.querySelectorAll('.js-dropdown');
 
       dropdowns.forEach((item) => {
@@ -346,13 +350,13 @@ class Dropdown {
     }
   }
 
-  closeDropdown() {
-    this.dropdown.querySelector('.js-dropdown__check').checked = false;
+  _closeDropdown() {
+    this._dropdown.querySelector('.js-dropdown__check').checked = false;
   }
 
-  OpenDateDropdown() {
-    this.closeOpenDropdowns();
-    this.dropCheck.checked = true;
+  _OpenDateDropdown() {
+    this._closeOpenDropdowns();
+    this._dropCheck.checked = true;
   }
 }
 
