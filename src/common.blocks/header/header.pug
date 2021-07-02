@@ -10,5 +10,8 @@ mixin header({ logoPath, navbar = [] } = {})
         +navbar({ items: navbar })
         label.header__burger.js-header__burger
           .header__burger-image
-          
-    +navbar({ items: navbar, vertical: true })
+
+    .header__hidden-navbar.js-header__hidden-navbar      
+      +navbar({ items: navbar, vertical: true })
+    
+    //- +navbar({ items: navbar, vertical: true })
