@@ -111,7 +111,7 @@ class Dropdown {
   }
 
   _handleHeaderClick() {
-    this._closeOpenDropdowns();
+    this._closeInactiveDropdowns();
     this._dropCheck.checked = !this._dropCheck.checked;
   }
 
@@ -337,7 +337,7 @@ class Dropdown {
     }
   }
 
-  _closeOpenDropdowns() {
+  _closeInactiveDropdowns() {
     if (this._dropCheck.checked === false) {
       const dropdowns = document.querySelectorAll('.js-dropdown');
 
@@ -355,7 +355,7 @@ class Dropdown {
   }
 
   _OpenDateDropdown() {
-    this._closeOpenDropdowns();
+    this._closeInactiveDropdowns();
     this._dropCheck.checked = true;
   }
 }
