@@ -8,7 +8,7 @@ class Header {
 
   _init() {
     this._burger = this._header.querySelector('.js-header__burger');
-    this._hideMenu = this._header.querySelector('.js-header__hidden-navbar');
+    this._hiddenMenu = this._header.querySelector('.js-header__hidden-navbar');
 
     this._handleBurgerClick = this._handleBurgerClick.bind(this);
   }
@@ -18,8 +18,8 @@ class Header {
   }
 
   _handleBurgerClick() {
-    if (this._hideMenu) {
-      this._hideMenu.classList.toggle('header__hidden-navbar_opened');
+    if (this._hiddenMenu) {
+      this._hiddenMenu.classList.toggle('header__hidden-navbar_opened');
     }
   }
 }
