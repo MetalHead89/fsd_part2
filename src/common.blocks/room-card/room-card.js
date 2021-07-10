@@ -19,6 +19,7 @@ class RoomCard {
     this._slides = this._roomCard.querySelectorAll(
       '.js-room-card__slider-list-item'
     );
+    this._activeSlide = 0;
 
     this._handleButtonNextClick = this._handleButtonNextClick.bind(this);
     this._handleButtonPrevClick = this._handleButtonPrevClick.bind(this);
@@ -35,63 +36,109 @@ class RoomCard {
   }
 
   _handleButtonNextClick() {
-    const activeSlide = this._roomCard.querySelector(
-      '.js-room-card__slider-list-item_opaque'
-    );
-    const nextSlide = activeSlide.nextElementSibling;
-    const activeDot = this._roomCard.querySelector('.js-room-card__dot_active');
-    const nextDot = activeDot.nextElementSibling;
+    const newActiveSlide =
+      this._activeSlide + (this._activeSlide < this._slides.length - 1 ? 1 : 0);
 
-    if (nextSlide) {
-      RoomCard.switchSlide(activeSlide, nextSlide);
-      RoomCard.switchSliderDot(activeDot, nextDot);
+    if (newActiveSlide !== this._activeSlide) {
+      this._switchSlide(newActiveSlide);
+      this._switchSliderDot(newActiveSlide);
+      this._activeSlide = newActiveSlide;
     }
+
+    // const activeSlide = this._roomCard.querySelector(
+    //   '.js-room-card__slider-list-item_opaque'
+    // );
+    // const nextSlide = activeSlide.nextElementSibling;
+    // const activeDot = this._roomCard.querySelector('.js-room-card__dot_active');
+    // const nextDot = activeDot.nextElementSibling;
+
+    // if (nextSlide) {
+    //   RoomCard.switchSlide(activeSlide, nextSlide);
+    //   RoomCard.switchSliderDot(activeDot, nextDot);
+    // }
   }
 
   _handleButtonPrevClick() {
-    const activeSlide = this._roomCard.querySelector(
-      '.js-room-card__slider-list-item_opaque'
-    );
-    const prevSlide = activeSlide.previousElementSibling;
-    const activeDot = this._roomCard.querySelector('.js-room-card__dot_active');
-    const prevDot = activeDot.previousElementSibling;
+    const newActiveSlide = this._activeSlide - (this._activeSlide > 0 ? 1 : 0);
 
-    if (prevSlide) {
-      RoomCard.switchSlide(activeSlide, prevSlide);
-      RoomCard.switchSliderDot(activeDot, prevDot);
+    if (newActiveSlide !== this._activeSlide) {
+      this._switchSlide(newActiveSlide);
+      this._switchSliderDot(newActiveSlide);
+      this._activeSlide = newActiveSlide;
     }
+
+    // const activeSlide = this._roomCard.querySelector(
+    //   '.js-room-card__slider-list-item_opaque'
+    // );
+    // const prevSlide = activeSlide.previousElementSibling;
+    // const activeDot = this._roomCard.querySelector('.js-room-card__dot_active');
+    // const prevDot = activeDot.previousElementSibling;
+
+    // if (prevSlide) {
+    //   RoomCard.switchSlide(activeSlide, prevSlide);
+    //   RoomCard.switchSliderDot(activeDot, prevDot);
+    // }
   }
 
-  static switchSlide(activeSlide, nextSlide) {
-    activeSlide.classList.remove(
+  _switchSlide(newActiveSlide) {
+    this._slides[this._activeSlide].classList.remove(
       'room-card__slider-list-item_opaque',
       'js-room-card__slider-list-item_opaque'
     );
-    nextSlide.classList.add(
+
+    this._slides[newActiveSlide].classList.add(
       'room-card__slider-list-item_opaque',
       'js-room-card__slider-list-item_opaque'
     );
+
+    // activeSlide.classList.remove(
+    //   'room-card__slider-list-item_opaque',
+    //   'js-room-card__slider-list-item_opaque'
+    // );
+    // nextSlide.classList.add(
+    //   'room-card__slider-list-item_opaque',
+    //   'js-room-card__slider-list-item_opaque'
+    // );
   }
 
   _handleDotClick(event) {
-    const activeDot = this._sliderDots.indexOf(
-      this._roomCard.querySelector('.js-room-card__dot_active')
-    );
-    const nextDot = this._sliderDots.indexOf(event.target);
+    const activeDotIndex = this._activeSlide;
+    const newActiveDotIndex = this._sliderDots.indexOf(event.target);
 
-    RoomCard.switchSlide(this._slides[activeDot], this._slides[nextDot]);
-    RoomCard.switchSliderDot(
-      this._sliderDots[activeDot],
-      this._sliderDots[nextDot]
-    );
+    if (activeDotIndex !== newActiveDotIndex) {
+      this._switchSlide(newActiveDotIndex);
+      this._switchSliderDot(newActiveDotIndex);
+      this._activeSlide = newActiveDotIndex;
+    }
+
+    // const activeDot = this._sliderDots.indexOf(
+    //   this._roomCard.querySelector('.js-room-card__dot_active')
+    // );
+    // const nextDot = this._sliderDots.indexOf(event.target);
+
+    // RoomCard.switchSlide(this._slides[activeDot], this._slides[nextDot]);
+    // RoomCard.switchSliderDot(
+    //   this._sliderDots[activeDot],
+    //   this._sliderDots[nextDot]
+    // );
   }
 
-  static switchSliderDot(activeDot, nextDot) {
-    activeDot.classList.remove(
+  _switchSliderDot(newActiveDot) {
+    this._sliderDots[this._activeSlide].classList.remove(
       'room-card__dot_active',
       'js-room-card__dot_active'
     );
-    nextDot.classList.add('room-card__dot_active', 'js-room-card__dot_active');
+
+    this._sliderDots[newActiveDot].classList.add(
+      'room-card__dot_active',
+      'js-room-card__dot_active'
+    );
+
+    // activeDot.classList.remove(
+    //   'room-card__dot_active',
+    //   'js-room-card__dot_active'
+    // );
+    // nextDot.classList.add('room-card__dot_active', 'js-room-card__dot_active');
   }
 }
 
