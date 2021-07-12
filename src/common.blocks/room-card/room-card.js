@@ -19,7 +19,7 @@ class RoomCard {
     this._slides = this._roomCard.querySelectorAll(
       '.js-room-card__slider-list-item'
     );
-    this._activeSlide = 0;
+    this._activeSlideIndex = 0;
 
     this._handleButtonNextClick = this._handleButtonNextClick.bind(this);
     this._handleButtonPrevClick = this._handleButtonPrevClick.bind(this);
@@ -36,51 +36,51 @@ class RoomCard {
   }
 
   _handleButtonNextClick() {
-    const newActiveSlide =
-      this._activeSlide + (this._activeSlide < this._slides.length - 1 ? 1 : 0);
+    const newActiveSlideIndex =
+      this._activeSlideIndex + (this._activeSlideIndex < this._slides.length - 1 ? 1 : 0);
 
-    if (newActiveSlide !== this._activeSlide) {
-      this._switchSlide(newActiveSlide);
-      this._switchSliderDot(newActiveSlide);
-      this._activeSlide = newActiveSlide;
+    if (newActiveSlideIndex !== this._activeSlideIndex) {
+      this._switchSlide(newActiveSlideIndex);
+      this._switchSliderDot(newActiveSlideIndex);
+      this._activeSlideIndex = newActiveSlideIndex;
     }
   }
 
   _handleButtonPrevClick() {
-    const newActiveSlide = this._activeSlide - (this._activeSlide > 0 ? 1 : 0);
+    const newActiveSlideIndex = this._activeSlideIndex - (this._activeSlideIndex > 0 ? 1 : 0);
 
-    if (newActiveSlide !== this._activeSlide) {
-      this._switchSlide(newActiveSlide);
-      this._switchSliderDot(newActiveSlide);
-      this._activeSlide = newActiveSlide;
+    if (newActiveSlideIndex !== this._activeSlideIndex) {
+      this._switchSlide(newActiveSlideIndex);
+      this._switchSliderDot(newActiveSlideIndex);
+      this._activeSlideIndex = newActiveSlideIndex;
     }
   }
 
-  _switchSlide(newActiveSlide) {
-    this._slides[this._activeSlide].classList.remove(
+  _switchSlide(newActiveSlideIndex) {
+    this._slides[this._activeSlideIndex].classList.remove(
       'room-card__slider-list-item_opaque',
       'js-room-card__slider-list-item_opaque'
     );
 
-    this._slides[newActiveSlide].classList.add(
+    this._slides[newActiveSlideIndex].classList.add(
       'room-card__slider-list-item_opaque',
       'js-room-card__slider-list-item_opaque'
     );
   }
 
   _handleDotClick(event) {
-    const activeDotIndex = this._activeSlide;
+    const activeDotIndex = this._activeSlideIndex;
     const newActiveDotIndex = this._sliderDots.indexOf(event.target);
 
     if (activeDotIndex !== newActiveDotIndex) {
       this._switchSlide(newActiveDotIndex);
       this._switchSliderDot(newActiveDotIndex);
-      this._activeSlide = newActiveDotIndex;
+      this._activeSlideIndex = newActiveDotIndex;
     }
   }
 
   _switchSliderDot(newActiveDot) {
-    this._sliderDots[this._activeSlide].classList.remove(
+    this._sliderDots[this._activeSlideIndex].classList.remove(
       'room-card__dot_active',
       'js-room-card__dot_active'
     );
