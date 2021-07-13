@@ -85,8 +85,7 @@ class Dropdown {
       );
 
       dropdownQuantityButtons.forEach((item) => {
-        const button = item;
-        button.addEventListener('click', this._handleQuantityButtonClick);
+        item.addEventListener('click', this._handleQuantityButtonClick);
       });
     }
 
@@ -342,9 +341,8 @@ class Dropdown {
       const dropdowns = document.querySelectorAll('.js-dropdown');
 
       dropdowns.forEach((item) => {
-        const dropdown = item;
-        if (dropdown !== this) {
-          dropdown.querySelector('.js-dropdown__check').checked = false;
+        if (item !== this) {
+          item.querySelector('.js-dropdown__check').checked = false;
         }
       });
     }
