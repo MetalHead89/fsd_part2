@@ -27,7 +27,7 @@ class Calendar {
     this._currentDate = new Date();
     this._currentDate.setHours(0, 0, 0, 0);
     this._calendarTitle = this._calendar.querySelector(
-      '.js-calendar__month-name',
+      '.js-calendar__month-name'
     );
     this._year = this._currentDate.getFullYear();
     this._month = this._currentDate.getMonth();
@@ -35,13 +35,13 @@ class Calendar {
     this._isChoiceMode = false;
     [this._startInput, this._endInput] = this._getStartAndEndDatesFields();
     this._prevMonthButton = this._calendar.querySelector(
-      '.js-calendar__month-button_with-back-arrow',
+      '.js-calendar__month-button_with-back-arrow'
     );
     this._nextMonthButton = this._calendar.querySelector(
-      '.js-calendar__month-button_with-forward-arrow',
+      '.js-calendar__month-button_with-forward-arrow'
     );
     [this._clearButton] = this._calendar.querySelector(
-      '.js-calendar__button-clear',
+      '.js-calendar__button-clear'
     ).children;
     this._clearButton.style.display = 'none';
 
@@ -61,11 +61,11 @@ class Calendar {
     this._clearButton.addEventListener('click', this._handleButtonClearClick);
     this._prevMonthButton.addEventListener(
       'click',
-      this._handleMonthButtonClick,
+      this._handleMonthButtonClick
     );
     this._nextMonthButton.addEventListener(
       'click',
-      this._handleMonthButtonClick,
+      this._handleMonthButtonClick
     );
   }
 
@@ -117,7 +117,7 @@ class Calendar {
 
   _clearSelectedDays() {
     const selectableDays = this._calendar.querySelectorAll(
-      '.js-calendar__day_selectable',
+      '.js-calendar__day_selectable'
     );
 
     for (let dayIndex = 0; dayIndex < selectableDays.length; dayIndex += 1) {
@@ -125,11 +125,11 @@ class Calendar {
 
       day.classList.remove(
         'calendar__day_selected',
-        'js-calendar__day_selected',
+        'js-calendar__day_selected'
       );
       day.parentNode.classList.remove('calendar__range-highlight_left-rounded');
       day.parentNode.classList.remove(
-        'calendar__range-highlight_right-rounded',
+        'calendar__range-highlight_right-rounded'
       );
       day.parentNode.classList.remove('calendar__range-highlight');
     }
@@ -228,7 +228,7 @@ class Calendar {
 
   _handleMonthButtonClick(event) {
     const isDate = event.target.classList.contains(
-      'calendar__month-button_with-back-arrow',
+      'calendar__month-button_with-back-arrow'
     )
       ? new Date(this._year, this._month - 1)
       : new Date(this._year, this._month + 1);
@@ -239,7 +239,7 @@ class Calendar {
   _showSelectedDays() {
     if (this._dateRange.length > 0) {
       const selectableDays = this._calendar.querySelectorAll(
-        '.js-calendar__day_selectable',
+        '.js-calendar__day_selectable'
       );
 
       for (let dayIndex = 0; dayIndex < selectableDays.length; dayIndex += 1) {
@@ -251,7 +251,7 @@ class Calendar {
         ) {
           day.classList.add(
             'calendar__day_selected',
-            'js-calendar__day_selected',
+            'js-calendar__day_selected'
           );
         }
       }
@@ -284,34 +284,34 @@ class Calendar {
       this._isChoiceMode = false;
       day.classList.remove(
         'calendar__day_selected',
-        'js-calendar__day_selected',
+        'js-calendar__day_selected'
       );
       day.parentNode.classList.remove('calendar__range-highlight_left-rounded');
       day.parentNode.classList.remove(
-        'calendar__range-highlight_right-rounded',
+        'calendar__range-highlight_right-rounded'
       );
     } else if (this._dateRange.length === 2 && this._dayIsSelected(day)) {
       this._dateRange.splice(
         this._dateRange.indexOf(selectedDate.getTime()),
-        1,
+        1
       );
       this._isChoiceMode = true;
       day.classList.remove(
         'calendar__day_selected',
-        'js-calendar__day_selected',
+        'js-calendar__day_selected'
       );
     } else if (
       this._dateRange.length === 2 &&
       this._dayIsSelectableAndLessThanStartingPointOfRange(day)
     ) {
       const selectedDays = this._calendar.querySelectorAll(
-        '.js-calendar__day_selected',
+        '.js-calendar__day_selected'
       );
 
       if (selectedDays[0]) {
         selectedDays[0].classList.remove(
           'calendar__day_selected',
-          'js-calendar__day_selected',
+          'js-calendar__day_selected'
         );
       }
 
@@ -323,13 +323,13 @@ class Calendar {
       this._dayIsSelectableAndGreaterThanStartingPointOfRange(day)
     ) {
       const selectedDays = this._calendar.querySelectorAll(
-        '.js-calendar__day_selected',
+        '.js-calendar__day_selected'
       );
 
       if (selectedDays.length === 2) {
         selectedDays[1].classList.remove(
           'calendar__day_selected',
-          'js-calendar__day_selected',
+          'js-calendar__day_selected'
         );
       } else if (
         selectedDays.length === 1 &&
@@ -337,7 +337,7 @@ class Calendar {
       ) {
         selectedDays[0].classList.remove(
           'calendar__day_selected',
-          'js-calendar__day_selected',
+          'js-calendar__day_selected'
         );
       }
 
@@ -362,7 +362,7 @@ class Calendar {
   _dayIsSelectableAndNotEqualToStartingPointOfRange(day) {
     const date = this._getDateFromCalendar(day).getTime();
     const startingDateOfRange = this._dateRange.sort(
-      Calendar.compareNumbers,
+      Calendar.compareNumbers
     )[0];
 
     return Calendar.dayIsSelectable(day) && date !== startingDateOfRange;
@@ -371,7 +371,7 @@ class Calendar {
   _dayIsSelectableAndEqualToStartingPointOfRange(day) {
     const date = this._getDateFromCalendar(day).getTime();
     const startingDateOfRange = this._dateRange.sort(
-      Calendar.compareNumbers,
+      Calendar.compareNumbers
     )[0];
 
     return Calendar.dayIsSelectable(day) && date === startingDateOfRange;
@@ -417,17 +417,17 @@ class Calendar {
 
   _showRange(range) {
     const selectableDays = this._calendar.querySelectorAll(
-      '.js-calendar__day_selectable',
+      '.js-calendar__day_selectable'
     );
 
     for (let dayIndex = 0; dayIndex < selectableDays.length; dayIndex += 1) {
       const selectableDay = selectableDays[dayIndex];
 
       selectableDay.parentNode.classList.remove(
-        'calendar__range-highlight_left-rounded',
+        'calendar__range-highlight_left-rounded'
       );
       selectableDay.parentNode.classList.remove(
-        'calendar__range-highlight_right-rounded',
+        'calendar__range-highlight_right-rounded'
       );
       selectableDay.parentNode.classList.remove('calendar__range-highlight');
     }
@@ -470,7 +470,7 @@ class Calendar {
 
   _handleButtonClearClick() {
     const selectableDays = this._calendar.querySelectorAll(
-      '.js-calendar__day_selectable',
+      '.js-calendar__day_selectable'
     );
 
     for (let dayIndex = 0; dayIndex < selectableDays.length; dayIndex += 1) {
@@ -478,11 +478,11 @@ class Calendar {
 
       day.classList.remove(
         'calendar__day_selected',
-        'js-calendar__day_selected',
+        'js-calendar__day_selected'
       );
       day.parentNode.classList.remove('calendar__range-highlight_left-rounded');
       day.parentNode.classList.remove(
-        'calendar__range-highlight_right-rounded',
+        'calendar__range-highlight_right-rounded'
       );
       day.parentNode.classList.remove('calendar__range-highlight');
     }
@@ -506,18 +506,18 @@ class Calendar {
     const parent = this._calendar.offsetParent.offsetParent;
 
     if (parent && parent.classList.contains('dropdown_date')) {
-      if (typeof this._dateRange[0] !== 'undefined') {
+      if (typeof this._dateRange[0]) {
         this._startInput.value = Calendar.dateToString(
-          new Date(this._dateRange[0]),
+          new Date(this._dateRange[0])
         );
         this._startInput.dispatchEvent(new Event('change'));
       } else {
         this._startInput.value = '';
       }
 
-      if (typeof this._dateRange[1] !== 'undefined') {
+      if (typeof this._dateRange[1]) {
         this._endInput.value = Calendar.dateToString(
-          new Date(this._dateRange[1]),
+          new Date(this._dateRange[1])
         );
         this._endInput.dispatchEvent(new Event('change'));
       } else {
@@ -556,7 +556,7 @@ class Calendar {
      */
 
     const weekBlocks = this._calendar.querySelectorAll(
-      '.js-calendar__week-section',
+      '.js-calendar__week-section'
     );
 
     for (
@@ -581,10 +581,10 @@ class Calendar {
       32 - new Date(this._year, this._month - 1, 32).getDate();
     const firstDayMonth = date.getDay() === 0 ? 7 : date.getDay();
     const calendarBody = this._calendar.querySelector(
-      '.js-calendar__days-section',
+      '.js-calendar__days-section'
     );
     const weeksInCalendar = Math.ceil(
-      (daysInCurrentMonth + firstDayMonth - 1) / 7,
+      (daysInCurrentMonth + firstDayMonth - 1) / 7
     );
 
     this._calendarTitle.innerText = `${this._MONTHS[this._month]} ${
@@ -596,7 +596,7 @@ class Calendar {
     calendarDate = new Date(
       date.getFullYear(),
       date.getMonth() - 1,
-      daysInPrevMonths - firstDayMonth + 2,
+      daysInPrevMonths - firstDayMonth + 2
     );
 
     for (let week = 0; week < weeksInCalendar; week += 1) {
@@ -627,7 +627,7 @@ class Calendar {
         if (calendarDate >= this._currentDate) {
           calendarDay.classList.add(
             'calendar__day_selectable',
-            'js-calendar__day_selectable',
+            'js-calendar__day_selectable'
           );
         }
 
