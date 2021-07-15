@@ -1,41 +1,29 @@
 mixin navbar({ items, vertical = false } = {})
-  - let modifier = vertical ? '_vertical' : '' 
+  - let navbarClass = 'navbar js-navbar'
+  - navbarClass += vertical ? ' navbar_vertical js-navbar_vertical' : ''
 
-  - let navbarClass = `navbar__list js-navbar__list${modifier}`
-  - let navbarItemClass = `navbar__item js-navbar__item${modifier}`
-  - let navbarHiddenListClass = `navbar__hidden-list`
-  - let navbarHiddenListItemClass = `navbar__hidden-list-item`
-  - let dropdownTitleClass = `navbar__dropdown-title js-navbar__dropdown-title${modifier}`
-  - let separatorClass = `navbar__separator`
-
-  - navbarClass += vertical ? ' navbar__list_vertical' : ''
-  - navbarItemClass += vertical ? ' navbar__item_vertical' : ''
-  - navbarHiddenListClass += vertical ? ' navbar__hidden-list_vertical' : ''
-  - navbarHiddenListItemClass += vertical ? ' navbar__hidden-list-item_vertical' : ''
-  - dropdownTitleClass += vertical ? ' navbar__dropdown-title_vertical' : ''
-  - separatorClass += vertical ? ' navbar__separator_vertical' : ''
-
-  <nav class='navbar js-navbar'>
-    ul(class=navbarClass)
+  nav(class=navbarClass)
+    ul(class='navbar__list js-navbar__list')
+    
       each item in items
         if item.items
-          li(class=navbarItemClass)
-            div(class=dropdownTitleClass)
+          li(class='navbar__item js-navbar__item')
+            input(type="checkbox" class='navbar__hidden-list-switch')
+            div(class='navbar__dropdown-title js-navbar__dropdown-title')
               span !{item.title}
               i.navbar__expand-more-button expand_more
-            ul(class=navbarHiddenListClass)
+            ul(class='navbar__hidden-list')
               each hiddenItem in item.items
-                li(class=navbarHiddenListItemClass) !{hiddenItem}
+                li(class='navbar__hidden-list-item') !{hiddenItem}
         else
-          li(class=navbarItemClass) !{item}
+          li(class='navbar__item js-navbar__item') !{item}
           
-      li(class=navbarItemClass + ' navbar__item_with-separator js-navbar__item_with-separator')
-        div(class=separatorClass)
-      li(class=navbarItemClass + ' navbar__item_with-name js-navbar__item_with-name') Виталий Бакалов
-      li(class=navbarItemClass)
+      li(class='navbar__item js-navbar__item navbar__item_with-separator js-navbar__item_with-separator')
+        div(class='navbar__separator')
+      li(class='navbar__item js-navbar__item navbar__item_with-name js-navbar__item_with-name') Виталий Бакалов
+      li(class='navbar__item js-navbar__item')
         .js-navbar__button-entry-container
           +button({type: 'border', text: 'войти', theme: 'paddingsS'})
-      li(class=navbarItemClass)
+      li(class='navbar__item js-navbar__item')
         .js-navbar__button-registration-container
           +button({text: 'зарегистрироваться', theme: 'paddingsL'})
-  </nav>

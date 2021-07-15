@@ -11,6 +11,9 @@ class Navbar {
   }
 
   _init() {
+    this._orientation = this._navbar.classList.contains('js-navbar_vertical')
+      ? 'vertical'
+      : 'horizontal';
     this._entryButton = this._navbar.querySelector(
       '.js-navbar__button-entry-container'
     );
@@ -18,14 +21,14 @@ class Navbar {
       '.js-navbar__item_with-name'
     );
     this._dropdownItems = this._navbar.querySelectorAll(
-      '.js-navbar__dropdown-title_vertical'
+      '.js-navbar__dropdown-title'
     );
 
     this._handleButtonEntryClick = this._handleButtonEntryClick.bind(this);
     this._handleNavbarItemWithNameClick = this._handleNavbarItemWithNameClick.bind(
       this
     );
-    this._handleDropdownTitleClick = Navbar.handleDropdownTitleClick.bind(this);
+    this._handleDropdownTitleClick = this.handleDropdownTitleClick.bind(this);
   }
 
   _addEventListeners() {
@@ -49,10 +52,13 @@ class Navbar {
     this._signIn();
   }
 
-  static handleDropdownTitleClick(event) {
-    event.target.parentElement.nextElementSibling.classList.toggle(
-      'navbar__hidden-list_opened'
-    );
+  handleDropdownTitleClick(event) {
+    if (this._orientation === 'vertical') {
+      const hiddenListSwitch = event.target.offsetParent.querySelector(
+        '.navbar__hidden-list-switch'
+      );
+      hiddenListSwitch.checked = !hiddenListSwitch.checked;
+    }
   }
 
   _signIn() {
