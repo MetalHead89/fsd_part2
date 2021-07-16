@@ -80,7 +80,7 @@ module.exports = {
       ],
     }),
     new StylelintPlugin({
-      configFile: path.resolve(__dirname, 'src/js/stylelint.config.js'),
+      configFile: path.resolve(__dirname, './stylelint.config.js'),
     }),
   ],
   module: {
