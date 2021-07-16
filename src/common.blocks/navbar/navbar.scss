@@ -152,7 +152,7 @@ $navbar: '.navbar';
       max-height: 0;
       transition: max-height 0.3s ease-in;
     }
-    /////////////////////////////////
+
     & #{$navbar}__hidden-list-switch:checked ~ #{$navbar}__hidden-list {
       transition: max-height 0.3s ease-in;
       max-height: 15rem;
@@ -196,6 +196,25 @@ $navbar: '.navbar';
     & #{$navbar}__separator {
       height: 1px;
       width: 150px;
+    }
+  }
+
+  &_logged-in {
+    #{$navbar}__button-entry-container {
+      display: none;
+    }
+
+    #{$navbar}__button-registration-container {
+      display: none;
+    }
+
+    #{$navbar}__item_with-name {
+      display: flex;
+      padding-right: 0;
+    }
+
+    #{$navbar}__item_with-separator {
+      display: flex;
     }
   }
 }
