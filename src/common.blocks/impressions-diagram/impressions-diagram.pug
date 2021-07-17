@@ -2,7 +2,7 @@ mixin impressions-diagram({ magnificently = 0, good = 0, satisfactorily = 0, dis
   - let diagramLegendItemClass = 'impressions-diagram__legend-item impressions-diagram__legend-item_theme'
 
 
-  .impressions-diagram
+  .impressions-diagram.js-impressions-diagram
     .impressions-diagram__diagram-section
       canvas.js-impressions-diagram__diagram(width=120, height=120)
       .impressions-diagram__votes-counter
@@ -14,9 +14,9 @@ mixin impressions-diagram({ magnificently = 0, good = 0, satisfactorily = 0, dis
       div(class = diagramLegendItemClass + "_good") Хорошо
       div(class = diagramLegendItemClass + "_satisfactorily") Удовлетворительно
       div(class = diagramLegendItemClass + "_disappointed") Разочарован
-      
-  script.
-    document.cookie = 'magnificently=' + !{magnificently}
-    document.cookie = 'good=' + !{good}
-    document.cookie = 'satisfactorily=' + !{satisfactorily}
-    document.cookie = 'disappointed=' + !{disappointed}
+
+    input(
+      class="impressions-diagram__data-field js-impressions-diagram__data-field"
+      type="text"
+      value=`{"magnificently":  ${magnificently}, "good":  ${good}, "satisfactorily":  ${satisfactorily}, "disappointed":  ${disappointed} }`
+    )
