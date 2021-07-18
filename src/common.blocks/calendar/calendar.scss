@@ -147,4 +147,10 @@
     display: flex;
     justify-content: space-between;
   }
+
+  &__button-clear {
+    &_hidden {
+      opacity: 0;
+    }
+  }
 }
