@@ -18,8 +18,11 @@ $dropdown: '.dropdown';
   }
 
   &__button-clear {
-    & input {
-      display: none;
+    // & input {
+    //   display: none;
+    // }
+    &_hidden {
+      opacity: 0;
     }
   }
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable comma-dangle */
 
 class Dropdown {
@@ -14,12 +15,11 @@ class Dropdown {
     this._dropMenu = this._dropdown.querySelector('.js-dropdown__drop-menu');
     this._dropCheck = this._dropdown.querySelector('.js-dropdown__check');
 
-    const clearButtonWrapper = this._dropdown.querySelector(
+    this._clearButtonWrapper = this._dropdown.querySelector(
       '.js-dropdown__button-clear'
     );
-    if (clearButtonWrapper !== null) {
-      [this._clearButton] = clearButtonWrapper.children;
-      this._clearButton.style.display = 'none';
+    if (this._clearButtonWrapper !== null) {
+      [this._clearButton] = this._clearButtonWrapper.children;
     }
 
     const applyButtonWrapper = this._dropdown.querySelector(
@@ -151,11 +151,11 @@ class Dropdown {
   }
 
   _clearButtonShow() {
-    this._clearButton.style.display = 'inline-block';
+    this._clearButtonWrapper.classList.remove('dropdown__button-clear_hidden');
   }
 
   _clearButtonHide() {
-    this._clearButton.style.display = 'none';
+    this._clearButtonWrapper.classList.add('dropdown__button-clear_hidden');
   }
 
   _closeDropMenu() {
@@ -283,7 +283,7 @@ class Dropdown {
     const quantityElements = this._dropdown.querySelectorAll(
       '.js-dropdown__quantity-number'
     );
-    this._clearButton.style.display = 'none';
+    this._clearButtonWrapper.classList.add('dropdown__button-clear_hidden');
 
     for (
       let quantityIndex = 0;

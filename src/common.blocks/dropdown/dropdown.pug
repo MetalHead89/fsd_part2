@@ -76,7 +76,7 @@ mixin dropdown({ type, startDate, endDate, title } = {})
               ) +
         if buttons
           .dropdown__bottom-buttons-panel
-            .dropdown__button-clear.js-dropdown__button-clear
+            .dropdown__button-clear.dropdown__button-clear_hidden.js-dropdown__button-clear
               +button({type: 'onlyText', text: 'очистить'})
             .js-dropdown__button-apply
               +button({type: 'onlyText', text: 'применить'})
