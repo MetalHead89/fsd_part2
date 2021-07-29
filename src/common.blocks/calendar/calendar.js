@@ -508,7 +508,7 @@ class Calendar {
     const parent = this._calendar.offsetParent.offsetParent;
 
     if (parent && parent.classList.contains('dropdown_date')) {
-      if (typeof this._dateRange[0]) {
+      if (this._dateRange[0]) {
         this._startInput.value = Calendar.dateToString(
           new Date(this._dateRange[0])
         );
@@ -517,7 +517,7 @@ class Calendar {
         this._startInput.value = '';
       }
 
-      if (typeof this._dateRange[1]) {
+      if (this._dateRange[1]) {
         this._endInput.value = Calendar.dateToString(
           new Date(this._dateRange[1])
         );
