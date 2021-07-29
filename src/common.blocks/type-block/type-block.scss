@@ -29,21 +29,21 @@
     flex: none;
     font-weight: 300;
     color: rgba(31, 32, 65, 0.25);
-    @include typeBlockTag;
+    @include type-block-tag;
 
     &_size_l {
       @include h1;
-      @include typeBlockTag;
+      @include type-block-tag;
     }
 
     &_size_m {
       @include h2;
-      @include typeBlockTag;
+      @include type-block-tag;
     }
 
     &_size_s {
       @include h3;
-      @include typeBlockTag;
+      @include type-block-tag;
     }
   }
 }
