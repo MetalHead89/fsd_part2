@@ -28,6 +28,16 @@
   color: #1f2041;
 }
 
+@mixin background-position() {
+  background-size: cover;
+  background-position: center center;
+}
+
+@mixin additional-photo-size() {
+  width: 100%;
+  height: 50%;
+}
+
 @mixin typeBlockTag() {
   font-weight: 400;
   color: rgba(31, 32, 65, 0.25);
