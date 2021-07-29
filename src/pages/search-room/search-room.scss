@@ -2,18 +2,6 @@
 
 $search-room: '.search-room';
 
-.site-container {
-  @include site-container;
-}
-
-.content-section {
-  @include content-section;
-}
-
-article {
-  @include article;
-}
-
 #{$search-room} {
   height: 100%;
   box-sizing: border-box;

@@ -1,17 +1,5 @@
 @import '../../scss/mixins';
 
-.site-container {
-  @include site-container;
-}
-
-.content-section {
-  @include content-section;
-}
-
-article {
-  @include article;
-}
-
 .room-details-page {
   &__room-photos {
     display: flex;

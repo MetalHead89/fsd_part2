@@ -16,3 +16,20 @@ body {
     overflow-wrap: anywhere;
   }
 }
+
+.site-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+.content-section {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+article {
+  width: 100%;
+}

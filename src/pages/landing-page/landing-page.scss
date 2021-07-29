@@ -1,18 +1,6 @@
 @import '../../scss/mixins';
 @import '../../scss/animations';
 
-.site-container {
-  @include site-container;
-}
-
-.content-section {
-  @include content-section;
-}
-
-article {
-  @include article;
-}
-
 .landing-page {
   position: relative;
   width: 100%;
