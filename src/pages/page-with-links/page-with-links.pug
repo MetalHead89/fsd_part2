@@ -7,8 +7,9 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Links
   body
-    nav.links-wrapper
-      ul.links
-        each link in config.links
-          li.links__item
-            a.links__link(href=link.href) !{link.text}
+    .page-with-links
+      nav.page-with-links__navigation
+        ul.page-with-links__links
+          each link in config.links
+            li.page-with-links__item
+              a.page-with-links__link(href=link.href) !{link.text}
