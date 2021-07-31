@@ -32,135 +32,136 @@ html(lang="ru")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title UI kit
   body
-    //- COLORS AND TYPE
-    section.section
-      h1.section__title Colors & Type
-      .colors-and-type
-        .colors-and-type__colors
-          each colorBlock in config.colorBlocks
-            .colors-and-type__color-block
-              +color-block({ theme: colorBlock.theme, colorName: colorBlock.colorName, colorCode: colorBlock.colorCode })
-        .colors-and-type__type
-          each typeBlock in config.typeBlocks
-            .colors-and-type__type-block
-              +type-block({tag: typeBlock.tag, text: typeBlock.text})
+    .ui-kit
+      //- COLORS AND TYPE
+      section.ui-kit__section
+        h1.ui-kit__section-title Colors & Type
+        .ui-kit__colors-and-type
+          .ui-kit__colors
+            each colorBlock in config.colorBlocks
+              .ui-kit__color-block
+                +color-block({ theme: colorBlock.theme, colorName: colorBlock.colorName, colorCode: colorBlock.colorCode })
+          .ui-kit__type
+            each typeBlock in config.typeBlocks
+              .ui-kit__type-block
+                +type-block({tag: typeBlock.tag, text: typeBlock.text})
 
-    //- FORM ELEMENTS
-    section.section
-      h1.section__title Form Elements
-      .form-elements
-        section.form-elements__three-column-section
-          .form-elements__column
-            .form-elements__block-wrapper
-              h3.form-elements__block-title Text Field
-              +text-field(config.textField)
-            .form-elements__block-wrapper
-              +dropdown(config.dropdown)
-            .form-elements__block-wrapper
-              h3.form-elements__block-title masked text field
-              +text-field(config.maskedTextField)
-            .form-elements__block-wrapper
-              +dropdown(config.dateDropdown)
-            .form-elements__block-wrapper.form-elements__block-wrapper_size_s
-              .form-elements__block-wrapper
-                +dropdown(config.filterDateDropdown)
-              .form-elements__block-wrapper
-                h3.form-elements__block-title subscription text field
-                +text-field(config.subscriptionTextField)
-              .form-elements__block-wrapper
-                +dropdown(config.comfortDropDown)
-              .form-elements__block-wrapper
-                +expandable-checkbox-list(config.expandableCheckboxList)
-          .form-elements__column
-            .form-elements__block-wrapper
-              h3.form-elements__block-title Checkbox Buttons
-              each checkboxButton in config.checkboxButtons
-                .form-elements__checkbox-container
-                  +checkbox-button({ label: checkboxButton.label, id: checkboxButton.id, isChecked: checkboxButton.isChecked })
-            .form-elements__block-wrapper
-              h3.form-elements__block-title Radio Buttons
-              +radio-button(config.radioButton)
-            .form-elements__block-wrapper
-              h3.form-elements__block-title toggle
-              +toggle(config.toggle)
-            .form-elements__block-wrapper
-              h3.form-elements__block-title like button
-              .form-elements__like-buttons-group
-                each likeButton in config.likeButtons
-                  .form-elements__like-button-block
-                    +like-button({ likesCount: likeButton.likesCount, isChecked: likeButton.isChecked })
-            .form-elements__block-wrapper
-              h3.form-elements__block-title rate button
-              .form-elements__rate-buttons-group
-                each rateButton in config.rateButtons
-                  .form-elements__rate-button-block
-                    +rate-button({ rate: rateButton.rate })
-            .form-elements__block-wrapper
-              h3.form-elements__block-title RICH CHECKBOX BUTTONS
-              each richCheckboxButton in config.richCheckboxButtons
-                .form-elements__checkbox-container
-                  +checkbox-button({ label: richCheckboxButton.label, id: richCheckboxButton.id, isChecked: richCheckboxButton.isChecked, isRich: richCheckboxButton.isRich, text: richCheckboxButton.text })
-          .form-elements__column
-            .form-elements__block-wrapper
-              +range-slider(config.rangeSlider)
-            .form-elements__block-wrapper
-              h3.form-elements__block-title.form-elements__block-title_big-vertical-margins Buttons
-              .form-elements__block-wrapper
-                .form-elements__buttons-group
-                  each button in config.buttons
-                    .form-elements__button-wrapper
-                      +button(button)
-              .form-elements__block-wrapper
-                .form-elements__buttons-group
-                  each button in config.borderButtons
-                    .form-elements__button-wrapper
-                      +button(button)
-              .form-elements__block-wrapper
-                .form-elements__only-text-buttons-group
-                  each onlyTextButton in config.onlyTextButtons
-                    .form-elements__only-text-button-block
-                      +button({ text: onlyTextButton.text, type: onlyTextButton.type, isDisabled: onlyTextButton.isDisabled })
-              .form-elements__block-wrapper
-                +button(config.arrowButton)
-            .form-elements__block-wrapper
-              h3.form-elements__block-title.form-elements__block-title_big-vertical-margins Pagination
-              +pagination(config.pagination)
-            .form-elements__block-wrapper
-              h3.form-elements__block-title bullet list
-              +bullet-list(config.bulletList)
-        section.form-elements__two-column-section
-          .form-elements__column
-            .form-elements__block-wrapper
-              each roomDetails in config.roomsDetails
-                +room-details({icon: roomDetails.icon, title: roomDetails.title, description: roomDetails.description})
-          .form-elements__column_size_s
-            .form-elements__block-wrapper
-              +guest-review(config.guestReview)
+      //- FORM ELEMENTS
+      section.ui-kit__section
+        h1.ui-kit__section-title Form Elements
+        .ui-kit__form-elements
+          section.ui-kit__three-column-section
+            .ui-kit__column
+              .ui-kit__block-wrapper
+                h3.ui-kit__block-title Text Field
+                +text-field(config.textField)
+              .ui-kit__block-wrapper
+                +dropdown(config.dropdown)
+              .ui-kit__block-wrapper
+                h3.ui-kit__block-title masked text field
+                +text-field(config.maskedTextField)
+              .ui-kit__block-wrapper
+                +dropdown(config.dateDropdown)
+              .ui-kit__block-wrapper.ui-kit__block-wrapper_size_s
+                .ui-kit__block-wrapper
+                  +dropdown(config.filterDateDropdown)
+                .ui-kit__block-wrapper
+                  h3.ui-kit__block-title subscription text field
+                  +text-field(config.subscriptionTextField)
+                .ui-kit__block-wrapper
+                  +dropdown(config.comfortDropDown)
+                .ui-kit__block-wrapper
+                  +expandable-checkbox-list(config.expandableCheckboxList)
+            .ui-kit__column
+              .ui-kit__block-wrapper
+                h3.ui-kit__block-title Checkbox Buttons
+                each checkboxButton in config.checkboxButtons
+                  .ui-kit__checkbox-container
+                    +checkbox-button({ label: checkboxButton.label, id: checkboxButton.id, isChecked: checkboxButton.isChecked })
+              .ui-kit__block-wrapper
+                h3.ui-kit__block-title Radio Buttons
+                +radio-button(config.radioButton)
+              .ui-kit__block-wrapper
+                h3.ui-kit__block-title toggle
+                +toggle(config.toggle)
+              .ui-kit__block-wrapper
+                h3.ui-kit__block-title like button
+                .ui-kit__like-buttons-group
+                  each likeButton in config.likeButtons
+                    .ui-kit__like-button-block
+                      +like-button({ likesCount: likeButton.likesCount, isChecked: likeButton.isChecked })
+              .ui-kit__block-wrapper
+                h3.ui-kit__block-title rate button
+                .ui-kit__rate-buttons-group
+                  each rateButton in config.rateButtons
+                    .ui-kit__rate-button-block
+                      +rate-button({ rate: rateButton.rate })
+              .ui-kit__block-wrapper
+                h3.ui-kit__block-title RICH CHECKBOX BUTTONS
+                each richCheckboxButton in config.richCheckboxButtons
+                  .ui-kit__checkbox-container
+                    +checkbox-button({ label: richCheckboxButton.label, id: richCheckboxButton.id, isChecked: richCheckboxButton.isChecked, isRich: richCheckboxButton.isRich, text: richCheckboxButton.text })
+            .ui-kit__column
+              .ui-kit__block-wrapper
+                +range-slider(config.rangeSlider)
+              .ui-kit__block-wrapper
+                h3.ui-kit__block-title.ui-kit__block-title_big-vertical-margins Buttons
+                .ui-kit__block-wrapper
+                  .ui-kit__buttons-group
+                    each button in config.buttons
+                      .ui-kit__button-wrapper
+                        +button(button)
+                .ui-kit__block-wrapper
+                  .ui-kit__buttons-group
+                    each button in config.borderButtons
+                      .ui-kit__button-wrapper
+                        +button(button)
+                .ui-kit__block-wrapper
+                  .ui-kit__only-text-buttons-group
+                    each onlyTextButton in config.onlyTextButtons
+                      .ui-kit__only-text-button-block
+                        +button({ text: onlyTextButton.text, type: onlyTextButton.type, isDisabled: onlyTextButton.isDisabled })
+                .ui-kit__block-wrapper
+                  +button(config.arrowButton)
+              .ui-kit__block-wrapper
+                h3.ui-kit__block-title.ui-kit__block-title_big-vertical-margins Pagination
+                +pagination(config.pagination)
+              .ui-kit__block-wrapper
+                h3.ui-kit__block-title bullet list
+                +bullet-list(config.bulletList)
+          section.ui-kit__two-column-section
+            .ui-kit__column
+              .ui-kit__block-wrapper
+                each roomDetails in config.roomsDetails
+                  +room-details({icon: roomDetails.icon, title: roomDetails.title, description: roomDetails.description})
+            .ui-kit__column_size_s
+              .ui-kit__block-wrapper
+                +guest-review(config.guestReview)
 
-    //- CARDS
-    section.section
-      h1.section__title Cards
-      .cards
-        .cards__column.cards_first-column
-          .cards__block-wrapper
-            +search-room-card(config.searchRoomCard)
-          .cards__block-wrapper
-            +registration-card(config.registrationCard)
-        .cards__column.cards_second-column
-          .cards__block-wrapper
-            +room-rate-card(config.roomRateCard)
-          .cards__block-wrapper
-            +entry-card(config.entryCard)
-        .cards__column.cards_third-column
-          .cards__block-wrapper.cards__block-wrapper_width_s
-            +calendar
-          .cards__column_width_s
-            each roomCard in config.roomCards
-              .cards__block-wrapper
-                +room-card(roomCard)
+      //- CARDS
+      section.ui-kit__section
+        h1.ui-kit__section-title Cards
+        .ui-kit__cards
+          .ui-kit__cards-column.ui-kit__cards-column_first
+            .ui-kit__block-wrapper
+              +search-room-card(config.searchRoomCard)
+            .ui-kit__block-wrapper
+              +registration-card(config.registrationCard)
+          .ui-kit__cards-column.ui-kit__cards-column_second
+            .ui-kit__block-wrapper
+              +room-rate-card(config.roomRateCard)
+            .ui-kit__block-wrapper
+              +entry-card(config.entryCard)
+          .ui-kit__cards-column.ui-kit__cards-column_third
+            .ui-kit__block-wrapper.ui-kit__block-wrapper_size_xs
+              +calendar
+            .ui-kit__cards-column_width_s
+              each roomCard in config.roomCards
+                .ui-kit__block-wrapper
+                  +room-card(roomCard)
 
-    //- HEADERS & FOOTERS
-    section.section
-      h1.section__title Headers & Footers
-      +header(config.header)
-      +footer(config.footer)
+      //- HEADERS & FOOTERS
+      section.ui-kit__section
+        h1.ui-kit__section-title Headers & Footers
+        +header(config.header)
+        +footer(config.footer)
