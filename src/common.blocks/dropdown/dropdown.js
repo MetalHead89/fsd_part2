@@ -15,26 +15,17 @@ class Dropdown {
     this._dropMenu = this._dropdown.querySelector('.js-dropdown__drop-menu');
     this._dropCheck = this._dropdown.querySelector('.js-dropdown__check');
 
-    this._clearButtonWrapper = this._dropdown.querySelector(
+    this._clearButton = this._dropdown.querySelector(
       '.js-dropdown__button-clear'
     );
-    if (this._clearButtonWrapper !== null) {
-      [this._clearButton] = this._clearButtonWrapper.children;
-    }
 
-    const applyButtonWrapper = this._dropdown.querySelector(
+    this._applyButton = this._dropdown.querySelector(
       '.js-dropdown__button-apply'
     );
-    if (applyButtonWrapper !== null) {
-      [this._applyButton] = applyButtonWrapper.children;
-    }
 
-    const calendarApplyButtonWrapper = this._dropdown.querySelector(
+    this._calendarApplyButton = this._dropdown.querySelector(
       '.js-calendar__button-apply'
     );
-    if (calendarApplyButtonWrapper !== null) {
-      [this._calendarApplyButton] = calendarApplyButtonWrapper.children;
-    }
 
     this._dropdownHeaderText = this._dropdown.querySelector(
       '.js-dropdown__header-text'
@@ -151,11 +142,11 @@ class Dropdown {
   }
 
   _clearButtonShow() {
-    this._clearButtonWrapper.classList.remove('dropdown__button-clear_hidden');
+    this._clearButton.classList.remove('dropdown__button-clear_hidden');
   }
 
   _clearButtonHide() {
-    this._clearButtonWrapper.classList.add('dropdown__button-clear_hidden');
+    this._clearButton.classList.add('dropdown__button-clear_hidden');
   }
 
   _closeDropMenu() {
@@ -283,7 +274,7 @@ class Dropdown {
     const quantityElements = this._dropdown.querySelectorAll(
       '.js-dropdown__quantity-number'
     );
-    this._clearButtonWrapper.classList.add('dropdown__button-clear_hidden');
+    this._clearButton.classList.add('dropdown__button-clear_hidden');
 
     for (
       let quantityIndex = 0;
