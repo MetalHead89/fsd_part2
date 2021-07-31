@@ -40,10 +40,9 @@ class Calendar {
     this._nextMonthButton = this._calendar.querySelector(
       '.js-calendar__month-button_with-forward-arrow'
     );
-    this._clearButtonContainer = this._calendar.querySelector(
+    this._clearButton = this._calendar.querySelector(
       '.js-calendar__button-clear'
     );
-    [this._clearButton] = this._clearButtonContainer.children;
 
     this._handleStartDateInputBlur = this._handleStartDateInputBlur.bind(this);
     this._handleEndDateInputBlur = this._handleEndDateInputBlur.bind(this);
@@ -347,11 +346,11 @@ class Calendar {
     }
 
     if (this._dateRange.length > 0) {
-      this._clearButtonContainer.classList.remove(
+      this._clearButton.classList.remove(
         'calendar__button-clear_hidden'
       );
     } else {
-      this._clearButtonContainer.classList.add('calendar__button-clear_hidden');
+      this._clearButton.classList.add('calendar__button-clear_hidden');
     }
 
     this._applyRange();
@@ -491,7 +490,7 @@ class Calendar {
 
     this._dateRange = [];
     this._isChoiceMode = false;
-    this._clearButtonContainer.classList.add('calendar__button-clear_hidden');
+    this._clearButton.classList.add('calendar__button-clear_hidden');
 
     const parent = this._calendar.offsetParent.offsetParent;
     if (parent && parent.classList.contains('dropdown_date')) {
