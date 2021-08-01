@@ -237,6 +237,8 @@ class Calendar {
 
   _showSelectedDays() {
     if (this._dateRange.length > 0) {
+      this._clearButton.classList.remove('calendar__button-clear_hidden');
+
       const selectableDays = this._calendar.querySelectorAll(
         '.js-calendar__day_selectable'
       );
@@ -257,6 +259,8 @@ class Calendar {
 
       this._dateRange.sort(Calendar.compareNumbers);
       this._showRange(this._dateRange);
+    } else {
+      this._clearButton.classList.add('calendar__button-clear_hidden');
     }
   }
 
@@ -346,9 +350,7 @@ class Calendar {
     }
 
     if (this._dateRange.length > 0) {
-      this._clearButton.classList.remove(
-        'calendar__button-clear_hidden'
-      );
+      this._clearButton.classList.remove('calendar__button-clear_hidden');
     } else {
       this._clearButton.classList.add('calendar__button-clear_hidden');
     }
