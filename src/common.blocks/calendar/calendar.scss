@@ -150,7 +150,9 @@
 
   &__button-clear {
     &_hidden {
-      opacity: 0;
+      & :first-child {
+        display: none;
+      }
     }
   }
 }
