@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+
 import QuantityDropdown from './quantity-dropdown';
 
 class GuestsDropdown extends QuantityDropdown {
@@ -14,7 +16,6 @@ class GuestsDropdown extends QuantityDropdown {
     const quantityNumbers = this._dropdown.querySelectorAll(
       '.js-dropdown__quantity-number'
     );
-    let headerText = '';
 
     const guests = {
       guests:
@@ -23,23 +24,7 @@ class GuestsDropdown extends QuantityDropdown {
       babies: parseInt(quantityNumbers[2].innerText, 10),
     };
 
-    Object.keys(guests).forEach((key) => {
-      if (guests[key] > 0) {
-        if (headerText !== '') {
-          headerText += ', ';
-        }
-        headerText += `${guests[key]} ${QuantityDropdown.dropdownWordGenerator(
-          this._headerWords[key],
-          guests[key]
-        )}`;
-      }
-    });
-
-    if (headerText === '') {
-      headerText = 'Сколько гостей';
-    }
-
-    this._setHeaderText(headerText);
+    super._changeDropdownHeaderText(guests, 'Сколько гостей');
   }
 }
 

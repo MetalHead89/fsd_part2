@@ -6,11 +6,11 @@ class Dropdown {
     this._dropdown = dropdown;
     this._dropdownType = type;
 
-    this._dropdownInit();
+    this._init();
     this._addEventListeners();
   }
 
-  _dropdownInit() {
+  _init() {
     this._dropMenu = this._dropdown.querySelector('.js-dropdown__drop-menu');
     this._dropCheck = this._dropdown.querySelector('.js-dropdown__check');
 

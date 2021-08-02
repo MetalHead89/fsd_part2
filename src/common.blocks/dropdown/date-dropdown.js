@@ -3,13 +3,10 @@ import Dropdown from './dropdown';
 class DateDropdown extends Dropdown {
   constructor(dropdown) {
     super(dropdown, 'date');
+  }
 
-    this._dropdownStartDay = this._dropdown
-      .querySelector('.js-dropdown__start-date-input')
-      .querySelector('.js-text-field__field');
-    this._dropdownEndDay = this._dropdown
-      .querySelector('.js-dropdown__end-date-input')
-      .querySelector('.js-text-field__field');
+  _init() {
+    super._init();
 
     this._handleStartDateInputOnfocus = this._handleStartDateInputOnfocus.bind(
       this
@@ -17,6 +14,17 @@ class DateDropdown extends Dropdown {
     this._handleEndDateInputOnfocus = this._handleEndDateInputOnfocus.bind(
       this
     );
+
+    this._dropdownStartDay = this._dropdown
+      .querySelector('.js-dropdown__start-date-input')
+      .querySelector('.js-text-field__field');
+    this._dropdownEndDay = this._dropdown
+      .querySelector('.js-dropdown__end-date-input')
+      .querySelector('.js-text-field__field');
+  }
+
+  _addEventListeners() {
+    super._addEventListeners();
 
     this._dropdownStartDay.addEventListener(
       'focus',

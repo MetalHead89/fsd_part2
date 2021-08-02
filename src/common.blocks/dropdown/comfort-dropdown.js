@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+
 import QuantityDropdown from './quantity-dropdown';
 
 class ComfortDropdown extends QuantityDropdown {
@@ -15,7 +17,6 @@ class ComfortDropdown extends QuantityDropdown {
     const quantityNumbers = this._dropdown.querySelectorAll(
       '.js-dropdown__quantity-number'
     );
-    let headerText = '';
 
     const comfort = {
       bedrooms: parseInt(quantityNumbers[0].innerText, 10),
@@ -23,23 +24,7 @@ class ComfortDropdown extends QuantityDropdown {
       bathrooms: parseInt(quantityNumbers[2].innerText, 10),
     };
 
-    Object.keys(comfort).forEach((key) => {
-      if (comfort[key] > 0) {
-        if (headerText !== '') {
-          headerText += ', ';
-        }
-        headerText += `${comfort[key]} ${QuantityDropdown.dropdownWordGenerator(
-          this._headerWords[key],
-          comfort[key]
-        )}`;
-      }
-    });
-
-    if (headerText === '') {
-      headerText = 'Выберите удобства';
-    }
-
-    this._setHeaderText(headerText);
+    super._changeDropdownHeaderText(comfort, 'Выберите удобства');
   }
 }
 

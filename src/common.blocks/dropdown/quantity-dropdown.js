@@ -1,8 +1,8 @@
 import Dropdown from './dropdown';
 
 class QuantityDropdown extends Dropdown {
-  constructor(dropdown, type) {
-    super(dropdown, type);
+  _init() {
+    super._init();
 
     this._quantitySum = 0;
     this._handleQuantityButtonClick = this._handleQuantityButtonClick.bind(
@@ -16,6 +16,28 @@ class QuantityDropdown extends Dropdown {
     dropdownQuantityButtons.forEach((item) => {
       item.addEventListener('click', this._handleQuantityButtonClick);
     });
+  }
+
+  _changeDropdownHeaderText(items, defaultHeaderText) {
+    let headerText = '';
+
+    Object.keys(items).forEach((key) => {
+      if (items[key] > 0) {
+        if (headerText !== '') {
+          headerText += ', ';
+        }
+        headerText += `${items[key]} ${QuantityDropdown.dropdownWordGenerator(
+          this._headerWords[key],
+          items[key]
+        )}`;
+      }
+    });
+
+    if (headerText === '') {
+      headerText = defaultHeaderText;
+    }
+
+    this._setHeaderText(headerText);
   }
 
   _increaseQuantitySum() {
@@ -32,20 +54,15 @@ class QuantityDropdown extends Dropdown {
     );
   }
 
-  static numberIsTwoThreeOrFour(number10, number100) {
-    return (
-      number10 >= 2 && number10 <= 4 && !(number100 >= 12 && number100 <= 14)
-    );
-  }
-  
   static dropdownWordGenerator(words, number) {
     const number10 = number % 10;
     const number100 = number % 100;
-    let generatedWord = '';
 
     if (number10 === 1 && number100 !== 11) {
       return words[0];
-    } else if (QuantityDropdown.numberIsTwoThreeOrFour(number10, number100)) {
+    }
+
+    if (QuantityDropdown.numberIsTwoThreeOrFour(number10, number100)) {
       return words[1];
     }
 
