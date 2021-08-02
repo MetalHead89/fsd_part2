@@ -1,7 +1,21 @@
-import Dropdown from './dropdown';
+import DateDropdown from './date-dropdown';
+import FilterDateDropdown from './filter-date-dropdown';
+import GuestsDropdown from './guests-dropdown';
+import ComfortDropdown from './comfort-dropdown';
 
 const dropdowns = document.querySelectorAll('.js-dropdown');
-dropdowns.forEach((item) => new Dropdown(item));
+
+dropdowns.forEach((item) => {
+  if (item.classList.contains('dropdown_comfort')) {
+    new ComfortDropdown(item);
+  } else if (item.classList.contains('dropdown_date')) {
+    new DateDropdown(item);
+  } else if (item.classList.contains('dropdown_filter-date')) {
+    new FilterDateDropdown(item);
+  } else {
+    new GuestsDropdown(item);
+  }
+});
 
 function closeAllDropdowns() {
   dropdowns.forEach((item) => {
