@@ -1,4 +1,3 @@
-@import '../../scss/mixins';
 @import '../../scss/animations';
 
 .landing-page {
@@ -23,23 +22,22 @@
     display: flex;
     justify-content: center;
     z-index: 1;
+    background-size: cover;
+    background-position: center center;
 
     &_image-one {
-      background: url('../../assets/images/landing-image-1.png');
+      background-image: url('../../assets/images/landing-image-1.png');
       animation: landing-first-image 40s infinite;
-      @include background-position;
     }
 
     &_image-two {
-      background: url('../../assets/images/landing-image-2.png');
+      background-image: url('../../assets/images/landing-image-2.png');
       animation: landing-second-image 40s infinite;
-      @include background-position;
     }
 
     &_image-three {
-      background: url('../../assets/images/landing-image-3.png');
+      background-image: url('../../assets/images/landing-image-3.png');
       animation: landing-third-image 40s infinite;
-      @include background-position;
     }
   }
 
