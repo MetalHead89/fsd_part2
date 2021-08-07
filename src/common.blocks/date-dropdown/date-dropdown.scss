@@ -10,7 +10,7 @@ $dropdown: '.date-dropdown';
   max-width: 500px;
 
   &__check {
-    // display: none;
+    display: none;
 
     &:checked {
       & ~ #{$dropdown}__drop-menu {

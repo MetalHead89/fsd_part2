@@ -45,7 +45,6 @@
     "type": "text"
   },
   "dateDropdown": {
-    "type": "date",
     "startDate": {
       "title": "date Dropdown",
       "input": {

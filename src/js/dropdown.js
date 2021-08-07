@@ -11,8 +11,8 @@ class Dropdown {
   }
 
   _init() {
-    this._dropdownTypes = ['js-dropdown', 'js-date-dropdown'];
-    this._dropdownsOnThePage = this._getAllDropdowns();
+    this._dropdownClasses = ['.js-dropdown', '.js-date-dropdown'];
+    this._allDropdownsChecksOnThePage = this._getAllDropdownsChecks();
 
     this._dropMenu = this._dropdown.querySelector(
       `.js-${this._type}__drop-menu`
@@ -40,7 +40,7 @@ class Dropdown {
     this._handleButtonClearClick = this._handleButtonClearClick.bind(this);
     this._handleButtonApplyClick = this._handleButtonApplyClick.bind(this);
     this._handleHeaderClick = this._handleHeaderClick.bind(this);
-    this._handleBodyClick = this._handleBodyClick();
+    this._handleBodyClick = Dropdown._handleBodyClick.bind(this);
   }
 
   _addEventListeners() {
@@ -63,7 +63,7 @@ class Dropdown {
       this._dropdownHeader.addEventListener('click', this._handleHeaderClick);
     }
 
-    document.body.addEventListener('mouseup', Dropdown._handleBodyClick);
+    document.body.addEventListener('mouseup', this._handleBodyClick);
   }
 
   _handleButtonApplyClick() {
@@ -75,9 +75,21 @@ class Dropdown {
     this._dropCheck.checked = !this._dropCheck.checked;
   }
 
+  _getAllDropdownsChecks() {
+    const dropdownsChecks = [];
+
+    this._dropdownClasses.forEach((dropdownClass) => {
+      dropdownsChecks.push(
+        ...document.querySelectorAll(`${dropdownClass}__check`)
+      );
+    });
+
+    return dropdownsChecks;
+  }
+
   static _handleBodyClick(evt) {
     if (Dropdown._clickIsOutsideDropdown(evt)) {
-      Dropdown.closeAllDropdowns();
+      this._closeAllDropdowns();
     }
   }
 
@@ -122,29 +134,40 @@ class Dropdown {
   }
 
   _closeOtherDropdowns() {
-    if (this._dropCheck.checked === false) {
-      const dropdowns = document.querySelectorAll('.js-dropdown');
-
-      dropdowns.forEach((item) => {
-        if (item !== this) {
-          item.querySelector('.js-dropdown__check').checked = false;
-        }
-      });
-    }
+    this._allDropdownsChecksOnThePage.forEach((dropdownCheck) => {
+      if (dropdownCheck !== this._dropCheck) {
+        dropdownCheck.checked = false;
+      }
+    });
   }
 
   _closeDropdown() {
     this._dropdown.querySelector(`.js-${this._type}__check`).checked = false;
   }
 
-  static _closeAllDropdowns() {
-    dropdowns.forEach((item) => {
-      const dropdown = item;
-      dropdown.querySelector('.js-dropdown__check').checked = false;
+  _closeAllDropdowns() {
+    this._allDropdownsChecksOnThePage.forEach((dropdownCheck) => {
+      dropdownCheck.checked = false;
     });
   }
 
   static _clickIsOutsideDropdown(evt) {
+    ///////////////
+    console.dir(evt);
+    evt.path.forEach((element) => {
+      if (
+        element instanceof HTMLElement &&
+        this._dropdownClasses.some((dropdownClass) =>
+          element.classList.contains(dropdownClass)
+        )
+      ) {
+        console.log('!!!!');
+      }
+
+      // if (element instanceof HTMLElement) {
+      //   console.log('!!!!');
+      // }
+    });
     return (
       (!evt.target.classList.contains('dropdown__header') &&
         !evt.target.classList.contains('dropdown__drop-menu') &&
@@ -154,14 +177,6 @@ class Dropdown {
       !evt.target.offsetParent
     );
   }
-
-  // function handleBodyClick(evt) {
-  //   if (clickIsOutsideDropdown(evt)) {
-  //     closeAllDropdowns();
-  //   }
-  // }
-
-  // document.body.addEventListener('mouseup', handleBodyClick);
 }
 
 export default Dropdown;
