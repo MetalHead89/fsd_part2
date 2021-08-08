@@ -11,7 +11,7 @@ class Dropdown {
   }
 
   _init() {
-    this._dropdownClasses = ['js-dropdown', 'js-date-dropdown'];
+    this._dropdownClasses = ['js-dropdown', 'js-date-dropdown', 'js-filter-date-dropdown'];
     this._allDropdownsChecksOnThePage = this._getAllDropdownsChecks();
 
     this._dropMenu = this._dropdown.querySelector(

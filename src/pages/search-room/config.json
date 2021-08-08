@@ -1,6 +1,5 @@
 {
   "filterDateDropdown": {
-    "type": "filter_date",
     "title": "даты пребывания в отеле"
   },
   "guestsDropdown": {

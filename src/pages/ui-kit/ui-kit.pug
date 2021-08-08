@@ -5,6 +5,7 @@ include ../../common.blocks/type-block/type-block.pug
 include ../../common.blocks/text-field/text-field.pug
 //- 
 include ../../common.blocks/date-dropdown/date-dropdown.pug
+include ../../common.blocks/filter-date-dropdown/filter-date-dropdown.pug
 include ../../common.blocks/dropdown/dropdown.pug
 include ../../common.blocks/expandable-checkbox-list/expandable-checkbox-list.pug
 include ../../common.blocks/room-details/room-details.pug
@@ -66,7 +67,7 @@ html(lang="ru")
                 +date-dropdown(config.dateDropdown)
               .ui-kit__block-wrapper.ui-kit__block-wrapper_size_s
                 .ui-kit__block-wrapper
-                  +dropdown(config.filterDateDropdown)
+                  +filter-date-dropdown(config.filterDateDropdown)
                 .ui-kit__block-wrapper
                   h3.ui-kit__block-title subscription text field
                   +text-field(config.subscriptionTextField)

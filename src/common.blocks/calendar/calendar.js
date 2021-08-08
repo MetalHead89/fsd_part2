@@ -498,8 +498,8 @@ class Calendar {
     if (parent && parent.classList.contains('date-dropdown')) {
       this._startInput.value = '';
       this._endInput.value = '';
-    } else if (parent && parent.classList.contains('dropdown_filter-date')) {
-      parent.querySelector('.js-dropdown__header-text').innerText =
+    } else if (parent && parent.classList.contains('filter-date-dropdown')) {
+      parent.querySelector('.js-filter-date-dropdown__header-text').innerText =
         'Выберите период';
     }
   }
@@ -526,19 +526,19 @@ class Calendar {
       } else {
         this._endInput.value = '';
       }
-    } else if (parent && parent.classList.contains('dropdown_filter-date')) {
+    } else if (parent && parent.classList.contains('filter-date-dropdown')) {
       if (this._dateRange.length === 2) {
         const startDate = new Date(this._dateRange[0]);
         const endDate = new Date(this._dateRange[1]);
 
-        parent.querySelector('.js-dropdown__header-text').innerText =
+        parent.querySelector('.js-filter-date-dropdown__header-text').innerText =
           `${startDate.getDate()} ` +
           `${this._MONTHS[startDate.getMonth()].toLowerCase().slice(0, 3)} - ` +
           `${endDate.getDate()} ${this._MONTHS[endDate.getMonth()]
             .toLowerCase()
             .slice(0, 3)} `;
       } else {
-        parent.querySelector('.js-dropdown__header-text').innerText =
+        parent.querySelector('.js-filter-date-dropdown__header-text').innerText =
           'Выберите период';
       }
     }

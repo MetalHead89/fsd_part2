@@ -1,0 +1,13 @@
+include ../calendar/calendar.pug
+
+mixin filter-date-dropdown({ title = 'даты пребывания в отеле' } = {})
+  .filter-date-dropdown.js-filter-date-dropdown
+    input.filter-date-dropdown__check.js-filter-date-dropdown__check(type="checkbox")
+
+    h3.filter-date-dropdown__title !{title}
+    label(class='filter-date-dropdown__header filter-date-dropdown__header_all-angles-are-round js-filter-date-dropdown__header')
+      .filter-date-dropdown__header-text.js-filter-date-dropdown__header-text Выберите период
+      i.filter-date-dropdown__expand-more keyboard_arrow_down
+            
+    .filter-date-dropdown__drop-menu.js-filter-date-dropdown__drop-menu
+      +calendar({ theme: 'without-top-border' })

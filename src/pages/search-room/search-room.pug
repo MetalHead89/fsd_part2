@@ -1,6 +1,8 @@
 extends ../layout-for-pages/layout-for-pages
 
 block includes
+  include ../../common.blocks/filter-date-dropdown/filter-date-dropdown.pug
+  //- 
   include ../../common.blocks/dropdown/dropdown.pug
   include ../../common.blocks/range-slider/range-slider.pug
   include ../../common.blocks/checkbox-button/checkbox-button.pug
@@ -24,7 +26,7 @@ block content
         .search-room__filter-options
           .search-room__option-column-one
             .search-room__filter-date-container
-              +dropdown(config.filterDateDropdown)
+              +filter-date-dropdown(config.filterDateDropdown)
             .search-room__guests-dropdown-container
               +dropdown(config.guestsDropdown)
             .search-room__range-slider-container

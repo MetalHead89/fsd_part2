@@ -63,7 +63,6 @@
     }
   },
   "filterDateDropdown": {
-    "type": "filter_date",
     "title": "filter date dropdown"
   },
   "subscriptionTextField": {
