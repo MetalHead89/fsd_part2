@@ -2,7 +2,6 @@
   "searchRoomCard": {
     "title": "Найдём номера под ваши пожелания",
     "dropdown1": {
-      "type": "date",
       "startDate": {
         "title": "прибытие",
         "input": {

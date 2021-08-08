@@ -176,7 +176,6 @@
   "searchRoomCard": {
     "title": "Найдём номера под ваши пожелания",
     "dropdown1": {
-      "type": "date",
       "startDate": {
         "title": "прибытие",
         "input": {
@@ -250,7 +249,6 @@
     "serviceCost": -2179,
     "additionalServiceCost": 300,
     "dropdown1": {
-      "type": "date",
       "startDate": {
         "title": "прибытие",
         "input": {

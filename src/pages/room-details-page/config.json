@@ -60,7 +60,6 @@
     "serviceCost": -2179,
     "additionalServiceCost": 300,
     "dropdown1": {
-      "type": "date",
       "startDate": {
         "title": "прибытие",
         "input": {

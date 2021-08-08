@@ -1,4 +1,5 @@
 include ../dropdown/dropdown.pug
+include ../date-dropdown/date-dropdown.pug
 include ../button/button.pug
 
 mixin search-room-card({ title = 'Найдём номера под ваши пожелания', dropdown1, dropdown2, button } = {})
@@ -8,7 +9,7 @@ mixin search-room-card({ title = 'Найдём номера под ваши по
 
       if dropdown1 !== undefined
         .search-room-card__dropdown
-          +dropdown(dropdown1)
+          +date-dropdown(dropdown1)
 
       if dropdown2 !== undefined
         .search-room-card__dropdown
