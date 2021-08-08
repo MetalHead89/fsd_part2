@@ -213,12 +213,12 @@ class Calendar {
     let startInput = null;
     let endInput = null;
 
-    if (parent != null && parent.classList.contains('dropdown_date')) {
+    if (parent != null && parent.classList.contains('date-dropdown')) {
       startInput = parent
-        .querySelector('.js-dropdown__start-date-input')
+        .querySelector('.js-date-dropdown__start-date-input')
         .querySelector('.js-text-field__field');
       endInput = parent
-        .querySelector('.js-dropdown__end-date-input')
+        .querySelector('.js-date-dropdown__end-date-input')
         .querySelector('.js-text-field__field');
     }
 
@@ -495,7 +495,7 @@ class Calendar {
     this._clearButton.classList.add('calendar__button-clear_hidden');
 
     const parent = this._calendar.offsetParent.offsetParent;
-    if (parent && parent.classList.contains('dropdown_date')) {
+    if (parent && parent.classList.contains('date-dropdown')) {
       this._startInput.value = '';
       this._endInput.value = '';
     } else if (parent && parent.classList.contains('dropdown_filter-date')) {
@@ -508,7 +508,7 @@ class Calendar {
     this._dateRange.sort(Calendar.compareNumbers);
     const parent = this._calendar.offsetParent.offsetParent;
 
-    if (parent && parent.classList.contains('dropdown_date')) {
+    if (parent && parent.classList.contains('date-dropdown')) {
       if (this._dateRange[0]) {
         this._startInput.value = Calendar.dateToString(
           new Date(this._dateRange[0])

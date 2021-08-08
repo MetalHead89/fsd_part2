@@ -11,7 +11,7 @@ class Dropdown {
   }
 
   _init() {
-    this._dropdownClasses = ['.js-dropdown', '.js-date-dropdown'];
+    this._dropdownClasses = ['js-dropdown', 'js-date-dropdown'];
     this._allDropdownsChecksOnThePage = this._getAllDropdownsChecks();
 
     this._dropMenu = this._dropdown.querySelector(
@@ -80,7 +80,7 @@ class Dropdown {
 
     this._dropdownClasses.forEach((dropdownClass) => {
       dropdownsChecks.push(
-        ...document.querySelectorAll(`${dropdownClass}__check`)
+        ...document.querySelectorAll(`.${dropdownClass}__check`)
       );
     });
 
@@ -88,7 +88,7 @@ class Dropdown {
   }
 
   static _handleBodyClick(evt) {
-    if (Dropdown._clickIsOutsideDropdown(evt)) {
+    if (this._clickIsOutsideDropdown(evt)) {
       this._closeAllDropdowns();
     }
   }
@@ -151,30 +151,18 @@ class Dropdown {
     });
   }
 
-  static _clickIsOutsideDropdown(evt) {
-    ///////////////
-    console.dir(evt);
-    evt.path.forEach((element) => {
-      if (
-        element instanceof HTMLElement &&
-        this._dropdownClasses.some((dropdownClass) =>
-          element.classList.contains(dropdownClass)
-        )
-      ) {
-        console.log('!!!!');
-      }
-
-      // if (element instanceof HTMLElement) {
-      //   console.log('!!!!');
-      // }
-    });
+  _elementContainsDropdownClass(element) {
     return (
-      (!evt.target.classList.contains('dropdown__header') &&
-        !evt.target.classList.contains('dropdown__drop-menu') &&
-        !evt.target.classList.contains('text-field__field') &&
-        evt.target.offsetParent &&
-        !evt.target.offsetParent.classList.contains('dropdown__drop-menu')) ||
-      !evt.target.offsetParent
+      element instanceof HTMLElement &&
+      this._dropdownClasses.some((dropdownClass) =>
+        element.classList.contains(dropdownClass)
+      )
+    );
+  }
+
+  _clickIsOutsideDropdown(evt) {
+    return !evt.path.some((element) =>
+      this._elementContainsDropdownClass(element)
     );
   }
 }
