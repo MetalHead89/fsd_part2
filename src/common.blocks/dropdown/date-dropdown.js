@@ -2,7 +2,7 @@ import Dropdown from './dropdown';
 
 class DateDropdown extends Dropdown {
   constructor(dropdown) {
-    super(dropdown, 'date');
+    super(dropdown, 'date-dropdown');
   }
 
   _init() {
