@@ -38,7 +38,7 @@
     }
   ],
   "textField": { "placeholderText": "Email", "type": "email" },
-  "dropdown": { "type": "guests", "title": "dropdown" },
+  "dropdown": { "title": "dropdown" },
   "maskedTextField": {
     "placeholderText": "ДД.ММ.ГГГГ",
     "isMasked": true,
@@ -193,7 +193,6 @@
       }
     },
     "dropdown2": {
-      "type": "guests",
       "title": "гости"
     },
     "button": { "type": "arrow", "text": "подобрать номер" }
@@ -265,7 +264,7 @@
         }
       }
     },
-    "dropdown2": { "type": "guests", "title": "гости" },
+    "dropdown2": { "title": "гости" },
     "button": { "type": "arrow", "text": "забронировать" }
   },
   "entryCard": {

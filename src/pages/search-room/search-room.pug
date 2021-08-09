@@ -2,6 +2,7 @@ extends ../layout-for-pages/layout-for-pages
 
 block includes
   include ../../common.blocks/filter-date-dropdown/filter-date-dropdown.pug
+  include ../../common.blocks/guests-dropdown/guests-dropdown.pug
   //- 
   include ../../common.blocks/dropdown/dropdown.pug
   include ../../common.blocks/range-slider/range-slider.pug
@@ -28,7 +29,7 @@ block content
             .search-room__filter-date-container
               +filter-date-dropdown(config.filterDateDropdown)
             .search-room__guests-dropdown-container
-              +dropdown(config.guestsDropdown)
+              +guests-dropdown(config.guestsDropdown)
             .search-room__range-slider-container
               +range-slider(config.rangeSlider)
               span.search-room__range-slider-remark Стоимость за сутки пребывания в номере

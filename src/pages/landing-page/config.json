@@ -20,7 +20,6 @@
       }
     },
     "dropdown2": {
-      "type": "guests",
       "title": "гости"
     },
     "button": { "type": "arrow", "text": "подобрать номер" }

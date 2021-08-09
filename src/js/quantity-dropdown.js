@@ -16,7 +16,7 @@ class QuantityDropdown extends Dropdown {
     );
 
     const dropdownQuantityButtons = this._dropdown.querySelectorAll(
-      '.js-dropdown__quantity-button'
+      `.js-${this._type}__quantity-button`
     );
 
     dropdownQuantityButtons.forEach((item) => {
@@ -78,7 +78,7 @@ class QuantityDropdown extends Dropdown {
   _handleQuantityButtonClick(event) {
     let quantityElement = null;
 
-    if (event.target.classList.contains('dropdown__quantity-button_add')) {
+    if (event.target.classList.contains(`${this._type}__quantity-button_add`)) {
       quantityElement = event.target.previousElementSibling;
       quantityElement.innerText = parseInt(quantityElement.innerText, 10) + 1;
       this._increaseQuantitySum();
@@ -89,7 +89,7 @@ class QuantityDropdown extends Dropdown {
     }
 
     this._onOffQuantityButton.bind(quantityElement)();
-    if (this._dropdownType === 'guests') {
+    if (this._type === 'guests-dropdown') {
       this._onOffClearButton();
     }
     this._changeDropdownHeaderText();

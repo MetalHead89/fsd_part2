@@ -1,5 +1,5 @@
-include ../dropdown/dropdown.pug
 include ../date-dropdown/date-dropdown.pug
+include ../guests-dropdown/guests-dropdown.pug
 include ../button/button.pug
 
 mixin room-rate-card({ roomNumber = 1, isLux, roomRate = 10000, dropdown1, dropdown2, serviceCost = 0, additionalServiceCost = 0, button } = {})
@@ -23,7 +23,7 @@ mixin room-rate-card({ roomNumber = 1, isLux, roomRate = 10000, dropdown1, dropd
 
       if dropdown2 !== undefined
         .room-rate-card__drop-guests
-          +dropdown(dropdown2)
+          +guests-dropdown(dropdown2)
 
       .room-rate-card__room-rate-calc
         .js-room-rate-card__daily-calc !{roomRate}

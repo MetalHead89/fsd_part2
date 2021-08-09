@@ -6,6 +6,7 @@ include ../../common.blocks/text-field/text-field.pug
 //- 
 include ../../common.blocks/date-dropdown/date-dropdown.pug
 include ../../common.blocks/filter-date-dropdown/filter-date-dropdown.pug
+include ../../common.blocks/guests-dropdown/guests-dropdown.pug
 include ../../common.blocks/dropdown/dropdown.pug
 include ../../common.blocks/expandable-checkbox-list/expandable-checkbox-list.pug
 include ../../common.blocks/room-details/room-details.pug
@@ -59,7 +60,7 @@ html(lang="ru")
                 h3.ui-kit__block-title Text Field
                 +text-field(config.textField)
               .ui-kit__block-wrapper
-                +dropdown(config.dropdown)
+                +guests-dropdown(config.dropdown)
               .ui-kit__block-wrapper
                 h3.ui-kit__block-title masked text field
                 +text-field(config.maskedTextField)

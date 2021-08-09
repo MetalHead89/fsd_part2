@@ -11,7 +11,12 @@ class Dropdown {
   }
 
   _init() {
-    this._dropdownClasses = ['js-dropdown', 'js-date-dropdown', 'js-filter-date-dropdown'];
+    this._dropdownClasses = [
+      'js-dropdown',
+      'js-date-dropdown',
+      'js-filter-date-dropdown',
+      'js-guests-dropdown',
+    ];
     this._allDropdownsChecksOnThePage = this._getAllDropdownsChecks();
 
     this._dropMenu = this._dropdown.querySelector(
@@ -99,12 +104,12 @@ class Dropdown {
 
   _clearButtonShow() {
     this._clearButton.classList.remove(
-      `.js-${this._type}__button-clear_hidden`
+      `${this._type}__button-clear_hidden`
     );
   }
 
   _clearButtonHide() {
-    this._clearButton.classList.add(`.js-${this._type}__button-clear_hidden`);
+    this._clearButton.classList.add(`${this._type}__button-clear_hidden`);
   }
 
   _closeDropMenu() {
@@ -116,7 +121,7 @@ class Dropdown {
     const quantityElements = this._dropdown.querySelectorAll(
       `.js-${this._type}__quantity-number`
     );
-    this._clearButton.classList.add(`.js-${this._type}__button-clear_hidden`);
+    this._clearButton.classList.add(`${this._type}__button-clear_hidden`);
 
     for (
       let quantityIndex = 0;

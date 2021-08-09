@@ -78,7 +78,6 @@
       }
     },
     "dropdown2": {
-      "type": "guests",
       "title": "гости"
     },
     "button": {
