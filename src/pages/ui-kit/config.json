@@ -71,7 +71,6 @@
     "type": "email"
   },
   "comfortDropDown": {
-    "type": "comfort",
     "title": "dropdown"
   },
   "expandableCheckboxList": {

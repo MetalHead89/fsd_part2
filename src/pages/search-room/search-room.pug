@@ -3,8 +3,7 @@ extends ../layout-for-pages/layout-for-pages
 block includes
   include ../../common.blocks/filter-date-dropdown/filter-date-dropdown.pug
   include ../../common.blocks/guests-dropdown/guests-dropdown.pug
-  //- 
-  include ../../common.blocks/dropdown/dropdown.pug
+  include ../../common.blocks/comfort-dropdown/comfort-dropdown.pug
   include ../../common.blocks/range-slider/range-slider.pug
   include ../../common.blocks/checkbox-button/checkbox-button.pug
   include ../../common.blocks/expandable-checkbox-list/expandable-checkbox-list.pug
@@ -45,7 +44,7 @@ block content
                 .search-room__checkbox-wrapper
                   +checkbox-button(checkbox)
             .search-room__comfort-dropdown-container
-              +dropdown(config.comfortDropdown)
+              +comfort-dropdown(config.comfortDropdown)
             .search-room__expandable-checkbox-list-container
               +expandable-checkbox-list(config.expandableCheckboxList)
       .search-room__rooms-section

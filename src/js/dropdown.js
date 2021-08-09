@@ -16,6 +16,7 @@ class Dropdown {
       'js-date-dropdown',
       'js-filter-date-dropdown',
       'js-guests-dropdown',
+      'js-comfort-dropdown'
     ];
     this._allDropdownsChecksOnThePage = this._getAllDropdownsChecks();
 
