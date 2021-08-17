@@ -38,7 +38,11 @@
     }
   ],
   "textField": { "placeholderText": "Email", "type": "email" },
-  "dropdown": { "title": "dropdown" },
+  "dropdown": {
+    "title": "dropdown",
+    "type": "guests",
+    "options": ["взрослые", "дети", "младенцы"]
+  },
   "maskedTextField": {
     "placeholderText": "ДД.ММ.ГГГГ",
     "isMasked": true,
@@ -133,7 +137,10 @@
     "value1": 5000,
     "value2": 10000
   },
-  "buttons": [{ "text": "click me" }, { "text": "click me", "isDisabled": true }],
+  "buttons": [
+    { "text": "click me" },
+    { "text": "click me", "isDisabled": true }
+  ],
   "borderButtons": [
     { "text": "click me", "type": "border" },
     { "text": "click me", "type": "border", "isDisabled": true }

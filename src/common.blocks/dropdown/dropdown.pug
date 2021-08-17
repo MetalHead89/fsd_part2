@@ -1,6 +1,7 @@
 include ../button/button.pug
+include ../counting-menu/counting-menu.pug
 
-mixin dropdown({ type = 'guests' title = 'dropdown' } = {})
+mixin dropdown({ type = 'guests', title = 'dropdown', options = [] } = {})
   .dropdown.js-dropdown
     input.dropdown__check.js-dropdown__check(type="checkbox")
     
@@ -10,3 +11,5 @@ mixin dropdown({ type = 'guests' title = 'dropdown' } = {})
       i.dropdown__expand-more keyboard_arrow_down
 
     .dropdown__drop-menu.js-dropdown__drop-menu
+      if type === 'guests' || type === 'comfort'
+        +counting-menu({ options })

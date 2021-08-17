@@ -1,0 +1,22 @@
+include ../button/button.pug
+
+mixin counting-menu({ isButtons = true, options = [] } = {})
+    .counting-menu
+      each val in options
+        .counting-menu__option
+          .counting-menu__option-title !{val}
+          .counting-menu__quantity-buttons-group
+            button.counting-menu__quantity-button.counting-menu__quantity-button_subtract.js-counting-menu__quantity-button(
+              type='button' disabled
+            ) -
+            .counting-menu__quantity-number.js-counting-menu__quantity-number 0
+            button.counting-menu__quantity-button.counting-menu__quantity-button_add.js-counting-menu__quantity-button(
+              type='button'
+            ) +
+
+      if isButtons
+        .counting-menu__bottom-buttons-panel
+          .counting-menu__button-clear.counting-menu__button-clear_hidden.js-counting-menu__button-clear
+            +button({type: 'onlyText', text: 'очистить'})
+          .js-counting-menu__button-apply
+            +button({type: 'onlyText', text: 'применить'})

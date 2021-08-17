@@ -1,0 +1,66 @@
+@import '../../scss/mixins';
+@import '../../scss/vars';
+
+$dropdown: '.guests-dropdown';
+
+.counting-menu {
+  &__option {
+    font-weight: bold;
+    display: flex;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #1f2041;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+  }
+
+  &__quantity-button {
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    font-family: $montserrat;
+    font-size: 1.28rem;
+    color: rgba(31, 32, 65, 0.5);
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    border-radius: 15px;
+    background: #ffffff;
+    transition: 0.5s;
+    cursor: pointer;
+    user-select: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      color: rgba(31, 32, 65, 0.25);
+    }
+
+    &:active {
+      transition: none;
+      border: 1px solid rgba(31, 32, 65, 0.5);
+      color: rgba(31, 32, 65, 0.5);
+    }
+
+    &:disabled {
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      color: rgba(31, 32, 65, 0.25);
+      cursor: default;
+    }
+  }
+
+  &__quantity-buttons-group {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__quantity-number {
+    width: 30px;
+    text-align: center;
+  }
+}
