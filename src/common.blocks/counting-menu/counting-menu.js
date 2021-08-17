@@ -83,7 +83,7 @@ class CountingMenu {
       this._decreaseQuantitySum();
     }
 
-    // this._onOffQuantityButton.bind(quantityElement)();
+    this._onOffQuantityButton.bind(quantityElement)();
     // if (this._type === 'guests-dropdown') {
     //   this._onOffClearButton();
     // }
