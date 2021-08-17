@@ -1,7 +1,7 @@
 include ../button/button.pug
 include ../counting-menu/counting-menu.pug
 
-mixin dropdown({ type = 'guests', title = 'dropdown', options = [] } = {})
+mixin dropdown({ type = 'guests', title = 'dropdown', isButtons = false, options = [] } = {})
   .dropdown.js-dropdown
     input.dropdown__check.js-dropdown__check(type="checkbox")
     
@@ -13,3 +13,10 @@ mixin dropdown({ type = 'guests', title = 'dropdown', options = [] } = {})
     .dropdown__drop-menu.js-dropdown__drop-menu
       if type === 'guests' || type === 'comfort'
         +counting-menu({ options })
+
+        if isButtons
+        .dropdown__bottom-buttons-panel
+          .dropdown__button-clear.dropdown__button-clear_hidden.js-dropdown__button-clear
+            +button({type: 'onlyText', text: 'очистить'})
+          .js-dropdown__button-apply
+            +button({type: 'onlyText', text: 'применить'})

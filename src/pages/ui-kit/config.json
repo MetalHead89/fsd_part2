@@ -41,6 +41,7 @@
   "dropdown": {
     "title": "dropdown",
     "type": "guests",
+    "isButtons": true,
     "options": ["взрослые", "дети", "младенцы"]
   },
   "maskedTextField": {
