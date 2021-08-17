@@ -1,7 +1,7 @@
 include ../button/button.pug
 
 mixin counting-menu({ options = [] } = {})
-    .counting-menu
+    .counting-menu.js-counting-menu
       each val in options
         .counting-menu__option
           .counting-menu__option-title !{val}
