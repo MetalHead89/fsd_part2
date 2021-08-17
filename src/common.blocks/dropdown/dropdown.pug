@@ -1,0 +1,12 @@
+include ../button/button.pug
+
+mixin dropdown({ type = 'guests' title = 'dropdown' } = {})
+  .dropdown.js-dropdown
+    input.dropdown__check.js-dropdown__check(type="checkbox")
+    
+    h3.dropdown__title !{title}
+    label(class='dropdown__header js-dropdown__header')
+      .dropdown__header-text.js-dropdown__header-text Сколько гостей
+      i.dropdown__expand-more keyboard_arrow_down
+
+    .dropdown__drop-menu.js-dropdown__drop-menu
