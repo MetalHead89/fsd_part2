@@ -39,10 +39,7 @@
   ],
   "textField": { "placeholderText": "Email", "type": "email" },
   "dropdown": {
-    "title": "dropdown",
-    "type": "guests",
-    "isButtons": true,
-    "options": ["взрослые", "дети", "младенцы"]
+    "title": "dropdown"
   },
   "maskedTextField": {
     "placeholderText": "ДД.ММ.ГГГГ",

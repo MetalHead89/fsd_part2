@@ -3,9 +3,6 @@
 include ../../common.blocks/color-block/color-block.pug
 include ../../common.blocks/type-block/type-block.pug
 include ../../common.blocks/text-field/text-field.pug
-
-include ../../common.blocks/dropdown/dropdown.pug
-
 include ../../common.blocks/date-dropdown/date-dropdown.pug
 include ../../common.blocks/filter-date-dropdown/filter-date-dropdown.pug
 include ../../common.blocks/guests-dropdown/guests-dropdown.pug
@@ -62,7 +59,7 @@ html(lang="ru")
                 h3.ui-kit__block-title Text Field
                 +text-field(config.textField)
               .ui-kit__block-wrapper
-                +dropdown(config.dropdown)
+                +guests-dropdown(config.dropdown)
               .ui-kit__block-wrapper
                 h3.ui-kit__block-title masked text field
                 +text-field(config.maskedTextField)
