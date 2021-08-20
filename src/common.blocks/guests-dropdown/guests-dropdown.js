@@ -1,31 +1,22 @@
-/* eslint-disable comma-dangle */
-
-import QuantityDropdown from '../../js/quantity-dropdown';
-
-class GuestsDropdown extends QuantityDropdown {
-  constructor(dropdown) {
-    super(dropdown, 'guests-dropdown');
-
-    this._headerWords = {
-      guests: ['гость', 'гостя', 'гостей'],
-      babies: ['младенец', 'младенца', 'младенцев'],
-    };
+class GuestsDropdown {
+  constructor(guestsDropdown, dropdown, countingMenu) {
+    this.guestsDropdown = guestsDropdown;
+    this.dropdown = dropdown;
+    this.countingMenu = countingMenu;
   }
 
-  _changeDropdownHeaderText() {
-    const quantityNumbers = this._dropdown.querySelectorAll(
-      '.js-guests-dropdown__quantity-number'
-    );
+  // _changeDropdownHeaderText() {
+  //   const quantityNumbers = this._dropdown.querySelectorAll(
+  //     '.js-guests-dropdown__quantity-number'
+  //   );
 
-    const guests = {
-      guests:
-        parseInt(quantityNumbers[0].innerText, 10) +
-        parseInt(quantityNumbers[1].innerText, 10),
-      babies: parseInt(quantityNumbers[2].innerText, 10),
-    };
-
-    super._changeDropdownHeaderText(guests, 'Сколько гостей');
-  }
+  //   const guests = {
+  //     guests:
+  //       parseInt(quantityNumbers[0].innerText, 10) +
+  //       parseInt(quantityNumbers[1].innerText, 10),
+  //     babies: parseInt(quantityNumbers[2].innerText, 10),
+  //   };
+  // }
 }
 
 export default GuestsDropdown;

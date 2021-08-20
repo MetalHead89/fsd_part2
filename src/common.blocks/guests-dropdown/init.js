@@ -1,5 +1,11 @@
+/* eslint-disable no-new */
+
 import GuestsDropdown from './guests-dropdown';
 
-const dropdowns = document.querySelectorAll('.js-guests-dropdown');
+const guestsDropdowns = document.querySelectorAll('.js-guests-dropdown');
 
-dropdowns.forEach((item) => new GuestsDropdown(item));
+guestsDropdowns.forEach((guestsDropdown) => {
+  const dropdown = guestsDropdown.querySelector('.js-dropdown');
+  const countingMenu = guestsDropdown.querySelector('.js-counting-menu');
+  new GuestsDropdown(guestsDropdown, dropdown, countingMenu);
+});

@@ -1,22 +1,22 @@
 include ../button/button.pug
 include ../counting-menu/counting-menu.pug
 
-mixin dropdown({ type = 'guests', title = 'dropdown', isButtons = false, options = [] } = {})
+mixin dropdown({ type = 'guests', title = 'dropdown', isButtons = false, options = [], placeholder, dropContent } = {})
   .dropdown.js-dropdown
     input.dropdown__check.js-dropdown__check(type="checkbox")
     
     h3.dropdown__title !{title}
     label(class='dropdown__header js-dropdown__header')
-      .dropdown__header-text.js-dropdown__header-text Сколько гостей
+      .dropdown__header-text.js-dropdown__header-text !{placeholder}
       i.dropdown__expand-more keyboard_arrow_down
 
     .dropdown__drop-menu.js-dropdown__drop-menu
       if type === 'guests' || type === 'comfort'
         +counting-menu({ options })
 
-        if isButtons
-        .dropdown__bottom-buttons-panel
-          .dropdown__button-clear.dropdown__button-clear_hidden.js-dropdown__button-clear
-            +button({type: 'onlyText', text: 'очистить'})
-          .js-dropdown__button-apply
-            +button({type: 'onlyText', text: 'применить'})
+      if isButtons
+      .dropdown__bottom-buttons-panel
+        .dropdown__button-clear.dropdown__button-clear_hidden.js-dropdown__button-clear
+          +button({type: 'onlyText', text: 'очистить'})
+        .js-dropdown__button-apply
+          +button({type: 'onlyText', text: 'применить'})
