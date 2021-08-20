@@ -3,6 +3,12 @@ class GuestsDropdown {
     this.guestsDropdown = guestsDropdown;
     this.dropdown = dropdown;
     this.countingMenu = countingMenu;
+
+    // this.countingMenu.addClickButtonObserver(this.obsobs);
+  }
+
+  obsobs() {
+    alert('!!!!!');
   }
 
   // _changeDropdownHeaderText() {

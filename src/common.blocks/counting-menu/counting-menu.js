@@ -6,6 +6,7 @@ class CountingMenu {
   }
 
   _init() {
+    // this.observer = null;
     this._quantitySum = 0;
     const quantityButtons = this._countingMenu.querySelectorAll(
       '.counting-menu__quantity-button'
@@ -18,6 +19,15 @@ class CountingMenu {
       item.addEventListener('click', this._handleQuantityButtonClick);
     });
   }
+
+  getMenu() {
+    console.log(this._countingMenu);
+    return this._countingMenu;
+  }
+
+  // addClickButtonObserver(func) {
+  //   this.observer = func;
+  // }
 
   // _changeDropdownHeaderText(items, defaultHeaderText) {
   //   let headerText = '';
@@ -84,6 +94,9 @@ class CountingMenu {
     }
 
     this._onOffQuantityButton.bind(quantityElement)();
+    if (this.observer) {
+      this.observer();
+    }
     // if (this._type === 'guests-dropdown') {
     //   this._onOffClearButton();
     // }
