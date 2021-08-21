@@ -1,15 +1,20 @@
 class GuestsDropdown {
-  constructor(guestsDropdown, countingMenu) {
-    this.guestsDropdown = guestsDropdown;
-    // this.dropdown = dropdown;
+  constructor(guestsDropdown, dropdown, countingMenu) {
+    this._guestsDropdown = guestsDropdown;
+    this._dropdown = dropdown;
     this._countingMenu = countingMenu;
 
     this._countingMenu.subscribe(this._changeDropdownHeaderText.bind(this));
+    this._dropdown.subscribeToClickOnClearButton(this._clear.bind(this));
     // this.countingMenu.addClickButtonObserver(this.obsobs);
   }
 
   _changeDropdownHeaderText() {
-    alert(this._countingMenu.getCounters());
+    // alert(this._countingMenu.getCounters());
+  }
+
+  _clear() {
+    alert('qqqqq');
   }
 
   // _changeDropdownHeaderText() {

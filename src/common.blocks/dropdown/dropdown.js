@@ -10,6 +10,7 @@ class Dropdown {
   }
 
   _init() {
+    this._clickOnClearButtonObervers = [];
     // this._dropdownClasses = [
     //   'js-dropdown',
     //   'js-date-dropdown',
@@ -23,9 +24,9 @@ class Dropdown {
 
     this._dropMenu = this._dropdown.querySelector('.js-dropdown__drop-menu');
     this._dropCheck = this._dropdown.querySelector('.js-dropdown__check');
-    // this._clearButton = this._dropdown.querySelector(
-    //   `.js-${this._type}__button-clear`
-    // );
+    this._clearButton = this._dropdown.querySelector(
+      '.js-dropdown__button-clear'
+    );
 
     // this._applyButton = this._dropdown.querySelector(
     //   `.js-${this._type}__button-apply`
@@ -40,16 +41,24 @@ class Dropdown {
     );
     this._dropdownHeader = this._dropdown.querySelector('.js-dropdown__header');
 
-    // this._handleButtonClearClick = this._handleButtonClearClick.bind(this);
+    this._handleButtonClearClick = this._handleButtonClearClick.bind(this);
     // this._handleButtonApplyClick = this._handleButtonApplyClick.bind(this);
     this._handleHeaderClick = this._handleHeaderClick.bind(this);
     // this._handleBodyClick = Dropdown._handleBodyClick.bind(this);
   }
 
+  getDropdown() {
+    return this._dropdown;
+  }
+
+  subscribeToClickOnClearButton(func) {
+    this._clickOnClearButtonObervers.push(func);
+  }
+
   _addEventListeners() {
-    // if (this._clearButton) {
-    //   this._clearButton.addEventListener('click', this._handleButtonClearClick);
-    // }
+    if (this._clearButton) {
+      this._clearButton.addEventListener('click', this._handleButtonClearClick);
+    }
 
     // if (this._applyButton) {
     //   this._applyButton.addEventListener('click', this._handleButtonApplyClick);
@@ -108,7 +117,12 @@ class Dropdown {
 
   _closeDropMenu() {
     this._dropCheck.checked = false;
-    this._closeTimer = null;
+  }
+
+  _handleButtonClearClick() {
+    if (this._clickOnClearButtonObervers.length > 0) {
+      this._clickOnClearButtonObervers.forEach((observer) => observer());
+    }
   }
 
   // _handleButtonClearClick() {
