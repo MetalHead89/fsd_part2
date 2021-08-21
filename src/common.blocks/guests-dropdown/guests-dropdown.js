@@ -10,6 +10,15 @@ class GuestsDropdown {
   }
 
   _changeDropdownHeaderText() {
+    const counters = this._countingMenu.getCounters();
+    const guests = counters[0] + counters[1];
+    const babies = counters[2];
+
+    if (guests + babies > 0) {
+      alert(guests + babies);
+    } else {
+      alert(0);
+    }
     // alert(this._countingMenu.getCounters());
   }
 

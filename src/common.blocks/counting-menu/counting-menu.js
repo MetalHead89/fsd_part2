@@ -35,7 +35,7 @@ class CountingMenu {
       ),
     ];
 
-    return counters.map((counter) => counter.innerText);
+    return counters.map((counter) => parseInt(counter.innerText, 10));
   }
 
   // addClickButtonObserver(func) {
