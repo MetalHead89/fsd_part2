@@ -1,14 +1,15 @@
 class GuestsDropdown {
-  constructor(guestsDropdown, dropdown, countingMenu) {
+  constructor(guestsDropdown, countingMenu) {
     this.guestsDropdown = guestsDropdown;
-    this.dropdown = dropdown;
-    this.countingMenu = countingMenu;
+    // this.dropdown = dropdown;
+    this._countingMenu = countingMenu;
 
+    this._countingMenu.subscribe(this._changeDropdownHeaderText.bind(this));
     // this.countingMenu.addClickButtonObserver(this.obsobs);
   }
 
-  obsobs() {
-    alert('!!!!!');
+  _changeDropdownHeaderText() {
+    alert(this._countingMenu.getCounters());
   }
 
   // _changeDropdownHeaderText() {

@@ -6,7 +6,7 @@ class CountingMenu {
   }
 
   _init() {
-    // this.observer = null;
+    this._observers = [];
     this._quantitySum = 0;
     const quantityButtons = this._countingMenu.querySelectorAll(
       '.counting-menu__quantity-button'
@@ -21,8 +21,21 @@ class CountingMenu {
   }
 
   getMenu() {
-    console.log(this._countingMenu);
     return this._countingMenu;
+  }
+
+  subscribe(func) {
+    this._observers.push(func);
+  }
+
+  getCounters() {
+    const counters = [
+      ...this._countingMenu.querySelectorAll(
+        '.js-counting-menu__quantity-number'
+      ),
+    ];
+
+    return counters.map((counter) => counter.innerText);
   }
 
   // addClickButtonObserver(func) {
@@ -94,8 +107,8 @@ class CountingMenu {
     }
 
     this._onOffQuantityButton.bind(quantityElement)();
-    if (this.observer) {
-      this.observer();
+    if (this._observers.length > 0) {
+      this._observers.forEach((observer) => observer());
     }
     // if (this._type === 'guests-dropdown') {
     //   this._onOffClearButton();
