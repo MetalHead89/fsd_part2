@@ -109,13 +109,13 @@ class Dropdown {
       text !== null ? text : this._placeholder;
   }
 
-  // _clearButtonShow() {
-  //   this._clearButton.classList.remove(`${this._type}__button-clear_hidden`);
-  // }
+  clearButtonShow() {
+    this._clearButton.classList.remove('dropdown__button-clear_hidden');
+  }
 
-  // _clearButtonHide() {
-  //   this._clearButton.classList.add(`${this._type}__button-clear_hidden`);
-  // }
+  clearButtonHide() {
+    this._clearButton.classList.add('dropdown__button-clear_hidden');
+  }
 
   _closeDropMenu() {
     this._dropCheck.checked = false;
