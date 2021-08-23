@@ -55,7 +55,7 @@ class GuestsDropdown {
   }
 
   _clear() {
-    alert('qqqqq');
+    this._countingMenu.clear();
   }
 
   // _changeDropdownHeaderText() {

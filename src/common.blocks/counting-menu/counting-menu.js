@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+
 class CountingMenu {
   constructor(countingMenu) {
     this._countingMenu = countingMenu;
@@ -8,6 +10,9 @@ class CountingMenu {
   _init() {
     this._observers = [];
     this._quantitySum = 0;
+    this._counters = this._countingMenu.querySelectorAll(
+      '.js-counting-menu__quantity-number'
+    );
     const quantityButtons = this._countingMenu.querySelectorAll(
       '.counting-menu__quantity-button'
     );
@@ -17,6 +22,12 @@ class CountingMenu {
 
     quantityButtons.forEach((item) => {
       item.addEventListener('click', this._handleQuantityButtonClick);
+    });
+  }
+
+  clear() {
+    this._counters.forEach((counter) => {
+      counter.innerText = '0';
     });
   }
 
