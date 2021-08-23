@@ -29,7 +29,8 @@ class GuestsDropdown {
         ? `${headerText}, ${babies} ${this._getWord(babies, 'babies')}`
         : `${babies} ${this._getWord(babies, 'babies')}`;
     }
-    alert(headerText);
+
+    this._dropdown.setHeaderText(headerText);
   }
 
   _getWord(count, word) {

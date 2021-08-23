@@ -39,6 +39,7 @@ class Dropdown {
     this._dropdownHeaderText = this._dropdown.querySelector(
       '.js-dropdown__header-text'
     );
+    this._placeholder = this._dropdownHeaderText.innerText;
     this._dropdownHeader = this._dropdown.querySelector('.js-dropdown__header');
 
     this._handleButtonClearClick = this._handleButtonClearClick.bind(this);
@@ -103,8 +104,9 @@ class Dropdown {
   //   }
   // }
 
-  _setHeaderText(text) {
-    this._dropdownHeaderText.innerText = text;
+  setHeaderText(text) {
+    this._dropdownHeaderText.innerText =
+      text !== null ? text : this._placeholder;
   }
 
   // _clearButtonShow() {
