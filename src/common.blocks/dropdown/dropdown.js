@@ -28,9 +28,9 @@ class Dropdown {
       '.js-dropdown__button-clear'
     );
 
-    // this._applyButton = this._dropdown.querySelector(
-    //   `.js-${this._type}__button-apply`
-    // );
+    this._applyButton = this._dropdown.querySelector(
+      '.js-dropdown__button-apply'
+    );
 
     // this._calendarApplyButton = this._dropdown.querySelector(
     //   '.js-calendar__button-apply'
@@ -43,7 +43,7 @@ class Dropdown {
     this._dropdownHeader = this._dropdown.querySelector('.js-dropdown__header');
 
     this._handleButtonClearClick = this._handleButtonClearClick.bind(this);
-    // this._handleButtonApplyClick = this._handleButtonApplyClick.bind(this);
+    this._handleButtonApplyClick = this._handleButtonApplyClick.bind(this);
     this._handleHeaderClick = this._handleHeaderClick.bind(this);
     // this._handleBodyClick = Dropdown._handleBodyClick.bind(this);
   }
@@ -61,9 +61,9 @@ class Dropdown {
       this._clearButton.addEventListener('click', this._handleButtonClearClick);
     }
 
-    // if (this._applyButton) {
-    //   this._applyButton.addEventListener('click', this._handleButtonApplyClick);
-    // }
+    if (this._applyButton) {
+      this._applyButton.addEventListener('click', this._handleButtonApplyClick);
+    }
 
     // if (this._calendarApplyButton) {
     //   this._calendarApplyButton.addEventListener(
