@@ -32,11 +32,11 @@ class GuestsDropdown {
 
     this._dropdown.setHeaderText(headerText);
 
-    if (headerText) {
-      this._dropdown.clearButtonShow();
-    } else {
-      this._dropdown.clearButtonHide();
-    }
+    // if (headerText) {
+    //   this._dropdown.clearButtonShow();
+    // } else {
+    //   this._dropdown.clearButtonHide();
+    // }
   }
 
   _getWord(count, word) {

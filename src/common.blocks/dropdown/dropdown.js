@@ -105,15 +105,20 @@ class Dropdown {
   // }
 
   setHeaderText(text) {
-    this._dropdownHeaderText.innerText =
-      text !== null ? text : this._placeholder;
+    if (text) {
+      this._dropdownHeaderText.innerText = text;
+      this._clearButtonShow();
+    } else {
+      this._dropdownHeaderText.innerText = this._placeholder;
+      this._clearButtonHide();
+    }
   }
 
-  clearButtonShow() {
+  _clearButtonShow() {
     this._clearButton.classList.remove('dropdown__button-clear_hidden');
   }
 
-  clearButtonHide() {
+  _clearButtonHide() {
     this._clearButton.classList.add('dropdown__button-clear_hidden');
   }
 
