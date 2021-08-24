@@ -4,6 +4,9 @@ import GuestsDropdown from './guests-dropdown';
 import CountingMenuStore from '../counting-menu/counting-menu-store';
 import DropdownStore from '../dropdown/dropdown-store';
 
+require('../dropdown/init');
+require('../counting-menu/init');
+
 const guestsDropdowns = document.querySelectorAll('.js-guests-dropdown');
 
 guestsDropdowns.forEach((guestsDropdown) => {
