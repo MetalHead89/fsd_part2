@@ -1,5 +1,20 @@
+/* eslint-disable no-new */
+
 import ComfortDropdown from './comfort-dropdown';
+import CountingMenuStore from '../counting-menu/counting-menu-store';
+import DropdownStore from '../dropdown/dropdown-store';
 
-const dropdowns = document.querySelectorAll('.js-comfort-dropdown');
+require('../dropdown/init');
+require('../counting-menu/init');
 
-dropdowns.forEach((item) => new ComfortDropdown(item));
+const comfortDropdowns = document.querySelectorAll('.js-comfort-dropdown');
+
+comfortDropdowns.forEach((comfortDropdown) => {
+  const dropdown = DropdownStore.getDropdownByElement(
+    comfortDropdown.querySelector('.js-dropdown')
+  );
+  const countingMenu = CountingMenuStore.getMenuByElement(
+    comfortDropdown.querySelector('.js-counting-menu')
+  );
+  new ComfortDropdown(comfortDropdown, dropdown, countingMenu);
+});
