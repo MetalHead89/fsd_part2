@@ -1,0 +1,48 @@
+@import '../../scss/mixins';
+
+.dropdown-header {
+  .dropdown-header__content {
+    padding: 9px 15px;
+    padding-right: 10px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(31, 32, 65, 0.75);
+    transition: border-radius 0.3s 0.5s ease, border-color 0.5s ease;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &_active {
+      border-radius: 4px 4px 0 0;
+      border: 1px solid rgba(31, 32, 65, 0.5);
+    }
+
+    &:hover,
+    &:focus {
+      border: 1px solid rgba(31, 32, 65, 0.5);
+      outline: none;
+    }
+  }
+
+  &__text {
+    width: 75%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    pointer-events: none;
+    display: inline-block;
+    flex: none;
+  }
+
+  &__expand-more {
+    @include material-icon;
+
+    color: rgba(31, 32, 65, 0.5);
+    pointer-events: none;
+    display: inline-block;
+    flex: none;
+    user-select: none;
+  }
+}
