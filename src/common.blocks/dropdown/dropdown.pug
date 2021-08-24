@@ -1,5 +1,6 @@
 include ../button/button.pug
 include ../counting-menu/counting-menu.pug
+include ../calendar/calendar.pug
 
 mixin dropdown({ type = 'guests', title = 'dropdown', isButtons = false, options = [], placeholder, dropContent } = {})
   .dropdown.js-dropdown
@@ -13,6 +14,8 @@ mixin dropdown({ type = 'guests', title = 'dropdown', isButtons = false, options
     .dropdown__drop-menu.js-dropdown__drop-menu
       if type === 'guests' || type === 'comfort'
         +counting-menu({ options })
+      else if type === 'filterDate'
+        +calendar
 
       if isButtons
       .dropdown__bottom-buttons-panel

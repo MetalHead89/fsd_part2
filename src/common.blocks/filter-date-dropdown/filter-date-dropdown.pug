@@ -1,0 +1,5 @@
+include ../dropdown/dropdown.pug
+
+mixin filter-date-dropdown({ title = 'dropdown' } = {})
+  .js-filter-date-dropdown
+    +dropdown({ type: 'filterDate', title, isButtons: false, placeholder: 'Выберите период'})
