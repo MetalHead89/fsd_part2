@@ -1,0 +1,4 @@
+mixin drop-menu({ type = 'counter', options = [] } = {})
+  .drop-menu.js-drop-menu
+    if type === 'counter'
+      +counting-menu({ options })
