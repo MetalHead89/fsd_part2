@@ -14,7 +14,7 @@
   border-radius: 0 0 4px 4px;
   transition: transform 0.5s;
 
-  &_active {
+  &_opened {
     transition: transform 0.4s cubic-bezier(0.73, 0.32, 0.34, 1.5);
     transform: scale(1, 1);
     opacity: 1;
