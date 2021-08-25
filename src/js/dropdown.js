@@ -15,20 +15,28 @@ class Dropdown {
 
   _addEventListeners() {
     this._dropdownHeader.addClickToHeaderListener(
-      this._toggleDropMenuState.bind(this)
+      this._toggleDropdownState.bind(this)
     );
   }
 
-  _toggleDropMenuState() {
+  _toggleDropdownState() {
     this._opened = !this._opened;
 
     if (this._opened) {
-      this._dropMenu.openDropMenu();
-      this._dropdownHeader.activate();
+      this._open();
     } else {
-      this._dropMenu.closeDropMenu();
-      this._dropdownHeader.disactivate();
+      this._close();
     }
+  }
+
+  _open() {
+    this._dropMenu.openDropMenu();
+    this._dropdownHeader.activate();
+  }
+
+  _close() {
+    this._dropMenu.closeDropMenu();
+    this._dropdownHeader.disactivate();
   }
 }
 
