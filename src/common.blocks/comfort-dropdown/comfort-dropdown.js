@@ -1,3 +1,9 @@
+import Dropdown from '../../js/dropdown';
+
+class ComfortDropdown extends Dropdown {}
+
+export default ComfortDropdown;
+
 // /* eslint-disable comma-dangle */
 
 // class ComfortDropdown {
