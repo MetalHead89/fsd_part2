@@ -10,6 +10,11 @@ class Dropdown {
   }
 
   _init() {
+    if (Dropdown.dropdownsOnThePage === undefined) {
+      Dropdown.dropdownsOnThePage = [];
+    }
+    Dropdown.dropdownsOnThePage.push(this._dropdown);
+
     this._opened = false;
   }
 
