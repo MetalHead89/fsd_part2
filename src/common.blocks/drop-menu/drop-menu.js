@@ -14,10 +14,6 @@ class DropMenu {
   closeDropMenu() {
     this._dropMenu.classList.remove('drop-menu_opened');
   }
-
-  toggleDropMenuState() {
-    this._dropMenu.classList.toggle('drop-menu_opened');
-  }
 }
 
 export default DropMenu;

@@ -5,7 +5,12 @@ class Dropdown {
     this._dropMenu = dropMenu;
     this._countingMenu = countingMenu;
 
+    this._init();
     this._addEventListeners();
+  }
+
+  _init() {
+    this._opened = false;
   }
 
   _addEventListeners() {
@@ -15,7 +20,15 @@ class Dropdown {
   }
 
   _toggleDropMenuState() {
-    this._dropMenu.toggleDropMenuState();
+    this._opened = !this._opened;
+
+    if (this._opened) {
+      this._dropMenu.openDropMenu();
+      this._dropdownHeader.activate();
+    } else {
+      this._dropMenu.closeDropMenu();
+      this._dropdownHeader.disactivate();
+    }
   }
 }
 

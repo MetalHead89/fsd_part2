@@ -15,6 +15,14 @@ class DropdownHeader {
     this._clickToHeaderListeners.push(callback);
   }
 
+  activate() {
+    this._header.classList.add('dropdown-header_active');
+  }
+
+  disactivate() {
+    this._header.classList.remove('dropdown-header_active');
+  }
+
   _init() {
     this._handleDropdownHeaderClick = this._handleDropdownHeaderClick.bind(
       this
