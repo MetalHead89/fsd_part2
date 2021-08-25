@@ -1,5 +1,5 @@
-import DateDropdown from './date-dropdown';
+// import DateDropdown from './date-dropdown';
 
-const dropdowns = document.querySelectorAll('.js-date-dropdown');
+// const dropdowns = document.querySelectorAll('.js-date-dropdown');
 
-dropdowns.forEach((item) => new DateDropdown(item));
+// dropdowns.forEach((item) => new DateDropdown(item));
