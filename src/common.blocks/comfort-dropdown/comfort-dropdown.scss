@@ -1,0 +1,8 @@
+@import '../../scss/mixins';
+
+.comfort-dropdown {
+  &__title {
+    @include h3;
+    margin-bottom: 5px;
+  }
+}
