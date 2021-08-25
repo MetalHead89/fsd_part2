@@ -11,7 +11,7 @@ class Dropdown {
 
   static handleBodyClick(evt) {
     if (Dropdown.clickIsOutsideDropdown(evt)) {
-      // Dropdown.closeAllDropdowns();
+      Dropdown.closeAllDropdowns();
     }
   }
 
@@ -21,9 +21,9 @@ class Dropdown {
     );
   }
 
-  // static closeAllDropdowns() {
-  //   Dropdown.dropdownsOnThePage.forEach();
-  // }
+  static closeAllDropdowns() {
+    Dropdown.dropdownsOnThePage.forEach((dropdown) => dropdown._close());
+  }
 
   _init() {
     if (Dropdown.dropdownsOnThePage === undefined) {
@@ -44,21 +44,21 @@ class Dropdown {
   }
 
   _toggleDropdownState() {
-    this._opened = !this._opened;
-
     if (this._opened) {
-      this._open();
-    } else {
       this._close();
+    } else {
+      this._open();
     }
   }
 
   _open() {
+    this._opened = true;
     this._dropMenu.openDropMenu();
     this._dropdownHeader.activate();
   }
 
   _close() {
+    this._opened = false;
     this._dropMenu.closeDropMenu();
     this._dropdownHeader.disactivate();
   }
