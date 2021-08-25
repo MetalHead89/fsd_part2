@@ -17,12 +17,12 @@ class Dropdown {
 
   static clickIsOutsideDropdown(evt) {
     return !Dropdown.dropdownsOnThePage.some(
-      (dropdown) => evt.path.indexOf(dropdown._dropdown) >= 0
+      (dropdown) => evt.path.indexOf(dropdown.getDropdown()) >= 0
     );
   }
 
   static closeAllDropdowns() {
-    Dropdown.dropdownsOnThePage.forEach((dropdown) => dropdown._close());
+    Dropdown.dropdownsOnThePage.forEach((dropdown) => dropdown.close());
   }
 
   _init() {
@@ -45,7 +45,7 @@ class Dropdown {
 
   _toggleDropdownState() {
     if (this._opened) {
-      this._close();
+      this.close();
     } else {
       this._open();
     }
@@ -57,7 +57,11 @@ class Dropdown {
     this._dropdownHeader.activate();
   }
 
-  _close() {
+  getDropdown() {
+    return this._dropdown;
+  }
+
+  close() {
     this._opened = false;
     this._dropMenu.closeDropMenu();
     this._dropdownHeader.disactivate();
