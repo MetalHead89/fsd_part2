@@ -5,4 +5,4 @@ mixin comfort-dropdown({ title = 'dropdown' } = {})
   .comfort-dropdown.js-comfort-dropdown
     .comfort-dropdown__title !{title}
     +dropdown-header({ placeholder: 'Выберите удобства', isStraightBottom: true })
-    +drop-menu()
+    +drop-menu({ options: ['спальни', 'кровати', 'ванные комнаты']} )
