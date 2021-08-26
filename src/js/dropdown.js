@@ -55,6 +55,16 @@ class Dropdown {
     this._opened = true;
     this._dropMenu.openDropMenu();
     this._dropdownHeader.activate();
+
+    this._closeOtherDropdowns();
+  }
+
+  _closeOtherDropdowns() {
+    Dropdown.dropdownsOnThePage.forEach((dropdown) => {
+      if (dropdown !== this) {
+        dropdown.close();
+      }
+    });
   }
 
   _changeHeader(text) {
