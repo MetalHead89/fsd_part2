@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+
 import Dropdown from '../../js/dropdown';
 
 class ComfortDropdown extends Dropdown {
@@ -14,6 +16,7 @@ class ComfortDropdown extends Dropdown {
   }
 
   _init() {
+    super._init();
     this._countingMenu.addClickToButtonListener(
       this._changeDropdownHeaderText.bind(this)
     );
