@@ -1,12 +1,16 @@
 include ../counting-menu/counting-menu
 include ../calendar/calendar
 
-mixin drop-menu({ type = 'counter', options = [], isButtons = false } = {})
-  .drop-menu.js-drop-menu
+mixin drop-menu({ type = 'counter', options = [], calendarModifiers = [], modifiers = [], isButtons = false } = {})
+  - let dropMenuStyle = 'drop-menu js-drop-menu';
+
+  - dropMenuStyle += modifiers.reduce((accumulator, modifier) => accumulator + ` drop-menu_${modifier}`, '' )
+
+  div( class = dropMenuStyle )
     if type === 'counter'
       +counting-menu({ options })
     else if type = 'calendar'
-      +calendar()
+      +calendar({ modifiers: calendarModifiers })
 
     if isButtons
       .drop-menu__bottom-buttons-panel

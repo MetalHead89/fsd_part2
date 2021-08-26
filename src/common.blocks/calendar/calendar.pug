@@ -1,6 +1,6 @@
 include ../button/button.pug
 
-mixin calendar({ theme } = {})
+mixin calendar({ modifiers = [] } = {})
   - const WEEK_DAYS = 7;
   - let maxDaysCount = 31;
   - let weeksCount = 5;
@@ -11,8 +11,10 @@ mixin calendar({ theme } = {})
   - let isPrevMonth = true;
   - let calendarStyle = 'calendar js-calendar';
 
-  if (theme !== undefined && theme === 'without-top-border')
-    - calendarStyle += ' calendar_without-top-border';
+  - calendarStyle += modifiers.reduce((accumulator, modifier) => accumulator + ` calendar_${modifier}`, '' )
+
+  //- if (theme !== undefined && theme === 'without-top-border')
+  //-   - calendarStyle += ' calendar_without-top-border';
 
   div(class=calendarStyle)
     .calendar__month-selection-section
