@@ -18,17 +18,32 @@ class GuestsDropdown extends Dropdown {
   _init() {
     super._init();
 
-    this._countingMenu.addClickToButtonListener(
-      this._changeDropdownHeaderText.bind(this)
-    );
     this.WORDS = {
       guests: ['гость', 'гостя', 'гостей'],
       babies: ['младенец', 'младенца', 'младенцев'],
     };
   }
 
+  _addEventListeners() {
+    super._addEventListeners();
+
+    this._countingMenu.addClickToButtonListener(
+      this._changeDropdownHeaderText.bind(this)
+    );
+    this._dropMenu.addClickToClearButtonListener(this._clear.bind(this));
+    this._dropMenu.addClickToApplyButtonListener(this.close.bind(this));
+  }
+
+  _clear() {
+    this._countingMenu.clear();
+    this._changeDropdownHeaderText();
+  }
+
   _changeDropdownHeaderText() {
     const counters = this._countingMenu.getCounters();
+    const sum = counters.reduce(
+      (accumulator, currentValue) => accumulator + currentValue
+    );
     const guests = counters[0] + counters[1];
     const babies = counters[2];
     let headerText = null;
@@ -41,6 +56,12 @@ class GuestsDropdown extends Dropdown {
       headerText = headerText
         ? `${headerText}, ${babies} ${this._getWord(babies, 'babies')}`
         : `${babies} ${this._getWord(babies, 'babies')}`;
+    }
+
+    if (sum > 0) {
+      this._dropMenu.showClearButton();
+    } else {
+      this._dropMenu.hideClearButton();
     }
 
     this._changeHeader(headerText);
