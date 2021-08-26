@@ -23,7 +23,16 @@ class Calendar {
     this._refreshCalendar();
   }
 
+  getCalendar() {
+    return this._calendar;
+  }
+
+  addObserver(callback) {
+    this._observers.push(callback);
+  }
+
   _calendarInit() {
+    this._observers = [];
     this._currentDate = new Date();
     this._currentDate.setHours(0, 0, 0, 0);
     this._calendarTitle = this._calendar.querySelector(
@@ -494,54 +503,60 @@ class Calendar {
     this._isChoiceMode = false;
     this._clearButton.classList.add('calendar__button-clear_hidden');
 
-    const parent = this._calendar.offsetParent.offsetParent;
-    if (parent && parent.classList.contains('date-dropdown')) {
-      this._startInput.value = '';
-      this._endInput.value = '';
-    } else if (parent && parent.classList.contains('filter-date-dropdown')) {
-      parent.querySelector('.js-filter-date-dropdown__header-text').innerText =
-        'Выберите период';
-    }
+    this._observers.forEach((observer) => observer());
+    // const parent = this._calendar.offsetParent.offsetParent;
+    // if (parent && parent.classList.contains('date-dropdown')) {
+    //   this._startInput.value = '';
+    //   this._endInput.value = '';
+    // } else if (parent && parent.classList.contains('filter-date-dropdown')) {
+    //   parent.querySelector('.js-filter-date-dropdown__header-text').innerText =
+    //     'Выберите период';
+    // }
   }
 
   _applyRange() {
     this._dateRange.sort(Calendar.compareNumbers);
-    const parent = this._calendar.offsetParent.offsetParent;
+    
+    this._observers.forEach((observer) => observer());
+    // const parent = this._calendar.offsetParent.offsetParent;
 
-    if (parent && parent.classList.contains('date-dropdown')) {
-      if (this._dateRange[0]) {
-        this._startInput.value = Calendar.dateToString(
-          new Date(this._dateRange[0])
-        );
-        this._startInput.dispatchEvent(new Event('change'));
-      } else {
-        this._startInput.value = '';
-      }
+    // if (parent && parent.classList.contains('date-dropdown')) {
+    //   if (this._dateRange[0]) {
+    //     this._startInput.value = Calendar.dateToString(
+    //       new Date(this._dateRange[0])
+    //     );
+    //     this._startInput.dispatchEvent(new Event('change'));
+    //   } else {
+    //     this._startInput.value = '';
+    //   }
 
-      if (this._dateRange[1]) {
-        this._endInput.value = Calendar.dateToString(
-          new Date(this._dateRange[1])
-        );
-        this._endInput.dispatchEvent(new Event('change'));
-      } else {
-        this._endInput.value = '';
-      }
-    } else if (parent && parent.classList.contains('filter-date-dropdown')) {
-      if (this._dateRange.length === 2) {
-        const startDate = new Date(this._dateRange[0]);
-        const endDate = new Date(this._dateRange[1]);
+    //   if (this._dateRange[1]) {
+    //     this._endInput.value = Calendar.dateToString(
+    //       new Date(this._dateRange[1])
+    //     );
+    //     this._endInput.dispatchEvent(new Event('change'));
+    //   } else {
+    //     this._endInput.value = '';
+    //   }
+    // } else if (parent && parent.classList.contains('filter-date-dropdown')) {
+    //   if (this._dateRange.length === 2) {
+    //     const startDate = new Date(this._dateRange[0]);
+    //     const endDate = new Date(this._dateRange[1]);
 
-        parent.querySelector('.js-filter-date-dropdown__header-text').innerText =
-          `${startDate.getDate()} ` +
-          `${this._MONTHS[startDate.getMonth()].toLowerCase().slice(0, 3)} - ` +
-          `${endDate.getDate()} ${this._MONTHS[endDate.getMonth()]
-            .toLowerCase()
-            .slice(0, 3)} `;
-      } else {
-        parent.querySelector('.js-filter-date-dropdown__header-text').innerText =
-          'Выберите период';
-      }
-    }
+    //     parent.querySelector(
+    //       '.js-filter-date-dropdown__header-text'
+    //     ).innerText =
+    //       `${startDate.getDate()} ` +
+    //       `${this._MONTHS[startDate.getMonth()].toLowerCase().slice(0, 3)} - ` +
+    //       `${endDate.getDate()} ${this._MONTHS[endDate.getMonth()]
+    //         .toLowerCase()
+    //         .slice(0, 3)} `;
+    //   } else {
+    //     parent.querySelector(
+    //       '.js-filter-date-dropdown__header-text'
+    //     ).innerText = 'Выберите период';
+    //   }
+    // }
   }
 
   _refreshCalendar(date = new Date(this._year, this._month)) {
