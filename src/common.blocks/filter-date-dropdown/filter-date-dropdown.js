@@ -3,12 +3,6 @@
 import Dropdown from '../../js/dropdown';
 
 class FilterDateDropdown extends Dropdown {
-  constructor(dropdown, header, dropMenu, calendar) {
-    super(dropdown, header, dropMenu);
-
-    this._calendar = calendar;
-  }
-
   _init() {
     super._init();
 

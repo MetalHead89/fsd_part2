@@ -12,7 +12,7 @@ require('../counting-menu/init');
 const dropdowns = document.querySelectorAll('.js-guests-dropdown');
 
 dropdowns.forEach((dropdown) => {
-  const header = DropdownHeaderStore.getHeaderByElement(
+  const dropdownHeader = DropdownHeaderStore.getHeaderByElement(
     dropdown.querySelector('.js-dropdown-header')
   );
   const dropMenu = DropMenuStore.getDropMenuByElement(
@@ -22,5 +22,5 @@ dropdowns.forEach((dropdown) => {
     dropdown.querySelector('.js-counting-menu')
   );
 
-  new GuestsDropdown(dropdown, header, dropMenu, countingMenu);
+  new GuestsDropdown({ dropdown, dropdownHeader, dropMenu, countingMenu });
 });

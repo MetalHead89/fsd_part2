@@ -3,12 +3,6 @@
 import Dropdown from '../../js/dropdown';
 
 class ComfortDropdown extends Dropdown {
-  constructor(dropdown, dropdownHeader, dropMenu, countingMenu) {
-    super(dropdown, dropdownHeader, dropMenu, countingMenu);
-
-    this._init();
-  }
-
   static numberIsTwoThreeOrFour(number10, number100) {
     return (
       number10 >= 2 && number10 <= 4 && !(number100 >= 12 && number100 <= 14)
@@ -17,6 +11,7 @@ class ComfortDropdown extends Dropdown {
 
   _init() {
     super._init();
+
     this._countingMenu.addClickToButtonListener(
       this._changeDropdownHeaderText.bind(this)
     );

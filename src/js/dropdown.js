@@ -1,9 +1,16 @@
 class Dropdown {
-  constructor(dropdown, dropdownHeader, dropMenu, countingMenu) {
+  constructor({
+    dropdown,
+    dropdownHeader,
+    dropMenu,
+    countingMenu,
+    calendar,
+  } = {}) {
     this._dropdown = dropdown;
     this._dropdownHeader = dropdownHeader;
     this._dropMenu = dropMenu;
     this._countingMenu = countingMenu;
+    this._calendar = calendar;
 
     this._init();
     this._addEventListeners();

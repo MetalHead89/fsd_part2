@@ -12,7 +12,7 @@ require('../calendar/init');
 const dropdowns = document.querySelectorAll('.js-filter-date-dropdown');
 
 dropdowns.forEach((dropdown) => {
-  const header = DropdownHeaderStore.getHeaderByElement(
+  const dropdownHeader = DropdownHeaderStore.getHeaderByElement(
     dropdown.querySelector('.js-dropdown-header')
   );
   const dropMenu = DropMenuStore.getDropMenuByElement(
@@ -22,5 +22,5 @@ dropdowns.forEach((dropdown) => {
     dropdown.querySelector('.js-calendar')
   );
 
-  new FilterDateDropdown(dropdown, header, dropMenu, calendar);
+  new FilterDateDropdown({ dropdown, dropdownHeader, dropMenu, calendar });
 });
