@@ -19,4 +19,20 @@
     transform: scale(1, 1);
     opacity: 1;
   }
+
+  &__bottom-buttons-panel {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 13px;
+    padding-bottom: 7px;
+  }
+
+  &__button-clear {
+    &_hidden {
+      & :first-child {
+        display: none;
+      }
+    }
+  }
 }
