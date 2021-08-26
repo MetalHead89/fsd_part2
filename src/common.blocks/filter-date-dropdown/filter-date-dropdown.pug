@@ -1,5 +1,8 @@
-include ../dropdown/dropdown.pug
+include ../dropdown-header/dropdown-header.pug
+include ../drop-menu/drop-menu.pug
 
 mixin filter-date-dropdown({ title = 'dropdown' } = {})
-  .js-filter-date-dropdown
-    +dropdown({ type: 'filterDate', title, isButtons: false, placeholder: 'Выберите период'})
+  .filter-date-dropdown.js-filter-date-dropdown
+    .filter-date-dropdown__title !{title}
+    +dropdown-header({ placeholder: 'Выберите период' })
+    +drop-menu({ type: 'calendar' })
