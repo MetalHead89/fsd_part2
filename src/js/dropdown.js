@@ -57,6 +57,10 @@ class Dropdown {
     this._dropdownHeader.activate();
   }
 
+  _changeHeader(text) {
+    this._dropdownHeader.setText(text);
+  }
+
   getDropdown() {
     return this._dropdown;
   }

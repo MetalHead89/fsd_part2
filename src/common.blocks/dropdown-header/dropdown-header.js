@@ -15,6 +15,10 @@ class DropdownHeader {
     this._clickToHeaderListeners.push(callback);
   }
 
+  setText(text) {
+    this._headerText.innerText = text || this._placeholder;
+  }
+
   activate() {
     this._header.classList.add('dropdown-header_active');
   }
@@ -24,6 +28,9 @@ class DropdownHeader {
   }
 
   _init() {
+    this._headerText = this._header.querySelector('.js-dropdown-header__text');
+    this._placeholder = this._headerText.innerText;
+
     this._handleDropdownHeaderClick = this._handleDropdownHeaderClick.bind(
       this
     );
