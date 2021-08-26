@@ -6,11 +6,29 @@ class FilterDateDropdown extends Dropdown {
   _init() {
     super._init();
 
-    this._calendar.addObserver(this._obsFunc);
+    this._calendar.addObserver(this._changeHeader.bind(this));
   }
 
-  _obsFunc() {
-    console.log('11111');
+  _changeHeader() {
+    const datesRange = this._calendar.getDatesRange();
+    let headerText = null;
+
+    if (datesRange.length === 2) {
+      const startDate = new Date(datesRange[0]);
+      const endDate = new Date(datesRange[1]);
+
+      headerText = `${startDate.toLocaleString('ru', {
+        day: 'numeric',
+        month: 'short',
+      })} - ${endDate.toLocaleString('ru', {
+        day: 'numeric',
+        month: 'short',
+      })}`;
+
+      headerText = headerText.replace(/\./g, '');
+    }
+
+    super._changeHeader(headerText);
   }
 
   // constructor(dropdown, dropdownHeader, dropMenu) {

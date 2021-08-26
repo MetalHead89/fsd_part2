@@ -31,6 +31,10 @@ class Calendar {
     this._observers.push(callback);
   }
 
+  getDatesRange() {
+    return this._dateRange;
+  }
+
   _calendarInit() {
     this._observers = [];
     this._currentDate = new Date();
@@ -516,7 +520,7 @@ class Calendar {
 
   _applyRange() {
     this._dateRange.sort(Calendar.compareNumbers);
-    
+
     this._observers.forEach((observer) => observer());
     // const parent = this._calendar.offsetParent.offsetParent;
 
