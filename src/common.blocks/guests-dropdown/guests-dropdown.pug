@@ -1,5 +1,9 @@
-include ../dropdown/dropdown.pug
+include ../dropdown-header/dropdown-header.pug
+include ../drop-menu/drop-menu.pug
+include ../button/button.pug
 
 mixin guests-dropdown({ title = 'dropdown' } = {})
-  .js-guests-dropdown
-    +dropdown({ title, isButtons: true, placeholder: 'Сколько гостей', options: ['взрослые', 'дети', 'младенцы'] })
+  .guests-dropdown.js-guests-dropdown
+    .guests-dropdown__title !{title}
+    +dropdown-header({ placeholder: 'Сколько гостей' })
+    +drop-menu({ options: ['взрослые', 'дети', 'младенцы'], isButtons: true })
