@@ -10,12 +10,12 @@ class RoomRateCard {
     this._dailyCostCalc = this._roomRateCard.querySelector(
       '.js-room-rate-card__daily-calc'
     );
-    this._startDate = this._roomRateCard
-      .querySelector('.js-date-dropdown__start-date-input')
-      .querySelector('.js-text-field__field');
-    this._endDate = this._roomRateCard
-      .querySelector('.js-date-dropdown__end-date-input')
-      .querySelector('.js-text-field__field');
+
+    const dateFilds = this._roomRateCard.querySelectorAll(
+      '.js-date-dropdown__input'
+    );
+    this._startDate = dateFilds[0].querySelector('.js-text-field__field');
+    this._endDate = dateFilds[1].querySelector('.js-text-field__field');
     this._dailyCost = parseInt(this._dailyCostCalc.innerText, 10);
     this._serviceCost = parseInt(
       this._roomRateCard.querySelector(

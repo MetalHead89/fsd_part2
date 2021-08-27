@@ -1,30 +1,21 @@
-include ../calendar/calendar.pug
-include ../text-field/text-field.pug
+include ../drop-menu/drop-menu.pug
 
-mixin date-dropdown({ startDate, endDate } = {})
-  - let dateObject = {'title': 'date Dropdown', 'input': {'placeholderText': 'ДД.ММ.ГГГГ', 'masked': true, 'type': 'text'}}
-
-  if startDate === undefined
-    - startDate = dateObject
-
-  if endDate === undefined
-    - endDate = dateObject
-
+mixin date-dropdown({ titleOne = 'date Dropdown', titleTwo = 'date Dropdown' } = {})
+  - const textFieldOptions = { 'placeholderText': 'ДД.ММ.ГГГГ', 'masked': true, 'type': 'text' }
+  
   .date-dropdown.js-date-dropdown
-    input.date-dropdown__check.js-date-dropdown__check(type="checkbox")
-    
+
     .date-dropdown__date-section
       .date-dropdown__date-block.date-dropdown__date-block_right-padding
-        h3.date-dropdown__title !{startDate.title}
-        .date-dropdown__start-date-input.js-date-dropdown__start-date-input
-          +text-field(startDate.input)
+        h3.date-dropdown__title !{titleOne}
+        .date-dropdown__input.js-date-dropdown__input
+          +text-field(textFieldOptions)
           i.date-dropdown__date-arrow keyboard_arrow_down
 
       .date-dropdown__date-block.date-dropdown__date-block_left-padding
-        h3.date-dropdown__title !{endDate.title}
-        .date-dropdown__end-date-input.js-date-dropdown__end-date-input
-          +text-field(endDate.input)
+        h3.date-dropdown__title !{titleTwo}
+        .date-dropdown__input.js-date-dropdown__input
+          +text-field(textFieldOptions)
           i.date-dropdown__date-arrow keyboard_arrow_down
-      
-    .date-dropdown__drop-menu.js-date-dropdown__drop-menu.date-dropdown__drop-menu_separate-from-dropdown
-        +calendar({ theme: calendarTheme })
+          
+    +drop-menu({ type: 'calendar', calendarModifiers: ['without-top-border'], modifiers: ['no-paddings', 'no-borders'] })
