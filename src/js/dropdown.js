@@ -61,7 +61,9 @@ class Dropdown {
   _open() {
     this._opened = true;
     this._dropMenu.openDropMenu();
-    this._dropdownHeader.activate();
+    if (this._dropdownHeader) {
+      this._dropdownHeader.activate();
+    }
 
     this._closeOtherDropdowns();
   }
@@ -85,7 +87,9 @@ class Dropdown {
   close() {
     this._opened = false;
     this._dropMenu.closeDropMenu();
-    this._dropdownHeader.disactivate();
+    if (this._dropdownHeader) {
+      this._dropdownHeader.disactivate();
+    }
   }
 }
 
