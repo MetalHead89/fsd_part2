@@ -104,10 +104,7 @@ class Calendar {
     this._clearSelectedDays();
     this._showSelectedDays();
 
-    return [
-      Calendar.dateToString(start) || null,
-      Calendar.dateToString(end) || null,
-    ];
+    return this._dateRange.map((item) => Calendar.dateToString(new Date(item)));
     // this._startInput.dispatchEvent(new Event('change'));
   }
 

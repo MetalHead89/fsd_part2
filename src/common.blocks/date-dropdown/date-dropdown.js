@@ -31,22 +31,39 @@ class DateDropdown extends Dropdown {
   }
 
   _handleStartDateBlur() {
-    const result = this._calendar.enterDates(
-      this._startDate.value,
-      this._endDate.value
-    );
-
-    this._startDate.value = result ? result[0] : '';
+    if (!this._updateCalendarData()) {
+      this._startDate.value = '';
+    }
+    // this._startDate.value = result ? result[0] : '';
     // this._startInput.dispatchEvent(new Event('change'));
   }
 
   _handleEndDateBlur() {
+    if (!this._updateCalendarData()) {
+      this._endDate.value = '';
+    }
+  }
+
+  _updateCalendarData() {
+    let success = true;
     const result = this._calendar.enterDates(
       this._startDate.value,
       this._endDate.value
     );
 
-    this._endDate.value = result ? result[1] : '';
+    if (!result) {
+      success = false;
+    } else if (result.length === 1) {
+      [this._startDate.value] = result;
+      this._endDate.value = '';
+    } else if (result.length === 2) {
+      [this._startDate.value, this._endDate.value] = result;
+    } else {
+      this._startDate.value = '';
+      this._endDate.value = '';
+    }
+
+    return success;
   }
 }
 export default DateDropdown;
