@@ -35,6 +35,10 @@ class Calendar {
     return this._dateRange;
   }
 
+  getStringDatesRange() {
+    return this._dateRange.map((item) => Calendar.dateToString(new Date(item)));
+  }
+
   _calendarInit() {
     this._observers = [];
     this._currentDate = new Date();

@@ -20,6 +20,13 @@ class DateDropdown extends Dropdown {
     this._endDate.addEventListener('focus', this._handleEndDateFocus);
     this._startDate.addEventListener('blur', this._handleStartDateBlur);
     this._endDate.addEventListener('blur', this._handleEndDateBlur);
+
+    this._calendar.addObserver(this._update.bind(this));
+  }
+
+  _update() {
+    const dates = this._calendar.getStringDatesRange();
+    this._changeDateInputs(dates);
   }
 
   _handleStartDateFocus() {
@@ -31,39 +38,36 @@ class DateDropdown extends Dropdown {
   }
 
   _handleStartDateBlur() {
-    if (!this._updateCalendarData()) {
-      this._startDate.value = '';
-    }
+    this._updateCalendarData();
     // this._startDate.value = result ? result[0] : '';
     // this._startInput.dispatchEvent(new Event('change'));
   }
 
   _handleEndDateBlur() {
-    if (!this._updateCalendarData()) {
-      this._endDate.value = '';
-    }
+    this._updateCalendarData();
   }
 
   _updateCalendarData() {
-    let success = true;
     const result = this._calendar.enterDates(
       this._startDate.value,
       this._endDate.value
     );
 
-    if (!result) {
-      success = false;
-    } else if (result.length === 1) {
-      [this._startDate.value] = result;
+    this._changeDateInputs(result);
+  }
+
+  _changeDateInputs(dates) {
+    if (!dates) {
+      this._update();
+    } else if (dates.length === 1) {
+      [this._startDate.value] = dates;
       this._endDate.value = '';
-    } else if (result.length === 2) {
-      [this._startDate.value, this._endDate.value] = result;
+    } else if (dates.length === 2) {
+      [this._startDate.value, this._endDate.value] = dates;
     } else {
       this._startDate.value = '';
       this._endDate.value = '';
     }
-
-    return success;
   }
 }
 export default DateDropdown;
