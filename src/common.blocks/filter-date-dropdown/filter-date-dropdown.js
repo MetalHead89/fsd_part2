@@ -3,10 +3,11 @@
 import Dropdown from '../../js/dropdown';
 
 class FilterDateDropdown extends Dropdown {
-  _init() {
-    super._init();
-
+  _addEventListeners() {
     this._calendar.addObserver(this._changeHeader.bind(this));
+    this._calendar.addClickToApplyButtonListener(this.close.bind(this));
+
+    super._addEventListeners();
   }
 
   _changeHeader() {
