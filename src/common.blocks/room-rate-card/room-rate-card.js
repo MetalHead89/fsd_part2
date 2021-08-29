@@ -1,6 +1,9 @@
+/* eslint-disable comma-dangle */
+
 class RoomRateCard {
-  constructor(card) {
+  constructor(card, dateDropdown) {
     this._roomRateCard = card;
+    this._dateDropdown = dateDropdown;
 
     this._init();
     this._addEventListeners();
@@ -11,11 +14,11 @@ class RoomRateCard {
       '.js-room-rate-card__daily-calc'
     );
 
-    const dateFilds = this._roomRateCard.querySelectorAll(
-      '.js-date-dropdown__input'
-    );
-    this._startDate = dateFilds[0].querySelector('.js-text-field__field');
-    this._endDate = dateFilds[1].querySelector('.js-text-field__field');
+    // const dateFilds = this._roomRateCard.querySelectorAll(
+    //   '.js-date-dropdown__input'
+    // );
+    // this._startDate = dateFilds[0].querySelector('.js-text-field__field');
+    // this._endDate = dateFilds[1].querySelector('.js-text-field__field');
     this._dailyCost = parseInt(this._dailyCostCalc.innerText, 10);
     this._serviceCost = parseInt(
       this._roomRateCard.querySelector(
@@ -62,45 +65,40 @@ class RoomRateCard {
       this._additionalServiceCost
     ).toLocaleString('ru-RU')}₽`;
 
-    this._handleStartDateChange = this._handleStartDateChange.bind(this);
-    this._handleEndDateChange = this._handleEndDateChange.bind(this);
+    // this._handleStartDateChange = this._handleStartDateChange.bind(this);
+    // this._handleEndDateChange = this._handleEndDateChange.bind(this);
   }
 
   _addEventListeners() {
-    if (this._startDate) {
-      this._startDate.addEventListener('change', this._handleStartDateChange);
-    }
-
-    if (this._endDate) {
-      this._endDate.addEventListener('change', this._handleEndDateChange);
-    }
-  }
-
-  _handleStartDateChange() {
-    this._calculateCost();
-  }
-
-  _handleEndDateChange() {
-    this._calculateCost();
-  }
-
-  _handleSelectableDayClick() {
-    this._calculateCost();
-  }
-
-  _getLengthOfStay() {
-    const startDay = Date.parse(
-      this._startDate.value.split('.').reverse().join('-')
+    this._dateDropdown.addClickToApplyButtonListener(
+      this._calculateCost.bind(this)
     );
+    //   if (this._startDate) {
+    //     this._startDate.addEventListener('change', this._handleStartDateChange);
+    //   }
 
-    const endDay = Date.parse(
-      this._endDate.value.split('.').reverse().join('-')
-    );
+    //   if (this._endDate) {
+    //     this._endDate.addEventListener('change', this._handleEndDateChange);
+    //   }
+  }
 
-    if (
-      this._startDate.value.length === 10 &&
-      this._endDate.value.length === 10
-    ) {
+  // _handleStartDateChange() {
+  //   this._calculateCost();
+  // }
+
+  // _handleEndDateChange() {
+  //   this._calculateCost();
+  // }
+
+  // _handleSelectableDayClick() {
+  //   this._calculateCost();
+  // }
+
+  static getLengthOfStay(startDate, endDate) {
+    if (startDate.length === 10 && endDate.length === 10) {
+      const startDay = Date.parse(startDate.split('.').reverse().join('-'));
+      const endDay = Date.parse(endDate.split('.').reverse().join('-'));
+
       return (endDay - startDay) / 86400000 + 1;
     }
 
@@ -120,7 +118,8 @@ class RoomRateCard {
   }
 
   _calculateCost() {
-    const lengthOfStay = this._getLengthOfStay();
+    const { startDate, endDate } = this._dateDropdown.getDataFieldsValues();
+    const lengthOfStay = RoomRateCard.getLengthOfStay(startDate, endDate);
 
     if (lengthOfStay !== null) {
       const priceRoomForAllTime = this._dailyCost * lengthOfStay;

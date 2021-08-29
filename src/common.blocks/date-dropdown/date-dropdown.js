@@ -3,9 +3,18 @@
 import Dropdown from '../../js/dropdown';
 
 class DateDropdown extends Dropdown {
+  addClickToApplyButtonListener(callback) {
+    this._clickToApplyButtonListeners.push(callback);
+  }
+
+  getDataFieldsValues() {
+    return { startDate: this._startDate.value, endDate: this._endDate.value };
+  }
+
   _init() {
     const dateFields = this._dropdown.querySelectorAll('.js-text-field__field');
     [this._startDate, this._endDate] = dateFields;
+    this._clickToApplyButtonListeners = [];
 
     this._handleStartDateFocus = this._handleStartDateFocus.bind(this);
     this._handleEndDateFocus = this._handleEndDateFocus.bind(this);
@@ -22,7 +31,14 @@ class DateDropdown extends Dropdown {
     this._endDate.addEventListener('blur', this._handleEndDateBlur);
 
     this._calendar.addObserver(this._update.bind(this));
-    this._calendar.addClickToApplyButtonListener(this.close.bind(this));
+    this._calendar.addClickToApplyButtonListener(
+      this._handleApplyButtonClick.bind(this)
+    );
+  }
+
+  _handleApplyButtonClick() {
+    this._clickToApplyButtonListeners.forEach((listener) => listener());
+    this.close();
   }
 
   _update() {
