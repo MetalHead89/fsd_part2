@@ -22,6 +22,7 @@ class DateDropdown extends Dropdown {
     this._endDate.addEventListener('blur', this._handleEndDateBlur);
 
     this._calendar.addObserver(this._update.bind(this));
+    this._calendar.addClickToApplyButtonListener(this.close.bind(this));
   }
 
   _update() {

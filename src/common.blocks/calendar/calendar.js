@@ -31,6 +31,10 @@ class Calendar {
     this._observers.push(callback);
   }
 
+  addClickToApplyButtonListener(callback) {
+    this._clickToApplyButtonListeners.push(callback);
+  }
+
   getDatesRange() {
     return this._dateRange;
   }
@@ -41,6 +45,7 @@ class Calendar {
 
   _calendarInit() {
     this._observers = [];
+    this._clickToApplyButtonListeners = [];
     this._currentDate = new Date();
     this._currentDate.setHours(0, 0, 0, 0);
     this._calendarTitle = this._calendar.querySelector(
@@ -60,11 +65,15 @@ class Calendar {
     this._clearButton = this._calendar.querySelector(
       '.js-calendar__button-clear'
     );
+    this._applyButton = this._calendar.querySelector(
+      '.js-calendar__button-apply'
+    );
 
     // this._handleStartDateInputBlur = this._handleStartDateInputBlur.bind(this);
     // this._handleEndDateInputBlur = this._handleEndDateInputBlur.bind(this);
     this._handleButtonClearClick = this._handleButtonClearClick.bind(this);
     this._handleMonthButtonClick = this._handleMonthButtonClick.bind(this);
+    this._handleButtonApplyClick = this._handleButtonApplyClick.bind(this);
   }
 
   _addEventListeners() {
@@ -75,6 +84,7 @@ class Calendar {
     //   this._endInput.addEventListener('blur', this._handleEndDateInputBlur);
     // }
     this._clearButton.addEventListener('click', this._handleButtonClearClick);
+    this._applyButton.addEventListener('click', this._handleButtonApplyClick);
     this._prevMonthButton.addEventListener(
       'click',
       this._handleMonthButtonClick
@@ -551,6 +561,10 @@ class Calendar {
     //   parent.querySelector('.js-filter-date-dropdown__header-text').innerText =
     //     'Выберите период';
     // }
+  }
+
+  _handleButtonApplyClick() {
+    this._clickToApplyButtonListeners.forEach((listener) => listener());
   }
 
   _applyRange() {
