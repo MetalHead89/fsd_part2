@@ -56,8 +56,6 @@ class DateDropdown extends Dropdown {
 
   _handleStartDateBlur() {
     this._updateCalendarData();
-    // this._startDate.value = result ? result[0] : '';
-    // this._startInput.dispatchEvent(new Event('change'));
   }
 
   _handleEndDateBlur() {
