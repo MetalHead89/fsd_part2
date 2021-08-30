@@ -13,9 +13,6 @@ mixin calendar({ modifiers = [] } = {})
 
   - calendarStyle += modifiers.reduce((accumulator, modifier) => accumulator + ` calendar_${modifier}`, '' )
 
-  //- if (theme !== undefined && theme === 'without-top-border')
-  //-   - calendarStyle += ' calendar_without-top-border';
-
   div(class=calendarStyle)
     .calendar__month-selection-section
       i.calendar__month-button.calendar__month-button_with-back-arrow.js-calendar__month-button_with-back-arrow arrow_back
