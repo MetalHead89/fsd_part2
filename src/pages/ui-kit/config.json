@@ -47,22 +47,8 @@
     "type": "text"
   },
   "dateDropdown": {
-    "startDate": {
-      "title": "date Dropdown",
-      "input": {
-        "placeholderText": "ДД.ММ.ГГГГ",
-        "isMasked": true,
-        "type": "text"
-      }
-    },
-    "endDate": {
-      "title": "date Dropdown",
-      "input": {
-        "placeholderText": "ДД.ММ.ГГГГ",
-        "isMasked": true,
-        "type": "text"
-      }
-    }
+    "titleOne": "date dropdown",
+    "titleTwo": "date dropdown"
   },
   "filterDateDropdown": {
     "title": "filter date dropdown"
@@ -179,22 +165,8 @@
   "searchRoomCard": {
     "title": "Найдём номера под ваши пожелания",
     "dropdown1": {
-      "startDate": {
-        "title": "прибытие",
-        "input": {
-          "placeholderText": "ДД.ММ.ГГГГ",
-          "isMasked": true,
-          "type": "text"
-        }
-      },
-      "endDate": {
-        "title": "выезд",
-        "input": {
-          "placeholderText": "ДД.ММ.ГГГГ",
-          "isMasked": true,
-          "type": "text"
-        }
-      }
+      "titleOne": "прибытие",
+      "titleTwo": "выезд"
     },
     "dropdown2": {
       "title": "гости"
@@ -251,22 +223,8 @@
     "serviceCost": -2179,
     "additionalServiceCost": 300,
     "dropdown1": {
-      "startDate": {
-        "title": "прибытие",
-        "input": {
-          "placeholderText": "ДД.ММ.ГГГГ",
-          "isMasked": true,
-          "type": "text"
-        }
-      },
-      "endDate": {
-        "title": "выезд",
-        "input": {
-          "placeholderText": "ДД.ММ.ГГГГ",
-          "isMasked": true,
-          "type": "text"
-        }
-      }
+      "titleOne": "прибытие",
+      "titleTwo": "выезд"
     },
     "dropdown2": { "title": "гости" },
     "button": { "type": "arrow", "text": "забронировать" }

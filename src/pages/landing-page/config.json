@@ -2,22 +2,8 @@
   "searchRoomCard": {
     "title": "Найдём номера под ваши пожелания",
     "dropdown1": {
-      "startDate": {
-        "title": "прибытие",
-        "input": {
-          "placeholderText": "ДД.ММ.ГГГГ",
-          "isMasked": true,
-          "type": "text"
-        }
-      },
-      "endDate": {
-        "title": "выезд",
-        "input": {
-          "placeholderText": "ДД.ММ.ГГГГ",
-          "isMasked": true,
-          "type": "text"
-        }
-      }
+      "titleOne": "прибытие",
+      "titleTwo": "выезд"
     },
     "dropdown2": {
       "title": "гости"
