@@ -12,8 +12,9 @@ class DateDropdown extends Dropdown {
   }
 
   _init() {
-    const dateFields = this._dropdown.querySelectorAll('.js-text-field__field');
-    [this._startDate, this._endDate] = dateFields;
+    [this._startDate, this._endDate] = this._dropdown.querySelectorAll(
+      '.js-text-field__field'
+    );
     this._clickToApplyButtonListeners = [];
 
     this._handleStartDateFocus = this._handleStartDateFocus.bind(this);
