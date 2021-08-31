@@ -28,6 +28,7 @@ class CountingMenu {
   clear() {
     this._counters.forEach((counter) => {
       counter.innerText = '0';
+      this._onOffQuantityButton.bind(counter)();
     });
   }
 
