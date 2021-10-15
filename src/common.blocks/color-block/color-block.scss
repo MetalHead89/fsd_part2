@@ -35,24 +35,24 @@
       display: block;
     }
 
-    &_theme {
-      &_dark-shade-5 {
+    &_color {
+      &_lightest-gray {
         background: rgba(31, 32, 65, 0.05);
       }
 
-      &_dark-shade-25 {
+      &_light-gray {
         background: rgba(31, 32, 65, 0.25);
       }
 
-      &_dark-shade-50 {
+      &_gray {
         background: rgba(31, 32, 65, 0.5);
       }
 
-      &_dark-shade-75 {
+      &_dark-gray {
         background: rgba(31, 32, 65, 0.75);
       }
 
-      &_dark-shade-100 {
+      &_darkest-gray {
         background: #1f2041;
       }
 

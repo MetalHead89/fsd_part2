@@ -6,22 +6,22 @@
       "colorCode": "#1F2041"
     },
     {
-      "theme": "darkShade75",
+      "theme": "darkGray",
       "colorName": "Dark Shade 75%",
       "colorCode": "#1F2041"
     },
     {
-      "theme": "darkShade50",
+      "theme": "gray",
       "colorName": "Dark Shade 50%",
       "colorCode": "#1F2041"
     },
     {
-      "theme": "darkShade25",
+      "theme": "light-gray",
       "colorName": "Dark Shade 25%",
       "colorCode": "#1F2041"
     },
     {
-      "theme": "darkShade5",
+      "theme": "lightest-gray",
       "colorName": "Dark Shade 5%",
       "colorCode": "#1F2041"
     },

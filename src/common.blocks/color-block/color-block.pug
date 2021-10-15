@@ -1,20 +1,20 @@
 mixin color-block({ theme, colorName = 'Dark Shade 100%', colorCode = '#1F2041' } = {})
   - let colorSquareClass = 'color-block__square';
     
-  if theme === 'darkShade75'
-    - colorSquareClass += ' color-block__square_theme_dark-shade-75';
-  else if theme === 'darkShade50'
-    - colorSquareClass += ' color-block__square_theme_dark-shade-50';
-  else if theme === 'darkShade25'
-    - colorSquareClass += ' color-block__square_theme_dark-shade-25';
-  else if theme === 'darkShade5'
-    - colorSquareClass += ' color-block__square_theme_dark-shade-5';
+  if theme === 'darkGray'
+    - colorSquareClass += ' color-block__square_color_dark-gray';
+  else if theme === 'gray'
+    - colorSquareClass += ' color-block__square_color_gray';
+  else if theme === 'light-gray'
+    - colorSquareClass += ' color-block__square_color_light-gray';
+  else if theme === 'lightest-gray'
+    - colorSquareClass += ' color-block__square_color_lightest-gray';
   else if theme === 'purple'
-    - colorSquareClass += ' color-block__square_theme_purple';
+    - colorSquareClass += ' color-block__square_color_purple';
   else if theme === 'green'
-    - colorSquareClass += ' color-block__square_theme_green';
+    - colorSquareClass += ' color-block__square_color_green';
   else
-    - colorSquareClass += ' color-block__square_theme_dark-shade-100';
+    - colorSquareClass += ' color-block__square_color_darkest-gray';
 
   .color-block
     div(class=colorSquareClass)
