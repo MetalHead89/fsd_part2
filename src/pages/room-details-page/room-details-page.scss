@@ -133,21 +133,21 @@
     font-size: 19px;
     margin-bottom: 12px;
 
-    &_paddings_left-and-bottom {
-      padding-left: 20px;
-      padding-bottom: 8px;
+    &_offset {
+      &_bottom {
+        padding-bottom: 8px;
 
-      @media screen and (max-width: 660px) {
-        text-align: center;
-        padding-left: 0;
+        @media screen and (max-width: 660px) {
+          text-align: center;
+        }
       }
-    }
 
-    &_cancel {
-      padding-bottom: 8px;
+      &_left {
+        padding-left: 20px;
 
-      @media screen and (max-width: 660px) {
-        text-align: center;
+        @media screen and (max-width: 660px) {
+          padding-left: 0;
+        }
       }
     }
   }
