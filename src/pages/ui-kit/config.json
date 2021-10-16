@@ -212,8 +212,7 @@
     "loginLabel": "Уже есть аккаунт на Toxin",
     "buttonEntry": {
       "type": "border",
-      "text": "войти",
-      "theme": "horizontalPaddingsL"
+      "text": "войти"
     }
   },
   "roomRateCard": {
@@ -240,8 +239,7 @@
     "accountSectionLabel": "Нет аккаунта на Toxin?",
     "buttonCreateAccount": {
       "type": "border",
-      "text": "создать",
-      "theme": "horizontalPaddingsS"
+      "text": "создать"
     }
   },
   "roomCards": [

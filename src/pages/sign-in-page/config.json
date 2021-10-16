@@ -5,6 +5,6 @@
     "textFieldPassword": { "placeholderText": "Пароль", "type": "password" },
     "buttonEntry": { "type": "arrow", "text": "войти" },
     "accountSectionLabel": "Нет аккаунта на Toxin?",
-    "buttonCreateAccount": { "type": "border", "text": "создать", "theme": "horizontalPaddingsS" }
+    "buttonCreateAccount": { "type": "border", "text": "создать" }
   }
 }

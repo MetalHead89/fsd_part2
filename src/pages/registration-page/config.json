@@ -38,8 +38,7 @@
     "loginLabel": "Уже есть аккаунт на Toxin",
     "buttonEntry": {
       "type": "border",
-      "text": "войти",
-      "theme": "horizontalPaddingsL"
+      "text": "войти"
     }
   }
 }
