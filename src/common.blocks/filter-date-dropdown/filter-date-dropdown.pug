@@ -5,4 +5,4 @@ mixin filter-date-dropdown({ title = 'dropdown' } = {})
   .filter-date-dropdown.js-filter-date-dropdown
     .filter-date-dropdown__title !{title}
     +dropdown-header({ placeholder: 'Выберите период' })
-    +drop-menu({ type: 'calendar', calendarModifiers: ['without-top-border'], modifiers: ['no-paddings', 'no-borders'] })
+    +drop-menu({ type: 'calendar', calendarModifiers: ['without-top-border'] })

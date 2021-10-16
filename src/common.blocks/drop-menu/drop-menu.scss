@@ -6,20 +6,20 @@
   transform-origin: top;
   transform: scale(1, 0);
   z-index: 99;
-  border: 1px solid rgba(31, 32, 65, 0.5);
-  border-top: none;
   box-sizing: border-box;
-  padding: 2px 6px 2px 15px;
   flex-direction: column;
-  border-radius: 0 0 4px 4px;
   transition: transform 0.5s;
 
-  &_no-paddings {
-    padding: 0;
-  }
+  &_theme {
+    &_bordered {
+      border: 1px solid rgba(31, 32, 65, 0.5);
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+    }
 
-  &_no-borders {
-    border: none;
+    &_indented {
+      padding: 2px 6px 2px 15px;
+    }
   }
 
   &_opened {

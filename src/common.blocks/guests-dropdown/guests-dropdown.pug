@@ -6,4 +6,4 @@ mixin guests-dropdown({ title = 'dropdown' } = {})
   .guests-dropdown.js-guests-dropdown
     .guests-dropdown__title !{title}
     +dropdown-header({ placeholder: 'Сколько гостей' })
-    +drop-menu({ options: ['взрослые', 'дети', 'младенцы'], isButtons: true })
+    +drop-menu({ options: ['взрослые', 'дети', 'младенцы'], themes: ['bordered', 'indented'], isButtons: true })

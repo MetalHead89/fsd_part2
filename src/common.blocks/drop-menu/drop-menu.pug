@@ -1,9 +1,10 @@
 include ../counting-menu/counting-menu
 include ../calendar/calendar
 
-mixin drop-menu({ type = 'counter', options = [], calendarModifiers = [], modifiers = [], isButtons = false } = {})
+mixin drop-menu({ type = 'counter', options = [], calendarModifiers = [], themes = [], modifiers = [], isButtons = false } = {})
   - let dropMenuStyle = 'drop-menu js-drop-menu';
 
+  - dropMenuStyle += themes.reduce((accumulator, theme) => accumulator + ` drop-menu_theme_${theme}`, '' )
   - dropMenuStyle += modifiers.reduce((accumulator, modifier) => accumulator + ` drop-menu_${modifier}`, '' )
 
   div( class = dropMenuStyle )
