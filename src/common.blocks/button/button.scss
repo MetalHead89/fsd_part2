@@ -3,6 +3,7 @@
 
 .button {
   position: relative;
+  width: 100%;
   box-sizing: border-box;
   border-radius: 22px;
   font-weight: bold;
@@ -81,29 +82,17 @@
     }
   }
 
-  &_paddings_s {
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-
-  &_paddings_l {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
-  &_horizontal-paddings-size_l {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  &_horizontal-paddings-size_s {
-    padding-left: 16px;
-    padding-right: 16px;
+  &_size {
+    &_small {
+      height: 34px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
 
   &__arrow {
     @include material-icon;
-    
+
     pointer-events: none;
     position: absolute;
     right: 0;

@@ -23,7 +23,7 @@
 
   &__person {
     padding-top: 10px;
-    padding-bottom: 17px
+    padding-bottom: 17px;
   }
 
   &__title {
@@ -34,5 +34,9 @@
 
   &__text-field-wrapper {
     padding-bottom: 9px;
+  }
+
+  &__login-button {
+    width: 100px;
   }
 }
