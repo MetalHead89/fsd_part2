@@ -9,16 +9,18 @@
     padding-left: 30px;
     margin: 0;
 
-    &_header-size_l {
-      @include h1;
-    }
+    &_size {
+      &_large {
+        @include h1;
+      }
 
-    &_header-size_m {
-      @include h2;
-    }
+      &_medium {
+        @include h2;
+      }
 
-    &_header-size_s {
-      @include h3;
+      &_small {
+        @include h3;
+      }
     }
   }
 
@@ -31,19 +33,21 @@
     color: rgba(31, 32, 65, 0.25);
     @include type-block-tag;
 
-    &_size_l {
-      @include h1;
-      @include type-block-tag;
-    }
+    &_size {
+      &_large {
+        @include h1;
+        @include type-block-tag;
+      }
 
-    &_size_m {
-      @include h2;
-      @include type-block-tag;
-    }
+      &_medium {
+        @include h2;
+        @include type-block-tag;
+      }
 
-    &_size_s {
-      @include h3;
-      @include type-block-tag;
+      &_small {
+        @include h3;
+        @include type-block-tag;
+      }
     }
   }
 }
