@@ -1,18 +1,16 @@
-mixin button({ type, text = 'click me', isDisabled = false, theme, size } = {})
+mixin button({ type, text = 'click me', isDisabled = false, theme, size, color } = {})
   - let button_class = 'button';
+  - let modifiedType = type === 'submit' ? 'submit' : 'button'
 
-  if type === 'border'
-    - button_class += ' button_with-border';
-  else if type === 'onlyText'
-    - button_class += ' button_only-text';
-  else if type == 'arrow'
-    - button_class += ' button_with-arrow';
-  else
-    - button_class += ' button_regular';
+  if theme === 'filled'
+    - button_class += ' button_theme_filled';
+  else if theme === 'bordered'
+    - button_class += ' button_theme_bordered';
+
+  if color === 'darkest-gray'
+    - button_class += ' button_color_darkest-gray';
 
   if size === 'small'
     - button_class += ' button_size_small';
 
-  button(type="button", value=text, disabled=isDisabled, class=button_class) !{text}
-    if type == 'arrow'
-      i.button__arrow arrow_forward
+  button(type=modifiedType, value=text, disabled=isDisabled, class=button_class) !{text}

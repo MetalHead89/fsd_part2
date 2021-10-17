@@ -122,18 +122,22 @@
     "value2": 10000
   },
   "buttons": [
-    { "text": "click me" },
-    { "text": "click me", "isDisabled": true }
+    { "text": "click me", "theme": "filled" },
+    {
+      "text": "click me",
+      "theme": "filled",
+      "isDisabled": true
+    }
   ],
   "borderButtons": [
-    { "text": "click me", "type": "border" },
-    { "text": "click me", "type": "border", "isDisabled": true }
+    { "text": "click me", "theme": "bordered" },
+    { "text": "click me", "theme": "bordered", "isDisabled": true }
   ],
   "onlyTextButtons": [
-    { "text": "click me", "type": "onlyText" },
-    { "isDisabled": true, "text": "click me", "type": "onlyText" }
+    { "text": "click me" },
+    { "isDisabled": true, "text": "click me", "color": "darkest-gray" }
   ],
-  "arrowButton": { "text": "перейти к оплате", "type": "arrow" },
+  "arrowButton": { "text": "перейти к оплате", "type": "submit", "theme": "filled" },
   "pagination": { "numberOfPages": 15, "activePage": 1 },
   "bulletList": {
     "menuItems": [

@@ -123,7 +123,7 @@ html(lang="ru")
                   .ui-kit__only-text-buttons-group
                     each onlyTextButton in config.onlyTextButtons
                       .ui-kit__only-text-button-block
-                        +button({ text: onlyTextButton.text, type: onlyTextButton.type, isDisabled: onlyTextButton.isDisabled })
+                        +button(onlyTextButton)
                 .ui-kit__block-wrapper
                   +button(config.arrowButton)
               .ui-kit__block-wrapper
