@@ -29,7 +29,7 @@
       padding-bottom: 100%;
     }
 
-    &_active-page {
+    &_active {
       font-weight: bold;
       color: white;
       background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
@@ -37,20 +37,22 @@
       cursor: pointer;
     }
 
-    &_with-arrow {
-      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-      border-radius: 22px;
-      transition: 0.5s ease;
-      cursor: pointer;
+    &_theme {
+      &_movement {
+        background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+        border-radius: 22px;
+        transition: 0.5s ease;
+        cursor: pointer;
 
-      &:hover {
-        opacity: 0.5;
+        &:hover {
+          opacity: 0.5;
+        }
       }
-    }
 
-    &_with-number:hover {
-      opacity: 0.5;
-      cursor: pointer;
+      &_numerical:hover {
+        opacity: 0.5;
+        cursor: pointer;
+      }
     }
   }
 
@@ -87,8 +89,10 @@
     color: rgba(31, 32, 65, 0.75);
     text-align: center;
 
-    &_with-top-margin {
-      margin-top: 10px;
+    &_offset {
+      &_top {
+        margin-top: 10px;
+      }
     }
   }
 }

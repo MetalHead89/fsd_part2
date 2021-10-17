@@ -11,7 +11,7 @@ mixin pagination({ numberOfPages = 1, activePage = 1 } = {})
   nav.pagination.js-pagination
     ul.pagination__pages.js-pagination__pages
       if activePage !== 1
-        li.pagination__button.pagination__button_with-arrow.js-pagination__button_with-prev-arrow
+        li.pagination__button.pagination__button_theme_movement.js-pagination__button_with-prev-arrow
           a.pagination__link(href="#")
             i.pagination__arrow arrow_back
 
@@ -31,15 +31,15 @@ mixin pagination({ numberOfPages = 1, activePage = 1 } = {})
           - continue;
 
         if current_page == activePage
-          li.pagination__button.pagination__button_with-number.js-pagination__button_with-number.pagination__button_active-page.js-pagination__button_active-page !{current_page}
+          li.pagination__button.pagination__button_theme_numerical.js-pagination__button_theme_numerical.pagination__button_active.js-pagination__button_active !{current_page}
         else
-          li.pagination__button.pagination__button_with-number.js-pagination__button_with-number
+          li.pagination__button.pagination__button_theme_numerical.js-pagination__button_theme_numerical
             a.pagination__link(href="#") !{current_page}
         - current_page++;
 
       if activePage != numberOfPages
-        li.pagination__button.pagination__button_with-arrow.js-pagination__button_with-next-arrow
+        li.pagination__button.pagination__button_theme_movement.js-pagination__button_with-next-arrow
           a.pagination__link(href="#")
             i.pagination__arrow arrow_forward
 
-    span.pagination__signature.pagination__signature_with-top-margin.js-pagination__signature !{startHotelRoomOnPage} – !{endHotelRoomOnPage} из !{hotelRoomsTotal} вариантов аренды
+    span.pagination__signature.pagination__signature_offset_top.js-pagination__signature !{startHotelRoomOnPage} – !{endHotelRoomOnPage} из !{hotelRoomsTotal} вариантов аренды

@@ -10,7 +10,7 @@ class Pagination {
 
   _init() {
     this._pagesNumbers = this._pagination.querySelectorAll(
-      '.js-pagination__button_with-number',
+      '.js-pagination__button_theme_numerical',
     );
     this._pagesCount = parseInt(
       this._pagesNumbers[this._pagesNumbers.length - 1].innerText,
@@ -56,11 +56,11 @@ class Pagination {
 
   _handleButtonWithPrevArrowClick() {
     const oldActivePage = document.querySelector(
-      '.js-pagination__button_active-page',
+      '.js-pagination__button_active',
     );
     oldActivePage.classList.remove(
-      'pagination__button_active-page',
-      'js-pagination__button_active-page',
+      'pagination__button_active',
+      'js-pagination__button_active',
     );
 
     this._createNewPagination.bind(
@@ -72,11 +72,11 @@ class Pagination {
 
   _handleButtonWithNextArrowClick() {
     const oldActivePage = this._pagination.querySelector(
-      '.js-pagination__button_active-page',
+      '.js-pagination__button_active',
     );
     oldActivePage.classList.remove(
-      'pagination__button_active-page',
-      'js-pagination__button_active-page',
+      'pagination__button_active',
+      'js-pagination__button_active',
     );
 
     this._createNewPagination.bind(this, oldActivePage.nextElementSibling)();
@@ -85,11 +85,11 @@ class Pagination {
 
   _handleButtonWithNumberClick(event) {
     const oldActivePage = this._pagination.querySelector(
-      '.js-pagination__button_active-page',
+      '.js-pagination__button_active',
     );
     oldActivePage.classList.remove(
-      'pagination__button_active-page',
-      'js-pagination__button_active-page',
+      'pagination__button_active',
+      'js-pagination__button_active',
     );
 
     this._createNewPagination.bind(this, event.target)();
@@ -188,7 +188,7 @@ class Pagination {
   _createNewPaginationSignature() {
     const span = document.createElement('span');
     const activePageNumber = parseInt(
-      document.querySelector('.js-pagination__button_active-page').innerText,
+      document.querySelector('.js-pagination__button_active').innerText,
       10,
     );
     let hotelRoomsTotal = (this._pagesCount - 1) * 12;
@@ -203,7 +203,7 @@ class Pagination {
 
     span.classList.add(
       'pagination__signature',
-      'pagination__signature_with-top-margin',
+      'pagination__signature_offset_top',
       'js-pagination__signature',
     );
     span.innerText = `${startHotelRoomOnPage} – ${endHotelRoomOnPage} из ${hotelRoomsTotal} вариантов аренды`;
@@ -236,7 +236,7 @@ class Pagination {
       if (type === 'prevButton') {
         li.classList.add(
           'pagination__button',
-          'pagination__button_with-arrow',
+          'pagination__button_theme_movement',
           'js-pagination__button_with-prev-arrow',
         );
         span.innerText = 'arrow_back';
@@ -247,7 +247,7 @@ class Pagination {
       } else {
         li.classList.add(
           'pagination__button',
-          'pagination__button_with-arrow',
+          'pagination__button_theme_movement',
           'js-pagination__button_with-next-arrow',
         );
         span.innerText = 'arrow_forward';
@@ -266,17 +266,17 @@ class Pagination {
       if (parseInt(button.innerText, 10) === page) {
         li.classList.add(
           'pagination__button',
-          'pagination__button_with-number',
-          'js-pagination__button_with-number',
-          'pagination__button_active-page',
-          'js-pagination__button_active-page',
+          'pagination__button_theme_numerical',
+          'js-pagination__button_theme_numerical',
+          'pagination__button_active',
+          'js-pagination__button_active',
         );
         li.innerText = page;
       } else {
         li.classList.add(
           'pagination__button',
-          'pagination__button_with-number',
-          'js-pagination__button_with-number',
+          'pagination__button_theme_numerical',
+          'js-pagination__button_theme_numerical',
         );
         li.append(a);
         a.innerText = page;
