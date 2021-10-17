@@ -91,12 +91,14 @@ $navbar: '.navbar';
       opacity: 1;
     }
 
-    &_with-name {
-      display: none;
-    }
+    &_type {
+      &_name {
+        display: none;
+      }
 
-    &_with-separator {
-      display: none;
+      &_separator {
+        display: none;
+      }
     }
 
     &:last-child {
@@ -208,12 +210,12 @@ $navbar: '.navbar';
       display: none;
     }
 
-    #{$navbar}__item_with-name {
+    #{$navbar}__item_type_name {
       display: flex;
       padding-right: 0;
     }
 
-    #{$navbar}__item_with-separator {
+    #{$navbar}__item_type_separator {
       display: flex;
     }
   }

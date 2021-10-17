@@ -18,7 +18,7 @@ class Navbar {
       '.js-navbar__button-entry-container'
     );
     this._accountName = this._navbar.querySelector(
-      '.js-navbar__item_with-name'
+      '.js-navbar__item_type_name'
     );
     this._dropdownItems = this._navbar.querySelectorAll(
       '.js-navbar__dropdown-title'
