@@ -83,19 +83,21 @@
     transition: transform 0.2s ease;
     cursor: pointer;
 
-    &_left {
-      transform: translate(-8px, -5px);
+    &_type {
+      &_left {
+        transform: translate(-8px, -5px);
 
-      &_hover {
-        transform: translate(-8px, -5px) scale(1.4);
+        &_hover {
+          transform: translate(-8px, -5px) scale(1.4);
+        }
       }
-    }
 
-    &_right {
-      transform: translate(8px, -5px);
+      &_right {
+        transform: translate(8px, -5px);
 
-      &_hover {
-        transform: translate(8px, -5px) scale(1.4);
+        &_hover {
+          transform: translate(8px, -5px) scale(1.4);
+        }
       }
     }
   }

@@ -14,10 +14,10 @@ class Slider {
       '.js-range-slider__input_right'
     );
     this._leftThumb = this._slider.querySelector(
-      '.js-range-slider__thumb_left'
+      '.js-range-slider__thumb_type_left'
     );
     this._rightThumb = this._slider.querySelector(
-      '.js-range-slider__thumb_right'
+      '.js-range-slider__thumb_type_right'
     );
     this._range = this._slider.querySelector('.js-range-slider__range');
     this._rangeLabel = this._slider.querySelector(
@@ -60,11 +60,11 @@ class Slider {
   }
 
   _handleInputLeftMouseover() {
-    this._leftThumb.classList.add('range-slider__thumb_left_hover');
+    this._leftThumb.classList.add('range-slider__thumb_type_left_hover');
   }
 
   _handleInputLeftMouseout() {
-    this._leftThumb.classList.remove('range-slider__thumb_left_hover');
+    this._leftThumb.classList.remove('range-slider__thumb_type_left_hover');
   }
 
   _handleInputRightInput() {
@@ -72,11 +72,11 @@ class Slider {
   }
 
   _handleInputRightMouseover() {
-    this._rightThumb.classList.add('range-slider__thumb_right_hover');
+    this._rightThumb.classList.add('range-slider__thumb_type_right_hover');
   }
 
   _handleInputRightMouseout() {
-    this._rightThumb.classList.remove('range-slider__thumb_right_hover');
+    this._rightThumb.classList.remove('range-slider__thumb_type_right_hover');
   }
 
   _setLeftValue() {
