@@ -12,14 +12,16 @@
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
-  &_without-top-border {
-    border-radius: 0 0 4px 4px;
-    border-color: rgba(31, 32, 65, 0.5);
-    border-top: none;
-  }
+  &_theme {
+    &_without-top-border {
+      border-radius: 0 0 4px 4px;
+      border-color: rgba(31, 32, 65, 0.5);
+      border-top: none;
+    }
 
-  &_separate-from-dropdown {
-    margin-top: 5px;
+    &_separate-from-dropdown {
+      margin-top: 5px;
+    }
   }
 
   &__buttons-panel {
@@ -43,31 +45,33 @@
       padding-bottom: 100%;
     }
 
-    &_other-month {
-      color: rgba(31, 32, 65, 0.25);
-    }
-
-    &_current {
-      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-      color: white;
-      font-weight: bold;
-      border-radius: 22px;
-    }
-
-    &_selectable {
-      transition: opacity 0.5s ease;
-      cursor: pointer;
-
-      &:hover {
-        opacity: 0.5;
+    &_theme {
+      &_current {
+        background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+        color: white;
+        font-weight: bold;
+        border-radius: 22px;
       }
-    }
 
-    &_selected {
-      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-      border-radius: 22px;
-      color: white;
-      font-weight: bold;
+      &_other-month {
+        color: rgba(31, 32, 65, 0.25);
+      }
+
+      &_selectable {
+        transition: opacity 0.5s ease;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      &_selected {
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+        border-radius: 22px;
+        color: white;
+        font-weight: bold;
+      }
     }
   }
 
@@ -123,12 +127,14 @@
       RGBA(139, 164, 249, 0.25) 100%
     );
 
-    &_left-rounded {
-      border-radius: 22px 0 0 22px;
-    }
+    &_theme {
+      &_left-rounded {
+        border-radius: 22px 0 0 22px;
+      }
 
-    &_right-rounded {
-      border-radius: 0 22px 22px 0;
+      &_right-rounded {
+        border-radius: 0 22px 22px 0;
+      }
     }
   }
 
@@ -153,9 +159,11 @@
   }
 
   &__button-clear {
-    &_hidden {
-      & :first-child {
-        display: none;
+    &_theme {
+      &_hidden {
+        & :first-child {
+          display: none;
+        }
       }
     }
   }

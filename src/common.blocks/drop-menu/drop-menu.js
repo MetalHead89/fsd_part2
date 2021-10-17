@@ -28,13 +28,13 @@ class DropMenu {
 
   showClearButton() {
     if (this._clearButton) {
-      this._clearButton.classList.remove('drop-menu__button-clear_hidden');
+      this._clearButton.classList.remove('drop-menu__button-clear_theme_hidden');
     }
   }
 
   hideClearButton() {
     if (this._clearButton) {
-      this._clearButton.classList.add('drop-menu__button-clear_hidden');
+      this._clearButton.classList.add('drop-menu__button-clear_theme_hidden');
     }
   }
 
