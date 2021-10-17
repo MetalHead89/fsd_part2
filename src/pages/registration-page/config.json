@@ -34,11 +34,15 @@
       "text": "Получать спецпредложения",
       "name": "toggleSpecialOffers"
     },
-    "buttonPayment": { "type": "arrow", "text": "перейти к оплате" },
+    "buttonPayment": {
+      "text": "перейти к оплате",
+      "theme": "filled",
+      "type": "submit"
+    },
     "loginLabel": "Уже есть аккаунт на Toxin",
     "buttonEntry": {
-      "type": "border",
-      "text": "войти"
+      "text": "войти",
+      "theme": "bordered"
     }
   }
 }
