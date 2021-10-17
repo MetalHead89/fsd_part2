@@ -8,7 +8,7 @@
     "dropdown2": {
       "title": "гости"
     },
-    "button": { "type": "arrow", "text": "подобрать номер" }
+    "button": { "text": "подобрать номер", "theme": "filled", "type": "submit" }
   },
   "bodyText": "Лучшие номера для вашей работы, отдыха и просто вдохновения"
 }
