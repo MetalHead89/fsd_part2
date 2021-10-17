@@ -8,10 +8,10 @@ class RoomCard {
 
   _init() {
     this._buttonPrev = this._roomCard.querySelector(
-      '.js-room-card__arrow-button_prev'
+      '.js-room-card__arrow-button_type_prev'
     );
     this._buttonNext = this._roomCard.querySelector(
-      '.js-room-card__arrow-button_next'
+      '.js-room-card__arrow-button_type_next'
     );
     this._sliderDots = Array.from(
       this._roomCard.querySelectorAll('.js-room-card__dot')

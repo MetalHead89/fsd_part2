@@ -11,12 +11,12 @@ mixin room-card({ images, roomNumber = 1, isLux, roomRate = 10000, rating = 5, r
           li(class=listItemClass)
             img(class='room-card__slider-image' src=img alt="room-image")
 
-      button.room-card__arrow-button.room-card__arrow-button_prev.js-room-card__arrow-button_prev(
+      button.room-card__arrow-button.room-card__arrow-button_type_prev.js-room-card__arrow-button_type_prev(
         type='button'
       )
         i.room-card__arrow keyboard_arrow_left
 
-      button.room-card__arrow-button.room-card__arrow-button_next.js-room-card__arrow-button_next(
+      button.room-card__arrow-button.room-card__arrow-button_type_next.js-room-card__arrow-button_type_next(
         type='button'
       )
         i.room-card__arrow keyboard_arrow_right
