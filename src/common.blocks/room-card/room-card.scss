@@ -111,8 +111,10 @@ $room-card: '.room-card';
     color: #1f2041;
     line-height: 0;
 
-    &_size_l {
-      font-size: 19px;
+    &_size {
+      &_large {
+        font-size: 19px;
+      }
     }
   }
 

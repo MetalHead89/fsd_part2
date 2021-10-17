@@ -32,7 +32,7 @@ mixin room-card({ images, roomNumber = 1, isLux, roomRate = 10000, rating = 5, r
       .room-card__number-section
         .room-card__room-number
           span.room-card__number №
-          |  #[span.room-card__number.room-card__number_size_l !{roomNumber}]
+          |  #[span.room-card__number.room-card__number_size_large !{roomNumber}]
           if isLux
             |  #[span.room-card__lux ЛЮКС]
 
