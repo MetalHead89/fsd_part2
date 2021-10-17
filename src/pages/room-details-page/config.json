@@ -67,8 +67,9 @@
       "title": "гости"
     },
     "button": {
-      "type": "arrow",
-      "text": "забронировать"
+      "text": "забронировать",
+      "theme": "filled",
+      "type": "submit"
     }
   }
 }
