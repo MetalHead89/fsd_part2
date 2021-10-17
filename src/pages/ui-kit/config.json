@@ -137,7 +137,11 @@
     { "text": "click me" },
     { "isDisabled": true, "text": "click me", "color": "darkest-gray" }
   ],
-  "arrowButton": { "text": "перейти к оплате", "type": "submit", "theme": "filled" },
+  "submitButton": {
+    "text": "перейти к оплате",
+    "type": "submit",
+    "theme": "filled"
+  },
   "pagination": { "numberOfPages": 15, "activePage": 1 },
   "bulletList": {
     "menuItems": [
@@ -175,7 +179,7 @@
     "dropdown2": {
       "title": "гости"
     },
-    "button": { "type": "arrow", "text": "подобрать номер" }
+    "button": { "text": "подобрать номер", "theme": "filled", "type": "submit" }
   },
   "registrationCard": {
     "title": "Регистрация аккаунта",
@@ -212,11 +216,15 @@
       "text": "Получать спецпредложения",
       "name": "toggleSpecialOffers"
     },
-    "buttonPayment": { "type": "arrow", "text": "перейти к оплате" },
+    "buttonPayment": {
+      "text": "перейти к оплате",
+      "theme": "filled",
+      "type": "submit"
+    },
     "loginLabel": "Уже есть аккаунт на Toxin",
     "buttonEntry": {
-      "type": "border",
-      "text": "войти"
+      "text": "войти",
+      "theme": "bordered"
     }
   },
   "roomRateCard": {
@@ -230,20 +238,21 @@
       "titleTwo": "выезд"
     },
     "dropdown2": { "title": "гости" },
-    "button": { "type": "arrow", "text": "забронировать" }
+    "button": { "text": "забронировать", "theme": "filled", "type": "submit" }
   },
   "entryCard": {
     "title": "Войти",
     "textFieldEmail": { "placeholderText": "Email", "type": "email" },
     "textFieldPassword": { "placeholderText": "Пароль", "type": "password" },
     "buttonEntry": {
-      "type": "arrow",
-      "text": "войти"
+      "text": "войти",
+      "theme": "filled",
+      "type": "submit"
     },
     "accountSectionLabel": "Нет аккаунта на Toxin?",
     "buttonCreateAccount": {
-      "type": "border",
-      "text": "создать"
+      "text": "создать",
+      "theme": "bordered"
     }
   },
   "roomCards": [
