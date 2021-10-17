@@ -19,8 +19,10 @@
     border: 1px solid rgba(31, 32, 65, 0.5);
   }
 
-  &_straight-bottom {
-    border-radius: 4px 4px 0 0;
+  &_theme {
+    &_straight-bottom {
+      border-radius: 4px 4px 0 0;
+    }
   }
 
   &:hover,
