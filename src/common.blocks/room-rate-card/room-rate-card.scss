@@ -62,8 +62,10 @@
   &__number {
     display: inline;
 
-    &_size-l {
-      font-size: 24px;
+    &_size {
+      &_large {
+        font-size: 24px;
+      }
     }
   }
 
