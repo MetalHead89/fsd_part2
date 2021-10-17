@@ -82,11 +82,13 @@
       }
     }
 
-    &_size_s {
-      max-width: 300px;
+    &_size {
+      &_small {
+        max-width: 300px;
 
-      @media screen and (max-width: 660px) {
-        margin-bottom: 20px;
+        @media screen and (max-width: 660px) {
+          margin-bottom: 20px;
+        }
       }
     }
   }
