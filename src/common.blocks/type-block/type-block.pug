@@ -6,15 +6,15 @@ mixin type-block({ tag, text } = {})
   if tag === 'h1'
     - tagName = 'H1';
     - tagClass += ' type-block__tag_size_large'
-    - tagTextClass = 'type-block__text_header-size_l'
+    - tagTextClass = 'type-block__text_size_large'
   else if tag === 'h2'
     - tagName = 'H2';
     - tagClass += ' type-block__tag_size_medium'
-    - tagTextClass = 'type-block__text_header-size_m'
+    - tagTextClass = 'type-block__text_size_medium'
   else if tag === 'h3'
     - tagName = 'H3';
     - tagClass += ' type-block__tag_size_small'
-    - tagTextClass = 'type-block__text_header-size_s'
+    - tagTextClass = 'type-block__text_size_small'
   else
     - tag = 'span'
     - tagName = 'Body'
