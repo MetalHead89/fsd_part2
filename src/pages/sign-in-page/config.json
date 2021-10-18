@@ -5,6 +5,10 @@
     "textFieldPassword": { "placeholderText": "Пароль", "type": "password" },
     "buttonEntry": { "text": "войти", "theme": "filled", "type": "submit" },
     "accountSectionLabel": "Нет аккаунта на Toxin?",
-    "buttonCreateAccount": { "text": "создать", "theme": "bordered" }
+    "buttonCreateAccount": {
+      "link": "./registration-page.html",
+      "text": "создать",
+      "theme": "bordered"
+    }
   }
 }

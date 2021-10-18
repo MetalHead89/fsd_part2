@@ -3,6 +3,9 @@
 
 .button {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   box-sizing: border-box;
   border-radius: 22px;
@@ -16,6 +19,8 @@
   background: transparent;
   padding: 0;
   color: #bc9cff;
+  text-decoration: none;
+  line-height: 1;
 
   &[type='submit'] {
     &::before {

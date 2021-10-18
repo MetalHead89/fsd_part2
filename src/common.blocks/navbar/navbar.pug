@@ -23,7 +23,7 @@ mixin navbar({ items, vertical = false } = {})
       li(class='navbar__item js-navbar__item navbar__item_type_name js-navbar__item_type_name') Виталий Бакалов
       li(class='navbar__item js-navbar__item')
         .navbar__button-entry-container.js-navbar__button-entry-container
-          +button({ text: 'войти', theme: 'bordered', size: 'small' })
+          +button({ link: './sign-in-page.html', text: 'войти', theme: 'bordered', size: 'small' })
       li(class='navbar__item js-navbar__item')
         .navbar__button-registration-container.js-navbar__button-registration-container
-          +button({ text: 'зарегистрироваться', theme: 'filled', size: 'small' })
+          +button({ link: './registration-page.html', text: 'зарегистрироваться', theme: 'filled', size: 'small' })

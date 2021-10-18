@@ -1,4 +1,5 @@
-mixin button({ type, text = 'click me', isDisabled = false, theme, size, color } = {})
+mixin button({ type, text = 'click me', isDisabled = false, theme, size, color, link } = {})
+  - const tag = link ? 'a' : 'button';
   - let button_class = 'button';
   - let modifiedType = type === 'submit' ? 'submit' : 'button'
 
@@ -13,4 +14,4 @@ mixin button({ type, text = 'click me', isDisabled = false, theme, size, color }
   if size === 'small'
     - button_class += ' button_size_small';
 
-  button(type=modifiedType, value=text, disabled=isDisabled, class=button_class) !{text}
+  #{tag}(href=link type=modifiedType, value=text, disabled=isDisabled, class=button_class) !{text}
