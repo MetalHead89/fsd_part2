@@ -43,7 +43,7 @@ html(lang="ru")
           .ui-kit__colors
             each colorBlock in config.colorBlocks
               .ui-kit__color-block
-                +color-block({ theme: colorBlock.theme, colorName: colorBlock.colorName, colorCode: colorBlock.colorCode })
+                +color-block({ color: colorBlock.color, colorName: colorBlock.colorName, colorCode: colorBlock.colorCode })
           .ui-kit__type
             each typeBlock in config.typeBlocks
               .ui-kit__type-block

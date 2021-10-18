@@ -1,23 +1,18 @@
-mixin color-block({ theme, colorName = 'Dark Shade 100%', colorCode = '#1F2041' } = {})
-  - let colorSquareClass = 'color-block__square';
-    
-  if theme === 'darkGray'
-    - colorSquareClass += ' color-block__square_color_dark-gray';
-  else if theme === 'gray'
-    - colorSquareClass += ' color-block__square_color_gray';
-  else if theme === 'light-gray'
-    - colorSquareClass += ' color-block__square_color_light-gray';
-  else if theme === 'lightest-gray'
-    - colorSquareClass += ' color-block__square_color_lightest-gray';
-  else if theme === 'purple'
-    - colorSquareClass += ' color-block__square_color_purple';
-  else if theme === 'green'
-    - colorSquareClass += ' color-block__square_color_green';
-  else
-    - colorSquareClass += ' color-block__square_color_darkest-gray';
+mixin color-block({ color, colorName = 'Dark Shade 100%', colorCode = '#1F2041' } = {})
+  -
+    const colorModifiers = {
+      darkestGray: 'color-block__square_color_darkest-gray',
+      darkGray: 'color-block__square_color_dark-gray',
+      gray: 'color-block__square_color_gray',
+      lightGray: 'color-block__square_color_light-gray',
+      lightestGray: 'color-block__square_color_lightest-gray',
+      purple: 'color-block__square_color_purple',
+      green: 'color-block__square_color_green'
+    }
+  - const classes = ['color-block__square', colorModifiers[color] || 'color-block__square_color_darkest-gray'];
 
   .color-block
-    div(class=colorSquareClass)
+    div(class=classes)
     .color-block__description
       h2.color-block__color-name !{colorName}
       .color-block__color-code !{colorCode}

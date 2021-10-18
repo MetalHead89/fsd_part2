@@ -1,32 +1,32 @@
 {
   "colorBlocks": [
     {
-      "theme": "darkShade100",
+      "color": "darkestGray",
       "colorName": "Dark Shade 100%",
       "colorCode": "#1F2041"
     },
     {
-      "theme": "darkGray",
+      "color": "darkGray",
       "colorName": "Dark Shade 75%",
       "colorCode": "#1F2041"
     },
     {
-      "theme": "gray",
+      "color": "gray",
       "colorName": "Dark Shade 50%",
       "colorCode": "#1F2041"
     },
     {
-      "theme": "light-gray",
+      "color": "lightGray",
       "colorName": "Dark Shade 25%",
       "colorCode": "#1F2041"
     },
     {
-      "theme": "lightest-gray",
+      "color": "lightestGray",
       "colorName": "Dark Shade 5%",
       "colorCode": "#1F2041"
     },
-    { "theme": "purple", "colorName": "Purple", "colorCode": "#BC9CFF" },
-    { "theme": "green", "colorName": "Green", "colorCode": "#6FCF97" }
+    { "color": "purple", "colorName": "Purple", "colorCode": "#BC9CFF" },
+    { "color": "green", "colorName": "Green", "colorCode": "#6FCF97" }
   ],
   "typeBlocks": [
     { "tag": "h1", "text": "This one is the sub-section or widget title" },
