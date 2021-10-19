@@ -3,9 +3,6 @@ include ../guests-dropdown/guests-dropdown.pug
 include ../button/button.pug
 
 mixin room-rate-card({ roomNumber = 1, isLux, roomRate = 10000, dropdown1, dropdown2, serviceCost = 0, additionalServiceCost = 0, button } = {})
-  if button === undefined
-    - button = { 'type': 'arrow', 'text': 'забронировать' }
-
   .room-rate-card.js-room-rate-card
     form
       .room-rate-card__room-info
@@ -51,4 +48,4 @@ mixin room-rate-card({ roomNumber = 1, isLux, roomRate = 10000, dropdown1, dropd
         .room-rate-card__result-label Итого
         .room-rate-card__result-dots
         .room-rate-card__result-cost.js-room-rate-card__result-cost 0₽
-      +button(button)
+      +button(button || { 'type': 'arrow', 'text': 'забронировать' })
