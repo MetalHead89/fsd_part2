@@ -135,7 +135,7 @@
   ],
   "onlyTextButtons": [
     { "text": "click me" },
-    { "isDisabled": true, "text": "click me", "color": "darkest-gray" }
+    { "isDisabled": true, "text": "click me", "color": "darkestGray" }
   ],
   "submitButton": {
     "text": "перейти к оплате",
