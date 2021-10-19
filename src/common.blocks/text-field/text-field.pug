@@ -1,10 +1,7 @@
 mixin text-field({ isMasked, isSubscription, title, type = 'text', placeholderText = 'text' } = {})
   - let fieldClass = 'text-field__field js-text-field__field';
-
-  if isMasked
-    - fieldClass += ' js-text-field__field_masked';
-  else if isSubscription
-    - fieldClass += ' text-field__field_theme_subscription';
+  - fieldClass += isMasked ? ' js-text-field__field_masked' : '';
+  - fieldClass += isSubscription ? ' text-field__field_theme_subscription' : '';
 
   .text-field
     if title
