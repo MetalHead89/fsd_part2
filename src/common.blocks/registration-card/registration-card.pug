@@ -4,32 +4,11 @@ include ../button/button.pug
 include ../toggle/toggle.pug
 
 mixin registration-card({ title = 'Регистрация', textFieldName, textFieldSurname, radioButton, textFieldBirth, textFieldEmail, textFieldPassword, toggle, buttonPayment, loginLabel = 'Уже есть аккаунт на Toxin', buttonEntry} = {})
-  if textFieldName === undefined 
-    - textFieldName = { 'placeholderText': 'Имя', 'type': 'text' }
-
-  if textFieldSurname === undefined 
-    - textFieldSurname = { 'placeholderText': 'Фамилия', 'type': 'text' }
-
-  if radioButton === undefined 
-    - radioButton = { 'buttons': [{ 'name': 'radioGender', 'value': 'male', 'text': 'Мужчина', 'checked': true }, { 'name': 'radioGender',' value': 'female', 'text': 'Женщина' }]}
-
-  if textFieldBirth === undefined 
-    - textFieldBirth = { 'placeholderText': 'ДД.ММ.ГГГГ', 'masked': true, 'title': 'Дата рождения', 'type': 'text' }
-
-  if textFieldEmail === undefined 
-    - textFieldEmail = { 'placeholderText': 'Email', 'title': 'Данные для входа в сервис', 'type': 'email' }
-
-  if textFieldPassword === undefined 
-    - textFieldPassword = { 'placeholderText': 'Пароль', 'type': 'password' }
-
-  if toggle === undefined 
-    - toggle = { 'text': 'Получать спецпредложения', 'name': 'toggleSpecialOffers' }
-
-  if buttonPayment === undefined 
-    - buttonPayment = { 'type': 'arrow', 'text': 'перейти к оплате' }
-
-  if buttonEntry === undefined 
-    - buttonEntry = { 'type': 'border', 'text': 'войти' }
+  -
+    const radioButtonDefault = { 'buttons': [
+      { 'name': 'radioGender', 'value': 'male', 'text': 'Мужчина', 'checked': true },
+      { 'name': 'radioGender',' value': 'female', 'text': 'Женщина' }
+    ]}
   
   .registration-card
     form
@@ -37,21 +16,21 @@ mixin registration-card({ title = 'Регистрация', textFieldName, textF
 
       .registration-card__person
         .registration-card__text-field-wrapper
-          +text-field(textFieldName)
+          +text-field(textFieldName || { 'placeholderText': 'Имя', 'type': 'text' })
         .registration-card__text-field-wrapper
-          +text-field(textFieldSurname)
-        +radio-button(radioButton)
+          +text-field(textFieldSurname || { 'placeholderText': 'Фамилия', 'type': 'text' })
+        +radio-button(radioButton || radioButtonDefault)
 
       +text-field(textFieldBirth)
       .registration-card__login-details
         .registration-card__text-field-wrapper
           +text-field(textFieldEmail)
         .registration-card__text-field-wrapper
-          +text-field(textFieldPassword)
-        +toggle(toggle)
+          +text-field(textFieldPassword || { 'placeholderText': 'Пароль', 'type': 'password' })
+        +toggle(toggle || { 'text': 'Получать спецпредложения', 'name': 'toggleSpecialOffers' })
         
-      +button(buttonPayment)
+      +button(buttonPayment || { 'type': 'arrow', 'text': 'перейти к оплате' })
       .registration-card__account-login
         .registration-card__login-label !{loginLabel}
         .registration-card__login-button
-          +button(buttonEntry)
+          +button(buttonEntry || { 'type': 'border', 'text': 'войти' })
