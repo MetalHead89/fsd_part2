@@ -1,32 +1,16 @@
 include ../text-field/text-field.pug
 
 mixin entry-card({ title = 'Войти', textFieldEmail, textFieldPassword, buttonEntry, accountSectionLabel ,buttonCreateAccount } = {})
-  
-  if textFieldEmail === undefined
-    - textFieldEmail = { 'placeholderText': 'Email', 'type': 'email' }
-    
-  if textFieldPassword === undefined
-    - textFieldPassword = { 'placeholderText': 'Пароль', 'type': 'password' }
-
-  if buttonEntry === undefined
-    - buttonEntry = { 'type': 'arrow', 'text': 'войти' }
-
-  if accountSectionLabel === undefined
-    - accountSectionLabel = 'Нет аккаунта на Toxin?'
-
-  if buttonCreateAccount === undefined
-    - buttonCreateAccount = { 'type': 'border', 'text': 'создать' }
-
   .entry-card
     form
       h1.entry-card__title !{title}
       .entry-card__login-section
         .entry-card__text-field-wrapper
-          +text-field(textFieldEmail)
+          +text-field(textFieldEmail || { 'placeholderText': 'Email', 'type': 'email' })
         .entry-card__text-field-wrapper
-          +text-field(textFieldPassword)
-      +button(buttonEntry)
+          +text-field(textFieldPassword || { 'placeholderText': 'Пароль', 'type': 'password' })
+      +button(buttonEntry || { 'type': 'arrow', 'text': 'войти' })
       .entry-card__new-account-section
-        .entry-card__label !{accountSectionLabel}
+        .entry-card__label !{accountSectionLabel || 'Нет аккаунта на Toxin?'}
         .entry-card__button-wrapper
-          +button(buttonCreateAccount)
+          +button(buttonCreateAccount || { 'type': 'border', 'text': 'создать' })
