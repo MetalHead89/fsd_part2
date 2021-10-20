@@ -19,14 +19,16 @@
     background-size: cover;
     background-position: center center;
 
-    &_image-one {
-      background-image: url('../../assets/images/registration-sign-in-background-1.png');
-      animation: background-first-image 40s infinite;
-    }
+    &_image {
+      &_first {
+        background-image: url('../../assets/images/registration-sign-in-background-1.png');
+        animation: background-first-image 40s infinite;
+      }
 
-    &_image-two {
-      background-image: url('../../assets/images/registration-sign-in-background-2.png');
-      animation: background-second-image 40s infinite;
+      &_second {
+        background-image: url('../../assets/images/registration-sign-in-background-2.png');
+        animation: background-second-image 40s infinite;
+      }
     }
   }
 
