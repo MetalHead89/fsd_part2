@@ -25,12 +25,14 @@
     background-size: cover;
     background-position: center center;
 
-    &_first {
-      background-image: url('../../assets/images/room-details-image-2.png');
-    }
+    &_image {
+      &_first {
+        background-image: url('../../assets/images/room-details-image-2.png');
+      }
 
-    &_second {
-      background-image: url('../../assets/images/room-details-image-3.png');
+      &_second {
+        background-image: url('../../assets/images/room-details-image-3.png');
+      }
     }
   }
 
