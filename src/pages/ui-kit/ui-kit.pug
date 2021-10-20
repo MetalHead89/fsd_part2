@@ -108,7 +108,7 @@ html(lang="ru")
               .ui-kit__block-wrapper
                 +range-slider(config.rangeSlider)
               .ui-kit__block-wrapper
-                h3.ui-kit__block-title.ui-kit__block-title_big-vertical-margins Buttons
+                h3.ui-kit__block-title.ui-kit__block-title_size_big Buttons
                 .ui-kit__block-wrapper
                   .ui-kit__buttons-group
                     each button in config.buttons
@@ -127,7 +127,7 @@ html(lang="ru")
                 .ui-kit__block-wrapper
                   +button(config.submitButton)
               .ui-kit__block-wrapper
-                h3.ui-kit__block-title.ui-kit__block-title_big-vertical-margins Pagination
+                h3.ui-kit__block-title.ui-kit__block-title_size_big Pagination
                 +pagination(config.pagination)
               .ui-kit__block-wrapper
                 h3.ui-kit__block-title bullet list
@@ -158,7 +158,7 @@ html(lang="ru")
           .ui-kit__cards-column.ui-kit__cards-column_third
             .ui-kit__block-wrapper.ui-kit__block-wrapper_size_extra-small
               +calendar
-            .ui-kit__cards-column_width_s
+            .ui-kit__cards-column_width_small
               each roomCard in config.roomCards
                 .ui-kit__block-wrapper
                   +room-card(roomCard)

@@ -139,7 +139,7 @@
     @include h3;
     margin-bottom: 5px;
 
-    &_big-vertical-margins {
+    &_size_big {
       margin: 15px 0;
     }
   }
@@ -233,7 +233,7 @@
     width: 100%;
     max-width: 380px;
 
-    &_width_s {
+    &_width_small {
       width: 100%;
       max-width: 270px;
     }
