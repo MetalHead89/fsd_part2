@@ -6,13 +6,13 @@ mixin date-dropdown({ titleOne = 'date Dropdown', titleTwo = 'date Dropdown' } =
   .date-dropdown.js-date-dropdown
 
     .date-dropdown__date-section
-      .date-dropdown__date-block.date-dropdown__date-block_right-padding
+      .date-dropdown__date-block
         h3.date-dropdown__title !{titleOne}
         .date-dropdown__input.js-date-dropdown__input
           +text-field(textFieldOptions)
           i.date-dropdown__date-arrow keyboard_arrow_down
 
-      .date-dropdown__date-block.date-dropdown__date-block_left-padding
+      .date-dropdown__date-block
         h3.date-dropdown__title !{titleTwo}
         .date-dropdown__input.js-date-dropdown__input
           +text-field(textFieldOptions)
