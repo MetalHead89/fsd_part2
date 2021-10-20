@@ -25,19 +25,21 @@
     background-size: cover;
     background-position: center center;
 
-    &_image-one {
-      background-image: url('../../assets/images/landing-image-1.png');
-      animation: landing-first-image 40s infinite;
-    }
+    &_image {
+      &_first {
+        background-image: url('../../assets/images/landing-image-1.png');
+        animation: landing-first-image 40s infinite;
+      }
 
-    &_image-two {
-      background-image: url('../../assets/images/landing-image-2.png');
-      animation: landing-second-image 40s infinite;
-    }
+      &_second {
+        background-image: url('../../assets/images/landing-image-2.png');
+        animation: landing-second-image 40s infinite;
+      }
 
-    &_image-three {
-      background-image: url('../../assets/images/landing-image-3.png');
-      animation: landing-third-image 40s infinite;
+      &_third {
+        background-image: url('../../assets/images/landing-image-3.png');
+        animation: landing-third-image 40s infinite;
+      }
     }
   }
 
