@@ -58,13 +58,13 @@ class RoomCard {
 
   _switchSlide(newActiveSlideIndex) {
     this._slides[this._activeSlideIndex].classList.remove(
-      'room-card__slider-list-item_opaque',
-      'js-room-card__slider-list-item_opaque'
+      'room-card__slider-list-item_theme_opaque',
+      'js-room-card__slider-list-item_theme_opaque'
     );
 
     this._slides[newActiveSlideIndex].classList.add(
-      'room-card__slider-list-item_opaque',
-      'js-room-card__slider-list-item_opaque'
+      'room-card__slider-list-item_theme_opaque',
+      'js-room-card__slider-list-item_theme_opaque'
     );
   }
 

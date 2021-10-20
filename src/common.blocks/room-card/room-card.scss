@@ -173,8 +173,10 @@ $room-card: '.room-card';
     transition: opacity 0.5s ease-in;
     opacity: 0;
 
-    &_opaque {
-      opacity: 1;
+    &_theme {
+      &_opaque {
+        opacity: 1;
+      }
     }
   }
 

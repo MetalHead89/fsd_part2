@@ -6,7 +6,7 @@ mixin room-card({ images, roomNumber = 1, isLux, roomRate = 10000, rating = 5, r
       ul(class='room-card__slider-list')
         each img, index in images
           - let listItemClass = 'room-card__slider-list-item js-room-card__slider-list-item'
-          - listItemClass += index === 0 ? ' room-card__slider-list-item_opaque js-room-card__slider-list-item_opaque' : ''
+          - listItemClass += index === 0 ? ' room-card__slider-list-item_theme_opaque js-room-card__slider-list-item_theme_opaque' : ''
             
           li(class=listItemClass)
             img(class='room-card__slider-image' src=img alt="room-image")
