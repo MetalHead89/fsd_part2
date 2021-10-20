@@ -59,13 +59,17 @@
     "roomRate": 9990,
     "serviceCost": -2179,
     "additionalServiceCost": 300,
-    "dropdown1": {
-      "titleOne": "прибытие",
-      "titleTwo": "выезд"
-    },
-    "dropdown2": {
-      "title": "гости"
-    },
+    "dropdowns": [
+      {
+        "type": "date",
+        "titleOne": "прибытие",
+        "titleTwo": "выезд"
+      },
+      {
+        "type": "guests",
+        "title": "гости"
+      }
+    ],
     "button": {
       "text": "забронировать",
       "theme": "filled",

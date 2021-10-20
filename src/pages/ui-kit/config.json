@@ -172,14 +172,23 @@
   },
   "searchRoomCard": {
     "title": "Найдём номера под ваши пожелания",
-    "dropdown1": {
-      "titleOne": "прибытие",
-      "titleTwo": "выезд"
-    },
-    "dropdown2": {
-      "title": "гости"
-    },
-    "button": { "text": "подобрать номер", "theme": "filled", "type": "submit" }
+    "blocks": [
+      {
+        "blockType": "date",
+        "titleOne": "прибытие",
+        "titleTwo": "выезд"
+      },
+      {
+        "blockType": "guests",
+        "title": "гости"
+      },
+      {
+        "blockType": "button",
+        "text": "подобрать номер",
+        "theme": "filled",
+        "type": "submit"
+      }
+    ]
   },
   "registrationCard": {
     "title": "Регистрация аккаунта",
@@ -234,11 +243,14 @@
     "roomRate": 9990,
     "serviceCost": -2179,
     "additionalServiceCost": 300,
-    "dropdown1": {
-      "titleOne": "прибытие",
-      "titleTwo": "выезд"
-    },
-    "dropdown2": { "title": "гости" },
+    "dropdowns": [
+      {
+        "type": "date",
+        "titleOne": "прибытие",
+        "titleTwo": "выезд"
+      },
+      { "type": "guests", "title": "гости" }
+    ],
     "button": { "text": "забронировать", "theme": "filled", "type": "submit" }
   },
   "entryCard": {

@@ -2,19 +2,23 @@ include ../date-dropdown/date-dropdown.pug
 include ../guests-dropdown/guests-dropdown.pug
 include ../button/button.pug
 
-mixin search-room-card({ title = 'Найдём номера под ваши пожелания', dropdown1, dropdown2, button } = {})
+mixin search-room-card({ title = 'Найдём номера под ваши пожелания', blocks } = {})
+  -
+    const classes = {
+      date: 'search-room-card__dropdown',
+      guests: 'search-room-card__dropdown',
+      button: 'search-room-card__button'
+    }
+
   .search-room-card
     form
       h1.search-room-card__title !{title}
 
-      if dropdown1 !== undefined
-        .search-room-card__dropdown
-          +date-dropdown(dropdown1)
-
-      if dropdown2 !== undefined
-        .search-room-card__dropdown
-          +guests-dropdown(dropdown2)
-          
-      if button !== undefined
-        .search-room-card__button
-          +button(button)
+      each block in blocks
+        div(class=classes[block.blockType])
+          if block.blockType === 'date'
+            +date-dropdown(block)
+          if block.blockType === 'guests'
+            +guests-dropdown(block)
+          if block.blockType === 'button'
+            +button(block)

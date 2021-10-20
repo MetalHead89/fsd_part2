@@ -1,14 +1,23 @@
 {
   "searchRoomCard": {
     "title": "Найдём номера под ваши пожелания",
-    "dropdown1": {
-      "titleOne": "прибытие",
-      "titleTwo": "выезд"
-    },
-    "dropdown2": {
-      "title": "гости"
-    },
-    "button": { "text": "подобрать номер", "theme": "filled", "type": "submit" }
+    "blocks": [
+      {
+        "blockType": "date",
+        "titleOne": "прибытие",
+        "titleTwo": "выезд"
+      },
+      {
+        "blockType": "guests",
+        "title": "гости"
+      },
+      {
+        "blockType": "button",
+        "text": "подобрать номер",
+        "theme": "filled",
+        "type": "submit"
+      }
+    ]
   },
   "bodyText": "Лучшие номера для вашей работы, отдыха и просто вдохновения"
 }

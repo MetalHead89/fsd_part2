@@ -2,7 +2,7 @@ include ../date-dropdown/date-dropdown.pug
 include ../guests-dropdown/guests-dropdown.pug
 include ../button/button.pug
 
-mixin room-rate-card({ roomNumber = 1, isLux, roomRate = 10000, dropdown1, dropdown2, serviceCost = 0, additionalServiceCost = 0, button } = {})
+mixin room-rate-card({ roomNumber = 1, isLux, roomRate = 10000, dropdowns, serviceCost = 0, additionalServiceCost = 0, button } = {})
   .room-rate-card.js-room-rate-card
     form
       .room-rate-card__room-info
@@ -15,12 +15,12 @@ mixin room-rate-card({ roomNumber = 1, isLux, roomRate = 10000, dropdown1, dropd
           .room-rate-card__cost !{roomRate.toLocaleString('ru-RU')}₽&#32
           .room-rate-card__room-rate-label в сутки
 
-      if dropdown1 !== undefined
-        +date-dropdown(dropdown1)
-
-      if dropdown2 !== undefined
-        .room-rate-card__drop-guests
-          +guests-dropdown(dropdown2)
+      each dropdown in dropdowns
+        .room-rate-card__dropdown
+          if dropdown.type === 'date'
+            +date-dropdown(dropdown)
+          if dropdown.type === 'guests'
+            +guests-dropdown(dropdown)
 
       .room-rate-card__room-rate-calc
         .js-room-rate-card__daily-calc !{roomRate}
