@@ -11,7 +11,7 @@ class Navbar {
   }
 
   _init() {
-    this._orientation = this._navbar.classList.contains('js-navbar_vertical')
+    this._orientation = this._navbar.classList.contains('js-navbar_theme_vertical')
       ? 'vertical'
       : 'horizontal';
     this._entryButton = this._navbar.querySelector(

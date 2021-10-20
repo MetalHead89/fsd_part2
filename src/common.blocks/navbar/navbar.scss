@@ -138,66 +138,68 @@ $navbar: '.navbar';
     display: none;
   }
 
-  &_vertical {
-    & #{$navbar}__dropdown-title {
-      padding-left: 7px;
-      justify-content: center;
-    }
+  &_theme {
+    &_vertical {
+      & #{$navbar}__dropdown-title {
+        padding-left: 7px;
+        justify-content: center;
+      }
 
-    & #{$navbar}__hidden-list {
-      position: unset;
-      box-shadow: none;
-      transform: none;
-      padding: 0;
-      align-items: center;
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.3s ease-in;
-    }
+      & #{$navbar}__hidden-list {
+        position: unset;
+        box-shadow: none;
+        transform: none;
+        padding: 0;
+        align-items: center;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease-in;
+      }
 
-    & #{$navbar}__hidden-list-switch:checked ~ #{$navbar}__hidden-list {
-      transition: max-height 0.3s ease-in;
-      max-height: 15rem;
-    }
+      & #{$navbar}__hidden-list-switch:checked ~ #{$navbar}__hidden-list {
+        transition: max-height 0.3s ease-in;
+        max-height: 15rem;
+      }
 
-    & #{$navbar}__hidden-list-item {
-      padding: 5px 0;
-      text-align: center;
-      opacity: 0.6;
-    }
+      & #{$navbar}__hidden-list-item {
+        padding: 5px 0;
+        text-align: center;
+        opacity: 0.6;
+      }
 
-    & #{$navbar}__item {
-      padding: 5px 0;
+      & #{$navbar}__item {
+        padding: 5px 0;
 
-      &:hover {
-        & #{$navbar}__hidden-list {
-          transition: 0.3s ease-in;
-          transform: unset;
-        }
+        &:hover {
+          & #{$navbar}__hidden-list {
+            transition: 0.3s ease-in;
+            transform: unset;
+          }
 
-        & #{$navbar}__hidden-list-item {
-          opacity: 0.6;
+          & #{$navbar}__hidden-list-item {
+            opacity: 0.6;
+          }
         }
       }
-    }
 
-    & #{$navbar}__list {
-      box-sizing: border-box;
-      width: 100%;
-      font-size: 18px;
-      flex-direction: column;
-      justify-content: start;
-      align-items: center;
-      padding: 20px 40px;
+      & #{$navbar}__list {
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 18px;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        padding: 20px 40px;
 
-      @media screen and (max-width: 950px) {
-        display: flex;
+        @media screen and (max-width: 950px) {
+          display: flex;
+        }
       }
-    }
 
-    & #{$navbar}__separator {
-      height: 1px;
-      width: 150px;
+      & #{$navbar}__separator {
+        height: 1px;
+        width: 150px;
+      }
     }
   }
 
