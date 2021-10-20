@@ -61,7 +61,7 @@ class CountingMenu {
   _handleQuantityButtonClick(event) {
     let quantityElement = null;
 
-    if (event.target.classList.contains('counting-menu__quantity-button_add')) {
+    if (event.target.classList.contains('counting-menu__quantity-button_type_addition')) {
       quantityElement = event.target.previousElementSibling;
       quantityElement.innerText = parseInt(quantityElement.innerText, 10) + 1;
       this._increaseQuantitySum();

@@ -8,10 +8,10 @@ class Slider {
 
   _init() {
     this._leftInput = this._slider.querySelector(
-      '.js-range-slider__input_left'
+      '.js-range-slider__input_type_left'
     );
     this._rightInput = this._slider.querySelector(
-      '.js-range-slider__input_right'
+      '.js-range-slider__input_type_right'
     );
     this._leftThumb = this._slider.querySelector(
       '.js-range-slider__thumb_type_left'
