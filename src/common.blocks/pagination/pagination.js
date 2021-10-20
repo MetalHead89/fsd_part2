@@ -17,10 +17,10 @@ class Pagination {
       10,
     );
     this._prevButton = this._pagination.querySelector(
-      '.js-pagination__button_with-prev-arrow',
+      '.js-pagination__button_theme_previous',
     );
     this._nextButton = this._pagination.querySelector(
-      '.js-pagination__button_with-next-arrow',
+      '.js-pagination__button_theme_next',
     );
 
     this._handleButtonWithPrevArrowClick = this._handleButtonWithPrevArrowClick.bind(
@@ -237,7 +237,7 @@ class Pagination {
         li.classList.add(
           'pagination__button',
           'pagination__button_theme_movement',
-          'js-pagination__button_with-prev-arrow',
+          'js-pagination__button_theme_previous',
         );
         span.innerText = 'arrow_back';
         li.addEventListener(
@@ -248,7 +248,7 @@ class Pagination {
         li.classList.add(
           'pagination__button',
           'pagination__button_theme_movement',
-          'js-pagination__button_with-next-arrow',
+          'js-pagination__button_theme_next',
         );
         span.innerText = 'arrow_forward';
         li.addEventListener(

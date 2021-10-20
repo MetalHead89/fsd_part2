@@ -11,7 +11,7 @@ mixin pagination({ numberOfPages = 1, activePage = 1 } = {})
   nav.pagination.js-pagination
     ul.pagination__pages.js-pagination__pages
       if activePage !== 1
-        li.pagination__button.pagination__button_theme_movement.js-pagination__button_with-prev-arrow
+        li.pagination__button.pagination__button_theme_movement.js-pagination__button_theme_previous
           a.pagination__link(href="#")
             i.pagination__arrow arrow_back
 
@@ -38,7 +38,7 @@ mixin pagination({ numberOfPages = 1, activePage = 1 } = {})
         - current_page++;
 
       if activePage != numberOfPages
-        li.pagination__button.pagination__button_theme_movement.js-pagination__button_with-next-arrow
+        li.pagination__button.pagination__button_theme_movement.js-pagination__button_theme_next
           a.pagination__link(href="#")
             i.pagination__arrow arrow_forward
 
