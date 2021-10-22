@@ -2,12 +2,12 @@ include ../button/button.pug
 
 mixin calendar({ modifiers = [] } = {})
   - const WEEK_DAYS = 7;
+  - const weeksCount = 5;
+  - const currentDay = 6;
   - let maxDaysCount = 31;
-  - let weeksCount = 5;
   - let week = 1;
   - let dayNumber = 28;
   - let calendarDayClass = 'calendar__day calendar__day_theme_other-month js-calendar__day';
-  - let currentDay = 6;
   - let isPrevMonth = true;
   - let calendarStyle = 'calendar js-calendar';
 
