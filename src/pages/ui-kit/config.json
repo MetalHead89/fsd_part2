@@ -122,20 +122,31 @@
     "value2": 10000
   },
   "buttons": [
-    { "text": "click me", "theme": "filled" },
+    { "text": "click me", "theme": "filled", "type": "button" },
     {
       "text": "click me",
       "theme": "filled",
-      "isDisabled": true
+      "isDisabled": true,
+      "type": "button"
     }
   ],
   "borderButtons": [
-    { "text": "click me", "theme": "bordered" },
-    { "text": "click me", "theme": "bordered", "isDisabled": true }
+    { "text": "click me", "theme": "bordered", "type": "button" },
+    {
+      "text": "click me",
+      "theme": "bordered",
+      "isDisabled": true,
+      "type": "button"
+    }
   ],
   "onlyTextButtons": [
-    { "text": "click me" },
-    { "isDisabled": true, "text": "click me", "color": "darkestGray" }
+    { "text": "click me", "type": "button" },
+    {
+      "isDisabled": true,
+      "text": "click me",
+      "color": "darkestGray",
+      "type": "button"
+    }
   ],
   "submitButton": {
     "text": "перейти к оплате",
