@@ -3,36 +3,28 @@ include ../like-button/like-button.pug
 mixin guest-review({ days = 0, photo, name = 'Иванов Иван Иванович', likes = 0, isCheckedLike, review } = {})
   -
     function getLastVisit(days) {
-      let lastVisit = '';
+      if (days > 6) {
+        const weeks = parseInt(days / 7);
+        const weeks10 = weeks % 10;
+        const weeks100 = weeks % 100;
 
-      if (days < 7) {
-        if (days === 1) {
-          lastVisit = days + ' день ';
-        } else if (days >= 2 && days <= 4) {
-          lastVisit = days + ' дня ';
-        } else {
-          lastVisit = days + ' дней ';
+        if (weeks10 === 1 && weeks100 !== 11) {
+          return `${weeks} неделю назад`;
+        } 
+        if (weeks10 >= 2 && weeks10 <= 4 && !(weeks100 >= 12 && weeks100 <= 14)) {
+          return `${weeks} недели назад`;
         }
-      } else {
-        let weeks = parseInt(days / 7);
 
-        if (weeks === 1) {
-          lastVisit = 'Неделю ';
-        } else {
-          let weeks10 = weeks % 10;
-          let weeks100 = weeks % 100;
-
-          if (weeks10 === 1 && weeks100 !== 11) {
-            lastVisit = weeks + ' неделю ';
-          } else if (weeks10 >= 2 && weeks10 <= 4 && !(weeks100 >= 12 && weeks100 <= 14)) {
-            lastVisit = weeks + ' недели ';
-          } else {
-            lastVisit = weeks + ' недель ';
-          }
-        }
+        return `${weeks} недель назад`;
       }
-
-      return lastVisit + ' назад '
+      if (days === 1) {
+        return `${days} день назад`;
+      }
+      if (days >= 2 && days <= 4) {
+          return `${days} дня назад`;
+      }
+          
+      return `${days} дней назад`;
     }
 
   .guest-review
