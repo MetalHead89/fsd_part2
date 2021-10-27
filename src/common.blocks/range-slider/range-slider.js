@@ -1,4 +1,4 @@
-class Slider {
+class RangeSlider {
   constructor(slider) {
     this._slider = slider;
 
@@ -119,4 +119,4 @@ class Slider {
   }
 }
 
-export default Slider;
+export default RangeSlider;

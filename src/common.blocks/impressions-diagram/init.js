@@ -1,4 +1,4 @@
-import Diagram from './impressions-diagram';
+import ImpressionsDiagram from './impressions-diagram';
 
 const diagrams = document.querySelectorAll('.js-impressions-diagram');
-diagrams.forEach((item) => new Diagram(item));
+diagrams.forEach((item) => new ImpressionsDiagram(item));

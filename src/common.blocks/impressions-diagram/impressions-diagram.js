@@ -1,6 +1,6 @@
 /* eslint-disable comma-dangle */
 
-class Diagram {
+class ImpressionsDiagram {
   constructor(diagram) {
     this._diagram = diagram;
     this._init();
@@ -141,4 +141,4 @@ class Diagram {
   }
 }
 
-export default Diagram;
+export default ImpressionsDiagram;
