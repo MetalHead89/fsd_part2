@@ -1,4 +1,4 @@
-import TextField from './text-field';
+import TextField from './TextField';
 
 const maskedTextFields = document.querySelectorAll(
   '.js-text-field__field_masked'

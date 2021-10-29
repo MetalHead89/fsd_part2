@@ -1,5 +1,5 @@
-import DropMenu from './drop-menu';
-import DropMenuStore from './drop-menu-store';
+import DropMenu from './DropMenu';
+import DropMenuStore from './DropMenuStore';
 
 const dropMenus = document.querySelectorAll('.js-drop-menu');
 

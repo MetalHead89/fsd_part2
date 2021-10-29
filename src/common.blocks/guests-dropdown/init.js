@@ -1,9 +1,9 @@
 /* eslint-disable no-new */
 
-import GuestsDropdown from './guests-dropdown';
-import DropdownHeaderStore from '../dropdown-header/dropdown-header-store';
-import DropMenuStore from '../drop-menu/drop-menu-store';
-import CountingMenuStore from '../counting-menu/counting-menu-store';
+import GuestsDropdown from './GuestsDropdown';
+import DropdownHeaderStore from '../dropdown-header/DropdownHeaderStore';
+import DropMenuStore from '../drop-menu/DropMenuStore';
+import CountingMenuStore from '../counting-menu/CountingMenuStore';
 
 require('../dropdown-header/init');
 require('../drop-menu/init');

@@ -1,6 +1,6 @@
 /* eslint-disable comma-dangle */
 
-import Dropdown from '../../js/dropdown';
+import Dropdown from '../../js/Dropdown';
 
 class DateDropdown extends Dropdown {
   addClickToApplyButtonListener(callback) {

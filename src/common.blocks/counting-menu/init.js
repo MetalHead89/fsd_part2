@@ -1,5 +1,5 @@
-import CountingMenu from './counting-menu';
-import CountingMenuStore from './counting-menu-store';
+import CountingMenu from './CountingMenu';
+import CountingMenuStore from './CountingMenuStore';
 
 const menus = document.querySelectorAll('.js-counting-menu');
 

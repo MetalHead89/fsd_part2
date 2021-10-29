@@ -1,4 +1,4 @@
-import Pagination from './pagination';
+import Pagination from './Pagination';
 
 const paginations = document.querySelectorAll('.js-pagination');
 

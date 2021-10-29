@@ -1,9 +1,9 @@
 /* eslint-disable no-new */
 
-import FilterDateDropdown from './filter-date-dropdown';
-import DropdownHeaderStore from '../dropdown-header/dropdown-header-store';
-import DropMenuStore from '../drop-menu/drop-menu-store';
-import CalendarStore from '../calendar/calendar-store';
+import FilterDateDropdown from './FilterDateDropdown';
+import DropdownHeaderStore from '../dropdown-header/DropdownHeaderStore';
+import DropMenuStore from '../drop-menu/DropMenuStore';
+import CalendarStore from '../calendar/CalendarStore';
 
 require('../dropdown-header/init');
 require('../drop-menu/init');

@@ -1,5 +1,5 @@
-import DropdownHeader from './dropdown-header';
-import DropdownHeaderStore from './dropdown-header-store';
+import DropdownHeader from './DropdownHeader';
+import DropdownHeaderStore from './DropdownHeaderStore';
 
 const headers = document.querySelectorAll('.js-dropdown-header');
 

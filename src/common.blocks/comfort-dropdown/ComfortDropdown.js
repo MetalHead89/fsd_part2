@@ -1,6 +1,6 @@
 /* eslint-disable comma-dangle */
 
-import Dropdown from '../../js/dropdown';
+import Dropdown from '../../js/Dropdown';
 
 class ComfortDropdown extends Dropdown {
   static numberIsTwoThreeOrFour(number10, number100) {
