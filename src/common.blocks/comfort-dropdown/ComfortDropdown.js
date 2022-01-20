@@ -1,5 +1,6 @@
 /* eslint-disable comma-dangle */
 
+import { boundMethod } from 'autobind-decorator';
 import Dropdown from '../../js/Dropdown';
 
 class ComfortDropdown extends Dropdown {
@@ -13,7 +14,7 @@ class ComfortDropdown extends Dropdown {
     super._init();
 
     this._countingMenu.addClickToButtonListener(
-      this._changeDropdownHeaderText.bind(this)
+      this._changeDropdownHeaderText
     );
     this.WORDS = {
       bedrooms: ['спальня', 'спальни', 'спален'],
@@ -22,6 +23,7 @@ class ComfortDropdown extends Dropdown {
     };
   }
 
+  @boundMethod
   _changeDropdownHeaderText() {
     const counters = this._countingMenu.getCounters();
     const bedrooms = counters[0];

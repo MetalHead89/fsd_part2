@@ -1,15 +1,17 @@
 // /* eslint-disable comma-dangle */
 
+import { boundMethod } from 'autobind-decorator';
 import Dropdown from '../../js/Dropdown';
 
 class FilterDateDropdown extends Dropdown {
   _addEventListeners() {
-    this._calendar.addObserver(this._changeHeader.bind(this));
+    this._calendar.addObserver(this._changeHeader);
     this._calendar.addClickToApplyButtonListener(this.close.bind(this));
 
     super._addEventListeners();
   }
 
+  @boundMethod
   _changeHeader() {
     const datesRange = this._calendar.getDatesRange();
     let headerText = null;

@@ -1,10 +1,10 @@
+import { boundMethod } from 'autobind-decorator';
+
 class TextField {
   constructor(field) {
     this._field = field;
 
-    this._handleFieldInput = this._handleFieldInput.bind(this);
     this._handleFieldPaste = TextField.handleFieldPaste.bind(this);
-    this._handleFieldKeydown = this._handleFieldKeydown.bind(this);
 
     this._addEventListeners();
   }
@@ -55,6 +55,7 @@ class TextField {
     );
   }
 
+  @boundMethod
   _handleFieldKeydown(event) {
     /**
      * Сдвигает каретку во время удаления, если она стоит до или перед точкой
@@ -78,6 +79,7 @@ class TextField {
     );
   }
 
+  @boundMethod
   _handleFieldInput(event) {
     /**
      * Ограничивает ввод символов, не являющихся буквами

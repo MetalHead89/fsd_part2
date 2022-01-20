@@ -1,5 +1,7 @@
 /* eslint-disable comma-dangle */
 
+import { boundMethod } from 'autobind-decorator';
+
 class Calendar {
   constructor(calendar) {
     this._MONTHS = [
@@ -67,10 +69,6 @@ class Calendar {
     this._applyButton = this._calendar.querySelector(
       '.js-calendar__button-apply'
     );
-
-    this._handleButtonClearClick = this._handleButtonClearClick.bind(this);
-    this._handleMonthButtonClick = this._handleMonthButtonClick.bind(this);
-    this._handleButtonApplyClick = this._handleButtonApplyClick.bind(this);
   }
 
   _addEventListeners() {
@@ -128,7 +126,9 @@ class Calendar {
         'calendar__day_theme_selected',
         'js-calendar__day_theme_selected'
       );
-      day.parentNode.classList.remove('calendar__range-highlight_theme_left-rounded');
+      day.parentNode.classList.remove(
+        'calendar__range-highlight_theme_left-rounded'
+      );
       day.parentNode.classList.remove(
         'calendar__range-highlight_theme_right-rounded'
       );
@@ -210,6 +210,7 @@ class Calendar {
     );
   }
 
+  @boundMethod
   _handleMonthButtonClick(event) {
     const isDate = event.target.classList.contains(
       'calendar__month-button_theme_previous'
@@ -254,14 +255,20 @@ class Calendar {
     if (this._dateRange.length === 0 && Calendar.dayIsSelectable(day)) {
       this._dateRange.push(selectedDate.getTime());
       this._isChoiceMode = true;
-      day.classList.add('calendar__day_theme_selected', 'js-calendar__day_theme_selected');
+      day.classList.add(
+        'calendar__day_theme_selected',
+        'js-calendar__day_theme_selected'
+      );
     } else if (
       this._dateRange.length === 1 &&
       this._dayIsSelectableAndNotEqualToStartingPointOfRange(day)
     ) {
       this._dateRange.push(selectedDate.getTime());
       this._isChoiceMode = false;
-      day.classList.add('calendar__day_theme_selected', 'js-calendar__day_theme_selected');
+      day.classList.add(
+        'calendar__day_theme_selected',
+        'js-calendar__day_theme_selected'
+      );
       this._dateRange.sort(Calendar.compareNumbers);
       this._showRange(this._dateRange);
     } else if (
@@ -274,7 +281,9 @@ class Calendar {
         'calendar__day_theme_selected',
         'js-calendar__day_theme_selected'
       );
-      day.parentNode.classList.remove('calendar__range-highlight_theme_left-rounded');
+      day.parentNode.classList.remove(
+        'calendar__range-highlight_theme_left-rounded'
+      );
       day.parentNode.classList.remove(
         'calendar__range-highlight_theme_right-rounded'
       );
@@ -303,7 +312,10 @@ class Calendar {
         );
       }
 
-      day.classList.add('calendar__day_theme_selected', 'js-calendar__day_theme_selected');
+      day.classList.add(
+        'calendar__day_theme_selected',
+        'js-calendar__day_theme_selected'
+      );
       this._dateRange[0] = this._getDateFromCalendar(day).getTime();
       this._showRange(this._dateRange);
     } else if (
@@ -329,7 +341,10 @@ class Calendar {
         );
       }
 
-      day.classList.add('calendar__day_theme_selected', 'js-calendar__day_theme_selected');
+      day.classList.add(
+        'calendar__day_theme_selected',
+        'js-calendar__day_theme_selected'
+      );
       this._dateRange[1] = this._getDateFromCalendar(day).getTime();
       this._showRange(this._dateRange);
     }
@@ -430,10 +445,14 @@ class Calendar {
 
       if (dayToTime === range[0]) {
         day.parentNode.classList.add('calendar__range-highlight');
-        day.parentNode.classList.add('calendar__range-highlight_theme_left-rounded');
+        day.parentNode.classList.add(
+          'calendar__range-highlight_theme_left-rounded'
+        );
       } else if (dayToTime === range[1]) {
         day.parentNode.classList.add('calendar__range-highlight');
-        day.parentNode.classList.add('calendar__range-highlight_theme_right-rounded');
+        day.parentNode.classList.add(
+          'calendar__range-highlight_theme_right-rounded'
+        );
       } else if (dayToTime >= range[0] && dayToTime <= range[1]) {
         day.parentNode.classList.add('calendar__range-highlight');
       }
@@ -456,6 +475,7 @@ class Calendar {
     return new Date(this._year, this._month + 1, day.innerText);
   }
 
+  @boundMethod
   _handleButtonClearClick() {
     const selectableDays = this._calendar.querySelectorAll(
       '.js-calendar__day_theme_selectable'
@@ -468,7 +488,9 @@ class Calendar {
         'calendar__day_theme_selected',
         'js-calendar__day_theme_selected'
       );
-      day.parentNode.classList.remove('calendar__range-highlight_theme_left-rounded');
+      day.parentNode.classList.remove(
+        'calendar__range-highlight_theme_left-rounded'
+      );
       day.parentNode.classList.remove(
         'calendar__range-highlight_theme_right-rounded'
       );
@@ -482,6 +504,7 @@ class Calendar {
     this._observers.forEach((observer) => observer());
   }
 
+  @boundMethod
   _handleButtonApplyClick() {
     this._clickToApplyButtonListeners.forEach((listener) => listener());
   }

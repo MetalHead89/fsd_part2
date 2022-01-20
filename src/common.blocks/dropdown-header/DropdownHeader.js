@@ -1,3 +1,5 @@
+import { boundMethod } from 'autobind-decorator';
+
 class DropdownHeader {
   constructor(header) {
     this._header = header;
@@ -30,16 +32,13 @@ class DropdownHeader {
   _init() {
     this._headerText = this._header.querySelector('.js-dropdown-header__text');
     this._placeholder = this._headerText.innerText;
-
-    this._handleDropdownHeaderClick = this._handleDropdownHeaderClick.bind(
-      this
-    );
   }
 
   _addEventListeners() {
     this._header.addEventListener('click', this._handleDropdownHeaderClick);
   }
 
+  @boundMethod
   _handleDropdownHeaderClick() {
     this._clickToHeaderListeners.forEach((listener) => listener());
   }

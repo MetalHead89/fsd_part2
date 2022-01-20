@@ -2,6 +2,8 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-return-assign */
 
+import { boundMethod } from 'autobind-decorator';
+
 class Navbar {
   constructor(navbar) {
     this._navbar = navbar;
@@ -11,7 +13,9 @@ class Navbar {
   }
 
   _init() {
-    this._orientation = this._navbar.classList.contains('js-navbar_theme_vertical')
+    this._orientation = this._navbar.classList.contains(
+      'js-navbar_theme_vertical'
+    )
       ? 'vertical'
       : 'horizontal';
     this._entryButton = this._navbar.querySelector(
@@ -28,7 +32,6 @@ class Navbar {
     this._handleNavbarItemWithNameClick = Navbar.handleNavbarItemWithNameClick.bind(
       this
     );
-    this._handleDropdownTitleClick = this.handleDropdownTitleClick.bind(this);
   }
 
   _addEventListeners() {
@@ -40,7 +43,7 @@ class Navbar {
     );
 
     this._dropdownItems.forEach((item) => {
-      item.addEventListener('click', this._handleDropdownTitleClick);
+      item.addEventListener('click', this.handleDropdownTitleClick);
     });
   }
 
@@ -52,6 +55,7 @@ class Navbar {
     Navbar.signIn();
   }
 
+  @boundMethod
   handleDropdownTitleClick(event) {
     if (this._orientation === 'vertical') {
       const hiddenListSwitch = event.target.offsetParent.querySelector(

@@ -1,5 +1,7 @@
 /* eslint-disable comma-dangle */
 
+import { boundMethod } from 'autobind-decorator';
+
 class RoomRateCard {
   constructor(card, dateDropdown) {
     this._roomRateCard = card;
@@ -61,9 +63,7 @@ class RoomRateCard {
   }
 
   _addEventListeners() {
-    this._dateDropdown.addClickToApplyButtonListener(
-      this._calculateCost.bind(this)
-    );
+    this._dateDropdown.addClickToApplyButtonListener(this._calculateCost);
   }
 
   static getLengthOfStay(startDate, endDate) {
@@ -89,6 +89,7 @@ class RoomRateCard {
     return word;
   }
 
+  @boundMethod
   _calculateCost() {
     const { startDate, endDate } = this._dateDropdown.getDataFieldsValues();
     const lengthOfStay = RoomRateCard.getLengthOfStay(startDate, endDate);

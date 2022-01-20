@@ -1,5 +1,7 @@
 /* eslint-disable no-param-reassign */
 
+import { boundMethod } from 'autobind-decorator';
+
 class CountingMenu {
   constructor(countingMenu) {
     this._countingMenu = countingMenu;
@@ -15,9 +17,6 @@ class CountingMenu {
     );
     const quantityButtons = this._countingMenu.querySelectorAll(
       '.counting-menu__quantity-button'
-    );
-    this._handleQuantityButtonClick = this._handleQuantityButtonClick.bind(
-      this
     );
 
     quantityButtons.forEach((item) => {
@@ -58,10 +57,15 @@ class CountingMenu {
     this._quantitySum -= 1;
   }
 
+  @boundMethod
   _handleQuantityButtonClick(event) {
     let quantityElement = null;
 
-    if (event.target.classList.contains('counting-menu__quantity-button_type_addition')) {
+    if (
+      event.target.classList.contains(
+        'counting-menu__quantity-button_type_addition'
+      )
+    ) {
       quantityElement = event.target.previousElementSibling;
       quantityElement.innerText = parseInt(quantityElement.innerText, 10) + 1;
       this._increaseQuantitySum();

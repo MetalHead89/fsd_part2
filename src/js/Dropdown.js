@@ -1,3 +1,5 @@
+import { boundMethod } from 'autobind-decorator';
+
 class Dropdown {
   constructor({
     dropdown,
@@ -44,12 +46,11 @@ class Dropdown {
   }
 
   _addEventListeners() {
-    this._dropdownHeader.addClickToHeaderListener(
-      this._toggleDropdownState.bind(this)
-    );
+    this._dropdownHeader.addClickToHeaderListener(this._toggleDropdownState);
     document.body.addEventListener('mouseup', this._handleBodyClick);
   }
 
+  @boundMethod
   _toggleDropdownState() {
     if (this._opened) {
       this.close();
@@ -84,6 +85,7 @@ class Dropdown {
     return this._dropdown;
   }
 
+  @boundMethod
   close() {
     this._opened = false;
     this._dropMenu.closeDropMenu();

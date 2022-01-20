@@ -1,3 +1,5 @@
+import { boundMethod } from 'autobind-decorator';
+
 class RoomCard {
   constructor(roomCard) {
     this._roomCard = roomCard;
@@ -20,10 +22,6 @@ class RoomCard {
       '.js-room-card__slider-list-item'
     );
     this._activeSlideIndex = 0;
-
-    this._handleButtonNextClick = this._handleButtonNextClick.bind(this);
-    this._handleButtonPrevClick = this._handleButtonPrevClick.bind(this);
-    this._handleDotClick = this._handleDotClick.bind(this);
   }
 
   _addEventListeners() {
@@ -35,9 +33,11 @@ class RoomCard {
     });
   }
 
+  @boundMethod
   _handleButtonNextClick() {
     const newActiveSlideIndex =
-      this._activeSlideIndex + (this._activeSlideIndex < this._slides.length - 1 ? 1 : 0);
+      this._activeSlideIndex +
+      (this._activeSlideIndex < this._slides.length - 1 ? 1 : 0);
 
     if (newActiveSlideIndex !== this._activeSlideIndex) {
       this._switchSlide(newActiveSlideIndex);
@@ -46,8 +46,10 @@ class RoomCard {
     }
   }
 
+  @boundMethod
   _handleButtonPrevClick() {
-    const newActiveSlideIndex = this._activeSlideIndex - (this._activeSlideIndex > 0 ? 1 : 0);
+    const newActiveSlideIndex =
+      this._activeSlideIndex - (this._activeSlideIndex > 0 ? 1 : 0);
 
     if (newActiveSlideIndex !== this._activeSlideIndex) {
       this._switchSlide(newActiveSlideIndex);
@@ -68,6 +70,7 @@ class RoomCard {
     );
   }
 
+  @boundMethod
   _handleDotClick(event) {
     const activeDotIndex = this._activeSlideIndex;
     const newActiveDotIndex = this._sliderDots.indexOf(event.target);

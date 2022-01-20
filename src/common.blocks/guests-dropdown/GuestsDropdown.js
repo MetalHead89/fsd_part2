@@ -1,5 +1,6 @@
 /* eslint-disable comma-dangle */
 
+import { boundMethod } from 'autobind-decorator';
 import Dropdown from '../../js/Dropdown';
 
 class GuestsDropdown extends Dropdown {
@@ -21,18 +22,18 @@ class GuestsDropdown extends Dropdown {
   _addEventListeners() {
     super._addEventListeners();
 
-    this._countingMenu.addClickToButtonListener(
-      this._changeDropdownHeaderText.bind(this)
-    );
-    this._dropMenu.addClickToClearButtonListener(this._clear.bind(this));
-    this._dropMenu.addClickToApplyButtonListener(this.close.bind(this));
+    this._countingMenu.addClickToButtonListener(this._changeDropdownHeaderText);
+    this._dropMenu.addClickToClearButtonListener(this._clear);
+    this._dropMenu.addClickToApplyButtonListener(this.close);
   }
 
+  @boundMethod
   _clear() {
     this._countingMenu.clear();
     this._changeDropdownHeaderText();
   }
 
+  @boundMethod
   _changeDropdownHeaderText() {
     const counters = this._countingMenu.getCounters();
     const sum = counters.reduce(

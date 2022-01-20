@@ -1,5 +1,7 @@
 /* eslint-disable comma-dangle */
 
+import { boundMethod } from 'autobind-decorator';
+
 import Dropdown from '../../js/Dropdown';
 
 class DateDropdown extends Dropdown {
@@ -17,11 +19,6 @@ class DateDropdown extends Dropdown {
     );
     this._clickToApplyButtonListeners = [];
 
-    this._handleStartDateFocus = this._handleStartDateFocus.bind(this);
-    this._handleEndDateFocus = this._handleEndDateFocus.bind(this);
-    this._handleStartDateBlur = this._handleStartDateBlur.bind(this);
-    this._handleEndDateBlur = this._handleEndDateBlur.bind(this);
-
     super._init();
   }
 
@@ -31,34 +28,38 @@ class DateDropdown extends Dropdown {
     this._startDate.addEventListener('blur', this._handleStartDateBlur);
     this._endDate.addEventListener('blur', this._handleEndDateBlur);
 
-    this._calendar.addObserver(this._update.bind(this));
-    this._calendar.addClickToApplyButtonListener(
-      this._handleApplyButtonClick.bind(this)
-    );
+    this._calendar.addObserver(this._update);
+    this._calendar.addClickToApplyButtonListener(this._handleApplyButtonClick);
   }
 
+  @boundMethod
   _handleApplyButtonClick() {
     this._clickToApplyButtonListeners.forEach((listener) => listener());
     this.close();
   }
 
+  @boundMethod
   _update() {
     const dates = this._calendar.getStringDatesRange();
     this._changeDateInputs(dates);
   }
 
+  @boundMethod
   _handleStartDateFocus() {
     this._open();
   }
 
+  @boundMethod
   _handleEndDateFocus() {
     this._open();
   }
 
+  @boundMethod
   _handleStartDateBlur() {
     this._updateCalendarData();
   }
 
+  @boundMethod
   _handleEndDateBlur() {
     this._updateCalendarData();
   }

@@ -1,3 +1,5 @@
+import { boundMethod } from 'autobind-decorator';
+
 class RangeSlider {
   constructor(slider) {
     this._slider = slider;
@@ -24,15 +26,6 @@ class RangeSlider {
       '.js-range-slider__range-label'
     );
 
-    this._handleInputLeftInput = this._handleInputLeftInput.bind(this);
-    this._handleInputRightInput = this._handleInputRightInput.bind(this);
-    this._handleInputLeftMouseover = this._handleInputLeftMouseover.bind(this);
-    this._handleInputRightMouseover = this._handleInputRightMouseover.bind(
-      this
-    );
-    this._handleInputLeftMouseout = this._handleInputLeftMouseout.bind(this);
-    this._handleInputRightMouseout = this._handleInputRightMouseout.bind(this);
-
     this._setLeftValue();
     this._setRightValue();
   }
@@ -55,26 +48,32 @@ class RangeSlider {
     );
   }
 
+  @boundMethod
   _handleInputLeftInput() {
     this._setLeftValue();
   }
 
+  @boundMethod
   _handleInputLeftMouseover() {
     this._leftThumb.classList.add('range-slider__thumb_type_left_hover');
   }
 
+  @boundMethod
   _handleInputLeftMouseout() {
     this._leftThumb.classList.remove('range-slider__thumb_type_left_hover');
   }
 
+  @boundMethod
   _handleInputRightInput() {
     this._setRightValue();
   }
 
+  @boundMethod
   _handleInputRightMouseover() {
     this._rightThumb.classList.add('range-slider__thumb_type_right_hover');
   }
 
+  @boundMethod
   _handleInputRightMouseout() {
     this._rightThumb.classList.remove('range-slider__thumb_type_right_hover');
   }

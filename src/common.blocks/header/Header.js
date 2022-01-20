@@ -1,3 +1,5 @@
+import { boundMethod } from 'autobind-decorator';
+
 class Header {
   constructor(header) {
     this._header = header;
@@ -9,14 +11,13 @@ class Header {
   _init() {
     this._burger = this._header.querySelector('.js-header__burger');
     this._hiddenMenu = this._header.querySelector('.js-header__hidden-navbar');
-
-    this._handleBurgerClick = this._handleBurgerClick.bind(this);
   }
 
   _addEventListeners() {
     this._burger.addEventListener('click', this._handleBurgerClick);
   }
 
+  @boundMethod
   _handleBurgerClick() {
     if (this._hiddenMenu) {
       this._hiddenMenu.classList.toggle('header__hidden-navbar_opened');

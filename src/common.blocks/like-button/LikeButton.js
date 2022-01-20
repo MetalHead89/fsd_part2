@@ -1,10 +1,11 @@
+import { boundMethod } from 'autobind-decorator';
+
 class LikeButton {
   constructor(button) {
     this._likeButton = button;
     this._isLikeChecked = this._likeButton.classList.contains(
       'like-button_checked'
     );
-    this._handleLikeButtonClick = this._handleLikeButtonClick.bind(this);
 
     this._addEventListeners();
   }
@@ -17,6 +18,7 @@ class LikeButton {
     this._isLikeChecked = !this._isLikeChecked;
   }
 
+  @boundMethod
   _handleLikeButtonClick() {
     const heart = this._likeButton.querySelector('.js-like-button__heart');
     const likeCounter = this._likeButton.querySelector(

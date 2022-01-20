@@ -1,3 +1,5 @@
+import { boundMethod } from 'autobind-decorator';
+
 class DropMenu {
   constructor(dropMenu) {
     this._dropMenu = dropMenu;
@@ -28,7 +30,9 @@ class DropMenu {
 
   showClearButton() {
     if (this._clearButton) {
-      this._clearButton.classList.remove('drop-menu__button-clear_theme_hidden');
+      this._clearButton.classList.remove(
+        'drop-menu__button-clear_theme_hidden'
+      );
     }
   }
 
@@ -47,9 +51,6 @@ class DropMenu {
     this._applyButton = this._dropMenu.querySelector(
       '.js-drop-menu__button-apply'
     );
-
-    this._handleButtonClearClick = this._handleButtonClearClick.bind(this);
-    this._handleButtonApplyClick = this._handleButtonApplyClick.bind(this);
   }
 
   _addEventListeners() {
@@ -62,10 +63,12 @@ class DropMenu {
     }
   }
 
+  @boundMethod
   _handleButtonClearClick() {
     this._clickToClearButtonListeners.forEach((listener) => listener());
   }
 
+  @boundMethod
   _handleButtonApplyClick() {
     this._clickToApplyButtonListeners.forEach((listener) => listener());
   }
