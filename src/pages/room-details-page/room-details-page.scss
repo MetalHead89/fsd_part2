@@ -1,4 +1,9 @@
-@import '../../scss/mixins';
+@import '@/scss/mixins';
+@import '@/common.blocks/guest-review/guest-review';
+@import '@/common.blocks/room-details/room-details';
+@import '@/common.blocks/bullet-list/bullet-list';
+@import '@/common.blocks/room-rate-card/room-rate-card';
+@import '@/common.blocks/impressions-diagram/impressions-diagram';
 
 .room-details-page {
   &__room-photos {

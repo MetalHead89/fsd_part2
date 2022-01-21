@@ -1,4 +1,5 @@
-@import '../../scss/vars';
+@import '@/scss/vars';
+@import '@/common.blocks/button/button';
 
 .counting-menu {
   &__option {

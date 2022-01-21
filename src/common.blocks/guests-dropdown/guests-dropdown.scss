@@ -1,4 +1,7 @@
-@import '../../scss/mixins';
+@import '@/scss/mixins';
+@import '@/common.blocks/dropdown-header/dropdown-header';
+@import '@/common.blocks/drop-menu/drop-menu';
+@import '@/common.blocks/button/button';
 
 .guests-dropdown {
   position: relative;

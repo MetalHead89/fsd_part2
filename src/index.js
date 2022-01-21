@@ -1,6 +1,5 @@
 require.context('@/scss', true, /\.scss$/);
 require.context('@/pages', true, /\.scss$/);
-require.context('@/common.blocks', true, /\.scss$/);
 
 const scripts = require.context('@/common.blocks', true, /\.js$/);
 scripts.keys().forEach((script) => {

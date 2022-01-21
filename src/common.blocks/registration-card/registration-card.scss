@@ -1,4 +1,8 @@
-@import '../../scss/mixins';
+@import '@/scss/mixins';
+@import '@/common.blocks/text-field/text-field';
+@import '@/common.blocks/radio-button/radio-button';
+@import '@/common.blocks/button/button';
+@import '@/common.blocks/toggle/toggle';
 
 .registration-card {
   width: 100%;

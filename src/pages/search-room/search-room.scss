@@ -1,4 +1,12 @@
-@import '../../scss/mixins';
+@import '@/scss/mixins';
+@import '@/common.blocks/filter-date-dropdown/filter-date-dropdown';
+@import '@/common.blocks/guests-dropdown/guests-dropdown';
+@import '@/common.blocks/comfort-dropdown/comfort-dropdown';
+@import '@/common.blocks/range-slider/range-slider';
+@import '@/common.blocks/checkbox-button/checkbox-button';
+@import '@/common.blocks/expandable-checkbox-list/expandable-checkbox-list';
+@import '@/common.blocks/room-card/room-card';
+@import '@/common.blocks/pagination/pagination';
 
 $search-room: '.search-room';
 

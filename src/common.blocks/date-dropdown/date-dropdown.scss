@@ -1,4 +1,5 @@
-@import '../../scss/mixins';
+@import '@/scss/mixins';
+@import '@/common.blocks/drop-menu/drop-menu';
 
 .date-dropdown {
   position: relative;

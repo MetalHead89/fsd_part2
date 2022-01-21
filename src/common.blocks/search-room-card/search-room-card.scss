@@ -1,4 +1,7 @@
-@import '../../scss/mixins';
+@import '@/scss/mixins';
+@import '@/common.blocks/date-dropdown/date-dropdown';
+@import '@/common.blocks/guests-dropdown/guests-dropdown';
+@import '@/common.blocks/button/button';
 
 .search-room-card {
   padding: 30px;

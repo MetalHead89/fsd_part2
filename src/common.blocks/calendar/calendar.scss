@@ -1,5 +1,6 @@
-@import '../../scss/mixins';
-@import '../../scss/vars';
+@import '@/scss/mixins';
+@import '@/scss/vars';
+@import '@/common.blocks/button/button';
 
 .calendar {
   width: 100%;

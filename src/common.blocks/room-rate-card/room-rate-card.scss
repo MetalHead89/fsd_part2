@@ -1,5 +1,8 @@
-@import '../../scss/animations';
-@import '../../scss/vars';
+@import '@/scss/animations';
+@import '@/scss/vars';
+@import '@/common.blocks/date-dropdown/date-dropdown';
+@import '@/common.blocks/guests-dropdown/guests-dropdown';
+@import '@/common.blocks/button/button';
 
 .room-rate-card {
   padding: 30px;
