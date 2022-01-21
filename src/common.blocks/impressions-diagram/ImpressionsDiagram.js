@@ -30,7 +30,7 @@ class ImpressionsDiagram {
       '.js-impressions-diagram__votes-text'
     );
     this._startAngle = 0;
-    this._endAngle = 0 - Diagram.degToRad(90 + this._separatorSize / 2);
+    this._endAngle = 0 - ImpressionsDiagram.degToRad(90 + this._separatorSize / 2);
 
     // Установка градиентов
     const magnificentlyGradient = this._canvasContext.createLinearGradient(
@@ -52,10 +52,10 @@ class ImpressionsDiagram {
       0,
       120
     );
-    Diagram.setGradient(magnificentlyGradient, '#FFE39C', '#FFBA9C');
-    Diagram.setGradient(goodGradient, '#6FCF97', '#66D2EA');
-    Diagram.setGradient(satisfactorilyGradient, '#BC9CFF', '#8BA4F9');
-    Diagram.setGradient(disappointedGradient, '#919191', '#3D4975');
+    ImpressionsDiagram.setGradient(magnificentlyGradient, '#FFE39C', '#FFBA9C');
+    ImpressionsDiagram.setGradient(goodGradient, '#6FCF97', '#66D2EA');
+    ImpressionsDiagram.setGradient(satisfactorilyGradient, '#BC9CFF', '#8BA4F9');
+    ImpressionsDiagram.setGradient(disappointedGradient, '#919191', '#3D4975');
 
     // Формирование словаря сегментов диаграммы и подсчет общего количества голосов
     this._votesSum = Object.keys(this._roomImpressions).reduce(
@@ -64,7 +64,7 @@ class ImpressionsDiagram {
     );
 
     this._votesCounterNumber.innerText = this._votesSum;
-    this._votesCounterText.innerText = Diagram.wordGenerator(this._votesSum);
+    this._votesCounterText.innerText = ImpressionsDiagram.wordGenerator(this._votesSum);
 
     this._setDiagramSegment(
       magnificentlyGradient,
@@ -100,7 +100,7 @@ class ImpressionsDiagram {
 
     if (number10 === 1 && number100 !== 11) {
       word = 'голос';
-    } else if (Diagram.numberIsTwoThreeOrFour(number10, number100)) {
+    } else if (ImpressionsDiagram.numberIsTwoThreeOrFour(number10, number100)) {
       word = 'голоса';
     } else {
       word = 'голосов';
@@ -123,7 +123,7 @@ class ImpressionsDiagram {
     const impressionPercent = (votes / this._votesSum) * 100;
     this._startAngle = this._endAngle;
     const degAngle = (360 * impressionPercent) / 100 - this._separatorSize;
-    this._endAngle -= Diagram.degToRad(degAngle);
+    this._endAngle -= ImpressionsDiagram.degToRad(degAngle);
 
     this._canvasContext.beginPath();
     this._canvasContext.arc(
@@ -137,7 +137,7 @@ class ImpressionsDiagram {
     this._canvasContext.lineWidth = 4;
     this._canvasContext.strokeStyle = color;
     this._canvasContext.stroke();
-    this._endAngle -= Diagram.degToRad(this._separatorSize);
+    this._endAngle -= ImpressionsDiagram.degToRad(this._separatorSize);
   }
 }
 
