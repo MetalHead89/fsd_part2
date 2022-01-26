@@ -65,13 +65,18 @@ $header: '.header';
   }
 
   &__content {
+    margin: 0 120px;
     width: 100%;
-    max-width: 1160px;
+    max-width: 1920px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+
+    @media screen and (max-width: 1170px) {
+      margin: 0 2%;
+    }
   }
 
   &__logo {

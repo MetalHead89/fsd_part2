@@ -25,9 +25,14 @@ $footer: '.footer';
 
   &__copyright {
     width: 100%;
-    max-width: 1160px;
+    margin: 0 120px;
+    max-width: 1920px;
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 1170px) {
+      margin: 0 2%;
+    }
 
     @media screen and (max-width: 768px) {
       flex-direction: column;
@@ -47,11 +52,16 @@ $footer: '.footer';
   &__info {
     box-sizing: border-box;
     width: 100%;
-    max-width: 1160px;
+    margin: 0 120px;
+    max-width: 1920px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 80px 0;
+
+    @media screen and (max-width: 1170px) {
+      margin: 0 2%;
+    }
   }
 
   &__info-column {

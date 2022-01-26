@@ -53,9 +53,14 @@
   &__central-container {
     padding-top: 50px;
     width: 100%;
-    max-width: 1160px;
+    margin: 0 120px;
+    max-width: 1920px;
     display: flex;
     justify-content: space-between;
+
+    @media screen and (max-width: 1170px) {
+      margin: 0 2%;
+    }
 
     @media screen and (max-width: 850px) {
       flex-direction: column;
@@ -200,6 +205,7 @@
     width: 100%;
     max-width: 380px;
     padding-top: 19px;
+    padding-left: 20px;
 
     @media screen and (max-width: 1120px) {
       position: absolute;
