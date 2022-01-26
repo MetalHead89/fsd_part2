@@ -1,16 +1,19 @@
 include ../counting-menu/counting-menu
 include ../calendar/calendar
+include ../checkbox-list/checkbox-list
 
 mixin drop-menu({ type = 'counter', options = [], calendarModifiers = [], themes = [], isButtons = false } = {})
   - let dropMenuStyle = 'drop-menu js-drop-menu';
-
   - dropMenuStyle += themes.reduce((accumulator, theme) => accumulator + ` drop-menu_theme_${theme}`, '' )
+  - dropMenuStyle += type === 'checkbox-list' ? ' drop-menu_relative' : ''
 
   div( class = dropMenuStyle )
     if type === 'counter'
       +counting-menu({ options })
-    else if type = 'calendar'
+    else if type === 'calendar'
       +calendar({ modifiers: calendarModifiers })
+    else if type === 'checkbox-list'
+      +checkbox-list({ checkboxes: options })
 
     if isButtons
       .drop-menu__bottom-buttons-panel

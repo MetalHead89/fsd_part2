@@ -4,5 +4,5 @@ include ../drop-menu/drop-menu.pug
 mixin comfort-dropdown({ title = 'dropdown' } = {})
   .comfort-dropdown.js-comfort-dropdown
     .comfort-dropdown__title !{title}
-    +dropdown-header({ placeholder: 'Выберите удобства', isStraightBottom: true })
+    +dropdown-header({ placeholder: 'Выберите удобства', theme: 'straight-bottom' })
     +drop-menu({ options: ['спальни', 'кровати', 'ванные комнаты'], themes: ['bordered', 'indented']} )

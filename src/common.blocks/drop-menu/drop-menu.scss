@@ -1,5 +1,6 @@
 @import '@/common.blocks/counting-menu/counting-menu';
 @import '@/common.blocks/calendar/calendar';
+@import '@/common.blocks/checkbox-list/checkbox-list';
 
 .drop-menu {
   position: absolute;
@@ -25,10 +26,17 @@
     }
   }
 
+  &_relative {
+    display: none;
+    position: relative;
+    box-shadow: none;
+  }
+
   &_opened {
     transition: transform 0.4s cubic-bezier(0.73, 0.32, 0.34, 1.5);
     transform: scale(1, 1);
     opacity: 1;
+    display: block;
   }
 
   &__bottom-buttons-panel {

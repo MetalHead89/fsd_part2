@@ -1,14 +1,6 @@
-include ../checkbox-button/checkbox-button.pug
+include ../drop-menu/drop-menu
 
-mixin expandable-checkbox-list({ title, checkboxes } = {})
-
-  .expandable-checkbox-list
-    label
-      input.expandable-checkbox-list__check(type="checkbox")
-      .expandable-checkbox-list__title-section
-        h3.expandable-checkbox-list__title !{title}
-        i.expandable-checkbox-list__expand-more keyboard_arrow_down
-      .expandable-checkbox-list__hide-list    
-        each checkbox in checkboxes
-          .expandable-checkbox-list__checkbox-container
-            +checkbox-button(checkbox)
+mixin expandable-checkbox-list({ title, checkboxes } = {})  
+  .expandable-checkbox-list.js-expandable-checkbox-list
+    +dropdown-header({ placeholder: title, theme: 'bold-title' })
+    +drop-menu({ type: 'checkbox-list', options: checkboxes })

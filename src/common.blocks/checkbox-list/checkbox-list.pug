@@ -1,0 +1,7 @@
+include ../checkbox-button/checkbox-button.pug
+
+mixin checkbox-list({ checkboxes = [] } = {} )
+  .checkbox-list
+    each checkbox in checkboxes
+      .checkbox-list__checkbox-container
+        +checkbox-button(checkbox)

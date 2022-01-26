@@ -1,6 +1,8 @@
 @import '@/scss/mixins';
 
-.dropdown-header {
+$dropdown-header: '.dropdown-header';
+
+#{$dropdown-header} {
   padding: 9px 15px;
   padding-right: 10px;
   border: 1px solid rgba(31, 32, 65, 0.25);
@@ -19,12 +21,6 @@
     border: 1px solid rgba(31, 32, 65, 0.5);
   }
 
-  &_theme {
-    &_straight-bottom {
-      border-radius: 4px 4px 0 0;
-    }
-  }
-
   &:hover,
   &:focus {
     border: 1px solid rgba(31, 32, 65, 0.5);
@@ -32,13 +28,13 @@
   }
 
   &__text {
+    flex-grow: 1;
     width: 75%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     pointer-events: none;
     display: inline-block;
-    flex: none;
   }
 
   &__expand-more {
@@ -49,5 +45,31 @@
     display: inline-block;
     flex: none;
     user-select: none;
+    line-height: 24px;
+  }
+
+  &_theme {
+    &_straight-bottom {
+      border-radius: 4px 4px 0 0;
+    }
+
+    &_bold-title {
+      @include h3;
+      color: #1f2041;
+      margin-bottom: 17px;
+      margin: 0;
+      padding: 0 10px 0 0;
+      border: none;
+
+      &#{$dropdown-header}_active {
+        #{$dropdown-header}__expand-more {
+          transform: rotate(180deg);
+        }
+      }
+
+      &:hover {
+        border: none;
+      }
+    }
   }
 }

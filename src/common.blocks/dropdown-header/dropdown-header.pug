@@ -1,6 +1,7 @@
-mixin dropdown-header({ placeholder = '', isStraightBottom = false })
+mixin dropdown-header({ placeholder = '', theme })
   - let headerClass = 'dropdown-header js-dropdown-header'
-  - headerClass += isStraightBottom ? ' dropdown-header_theme_straight-bottom' : ''
+  - headerClass += theme === 'straight-bottom' ? ' dropdown-header_theme_straight-bottom' : ''
+  - headerClass += theme === 'bold-title' ? ' dropdown-header_theme_bold-title' : ''
 
   div( class=headerClass )
     .dropdown-header__text.js-dropdown-header__text !{placeholder}
