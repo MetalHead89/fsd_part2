@@ -9,21 +9,6 @@ class CountingMenu {
     this._init();
   }
 
-  _init() {
-    this._clickToButtonListeners = [];
-    this._quantitySum = 0;
-    this._counters = this._countingMenu.querySelectorAll(
-      '.js-counting-menu__quantity-number'
-    );
-    const quantityButtons = this._countingMenu.querySelectorAll(
-      '.counting-menu__quantity-button'
-    );
-
-    quantityButtons.forEach((item) => {
-      item.addEventListener('click', this._handleQuantityButtonClick);
-    });
-  }
-
   clear() {
     this._counters.forEach((counter) => {
       counter.innerText = '0';
@@ -47,6 +32,21 @@ class CountingMenu {
     ];
 
     return counters.map((counter) => parseInt(counter.innerText, 10));
+  }
+
+  _init() {
+    this._clickToButtonListeners = [];
+    this._quantitySum = 0;
+    this._counters = this._countingMenu.querySelectorAll(
+      '.js-counting-menu__quantity-number'
+    );
+    const quantityButtons = this._countingMenu.querySelectorAll(
+      '.counting-menu__quantity-button'
+    );
+
+    quantityButtons.forEach((item) => {
+      item.addEventListener('click', this._handleQuantityButtonClick);
+    });
   }
 
   _increaseQuantitySum() {

@@ -18,20 +18,17 @@ class Dropdown {
     this._addEventListeners();
   }
 
-  static handleBodyClick(evt) {
-    if (Dropdown.clickIsOutsideDropdown(evt)) {
-      Dropdown.closeAllDropdowns();
+  getDropdown() {
+    return this._dropdown;
+  }
+
+  @boundMethod
+  close() {
+    this._opened = false;
+    this._dropMenu.closeDropMenu();
+    if (this._dropdownHeader) {
+      this._dropdownHeader.disactivate();
     }
-  }
-
-  static clickIsOutsideDropdown(evt) {
-    return !Dropdown.dropdownsOnThePage.some(
-      (dropdown) => evt.path.indexOf(dropdown.getDropdown()) >= 0
-    );
-  }
-
-  static closeAllDropdowns() {
-    Dropdown.dropdownsOnThePage.forEach((dropdown) => dropdown.close());
   }
 
   _init() {
@@ -81,17 +78,20 @@ class Dropdown {
     this._dropdownHeader.setText(text);
   }
 
-  getDropdown() {
-    return this._dropdown;
+  static handleBodyClick(evt) {
+    if (Dropdown.clickIsOutsideDropdown(evt)) {
+      Dropdown.closeAllDropdowns();
+    }
   }
 
-  @boundMethod
-  close() {
-    this._opened = false;
-    this._dropMenu.closeDropMenu();
-    if (this._dropdownHeader) {
-      this._dropdownHeader.disactivate();
-    }
+  static clickIsOutsideDropdown(evt) {
+    return !Dropdown.dropdownsOnThePage.some(
+      (dropdown) => evt.path.indexOf(dropdown.getDropdown()) >= 0
+    );
+  }
+
+  static closeAllDropdowns() {
+    Dropdown.dropdownsOnThePage.forEach((dropdown) => dropdown.close());
   }
 }
 

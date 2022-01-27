@@ -66,29 +66,6 @@ class RoomRateCard {
     this._dateDropdown.addClickToApplyButtonListener(this._calculateCost);
   }
 
-  static getLengthOfStay(startDate, endDate) {
-    if (startDate.length === 10 && endDate.length === 10) {
-      const startDay = Date.parse(startDate.split('.').reverse().join('-'));
-      const endDay = Date.parse(endDate.split('.').reverse().join('-'));
-
-      return (endDay - startDay) / 86400000 + 1;
-    }
-
-    return null;
-  }
-
-  static getWord(number) {
-    /**
-     * Склоняет слова
-     */
-    let word = 'суток';
-    if (number % 10 === 1 && number % 100 !== 11) {
-      word = 'сутки';
-    }
-
-    return word;
-  }
-
   @boundMethod
   _calculateCost() {
     const { startDate, endDate } = this._dateDropdown.getDataFieldsValues();
@@ -120,6 +97,29 @@ class RoomRateCard {
         '.js-room-rate-card__result-cost'
       ).innerText = `${'0'.toLocaleString('ru-RU')}₽`;
     }
+  }
+
+  static getLengthOfStay(startDate, endDate) {
+    if (startDate.length === 10 && endDate.length === 10) {
+      const startDay = Date.parse(startDate.split('.').reverse().join('-'));
+      const endDay = Date.parse(endDate.split('.').reverse().join('-'));
+
+      return (endDay - startDay) / 86400000 + 1;
+    }
+
+    return null;
+  }
+
+  static getWord(number) {
+    /**
+     * Склоняет слова
+     */
+    let word = 'суток';
+    if (number % 10 === 1 && number % 100 !== 11) {
+      word = 'сутки';
+    }
+
+    return word;
   }
 }
 

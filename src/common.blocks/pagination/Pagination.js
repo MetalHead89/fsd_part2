@@ -91,24 +91,6 @@ class Pagination {
     this._createNewPaginationSignature();
   }
 
-  static numberDontFitOnTheLeft(currentPage, activePage) {
-    return (
-      currentPage < activePage &&
-      activePage - currentPage > 2 &&
-      currentPage > 1 &&
-      activePage > 5
-    );
-  }
-
-  static numberDontFitOnTheRight(currentPage, activePage, pagesCount) {
-    return (
-      currentPage > activePage &&
-      currentPage - activePage > 2 &&
-      currentPage < pagesCount &&
-      pagesCount - activePage > 4
-    );
-  }
-
   _createNewPagination(button) {
     /**
      * Создаёт обновлённый элемент пагинации, удаляет старый
@@ -275,6 +257,24 @@ class Pagination {
     }
 
     ul.append(li);
+  }
+
+  static numberDontFitOnTheLeft(currentPage, activePage) {
+    return (
+      currentPage < activePage &&
+      activePage - currentPage > 2 &&
+      currentPage > 1 &&
+      activePage > 5
+    );
+  }
+
+  static numberDontFitOnTheRight(currentPage, activePage, pagesCount) {
+    return (
+      currentPage > activePage &&
+      currentPage - activePage > 2 &&
+      currentPage < pagesCount &&
+      pagesCount - activePage > 4
+    );
   }
 }
 

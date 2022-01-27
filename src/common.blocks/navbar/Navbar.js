@@ -12,6 +12,16 @@ class Navbar {
     this._addEventListeners();
   }
 
+  @boundMethod
+  handleDropdownTitleClick(event) {
+    if (this._orientation === 'vertical') {
+      const hiddenListSwitch = event.target.offsetParent.querySelector(
+        '.navbar__hidden-list-switch'
+      );
+      hiddenListSwitch.checked = !hiddenListSwitch.checked;
+    }
+  }
+
   _init() {
     this._orientation = this._navbar.classList.contains(
       'js-navbar_theme_vertical'
@@ -53,16 +63,6 @@ class Navbar {
 
   static handleNavbarItemWithNameClick() {
     Navbar.signIn();
-  }
-
-  @boundMethod
-  handleDropdownTitleClick(event) {
-    if (this._orientation === 'vertical') {
-      const hiddenListSwitch = event.target.offsetParent.querySelector(
-        '.navbar__hidden-list-switch'
-      );
-      hiddenListSwitch.checked = !hiddenListSwitch.checked;
-    }
   }
 
   static signIn() {

@@ -4,12 +4,6 @@ import { boundMethod } from 'autobind-decorator';
 import Dropdown from '../../js/Dropdown';
 
 class GuestsDropdown extends Dropdown {
-  static numberIsTwoThreeOrFour(number10, number100) {
-    return (
-      number10 >= 2 && number10 <= 4 && !(number100 >= 12 && number100 <= 14)
-    );
-  }
-
   _init() {
     super._init();
 
@@ -75,6 +69,12 @@ class GuestsDropdown extends Dropdown {
     }
 
     return this.WORDS[word][2];
+  }
+
+  static numberIsTwoThreeOrFour(number10, number100) {
+    return (
+      number10 >= 2 && number10 <= 4 && !(number100 >= 12 && number100 <= 14)
+    );
   }
 }
 

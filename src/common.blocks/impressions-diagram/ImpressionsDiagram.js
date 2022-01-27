@@ -81,6 +81,31 @@ class ImpressionsDiagram {
     );
   }
 
+  _setDiagramSegment(color, votes) {
+    if (votes === 0) {
+      return;
+    }
+
+    const impressionPercent = (votes / this._votesSum) * 100;
+    this._startAngle = this._endAngle;
+    const degAngle = (360 * impressionPercent) / 100 - this._separatorSize;
+    this._endAngle -= ImpressionsDiagram.degToRad(degAngle);
+
+    this._canvasContext.beginPath();
+    this._canvasContext.arc(
+      this._canvasCenterX,
+      this._canvasCenterY,
+      58,
+      this._startAngle,
+      this._endAngle,
+      true
+    );
+    this._canvasContext.lineWidth = 4;
+    this._canvasContext.strokeStyle = color;
+    this._canvasContext.stroke();
+    this._endAngle -= ImpressionsDiagram.degToRad(this._separatorSize);
+  }
+
   static degToRad(deg) {
     return (Math.PI * deg) / 180;
   }
@@ -113,31 +138,6 @@ class ImpressionsDiagram {
     return (
       number10 >= 2 && number10 <= 4 && !(number100 >= 12 && number100 <= 14)
     );
-  }
-
-  _setDiagramSegment(color, votes) {
-    if (votes === 0) {
-      return;
-    }
-
-    const impressionPercent = (votes / this._votesSum) * 100;
-    this._startAngle = this._endAngle;
-    const degAngle = (360 * impressionPercent) / 100 - this._separatorSize;
-    this._endAngle -= ImpressionsDiagram.degToRad(degAngle);
-
-    this._canvasContext.beginPath();
-    this._canvasContext.arc(
-      this._canvasCenterX,
-      this._canvasCenterY,
-      58,
-      this._startAngle,
-      this._endAngle,
-      true
-    );
-    this._canvasContext.lineWidth = 4;
-    this._canvasContext.strokeStyle = color;
-    this._canvasContext.stroke();
-    this._endAngle -= ImpressionsDiagram.degToRad(this._separatorSize);
   }
 }
 

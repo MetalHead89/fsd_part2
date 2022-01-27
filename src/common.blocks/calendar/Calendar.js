@@ -45,6 +45,32 @@ class Calendar {
     return this._dateRange.map((item) => Calendar.dateToString(new Date(item)));
   }
 
+  enterDates(startDate, endDate) {
+    let start = Calendar.getDate(startDate);
+    let end = Calendar.getDate(endDate);
+
+    if (
+      Calendar.isDatesNotNull &&
+      Calendar.isStartDateGreaterEndDate(start, end)
+    ) {
+      return null;
+    }
+
+    if (start && start.getTime() < this._currentDate.getTime()) {
+      start = this._currentDate;
+    }
+
+    if (end && end.getTime() < this._currentDate.getTime()) {
+      end = this._currentDate;
+    }
+
+    this._activateCalendarDays(start, end);
+    this._clearSelectedDays();
+    this._showSelectedDays();
+
+    return this._dateRange.map((item) => Calendar.dateToString(new Date(item)));
+  }
+
   _calendarInit() {
     this._observers = [];
     this._clickToApplyButtonListeners = [];
@@ -84,36 +110,6 @@ class Calendar {
     );
   }
 
-  enterDates(startDate, endDate) {
-    let start = Calendar.getDate(startDate);
-    let end = Calendar.getDate(endDate);
-
-    if (
-      Calendar.isDatesNotNull &&
-      Calendar.isStartDateGreaterEndDate(start, end)
-    ) {
-      return null;
-    }
-
-    if (start && start.getTime() < this._currentDate.getTime()) {
-      start = this._currentDate;
-    }
-
-    if (end && end.getTime() < this._currentDate.getTime()) {
-      end = this._currentDate;
-    }
-
-    this._activateCalendarDays(start, end);
-    this._clearSelectedDays();
-    this._showSelectedDays();
-
-    return this._dateRange.map((item) => Calendar.dateToString(new Date(item)));
-  }
-
-  static isDatesNotNull(startDate, endDate) {
-    return startDate && endDate;
-  }
-
   _clearSelectedDays() {
     const selectableDays = this._calendar.querySelectorAll(
       '.js-calendar__day_theme_selectable'
@@ -150,64 +146,6 @@ class Calendar {
       this._dateRange = [];
       this._isChoiceMode = false;
     }
-  }
-
-  static isStartDateGreaterEndDate(startDate, endDate) {
-    return (
-      startDate !== null &&
-      endDate !== null &&
-      startDate.getTime() >= endDate.getTime()
-    );
-  }
-
-  static isEndDateGreaterStartDate(startDate, endDate) {
-    return (
-      startDate !== null &&
-      endDate !== null &&
-      endDate.getTime() <= startDate.getTime()
-    );
-  }
-
-  static dateToString(date) {
-    let day = date.getDate();
-    let month = (date.getMonth() + 1).toString();
-    const year = date.getFullYear();
-
-    if (day.toString().length < 2) {
-      day = `0${day}`;
-    }
-
-    if (month.toString().length < 2) {
-      month = `0${month}`;
-    }
-
-    return `${day}.${month}.${year}`;
-  }
-
-  static getDate(date) {
-    let newDate = null;
-
-    if (Calendar.dateIsValid(date)) {
-      const [day, month, year] = date.split('.');
-      newDate = new Date(year, month - 1, day, 0, 0, 0, 0);
-    }
-
-    return newDate;
-  }
-
-  static dateIsValid(date) {
-    const [day, month, year] = date.split('.');
-
-    return (
-      day !== '' &&
-      month !== '' &&
-      year !== '' &&
-      day >= 1 &&
-      day <= 31 &&
-      month > 0 &&
-      month <= 12 &&
-      year > 0
-    );
   }
 
   @boundMethod
@@ -358,10 +296,6 @@ class Calendar {
     this._applyRange();
   }
 
-  static dayIsSelectable(day) {
-    return day.classList.contains('calendar__day_theme_selectable');
-  }
-
   _dayIsSelectableAndNotEqualToStartingPointOfRange(day) {
     const date = this._getDateFromCalendar(day).getTime();
     const startingDateOfRange = this._dateRange.sort(
@@ -457,10 +391,6 @@ class Calendar {
         day.parentNode.classList.add('calendar__range-highlight');
       }
     }
-  }
-
-  static compareNumbers(a, b) {
-    return a - b;
   }
 
   _getDateFromCalendar(day) {
@@ -618,6 +548,76 @@ class Calendar {
       date.getMonth() === this._currentDate.getMonth() &&
       date.getDate() === this._currentDate.getDate()
     );
+  }
+
+  static isDatesNotNull(startDate, endDate) {
+    return startDate && endDate;
+  }
+
+  static isStartDateGreaterEndDate(startDate, endDate) {
+    return (
+      startDate !== null &&
+      endDate !== null &&
+      startDate.getTime() >= endDate.getTime()
+    );
+  }
+
+  static isEndDateGreaterStartDate(startDate, endDate) {
+    return (
+      startDate !== null &&
+      endDate !== null &&
+      endDate.getTime() <= startDate.getTime()
+    );
+  }
+
+  static dateToString(date) {
+    let day = date.getDate();
+    let month = (date.getMonth() + 1).toString();
+    const year = date.getFullYear();
+
+    if (day.toString().length < 2) {
+      day = `0${day}`;
+    }
+
+    if (month.toString().length < 2) {
+      month = `0${month}`;
+    }
+
+    return `${day}.${month}.${year}`;
+  }
+
+  static getDate(date) {
+    let newDate = null;
+
+    if (Calendar.dateIsValid(date)) {
+      const [day, month, year] = date.split('.');
+      newDate = new Date(year, month - 1, day, 0, 0, 0, 0);
+    }
+
+    return newDate;
+  }
+
+  static dateIsValid(date) {
+    const [day, month, year] = date.split('.');
+
+    return (
+      day !== '' &&
+      month !== '' &&
+      year !== '' &&
+      day >= 1 &&
+      day <= 31 &&
+      month > 0 &&
+      month <= 12 &&
+      year > 0
+    );
+  }
+
+  static dayIsSelectable(day) {
+    return day.classList.contains('calendar__day_theme_selectable');
+  }
+
+  static compareNumbers(a, b) {
+    return a - b;
   }
 }
 

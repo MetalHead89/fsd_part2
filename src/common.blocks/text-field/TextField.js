@@ -15,30 +15,6 @@ class TextField {
     this._field.addEventListener('keydown', this._handleFieldKeydown);
   }
 
-  static getTextWithoutDots(text) {
-    /**
-     * Удаляет точки из полученной строки
-     * @param {string} text - строка с точками
-     * @returns {string} Строка без точек
-     */
-
-    return text.split('.').join('');
-  }
-
-  static handleFieldPaste(event) {
-    /**
-     * Проверяет, что вставляемый текст содержит в себе только цифры и точки.
-     * В случае неудачной проверки отменяет вставку
-     */
-
-    const clipboardData = event.clipboardData || window.clipboardData;
-    const pastedData = clipboardData.getData('Text');
-
-    if (Number.isNaN(Number(TextField.getTextWithoutDots(pastedData)))) {
-      event.preventDefault();
-    }
-  }
-
   _isBackspaceAndCaretBeforeDot(key) {
     return (
       key === 'Backspace' &&
@@ -69,14 +45,6 @@ class TextField {
       this._field.selectionStart += 1;
       this._field.selectionEnd += 1;
     }
-  }
-
-  static deleteContentAndLengthMoreThanTwo(inputType, textLength) {
-    return (
-      (inputType === 'deleteContentBackward' ||
-        inputType === 'deleteContentForward') &&
-      textLength > 2
-    );
   }
 
   @boundMethod
@@ -117,6 +85,38 @@ class TextField {
     this._field.value = text;
     this._field.selectionStart = caretPosition;
     this._field.selectionEnd = caretPosition;
+  }
+
+  static getTextWithoutDots(text) {
+    /**
+     * Удаляет точки из полученной строки
+     * @param {string} text - строка с точками
+     * @returns {string} Строка без точек
+     */
+
+    return text.split('.').join('');
+  }
+
+  static handleFieldPaste(event) {
+    /**
+     * Проверяет, что вставляемый текст содержит в себе только цифры и точки.
+     * В случае неудачной проверки отменяет вставку
+     */
+
+    const clipboardData = event.clipboardData || window.clipboardData;
+    const pastedData = clipboardData.getData('Text');
+
+    if (Number.isNaN(Number(TextField.getTextWithoutDots(pastedData)))) {
+      event.preventDefault();
+    }
+  }
+
+  static deleteContentAndLengthMoreThanTwo(inputType, textLength) {
+    return (
+      (inputType === 'deleteContentBackward' ||
+        inputType === 'deleteContentForward') &&
+      textLength > 2
+    );
   }
 }
 
