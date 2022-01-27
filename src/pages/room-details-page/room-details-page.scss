@@ -107,7 +107,12 @@
 
   &__top-info-section {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+
+    @media screen and (max-width: 1300px) {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
 
     @media screen and (max-width: 1120px) {
       margin-left: 5%;
@@ -128,14 +133,9 @@
   }
 
   &__impressions-diagram {
-    width: 50%;
+    width: 49%;
     min-width: 240px;
     box-sizing: border-box;
-    margin-left: 15%;
-
-    @media screen and (max-width: 1120px) {
-      margin-left: 0;
-    }
 
     @media screen and (max-width: 660px) {
       margin: 0 auto 30px;
@@ -183,7 +183,6 @@
   }
 
   &__bottom-info-section {
-    padding-top: 5px;
     display: flex;
     justify-content: space-between;
 
@@ -216,6 +215,7 @@
     @media screen and (max-width: 850px) {
       position: static;
       margin: 30px auto 0;
+      padding-left: 0;
     }
   }
 }
