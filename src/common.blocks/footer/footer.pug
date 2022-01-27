@@ -13,7 +13,7 @@ mixin footer({ info, copyright } = {})
                 if item.image
                   img(class=item.image.class, src=item.image.src, alt=item.image.alt)
                 else if item.textField
-                  li.footer__info-item
+                  li.footer__text-field-container
                     +text-field(item.textField)
                 else
                   li.footer__info-item !{item}

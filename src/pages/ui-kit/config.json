@@ -338,7 +338,7 @@
   "footer": {
     "info": [
       {
-        "listStyle": "footer__info-column footer__info-column_width-260",
+        "listStyle": "footer__info-column",
         "image": {
           "class": "footer__logo",
           "src": "../images/logo.svg",
@@ -379,7 +379,7 @@
         ]
       },
       {
-        "listStyle": "footer__info-column footer__info-column_width-260",
+        "listStyle": "footer__info-column",
         "title": "Подписка",
         "items": [
           "Получайте специальные предложения и новости сервиса",

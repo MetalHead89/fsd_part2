@@ -50,6 +50,7 @@ $footer: '.footer';
   }
 
   &__info {
+    gap: 30px;
     box-sizing: border-box;
     width: 100%;
     margin: 0 120px;
@@ -66,7 +67,7 @@ $footer: '.footer';
 
   &__info-column {
     list-style-type: none;
-    padding: 0 30px;
+    padding: 0px;
     max-width: 260px;
 
     &:first-child,
@@ -141,5 +142,9 @@ $footer: '.footer';
     & + #{$footer}__social-link {
       margin-left: 22px;
     }
+  }
+
+  &__text-field-container {
+    margin-top: 15px;
   }
 }
